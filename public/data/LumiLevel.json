@@ -1,0 +1,492 @@
+[
+  {
+    "Id": 1,
+    "Exp": 5,
+    "ShardNum": 0,
+    "workState": 10000,
+    "IsBreak": false
+  },
+  {
+    "Id": 2,
+    "Exp": 5,
+    "ShardNum": 0,
+    "workState": 10200,
+    "IsBreak": false
+  },
+  {
+    "Id": 3,
+    "Exp": 5,
+    "ShardNum": 0,
+    "workState": 10400,
+    "IsBreak": false
+  },
+  {
+    "Id": 4,
+    "Exp": 5,
+    "ShardNum": 0,
+    "workState": 10600,
+    "IsBreak": false
+  },
+  {
+    "Id": 5,
+    "Exp": 5,
+    "ShardNum": 0,
+    "workState": 10800,
+    "IsBreak": false
+  },
+  {
+    "Id": 6,
+    "Exp": 10,
+    "ShardNum": 0,
+    "workState": 11000,
+    "IsBreak": false
+  },
+  {
+    "Id": 7,
+    "Exp": 10,
+    "ShardNum": 0,
+    "workState": 11200,
+    "IsBreak": false
+  },
+  {
+    "Id": 8,
+    "Exp": 10,
+    "ShardNum": 0,
+    "workState": 11400,
+    "IsBreak": false
+  },
+  {
+    "Id": 9,
+    "Exp": 10,
+    "ShardNum": 0,
+    "workState": 11600,
+    "IsBreak": false
+  },
+  {
+    "Id": 10,
+    "Exp": 20,
+    "ShardNum": 0,
+    "workState": 11800,
+    "IsBreak": true
+  },
+  {
+    "Id": 11,
+    "Exp": 20,
+    "ShardNum": 0,
+    "workState": 12000,
+    "IsBreak": false
+  },
+  {
+    "Id": 12,
+    "Exp": 20,
+    "ShardNum": 0,
+    "workState": 12200,
+    "IsBreak": false
+  },
+  {
+    "Id": 13,
+    "Exp": 20,
+    "ShardNum": 0,
+    "workState": 12400,
+    "IsBreak": false
+  },
+  {
+    "Id": 14,
+    "Exp": 20,
+    "ShardNum": 0,
+    "workState": 12600,
+    "IsBreak": false
+  },
+  {
+    "Id": 15,
+    "Exp": 40,
+    "ShardNum": 0,
+    "workState": 12800,
+    "IsBreak": false
+  },
+  {
+    "Id": 16,
+    "Exp": 40,
+    "ShardNum": 0,
+    "workState": 13000,
+    "IsBreak": false
+  },
+  {
+    "Id": 17,
+    "Exp": 40,
+    "ShardNum": 0,
+    "workState": 13200,
+    "IsBreak": false
+  },
+  {
+    "Id": 18,
+    "Exp": 40,
+    "ShardNum": 0,
+    "workState": 13400,
+    "IsBreak": false
+  },
+  {
+    "Id": 19,
+    "Exp": 40,
+    "ShardNum": 0,
+    "workState": 13600,
+    "IsBreak": false
+  },
+  {
+    "Id": 20,
+    "Exp": 60,
+    "ShardNum": 1,
+    "workState": 13800,
+    "IsBreak": true
+  },
+  {
+    "Id": 21,
+    "Exp": 60,
+    "ShardNum": 1,
+    "workState": 14000,
+    "IsBreak": false
+  },
+  {
+    "Id": 22,
+    "Exp": 60,
+    "ShardNum": 1,
+    "workState": 14200,
+    "IsBreak": false
+  },
+  {
+    "Id": 23,
+    "Exp": 60,
+    "ShardNum": 1,
+    "workState": 14400,
+    "IsBreak": false
+  },
+  {
+    "Id": 24,
+    "Exp": 60,
+    "ShardNum": 1,
+    "workState": 14600,
+    "IsBreak": false
+  },
+  {
+    "Id": 25,
+    "Exp": 60,
+    "ShardNum": 1,
+    "workState": 14800,
+    "IsBreak": false
+  },
+  {
+    "Id": 26,
+    "Exp": 100,
+    "ShardNum": 1,
+    "workState": 15000,
+    "IsBreak": false
+  },
+  {
+    "Id": 27,
+    "Exp": 100,
+    "ShardNum": 1,
+    "workState": 15200,
+    "IsBreak": false
+  },
+  {
+    "Id": 28,
+    "Exp": 100,
+    "ShardNum": 1,
+    "workState": 15400,
+    "IsBreak": false
+  },
+  {
+    "Id": 29,
+    "Exp": 100,
+    "ShardNum": 1,
+    "workState": 15600,
+    "IsBreak": false
+  },
+  {
+    "Id": 30,
+    "Exp": 100,
+    "ShardNum": 2,
+    "workState": 15800,
+    "IsBreak": true
+  },
+  {
+    "Id": 31,
+    "Exp": 150,
+    "ShardNum": 2,
+    "workState": 16000,
+    "IsBreak": false
+  },
+  {
+    "Id": 32,
+    "Exp": 150,
+    "ShardNum": 2,
+    "workState": 16200,
+    "IsBreak": false
+  },
+  {
+    "Id": 33,
+    "Exp": 150,
+    "ShardNum": 2,
+    "workState": 16400,
+    "IsBreak": false
+  },
+  {
+    "Id": 34,
+    "Exp": 150,
+    "ShardNum": 2,
+    "workState": 16600,
+    "IsBreak": false
+  },
+  {
+    "Id": 35,
+    "Exp": 150,
+    "ShardNum": 2,
+    "workState": 16800,
+    "IsBreak": false
+  },
+  {
+    "Id": 36,
+    "Exp": 200,
+    "ShardNum": 2,
+    "workState": 17000,
+    "IsBreak": false
+  },
+  {
+    "Id": 37,
+    "Exp": 200,
+    "ShardNum": 2,
+    "workState": 17200,
+    "IsBreak": false
+  },
+  {
+    "Id": 38,
+    "Exp": 200,
+    "ShardNum": 2,
+    "workState": 17400,
+    "IsBreak": false
+  },
+  {
+    "Id": 39,
+    "Exp": 200,
+    "ShardNum": 2,
+    "workState": 17600,
+    "IsBreak": false
+  },
+  {
+    "Id": 40,
+    "Exp": 200,
+    "ShardNum": 3,
+    "workState": 17800,
+    "IsBreak": true
+  },
+  {
+    "Id": 41,
+    "Exp": 300,
+    "ShardNum": 3,
+    "workState": 18000,
+    "IsBreak": false
+  },
+  {
+    "Id": 42,
+    "Exp": 300,
+    "ShardNum": 3,
+    "workState": 18200,
+    "IsBreak": false
+  },
+  {
+    "Id": 43,
+    "Exp": 300,
+    "ShardNum": 3,
+    "workState": 18400,
+    "IsBreak": false
+  },
+  {
+    "Id": 44,
+    "Exp": 300,
+    "ShardNum": 3,
+    "workState": 18600,
+    "IsBreak": false
+  },
+  {
+    "Id": 45,
+    "Exp": 300,
+    "ShardNum": 3,
+    "workState": 18800,
+    "IsBreak": false
+  },
+  {
+    "Id": 46,
+    "Exp": 500,
+    "ShardNum": 3,
+    "workState": 19000,
+    "IsBreak": false
+  },
+  {
+    "Id": 47,
+    "Exp": 500,
+    "ShardNum": 3,
+    "workState": 19200,
+    "IsBreak": false
+  },
+  {
+    "Id": 48,
+    "Exp": 500,
+    "ShardNum": 3,
+    "workState": 19400,
+    "IsBreak": false
+  },
+  {
+    "Id": 49,
+    "Exp": 500,
+    "ShardNum": 3,
+    "workState": 19600,
+    "IsBreak": false
+  },
+  {
+    "Id": 50,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 20000,
+    "IsBreak": true
+  },
+  {
+    "Id": 51,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 52,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 53,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 54,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 55,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 56,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 57,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 58,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 59,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 60,
+    "Exp": 1000,
+    "ShardNum": 5,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 61,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 62,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 63,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 64,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 65,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 66,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 67,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 68,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 69,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  },
+  {
+    "Id": 70,
+    "Exp": 1000,
+    "ShardNum": 0,
+    "workState": 0,
+    "IsBreak": false
+  }
+]

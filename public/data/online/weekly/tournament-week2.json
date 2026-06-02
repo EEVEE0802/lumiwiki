@@ -1,0 +1,3120 @@
+{
+  "updateTime": "2026-05-29T09:48:34.673Z",
+  "totalBattles": 2309,
+  "gameMode": "tournament",
+  "stats": {
+    "all": {
+      "appearance": [
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗",
+          "uniqueBattles": 453,
+          "appearanceRate": "19.62"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶",
+          "uniqueBattles": 448,
+          "appearanceRate": "19.40"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨",
+          "uniqueBattles": 393,
+          "appearanceRate": "17.02"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "海天使",
+          "uniqueBattles": 276,
+          "appearanceRate": "11.95"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "冰原战狼",
+          "uniqueBattles": 274,
+          "appearanceRate": "11.87"
+        },
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠",
+          "uniqueBattles": 274,
+          "appearanceRate": "11.87"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "森灵龙",
+          "uniqueBattles": 270,
+          "appearanceRate": "11.69"
+        },
+        {
+          "lumiId": "111001",
+          "lumiName": "发牌雀圣",
+          "uniqueBattles": 266,
+          "appearanceRate": "11.52"
+        },
+        {
+          "lumiId": "102001",
+          "lumiName": "冰川鹿",
+          "uniqueBattles": 249,
+          "appearanceRate": "10.78"
+        },
+        {
+          "lumiId": "112201",
+          "lumiName": "魔影只鼬",
+          "uniqueBattles": 235,
+          "appearanceRate": "10.18"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "烈焰龙",
+          "uniqueBattles": 209,
+          "appearanceRate": "9.05"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "双刃炎猫",
+          "uniqueBattles": 207,
+          "appearanceRate": "8.96"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "风暴狮鹫",
+          "uniqueBattles": 205,
+          "appearanceRate": "8.88"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "九色鹿",
+          "uniqueBattles": 190,
+          "appearanceRate": "8.23"
+        },
+        {
+          "lumiId": "106404",
+          "lumiName": "英俊狮鹫·异",
+          "uniqueBattles": 165,
+          "appearanceRate": "7.15"
+        },
+        {
+          "lumiId": "121004",
+          "lumiName": "战螂·异",
+          "uniqueBattles": 137,
+          "appearanceRate": "5.93"
+        },
+        {
+          "lumiId": "102701",
+          "lumiName": "筋肉鹅",
+          "uniqueBattles": 136,
+          "appearanceRate": "5.89"
+        },
+        {
+          "lumiId": "103704",
+          "lumiName": "呐喊君·异",
+          "uniqueBattles": 130,
+          "appearanceRate": "5.63"
+        },
+        {
+          "lumiId": "109201",
+          "lumiName": "水母奈奈",
+          "uniqueBattles": 121,
+          "appearanceRate": "5.24"
+        },
+        {
+          "lumiId": "108701",
+          "lumiName": "响尾眼镜蛇",
+          "uniqueBattles": 120,
+          "appearanceRate": "5.20"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "绽放",
+          "uniqueBattles": 119,
+          "appearanceRate": "5.15"
+        },
+        {
+          "lumiId": "126304",
+          "lumiName": "粉扇雀圣·异",
+          "uniqueBattles": 114,
+          "appearanceRate": "4.94"
+        },
+        {
+          "lumiId": "127101",
+          "lumiName": "龙虾",
+          "uniqueBattles": 105,
+          "appearanceRate": "4.55"
+        },
+        {
+          "lumiId": "114601",
+          "lumiName": "晴天舞姬",
+          "uniqueBattles": 91,
+          "appearanceRate": "3.94"
+        },
+        {
+          "lumiId": "126301",
+          "lumiName": "粉扇雀圣",
+          "uniqueBattles": 81,
+          "appearanceRate": "3.51"
+        },
+        {
+          "lumiId": "121401",
+          "lumiName": "龙裹火",
+          "uniqueBattles": 81,
+          "appearanceRate": "3.51"
+        },
+        {
+          "lumiId": "109101",
+          "lumiName": "隐叶鼠侠",
+          "uniqueBattles": 80,
+          "appearanceRate": "3.46"
+        },
+        {
+          "lumiId": "103801",
+          "lumiName": "黄风大圣",
+          "uniqueBattles": 80,
+          "appearanceRate": "3.46"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "暗影兔",
+          "uniqueBattles": 76,
+          "appearanceRate": "3.29"
+        },
+        {
+          "lumiId": "121001",
+          "lumiName": "战螂",
+          "uniqueBattles": 73,
+          "appearanceRate": "3.16"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "海浪龙",
+          "uniqueBattles": 64,
+          "appearanceRate": "2.77"
+        },
+        {
+          "lumiId": "102301",
+          "lumiName": "独角兽",
+          "uniqueBattles": 59,
+          "appearanceRate": "2.56"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "耀光兔",
+          "uniqueBattles": 58,
+          "appearanceRate": "2.51"
+        },
+        {
+          "lumiId": "125901",
+          "lumiName": "巨岩角龟",
+          "uniqueBattles": 54,
+          "appearanceRate": "2.34"
+        },
+        {
+          "lumiId": "102401",
+          "lumiName": "金刚狼",
+          "uniqueBattles": 46,
+          "appearanceRate": "1.99"
+        },
+        {
+          "lumiId": "125801",
+          "lumiName": "魔魔猪",
+          "uniqueBattles": 43,
+          "appearanceRate": "1.86"
+        },
+        {
+          "lumiId": "120601",
+          "lumiName": "卡布奇诺刺客",
+          "uniqueBattles": 41,
+          "appearanceRate": "1.78"
+        },
+        {
+          "lumiId": "111701",
+          "lumiName": "飞行猫鲨",
+          "uniqueBattles": 38,
+          "appearanceRate": "1.65"
+        },
+        {
+          "lumiId": "113101",
+          "lumiName": "炽焰马",
+          "uniqueBattles": 38,
+          "appearanceRate": "1.65"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "搏击袋鼠",
+          "uniqueBattles": 33,
+          "appearanceRate": "1.43"
+        },
+        {
+          "lumiId": "103901",
+          "lumiName": "食梦貘",
+          "uniqueBattles": 32,
+          "appearanceRate": "1.39"
+        },
+        {
+          "lumiId": "102801",
+          "lumiName": "传话蛙",
+          "uniqueBattles": 30,
+          "appearanceRate": "1.30"
+        },
+        {
+          "lumiId": "110001",
+          "lumiName": "暗蚀莱姆",
+          "uniqueBattles": 29,
+          "appearanceRate": "1.26"
+        },
+        {
+          "lumiId": "116601",
+          "lumiName": "招财猫",
+          "uniqueBattles": 27,
+          "appearanceRate": "1.17"
+        },
+        {
+          "lumiId": "105504",
+          "lumiName": "闪电狗·异",
+          "uniqueBattles": 25,
+          "appearanceRate": "1.08"
+        },
+        {
+          "lumiId": "107801",
+          "lumiName": "筋肉虎",
+          "uniqueBattles": 25,
+          "appearanceRate": "1.08"
+        },
+        {
+          "lumiId": "111601",
+          "lumiName": "霹雳猫鲨",
+          "uniqueBattles": 25,
+          "appearanceRate": "1.08"
+        },
+        {
+          "lumiId": "127301",
+          "lumiName": "铁甲土犀",
+          "uniqueBattles": 24,
+          "appearanceRate": "1.04"
+        },
+        {
+          "lumiId": "105301",
+          "lumiName": "史莱姆王",
+          "uniqueBattles": 23,
+          "appearanceRate": "1.00"
+        },
+        {
+          "lumiId": "109501",
+          "lumiName": "水鳍莱姆",
+          "uniqueBattles": 21,
+          "appearanceRate": "0.91"
+        },
+        {
+          "lumiId": "123201",
+          "lumiName": "岩刺猫鲨",
+          "uniqueBattles": 19,
+          "appearanceRate": "0.82"
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "骑士铠",
+          "uniqueBattles": 19,
+          "appearanceRate": "0.82"
+        },
+        {
+          "lumiId": "115501",
+          "lumiName": "宝剑海獭",
+          "uniqueBattles": 17,
+          "appearanceRate": "0.74"
+        },
+        {
+          "lumiId": "115701",
+          "lumiName": "粉拳海獭",
+          "uniqueBattles": 17,
+          "appearanceRate": "0.74"
+        },
+        {
+          "lumiId": "124301",
+          "lumiName": "灵光鸟",
+          "uniqueBattles": 16,
+          "appearanceRate": "0.69"
+        },
+        {
+          "lumiId": "108901",
+          "lumiName": "花牌孔雀",
+          "uniqueBattles": 16,
+          "appearanceRate": "0.69"
+        },
+        {
+          "lumiId": "109601",
+          "lumiName": "冰晶莱姆",
+          "uniqueBattles": 14,
+          "appearanceRate": "0.61"
+        },
+        {
+          "lumiId": "116801",
+          "lumiName": "梦游羊",
+          "uniqueBattles": 14,
+          "appearanceRate": "0.61"
+        },
+        {
+          "lumiId": "113801",
+          "lumiName": "云朵蝶",
+          "uniqueBattles": 13,
+          "appearanceRate": "0.56"
+        },
+        {
+          "lumiId": "109701",
+          "lumiName": "草冠莱姆",
+          "uniqueBattles": 12,
+          "appearanceRate": "0.52"
+        },
+        {
+          "lumiId": "114501",
+          "lumiName": "晴天精灵",
+          "uniqueBattles": 12,
+          "appearanceRate": "0.52"
+        },
+        {
+          "lumiId": "105701",
+          "lumiName": "盼盼",
+          "uniqueBattles": 11,
+          "appearanceRate": "0.48"
+        },
+        {
+          "lumiId": "110601",
+          "lumiName": "叶刃猫鲨",
+          "uniqueBattles": 11,
+          "appearanceRate": "0.48"
+        },
+        {
+          "lumiId": "113701",
+          "lumiName": "云朵蛹",
+          "uniqueBattles": 11,
+          "appearanceRate": "0.48"
+        },
+        {
+          "lumiId": "120101",
+          "lumiName": "鳄鱼轰炸机",
+          "uniqueBattles": 11,
+          "appearanceRate": "0.48"
+        },
+        {
+          "lumiId": "111801",
+          "lumiName": "许愿灯象",
+          "uniqueBattles": 10,
+          "appearanceRate": "0.43"
+        },
+        {
+          "lumiId": "115801",
+          "lumiName": "战甲海獭",
+          "uniqueBattles": 10,
+          "appearanceRate": "0.43"
+        },
+        {
+          "lumiId": "114101",
+          "lumiName": "冰晶狼",
+          "uniqueBattles": 10,
+          "appearanceRate": "0.43"
+        },
+        {
+          "lumiId": "103301",
+          "lumiName": "企鹅秋秋",
+          "uniqueBattles": 9,
+          "appearanceRate": "0.39"
+        },
+        {
+          "lumiId": "120801",
+          "lumiName": "含苞",
+          "uniqueBattles": 9,
+          "appearanceRate": "0.39"
+        },
+        {
+          "lumiId": "115301",
+          "lumiName": "口哨鸦",
+          "uniqueBattles": 8,
+          "appearanceRate": "0.35"
+        },
+        {
+          "lumiId": "101901",
+          "lumiName": "小鹿晶晶",
+          "uniqueBattles": 8,
+          "appearanceRate": "0.35"
+        },
+        {
+          "lumiId": "109801",
+          "lumiName": "电鸣莱姆",
+          "uniqueBattles": 8,
+          "appearanceRate": "0.35"
+        },
+        {
+          "lumiId": "101601",
+          "lumiName": "火龙",
+          "uniqueBattles": 8,
+          "appearanceRate": "0.35"
+        },
+        {
+          "lumiId": "119701",
+          "lumiName": "莽莽水牛",
+          "uniqueBattles": 8,
+          "appearanceRate": "0.35"
+        },
+        {
+          "lumiId": "106901",
+          "lumiName": "雨鳍猫鲨",
+          "uniqueBattles": 7,
+          "appearanceRate": "0.30"
+        },
+        {
+          "lumiId": "103701",
+          "lumiName": "呐喊君",
+          "uniqueBattles": 7,
+          "appearanceRate": "0.30"
+        },
+        {
+          "lumiId": "109901",
+          "lumiName": "土脉莱姆",
+          "uniqueBattles": 7,
+          "appearanceRate": "0.30"
+        },
+        {
+          "lumiId": "112501",
+          "lumiName": "石角龟",
+          "uniqueBattles": 7,
+          "appearanceRate": "0.30"
+        },
+        {
+          "lumiId": "110101",
+          "lumiName": "光辉莱姆",
+          "uniqueBattles": 6,
+          "appearanceRate": "0.26"
+        },
+        {
+          "lumiId": "102601",
+          "lumiName": "筋肉狗",
+          "uniqueBattles": 6,
+          "appearanceRate": "0.26"
+        },
+        {
+          "lumiId": "123801",
+          "lumiName": "螳螂虾",
+          "uniqueBattles": 6,
+          "appearanceRate": "0.26"
+        },
+        {
+          "lumiId": "104701",
+          "lumiName": "冰莱姆",
+          "uniqueBattles": 6,
+          "appearanceRate": "0.26"
+        },
+        {
+          "lumiId": "111501",
+          "lumiName": "炽焰猫鲨",
+          "uniqueBattles": 5,
+          "appearanceRate": "0.22"
+        },
+        {
+          "lumiId": "121101",
+          "lumiName": "战螂宝宝",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "109401",
+          "lumiName": "火炎莱姆",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "115901",
+          "lumiName": "钢盔海獭",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "120701",
+          "lumiName": "卡布奇诺小姐",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "119801",
+          "lumiName": "木棍人",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "101801",
+          "lumiName": "飞叶鼠",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "100501",
+          "lumiName": "多肉猫",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "124001",
+          "lumiName": "六曜鹿",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "120501",
+          "lumiName": "蕉蕉猩",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "120401",
+          "lumiName": "大脚树猿",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "139801",
+          "lumiName": "松果猫头鹰",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "115601",
+          "lumiName": "蓝拳海獭",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "106401",
+          "lumiName": "英俊狮鹫",
+          "uniqueBattles": 4,
+          "appearanceRate": "0.17"
+        },
+        {
+          "lumiId": "116901",
+          "lumiName": "呼呼兔",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "117501",
+          "lumiName": "摸鱼雪貂",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "105804",
+          "lumiName": "海浪龙·异",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "119201",
+          "lumiName": "海精灵",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "114301",
+          "lumiName": "海宝宝",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "104201",
+          "lumiName": "土犀犀",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "112301",
+          "lumiName": "吓吓团",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "108401",
+          "lumiName": "小火喵",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "119901",
+          "lumiName": "耐氪鲨",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "106201",
+          "lumiName": "只鼬",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "101301",
+          "lumiName": "好运鸟",
+          "uniqueBattles": 3,
+          "appearanceRate": "0.13"
+        },
+        {
+          "lumiId": "115101",
+          "lumiName": "暗兔",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "112101",
+          "lumiName": "只鼬宝宝",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "103601",
+          "lumiName": "奶牛哞哞",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "116701",
+          "lumiName": "甜梦",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "114801",
+          "lumiName": "光兔",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "120301",
+          "lumiName": "轮胎青蛙",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "102901",
+          "lumiName": "淘淘",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "118901",
+          "lumiName": "草龙",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "135901",
+          "lumiName": "莓果羊驼",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "118101",
+          "lumiName": "拳拳袋鼠",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "104101",
+          "lumiName": "小钢狼",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "103401",
+          "lumiName": "小火狐",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "112401",
+          "lumiName": "喷喷蟹",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "114001",
+          "lumiName": "冰狼崽",
+          "uniqueBattles": 2,
+          "appearanceRate": "0.09"
+        },
+        {
+          "lumiId": "104501",
+          "lumiName": "火莱姆",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "106601",
+          "lumiName": "美团团",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "130001",
+          "lumiName": "石雕树懒",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "108501",
+          "lumiName": "小叶鼠",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "121201",
+          "lumiName": "火龙果",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "114401",
+          "lumiName": "晴天娃娃",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "110501",
+          "lumiName": "猫鲨",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "102501",
+          "lumiName": "发奋仓鼠",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "116501",
+          "lumiName": "噼啪蛋",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "104301",
+          "lumiName": "火马墩墩",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "105201",
+          "lumiName": "光莱姆",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "104601",
+          "lumiName": "水莱姆",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "112901",
+          "lumiName": "刺啦汪",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "101201",
+          "lumiName": "火猫",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "112801",
+          "lumiName": "草龙宝宝",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "108801",
+          "lumiName": "石猩猩",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "120001",
+          "lumiName": "仙人掌大象",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "103201",
+          "lumiName": "水母花花",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "118301",
+          "lumiName": "水龙",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "123401",
+          "lumiName": "头铁牛",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "104401",
+          "lumiName": "地鼠方方",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        },
+        {
+          "lumiId": "121301",
+          "lumiName": "果火龙",
+          "uniqueBattles": 1,
+          "appearanceRate": "0.04"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "105804",
+          "lumiName": "海浪龙·异",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "骑士铠",
+          "battles": 19,
+          "wins": 17,
+          "winRate": "89.47"
+        },
+        {
+          "lumiId": "123201",
+          "lumiName": "岩刺猫鲨",
+          "battles": 19,
+          "wins": 16,
+          "winRate": "84.21"
+        },
+        {
+          "lumiId": "105301",
+          "lumiName": "史莱姆王",
+          "battles": 23,
+          "wins": 18,
+          "winRate": "78.26"
+        },
+        {
+          "lumiId": "109501",
+          "lumiName": "水鳍莱姆",
+          "battles": 21,
+          "wins": 16,
+          "winRate": "76.19"
+        },
+        {
+          "lumiId": "105504",
+          "lumiName": "闪电狗·异",
+          "battles": 25,
+          "wins": 19,
+          "winRate": "76.00"
+        },
+        {
+          "lumiId": "110001",
+          "lumiName": "暗蚀莱姆",
+          "battles": 29,
+          "wins": 22,
+          "winRate": "75.86"
+        },
+        {
+          "lumiId": "106901",
+          "lumiName": "雨鳍猫鲨",
+          "battles": 7,
+          "wins": 5,
+          "winRate": "71.43"
+        },
+        {
+          "lumiId": "103801",
+          "lumiName": "黄风大圣",
+          "battles": 80,
+          "wins": 54,
+          "winRate": "67.50"
+        },
+        {
+          "lumiId": "108401",
+          "lumiName": "小火喵",
+          "battles": 3,
+          "wins": 2,
+          "winRate": "66.67"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "烈焰龙",
+          "battles": 209,
+          "wins": 139,
+          "winRate": "66.51"
+        },
+        {
+          "lumiId": "120601",
+          "lumiName": "卡布奇诺刺客",
+          "battles": 41,
+          "wins": 27,
+          "winRate": "65.85"
+        },
+        {
+          "lumiId": "125901",
+          "lumiName": "巨岩角龟",
+          "battles": 54,
+          "wins": 35,
+          "winRate": "64.81"
+        },
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠",
+          "battles": 274,
+          "wins": 176,
+          "winRate": "64.23"
+        },
+        {
+          "lumiId": "111001",
+          "lumiName": "发牌雀圣",
+          "battles": 266,
+          "wins": 169,
+          "winRate": "63.53"
+        },
+        {
+          "lumiId": "102701",
+          "lumiName": "筋肉鹅",
+          "battles": 136,
+          "wins": 85,
+          "winRate": "62.50"
+        },
+        {
+          "lumiId": "108901",
+          "lumiName": "花牌孔雀",
+          "battles": 16,
+          "wins": 10,
+          "winRate": "62.50"
+        },
+        {
+          "lumiId": "126304",
+          "lumiName": "粉扇雀圣·异",
+          "battles": 114,
+          "wins": 69,
+          "winRate": "60.53"
+        },
+        {
+          "lumiId": "108701",
+          "lumiName": "响尾眼镜蛇",
+          "battles": 120,
+          "wins": 71,
+          "winRate": "59.17"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "冰原战狼",
+          "battles": 274,
+          "wins": 162,
+          "winRate": "59.12"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "风暴狮鹫",
+          "battles": 205,
+          "wins": 121,
+          "winRate": "59.02"
+        },
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗",
+          "battles": 453,
+          "wins": 261,
+          "winRate": "57.62"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "海天使",
+          "battles": 276,
+          "wins": 155,
+          "winRate": "56.16"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶",
+          "battles": 448,
+          "wins": 251,
+          "winRate": "56.03"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨",
+          "battles": 393,
+          "wins": 220,
+          "winRate": "55.98"
+        },
+        {
+          "lumiId": "102001",
+          "lumiName": "冰川鹿",
+          "battles": 249,
+          "wins": 135,
+          "winRate": "54.22"
+        },
+        {
+          "lumiId": "112201",
+          "lumiName": "魔影只鼬",
+          "battles": 235,
+          "wins": 127,
+          "winRate": "54.04"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "暗影兔",
+          "battles": 76,
+          "wins": 41,
+          "winRate": "53.95"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "海浪龙",
+          "battles": 64,
+          "wins": 34,
+          "winRate": "53.13"
+        },
+        {
+          "lumiId": "126301",
+          "lumiName": "粉扇雀圣",
+          "battles": 81,
+          "wins": 42,
+          "winRate": "51.85"
+        },
+        {
+          "lumiId": "102301",
+          "lumiName": "独角兽",
+          "battles": 59,
+          "wins": 30,
+          "winRate": "50.85"
+        },
+        {
+          "lumiId": "114801",
+          "lumiName": "光兔",
+          "battles": 2,
+          "wins": 1,
+          "winRate": "50.00"
+        },
+        {
+          "lumiId": "109801",
+          "lumiName": "电鸣莱姆",
+          "battles": 8,
+          "wins": 4,
+          "winRate": "50.00"
+        },
+        {
+          "lumiId": "135901",
+          "lumiName": "莓果羊驼",
+          "battles": 2,
+          "wins": 1,
+          "winRate": "50.00"
+        },
+        {
+          "lumiId": "120401",
+          "lumiName": "大脚树猿",
+          "battles": 4,
+          "wins": 2,
+          "winRate": "50.00"
+        },
+        {
+          "lumiId": "121401",
+          "lumiName": "龙裹火",
+          "battles": 81,
+          "wins": 40,
+          "winRate": "49.38"
+        },
+        {
+          "lumiId": "111601",
+          "lumiName": "霹雳猫鲨",
+          "battles": 25,
+          "wins": 12,
+          "winRate": "48.00"
+        },
+        {
+          "lumiId": "113101",
+          "lumiName": "炽焰马",
+          "battles": 38,
+          "wins": 18,
+          "winRate": "47.37"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "森灵龙",
+          "battles": 270,
+          "wins": 126,
+          "winRate": "46.67"
+        },
+        {
+          "lumiId": "102401",
+          "lumiName": "金刚狼",
+          "battles": 46,
+          "wins": 21,
+          "winRate": "45.65"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "耀光兔",
+          "battles": 58,
+          "wins": 26,
+          "winRate": "44.83"
+        },
+        {
+          "lumiId": "106404",
+          "lumiName": "英俊狮鹫·异",
+          "battles": 165,
+          "wins": 72,
+          "winRate": "43.64"
+        },
+        {
+          "lumiId": "121001",
+          "lumiName": "战螂",
+          "battles": 73,
+          "wins": 31,
+          "winRate": "42.47"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "搏击袋鼠",
+          "battles": 33,
+          "wins": 14,
+          "winRate": "42.42"
+        },
+        {
+          "lumiId": "127101",
+          "lumiName": "龙虾",
+          "battles": 105,
+          "wins": 42,
+          "winRate": "40.00"
+        },
+        {
+          "lumiId": "111501",
+          "lumiName": "炽焰猫鲨",
+          "battles": 5,
+          "wins": 2,
+          "winRate": "40.00"
+        },
+        {
+          "lumiId": "111801",
+          "lumiName": "许愿灯象",
+          "battles": 10,
+          "wins": 4,
+          "winRate": "40.00"
+        },
+        {
+          "lumiId": "114101",
+          "lumiName": "冰晶狼",
+          "battles": 10,
+          "wins": 4,
+          "winRate": "40.00"
+        },
+        {
+          "lumiId": "125801",
+          "lumiName": "魔魔猪",
+          "battles": 43,
+          "wins": 17,
+          "winRate": "39.53"
+        },
+        {
+          "lumiId": "111701",
+          "lumiName": "飞行猫鲨",
+          "battles": 38,
+          "wins": 15,
+          "winRate": "39.47"
+        },
+        {
+          "lumiId": "103704",
+          "lumiName": "呐喊君·异",
+          "battles": 130,
+          "wins": 51,
+          "winRate": "39.23"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "双刃炎猫",
+          "battles": 207,
+          "wins": 80,
+          "winRate": "38.65"
+        },
+        {
+          "lumiId": "109101",
+          "lumiName": "隐叶鼠侠",
+          "battles": 80,
+          "wins": 30,
+          "winRate": "37.50"
+        },
+        {
+          "lumiId": "101601",
+          "lumiName": "火龙",
+          "battles": 8,
+          "wins": 3,
+          "winRate": "37.50"
+        },
+        {
+          "lumiId": "121004",
+          "lumiName": "战螂·异",
+          "battles": 137,
+          "wins": 51,
+          "winRate": "37.23"
+        },
+        {
+          "lumiId": "109201",
+          "lumiName": "水母奈奈",
+          "battles": 121,
+          "wins": 44,
+          "winRate": "36.36"
+        },
+        {
+          "lumiId": "114601",
+          "lumiName": "晴天舞姬",
+          "battles": 91,
+          "wins": 31,
+          "winRate": "34.07"
+        },
+        {
+          "lumiId": "110101",
+          "lumiName": "光辉莱姆",
+          "battles": 6,
+          "wins": 2,
+          "winRate": "33.33"
+        },
+        {
+          "lumiId": "117501",
+          "lumiName": "摸鱼雪貂",
+          "battles": 3,
+          "wins": 1,
+          "winRate": "33.33"
+        },
+        {
+          "lumiId": "123801",
+          "lumiName": "螳螂虾",
+          "battles": 6,
+          "wins": 2,
+          "winRate": "33.33"
+        },
+        {
+          "lumiId": "119901",
+          "lumiName": "耐氪鲨",
+          "battles": 3,
+          "wins": 1,
+          "winRate": "33.33"
+        },
+        {
+          "lumiId": "107801",
+          "lumiName": "筋肉虎",
+          "battles": 25,
+          "wins": 8,
+          "winRate": "32.00"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "绽放",
+          "battles": 119,
+          "wins": 38,
+          "winRate": "31.93"
+        },
+        {
+          "lumiId": "103901",
+          "lumiName": "食梦貘",
+          "battles": 32,
+          "wins": 10,
+          "winRate": "31.25"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "九色鹿",
+          "battles": 190,
+          "wins": 58,
+          "winRate": "30.53"
+        },
+        {
+          "lumiId": "115801",
+          "lumiName": "战甲海獭",
+          "battles": 10,
+          "wins": 3,
+          "winRate": "30.00"
+        },
+        {
+          "lumiId": "115501",
+          "lumiName": "宝剑海獭",
+          "battles": 17,
+          "wins": 5,
+          "winRate": "29.41"
+        },
+        {
+          "lumiId": "115701",
+          "lumiName": "粉拳海獭",
+          "battles": 17,
+          "wins": 5,
+          "winRate": "29.41"
+        },
+        {
+          "lumiId": "105701",
+          "lumiName": "盼盼",
+          "battles": 11,
+          "wins": 3,
+          "winRate": "27.27"
+        },
+        {
+          "lumiId": "113701",
+          "lumiName": "云朵蛹",
+          "battles": 11,
+          "wins": 3,
+          "winRate": "27.27"
+        },
+        {
+          "lumiId": "124301",
+          "lumiName": "灵光鸟",
+          "battles": 16,
+          "wins": 4,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "115301",
+          "lumiName": "口哨鸦",
+          "battles": 8,
+          "wins": 2,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "127301",
+          "lumiName": "铁甲土犀",
+          "battles": 24,
+          "wins": 6,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "109401",
+          "lumiName": "火炎莱姆",
+          "battles": 4,
+          "wins": 1,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "109701",
+          "lumiName": "草冠莱姆",
+          "battles": 12,
+          "wins": 3,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "115901",
+          "lumiName": "钢盔海獭",
+          "battles": 4,
+          "wins": 1,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "119801",
+          "lumiName": "木棍人",
+          "battles": 4,
+          "wins": 1,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "124001",
+          "lumiName": "六曜鹿",
+          "battles": 4,
+          "wins": 1,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "120501",
+          "lumiName": "蕉蕉猩",
+          "battles": 4,
+          "wins": 1,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "115601",
+          "lumiName": "蓝拳海獭",
+          "battles": 4,
+          "wins": 1,
+          "winRate": "25.00"
+        },
+        {
+          "lumiId": "116601",
+          "lumiName": "招财猫",
+          "battles": 27,
+          "wins": 6,
+          "winRate": "22.22"
+        },
+        {
+          "lumiId": "103301",
+          "lumiName": "企鹅秋秋",
+          "battles": 9,
+          "wins": 2,
+          "winRate": "22.22"
+        },
+        {
+          "lumiId": "109601",
+          "lumiName": "冰晶莱姆",
+          "battles": 14,
+          "wins": 3,
+          "winRate": "21.43"
+        },
+        {
+          "lumiId": "102801",
+          "lumiName": "传话蛙",
+          "battles": 30,
+          "wins": 6,
+          "winRate": "20.00"
+        },
+        {
+          "lumiId": "110601",
+          "lumiName": "叶刃猫鲨",
+          "battles": 11,
+          "wins": 2,
+          "winRate": "18.18"
+        },
+        {
+          "lumiId": "120101",
+          "lumiName": "鳄鱼轰炸机",
+          "battles": 11,
+          "wins": 2,
+          "winRate": "18.18"
+        },
+        {
+          "lumiId": "114501",
+          "lumiName": "晴天精灵",
+          "battles": 12,
+          "wins": 2,
+          "winRate": "16.67"
+        },
+        {
+          "lumiId": "113801",
+          "lumiName": "云朵蝶",
+          "battles": 13,
+          "wins": 2,
+          "winRate": "15.38"
+        },
+        {
+          "lumiId": "103701",
+          "lumiName": "呐喊君",
+          "battles": 7,
+          "wins": 1,
+          "winRate": "14.29"
+        },
+        {
+          "lumiId": "101901",
+          "lumiName": "小鹿晶晶",
+          "battles": 8,
+          "wins": 1,
+          "winRate": "12.50"
+        },
+        {
+          "lumiId": "119701",
+          "lumiName": "莽莽水牛",
+          "battles": 8,
+          "wins": 1,
+          "winRate": "12.50"
+        },
+        {
+          "lumiId": "120801",
+          "lumiName": "含苞",
+          "battles": 9,
+          "wins": 1,
+          "winRate": "11.11"
+        },
+        {
+          "lumiId": "116801",
+          "lumiName": "梦游羊",
+          "battles": 14,
+          "wins": 1,
+          "winRate": "7.14"
+        },
+        {
+          "lumiId": "116901",
+          "lumiName": "呼呼兔",
+          "battles": 3,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "115101",
+          "lumiName": "暗兔",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "102601",
+          "lumiName": "筋肉狗",
+          "battles": 6,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "104501",
+          "lumiName": "火莱姆",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "112101",
+          "lumiName": "只鼬宝宝",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "121101",
+          "lumiName": "战螂宝宝",
+          "battles": 4,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "119201",
+          "lumiName": "海精灵",
+          "battles": 3,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "106601",
+          "lumiName": "美团团",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "103601",
+          "lumiName": "奶牛哞哞",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "109901",
+          "lumiName": "土脉莱姆",
+          "battles": 7,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "120701",
+          "lumiName": "卡布奇诺小姐",
+          "battles": 4,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "114301",
+          "lumiName": "海宝宝",
+          "battles": 3,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "116701",
+          "lumiName": "甜梦",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "130001",
+          "lumiName": "石雕树懒",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "104201",
+          "lumiName": "土犀犀",
+          "battles": 3,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "112301",
+          "lumiName": "吓吓团",
+          "battles": 3,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "108501",
+          "lumiName": "小叶鼠",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "101801",
+          "lumiName": "飞叶鼠",
+          "battles": 4,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "120301",
+          "lumiName": "轮胎青蛙",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "100501",
+          "lumiName": "多肉猫",
+          "battles": 4,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "102901",
+          "lumiName": "淘淘",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "112501",
+          "lumiName": "石角龟",
+          "battles": 7,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "121201",
+          "lumiName": "火龙果",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "104701",
+          "lumiName": "冰莱姆",
+          "battles": 6,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "118901",
+          "lumiName": "草龙",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "106201",
+          "lumiName": "只鼬",
+          "battles": 3,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "114401",
+          "lumiName": "晴天娃娃",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "118101",
+          "lumiName": "拳拳袋鼠",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "101301",
+          "lumiName": "好运鸟",
+          "battles": 3,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "139801",
+          "lumiName": "松果猫头鹰",
+          "battles": 4,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "110501",
+          "lumiName": "猫鲨",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "104101",
+          "lumiName": "小钢狼",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "103401",
+          "lumiName": "小火狐",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "102501",
+          "lumiName": "发奋仓鼠",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "116501",
+          "lumiName": "噼啪蛋",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "104301",
+          "lumiName": "火马墩墩",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "106401",
+          "lumiName": "英俊狮鹫",
+          "battles": 4,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "105201",
+          "lumiName": "光莱姆",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "104601",
+          "lumiName": "水莱姆",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "112401",
+          "lumiName": "喷喷蟹",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "112901",
+          "lumiName": "刺啦汪",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "101201",
+          "lumiName": "火猫",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "112801",
+          "lumiName": "草龙宝宝",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "114001",
+          "lumiName": "冰狼崽",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "108801",
+          "lumiName": "石猩猩",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "120001",
+          "lumiName": "仙人掌大象",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "103201",
+          "lumiName": "水母花花",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "118301",
+          "lumiName": "水龙",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "123401",
+          "lumiName": "头铁牛",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "104401",
+          "lumiName": "地鼠方方",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "121301",
+          "lumiName": "果火龙",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "totalBattles": 2309,
+      "rankRange": {
+        "min": 1,
+        "max": 0
+      }
+    }
+  },
+  "popularTeams": [
+    {
+      "teamLumiIds": [
+        "111001",
+        "105401",
+        "119301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "111001",
+          "lumiName": "发牌雀圣"
+        },
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "海天使"
+        }
+      ],
+      "battles": 124,
+      "wins": 85,
+      "winRate": "68.55"
+    },
+    {
+      "teamLumiIds": [
+        "107001",
+        "113901",
+        "105501"
+      ],
+      "lumis": [
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        },
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        }
+      ],
+      "battles": 86,
+      "wins": 55,
+      "winRate": "63.95"
+    },
+    {
+      "teamLumiIds": [
+        "102001",
+        "102701",
+        "114201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102001",
+          "lumiName": "冰川鹿"
+        },
+        {
+          "lumiId": "102701",
+          "lumiName": "筋肉鹅"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "冰原战狼"
+        }
+      ],
+      "battles": 75,
+      "wins": 45,
+      "winRate": "60.00"
+    },
+    {
+      "teamLumiIds": [
+        "103801",
+        "102001",
+        "114201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "103801",
+          "lumiName": "黄风大圣"
+        },
+        {
+          "lumiId": "102001",
+          "lumiName": "冰川鹿"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "冰原战狼"
+        }
+      ],
+      "battles": 42,
+      "wins": 32,
+      "winRate": "76.19"
+    },
+    {
+      "teamLumiIds": [
+        "108701",
+        "112201",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "108701",
+          "lumiName": "响尾眼镜蛇"
+        },
+        {
+          "lumiId": "112201",
+          "lumiName": "魔影只鼬"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 30,
+      "wins": 20,
+      "winRate": "66.67"
+    },
+    {
+      "teamLumiIds": [
+        "111001",
+        "101701",
+        "110201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "111001",
+          "lumiName": "发牌雀圣"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "烈焰龙"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "风暴狮鹫"
+        }
+      ],
+      "battles": 21,
+      "wins": 13,
+      "winRate": "61.90"
+    },
+    {
+      "teamLumiIds": [
+        "111201",
+        "101701",
+        "110201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "111201",
+          "lumiName": "森灵龙"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "烈焰龙"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "风暴狮鹫"
+        }
+      ],
+      "battles": 20,
+      "wins": 15,
+      "winRate": "75.00"
+    },
+    {
+      "teamLumiIds": [
+        "105301",
+        "110001",
+        "109501"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105301",
+          "lumiName": "史莱姆王"
+        },
+        {
+          "lumiId": "110001",
+          "lumiName": "暗蚀莱姆"
+        },
+        {
+          "lumiId": "109501",
+          "lumiName": "水鳍莱姆"
+        }
+      ],
+      "battles": 18,
+      "wins": 16,
+      "winRate": "88.89"
+    },
+    {
+      "teamLumiIds": [
+        "105401",
+        "105501",
+        "119301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠"
+        },
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "海天使"
+        }
+      ],
+      "battles": 17,
+      "wins": 10,
+      "winRate": "58.82"
+    },
+    {
+      "teamLumiIds": [
+        "105501",
+        "111201",
+        "113901"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "森灵龙"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        }
+      ],
+      "battles": 17,
+      "wins": 10,
+      "winRate": "58.82"
+    },
+    {
+      "teamLumiIds": [
+        "113901",
+        "105501",
+        "123201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        },
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        },
+        {
+          "lumiId": "123201",
+          "lumiName": "岩刺猫鲨"
+        }
+      ],
+      "battles": 16,
+      "wins": 14,
+      "winRate": "87.50"
+    },
+    {
+      "teamLumiIds": [
+        "101701",
+        "102701",
+        "105501"
+      ],
+      "lumis": [
+        {
+          "lumiId": "101701",
+          "lumiName": "烈焰龙"
+        },
+        {
+          "lumiId": "102701",
+          "lumiName": "筋肉鹅"
+        },
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        }
+      ],
+      "battles": 15,
+      "wins": 13,
+      "winRate": "86.67"
+    },
+    {
+      "teamLumiIds": [
+        "111201",
+        "113901",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "111201",
+          "lumiName": "森灵龙"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 14,
+      "wins": 10,
+      "winRate": "71.43"
+    },
+    {
+      "teamLumiIds": [
+        "120601",
+        "102401",
+        "109001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "120601",
+          "lumiName": "卡布奇诺刺客"
+        },
+        {
+          "lumiId": "102401",
+          "lumiName": "金刚狼"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "双刃炎猫"
+        }
+      ],
+      "battles": 14,
+      "wins": 9,
+      "winRate": "64.29"
+    },
+    {
+      "teamLumiIds": [
+        "126304",
+        "126301",
+        "102301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "126304",
+          "lumiName": "粉扇雀圣·异"
+        },
+        {
+          "lumiId": "126301",
+          "lumiName": "粉扇雀圣"
+        },
+        {
+          "lumiId": "102301",
+          "lumiName": "独角兽"
+        }
+      ],
+      "battles": 14,
+      "wins": 13,
+      "winRate": "92.86"
+    },
+    {
+      "teamLumiIds": [
+        "102001",
+        "114201",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102001",
+          "lumiName": "冰川鹿"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "冰原战狼"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 13,
+      "wins": 5,
+      "winRate": "38.46"
+    },
+    {
+      "teamLumiIds": [
+        "120601",
+        "110201",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "120601",
+          "lumiName": "卡布奇诺刺客"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "风暴狮鹫"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 13,
+      "wins": 12,
+      "winRate": "92.31"
+    },
+    {
+      "teamLumiIds": [
+        "111001",
+        "102701",
+        "110201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "111001",
+          "lumiName": "发牌雀圣"
+        },
+        {
+          "lumiId": "102701",
+          "lumiName": "筋肉鹅"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "风暴狮鹫"
+        }
+      ],
+      "battles": 13,
+      "wins": 10,
+      "winRate": "76.92"
+    },
+    {
+      "teamLumiIds": [
+        "101701",
+        "107001",
+        "105501"
+      ],
+      "lumis": [
+        {
+          "lumiId": "101701",
+          "lumiName": "烈焰龙"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        },
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        }
+      ],
+      "battles": 13,
+      "wins": 6,
+      "winRate": "46.15"
+    },
+    {
+      "teamLumiIds": [
+        "105501",
+        "105401",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        },
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 13,
+      "wins": 8,
+      "winRate": "61.54"
+    },
+    {
+      "teamLumiIds": [
+        "109201",
+        "119301",
+        "105801"
+      ],
+      "lumis": [
+        {
+          "lumiId": "109201",
+          "lumiName": "水母奈奈"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "海天使"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "海浪龙"
+        }
+      ],
+      "battles": 13,
+      "wins": 6,
+      "winRate": "46.15"
+    },
+    {
+      "teamLumiIds": [
+        "105401",
+        "119301",
+        "126304"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "海天使"
+        },
+        {
+          "lumiId": "126304",
+          "lumiName": "粉扇雀圣·异"
+        }
+      ],
+      "battles": 12,
+      "wins": 8,
+      "winRate": "66.67"
+    },
+    {
+      "teamLumiIds": [
+        "107001",
+        "114901",
+        "115201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "耀光兔"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "暗影兔"
+        }
+      ],
+      "battles": 11,
+      "wins": 4,
+      "winRate": "36.36"
+    },
+    {
+      "teamLumiIds": [
+        "105401",
+        "102701",
+        "119301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠"
+        },
+        {
+          "lumiId": "102701",
+          "lumiName": "筋肉鹅"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "海天使"
+        }
+      ],
+      "battles": 11,
+      "wins": 8,
+      "winRate": "72.73"
+    },
+    {
+      "teamLumiIds": [
+        "110201",
+        "107001",
+        "115201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "110201",
+          "lumiName": "风暴狮鹫"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "暗影兔"
+        }
+      ],
+      "battles": 10,
+      "wins": 6,
+      "winRate": "60.00"
+    },
+    {
+      "teamLumiIds": [
+        "109201",
+        "125901",
+        "105801"
+      ],
+      "lumis": [
+        {
+          "lumiId": "109201",
+          "lumiName": "水母奈奈"
+        },
+        {
+          "lumiId": "125901",
+          "lumiName": "巨岩角龟"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "海浪龙"
+        }
+      ],
+      "battles": 10,
+      "wins": 6,
+      "winRate": "60.00"
+    },
+    {
+      "teamLumiIds": [
+        "126304",
+        "106404",
+        "105401"
+      ],
+      "lumis": [
+        {
+          "lumiId": "126304",
+          "lumiName": "粉扇雀圣·异"
+        },
+        {
+          "lumiId": "106404",
+          "lumiName": "英俊狮鹫·异"
+        },
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠"
+        }
+      ],
+      "battles": 10,
+      "wins": 6,
+      "winRate": "60.00"
+    },
+    {
+      "teamLumiIds": [
+        "105501",
+        "105401",
+        "125801"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        },
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠"
+        },
+        {
+          "lumiId": "125801",
+          "lumiName": "魔魔猪"
+        }
+      ],
+      "battles": 9,
+      "wins": 4,
+      "winRate": "44.44"
+    },
+    {
+      "teamLumiIds": [
+        "114201",
+        "102001",
+        "103704"
+      ],
+      "lumis": [
+        {
+          "lumiId": "114201",
+          "lumiName": "冰原战狼"
+        },
+        {
+          "lumiId": "102001",
+          "lumiName": "冰川鹿"
+        },
+        {
+          "lumiId": "103704",
+          "lumiName": "呐喊君·异"
+        }
+      ],
+      "battles": 9,
+      "wins": 2,
+      "winRate": "22.22"
+    },
+    {
+      "teamLumiIds": [
+        "108701",
+        "113901",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "108701",
+          "lumiName": "响尾眼镜蛇"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 9,
+      "wins": 4,
+      "winRate": "44.44"
+    },
+    {
+      "teamLumiIds": [
+        "112201",
+        "109101",
+        "113901"
+      ],
+      "lumis": [
+        {
+          "lumiId": "112201",
+          "lumiName": "魔影只鼬"
+        },
+        {
+          "lumiId": "109101",
+          "lumiName": "隐叶鼠侠"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        }
+      ],
+      "battles": 9,
+      "wins": 6,
+      "winRate": "66.67"
+    },
+    {
+      "teamLumiIds": [
+        "111201",
+        "108701",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "111201",
+          "lumiName": "森灵龙"
+        },
+        {
+          "lumiId": "108701",
+          "lumiName": "响尾眼镜蛇"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 9,
+      "wins": 6,
+      "winRate": "66.67"
+    },
+    {
+      "teamLumiIds": [
+        "105501",
+        "108701",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        },
+        {
+          "lumiId": "108701",
+          "lumiName": "响尾眼镜蛇"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 9,
+      "wins": 7,
+      "winRate": "77.78"
+    },
+    {
+      "teamLumiIds": [
+        "105501",
+        "108701",
+        "114201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        },
+        {
+          "lumiId": "108701",
+          "lumiName": "响尾眼镜蛇"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "冰原战狼"
+        }
+      ],
+      "battles": 8,
+      "wins": 6,
+      "winRate": "75.00"
+    },
+    {
+      "teamLumiIds": [
+        "111601",
+        "108701",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "111601",
+          "lumiName": "霹雳猫鲨"
+        },
+        {
+          "lumiId": "108701",
+          "lumiName": "响尾眼镜蛇"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 8,
+      "wins": 3,
+      "winRate": "37.50"
+    },
+    {
+      "teamLumiIds": [
+        "118201",
+        "102001",
+        "114201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "118201",
+          "lumiName": "搏击袋鼠"
+        },
+        {
+          "lumiId": "102001",
+          "lumiName": "冰川鹿"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "冰原战狼"
+        }
+      ],
+      "battles": 8,
+      "wins": 6,
+      "winRate": "75.00"
+    },
+    {
+      "teamLumiIds": [
+        "113901",
+        "112201",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        },
+        {
+          "lumiId": "112201",
+          "lumiName": "魔影只鼬"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 8,
+      "wins": 6,
+      "winRate": "75.00"
+    },
+    {
+      "teamLumiIds": [
+        "105501",
+        "120901",
+        "101701"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "绽放"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "烈焰龙"
+        }
+      ],
+      "battles": 8,
+      "wins": 5,
+      "winRate": "62.50"
+    },
+    {
+      "teamLumiIds": [
+        "105401",
+        "101701",
+        "111001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "烈焰龙"
+        },
+        {
+          "lumiId": "111001",
+          "lumiName": "发牌雀圣"
+        }
+      ],
+      "battles": 8,
+      "wins": 7,
+      "winRate": "87.50"
+    },
+    {
+      "teamLumiIds": [
+        "102101",
+        "112201",
+        "105501"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102101",
+          "lumiName": "九色鹿"
+        },
+        {
+          "lumiId": "112201",
+          "lumiName": "魔影只鼬"
+        },
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        }
+      ],
+      "battles": 7,
+      "wins": 5,
+      "winRate": "71.43"
+    },
+    {
+      "teamLumiIds": [
+        "102101",
+        "113901",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102101",
+          "lumiName": "九色鹿"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 7,
+      "wins": 4,
+      "winRate": "57.14"
+    },
+    {
+      "teamLumiIds": [
+        "108701",
+        "109001",
+        "113901"
+      ],
+      "lumis": [
+        {
+          "lumiId": "108701",
+          "lumiName": "响尾眼镜蛇"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "双刃炎猫"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        }
+      ],
+      "battles": 7,
+      "wins": 4,
+      "winRate": "57.14"
+    },
+    {
+      "teamLumiIds": [
+        "105504",
+        "114201",
+        "112201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105504",
+          "lumiName": "闪电狗·异"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "冰原战狼"
+        },
+        {
+          "lumiId": "112201",
+          "lumiName": "魔影只鼬"
+        }
+      ],
+      "battles": 7,
+      "wins": 5,
+      "winRate": "71.43"
+    },
+    {
+      "teamLumiIds": [
+        "102001",
+        "105504",
+        "101701"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102001",
+          "lumiName": "冰川鹿"
+        },
+        {
+          "lumiId": "105504",
+          "lumiName": "闪电狗·异"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "烈焰龙"
+        }
+      ],
+      "battles": 7,
+      "wins": 7,
+      "winRate": "100.00"
+    },
+    {
+      "teamLumiIds": [
+        "121001",
+        "113901",
+        "105501"
+      ],
+      "lumis": [
+        {
+          "lumiId": "121001",
+          "lumiName": "战螂"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        },
+        {
+          "lumiId": "105501",
+          "lumiName": "闪电狗"
+        }
+      ],
+      "battles": 6,
+      "wins": 3,
+      "winRate": "50.00"
+    },
+    {
+      "teamLumiIds": [
+        "111001",
+        "106404",
+        "124301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "111001",
+          "lumiName": "发牌雀圣"
+        },
+        {
+          "lumiId": "106404",
+          "lumiName": "英俊狮鹫·异"
+        },
+        {
+          "lumiId": "124301",
+          "lumiName": "灵光鸟"
+        }
+      ],
+      "battles": 6,
+      "wins": 4,
+      "winRate": "66.67"
+    },
+    {
+      "teamLumiIds": [
+        "109201",
+        "116601",
+        "102301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "109201",
+          "lumiName": "水母奈奈"
+        },
+        {
+          "lumiId": "116601",
+          "lumiName": "招财猫"
+        },
+        {
+          "lumiId": "102301",
+          "lumiName": "独角兽"
+        }
+      ],
+      "battles": 6,
+      "wins": 3,
+      "winRate": "50.00"
+    },
+    {
+      "teamLumiIds": [
+        "113901",
+        "121004",
+        "107001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "113901",
+          "lumiName": "流星蝶"
+        },
+        {
+          "lumiId": "121004",
+          "lumiName": "战螂·异"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "迷梦猫鲨"
+        }
+      ],
+      "battles": 6,
+      "wins": 3,
+      "winRate": "50.00"
+    },
+    {
+      "teamLumiIds": [
+        "121401",
+        "109101",
+        "105401"
+      ],
+      "lumis": [
+        {
+          "lumiId": "121401",
+          "lumiName": "龙裹火"
+        },
+        {
+          "lumiId": "109101",
+          "lumiName": "隐叶鼠侠"
+        },
+        {
+          "lumiId": "105401",
+          "lumiName": "怪盗蝠"
+        }
+      ],
+      "battles": 6,
+      "wins": 4,
+      "winRate": "66.67"
+    },
+    {
+      "teamLumiIds": [
+        "125801",
+        "106404",
+        "111001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "125801",
+          "lumiName": "魔魔猪"
+        },
+        {
+          "lumiId": "106404",
+          "lumiName": "英俊狮鹫·异"
+        },
+        {
+          "lumiId": "111001",
+          "lumiName": "发牌雀圣"
+        }
+      ],
+      "battles": 6,
+      "wins": 4,
+      "winRate": "66.67"
+    }
+  ],
+  "winDistribution": {
+    "0": 178,
+    "1": 110,
+    "2": 40,
+    "3": 51,
+    "4": 39,
+    "5": 19,
+    "6": 12,
+    "7": 11,
+    "8": 7,
+    "9": 9,
+    "10": 5,
+    "11": 3,
+    "12": 2,
+    "13": 1,
+    "14": 1,
+    "15": 7
+  },
+  "totalPlayers": 495,
+  "tournamentPlayerRankDistribution": {
+    "bronze": 17,
+    "silver": 65,
+    "gold": 78,
+    "diamond": 127,
+    "star": 106,
+    "legend": 71,
+    "total": 464
+  }
+}

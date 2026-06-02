@@ -1,0 +1,1341 @@
+[
+  {
+    "Id": 2100001,
+    "icon": "Passive_ApplePlanting",
+    "icon2": "",
+    "name": "H_Skill_2100001",
+    "Des": "H_SkillText_2100001",
+    "DesParam": [],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2100101,
+    "icon": "WorkType_Wishing",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2100101",
+    "Des": "H_SkillText_2100101",
+    "DesParam": [
+      25
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 4,
+        "Param": 2500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2100201,
+    "icon": "Passive_HandWorking",
+    "icon2": "",
+    "name": "H_Skill_2100201",
+    "Des": "H_SkillText_2100201",
+    "DesParam": [
+      50
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10120,
+        "Y": 5000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2100501,
+    "icon": "WorkType_Corn",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2100501",
+    "Des": "H_SkillText_2100501",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 44,
+        "Y": 5500
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2100601,
+    "icon": "WorkType_Feeding",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2100601",
+    "Des": "H_SkillText_2100601",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 7,
+        "Param": 4000
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2100701,
+    "icon": "WorkType_Mining",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2100701",
+    "Des": "H_SkillText_2100701",
+    "DesParam": [
+      25
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 9,
+        "Param": 2500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2100901,
+    "icon": "Passive_Planting_04",
+    "icon2": "",
+    "name": "H_Skill_2100901",
+    "Des": "H_SkillText_2100901",
+    "DesParam": [
+      60
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 27,
+        "Y": 6000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2101001,
+    "icon": "WorkType_Lettuce",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2101001",
+    "Des": "H_SkillText_2101001",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 26,
+        "Y": 4000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2101101,
+    "icon": "WorkType_Amethyst",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2101101",
+    "Des": "H_SkillText_2101101",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 22,
+        "Y": 4000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2101301,
+    "icon": "WorkType_Logging",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2101301",
+    "Des": "H_SkillText_2101301",
+    "DesParam": [
+      25
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 2,
+        "Param": 2500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2101401,
+    "icon": "Passive_Planting_02",
+    "icon2": "",
+    "name": "H_Skill_2101401",
+    "Des": "H_SkillText_2101001",
+    "DesParam": [
+      45
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 3,
+        "Param": 4500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2102501,
+    "icon": "WorkType_HandWorking",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2102501",
+    "Des": "H_SkillText_2102501",
+    "DesParam": [
+      25
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 1,
+        "Param": 2500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2102901,
+    "icon": "WorkType_Stone",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2102901",
+    "Des": "H_SkillText_2102901",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 17,
+        "Y": 4000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2103401,
+    "icon": "WorkType_Stove",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2103401",
+    "Des": "H_SkillText_2103401",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10105,
+        "Y": 4000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2103601,
+    "icon": "WorkType_Feeding2",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2103601",
+    "Des": "H_SkillText_2103601",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10116,
+        "Y": 4000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2104401,
+    "icon": "WorkType_Mining",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2104401",
+    "Des": "H_SkillText_2104401",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 9,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2105601,
+    "icon": "TrainerSkill_00",
+    "icon2": "",
+    "name": "H_Skill_2105601",
+    "Des": "H_SkillText_2105601",
+    "DesParam": [
+      50
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2105701,
+    "icon": "Passive_LumiCard",
+    "icon2": "",
+    "name": "H_Skill_2105701",
+    "Des": "H_SkillText_2105701",
+    "DesParam": [
+      50
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10101,
+        "Y": 5000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2106101,
+    "icon": "WorkType_Experience Leaves",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2106101",
+    "Des": "H_SkillText_2106101",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 55,
+        "Y": 4000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2106601,
+    "icon": "WorkType_Exploration",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2106601",
+    "Des": "H_SkillText_2106601",
+    "DesParam": [],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2106801,
+    "icon": "Passive_Mining_02",
+    "icon2": "",
+    "name": "H_Skill_2106801",
+    "Des": "H_SkillText_2106801",
+    "DesParam": [
+      30
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 9,
+        "Param": 3000
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2108801,
+    "icon": "WorkType_Amethyst sand",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2108801",
+    "Des": "H_SkillText_2108801",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 24,
+        "Y": 4000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2111801,
+    "icon": "WorkType_Wishing",
+    "icon2": "",
+    "name": "H_Skill_2111801",
+    "Des": "H_SkillText_2111801",
+    "DesParam": [
+      70
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10103,
+        "Y": 7000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2112401,
+    "icon": "WorkType_Firing",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2112401",
+    "Des": "H_SkillText_2112401",
+    "DesParam": [
+      25
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 5,
+        "Param": 2500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2113401,
+    "icon": "Passive_Planting",
+    "icon2": "",
+    "name": "H_Skill_2113401",
+    "Des": "H_SkillText_2113401",
+    "DesParam": [
+      70
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 26,
+        "Y": 7000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2116501,
+    "icon": "WorkType_electricity",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2116501",
+    "Des": "H_SkillText_2116501",
+    "DesParam": [
+      25
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 8,
+        "Param": 2500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2116701,
+    "icon": "WorkType_Starlight",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2116701",
+    "Des": "H_SkillText_2116701",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10106,
+        "Y": 4000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2116901,
+    "icon": "WorkType_HandWorking",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2116901",
+    "Des": "H_SkillText_2116901",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 1,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2117501,
+    "icon": "WorkType_refrigeration",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2117501",
+    "Des": "H_SkillText_2117501",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 10,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2119401,
+    "icon": "Passive_Planting_03",
+    "icon2": "",
+    "name": "H_Skill_2119401",
+    "Des": "H_SkillText_2119401",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 3,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2119501,
+    "icon": "Upup_Planting_03",
+    "icon2": "",
+    "name": "H_Skill_2119501",
+    "Des": "H_SkillText_2119501",
+    "DesParam": [
+      50
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 3,
+        "Param": 5000
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2119601,
+    "icon": "Passive_Planting_04",
+    "icon2": "",
+    "name": "H_Skill_2119601",
+    "Des": "H_SkillText_2119601",
+    "DesParam": [
+      60
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 44,
+        "Y": 6000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2119701,
+    "icon": "Upup_Planting_04",
+    "icon2": "",
+    "name": "H_Skill_2119701",
+    "Des": "H_SkillText_2119701",
+    "DesParam": [
+      75
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 44,
+        "Y": 7500
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2120001,
+    "icon": "WorkType_Wood",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2120001",
+    "Des": "H_SkillText_2120001",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10102,
+        "Y": 4000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2120301,
+    "icon": "WorkType_Planting",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2120301",
+    "Des": "H_SkillText_2120301",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 3,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2120401,
+    "icon": "WorkType_Plank",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2120401",
+    "Des": "H_SkillText_2120401",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10122,
+        "Y": 4000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2120501,
+    "icon": "WorkType_Logging",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2120501",
+    "Des": "H_SkillText_2120501",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 2,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2120701,
+    "icon": "WorkType_Planting",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2120701",
+    "Des": "H_SkillText_2120701",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 3,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2122301,
+    "icon": "WorkType_Exploration",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2122301",
+    "Des": "H_SkillText_2122301",
+    "DesParam": [],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2123001,
+    "icon": "TrainerSkill_00",
+    "icon2": "",
+    "name": "H_Skill_2123001",
+    "Des": "H_SkillText_2123001",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 10,
+        "Param": 5500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2123101,
+    "icon": "WorkType_refrigeration",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2123101",
+    "Des": "H_SkillText_2123101",
+    "DesParam": [
+      25
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 10,
+        "Param": 2500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2123401,
+    "icon": "WorkType_Mining",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2123401",
+    "Des": "H_SkillText_2123401",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 24,
+        "Y": 5500
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2124401,
+    "icon": "WorkType_Wishing",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2124401",
+    "Des": "H_SkillText_2124401",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 4,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2125001,
+    "icon": "WorkType_Wishing",
+    "icon2": "",
+    "name": "H_Skill_2125001",
+    "Des": "H_SkillText_2125001",
+    "DesParam": [
+      60
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10103,
+        "Y": 6000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2125101,
+    "icon": "Upup_Mining_02",
+    "icon2": "",
+    "name": "H_Skill_2125101",
+    "Des": "H_SkillText_2125101",
+    "DesParam": [
+      60
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10114,
+        "Y": 6000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2125201,
+    "icon": "Passive_HandWorking",
+    "icon2": "",
+    "name": "H_Skill_2125201",
+    "Des": "H_SkillText_2125201",
+    "DesParam": [
+      50
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10109,
+        "Y": 5000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2125301,
+    "icon": "Upup_LumiCard",
+    "icon2": "",
+    "name": "H_Skill_2125301",
+    "Des": "H_SkillText_2125301",
+    "DesParam": [
+      30,
+      1
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": [
+      {
+        "AimRecipeID": 4,
+        "Rate": 3000,
+        "Type": 2,
+        "Id": 10033,
+        "Count": 1
+      }
+    ]
+  },
+  {
+    "Id": 2125501,
+    "icon": "WorkType_Wishing",
+    "icon2": "",
+    "name": "H_Skill_2125501",
+    "Des": "H_SkillText_2125501",
+    "DesParam": [
+      60
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10106,
+        "Y": 6000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2127001,
+    "icon": "WorkType_Logging",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2127001",
+    "Des": "H_SkillText_2127001",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 2,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2130001,
+    "icon": "WorkType_Stone",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2130001",
+    "Des": "H_SkillText_2130001",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 17,
+        "Y": 5500
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2135901,
+    "icon": "WorkType_Berries",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2135901",
+    "Des": "H_SkillText_2135901",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 9,
+        "Y": 5500
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2136101,
+    "icon": "WorkType_Wishing",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2136101",
+    "Des": "H_SkillText_2136101",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 101,
+        "Y": 4000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2136201,
+    "icon": "WorkType_Mushroom",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2136201",
+    "Des": "H_SkillText_2136201",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 27,
+        "Y": 4000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2139801,
+    "icon": "WorkType_Exploration",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2139801",
+    "Des": "H_SkillText_2139801",
+    "DesParam": [],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2141301,
+    "icon": "WorkType_Exploration",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2141301",
+    "Des": "H_SkillText_2141301",
+    "DesParam": [],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2141401,
+    "icon": "WorkType_Berries",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2141401",
+    "Des": "H_SkillText_2141401",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 9,
+        "Y": 3500
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21000101,
+    "icon": "WorkType_Stardust",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_21000101",
+    "Des": "H_SkillText_21000101",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 8,
+        "Y": 5500
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21000201,
+    "icon": "WorkType_Drinks",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_21000201",
+    "Des": "H_SkillText_21000201",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21000801,
+    "icon": "WorkType_candy",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_21000801",
+    "Des": "H_SkillText_21000801",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21001001,
+    "icon": "WorkType_Wishing",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_21001001",
+    "Des": "H_SkillText_21001001",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21001101,
+    "icon": "WorkType_HandWorking",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_21001101",
+    "Des": "H_SkillText_21001101",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21001201,
+    "icon": "WorkType_HandWorking",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_21001201",
+    "Des": "H_SkillText_21001201",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21001301,
+    "icon": "WorkType_Exploration",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_21001301",
+    "Des": "H_SkillText_21001301",
+    "DesParam": [],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21001401,
+    "icon": "WorkType_Planting",
+    "icon2": "comConfig_skill_enhance_L",
+    "name": "H_Skill_21001401",
+    "Des": "H_SkillText_21001401",
+    "DesParam": [
+      50
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 3,
+        "Param": 5000
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21003201,
+    "icon": "WorkType_HandWorking",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_21003201",
+    "Des": "H_SkillText_21003201",
+    "DesParam": [
+      35
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [
+      {
+        "WorkType": 1,
+        "Param": 3500
+      }
+    ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21003301,
+    "icon": "WorkType_HandWorking",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_21003301",
+    "Des": "H_SkillText_21003301",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10118,
+        "Y": 4000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 21003401,
+    "icon": "WorkType_HandWorking",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_21003401",
+    "Des": "H_SkillText_21003401",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [
+      {
+        "X": 10110,
+        "Y": 4000
+      }
+    ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  }
+]

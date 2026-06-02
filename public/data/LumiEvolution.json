@@ -1,0 +1,1367 @@
+[
+  {
+    "Lumi": 108901,
+    "order": 1,
+    "EvoType": 4,
+    "evoLumiID": 0,
+    "GenderEvo": [
+      [
+        1,
+        111001
+      ],
+      [
+        2,
+        126301
+      ]
+    ],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 107901,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 101601,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 101601,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 101701,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 108401,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 101201,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 108501,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 101801,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 108601,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 103201,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 101201,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 109001,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 101801,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 109101,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 103201,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 109201,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 104101,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 102401,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 102201,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 102301,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 101901,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 102001,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 124001,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 102101,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 113301,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 102801,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 112901,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 105501,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 103501,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 127101,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 118301,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 105801,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 112101,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 106201,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 106301,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 106401,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 104501,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 109401,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 104601,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 109501,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 104701,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 109601,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 104801,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 109701,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 104901,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 109801,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 105001,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 109901,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 105101,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 110001,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 105201,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 110101,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 106401,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 110201,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 118901,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 111201,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 106201,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 112201,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 103101,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 112601,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 104301,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 113101,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 113601,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 113701,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 113701,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 113801,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 113801,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 113901,
+    "GenderEvo": [],
+    "evoLevel": 50,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 3
+  },
+  {
+    "Lumi": 114401,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 114501,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 114501,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 114601,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 114701,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 114801,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 114801,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 114901,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 115001,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 115101,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 115101,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 115201,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 112001,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 118301,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 112801,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 118901,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 119401,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 119501,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 119601,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 119701,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 123901,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 124001,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110301,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 110401,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 122801,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 122901,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 121101,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 121001,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 122601,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 122701,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 111101,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 111901,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 120801,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 120901,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 121201,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 121301,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 121301,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 121401,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 118101,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 118201,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 112501,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 125901,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 114001,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 114101,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 114101,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 114201,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 114301,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 119201,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 119201,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 119301,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 104201,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 127301,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 1
+  },
+  {
+    "Lumi": 141401,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 135901,
+    "GenderEvo": [],
+    "evoLevel": 35,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 2
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110801,
+    "order": 1,
+    "EvoType": 2,
+    "evoLumiID": 106901,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110801,
+    "order": 2,
+    "EvoType": 2,
+    "evoLumiID": 107001,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110801,
+    "order": 3,
+    "EvoType": 2,
+    "evoLumiID": 110601,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110801,
+    "order": 4,
+    "EvoType": 2,
+    "evoLumiID": 111501,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110801,
+    "order": 5,
+    "EvoType": 2,
+    "evoLumiID": 111601,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110801,
+    "order": 6,
+    "EvoType": 2,
+    "evoLumiID": 111701,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110801,
+    "order": 7,
+    "EvoType": 2,
+    "evoLumiID": 123201,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110801,
+    "order": 8,
+    "EvoType": 2,
+    "evoLumiID": 110501,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
+    "Lumi": 110801,
+    "order": 1,
+    "EvoType": 3,
+    "evoLumiID": 106901,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [],
+    "colorWeight": 10000,
+    "param": 250,
+    "EvolutionProbGroup": 0
+  },
+  {
+    "Lumi": 110801,
+    "order": 2,
+    "EvoType": 3,
+    "evoLumiID": 107001,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [],
+    "colorWeight": 10000,
+    "param": 250,
+    "EvolutionProbGroup": 0
+  },
+  {
+    "Lumi": 110801,
+    "order": 3,
+    "EvoType": 3,
+    "evoLumiID": 110601,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [],
+    "colorWeight": 10000,
+    "param": 250,
+    "EvolutionProbGroup": 0
+  },
+  {
+    "Lumi": 110801,
+    "order": 4,
+    "EvoType": 3,
+    "evoLumiID": 111501,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [],
+    "colorWeight": 10000,
+    "param": 250,
+    "EvolutionProbGroup": 0
+  },
+  {
+    "Lumi": 110801,
+    "order": 5,
+    "EvoType": 3,
+    "evoLumiID": 111601,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [],
+    "colorWeight": 10000,
+    "param": 250,
+    "EvolutionProbGroup": 0
+  },
+  {
+    "Lumi": 110801,
+    "order": 6,
+    "EvoType": 3,
+    "evoLumiID": 111701,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [],
+    "colorWeight": 10000,
+    "param": 250,
+    "EvolutionProbGroup": 0
+  },
+  {
+    "Lumi": 110801,
+    "order": 7,
+    "EvoType": 3,
+    "evoLumiID": 123201,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [],
+    "colorWeight": 10000,
+    "param": 250,
+    "EvolutionProbGroup": 0
+  },
+  {
+    "Lumi": 110801,
+    "order": 8,
+    "EvoType": 3,
+    "evoLumiID": 110501,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [],
+    "colorWeight": 10000,
+    "param": 250,
+    "EvolutionProbGroup": 0
+  }
+]
