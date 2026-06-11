@@ -592,6 +592,71 @@ watch([
     showResults.value = false
   }
 })
+
+// ===== MMR 计算器 =====
+const mmrLeft = ref(1500)
+const mmrRight = ref(1500)
+const mmrKLeft = ref(32)
+const mmrKRight = ref(32)
+const mmrScaleFactor = ref(400)
+const winner = ref('left') // 'left', 'right', 'draw'
+const showMmrResults = ref(false)
+const mmrResults = ref({
+  leftWinRate: 0,
+  rightWinRate: 0,
+  leftMmrChange: 0,
+  rightMmrChange: 0,
+  leftFinalMmr: 0,
+  rightFinalMmr: 0
+})
+
+// 计算 MMR 变化
+function calculateMmr() {
+  const Ra = mmrLeft.value
+  const Rb = mmrRight.value
+  const Ka = mmrKLeft.value
+  const Kb = mmrKRight.value
+  const scale = mmrScaleFactor.value
+
+  // 计算预期胜率
+  const Ea = 1 / (1 + Math.pow(10, (Rb - Ra) / scale))
+  const Eb = 1 / (1 + Math.pow(10, (Ra - Rb) / scale))
+
+  // 实际得分
+  let Sa = 0, Sb = 0
+  if (winner.value === 'left') {
+    Sa = 1
+    Sb = 0
+  } else if (winner.value === 'right') {
+    Sa = 0
+    Sb = 1
+  } else {
+    Sa = 0.5
+    Sb = 0.5
+  }
+
+  // 计算 MMR 变化（各自使用自己的K值）
+  const leftChange = Ka * (Sa - Ea)
+  const rightChange = Kb * (Sb - Eb)
+
+  mmrResults.value = {
+    leftWinRate: (Ea * 100).toFixed(1),
+    rightWinRate: (Eb * 100).toFixed(1),
+    leftMmrChange: leftChange.toFixed(1),
+    rightMmrChange: rightChange.toFixed(1),
+    leftFinalMmr: (Ra + leftChange).toFixed(1),
+    rightFinalMmr: (Rb + rightChange).toFixed(1)
+  }
+
+  showMmrResults.value = true
+}
+
+// 监听 MMR 参数变化，重置结果
+watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
+  if (showMmrResults.value) {
+    showMmrResults.value = false
+  }
+})
 </script>
 
 <template>
@@ -946,6 +1011,181 @@ watch([
       <button @click="calculateDamage" :disabled="!canCalculate" class="calculate-btn">
         计算相互伤害
       </button>
+    </div>
+
+    <!-- MMR 变化计算器 -->
+    <div class="mmr-calculator">
+      <div class="page-header">
+        <h1 class="page-title">📊 MMR 变化计算器</h1>
+        <p class="page-desc">计算对战后的 MMR 变化</p>
+      </div>
+
+      <div class="mmr-form">
+        <div class="mmr-row">
+          <div class="mmr-col">
+            <h3 class="mmr-col-title">👈 左侧玩家</h3>
+            <div class="input-group">
+              <label class="input-label">当前 MMR</label>
+              <input v-model.number="mmrLeft" type="number" class="form-input" placeholder="1500" />
+            </div>
+            <div class="input-group">
+              <label class="input-label">K 值（波动系数）</label>
+              <input v-model.number="mmrKLeft" type="number" step="1" min="1" max="100" class="form-input" placeholder="32" />
+              <span class="input-hint">新手=40，普通=32，高手=24</span>
+            </div>
+          </div>
+
+          <div class="mmr-vs-divider">
+            <span class="vs-text">VS</span>
+          </div>
+
+          <div class="mmr-col">
+            <h3 class="mmr-col-title">右侧玩家 👉</h3>
+            <div class="input-group">
+              <label class="input-label">当前 MMR</label>
+              <input v-model.number="mmrRight" type="number" class="form-input" placeholder="1500" />
+            </div>
+            <div class="input-group">
+              <label class="input-label">K 值（波动系数）</label>
+              <input v-model.number="mmrKRight" type="number" step="1" min="1" max="100" class="form-input" placeholder="32" />
+              <span class="input-hint">新手=40，普通=32，高手=24</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mmr-settings">
+          <div class="input-group">
+            <label class="input-label">标准系数</label>
+            <input v-model.number="mmrScaleFactor" type="number" step="50" min="50" max="1000" class="form-input" placeholder="400" />
+            <span class="input-hint">标准Elo系统使用400，可调整影响预期胜率计算</span>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label">比赛结果</label>
+            <div class="winner-selector">
+              <button
+                @click="winner = 'left'"
+                :class="['winner-btn', { active: winner === 'left' }]"
+              >
+                👈 左侧胜
+              </button>
+              <button
+                @click="winner = 'draw'"
+                :class="['winner-btn', { active: winner === 'draw' }]"
+              >
+                🤝 平局
+              </button>
+              <button
+                @click="winner = 'right'"
+                :class="['winner-btn', { active: winner === 'right' }]"
+              >
+                右侧胜 👉
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button @click="calculateMmr" class="calculate-btn">
+            计算 MMR 变化
+          </button>
+        </div>
+      </div>
+
+      <!-- MMR 结果显示 -->
+      <div v-if="showMmrResults" class="mmr-results">
+        <h2 class="results-title">MMR 变化结果</h2>
+
+        <div class="mmr-result-cards">
+          <!-- 左侧结果 -->
+          <div class="mmr-result-card" :class="{ 'winner': winner === 'left', 'loser': winner === 'right' }">
+            <div class="mmr-card-header">
+              <span class="mmr-card-title">👈 左侧玩家</span>
+              <span v-if="winner === 'left'" class="result-badge winner-badge">🏆 胜利</span>
+              <span v-else-if="winner === 'right'" class="result-badge loser-badge">💔 失败</span>
+              <span v-else class="result-badge draw-badge">🤝 平局</span>
+            </div>
+            <div class="mmr-card-body">
+              <div class="mmr-stat">
+                <span class="mmr-stat-label">K 值</span>
+                <span class="mmr-stat-value">{{ mmrKLeft }}</span>
+              </div>
+              <div class="mmr-stat">
+                <span class="mmr-stat-label">预期胜率</span>
+                <span class="mmr-stat-value">{{ mmrResults.leftWinRate }}%</span>
+              </div>
+              <div class="mmr-stat">
+                <span class="mmr-stat-label">MMR 变化</span>
+                <span class="mmr-stat-value" :class="{ 'positive': mmrResults.leftMmrChange > 0, 'negative': mmrResults.leftMmrChange < 0 }">
+                  {{ mmrResults.leftMmrChange > 0 ? '+' : '' }}{{ mmrResults.leftMmrChange }}
+                </span>
+              </div>
+              <div class="mmr-stat final">
+                <span class="mmr-stat-label">最终 MMR</span>
+                <span class="mmr-stat-value final">{{ mmrResults.leftFinalMmr }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右侧结果 -->
+          <div class="mmr-result-card" :class="{ 'winner': winner === 'right', 'loser': winner === 'left' }">
+            <div class="mmr-card-header">
+              <span class="mmr-card-title">右侧玩家 👉</span>
+              <span v-if="winner === 'right'" class="result-badge winner-badge">🏆 胜利</span>
+              <span v-else-if="winner === 'left'" class="result-badge loser-badge">💔 失败</span>
+              <span v-else class="result-badge draw-badge">🤝 平局</span>
+            </div>
+            <div class="mmr-card-body">
+              <div class="mmr-stat">
+                <span class="mmr-stat-label">K 值</span>
+                <span class="mmr-stat-value">{{ mmrKRight }}</span>
+              </div>
+              <div class="mmr-stat">
+                <span class="mmr-stat-label">预期胜率</span>
+                <span class="mmr-stat-value">{{ mmrResults.rightWinRate }}%</span>
+              </div>
+              <div class="mmr-stat">
+                <span class="mmr-stat-label">MMR 变化</span>
+                <span class="mmr-stat-value" :class="{ 'positive': mmrResults.rightMmrChange > 0, 'negative': mmrResults.rightMmrChange < 0 }">
+                  {{ mmrResults.rightMmrChange > 0 ? '+' : '' }}{{ mmrResults.rightMmrChange }}
+                </span>
+              </div>
+              <div class="mmr-stat final">
+                <span class="mmr-stat-label">最终 MMR</span>
+                <span class="mmr-stat-value final">{{ mmrResults.rightFinalMmr }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 计算详情 -->
+        <details class="calculation-details">
+          <summary>查看计算公式</summary>
+          <div class="calculation-log">
+            <div class="log-item">=== MMR 计算公式 ===</div>
+            <div class="log-item">预期胜率 Ea = 1 / (1 + 10^((Rb - Ra) / 标准系数))</div>
+            <div class="log-item">预期胜率 Eb = 1 / (1 + 10^((Ra - Rb) / 标准系数))</div>
+            <div class="log-item"></div>
+            <div class="log-item">MMR变化 = K × (实际得分 - 预期胜率)</div>
+            <div class="log-item">- 胜利：实际得分 = 1</div>
+            <div class="log-item">- 失败：实际得分 = 0</div>
+            <div class="log-item">- 平局：实际得分 = 0.5</div>
+            <div class="log-item"></div>
+            <div class="log-item">⚡ 各自使用独立的K值计算MMR变化</div>
+            <div class="log-item"></div>
+            <div class="log-item">=== 本次计算 ===</div>
+            <div class="log-item">左侧 MMR: {{ mmrLeft }} (K={{ mmrKLeft }})</div>
+            <div class="log-item">右侧 MMR: {{ mmrRight }} (K={{ mmrKRight }})</div>
+            <div class="log-item">标准系数: {{ mmrScaleFactor }}</div>
+            <div class="log-item"></div>
+            <div class="log-item">左侧预期胜率: {{ mmrResults.leftWinRate }}%</div>
+            <div class="log-item">右侧预期胜率: {{ mmrResults.rightWinRate }}%</div>
+            <div class="log-item"></div>
+            <div class="log-item">左侧 MMR 变化: {{ mmrKLeft }} × ({{ winner === 'left' ? 1 : winner === 'right' ? 0 : 0.5 }} - {{ (parseFloat(mmrResults.leftWinRate) / 100).toFixed(3) }}) = {{ mmrResults.leftMmrChange > 0 ? '+' : '' }}{{ mmrResults.leftMmrChange }}</div>
+            <div class="log-item">右侧 MMR 变化: {{ mmrKRight }} × ({{ winner === 'right' ? 1 : winner === 'left' ? 0 : 0.5 }} - {{ (parseFloat(mmrResults.rightWinRate) / 100).toFixed(3) }}) = {{ mmrResults.rightMmrChange > 0 ? '+' : '' }}{{ mmrResults.rightMmrChange }}</div>
+          </div>
+        </details>
+      </div>
     </div>
 
     <!-- 结果显示 -->
@@ -1506,6 +1746,239 @@ watch([
     .result-cards-4 {
       grid-template-columns: 1fr;
     }
+  }
+}
+
+/* MMR 计算器样式 */
+.mmr-calculator {
+  max-width: 1200px;
+  margin: 48px auto 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.mmr-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.mmr-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.mmr-col {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.mmr-col-title {
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-size: 1em;
+  text-align: center;
+}
+
+.mmr-vs-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mmr-settings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.mmr-settings .input-group:last-child {
+  grid-column: 1 / -1;
+}
+
+.input-hint {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-dim);
+  font-size: 0.75em;
+}
+
+.winner-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.winner-btn {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9em;
+}
+
+.winner-btn:hover {
+  background: rgba(233, 69, 96, 0.1);
+  border-color: var(--accent);
+}
+
+.winner-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+/* MMR 结果样式 */
+.mmr-results {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.mmr-result-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.mmr-result-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.mmr-result-card:hover {
+  border-color: var(--accent);
+}
+
+.mmr-result-card.winner {
+  border: 2px solid var(--accent);
+  background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), var(--bg));
+}
+
+.mmr-result-card.loser {
+  border-color: var(--border);
+  opacity: 0.8;
+}
+
+.mmr-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(233, 69, 96, 0.05);
+  border-bottom: 1px solid var(--border);
+}
+
+.mmr-card-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.result-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+
+.winner-badge {
+  background: var(--accent);
+  color: white;
+}
+
+.loser-badge {
+  background: var(--bg);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+}
+
+.draw-badge {
+  background: rgba(255, 200, 0, 0.2);
+  color: #ffd700;
+  border: 1px solid rgba(255, 200, 0, 0.3);
+}
+
+.mmr-card-body {
+  padding: 16px;
+}
+
+.mmr-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mmr-stat:last-child,
+.mmr-stat.final {
+  border-bottom: none;
+}
+
+.mmr-stat.final {
+  padding-top: 14px;
+  margin-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.mmr-stat-label {
+  color: var(--text-dim);
+  font-size: 0.85em;
+}
+
+.mmr-stat-value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.mmr-stat-value.positive {
+  color: #4ade80;
+}
+
+.mmr-stat-value.negative {
+  color: #f87171;
+}
+
+.mmr-stat-value.final {
+  color: var(--accent);
+  font-size: 1.3em;
+}
+
+@media (max-width: 768px) {
+  .mmr-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mmr-vs-divider {
+    padding: 8px 0;
+  }
+
+  .mmr-result-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .winner-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .mmr-settings {
+    grid-template-columns: 1fr;
   }
 }
 </style>

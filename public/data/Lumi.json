@@ -180,7 +180,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Capibara_XC"
+    "ModleColorVariant": "Capibara_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 100501,
@@ -363,7 +364,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Cat_Succulent_XC"
+    "ModleColorVariant": "Cat_Succulent_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 100601,
@@ -546,7 +548,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Chicken_Gugu_XC"
+    "ModleColorVariant": "Chicken_Gugu_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 100701,
@@ -729,7 +732,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Chicken_Bomb_XC"
+    "ModleColorVariant": "Chicken_Bomb_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 100801,
@@ -834,14 +838,14 @@
     ],
     "BattlePassive": 1100801,
     "HomePassive": 0,
-    "MinHpState": 38,
+    "MinHpState": 43,
     "MinAtkState": 73,
-    "MinDefState": 63,
-    "MinWorkState": 34,
-    "MaxHpState": 70,
+    "MinDefState": 62,
+    "MinWorkState": 30,
+    "MaxHpState": 75,
     "MaxAtkState": 105,
-    "MaxDefState": 95,
-    "MaxWorkState": 66,
+    "MaxDefState": 94,
+    "MaxWorkState": 62,
     "Satiety": 140000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [],
@@ -877,7 +881,7 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1200,
+    "LoveHeartHeight": 1000,
     "CatchRateCheckHeight": 400,
     "HomeMoveSpeed": 0.4,
     "HomeRotateSpeed": 90,
@@ -907,7 +911,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Chicken_Kunkun_XC"
+    "ModleColorVariant": "Chicken_Kunkun_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 101001,
@@ -1090,7 +1095,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Chicken_Lettuce_XC"
+    "ModleColorVariant": "Chicken_Lettuce_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 101101,
@@ -1273,7 +1279,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bear_Burning_XC"
+    "ModleColorVariant": "Bear_Burning_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 101201,
@@ -1378,14 +1385,14 @@
     ],
     "BattlePassive": 1101201,
     "HomePassive": 0,
-    "MinHpState": 56,
-    "MinAtkState": 66,
-    "MinDefState": 52,
-    "MinWorkState": 38,
-    "MaxHpState": 88,
-    "MaxAtkState": 98,
-    "MaxDefState": 84,
-    "MaxWorkState": 70,
+    "MinHpState": 54,
+    "MinAtkState": 74,
+    "MinDefState": 54,
+    "MinWorkState": 30,
+    "MaxHpState": 86,
+    "MaxAtkState": 106,
+    "MaxDefState": 86,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -1456,7 +1463,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Cat_SanZhang_XC"
+    "ModleColorVariant": "Cat_SanZhang_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 101301,
@@ -1639,7 +1647,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bird_Lucky_XC"
+    "ModleColorVariant": "Bird_Lucky_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 101601,
@@ -1648,7 +1657,7 @@
     "LumiTag": 2,
     "Name": "LumiName_101601",
     "MaxScore": 86,
-    "MinScore": 70,
+    "MinScore": 54,
     "Genius": 1,
     "ShardId": 107901,
     "LumiMap": 100,
@@ -1744,14 +1753,14 @@
     ],
     "BattlePassive": 1101601,
     "HomePassive": 0,
-    "MinHpState": 52,
+    "MinHpState": 54,
     "MinAtkState": 68,
-    "MinDefState": 60,
-    "MinWorkState": 36,
-    "MaxHpState": 84,
+    "MinDefState": 63,
+    "MinWorkState": 31,
+    "MaxHpState": 86,
     "MaxAtkState": 100,
-    "MaxDefState": 92,
-    "MaxWorkState": 68,
+    "MaxDefState": 95,
+    "MaxWorkState": 63,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -1786,7 +1795,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-86",
+    "scoreShow": "54-86",
     "Story": "story_101601",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -1822,7 +1831,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_Fire_XC"
+    "ModleColorVariant": "Dragon_Fire_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 101701,
@@ -1929,12 +1939,12 @@
     "HomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 78,
-    "MinDefState": 60,
-    "MinWorkState": 36,
+    "MinDefState": 63,
+    "MinWorkState": 33,
     "MaxHpState": 86,
     "MaxAtkState": 110,
-    "MaxDefState": 92,
-    "MaxWorkState": 68,
+    "MaxDefState": 95,
+    "MaxWorkState": 65,
     "Satiety": 280000,
     "SatietyDownSpeed": 38,
     "WorkAbility": [
@@ -2007,7 +2017,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_Blaze_XC"
+    "ModleColorVariant": "Dragon_Blaze_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 101801,
@@ -2112,14 +2123,14 @@
     ],
     "BattlePassive": 1101801,
     "HomePassive": 0,
-    "MinHpState": 56,
+    "MinHpState": 58,
     "MinAtkState": 60,
-    "MinDefState": 58,
-    "MinWorkState": 38,
-    "MaxHpState": 88,
+    "MinDefState": 64,
+    "MinWorkState": 30,
+    "MaxHpState": 90,
     "MaxAtkState": 92,
-    "MaxDefState": 90,
-    "MaxWorkState": 70,
+    "MaxDefState": 96,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -2190,7 +2201,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rat_Leaf_XC"
+    "ModleColorVariant": "Rat_Leaf_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 101901,
@@ -2295,14 +2307,14 @@
     ],
     "BattlePassive": 1102001,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 53,
-    "MinDefState": 58,
-    "MinWorkState": 35,
-    "MaxHpState": 90,
-    "MaxAtkState": 85,
-    "MaxDefState": 90,
-    "MaxWorkState": 67,
+    "MinHpState": 60,
+    "MinAtkState": 52,
+    "MinDefState": 63,
+    "MinWorkState": 29,
+    "MaxHpState": 92,
+    "MaxAtkState": 84,
+    "MaxDefState": 95,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -2373,7 +2385,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Deer_Frostling_XC"
+    "ModleColorVariant": "Deer_Frostling_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102001,
@@ -2478,14 +2491,14 @@
     ],
     "BattlePassive": 1102001,
     "HomePassive": 0,
-    "MinHpState": 63,
+    "MinHpState": 64,
     "MinAtkState": 58,
-    "MinDefState": 58,
-    "MinWorkState": 37,
-    "MaxHpState": 95,
+    "MinDefState": 63,
+    "MinWorkState": 31,
+    "MaxHpState": 96,
     "MaxAtkState": 90,
-    "MaxDefState": 90,
-    "MaxWorkState": 69,
+    "MaxDefState": 95,
+    "MaxWorkState": 63,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -2556,7 +2569,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Deer_Frost_XC"
+    "ModleColorVariant": "Deer_Frost_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102101,
@@ -2661,14 +2675,14 @@
     ],
     "BattlePassive": 1102101,
     "HomePassive": 0,
-    "MinHpState": 78,
+    "MinHpState": 68,
     "MinAtkState": 56,
-    "MinDefState": 52,
-    "MinWorkState": 38,
-    "MaxHpState": 110,
+    "MinDefState": 68,
+    "MinWorkState": 32,
+    "MaxHpState": 100,
     "MaxAtkState": 88,
-    "MaxDefState": 84,
-    "MaxWorkState": 70,
+    "MaxDefState": 100,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -2741,7 +2755,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Deer_Rainbow_XC"
+    "ModleColorVariant": "Deer_Rainbow_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102102,
@@ -2850,14 +2865,14 @@
     ],
     "BattlePassive": 1102101,
     "HomePassive": 0,
-    "MinHpState": 80,
-    "MinAtkState": 58,
-    "MinDefState": 54,
-    "MinWorkState": 40,
-    "MaxHpState": 112,
-    "MaxAtkState": 90,
-    "MaxDefState": 86,
-    "MaxWorkState": 72,
+    "MinHpState": 68,
+    "MinAtkState": 64,
+    "MinDefState": 68,
+    "MinWorkState": 32,
+    "MaxHpState": 100,
+    "MaxAtkState": 96,
+    "MaxDefState": 100,
+    "MaxWorkState": 64,
     "Satiety": 300000,
     "SatietyDownSpeed": 40,
     "WorkAbility": [
@@ -2930,7 +2945,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Deer_Rainbow_Full_XC"
+    "ModleColorVariant": "Deer_Rainbow_Full_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102103,
@@ -3042,14 +3058,14 @@
     ],
     "BattlePassive": 1102103,
     "HomePassive": 0,
-    "MinHpState": 82,
-    "MinAtkState": 60,
-    "MinDefState": 56,
-    "MinWorkState": 42,
-    "MaxHpState": 114,
-    "MaxAtkState": 92,
-    "MaxDefState": 88,
-    "MaxWorkState": 74,
+    "MinHpState": 72,
+    "MinAtkState": 64,
+    "MinDefState": 72,
+    "MinWorkState": 32,
+    "MaxHpState": 104,
+    "MaxAtkState": 96,
+    "MaxDefState": 104,
+    "MaxWorkState": 64,
     "Satiety": 340000,
     "SatietyDownSpeed": 40,
     "WorkAbility": [
@@ -3122,7 +3138,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Deer_Lily_XC"
+    "ModleColorVariant": "Deer_Lily_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102201,
@@ -3229,12 +3246,12 @@
     "HomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 56,
-    "MinDefState": 64,
-    "MinWorkState": 34,
+    "MinDefState": 68,
+    "MinWorkState": 30,
     "MaxHpState": 86,
     "MaxAtkState": 88,
-    "MaxDefState": 96,
-    "MaxWorkState": 66,
+    "MaxDefState": 100,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -3305,7 +3322,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Unicorn_Dudu_XC"
+    "ModleColorVariant": "Unicorn_Dudu_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102301,
@@ -3411,13 +3429,13 @@
     "BattlePassive": 1102201,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 64,
-    "MinDefState": 64,
-    "MinWorkState": 38,
+    "MinAtkState": 66,
+    "MinDefState": 68,
+    "MinWorkState": 32,
     "MaxHpState": 90,
-    "MaxAtkState": 96,
-    "MaxDefState": 96,
-    "MaxWorkState": 70,
+    "MaxAtkState": 98,
+    "MaxDefState": 100,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -3488,7 +3506,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Horse_Unicorn_XC"
+    "ModleColorVariant": "Horse_Unicorn_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102401,
@@ -3595,12 +3614,12 @@
     "HomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 74,
-    "MinDefState": 56,
-    "MinWorkState": 38,
+    "MinDefState": 62,
+    "MinWorkState": 32,
     "MaxHpState": 88,
     "MaxAtkState": 106,
-    "MaxDefState": 88,
-    "MaxWorkState": 70,
+    "MaxDefState": 94,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -3671,7 +3690,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Wolf_Claw_XC"
+    "ModleColorVariant": "Wolf_Claw_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102404,
@@ -3777,13 +3797,13 @@
     "BattlePassive": 1102401,
     "HomePassive": 0,
     "MinHpState": 56,
-    "MinAtkState": 56,
-    "MinDefState": 74,
-    "MinWorkState": 38,
+    "MinAtkState": 74,
+    "MinDefState": 62,
+    "MinWorkState": 32,
     "MaxHpState": 88,
-    "MaxAtkState": 88,
-    "MaxDefState": 106,
-    "MaxWorkState": 70,
+    "MaxAtkState": 106,
+    "MaxDefState": 94,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -3856,7 +3876,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Wolf_Claw_01_XC"
+    "ModleColorVariant": "Wolf_Claw_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102501,
@@ -4039,7 +4060,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Ham_Spark_XC"
+    "ModleColorVariant": "Ham_Spark_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102601,
@@ -4145,13 +4167,13 @@
     "BattlePassive": 1102601,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 54,
-    "MinDefState": 68,
-    "MinWorkState": 36,
+    "MinAtkState": 53,
+    "MinDefState": 74,
+    "MinWorkState": 31,
     "MaxHpState": 90,
-    "MaxAtkState": 86,
-    "MaxDefState": 100,
-    "MaxWorkState": 68,
+    "MaxAtkState": 85,
+    "MaxDefState": 106,
+    "MaxWorkState": 63,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -4222,7 +4244,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Muscle_Dog_XC"
+    "ModleColorVariant": "Muscle_Dog_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102602,
@@ -4331,14 +4354,14 @@
     ],
     "BattlePassive": 1102601,
     "HomePassive": 0,
-    "MinHpState": 60,
-    "MinAtkState": 56,
-    "MinDefState": 70,
-    "MinWorkState": 38,
-    "MaxHpState": 92,
-    "MaxAtkState": 88,
-    "MaxDefState": 102,
-    "MaxWorkState": 70,
+    "MinHpState": 58,
+    "MinAtkState": 53,
+    "MinDefState": 82,
+    "MinWorkState": 31,
+    "MaxHpState": 90,
+    "MaxAtkState": 85,
+    "MaxDefState": 114,
+    "MaxWorkState": 63,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -4411,7 +4434,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Muscle_Dog_3D_XC"
+    "ModleColorVariant": "Muscle_Dog_3D_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102701,
@@ -4516,14 +4540,14 @@
     ],
     "BattlePassive": 1102701,
     "HomePassive": 0,
-    "MinHpState": 56,
+    "MinHpState": 53,
     "MinAtkState": 68,
-    "MinDefState": 56,
-    "MinWorkState": 36,
-    "MaxHpState": 88,
+    "MinDefState": 64,
+    "MinWorkState": 31,
+    "MaxHpState": 85,
     "MaxAtkState": 100,
-    "MaxDefState": 88,
-    "MaxWorkState": 68,
+    "MaxDefState": 96,
+    "MaxWorkState": 63,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -4594,7 +4618,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Muscle_Goose_XC"
+    "ModleColorVariant": "Muscle_Goose_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102801,
@@ -4699,14 +4724,14 @@
     ],
     "BattlePassive": 1102801,
     "HomePassive": 0,
-    "MinHpState": 68,
-    "MinAtkState": 48,
-    "MinDefState": 63,
-    "MinWorkState": 37,
-    "MaxHpState": 100,
-    "MaxAtkState": 80,
-    "MaxDefState": 95,
-    "MaxWorkState": 69,
+    "MinHpState": 66,
+    "MinAtkState": 53,
+    "MinDefState": 66,
+    "MinWorkState": 31,
+    "MaxHpState": 98,
+    "MaxAtkState": 85,
+    "MaxDefState": 98,
+    "MaxWorkState": 63,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -4777,7 +4802,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Frog_Prince_XC"
+    "ModleColorVariant": "Frog_Prince_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 102901,
@@ -4960,7 +4986,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rat_Taotao_XC"
+    "ModleColorVariant": "Rat_Taotao_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103201,
@@ -5065,14 +5092,14 @@
     ],
     "BattlePassive": 1103201,
     "HomePassive": 0,
-    "MinHpState": 66,
+    "MinHpState": 70,
     "MinAtkState": 50,
-    "MinDefState": 58,
-    "MinWorkState": 38,
-    "MaxHpState": 98,
+    "MinDefState": 62,
+    "MinWorkState": 30,
+    "MaxHpState": 102,
     "MaxAtkState": 82,
-    "MaxDefState": 90,
-    "MaxWorkState": 70,
+    "MaxDefState": 94,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -5143,7 +5170,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Jellyfish_Baby_XC"
+    "ModleColorVariant": "Jellyfish_Baby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103301,
@@ -5248,14 +5276,14 @@
     ],
     "BattlePassive": 1103301,
     "HomePassive": 0,
-    "MinHpState": 56,
-    "MinAtkState": 56,
+    "MinHpState": 53,
+    "MinAtkState": 66,
     "MinDefState": 56,
-    "MinWorkState": 36,
-    "MaxHpState": 88,
-    "MaxAtkState": 88,
+    "MinWorkState": 29,
+    "MaxHpState": 85,
+    "MaxAtkState": 98,
     "MaxDefState": 88,
-    "MaxWorkState": 68,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -5326,13 +5354,14 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Penguin_Qiuqiu_XC"
+    "ModleColorVariant": "Penguin_Qiuqiu_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103304,
     "PokedexId": 390,
     "IfLock": true,
-    "LumiTag": 1,
+    "LumiTag": 3,
     "Name": "LumiName_103304",
     "MaxScore": 83,
     "MinScore": 83,
@@ -5409,7 +5438,7 @@
     "Model": "Penguin_Qiuqiu_01",
     "Avatar": "Avatar_103304",
     "CA": "CA_103304",
-    "CardBack": 0,
+    "CardBack": 50,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -5431,14 +5460,14 @@
     ],
     "BattlePassive": 1103301,
     "HomePassive": 0,
-    "MinHpState": 56,
-    "MinAtkState": 56,
+    "MinHpState": 53,
+    "MinAtkState": 66,
     "MinDefState": 56,
-    "MinWorkState": 36,
-    "MaxHpState": 88,
-    "MaxAtkState": 88,
+    "MinWorkState": 29,
+    "MaxHpState": 85,
+    "MaxAtkState": 98,
     "MaxDefState": 88,
-    "MaxWorkState": 68,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -5509,7 +5538,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Penguin_Qiuqiu_01_XC"
+    "ModleColorVariant": "Penguin_Qiuqiu_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103401,
@@ -5692,7 +5722,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Fox_Fire_XC"
+    "ModleColorVariant": "Fox_Fire_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103501,
@@ -5799,12 +5830,12 @@
     "HomePassive": 0,
     "MinHpState": 46,
     "MinAtkState": 64,
-    "MinDefState": 54,
-    "MinWorkState": 36,
+    "MinDefState": 62,
+    "MinWorkState": 28,
     "MaxHpState": 78,
     "MaxAtkState": 96,
-    "MaxDefState": 86,
-    "MaxWorkState": 68,
+    "MaxDefState": 94,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -5875,7 +5906,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Shrimp_Xiatou_XC"
+    "ModleColorVariant": "Shrimp_Xiatou_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103601,
@@ -6058,7 +6090,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Cow_Miemie_XC"
+    "ModleColorVariant": "Cow_Miemie_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103701,
@@ -6066,8 +6099,8 @@
     "IfLock": false,
     "LumiTag": 1,
     "Name": "LumiName_103701",
-    "MaxScore": 84,
-    "MinScore": 52,
+    "MaxScore": 85,
+    "MinScore": 53,
     "Genius": 1,
     "ShardId": 103701,
     "LumiMap": 100,
@@ -6163,16 +6196,16 @@
     ],
     "BattlePassive": 1103701,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 53,
+    "MinHpState": 56,
+    "MinAtkState": 63,
     "MinDefState": 63,
-    "MinWorkState": 34,
-    "MaxHpState": 90,
-    "MaxAtkState": 85,
+    "MinWorkState": 30,
+    "MaxHpState": 88,
+    "MaxAtkState": 95,
     "MaxDefState": 95,
-    "MaxWorkState": 66,
-    "Satiety": 180000,
-    "SatietyDownSpeed": 28,
+    "MaxWorkState": 62,
+    "Satiety": 200000,
+    "SatietyDownSpeed": 30,
     "WorkAbility": [
       {
         "Type": 9,
@@ -6205,7 +6238,7 @@
         5000
       ]
     ],
-    "scoreShow": "52-84",
+    "scoreShow": "53-85",
     "Story": "story_103701",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -6241,7 +6274,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Groundhog_A_XC"
+    "ModleColorVariant": "Groundhog_A_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103704,
@@ -6249,8 +6283,8 @@
     "IfLock": true,
     "LumiTag": 2,
     "Name": "LumiName_103704",
-    "MaxScore": 84,
-    "MinScore": 84,
+    "MaxScore": 85,
+    "MinScore": 85,
     "Genius": 1,
     "ShardId": 103701,
     "LumiMap": 100,
@@ -6346,16 +6380,16 @@
     ],
     "BattlePassive": 1103701,
     "HomePassive": 0,
-    "MinHpState": 58,
+    "MinHpState": 56,
     "MinAtkState": 63,
-    "MinDefState": 53,
-    "MinWorkState": 34,
-    "MaxHpState": 90,
+    "MinDefState": 63,
+    "MinWorkState": 30,
+    "MaxHpState": 88,
     "MaxAtkState": 95,
-    "MaxDefState": 85,
-    "MaxWorkState": 66,
+    "MaxDefState": 95,
+    "MaxWorkState": 62,
     "Satiety": 180000,
-    "SatietyDownSpeed": 28,
+    "SatietyDownSpeed": 30,
     "WorkAbility": [
       {
         "Type": 9,
@@ -6388,7 +6422,7 @@
         5000
       ]
     ],
-    "scoreShow": "84-84",
+    "scoreShow": "85-85",
     "Story": "story_103704",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -6426,7 +6460,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Groundhog_A_01_XC"
+    "ModleColorVariant": "Groundhog_A_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103801,
@@ -6533,12 +6568,12 @@
     "HomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
-    "MinDefState": 68,
-    "MinWorkState": 34,
+    "MinDefState": 72,
+    "MinWorkState": 30,
     "MaxHpState": 85,
     "MaxAtkState": 85,
-    "MaxDefState": 100,
-    "MaxWorkState": 66,
+    "MaxDefState": 104,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -6609,7 +6644,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Hamster_Huang_XC"
+    "ModleColorVariant": "Hamster_Huang_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103804,
@@ -6716,12 +6752,12 @@
     "HomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
-    "MinDefState": 68,
-    "MinWorkState": 34,
+    "MinDefState": 72,
+    "MinWorkState": 30,
     "MaxHpState": 85,
     "MaxAtkState": 85,
-    "MaxDefState": 100,
-    "MaxWorkState": 66,
+    "MaxDefState": 104,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -6794,16 +6830,17 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Hamster_Huang_01_XC"
+    "ModleColorVariant": "Hamster_Huang_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 103901,
     "PokedexId": 1230,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 1,
     "Name": "LumiName_103901",
-    "MaxScore": 86,
-    "MinScore": 54,
+    "MaxScore": 87,
+    "MinScore": 55,
     "Genius": 1,
     "ShardId": 103901,
     "LumiMap": 100,
@@ -6899,16 +6936,16 @@
     ],
     "BattlePassive": 1103901,
     "HomePassive": 0,
-    "MinHpState": 73,
+    "MinHpState": 72,
     "MinAtkState": 48,
-    "MinDefState": 58,
-    "MinWorkState": 37,
-    "MaxHpState": 105,
+    "MinDefState": 68,
+    "MinWorkState": 32,
+    "MaxHpState": 104,
     "MaxAtkState": 80,
-    "MaxDefState": 90,
-    "MaxWorkState": 69,
-    "Satiety": 220000,
-    "SatietyDownSpeed": 32,
+    "MaxDefState": 100,
+    "MaxWorkState": 64,
+    "Satiety": 240000,
+    "SatietyDownSpeed": 34,
     "WorkAbility": [
       {
         "Type": 4,
@@ -6941,7 +6978,7 @@
         5000
       ]
     ],
-    "scoreShow": "54-86",
+    "scoreShow": "55-87",
     "Story": "story_103901",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -6977,7 +7014,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Tapirs_Dream_XC"
+    "ModleColorVariant": "Tapirs_Dream_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 104101,
@@ -7082,14 +7120,14 @@
     ],
     "BattlePassive": 1102401,
     "HomePassive": 0,
-    "MinHpState": 53,
+    "MinHpState": 54,
     "MinAtkState": 68,
-    "MinDefState": 53,
-    "MinWorkState": 34,
-    "MaxHpState": 85,
+    "MinDefState": 56,
+    "MinWorkState": 30,
+    "MaxHpState": 86,
     "MaxAtkState": 100,
-    "MaxDefState": 85,
-    "MaxWorkState": 66,
+    "MaxDefState": 88,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -7160,7 +7198,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Werewolf_Baby_XC"
+    "ModleColorVariant": "Werewolf_Baby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 104201,
@@ -7265,14 +7304,14 @@
     ],
     "BattlePassive": 1104201,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 63,
-    "MinDefState": 58,
-    "MinWorkState": 34,
-    "MaxHpState": 85,
-    "MaxAtkState": 95,
-    "MaxDefState": 90,
-    "MaxWorkState": 66,
+    "MinHpState": 48,
+    "MinAtkState": 68,
+    "MinDefState": 62,
+    "MinWorkState": 30,
+    "MaxHpState": 80,
+    "MaxAtkState": 100,
+    "MaxDefState": 94,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -7343,7 +7382,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rhinoceros_Xixi_XC"
+    "ModleColorVariant": "Rhinoceros_Xixi_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 104301,
@@ -7448,14 +7488,14 @@
     ],
     "BattlePassive": 1104301,
     "HomePassive": 0,
-    "MinHpState": 43,
-    "MinAtkState": 68,
-    "MinDefState": 58,
-    "MinWorkState": 35,
-    "MaxHpState": 75,
-    "MaxAtkState": 100,
-    "MaxDefState": 90,
-    "MaxWorkState": 67,
+    "MinHpState": 63,
+    "MinAtkState": 48,
+    "MinDefState": 64,
+    "MinWorkState": 29,
+    "MaxHpState": 95,
+    "MaxAtkState": 80,
+    "MaxDefState": 96,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -7526,7 +7566,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Horse_Colt_XC"
+    "ModleColorVariant": "Horse_Colt_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 104401,
@@ -7709,7 +7750,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Hamster_FangFang_XC"
+    "ModleColorVariant": "Hamster_FangFang_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 104501,
@@ -7888,7 +7930,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Fire_XC"
+    "ModleColorVariant": "Slime_Fire_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 104601,
@@ -8067,7 +8110,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Water_XC"
+    "ModleColorVariant": "Slime_Water_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 104701,
@@ -8246,7 +8290,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Ice_XC"
+    "ModleColorVariant": "Slime_Ice_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 104801,
@@ -8425,7 +8470,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Grass_XC"
+    "ModleColorVariant": "Slime_Grass_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 104901,
@@ -8604,7 +8650,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Electric_XC"
+    "ModleColorVariant": "Slime_Electric_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105001,
@@ -8783,7 +8830,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Ground_XC"
+    "ModleColorVariant": "Slime_Ground_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105101,
@@ -8962,7 +9010,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Dark_XC"
+    "ModleColorVariant": "Slime_Dark_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105201,
@@ -9141,12 +9190,13 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Light_XC"
+    "ModleColorVariant": "Slime_Light_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105301,
     "PokedexId": 260,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 1,
     "Name": "LumiName_105301",
     "MaxScore": 88,
@@ -9248,14 +9298,14 @@
     ],
     "BattlePassive": 1105301,
     "HomePassive": 0,
-    "MinHpState": 63,
-    "MinAtkState": 63,
-    "MinDefState": 63,
-    "MinWorkState": 35,
-    "MaxHpState": 95,
-    "MaxAtkState": 95,
-    "MaxDefState": 95,
-    "MaxWorkState": 67,
+    "MinHpState": 64,
+    "MinAtkState": 64,
+    "MinDefState": 64,
+    "MinWorkState": 32,
+    "MaxHpState": 96,
+    "MaxAtkState": 96,
+    "MaxDefState": 96,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [],
@@ -9319,7 +9369,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_King_XC"
+    "ModleColorVariant": "Slime_King_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105401,
@@ -9424,14 +9475,14 @@
     ],
     "BattlePassive": 1105401,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 63,
-    "MinDefState": 53,
-    "MinWorkState": 35,
-    "MaxHpState": 85,
-    "MaxAtkState": 95,
-    "MaxDefState": 85,
-    "MaxWorkState": 67,
+    "MinHpState": 54,
+    "MinAtkState": 73,
+    "MinDefState": 48,
+    "MinWorkState": 29,
+    "MaxHpState": 86,
+    "MaxAtkState": 105,
+    "MaxDefState": 80,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -9502,7 +9553,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bat_Joker_XC"
+    "ModleColorVariant": "Bat_Joker_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105501,
@@ -9607,14 +9659,14 @@
     ],
     "BattlePassive": 1105501,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 73,
-    "MinDefState": 53,
-    "MinWorkState": 36,
-    "MaxHpState": 90,
-    "MaxAtkState": 105,
-    "MaxDefState": 85,
-    "MaxWorkState": 68,
+    "MinHpState": 54,
+    "MinAtkState": 78,
+    "MinDefState": 56,
+    "MinWorkState": 32,
+    "MaxHpState": 86,
+    "MaxAtkState": 110,
+    "MaxDefState": 88,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -9685,7 +9737,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dog_Lighting_XC"
+    "ModleColorVariant": "Dog_Lighting_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105504,
@@ -9790,14 +9843,14 @@
     ],
     "BattlePassive": 1105501,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 63,
-    "MinDefState": 63,
-    "MinWorkState": 36,
-    "MaxHpState": 90,
-    "MaxAtkState": 95,
-    "MaxDefState": 95,
-    "MaxWorkState": 68,
+    "MinHpState": 54,
+    "MinAtkState": 78,
+    "MinDefState": 56,
+    "MinWorkState": 32,
+    "MaxHpState": 86,
+    "MaxAtkState": 110,
+    "MaxDefState": 88,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -9868,7 +9921,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dog_Lighting_01_XC"
+    "ModleColorVariant": "Dog_Lighting_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105701,
@@ -9973,14 +10027,14 @@
     ],
     "BattlePassive": 1105701,
     "HomePassive": 0,
-    "MinHpState": 63,
+    "MinHpState": 68,
     "MinAtkState": 54,
     "MinDefState": 56,
-    "MinWorkState": 35,
-    "MaxHpState": 95,
+    "MinWorkState": 30,
+    "MaxHpState": 100,
     "MaxAtkState": 86,
     "MaxDefState": 88,
-    "MaxWorkState": 67,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -10051,7 +10105,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Panda_Tuantuan_XC"
+    "ModleColorVariant": "Panda_Tuantuan_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105801,
@@ -10156,14 +10211,14 @@
     ],
     "BattlePassive": 1105801,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 56,
+    "MinHpState": 63,
+    "MinAtkState": 54,
     "MinDefState": 78,
-    "MinWorkState": 36,
-    "MaxHpState": 90,
-    "MaxAtkState": 88,
+    "MinWorkState": 33,
+    "MaxHpState": 95,
+    "MaxAtkState": 86,
     "MaxDefState": 110,
-    "MaxWorkState": 68,
+    "MaxWorkState": 65,
     "Satiety": 280000,
     "SatietyDownSpeed": 38,
     "WorkAbility": [
@@ -10236,7 +10291,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_Wave_XC"
+    "ModleColorVariant": "Dragon_Wave_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 105804,
@@ -10343,12 +10399,12 @@
     "HomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 56,
-    "MinDefState": 78,
-    "MinWorkState": 36,
+    "MinDefState": 81,
+    "MinWorkState": 33,
     "MaxHpState": 90,
     "MaxAtkState": 88,
-    "MaxDefState": 110,
-    "MaxWorkState": 68,
+    "MaxDefState": 113,
+    "MaxWorkState": 65,
     "Satiety": 280000,
     "SatietyDownSpeed": 38,
     "WorkAbility": [
@@ -10421,7 +10477,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_Wave_01_XC"
+    "ModleColorVariant": "Dragon_Wave_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 106101,
@@ -10604,7 +10661,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rabbit_Moon_XC"
+    "ModleColorVariant": "Rabbit_Moon_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 106201,
@@ -10613,7 +10671,7 @@
     "LumiTag": 1,
     "Name": "LumiName_106201",
     "MaxScore": 85,
-    "MinScore": 53,
+    "MinScore": 70,
     "Genius": 1,
     "ShardId": 112101,
     "LumiMap": 100,
@@ -10711,12 +10769,12 @@
     "HomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 66,
-    "MinDefState": 52,
-    "MinWorkState": 38,
+    "MinDefState": 60,
+    "MinWorkState": 30,
     "MaxHpState": 88,
     "MaxAtkState": 98,
-    "MaxDefState": 84,
-    "MaxWorkState": 70,
+    "MaxDefState": 92,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -10751,7 +10809,7 @@
         5000
       ]
     ],
-    "scoreShow": "53-85",
+    "scoreShow": "70-85",
     "Story": "story_106201",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -10787,18 +10845,19 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Mustela_Shadow_XC"
+    "ModleColorVariant": "Mustela_Shadow_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 106202,
     "PokedexId": 490,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 1,
-    "Name": "LumiName_106201",
-    "MaxScore": 85,
-    "MinScore": 53,
+    "Name": "LumiName_106202",
+    "MaxScore": 88,
+    "MinScore": 88,
     "Genius": 1,
-    "ShardId": 112101,
+    "ShardId": 112102,
     "LumiMap": 100,
     "MarketOrder": 85,
     "DefaultPrice": [
@@ -10870,10 +10929,14 @@
     "Model": "Mustela_Shadow_3D",
     "Avatar": "Avatar_106202",
     "CA": "CA_106202",
-    "CardBack": 0,
-    "CardBackRes": [],
-    "CardType": 0,
-    "CardResName": [],
+    "CardBack": 98,
+    "CardBackRes": [
+      "com_card_9_106202"
+    ],
+    "CardType": 98,
+    "CardResName": [
+      "Card3D_Mustela_Shadow"
+    ],
     "Type1": 11,
     "Type2": 0,
     "NormalAttack": 10620201,
@@ -10893,15 +10956,15 @@
     "BattlePassive": 1106202,
     "HomePassive": 0,
     "MinHpState": 56,
-    "MinAtkState": 66,
-    "MinDefState": 52,
-    "MinWorkState": 38,
+    "MinAtkState": 68,
+    "MinDefState": 70,
+    "MinWorkState": 30,
     "MaxHpState": 88,
-    "MaxAtkState": 98,
-    "MaxDefState": 84,
-    "MaxWorkState": 70,
-    "Satiety": 200000,
-    "SatietyDownSpeed": 30,
+    "MaxAtkState": 100,
+    "MaxDefState": 102,
+    "MaxWorkState": 62,
+    "Satiety": 260000,
+    "SatietyDownSpeed": 36,
     "WorkAbility": [
       {
         "Type": 2,
@@ -10934,7 +10997,7 @@
         5000
       ]
     ],
-    "scoreShow": "53-85",
+    "scoreShow": "88-88",
     "Story": "story_106202",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -10970,7 +11033,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Mustela_Shadow_3D_XC"
+    "ModleColorVariant": "Mustela_Shadow_3D_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 106301,
@@ -11077,12 +11141,12 @@
     "HomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 62,
-    "MinDefState": 50,
-    "MinWorkState": 36,
+    "MinDefState": 58,
+    "MinWorkState": 28,
     "MaxHpState": 84,
     "MaxAtkState": 94,
-    "MaxDefState": 82,
-    "MaxWorkState": 68,
+    "MaxDefState": 90,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -11153,7 +11217,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Griffin_Baby_XC"
+    "ModleColorVariant": "Griffin_Baby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 106401,
@@ -11260,12 +11325,12 @@
     "HomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 68,
-    "MinDefState": 54,
-    "MinWorkState": 36,
+    "MinDefState": 60,
+    "MinWorkState": 30,
     "MaxHpState": 86,
     "MaxAtkState": 100,
-    "MaxDefState": 86,
-    "MaxWorkState": 68,
+    "MaxDefState": 92,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -11336,7 +11401,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Griffin_Gallant_XC"
+    "ModleColorVariant": "Griffin_Gallant_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 106404,
@@ -11443,12 +11509,12 @@
     "HomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 68,
-    "MinDefState": 54,
-    "MinWorkState": 36,
+    "MinDefState": 60,
+    "MinWorkState": 30,
     "MaxHpState": 86,
     "MaxAtkState": 100,
-    "MaxDefState": 86,
-    "MaxWorkState": 68,
+    "MaxDefState": 92,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -11521,7 +11587,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Griffin_Gallant_01_XC"
+    "ModleColorVariant": "Griffin_Gallant_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 106601,
@@ -11704,7 +11771,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Pelican_XC"
+    "ModleColorVariant": "Pelican_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 106901,
@@ -11809,14 +11877,14 @@
     ],
     "BattlePassive": 1106901,
     "HomePassive": 0,
-    "MinHpState": 63,
-    "MinAtkState": 53,
-    "MinDefState": 63,
-    "MinWorkState": 37,
-    "MaxHpState": 95,
-    "MaxAtkState": 85,
-    "MaxDefState": 95,
-    "MaxWorkState": 69,
+    "MinHpState": 64,
+    "MinAtkState": 56,
+    "MinDefState": 66,
+    "MinWorkState": 30,
+    "MaxHpState": 96,
+    "MaxAtkState": 88,
+    "MaxDefState": 98,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -11889,7 +11957,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "CatShark_Water_XC"
+    "ModleColorVariant": "CatShark_Water_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 107001,
@@ -11994,14 +12063,14 @@
     ],
     "BattlePassive": 1107001,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 63,
-    "MinDefState": 58,
-    "MinWorkState": 37,
-    "MaxHpState": 90,
-    "MaxAtkState": 95,
-    "MaxDefState": 90,
-    "MaxWorkState": 69,
+    "MinHpState": 62,
+    "MinAtkState": 62,
+    "MinDefState": 62,
+    "MinWorkState": 30,
+    "MaxHpState": 94,
+    "MaxAtkState": 94,
+    "MaxDefState": 94,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -12074,7 +12143,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "CatShark_Psychic_XC"
+    "ModleColorVariant": "CatShark_Psychic_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 107801,
@@ -12082,8 +12152,8 @@
     "IfLock": false,
     "LumiTag": 1,
     "Name": "LumiName_107801",
-    "MaxScore": 87,
-    "MinScore": 70,
+    "MaxScore": 86,
+    "MinScore": 54,
     "Genius": 1,
     "ShardId": 107801,
     "LumiMap": 100,
@@ -12180,15 +12250,15 @@
     "BattlePassive": 1107801,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 68,
-    "MinDefState": 58,
-    "MinWorkState": 36,
+    "MinAtkState": 73,
+    "MinDefState": 54,
+    "MinWorkState": 31,
     "MaxHpState": 90,
-    "MaxAtkState": 100,
-    "MaxDefState": 90,
-    "MaxWorkState": 68,
-    "Satiety": 240000,
-    "SatietyDownSpeed": 34,
+    "MaxAtkState": 105,
+    "MaxDefState": 86,
+    "MaxWorkState": 63,
+    "Satiety": 220000,
+    "SatietyDownSpeed": 32,
     "WorkAbility": [
       {
         "Type": 1,
@@ -12221,7 +12291,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-87",
+    "scoreShow": "54-86",
     "Story": "story_107801",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1500,
@@ -12257,7 +12327,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Muscle_Tiger_XC"
+    "ModleColorVariant": "Muscle_Tiger_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 107901,
@@ -12362,14 +12433,14 @@
     ],
     "BattlePassive": 1101601,
     "HomePassive": 0,
-    "MinHpState": 50,
-    "MinAtkState": 58,
-    "MinDefState": 60,
-    "MinWorkState": 36,
-    "MaxHpState": 82,
-    "MaxAtkState": 90,
-    "MaxDefState": 92,
-    "MaxWorkState": 68,
+    "MinHpState": 54,
+    "MinAtkState": 63,
+    "MinDefState": 58,
+    "MinWorkState": 29,
+    "MaxHpState": 86,
+    "MaxAtkState": 95,
+    "MaxDefState": 90,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -12440,7 +12511,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_Flame_XC"
+    "ModleColorVariant": "Dragon_Flame_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 108301,
@@ -12554,12 +12626,12 @@
     "HomePassive": 0,
     "MinHpState": 73,
     "MinAtkState": 48,
-    "MinDefState": 83,
-    "MinWorkState": 36,
+    "MinDefState": 84,
+    "MinWorkState": 35,
     "MaxHpState": 105,
     "MaxAtkState": 80,
-    "MaxDefState": 115,
-    "MaxWorkState": 68,
+    "MaxDefState": 116,
+    "MaxWorkState": 67,
     "Satiety": 340000,
     "SatietyDownSpeed": 40,
     "WorkAbility": [],
@@ -12627,7 +12699,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Tortoise_Black_XC"
+    "ModleColorVariant": "Tortoise_Black_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 108401,
@@ -12732,14 +12805,14 @@
     ],
     "BattlePassive": 1101201,
     "HomePassive": 0,
-    "MinHpState": 52,
-    "MinAtkState": 62,
-    "MinDefState": 48,
-    "MinWorkState": 38,
-    "MaxHpState": 84,
-    "MaxAtkState": 94,
-    "MaxDefState": 80,
-    "MaxWorkState": 70,
+    "MinHpState": 50,
+    "MinAtkState": 70,
+    "MinDefState": 52,
+    "MinWorkState": 28,
+    "MaxHpState": 82,
+    "MaxAtkState": 102,
+    "MaxDefState": 84,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -12810,7 +12883,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Cat_Flamelet_XC"
+    "ModleColorVariant": "Cat_Flamelet_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 108501,
@@ -12915,14 +12989,14 @@
     ],
     "BattlePassive": 1101801,
     "HomePassive": 0,
-    "MinHpState": 52,
+    "MinHpState": 56,
     "MinAtkState": 56,
-    "MinDefState": 54,
-    "MinWorkState": 38,
-    "MaxHpState": 84,
+    "MinDefState": 60,
+    "MinWorkState": 28,
+    "MaxHpState": 88,
     "MaxAtkState": 88,
-    "MaxDefState": 86,
-    "MaxWorkState": 70,
+    "MaxDefState": 92,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -12993,7 +13067,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rat_NewLeaf_XC"
+    "ModleColorVariant": "Rat_NewLeaf_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 108601,
@@ -13098,14 +13173,14 @@
     ],
     "BattlePassive": 1103201,
     "HomePassive": 0,
-    "MinHpState": 62,
+    "MinHpState": 66,
     "MinAtkState": 46,
-    "MinDefState": 54,
-    "MinWorkState": 38,
-    "MaxHpState": 94,
+    "MinDefState": 60,
+    "MinWorkState": 28,
+    "MaxHpState": 98,
     "MaxAtkState": 78,
-    "MaxDefState": 86,
-    "MaxWorkState": 70,
+    "MaxDefState": 92,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -13176,7 +13251,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Jellyfish_Wee_XC"
+    "ModleColorVariant": "Jellyfish_Wee_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 108701,
@@ -13281,14 +13357,14 @@
     ],
     "BattlePassive": 1108701,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 63,
-    "MinDefState": 53,
-    "MinWorkState": 39,
-    "MaxHpState": 85,
-    "MaxAtkState": 95,
-    "MaxDefState": 85,
-    "MaxWorkState": 71,
+    "MinHpState": 54,
+    "MinAtkState": 64,
+    "MinDefState": 60,
+    "MinWorkState": 30,
+    "MaxHpState": 86,
+    "MaxAtkState": 96,
+    "MaxDefState": 92,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -13359,7 +13435,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Cobra_Scalechime_XC"
+    "ModleColorVariant": "Cobra_Scalechime_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 108704,
@@ -13464,14 +13541,14 @@
     ],
     "BattlePassive": 1108704,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 63,
-    "MinDefState": 53,
-    "MinWorkState": 39,
-    "MaxHpState": 85,
-    "MaxAtkState": 95,
-    "MaxDefState": 85,
-    "MaxWorkState": 71,
+    "MinHpState": 54,
+    "MinAtkState": 64,
+    "MinDefState": 60,
+    "MinWorkState": 30,
+    "MaxHpState": 86,
+    "MaxAtkState": 96,
+    "MaxDefState": 92,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -13544,7 +13621,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Cobra_Scalechime_01_XC"
+    "ModleColorVariant": "Cobra_Scalechime_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 108801,
@@ -13727,7 +13805,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Gorilla_Basalt_XC"
+    "ModleColorVariant": "Gorilla_Basalt_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 108901,
@@ -13832,14 +13911,14 @@
     ],
     "BattlePassive": 1108901,
     "HomePassive": 0,
-    "MinHpState": 58,
+    "MinHpState": 56,
     "MinAtkState": 58,
-    "MinDefState": 58,
-    "MinWorkState": 34,
-    "MaxHpState": 90,
+    "MinDefState": 64,
+    "MinWorkState": 30,
+    "MaxHpState": 88,
     "MaxAtkState": 90,
-    "MaxDefState": 90,
-    "MaxWorkState": 66,
+    "MaxDefState": 96,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -13910,7 +13989,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Peacock_Card_XC"
+    "ModleColorVariant": "Peacock_Card_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 109001,
@@ -14015,14 +14095,14 @@
     ],
     "BattlePassive": 1101201,
     "HomePassive": 0,
-    "MinHpState": 60,
-    "MinAtkState": 70,
+    "MinHpState": 58,
+    "MinAtkState": 78,
     "MinDefState": 56,
-    "MinWorkState": 38,
-    "MaxHpState": 92,
-    "MaxAtkState": 102,
+    "MinWorkState": 32,
+    "MaxHpState": 90,
+    "MaxAtkState": 110,
     "MaxDefState": 88,
-    "MaxWorkState": 70,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -14095,7 +14175,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Cat_FlareEdge_XC"
+    "ModleColorVariant": "Cat_FlareEdge_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 109101,
@@ -14202,12 +14283,12 @@
     "HomePassive": 0,
     "MinHpState": 60,
     "MinAtkState": 64,
-    "MinDefState": 62,
-    "MinWorkState": 38,
+    "MinDefState": 68,
+    "MinWorkState": 32,
     "MaxHpState": 92,
     "MaxAtkState": 96,
-    "MaxDefState": 94,
-    "MaxWorkState": 70,
+    "MaxDefState": 100,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -14280,7 +14361,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rat_NinjaLeaf_XC"
+    "ModleColorVariant": "Rat_NinjaLeaf_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 109201,
@@ -14385,14 +14467,14 @@
     ],
     "BattlePassive": 1103201,
     "HomePassive": 0,
-    "MinHpState": 70,
+    "MinHpState": 74,
     "MinAtkState": 54,
-    "MinDefState": 62,
-    "MinWorkState": 38,
-    "MaxHpState": 102,
+    "MinDefState": 64,
+    "MinWorkState": 32,
+    "MaxHpState": 106,
     "MaxAtkState": 86,
-    "MaxDefState": 94,
-    "MaxWorkState": 70,
+    "MaxDefState": 96,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -14465,7 +14547,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Jellyfish_Nira_XC"
+    "ModleColorVariant": "Jellyfish_Nira_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 109401,
@@ -14648,7 +14731,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Blaze_XC"
+    "ModleColorVariant": "Slime_Blaze_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 109501,
@@ -14831,7 +14915,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Aqua_XC"
+    "ModleColorVariant": "Slime_Aqua_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 109601,
@@ -15014,7 +15099,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Frost_XC"
+    "ModleColorVariant": "Slime_Frost_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 109701,
@@ -15197,7 +15283,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Flora_XC"
+    "ModleColorVariant": "Slime_Flora_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 109801,
@@ -15380,7 +15467,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Spark_XC"
+    "ModleColorVariant": "Slime_Spark_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 109901,
@@ -15563,7 +15651,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Terra_XC"
+    "ModleColorVariant": "Slime_Terra_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 110001,
@@ -15748,7 +15837,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Shadow_XC"
+    "ModleColorVariant": "Slime_Shadow_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 110101,
@@ -15933,7 +16023,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Slime_Radiant_XC"
+    "ModleColorVariant": "Slime_Radiant_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 110201,
@@ -16040,12 +16131,12 @@
     "HomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 74,
-    "MinDefState": 58,
-    "MinWorkState": 36,
+    "MinDefState": 62,
+    "MinWorkState": 32,
     "MaxHpState": 88,
     "MaxAtkState": 106,
-    "MaxDefState": 90,
-    "MaxWorkState": 68,
+    "MaxDefState": 94,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -16086,7 +16177,7 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1650,
+    "LoveHeartHeight": 1450,
     "CatchRateCheckHeight": 1100,
     "HomeMoveSpeed": 0.4,
     "HomeRotateSpeed": 90,
@@ -16118,7 +16209,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Griffin_Sovereign_XC"
+    "ModleColorVariant": "Griffin_Sovereign_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 110404,
@@ -16296,7 +16388,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bull_Alternative_01_XC"
+    "ModleColorVariant": "Bull_Alternative_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 110501,
@@ -16402,14 +16495,14 @@
     ],
     "BattlePassive": 1110501,
     "HomePassive": 0,
-    "MinHpState": 63,
-    "MinAtkState": 58,
-    "MinDefState": 58,
-    "MinWorkState": 37,
-    "MaxHpState": 95,
-    "MaxAtkState": 90,
-    "MaxDefState": 90,
-    "MaxWorkState": 69,
+    "MinHpState": 62,
+    "MinAtkState": 62,
+    "MinDefState": 62,
+    "MinWorkState": 30,
+    "MaxHpState": 94,
+    "MaxAtkState": 94,
+    "MaxDefState": 94,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [],
@@ -16477,7 +16570,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "CatShark_Normal_XC"
+    "ModleColorVariant": "CatShark_Normal_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 110601,
@@ -16582,14 +16676,14 @@
     ],
     "BattlePassive": 1110601,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 68,
-    "MinDefState": 53,
-    "MinWorkState": 37,
-    "MaxHpState": 90,
-    "MaxAtkState": 100,
-    "MaxDefState": 85,
-    "MaxWorkState": 69,
+    "MinHpState": 56,
+    "MinAtkState": 74,
+    "MinDefState": 56,
+    "MinWorkState": 30,
+    "MaxHpState": 88,
+    "MaxAtkState": 106,
+    "MaxDefState": 88,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -16662,7 +16756,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "CatShark_Grass_XC"
+    "ModleColorVariant": "CatShark_Grass_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 110801,
@@ -16768,14 +16863,14 @@
     ],
     "BattlePassive": 1110501,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 53,
-    "MinDefState": 53,
-    "MinWorkState": 32,
-    "MaxHpState": 90,
-    "MaxAtkState": 85,
-    "MaxDefState": 85,
-    "MaxWorkState": 64,
+    "MinHpState": 56,
+    "MinAtkState": 56,
+    "MinDefState": 56,
+    "MinWorkState": 28,
+    "MaxHpState": 88,
+    "MaxAtkState": 88,
+    "MaxDefState": 88,
+    "MaxWorkState": 60,
     "Satiety": 120000,
     "SatietyDownSpeed": 22,
     "WorkAbility": [],
@@ -16843,7 +16938,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "CatSharklet_XC"
+    "ModleColorVariant": "CatSharklet_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 111001,
@@ -16949,13 +17045,13 @@
     "BattlePassive": 1108901,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 68,
-    "MinDefState": 58,
-    "MinWorkState": 36,
+    "MinAtkState": 66,
+    "MinDefState": 64,
+    "MinWorkState": 32,
     "MaxHpState": 90,
-    "MaxAtkState": 100,
-    "MaxDefState": 90,
-    "MaxWorkState": 68,
+    "MaxAtkState": 98,
+    "MaxDefState": 96,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -17028,7 +17124,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Peacock_CardST_XC"
+    "ModleColorVariant": "Peacock_CardST_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 111004,
@@ -17134,13 +17231,13 @@
     "BattlePassive": 1108901,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 63,
-    "MinDefState": 63,
-    "MinWorkState": 36,
+    "MinAtkState": 66,
+    "MinDefState": 64,
+    "MinWorkState": 32,
     "MaxHpState": 90,
-    "MaxAtkState": 95,
-    "MaxDefState": 95,
-    "MaxWorkState": 68,
+    "MaxAtkState": 98,
+    "MaxDefState": 96,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -17213,7 +17310,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Peacock_CardST_01_XC"
+    "ModleColorVariant": "Peacock_CardST_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 111201,
@@ -17318,14 +17416,14 @@
     ],
     "BattlePassive": 1111201,
     "HomePassive": 0,
-    "MinHpState": 72,
-    "MinAtkState": 56,
+    "MinHpState": 78,
+    "MinAtkState": 53,
     "MinDefState": 64,
-    "MinWorkState": 36,
-    "MaxHpState": 104,
-    "MaxAtkState": 88,
+    "MinWorkState": 33,
+    "MaxHpState": 110,
+    "MaxAtkState": 85,
     "MaxDefState": 96,
-    "MaxWorkState": 68,
+    "MaxWorkState": 65,
     "Satiety": 280000,
     "SatietyDownSpeed": 38,
     "WorkAbility": [
@@ -17398,7 +17496,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_Forest_XC"
+    "ModleColorVariant": "Dragon_Forest_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 111501,
@@ -17503,14 +17602,14 @@
     ],
     "BattlePassive": 1111501,
     "HomePassive": 0,
-    "MinHpState": 63,
-    "MinAtkState": 63,
-    "MinDefState": 53,
-    "MinWorkState": 37,
-    "MaxHpState": 95,
-    "MaxAtkState": 95,
-    "MaxDefState": 85,
-    "MaxWorkState": 69,
+    "MinHpState": 74,
+    "MinAtkState": 56,
+    "MinDefState": 56,
+    "MinWorkState": 30,
+    "MaxHpState": 106,
+    "MaxAtkState": 88,
+    "MaxDefState": 88,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -17583,7 +17682,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "CatShark_Fire_XC"
+    "ModleColorVariant": "CatShark_Fire_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 111601,
@@ -17688,14 +17788,14 @@
     ],
     "BattlePassive": 1111601,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 63,
-    "MinDefState": 58,
-    "MinWorkState": 37,
-    "MaxHpState": 90,
-    "MaxAtkState": 95,
-    "MaxDefState": 90,
-    "MaxWorkState": 69,
+    "MinHpState": 66,
+    "MinAtkState": 64,
+    "MinDefState": 56,
+    "MinWorkState": 30,
+    "MaxHpState": 98,
+    "MaxAtkState": 96,
+    "MaxDefState": 88,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -17768,7 +17868,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "CatShark_Lightning_XC"
+    "ModleColorVariant": "CatShark_Lightning_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 111701,
@@ -17873,14 +17974,14 @@
     ],
     "BattlePassive": 1111701,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 63,
-    "MinDefState": 58,
-    "MinWorkState": 37,
-    "MaxHpState": 90,
-    "MaxAtkState": 95,
-    "MaxDefState": 90,
-    "MaxWorkState": 69,
+    "MinHpState": 56,
+    "MinAtkState": 66,
+    "MinDefState": 64,
+    "MinWorkState": 30,
+    "MaxHpState": 88,
+    "MaxAtkState": 98,
+    "MaxDefState": 96,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -17953,16 +18054,17 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "CatShark_Fly_XC"
+    "ModleColorVariant": "CatShark_Fly_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 111801,
     "PokedexId": 840,
     "IfLock": false,
-    "LumiTag": 1,
+    "LumiTag": 2,
     "Name": "LumiName_111801",
     "MaxScore": 87,
-    "MinScore": 70,
+    "MinScore": 55,
     "Genius": 1,
     "ShardId": 111801,
     "LumiMap": 100,
@@ -18060,12 +18162,12 @@
     "HomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 68,
-    "MinDefState": 48,
-    "MinWorkState": 36,
+    "MinDefState": 52,
+    "MinWorkState": 32,
     "MaxHpState": 100,
     "MaxAtkState": 100,
-    "MaxDefState": 80,
-    "MaxWorkState": 68,
+    "MaxDefState": 84,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -18100,7 +18202,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-87",
+    "scoreShow": "55-87",
     "Story": "story_111801",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -18136,7 +18238,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Elephant_Lamp_XC"
+    "ModleColorVariant": "Elephant_Lamp_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 112001,
@@ -18242,13 +18345,13 @@
     "BattlePassive": 1112001,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 52,
-    "MinDefState": 58,
-    "MinWorkState": 36,
+    "MinAtkState": 54,
+    "MinDefState": 63,
+    "MinWorkState": 29,
     "MaxHpState": 90,
-    "MaxAtkState": 84,
-    "MaxDefState": 90,
-    "MaxWorkState": 68,
+    "MaxAtkState": 86,
+    "MaxDefState": 95,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -18319,7 +18422,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_WaterBaby_XC"
+    "ModleColorVariant": "Dragon_WaterBaby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 112101,
@@ -18426,12 +18530,12 @@
     "HomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 62,
-    "MinDefState": 48,
-    "MinWorkState": 38,
+    "MinDefState": 58,
+    "MinWorkState": 28,
     "MaxHpState": 84,
     "MaxAtkState": 94,
-    "MaxDefState": 80,
-    "MaxWorkState": 70,
+    "MaxDefState": 90,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -18502,7 +18606,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Mustela_Baby_XC"
+    "ModleColorVariant": "Mustela_Baby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 112201,
@@ -18609,12 +18714,12 @@
     "HomePassive": 0,
     "MinHpState": 60,
     "MinAtkState": 70,
-    "MinDefState": 56,
-    "MinWorkState": 38,
+    "MinDefState": 62,
+    "MinWorkState": 32,
     "MaxHpState": 92,
     "MaxAtkState": 102,
-    "MaxDefState": 88,
-    "MaxWorkState": 70,
+    "MaxDefState": 94,
+    "MaxWorkState": 64,
     "Satiety": 140000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -18687,7 +18792,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Mustela_ShadowSuper_XC"
+    "ModleColorVariant": "Mustela_ShadowSuper_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 112301,
@@ -18794,12 +18900,12 @@
     "HomePassive": 0,
     "MinHpState": 43,
     "MinAtkState": 63,
-    "MinDefState": 58,
-    "MinWorkState": 36,
+    "MinDefState": 66,
+    "MinWorkState": 28,
     "MaxHpState": 75,
     "MaxAtkState": 95,
-    "MaxDefState": 90,
-    "MaxWorkState": 68,
+    "MaxDefState": 98,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -18870,7 +18976,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Creature_Scare_XC"
+    "ModleColorVariant": "Creature_Scare_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 112401,
@@ -19023,7 +19130,7 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1200,
+    "LoveHeartHeight": 1000,
     "CatchRateCheckHeight": 400,
     "HomeMoveSpeed": 0.4,
     "HomeRotateSpeed": 90,
@@ -19053,7 +19160,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Crab_Spout_XC"
+    "ModleColorVariant": "Crab_Spout_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 112501,
@@ -19158,14 +19266,14 @@
     ],
     "BattlePassive": 1112501,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 48,
-    "MinDefState": 68,
-    "MinWorkState": 35,
-    "MaxHpState": 85,
-    "MaxAtkState": 80,
-    "MaxDefState": 100,
-    "MaxWorkState": 67,
+    "MinHpState": 48,
+    "MinAtkState": 54,
+    "MinDefState": 73,
+    "MinWorkState": 29,
+    "MaxHpState": 80,
+    "MaxAtkState": 86,
+    "MaxDefState": 105,
+    "MaxWorkState": 61,
     "Satiety": 120000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -19236,7 +19344,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Insect_Rockhorn_XC"
+    "ModleColorVariant": "Insect_Rockhorn_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 112801,
@@ -19341,14 +19450,14 @@
     ],
     "BattlePassive": 1112801,
     "HomePassive": 0,
-    "MinHpState": 60,
-    "MinAtkState": 50,
-    "MinDefState": 58,
-    "MinWorkState": 36,
-    "MaxHpState": 92,
-    "MaxAtkState": 82,
-    "MaxDefState": 90,
-    "MaxWorkState": 68,
+    "MinHpState": 63,
+    "MinAtkState": 48,
+    "MinDefState": 64,
+    "MinWorkState": 29,
+    "MaxHpState": 95,
+    "MaxAtkState": 80,
+    "MaxDefState": 96,
+    "MaxWorkState": 61,
     "Satiety": 140000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -19389,7 +19498,7 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1200,
+    "LoveHeartHeight": 1100,
     "CatchRateCheckHeight": 400,
     "HomeMoveSpeed": 0.4,
     "HomeRotateSpeed": 90,
@@ -19419,7 +19528,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_Grass_Baby_XC"
+    "ModleColorVariant": "Dragon_Grass_Baby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 112901,
@@ -19524,14 +19634,14 @@
     ],
     "BattlePassive": 1105501,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 58,
-    "MinDefState": 53,
-    "MinWorkState": 35,
-    "MaxHpState": 90,
-    "MaxAtkState": 90,
-    "MaxDefState": 85,
-    "MaxWorkState": 67,
+    "MinHpState": 52,
+    "MinAtkState": 73,
+    "MinDefState": 50,
+    "MinWorkState": 29,
+    "MaxHpState": 84,
+    "MaxAtkState": 105,
+    "MaxDefState": 82,
+    "MaxWorkState": 61,
     "Satiety": 140000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -19602,7 +19712,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dog_Sparky_XC"
+    "ModleColorVariant": "Dog_Sparky_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 113101,
@@ -19707,14 +19818,14 @@
     ],
     "BattlePassive": 1104301,
     "HomePassive": 0,
-    "MinHpState": 48,
-    "MinAtkState": 73,
-    "MinDefState": 58,
-    "MinWorkState": 37,
-    "MaxHpState": 80,
-    "MaxAtkState": 105,
-    "MaxDefState": 90,
-    "MaxWorkState": 69,
+    "MinHpState": 68,
+    "MinAtkState": 53,
+    "MinDefState": 64,
+    "MinWorkState": 31,
+    "MaxHpState": 100,
+    "MaxAtkState": 85,
+    "MaxDefState": 96,
+    "MaxWorkState": 63,
     "Satiety": 140000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -19785,7 +19896,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Horse_Blaze_XC"
+    "ModleColorVariant": "Horse_Blaze_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 113201,
@@ -19970,7 +20082,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Horse_Cinderking_XC"
+    "ModleColorVariant": "Horse_Cinderking_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 113301,
@@ -20076,13 +20189,13 @@
     "BattlePassive": 1102801,
     "HomePassive": 0,
     "MinHpState": 63,
-    "MinAtkState": 48,
-    "MinDefState": 58,
-    "MinWorkState": 35,
+    "MinAtkState": 49,
+    "MinDefState": 63,
+    "MinWorkState": 29,
     "MaxHpState": 95,
-    "MaxAtkState": 80,
-    "MaxDefState": 90,
-    "MaxWorkState": 67,
+    "MaxAtkState": 81,
+    "MaxDefState": 95,
+    "MaxWorkState": 61,
     "Satiety": 140000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -20153,7 +20266,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Tadpole_Bubble_XC"
+    "ModleColorVariant": "Tadpole_Bubble_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 113601,
@@ -20258,14 +20372,14 @@
     ],
     "BattlePassive": 1113601,
     "HomePassive": 0,
-    "MinHpState": 53,
+    "MinHpState": 54,
     "MinAtkState": 56,
     "MinDefState": 58,
-    "MinWorkState": 29,
-    "MaxHpState": 85,
+    "MinWorkState": 28,
+    "MaxHpState": 86,
     "MaxAtkState": 88,
     "MaxDefState": 90,
-    "MaxWorkState": 61,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 22,
     "WorkAbility": [
@@ -20336,7 +20450,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Butterfly_Baby_XC"
+    "ModleColorVariant": "Butterfly_Baby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 113701,
@@ -20443,12 +20558,12 @@
     "HomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 56,
-    "MinDefState": 63,
-    "MinWorkState": 31,
+    "MinDefState": 64,
+    "MinWorkState": 30,
     "MaxHpState": 90,
     "MaxAtkState": 88,
-    "MaxDefState": 95,
-    "MaxWorkState": 63,
+    "MaxDefState": 96,
+    "MaxWorkState": 62,
     "Satiety": 140000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -20519,7 +20634,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dreama_Pupa_XC"
+    "ModleColorVariant": "Dreama_Pupa_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 113801,
@@ -20528,7 +20644,7 @@
     "LumiTag": 1,
     "Name": "LumiName_113801",
     "MaxScore": 87,
-    "MinScore": 70,
+    "MinScore": 55,
     "Genius": 1,
     "ShardId": 113601,
     "LumiMap": 100,
@@ -20626,12 +20742,12 @@
     "HomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 66,
-    "MinDefState": 63,
-    "MinWorkState": 33,
+    "MinDefState": 64,
+    "MinWorkState": 32,
     "MaxHpState": 90,
     "MaxAtkState": 98,
-    "MaxDefState": 95,
-    "MaxWorkState": 65,
+    "MaxDefState": 96,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -20666,7 +20782,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-87",
+    "scoreShow": "55-87",
     "Story": "story_113801",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -20702,7 +20818,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Butterfly_Cloud_XC"
+    "ModleColorVariant": "Butterfly_Cloud_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 113901,
@@ -20809,12 +20926,12 @@
     "HomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 76,
-    "MinDefState": 63,
-    "MinWorkState": 35,
+    "MinDefState": 64,
+    "MinWorkState": 34,
     "MaxHpState": 90,
     "MaxAtkState": 108,
-    "MaxDefState": 95,
-    "MaxWorkState": 67,
+    "MaxDefState": 96,
+    "MaxWorkState": 66,
     "Satiety": 140000,
     "SatietyDownSpeed": 40,
     "WorkAbility": [
@@ -20887,7 +21004,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Butterfly_Meteor_XC"
+    "ModleColorVariant": "Butterfly_Meteor_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114001,
@@ -20994,12 +21112,12 @@
     "HomePassive": 0,
     "MinHpState": 50,
     "MinAtkState": 62,
-    "MinDefState": 54,
-    "MinWorkState": 34,
+    "MinDefState": 60,
+    "MinWorkState": 28,
     "MaxHpState": 82,
     "MaxAtkState": 94,
-    "MaxDefState": 86,
-    "MaxWorkState": 66,
+    "MaxDefState": 92,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -21070,7 +21188,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Wolf_Snowcub_XC"
+    "ModleColorVariant": "Wolf_Snowcub_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114101,
@@ -21079,7 +21198,7 @@
     "LumiTag": 2,
     "Name": "LumiName_114101",
     "MaxScore": 85,
-    "MinScore": 70,
+    "MinScore": 53,
     "Genius": 1,
     "ShardId": 114001,
     "LumiMap": 100,
@@ -21177,12 +21296,12 @@
     "HomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 68,
-    "MinDefState": 54,
-    "MinWorkState": 38,
+    "MinDefState": 62,
+    "MinWorkState": 30,
     "MaxHpState": 84,
     "MaxAtkState": 100,
-    "MaxDefState": 86,
-    "MaxWorkState": 70,
+    "MaxDefState": 94,
+    "MaxWorkState": 62,
     "Satiety": 140000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -21217,7 +21336,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-85",
+    "scoreShow": "53-85",
     "Story": "story_114101",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -21253,7 +21372,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Wolf_Crystal_XC"
+    "ModleColorVariant": "Wolf_Crystal_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114201,
@@ -21360,12 +21480,12 @@
     "HomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 74,
-    "MinDefState": 56,
-    "MinWorkState": 40,
+    "MinDefState": 64,
+    "MinWorkState": 32,
     "MaxHpState": 86,
     "MaxAtkState": 106,
-    "MaxDefState": 88,
-    "MaxWorkState": 72,
+    "MaxDefState": 96,
+    "MaxWorkState": 64,
     "Satiety": 140000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -21438,7 +21558,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Wolf_Frostwild_XC"
+    "ModleColorVariant": "Wolf_Frostwild_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114202,
@@ -21450,7 +21571,7 @@
     "MinScore": 90,
     "Genius": 1,
     "ShardId": 114202,
-    "LumiMap": 100,
+    "LumiMap": 0,
     "MarketOrder": 0,
     "DefaultPrice": [
       [
@@ -21549,12 +21670,12 @@
     "HomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 76,
-    "MinDefState": 58,
-    "MinWorkState": 42,
+    "MinDefState": 68,
+    "MinWorkState": 32,
     "MaxHpState": 88,
     "MaxAtkState": 108,
-    "MaxDefState": 90,
-    "MaxWorkState": 74,
+    "MaxDefState": 100,
+    "MaxWorkState": 64,
     "Satiety": 140000,
     "SatietyDownSpeed": 40,
     "WorkAbility": [
@@ -21627,7 +21748,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Wolf_Frostwild_3D_XC"
+    "ModleColorVariant": "Wolf_Frostwild_3D_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114301,
@@ -21733,13 +21855,13 @@
     "BattlePassive": 1114301,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 48,
-    "MinDefState": 58,
-    "MinWorkState": 36,
+    "MinAtkState": 51,
+    "MinDefState": 63,
+    "MinWorkState": 28,
     "MaxHpState": 90,
-    "MaxAtkState": 80,
-    "MaxDefState": 90,
-    "MaxWorkState": 68,
+    "MaxAtkState": 83,
+    "MaxDefState": 95,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -21810,7 +21932,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Angle_SeaBaby_XC"
+    "ModleColorVariant": "Angle_SeaBaby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114401,
@@ -21915,14 +22038,14 @@
     ],
     "BattlePassive": 1114401,
     "HomePassive": 0,
-    "MinHpState": 48,
-    "MinAtkState": 63,
-    "MinDefState": 53,
-    "MinWorkState": 36,
-    "MaxHpState": 80,
-    "MaxAtkState": 95,
-    "MaxDefState": 85,
-    "MaxWorkState": 68,
+    "MinHpState": 58,
+    "MinAtkState": 48,
+    "MinDefState": 66,
+    "MinWorkState": 28,
+    "MaxHpState": 90,
+    "MaxAtkState": 80,
+    "MaxDefState": 98,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -21993,7 +22116,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Doll_Sunny_XC"
+    "ModleColorVariant": "Doll_Sunny_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114501,
@@ -22098,14 +22222,14 @@
     ],
     "BattlePassive": 1114401,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 68,
-    "MinDefState": 53,
-    "MinWorkState": 38,
-    "MaxHpState": 85,
-    "MaxAtkState": 100,
-    "MaxDefState": 85,
-    "MaxWorkState": 70,
+    "MinHpState": 63,
+    "MinAtkState": 53,
+    "MinDefState": 66,
+    "MinWorkState": 30,
+    "MaxHpState": 95,
+    "MaxAtkState": 85,
+    "MaxDefState": 98,
+    "MaxWorkState": 62,
     "Satiety": 140000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -22176,7 +22300,196 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Doll_CherryBlossom_XC"
+    "ModleColorVariant": "Doll_CherryBlossom_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 114502,
+    "PokedexId": 310,
+    "IfLock": false,
+    "LumiTag": 1,
+    "Name": "LumiName_114502",
+    "MaxScore": 88,
+    "MinScore": 88,
+    "Genius": 1,
+    "ShardId": 114402,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1200000
+      ],
+      [
+        5,
+        120000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        6000000
+      ],
+      [
+        5,
+        240000
+      ],
+      [
+        4,
+        6000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Doll_CherryBlossom_3D",
+    "Avatar": "Avatar_114502",
+    "CA": "CA_114502",
+    "CardBack": 98,
+    "CardBackRes": [
+      "com_card_9_114502"
+    ],
+    "CardType": 98,
+    "CardResName": [
+      "Card3D_Doll_CherryBlossom"
+    ],
+    "Type1": 4,
+    "Type2": 14,
+    "NormalAttack": 11450101,
+    "ActiveSkill": 11450102,
+    "SkillPool1": [
+      4001,
+      14001
+    ],
+    "SkillPool2": [
+      4004,
+      14005
+    ],
+    "SkillPool3": [
+      4006,
+      3004
+    ],
+    "BattlePassive": 1114502,
+    "HomePassive": 0,
+    "MinHpState": 63,
+    "MinAtkState": 63,
+    "MinDefState": 68,
+    "MinWorkState": 30,
+    "MaxHpState": 95,
+    "MaxAtkState": 95,
+    "MaxDefState": 100,
+    "MaxWorkState": 62,
+    "Satiety": 140000,
+    "SatietyDownSpeed": 36,
+    "WorkAbility": [
+      {
+        "Type": 1,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "88-88",
+    "Story": "story_114501",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 500,
+    "HomeMoveSpeed": 0.4,
+    "HomeRotateSpeed": 90,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Doll_CherryBlossom_3D_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114601,
@@ -22281,14 +22594,14 @@
     ],
     "BattlePassive": 1114401,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 73,
-    "MinDefState": 58,
-    "MinWorkState": 40,
-    "MaxHpState": 85,
-    "MaxAtkState": 105,
-    "MaxDefState": 90,
-    "MaxWorkState": 72,
+    "MinHpState": 63,
+    "MinAtkState": 56,
+    "MinDefState": 73,
+    "MinWorkState": 32,
+    "MaxHpState": 95,
+    "MaxAtkState": 88,
+    "MaxDefState": 105,
+    "MaxWorkState": 64,
     "Satiety": 140000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -22361,7 +22674,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Doll_FallingCherry_XC"
+    "ModleColorVariant": "Doll_FallingCherry_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114701,
@@ -22466,14 +22780,14 @@
     ],
     "BattlePassive": 1114701,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 43,
-    "MinDefState": 68,
-    "MinWorkState": 36,
-    "MaxHpState": 85,
-    "MaxAtkState": 75,
-    "MaxDefState": 100,
-    "MaxWorkState": 68,
+    "MinHpState": 64,
+    "MinAtkState": 44,
+    "MinDefState": 64,
+    "MinWorkState": 28,
+    "MaxHpState": 96,
+    "MaxAtkState": 76,
+    "MaxDefState": 96,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -22544,7 +22858,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rabbit_PinkHelm_XC"
+    "ModleColorVariant": "Rabbit_PinkHelm_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114801,
@@ -22553,7 +22868,7 @@
     "LumiTag": 2,
     "Name": "LumiName_114801",
     "MaxScore": 85,
-    "MinScore": 70,
+    "MinScore": 53,
     "Genius": 1,
     "ShardId": 114701,
     "LumiMap": 100,
@@ -22649,14 +22964,14 @@
     ],
     "BattlePassive": 1114701,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 48,
-    "MinDefState": 68,
-    "MinWorkState": 38,
-    "MaxHpState": 90,
-    "MaxAtkState": 80,
-    "MaxDefState": 100,
-    "MaxWorkState": 70,
+    "MinHpState": 66,
+    "MinAtkState": 52,
+    "MinDefState": 64,
+    "MinWorkState": 30,
+    "MaxHpState": 98,
+    "MaxAtkState": 84,
+    "MaxDefState": 96,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -22691,7 +23006,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-85",
+    "scoreShow": "53-85",
     "Story": "story_114801",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -22727,7 +23042,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rabbit_StarBlade_XC"
+    "ModleColorVariant": "Rabbit_StarBlade_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 114901,
@@ -22832,14 +23148,14 @@
     ],
     "BattlePassive": 1114701,
     "HomePassive": 0,
-    "MinHpState": 63,
-    "MinAtkState": 48,
-    "MinDefState": 73,
-    "MinWorkState": 40,
-    "MaxHpState": 95,
-    "MaxAtkState": 80,
-    "MaxDefState": 105,
-    "MaxWorkState": 72,
+    "MinHpState": 66,
+    "MinAtkState": 52,
+    "MinDefState": 74,
+    "MinWorkState": 32,
+    "MaxHpState": 98,
+    "MaxAtkState": 84,
+    "MaxDefState": 106,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -22912,7 +23228,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Maiden_StarSword_XC"
+    "ModleColorVariant": "Maiden_StarSword_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115001,
@@ -23017,14 +23334,14 @@
     ],
     "BattlePassive": 1115001,
     "HomePassive": 0,
-    "MinHpState": 43,
-    "MinAtkState": 68,
-    "MinDefState": 53,
-    "MinWorkState": 36,
-    "MaxHpState": 75,
-    "MaxAtkState": 100,
-    "MaxDefState": 85,
-    "MaxWorkState": 68,
+    "MinHpState": 64,
+    "MinAtkState": 54,
+    "MinDefState": 54,
+    "MinWorkState": 28,
+    "MaxHpState": 96,
+    "MaxAtkState": 86,
+    "MaxDefState": 86,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -23095,7 +23412,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rabbit_PurpleHat_XC"
+    "ModleColorVariant": "Rabbit_PurpleHat_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115101,
@@ -23104,7 +23422,7 @@
     "LumiTag": 2,
     "Name": "LumiName_115101",
     "MaxScore": 85,
-    "MinScore": 70,
+    "MinScore": 53,
     "Genius": 1,
     "ShardId": 115001,
     "LumiMap": 100,
@@ -23200,14 +23518,14 @@
     ],
     "BattlePassive": 1115001,
     "HomePassive": 0,
-    "MinHpState": 48,
-    "MinAtkState": 68,
-    "MinDefState": 58,
-    "MinWorkState": 38,
-    "MaxHpState": 80,
-    "MaxAtkState": 100,
-    "MaxDefState": 90,
-    "MaxWorkState": 70,
+    "MinHpState": 66,
+    "MinAtkState": 62,
+    "MinDefState": 54,
+    "MinWorkState": 30,
+    "MaxHpState": 98,
+    "MaxAtkState": 94,
+    "MaxDefState": 86,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -23242,7 +23560,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-85",
+    "scoreShow": "53-85",
     "Story": "story_115101",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -23278,7 +23596,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rabbit_EdgeShadow_XC"
+    "ModleColorVariant": "Rabbit_EdgeShadow_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115201,
@@ -23383,14 +23702,14 @@
     ],
     "BattlePassive": 1115001,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 73,
-    "MinDefState": 58,
-    "MinWorkState": 40,
-    "MaxHpState": 85,
-    "MaxAtkState": 105,
-    "MaxDefState": 90,
-    "MaxWorkState": 72,
+    "MinHpState": 66,
+    "MinAtkState": 72,
+    "MinDefState": 54,
+    "MinWorkState": 32,
+    "MaxHpState": 98,
+    "MaxAtkState": 104,
+    "MaxDefState": 86,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -23463,7 +23782,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Maiden_MoonSword_XC"
+    "ModleColorVariant": "Maiden_MoonSword_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115204,
@@ -23568,14 +23888,14 @@
     ],
     "BattlePassive": 1115204,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 58,
-    "MinDefState": 73,
-    "MinWorkState": 40,
-    "MaxHpState": 85,
-    "MaxAtkState": 90,
-    "MaxDefState": 105,
-    "MaxWorkState": 72,
+    "MinHpState": 66,
+    "MinAtkState": 72,
+    "MinDefState": 54,
+    "MinWorkState": 32,
+    "MaxHpState": 98,
+    "MaxAtkState": 104,
+    "MaxDefState": 86,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -23646,7 +23966,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Maiden_MoonSword_01_XC"
+    "ModleColorVariant": "Maiden_MoonSword_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115301,
@@ -23752,13 +24073,13 @@
     "BattlePassive": 1115301,
     "HomePassive": 0,
     "MinHpState": 48,
-    "MinAtkState": 60,
-    "MinDefState": 53,
-    "MinWorkState": 39,
+    "MinAtkState": 64,
+    "MinDefState": 60,
+    "MinWorkState": 28,
     "MaxHpState": 80,
-    "MaxAtkState": 92,
-    "MaxDefState": 85,
-    "MaxWorkState": 71,
+    "MaxAtkState": 96,
+    "MaxDefState": 92,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -23829,7 +24150,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Crow_Music_XC"
+    "ModleColorVariant": "Crow_Music_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115501,
@@ -23934,14 +24256,14 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
-    "MinHpState": 54,
-    "MinAtkState": 64,
-    "MinDefState": 44,
-    "MinWorkState": 42,
-    "MaxHpState": 86,
-    "MaxAtkState": 96,
-    "MaxDefState": 76,
-    "MaxWorkState": 74,
+    "MinHpState": 55,
+    "MinAtkState": 65,
+    "MinDefState": 55,
+    "MinWorkState": 29,
+    "MaxHpState": 87,
+    "MaxAtkState": 97,
+    "MaxDefState": 87,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -24012,7 +24334,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Otter_Sword_XC"
+    "ModleColorVariant": "Otter_Sword_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115601,
@@ -24117,14 +24440,14 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
-    "MinHpState": 64,
-    "MinAtkState": 54,
-    "MinDefState": 44,
-    "MinWorkState": 42,
-    "MaxHpState": 96,
-    "MaxAtkState": 86,
-    "MaxDefState": 76,
-    "MaxWorkState": 74,
+    "MinHpState": 65,
+    "MinAtkState": 55,
+    "MinDefState": 55,
+    "MinWorkState": 29,
+    "MaxHpState": 97,
+    "MaxAtkState": 87,
+    "MaxDefState": 87,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -24195,7 +24518,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Otter_BlueFist_XC"
+    "ModleColorVariant": "Otter_BlueFist_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115701,
@@ -24300,14 +24624,14 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
-    "MinHpState": 54,
-    "MinAtkState": 64,
-    "MinDefState": 44,
-    "MinWorkState": 42,
-    "MaxHpState": 86,
-    "MaxAtkState": 96,
-    "MaxDefState": 76,
-    "MaxWorkState": 74,
+    "MinHpState": 55,
+    "MinAtkState": 65,
+    "MinDefState": 55,
+    "MinWorkState": 29,
+    "MaxHpState": 87,
+    "MaxAtkState": 97,
+    "MaxDefState": 87,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -24378,7 +24702,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Otter_PinkFist_XC"
+    "ModleColorVariant": "Otter_PinkFist_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115801,
@@ -24483,14 +24808,14 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
-    "MinHpState": 54,
-    "MinAtkState": 44,
-    "MinDefState": 64,
-    "MinWorkState": 42,
-    "MaxHpState": 86,
-    "MaxAtkState": 76,
-    "MaxDefState": 96,
-    "MaxWorkState": 74,
+    "MinHpState": 55,
+    "MinAtkState": 55,
+    "MinDefState": 65,
+    "MinWorkState": 29,
+    "MaxHpState": 87,
+    "MaxAtkState": 87,
+    "MaxDefState": 97,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -24561,7 +24886,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Otter_BattleArmor_XC"
+    "ModleColorVariant": "Otter_BattleArmor_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 115901,
@@ -24666,14 +24992,14 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
-    "MinHpState": 44,
-    "MinAtkState": 54,
-    "MinDefState": 64,
-    "MinWorkState": 42,
-    "MaxHpState": 76,
-    "MaxAtkState": 86,
-    "MaxDefState": 96,
-    "MaxWorkState": 74,
+    "MinHpState": 55,
+    "MinAtkState": 55,
+    "MinDefState": 65,
+    "MinWorkState": 29,
+    "MaxHpState": 87,
+    "MaxAtkState": 87,
+    "MaxDefState": 97,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -24744,12 +25070,13 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Otter_SteelHelm_XC"
+    "ModleColorVariant": "Otter_SteelHelm_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 116001,
     "PokedexId": 1710,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 2,
     "Name": "LumiName_116001",
     "MaxScore": 89,
@@ -24851,14 +25178,14 @@
     ],
     "BattlePassive": 1116001,
     "HomePassive": 0,
-    "MinHpState": 64,
-    "MinAtkState": 64,
-    "MinDefState": 64,
-    "MinWorkState": 36,
-    "MaxHpState": 96,
-    "MaxAtkState": 96,
-    "MaxDefState": 96,
-    "MaxWorkState": 68,
+    "MinHpState": 65,
+    "MinAtkState": 65,
+    "MinDefState": 65,
+    "MinWorkState": 33,
+    "MaxHpState": 97,
+    "MaxAtkState": 97,
+    "MaxDefState": 97,
+    "MaxWorkState": 65,
     "Satiety": 280000,
     "SatietyDownSpeed": 38,
     "WorkAbility": [],
@@ -24926,7 +25253,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Otter_Knight_XC"
+    "ModleColorVariant": "Otter_Knight_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 116501,
@@ -25109,7 +25437,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Egg_Pop_XC"
+    "ModleColorVariant": "Egg_Pop_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 116601,
@@ -25215,13 +25544,13 @@
     "BattlePassive": 1116601,
     "HomePassive": 0,
     "MinHpState": 64,
-    "MinAtkState": 56,
-    "MinDefState": 60,
-    "MinWorkState": 36,
+    "MinAtkState": 53,
+    "MinDefState": 68,
+    "MinWorkState": 31,
     "MaxHpState": 96,
-    "MaxAtkState": 88,
-    "MaxDefState": 92,
-    "MaxWorkState": 68,
+    "MaxAtkState": 85,
+    "MaxDefState": 100,
+    "MaxWorkState": 63,
     "Satiety": 140000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -25292,7 +25621,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Muscle_Cat_XC"
+    "ModleColorVariant": "Muscle_Cat_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 116701,
@@ -25300,8 +25630,8 @@
     "IfLock": false,
     "LumiTag": 1,
     "Name": "LumiName_116701",
-    "MaxScore": 85,
-    "MinScore": 53,
+    "MaxScore": 84,
+    "MinScore": 52,
     "Genius": 2,
     "ShardId": 116701,
     "LumiMap": 100,
@@ -25399,14 +25729,14 @@
     "HomePassive": 2116701,
     "MinHpState": 46,
     "MinAtkState": 36,
-    "MinDefState": 56,
+    "MinDefState": 52,
     "MinWorkState": 74,
     "MaxHpState": 70,
     "MaxAtkState": 60,
-    "MaxDefState": 80,
+    "MaxDefState": 76,
     "MaxWorkState": 130,
     "Satiety": 140000,
-    "SatietyDownSpeed": 30,
+    "SatietyDownSpeed": 28,
     "WorkAbility": [
       {
         "Type": 4,
@@ -25439,7 +25769,7 @@
         5000
       ]
     ],
-    "scoreShow": "53-85",
+    "scoreShow": "52-84",
     "Story": "story_116701",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -25475,7 +25805,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Fairy_Sweetdream_XC"
+    "ModleColorVariant": "Fairy_Sweetdream_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 116801,
@@ -25581,13 +25912,13 @@
     "BattlePassive": 1116801,
     "HomePassive": 0,
     "MinHpState": 63,
-    "MinAtkState": 53,
-    "MinDefState": 58,
-    "MinWorkState": 34,
+    "MinAtkState": 52,
+    "MinDefState": 63,
+    "MinWorkState": 30,
     "MaxHpState": 95,
-    "MaxAtkState": 85,
-    "MaxDefState": 90,
-    "MaxWorkState": 66,
+    "MaxAtkState": 84,
+    "MaxDefState": 95,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -25658,7 +25989,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Sheep_Sleepwalk_XC"
+    "ModleColorVariant": "Sheep_Sleepwalk_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 116901,
@@ -25841,7 +26173,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rabbit_Hoho_XC"
+    "ModleColorVariant": "Rabbit_Hoho_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 117501,
@@ -26024,7 +26357,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Ferretfish_XC"
+    "ModleColorVariant": "Ferretfish_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 118101,
@@ -26129,14 +26463,14 @@
     ],
     "BattlePassive": 1118101,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 63,
-    "MinDefState": 58,
-    "MinWorkState": 34,
-    "MaxHpState": 85,
-    "MaxAtkState": 95,
-    "MaxDefState": 90,
-    "MaxWorkState": 66,
+    "MinHpState": 56,
+    "MinAtkState": 62,
+    "MinDefState": 60,
+    "MinWorkState": 30,
+    "MaxHpState": 88,
+    "MaxAtkState": 94,
+    "MaxDefState": 92,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -26207,7 +26541,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Kangaroo_Fist_XC"
+    "ModleColorVariant": "Kangaroo_Fist_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 118201,
@@ -26312,14 +26647,14 @@
     ],
     "BattlePassive": 1118101,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 73,
-    "MinDefState": 58,
-    "MinWorkState": 36,
-    "MaxHpState": 85,
-    "MaxAtkState": 105,
-    "MaxDefState": 90,
-    "MaxWorkState": 68,
+    "MinHpState": 56,
+    "MinAtkState": 72,
+    "MinDefState": 60,
+    "MinWorkState": 32,
+    "MaxHpState": 88,
+    "MaxAtkState": 104,
+    "MaxDefState": 92,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -26390,7 +26725,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Kangaroo_Combat_XC"
+    "ModleColorVariant": "Kangaroo_Combat_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 118204,
@@ -26495,14 +26831,14 @@
     ],
     "BattlePassive": 1118204,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 73,
-    "MinDefState": 58,
-    "MinWorkState": 36,
-    "MaxHpState": 85,
-    "MaxAtkState": 105,
-    "MaxDefState": 90,
-    "MaxWorkState": 68,
+    "MinHpState": 56,
+    "MinAtkState": 72,
+    "MinDefState": 60,
+    "MinWorkState": 32,
+    "MaxHpState": 88,
+    "MaxAtkState": 104,
+    "MaxDefState": 92,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -26575,7 +26911,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Kangaroo_Combat_01_XC"
+    "ModleColorVariant": "Kangaroo_Combat_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 118301,
@@ -26584,7 +26921,7 @@
     "LumiTag": 2,
     "Name": "LumiName_118301",
     "MaxScore": 86,
-    "MinScore": 70,
+    "MinScore": 54,
     "Genius": 1,
     "ShardId": 112001,
     "LumiMap": 100,
@@ -26680,14 +27017,14 @@
     ],
     "BattlePassive": 1112001,
     "HomePassive": 0,
-    "MinHpState": 58,
+    "MinHpState": 63,
     "MinAtkState": 54,
     "MinDefState": 68,
-    "MinWorkState": 36,
-    "MaxHpState": 90,
+    "MinWorkState": 31,
+    "MaxHpState": 95,
     "MaxAtkState": 86,
     "MaxDefState": 100,
-    "MaxWorkState": 68,
+    "MaxWorkState": 63,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -26722,7 +27059,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-86",
+    "scoreShow": "54-86",
     "Story": "story_118301",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -26758,7 +27095,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_Aqua_XC"
+    "ModleColorVariant": "Dragon_Aqua_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 118901,
@@ -26767,7 +27105,7 @@
     "LumiTag": 2,
     "Name": "LumiName_118901",
     "MaxScore": 86,
-    "MinScore": 70,
+    "MinScore": 54,
     "Genius": 1,
     "ShardId": 112801,
     "LumiMap": 100,
@@ -26863,14 +27201,14 @@
     ],
     "BattlePassive": 1112801,
     "HomePassive": 0,
-    "MinHpState": 66,
+    "MinHpState": 68,
     "MinAtkState": 53,
-    "MinDefState": 61,
-    "MinWorkState": 36,
-    "MaxHpState": 98,
+    "MinDefState": 64,
+    "MinWorkState": 31,
+    "MaxHpState": 100,
     "MaxAtkState": 85,
-    "MaxDefState": 93,
-    "MaxWorkState": 68,
+    "MaxDefState": 96,
+    "MaxWorkState": 63,
     "Satiety": 140000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -26905,7 +27243,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-86",
+    "scoreShow": "54-86",
     "Story": "story_118901",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -26941,7 +27279,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_Grass_XC"
+    "ModleColorVariant": "Dragon_Grass_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 119201,
@@ -27047,13 +27386,13 @@
     "BattlePassive": 1114301,
     "HomePassive": 0,
     "MinHpState": 63,
-    "MinAtkState": 48,
-    "MinDefState": 63,
-    "MinWorkState": 38,
+    "MinAtkState": 51,
+    "MinDefState": 68,
+    "MinWorkState": 30,
     "MaxHpState": 95,
-    "MaxAtkState": 80,
-    "MaxDefState": 95,
-    "MaxWorkState": 70,
+    "MaxAtkState": 83,
+    "MaxDefState": 100,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -27124,7 +27463,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Angle_Sea_XC"
+    "ModleColorVariant": "Angle_Sea_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 119204,
@@ -27230,13 +27570,13 @@
     "BattlePassive": 1114301,
     "HomePassive": 0,
     "MinHpState": 63,
-    "MinAtkState": 63,
-    "MinDefState": 48,
-    "MinWorkState": 38,
+    "MinAtkState": 51,
+    "MinDefState": 68,
+    "MinWorkState": 30,
     "MaxHpState": 95,
-    "MaxAtkState": 95,
-    "MaxDefState": 80,
-    "MaxWorkState": 70,
+    "MaxAtkState": 83,
+    "MaxDefState": 100,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -27307,7 +27647,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Angle_Sea_01_XC"
+    "ModleColorVariant": "Angle_Sea_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 119301,
@@ -27413,13 +27754,13 @@
     "BattlePassive": 1114301,
     "HomePassive": 0,
     "MinHpState": 68,
-    "MinAtkState": 53,
-    "MinDefState": 63,
-    "MinWorkState": 40,
+    "MinAtkState": 56,
+    "MinDefState": 68,
+    "MinWorkState": 32,
     "MaxHpState": 100,
-    "MaxAtkState": 85,
-    "MaxDefState": 95,
-    "MaxWorkState": 72,
+    "MaxAtkState": 88,
+    "MaxDefState": 100,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -27492,7 +27833,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Angle_Seaflower_XC"
+    "ModleColorVariant": "Angle_Seaflower_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 119601,
@@ -27597,14 +27939,14 @@
     ],
     "BattlePassive": 1119601,
     "HomePassive": 0,
-    "MinHpState": 68,
+    "MinHpState": 64,
     "MinAtkState": 43,
-    "MinDefState": 58,
-    "MinWorkState": 35,
-    "MaxHpState": 100,
+    "MinDefState": 68,
+    "MinWorkState": 29,
+    "MaxHpState": 96,
     "MaxAtkState": 75,
-    "MaxDefState": 90,
-    "MaxWorkState": 67,
+    "MaxDefState": 100,
+    "MaxWorkState": 61,
     "Satiety": 160000,
     "SatietyDownSpeed": 26,
     "WorkAbility": [
@@ -27675,7 +28017,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Buffalo_Baby_XC"
+    "ModleColorVariant": "Buffalo_Baby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 119701,
@@ -27780,14 +28123,14 @@
     ],
     "BattlePassive": 1119601,
     "HomePassive": 0,
-    "MinHpState": 73,
+    "MinHpState": 64,
     "MinAtkState": 48,
-    "MinDefState": 58,
-    "MinWorkState": 37,
-    "MaxHpState": 105,
+    "MinDefState": 73,
+    "MinWorkState": 31,
+    "MaxHpState": 96,
     "MaxAtkState": 80,
-    "MaxDefState": 90,
-    "MaxWorkState": 69,
+    "MaxDefState": 105,
+    "MaxWorkState": 63,
     "Satiety": 140000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -27858,7 +28201,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Buffalo_Stout_XC"
+    "ModleColorVariant": "Buffalo_Stout_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 119801,
@@ -27963,14 +28307,14 @@
     ],
     "BattlePassive": 1119801,
     "HomePassive": 0,
-    "MinHpState": 63,
-    "MinAtkState": 63,
+    "MinHpState": 62,
+    "MinAtkState": 68,
     "MinDefState": 48,
-    "MinWorkState": 34,
-    "MaxHpState": 95,
-    "MaxAtkState": 95,
+    "MinWorkState": 30,
+    "MaxHpState": 94,
+    "MaxAtkState": 100,
     "MaxDefState": 80,
-    "MaxWorkState": 66,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -28041,7 +28385,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Human_Stick_XC"
+    "ModleColorVariant": "Human_Stick_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 119901,
@@ -28147,13 +28492,13 @@
     "BattlePassive": 1119901,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 53,
-    "MinDefState": 63,
-    "MinWorkState": 34,
+    "MinAtkState": 52,
+    "MinDefState": 68,
+    "MinWorkState": 30,
     "MaxHpState": 90,
-    "MaxAtkState": 85,
-    "MaxDefState": 95,
-    "MaxWorkState": 66,
+    "MaxAtkState": 84,
+    "MaxDefState": 100,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -28224,13 +28569,14 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Shark_Nai_XC"
+    "ModleColorVariant": "Shark_Nai_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120001,
     "PokedexId": 1260,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 0,
     "Name": "LumiName_120001",
     "MaxScore": 84,
     "MinScore": 52,
@@ -28407,13 +28753,14 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Elephant_Cactus_XC"
+    "ModleColorVariant": "Elephant_Cactus_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120101,
     "PokedexId": 1270,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 0,
     "Name": "LumiName_120101",
     "MaxScore": 84,
     "MinScore": 52,
@@ -28512,14 +28859,14 @@
     ],
     "BattlePassive": 1120101,
     "HomePassive": 0,
-    "MinHpState": 48,
-    "MinAtkState": 68,
-    "MinDefState": 58,
-    "MinWorkState": 34,
-    "MaxHpState": 80,
-    "MaxAtkState": 100,
-    "MaxDefState": 90,
-    "MaxWorkState": 66,
+    "MinHpState": 43,
+    "MinAtkState": 83,
+    "MinDefState": 52,
+    "MinWorkState": 30,
+    "MaxHpState": 75,
+    "MaxAtkState": 115,
+    "MaxDefState": 84,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -28590,13 +28937,14 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bomber_Croc_XC"
+    "ModleColorVariant": "Bomber_Croc_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120301,
     "PokedexId": 1280,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 0,
     "Name": "LumiName_120301",
     "MaxScore": 84,
     "MinScore": 52,
@@ -28773,13 +29121,14 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Frog_Tire_XC"
+    "ModleColorVariant": "Frog_Tire_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120401,
     "PokedexId": 1290,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 0,
     "Name": "LumiName_120401",
     "MaxScore": 84,
     "MinScore": 52,
@@ -28956,7 +29305,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Ape_Treebigfoot_XC"
+    "ModleColorVariant": "Ape_Treebigfoot_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120501,
@@ -29139,7 +29489,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Banana_Gorilla_XC"
+    "ModleColorVariant": "Banana_Gorilla_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120601,
@@ -29245,13 +29596,13 @@
     "BattlePassive": 1120601,
     "HomePassive": 0,
     "MinHpState": 48,
-    "MinAtkState": 73,
-    "MinDefState": 53,
-    "MinWorkState": 34,
+    "MinAtkState": 76,
+    "MinDefState": 54,
+    "MinWorkState": 30,
     "MaxHpState": 80,
-    "MaxAtkState": 105,
-    "MaxDefState": 85,
-    "MaxWorkState": 66,
+    "MaxAtkState": 108,
+    "MaxDefState": 86,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -29322,7 +29673,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Mugshot_XC"
+    "ModleColorVariant": "Mugshot_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120701,
@@ -29428,12 +29780,12 @@
     "BattlePassive": 0,
     "HomePassive": 2120701,
     "MinHpState": 56,
-    "MinAtkState": 31,
-    "MinDefState": 61,
+    "MinAtkState": 16,
+    "MinDefState": 76,
     "MinWorkState": 60,
     "MaxHpState": 80,
-    "MaxAtkState": 55,
-    "MaxDefState": 85,
+    "MaxAtkState": 40,
+    "MaxDefState": 100,
     "MaxWorkState": 116,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
@@ -29505,7 +29857,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Coffee_Dancer_XC"
+    "ModleColorVariant": "Coffee_Dancer_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120704,
@@ -29611,13 +29964,13 @@
     "BattlePassive": 1120704,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 53,
-    "MinDefState": 63,
-    "MinWorkState": 34,
+    "MinAtkState": 48,
+    "MinDefState": 72,
+    "MinWorkState": 30,
     "MaxHpState": 90,
-    "MaxAtkState": 85,
-    "MaxDefState": 95,
-    "MaxWorkState": 66,
+    "MaxAtkState": 80,
+    "MaxDefState": 104,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -29688,7 +30041,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Coffee_Dancer_01_XC"
+    "ModleColorVariant": "Coffee_Dancer_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120801,
@@ -29793,14 +30147,14 @@
     ],
     "BattlePassive": 1120801,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 73,
-    "MinDefState": 48,
-    "MinWorkState": 34,
-    "MaxHpState": 85,
-    "MaxAtkState": 105,
-    "MaxDefState": 80,
-    "MaxWorkState": 66,
+    "MinHpState": 54,
+    "MinAtkState": 74,
+    "MinDefState": 50,
+    "MinWorkState": 30,
+    "MaxHpState": 86,
+    "MaxAtkState": 106,
+    "MaxDefState": 82,
+    "MaxWorkState": 62,
     "Satiety": 160000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -29871,7 +30225,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Flower_Hanbao_XC"
+    "ModleColorVariant": "Flower_Hanbao_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120901,
@@ -29976,14 +30331,14 @@
     ],
     "BattlePassive": 1120901,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 83,
-    "MinDefState": 48,
-    "MinWorkState": 36,
-    "MaxHpState": 85,
-    "MaxAtkState": 115,
-    "MaxDefState": 80,
-    "MaxWorkState": 68,
+    "MinHpState": 56,
+    "MinAtkState": 78,
+    "MinDefState": 54,
+    "MinWorkState": 32,
+    "MaxHpState": 88,
+    "MaxAtkState": 110,
+    "MaxDefState": 86,
+    "MaxWorkState": 64,
     "Satiety": 220000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -30054,7 +30409,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Flower_ZhanFang_XC"
+    "ModleColorVariant": "Flower_ZhanFang_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 120904,
@@ -30159,14 +30515,14 @@
     ],
     "BattlePassive": 1120904,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 83,
-    "MinDefState": 48,
-    "MinWorkState": 36,
-    "MaxHpState": 85,
-    "MaxAtkState": 115,
-    "MaxDefState": 80,
-    "MaxWorkState": 68,
+    "MinHpState": 56,
+    "MinAtkState": 78,
+    "MinDefState": 54,
+    "MinWorkState": 32,
+    "MaxHpState": 88,
+    "MaxAtkState": 110,
+    "MaxDefState": 86,
+    "MaxWorkState": 64,
     "Satiety": 220000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -30237,7 +30593,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Flower_ZhanFang_01_XC"
+    "ModleColorVariant": "Flower_ZhanFang_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 121001,
@@ -30342,14 +30699,14 @@
     ],
     "BattlePassive": 1121001,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 83,
-    "MinDefState": 48,
-    "MinWorkState": 36,
-    "MaxHpState": 85,
-    "MaxAtkState": 115,
-    "MaxDefState": 80,
-    "MaxWorkState": 68,
+    "MinHpState": 52,
+    "MinAtkState": 84,
+    "MinDefState": 52,
+    "MinWorkState": 32,
+    "MaxHpState": 84,
+    "MaxAtkState": 116,
+    "MaxDefState": 84,
+    "MaxWorkState": 64,
     "Satiety": 140000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -30420,7 +30777,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Mantis_Fist_XC"
+    "ModleColorVariant": "Mantis_Fist_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 121004,
@@ -30525,14 +30883,14 @@
     ],
     "BattlePassive": 1121004,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 83,
-    "MinDefState": 48,
-    "MinWorkState": 36,
-    "MaxHpState": 85,
-    "MaxAtkState": 115,
-    "MaxDefState": 80,
-    "MaxWorkState": 68,
+    "MinHpState": 52,
+    "MinAtkState": 84,
+    "MinDefState": 52,
+    "MinWorkState": 32,
+    "MaxHpState": 84,
+    "MaxAtkState": 116,
+    "MaxDefState": 84,
+    "MaxWorkState": 64,
     "Satiety": 140000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -30603,7 +30961,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Mantis_Fist_01_XC"
+    "ModleColorVariant": "Mantis_Fist_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 121101,
@@ -30708,14 +31067,14 @@
     ],
     "BattlePassive": 1121001,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 73,
-    "MinDefState": 48,
-    "MinWorkState": 34,
-    "MaxHpState": 85,
-    "MaxAtkState": 105,
-    "MaxDefState": 80,
-    "MaxWorkState": 66,
+    "MinHpState": 52,
+    "MinAtkState": 74,
+    "MinDefState": 52,
+    "MinWorkState": 30,
+    "MaxHpState": 84,
+    "MaxAtkState": 106,
+    "MaxDefState": 84,
+    "MaxWorkState": 62,
     "Satiety": 140000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -30786,7 +31145,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Mantis_FistBaby_XC"
+    "ModleColorVariant": "Mantis_FistBaby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 121201,
@@ -30892,13 +31252,13 @@
     "BattlePassive": 1121201,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 53,
-    "MinDefState": 53,
-    "MinWorkState": 36,
+    "MinAtkState": 50,
+    "MinDefState": 64,
+    "MinWorkState": 28,
     "MaxHpState": 90,
-    "MaxAtkState": 85,
-    "MaxDefState": 85,
-    "MaxWorkState": 68,
+    "MaxAtkState": 82,
+    "MaxDefState": 96,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [],
@@ -30964,7 +31324,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Fruit_PitayaBaby_XC"
+    "ModleColorVariant": "Fruit_PitayaBaby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 121301,
@@ -30973,7 +31334,7 @@
     "LumiTag": 2,
     "Name": "LumiName_121301",
     "MaxScore": 85,
-    "MinScore": 70,
+    "MinScore": 53,
     "Genius": 1,
     "ShardId": 121201,
     "LumiMap": 100,
@@ -31070,13 +31431,13 @@
     "BattlePassive": 1121301,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 53,
-    "MinDefState": 63,
-    "MinWorkState": 38,
+    "MinAtkState": 50,
+    "MinDefState": 74,
+    "MinWorkState": 30,
     "MaxHpState": 90,
-    "MaxAtkState": 85,
-    "MaxDefState": 95,
-    "MaxWorkState": 70,
+    "MaxAtkState": 82,
+    "MaxDefState": 106,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [],
@@ -31106,7 +31467,7 @@
         5000
       ]
     ],
-    "scoreShow": "70-85",
+    "scoreShow": "53-85",
     "Story": "story_121301",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -31144,7 +31505,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Fruit_Pitaya_XC"
+    "ModleColorVariant": "Fruit_Pitaya_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 121304,
@@ -31250,13 +31612,13 @@
     "BattlePassive": 1121304,
     "HomePassive": 0,
     "MinHpState": 58,
-    "MinAtkState": 53,
-    "MinDefState": 63,
-    "MinWorkState": 38,
+    "MinAtkState": 50,
+    "MinDefState": 74,
+    "MinWorkState": 30,
     "MaxHpState": 90,
-    "MaxAtkState": 85,
-    "MaxDefState": 95,
-    "MaxWorkState": 70,
+    "MaxAtkState": 82,
+    "MaxDefState": 106,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [],
@@ -31322,7 +31684,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Fruit_Pumpkin_XC"
+    "ModleColorVariant": "Fruit_Pumpkin_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 121401,
@@ -31427,14 +31790,14 @@
     ],
     "BattlePassive": 1121401,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 63,
-    "MinDefState": 63,
-    "MinWorkState": 40,
-    "MaxHpState": 90,
-    "MaxAtkState": 95,
-    "MaxDefState": 95,
-    "MaxWorkState": 72,
+    "MinHpState": 68,
+    "MinAtkState": 50,
+    "MinDefState": 74,
+    "MinWorkState": 32,
+    "MaxHpState": 100,
+    "MaxAtkState": 82,
+    "MaxDefState": 106,
+    "MaxWorkState": 64,
     "Satiety": 280000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [],
@@ -31470,7 +31833,7 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1800,
+    "LoveHeartHeight": 1500,
     "CatchRateCheckHeight": 750,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
@@ -31502,7 +31865,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Fruit_Pitayaking_XC"
+    "ModleColorVariant": "Fruit_Pitayaking_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 122301,
@@ -31685,7 +32049,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bird_Walker_XC"
+    "ModleColorVariant": "Bird_Walker_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 123101,
@@ -31868,7 +32233,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Turtle_Iceshell_XC"
+    "ModleColorVariant": "Turtle_Iceshell_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 123201,
@@ -31973,14 +32339,14 @@
     ],
     "BattlePassive": 1123201,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 53,
-    "MinDefState": 68,
-    "MinWorkState": 37,
-    "MaxHpState": 90,
-    "MaxAtkState": 85,
-    "MaxDefState": 100,
-    "MaxWorkState": 69,
+    "MinHpState": 56,
+    "MinAtkState": 56,
+    "MinDefState": 74,
+    "MinWorkState": 30,
+    "MaxHpState": 88,
+    "MaxAtkState": 88,
+    "MaxDefState": 106,
+    "MaxWorkState": 62,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -32053,7 +32419,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "CatShark_Rock_XC"
+    "ModleColorVariant": "CatShark_Rock_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 123401,
@@ -32236,7 +32603,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bull_IronHorn_XC"
+    "ModleColorVariant": "Bull_IronHorn_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 123404,
@@ -32246,7 +32614,7 @@
     "Name": "LumiName_123404",
     "MaxScore": 85,
     "MinScore": 85,
-    "Genius": 1,
+    "Genius": 2,
     "ShardId": 123401,
     "LumiMap": 100,
     "MarketOrder": 0,
@@ -32339,16 +32707,16 @@
       6006,
       15003
     ],
-    "BattlePassive": 1123404,
+    "BattlePassive": 0,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 58,
-    "MinDefState": 68,
-    "MinWorkState": 33,
+    "MinHpState": 61,
+    "MinAtkState": 11,
+    "MinDefState": 76,
+    "MinWorkState": 64,
     "MaxHpState": 85,
-    "MaxAtkState": 90,
+    "MaxAtkState": 35,
     "MaxDefState": 100,
-    "MaxWorkState": 65,
+    "MaxWorkState": 120,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -32421,7 +32789,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bull_IronHorn_01_XC"
+    "ModleColorVariant": "Bull_IronHorn_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 123801,
@@ -32528,12 +32897,12 @@
     "HomePassive": 0,
     "MinHpState": 48,
     "MinAtkState": 73,
-    "MinDefState": 58,
-    "MinWorkState": 37,
+    "MinDefState": 64,
+    "MinWorkState": 31,
     "MaxHpState": 80,
     "MaxAtkState": 105,
-    "MaxDefState": 90,
-    "MaxWorkState": 69,
+    "MaxDefState": 96,
+    "MaxWorkState": 63,
     "Satiety": 220000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -32604,7 +32973,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Fightmant_XC"
+    "ModleColorVariant": "Fightmant_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 123901,
@@ -32709,14 +33079,14 @@
     ],
     "BattlePassive": 1102101,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 56,
-    "MinDefState": 52,
-    "MinWorkState": 34,
-    "MaxHpState": 90,
-    "MaxAtkState": 88,
-    "MaxDefState": 84,
-    "MaxWorkState": 66,
+    "MinHpState": 60,
+    "MinAtkState": 48,
+    "MinDefState": 64,
+    "MinWorkState": 28,
+    "MaxHpState": 92,
+    "MaxAtkState": 80,
+    "MaxDefState": 96,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [
@@ -32787,7 +33157,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Deer_Gloria_XC"
+    "ModleColorVariant": "Deer_Gloria_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 124001,
@@ -32892,14 +33263,14 @@
     ],
     "BattlePassive": 1102101,
     "HomePassive": 0,
-    "MinHpState": 68,
-    "MinAtkState": 56,
-    "MinDefState": 52,
-    "MinWorkState": 36,
-    "MaxHpState": 100,
-    "MaxAtkState": 88,
-    "MaxDefState": 84,
-    "MaxWorkState": 68,
+    "MinHpState": 62,
+    "MinAtkState": 54,
+    "MinDefState": 66,
+    "MinWorkState": 30,
+    "MaxHpState": 94,
+    "MaxAtkState": 86,
+    "MaxDefState": 98,
+    "MaxWorkState": 62,
     "Satiety": 140000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -32970,7 +33341,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Deer_Solaris_XC"
+    "ModleColorVariant": "Deer_Solaris_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 124301,
@@ -33075,14 +33447,14 @@
     ],
     "BattlePassive": 1124301,
     "HomePassive": 0,
-    "MinHpState": 53,
-    "MinAtkState": 63,
-    "MinDefState": 58,
-    "MinWorkState": 38,
-    "MaxHpState": 85,
-    "MaxAtkState": 95,
-    "MaxDefState": 90,
-    "MaxWorkState": 70,
+    "MinHpState": 63,
+    "MinAtkState": 66,
+    "MinDefState": 53,
+    "MinWorkState": 30,
+    "MaxHpState": 95,
+    "MaxAtkState": 98,
+    "MaxDefState": 85,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [
@@ -33153,7 +33525,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bird_Smart_XC"
+    "ModleColorVariant": "Bird_Smart_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 124401,
@@ -33336,7 +33709,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Fish_Lantern_XC"
+    "ModleColorVariant": "Fish_Lantern_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 125601,
@@ -33514,14 +33888,15 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Ostrich_Knife_XC"
+    "ModleColorVariant": "Ostrich_Knife_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 125604,
     "PokedexId": 99999,
     "IfLock": false,
     "LumiTag": 3,
-    "Name": "LumiName_125601",
+    "Name": "LumiName_125604",
     "MaxScore": 85,
     "MinScore": 53,
     "Genius": 1,
@@ -33597,7 +33972,7 @@
     "Model": "Ostrich_Knife_01",
     "Avatar": "Avatar_125604",
     "CA": "CA_125604",
-    "CardBack": 0,
+    "CardBack": 50,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -33692,7 +34067,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Ostrich_Knife_01_XC"
+    "ModleColorVariant": "Ostrich_Knife_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 125801,
@@ -33798,13 +34174,13 @@
     "BattlePassive": 1125801,
     "HomePassive": 0,
     "MinHpState": 63,
-    "MinAtkState": 48,
-    "MinDefState": 63,
-    "MinWorkState": 34,
+    "MinAtkState": 67,
+    "MinDefState": 48,
+    "MinWorkState": 30,
     "MaxHpState": 95,
-    "MaxAtkState": 80,
-    "MaxDefState": 95,
-    "MaxWorkState": 66,
+    "MaxAtkState": 99,
+    "MaxDefState": 80,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -33875,7 +34251,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Pig_Starry_XC"
+    "ModleColorVariant": "Pig_Starry_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 125804,
@@ -33981,13 +34358,13 @@
     "BattlePassive": 1125804,
     "HomePassive": 0,
     "MinHpState": 63,
-    "MinAtkState": 48,
-    "MinDefState": 63,
-    "MinWorkState": 34,
+    "MinAtkState": 67,
+    "MinDefState": 48,
+    "MinWorkState": 30,
     "MaxHpState": 95,
-    "MaxAtkState": 80,
-    "MaxDefState": 95,
-    "MaxWorkState": 66,
+    "MaxAtkState": 99,
+    "MaxDefState": 80,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -34058,7 +34435,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Pig_Starry_01_XC"
+    "ModleColorVariant": "Pig_Starry_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 125901,
@@ -34163,14 +34541,14 @@
     ],
     "BattlePassive": 1112501,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 48,
+    "MinHpState": 50,
+    "MinAtkState": 62,
     "MinDefState": 73,
-    "MinWorkState": 37,
-    "MaxHpState": 90,
-    "MaxAtkState": 80,
+    "MinWorkState": 31,
+    "MaxHpState": 82,
+    "MaxAtkState": 94,
     "MaxDefState": 105,
-    "MaxWorkState": 69,
+    "MaxWorkState": 63,
     "Satiety": 120000,
     "SatietyDownSpeed": 32,
     "WorkAbility": [
@@ -34241,7 +34619,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Insect_Rockhorn_King_XC"
+    "ModleColorVariant": "Insect_Rockhorn_King_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 126301,
@@ -34250,7 +34629,7 @@
     "LumiTag": 2,
     "Name": "LumiName_126301",
     "MaxScore": 87,
-    "MinScore": 70,
+    "MinScore": 55,
     "Genius": 1,
     "ShardId": 108901,
     "LumiMap": 100,
@@ -34346,14 +34725,14 @@
     ],
     "BattlePassive": 1126301,
     "HomePassive": 0,
-    "MinHpState": 58,
+    "MinHpState": 64,
     "MinAtkState": 58,
-    "MinDefState": 68,
-    "MinWorkState": 36,
-    "MaxHpState": 90,
+    "MinDefState": 66,
+    "MinWorkState": 32,
+    "MaxHpState": 96,
     "MaxAtkState": 90,
-    "MaxDefState": 100,
-    "MaxWorkState": 68,
+    "MaxDefState": 98,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -34388,7 +34767,7 @@
         10000
       ]
     ],
-    "scoreShow": "70-87",
+    "scoreShow": "55-87",
     "Story": "story_126301",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -34426,7 +34805,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Peacock_PinkST_XC"
+    "ModleColorVariant": "Peacock_PinkST_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 126304,
@@ -34531,14 +34911,14 @@
     ],
     "BattlePassive": 1126304,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 63,
-    "MinDefState": 63,
-    "MinWorkState": 36,
-    "MaxHpState": 90,
-    "MaxAtkState": 95,
-    "MaxDefState": 95,
-    "MaxWorkState": 68,
+    "MinHpState": 64,
+    "MinAtkState": 58,
+    "MinDefState": 66,
+    "MinWorkState": 32,
+    "MaxHpState": 96,
+    "MaxAtkState": 90,
+    "MaxDefState": 98,
+    "MaxWorkState": 64,
     "Satiety": 240000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -34611,7 +34991,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Peacock_PinkST_01_XC"
+    "ModleColorVariant": "Peacock_PinkST_01_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 127001,
@@ -34794,7 +35175,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Gerbil_Wood_XC"
+    "ModleColorVariant": "Gerbil_Wood_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 127101,
@@ -34899,14 +35281,14 @@
     ],
     "BattlePassive": 1127101,
     "HomePassive": 0,
-    "MinHpState": 56,
-    "MinAtkState": 68,
-    "MinDefState": 58,
-    "MinWorkState": 38,
-    "MaxHpState": 88,
-    "MaxAtkState": 100,
-    "MaxDefState": 90,
-    "MaxWorkState": 70,
+    "MinHpState": 58,
+    "MinAtkState": 66,
+    "MinDefState": 64,
+    "MinWorkState": 32,
+    "MaxHpState": 90,
+    "MaxAtkState": 98,
+    "MaxDefState": 96,
+    "MaxWorkState": 64,
     "Satiety": 120000,
     "SatietyDownSpeed": 34,
     "WorkAbility": [
@@ -34981,7 +35363,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Shrimp_Dragon_XC"
+    "ModleColorVariant": "Shrimp_Dragon_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 127301,
@@ -35086,14 +35469,14 @@
     ],
     "BattlePassive": 1104201,
     "HomePassive": 0,
-    "MinHpState": 58,
-    "MinAtkState": 68,
-    "MinDefState": 58,
-    "MinWorkState": 40,
-    "MaxHpState": 90,
-    "MaxAtkState": 100,
-    "MaxDefState": 90,
-    "MaxWorkState": 72,
+    "MinHpState": 53,
+    "MinAtkState": 73,
+    "MinDefState": 66,
+    "MinWorkState": 32,
+    "MaxHpState": 85,
+    "MaxAtkState": 105,
+    "MaxDefState": 98,
+    "MaxWorkState": 64,
     "Satiety": 280000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [
@@ -35164,7 +35547,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Rhinoceros_Armor_XC"
+    "ModleColorVariant": "Rhinoceros_Armor_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 127501,
@@ -35342,7 +35726,187 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Newt_Pinksmall_XC"
+    "ModleColorVariant": "Newt_Pinksmall_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 127601,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_127601",
+    "MaxScore": 87,
+    "MinScore": 70,
+    "Genius": 1,
+    "ShardId": 127601,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Newt_Pink",
+    "Avatar": "Avatar_127601",
+    "CA": "CA_127601",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 14,
+    "Type2": 2,
+    "NormalAttack": 12760101,
+    "ActiveSkill": 12760102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 1127601,
+    "HomePassive": 0,
+    "MinHpState": 63,
+    "MinAtkState": 64,
+    "MinDefState": 56,
+    "MinWorkState": 37,
+    "MaxHpState": 95,
+    "MaxAtkState": 96,
+    "MaxDefState": 88,
+    "MaxWorkState": 69,
+    "Satiety": 240000,
+    "SatietyDownSpeed": 34,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "70-87",
+    "Story": "story_126401",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1600,
+    "CatchRateCheckHeight": 500,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.2,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": -0.01,
+      "Y": -0.4,
+      "Z": -0.03
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Newt_Pink_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 130001,
@@ -35525,7 +36089,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Sloth_Stone_XC"
+    "ModleColorVariant": "Sloth_Stone_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 135901,
@@ -35708,7 +36273,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Alpaca_Berry_XC"
+    "ModleColorVariant": "Alpaca_Berry_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 136101,
@@ -35861,7 +36427,7 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 800,
+    "LoveHeartHeight": 1000,
     "CatchRateCheckHeight": 300,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
@@ -35891,7 +36457,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Crab_Sleep_XC"
+    "ModleColorVariant": "Crab_Sleep_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 136201,
@@ -36074,7 +36641,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Mushroom_Maple_XC"
+    "ModleColorVariant": "Mushroom_Maple_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 139801,
@@ -36257,7 +36825,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Owl_Acorn_XC"
+    "ModleColorVariant": "Owl_Acorn_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 141301,
@@ -36410,7 +36979,7 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1100,
+    "LoveHeartHeight": 900,
     "CatchRateCheckHeight": 400,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
@@ -36440,7 +37009,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Snail_Maple_XC"
+    "ModleColorVariant": "Snail_Maple_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 141401,
@@ -36623,7 +37193,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Alpaca_Baby_XC"
+    "ModleColorVariant": "Alpaca_Baby_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 142501,
@@ -36781,14 +37352,14 @@
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
-      "Y": -0.3,
+      "Y": -0.1,
       "Z": 0
     },
     "AdventureVFXScale": 1,
     "AdventureZeroOffset": {
-      "X": -0.01,
-      "Y": -0.4,
-      "Z": -0.03
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
     },
     "BubbleOffset": {
       "X": 0,
@@ -36801,7 +37372,1976 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Bat_King_XC"
+    "ModleColorVariant": "Bat_King_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1000301,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 0,
+    "Name": "LumiName_1000301",
+    "MaxScore": 84,
+    "MinScore": 52,
+    "Genius": 1,
+    "ShardId": 1000301,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Tomato_S",
+    "Avatar": "Avatar_1000301",
+    "CA": "CA_1000301",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 4,
+    "Type2": 0,
+    "NormalAttack": 100030101,
+    "ActiveSkill": 100030102,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "MinHpState": 48,
+    "MinAtkState": 18,
+    "MinDefState": 74,
+    "MinWorkState": 68,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        10000
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "scoreShow": "52-84",
+    "Story": "story_1000301",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1000,
+    "CatchRateCheckHeight": 350,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.3,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Tomato_S_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1000401,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 0,
+    "Name": "LumiName_1000401",
+    "MaxScore": 84,
+    "MinScore": 52,
+    "Genius": 1,
+    "ShardId": 1000301,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Tomato_M",
+    "Avatar": "Avatar_1000401",
+    "CA": "CA_1000401",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 4,
+    "Type2": 0,
+    "NormalAttack": 100040101,
+    "ActiveSkill": 100040102,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "MinHpState": 48,
+    "MinAtkState": 18,
+    "MinDefState": 74,
+    "MinWorkState": 68,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        10000
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "scoreShow": "52-84",
+    "Story": "story_1000401",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1200,
+    "CatchRateCheckHeight": 500,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Tomato_M_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1000501,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 0,
+    "Name": "LumiName_1000501",
+    "MaxScore": 84,
+    "MinScore": 52,
+    "Genius": 1,
+    "ShardId": 1000301,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Tomato_L",
+    "Avatar": "Avatar_1000501",
+    "CA": "CA_1000501",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 4,
+    "Type2": 0,
+    "NormalAttack": 100050101,
+    "ActiveSkill": 100050102,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "MinHpState": 48,
+    "MinAtkState": 18,
+    "MinDefState": 74,
+    "MinWorkState": 68,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        10000
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "scoreShow": "52-84",
+    "Story": "story_1000501",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1400,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1.3,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0.1,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Tomato_L_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1000502,
+    "PokedexId": 99999,
+    "IfLock": true,
+    "LumiTag": 0,
+    "Name": "LumiName_1000501",
+    "MaxScore": 84,
+    "MinScore": 84,
+    "Genius": 1,
+    "ShardId": 1000502,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Tomato_Assassin_3D",
+    "Avatar": "Avatar_1000502",
+    "CA": "CA_1000502",
+    "CardBack": 98,
+    "CardBackRes": [
+      "com_card_9_1000502"
+    ],
+    "CardType": 98,
+    "CardResName": [
+      "Card3D_Tomato_L"
+    ],
+    "Type1": 11,
+    "Type2": 0,
+    "NormalAttack": 100050201,
+    "ActiveSkill": 100050202,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "MinHpState": 48,
+    "MinAtkState": 18,
+    "MinDefState": 74,
+    "MinWorkState": 68,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        10000
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "scoreShow": "84-84",
+    "Story": "story_1000502",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1400,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1.3,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0.1,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0.41,
+      "Y": -0.219,
+      "Z": -0.002
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Tomato_Assassin_3D_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1001001,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 0,
+    "Name": "LumiName_1001001",
+    "MaxScore": 84,
+    "MinScore": 52,
+    "Genius": 2,
+    "ShardId": 1001001,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Lipu",
+    "Avatar": "Avatar_1001001",
+    "CA": "CA_1001001",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 1,
+    "Type2": 0,
+    "NormalAttack": 100100101,
+    "ActiveSkill": 100100102,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 21001001,
+    "MinHpState": 56,
+    "MinAtkState": 26,
+    "MinDefState": 82,
+    "MinWorkState": 44,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        3,
+        10000
+      ]
+    ],
+    "scoreShow": "52-84",
+    "Story": "story_1001001",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1200,
+    "CatchRateCheckHeight": 500,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": -0.129,
+      "Y": -0.086,
+      "Z": 0.005
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Lipu_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1001101,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 0,
+    "Name": "LumiName_1001101",
+    "MaxScore": 84,
+    "MinScore": 52,
+    "Genius": 2,
+    "ShardId": 1001101,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Doodong",
+    "Avatar": "Avatar_1001101",
+    "CA": "CA_1001101",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 12,
+    "Type2": 0,
+    "NormalAttack": 100110101,
+    "ActiveSkill": 100110102,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "MinHpState": 56,
+    "MinAtkState": 26,
+    "MinDefState": 82,
+    "MinWorkState": 44,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        3,
+        10000
+      ]
+    ],
+    "scoreShow": "52-84",
+    "Story": "story_1001101",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 900,
+    "CatchRateCheckHeight": 300,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Doodong_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1001102,
+    "PokedexId": 99999,
+    "IfLock": true,
+    "LumiTag": 0,
+    "Name": "LumiName_1001102",
+    "MaxScore": 84,
+    "MinScore": 84,
+    "Genius": 1,
+    "ShardId": 1001102,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Doodong_King",
+    "Avatar": "Avatar_1001101",
+    "CA": "CA_1001101",
+    "CardBack": 98,
+    "CardBackRes": [
+      "com_card_9_114202"
+    ],
+    "CardType": 98,
+    "CardResName": [
+      "Card3D_Wolf_Frostwild"
+    ],
+    "Type1": 16,
+    "Type2": 0,
+    "NormalAttack": 100110201,
+    "ActiveSkill": 100110202,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "MinHpState": 48,
+    "MinAtkState": 18,
+    "MinDefState": 74,
+    "MinWorkState": 68,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        3,
+        10000
+      ]
+    ],
+    "scoreShow": "84-84",
+    "Story": "story_1001101",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 900,
+    "CatchRateCheckHeight": 300,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Doodong_King_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1001201,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 0,
+    "Name": "LumiName_1001201",
+    "MaxScore": 84,
+    "MinScore": 52,
+    "Genius": 2,
+    "ShardId": 1001201,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Xiuzhen",
+    "Avatar": "Avatar_1001201",
+    "CA": "CA_1001201",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 14,
+    "Type2": 0,
+    "NormalAttack": 100120101,
+    "ActiveSkill": 100120102,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "MinHpState": 56,
+    "MinAtkState": 26,
+    "MinDefState": 82,
+    "MinWorkState": 44,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        3,
+        10000
+      ]
+    ],
+    "scoreShow": "52-84",
+    "Story": "story_1001201",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1200,
+    "CatchRateCheckHeight": 500,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": -0.129,
+      "Y": -0.086,
+      "Z": 0.005
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Xiuzhen_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1001301,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 0,
+    "Name": "LumiName_1001301",
+    "MaxScore": 84,
+    "MinScore": 52,
+    "Genius": 2,
+    "ShardId": 1001301,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Hehe",
+    "Avatar": "Avatar_1001301",
+    "CA": "CA_1001301",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 7,
+    "Type2": 0,
+    "NormalAttack": 100130101,
+    "ActiveSkill": 100130102,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 21001301,
+    "MinHpState": 56,
+    "MinAtkState": 26,
+    "MinDefState": 82,
+    "MinWorkState": 44,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        3,
+        10000
+      ]
+    ],
+    "scoreShow": "52-84",
+    "Story": "story_1001301",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1100,
+    "CatchRateCheckHeight": 500,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": -0.129,
+      "Y": -0.086,
+      "Z": 0.005
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Hehe_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1001401,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 0,
+    "Name": "LumiName_1001401",
+    "MaxScore": 84,
+    "MinScore": 52,
+    "Genius": 2,
+    "ShardId": 1001401,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Tianzhong",
+    "Avatar": "Avatar_1001401",
+    "CA": "CA_1001401",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 4,
+    "Type2": 0,
+    "NormalAttack": 100140101,
+    "ActiveSkill": 100140102,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "MinHpState": 56,
+    "MinAtkState": 26,
+    "MinDefState": 82,
+    "MinWorkState": 44,
+    "MaxHpState": 80,
+    "MaxAtkState": 50,
+    "MaxDefState": 106,
+    "MaxWorkState": 100,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        3,
+        10000
+      ]
+    ],
+    "scoreShow": "52-84",
+    "Story": "story_1001401",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 900,
+    "CatchRateCheckHeight": 450,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 0.7,
+    "ZeroOffset": {
+      "X": -0.001,
+      "Y": -0.257,
+      "Z": -0.013
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0.053,
+      "Y": -0.066,
+      "Z": 0.003
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Tianzhong_XC",
+    "ModelBaseScale": 1
+  },
+  {
+    "Id": 1001501,
+    "PokedexId": 99999,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_1001501",
+    "MaxScore": 82,
+    "MinScore": 50,
+    "Genius": 2,
+    "ShardId": 1001501,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        450000
+      ],
+      [
+        5,
+        45000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Diandian",
+    "Avatar": "Avatar_1001501",
+    "CA": "CA_1001501",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 1,
+    "Type2": 0,
+    "NormalAttack": 100150101,
+    "ActiveSkill": 100150102,
+    "SkillPool1": [
+      6001,
+      6002
+    ],
+    "SkillPool2": [
+      12003,
+      12006
+    ],
+    "SkillPool3": [
+      13002,
+      13003
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "MinHpState": 71,
+    "MinAtkState": 26,
+    "MinDefState": 45,
+    "MinWorkState": 58,
+    "MaxHpState": 95,
+    "MaxAtkState": 50,
+    "MaxDefState": 69,
+    "MaxWorkState": 114,
+    "Satiety": 140000,
+    "SatietyDownSpeed": 24,
+    "WorkAbility": [
+      {
+        "Type": 4,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "50-82",
+    "Story": "story_1001501",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 900,
+    "CatchRateCheckHeight": 450,
+    "HomeMoveSpeed": 0.4,
+    "HomeRotateSpeed": 90,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.15,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0.1,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "LumiColorVariant": 1,
+    "BodySizeType": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Diandian_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 1003701,
@@ -36976,7 +39516,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Lipu_Bajie_XC"
+    "ModleColorVariant": "Lipu_Bajie_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 1003801,
@@ -37151,7 +39692,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Xiuzhen_Wujing_XC"
+    "ModleColorVariant": "Xiuzhen_Wujing_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 1003901,
@@ -37326,7 +39868,8 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Doodong_Wukong_XC"
+    "ModleColorVariant": "Doodong_Wukong_XC",
+    "ModelBaseScale": 1
   },
   {
     "Id": 1004001,
@@ -37501,6 +40044,7 @@
     "BodySizeType": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Tianzhong_Hehe_XC"
+    "ModleColorVariant": "Tianzhong_Hehe_XC",
+    "ModelBaseScale": 1
   }
 ]
