@@ -2,6 +2,7 @@
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { loadData, t, TYPE_NAMES, TYPE_COLORS, LUMI_TAG_NAMES, WORK_TYPE_NAMES } from '../data'
+import MultiSelect from '../components/MultiSelect.vue'
 
 const route = useRoute()
 const lumis = ref([])
@@ -11,11 +12,11 @@ const loading = ref(true)
 
 // 筛选条件
 const searchQuery = ref('')
-const filterType = ref(0)
-const filterTag = ref(0)
+const filterType = ref([])
+const filterTag = ref([])
 const filterMinScore = ref('')
 const filterMaxScore = ref('')
-const filterWorkType = ref(0)
+const filterWorkType = ref([])
 const sortBy = ref('id')
 
 onMounted(async () => {
@@ -53,7 +54,7 @@ function getGoldPrice(lumiId) {
 
 // 属性筛选选项
 const typeOptions = computed(() => {
-  const opts = [{ value: 0, label: '全部属性' }]
+  const opts = []
   for (const [k, v] of Object.entries(TYPE_NAMES)) {
     opts.push({ value: Number(k), label: v })
   }
@@ -62,7 +63,7 @@ const typeOptions = computed(() => {
 
 // 赛季筛选选项
 const tagOptions = computed(() => {
-  const opts = [{ value: 0, label: '全部赛季' }]
+  const opts = []
   for (const [k, v] of Object.entries(LUMI_TAG_NAMES)) {
     opts.push({ value: Number(k), label: v })
   }
@@ -71,7 +72,7 @@ const tagOptions = computed(() => {
 
 // 打工类型筛选选项
 const workTypeOptions = computed(() => {
-  const opts = [{ value: 0, label: '全部打工' }]
+  const opts = []
   for (const [k, v] of Object.entries(WORK_TYPE_NAMES)) {
     opts.push({ value: Number(k), label: v })
   }
@@ -92,14 +93,14 @@ const filtered = computed(() => {
     )
   }
 
-  // 属性筛选
-  if (filterType.value) {
-    list = list.filter(l => l.Type1 === filterType.value || l.Type2 === filterType.value)
+  // 属性筛选（多选 OR）
+  if (filterType.value.length) {
+    list = list.filter(l => filterType.value.includes(l.Type1) || filterType.value.includes(l.Type2))
   }
 
-  // 赛季筛选
-  if (filterTag.value) {
-    list = list.filter(l => l.LumiTag === filterTag.value)
+  // 赛季筛选（多选 OR）
+  if (filterTag.value.length) {
+    list = list.filter(l => filterTag.value.includes(l.LumiTag))
   }
 
   // 资质范围筛选（都针对 MaxScore）
@@ -116,10 +117,10 @@ const filtered = computed(() => {
     }
   }
 
-  // 打工能力筛选
-  if (filterWorkType.value) {
+  // 打工能力筛选（多选 OR）
+  if (filterWorkType.value.length) {
     list = list.filter(l =>
-      l.WorkAbility && l.WorkAbility.some(w => w.Type === filterWorkType.value)
+      l.WorkAbility && l.WorkAbility.some(w => filterWorkType.value.includes(w.Type))
     )
   }
 
@@ -160,23 +161,26 @@ const filtered = computed(() => {
     <!-- 筛选栏 -->
     <div class="filter-bar">
       <input v-model="searchQuery" placeholder="搜索名称或 ID..." />
-      <select v-model="filterType">
-        <option v-for="opt in typeOptions" :key="opt.value" :value="opt.value">
-          {{ opt.label }}
-        </option>
-      </select>
-      <select v-model="filterTag">
-        <option v-for="opt in tagOptions" :key="opt.value" :value="opt.value">
-          {{ opt.label }}
-        </option>
-      </select>
+      <MultiSelect
+        v-model="filterType"
+        :options="typeOptions"
+        placeholder="全部属性"
+        :colors="TYPE_COLORS"
+        searchable
+      />
+      <MultiSelect
+        v-model="filterTag"
+        :options="tagOptions"
+        placeholder="全部赛季"
+      />
       <input v-model="filterMinScore" placeholder="最小资质" type="number" style="width: 100px" />
       <input v-model="filterMaxScore" placeholder="最大资质" type="number" style="width: 100px" />
-      <select v-model="filterWorkType">
-        <option v-for="opt in workTypeOptions" :key="opt.value" :value="opt.value">
-          {{ opt.label }}
-        </option>
-      </select>
+      <MultiSelect
+        v-model="filterWorkType"
+        :options="workTypeOptions"
+        placeholder="全部打工"
+        searchable
+      />
       <select v-model="sortBy">
         <option value="id">按 ID 排序</option>
         <option value="name">按名称排序</option>
@@ -193,6 +197,7 @@ const filtered = computed(() => {
         :key="lumi.Id"
         :to="`/lumi/${lumi.Id}`"
         class="card lumi-card"
+        target="_blank"
       >
         <div class="lumi-avatar">
           <div class="lumi-id">#{{ lumi.PokedexId }}</div>

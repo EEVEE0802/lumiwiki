@@ -1,12 +1,13 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { loadData } from '../data'
+import MultiSelect from '../components/MultiSelect.vue'
 
 const items = ref([])
 const locMap = ref({})
 const loading = ref(true)
 const searchQuery = ref('')
-const filterType = ref(0)
+const filterType = ref([])
 
 onMounted(async () => {
   const [data, loc] = await Promise.all([
@@ -31,7 +32,6 @@ const QUALITY_COLORS = {
 }
 
 const typeOptions = computed(() => [
-  { value: 0, label: '全部类型' },
   { value: 2, label: '消耗品' },
   { value: 3, label: '材料' },
   { value: 4, label: '装备' },
@@ -48,8 +48,8 @@ const filtered = computed(() => {
       String(i.key1).includes(q)
     )
   }
-  if (filterType.value) {
-    list = list.filter(i => i.type === filterType.value)
+  if (filterType.value.length) {
+    list = list.filter(i => filterType.value.includes(i.type))
   }
   return list
 })
@@ -62,11 +62,11 @@ const filtered = computed(() => {
 
     <div class="filter-bar">
       <input v-model="searchQuery" placeholder="搜索物品名称或 ID..." />
-      <select v-model="filterType">
-        <option v-for="opt in typeOptions" :key="opt.value" :value="opt.value">
-          {{ opt.label }}
-        </option>
-      </select>
+      <MultiSelect
+        v-model="filterType"
+        :options="typeOptions"
+        placeholder="全部类型"
+      />
       <span class="result-count">共 {{ filtered.length }} 件</span>
     </div>
 

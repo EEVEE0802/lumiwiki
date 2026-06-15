@@ -12,7 +12,7 @@ const fs = require('fs')
 const path = require('path')
 
 // 源数据目录
-const SRC_DIR = 'D:/G36Branch/LumiGoProgram/LumiGoDesigner/Config/Luban/Datas/Table/data'
+const SRC_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data'
 // 目标目录
 const DST_DIR = path.join(__dirname, 'public/data')
 

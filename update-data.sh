@@ -8,7 +8,7 @@ echo "======================================"
 echo ""
 
 # 源目录
-SRC="D:/G36Branch/LumiGoProgram/LumiGoDesigner/Config/Luban/Datas/Table/data"
+SRC="F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data"
 # 目标目录
 DST="/d/LumiWiki/public/data"
 

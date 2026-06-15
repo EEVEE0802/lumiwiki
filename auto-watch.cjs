@@ -14,7 +14,7 @@ const path = require('path');
 const CHECK_INTERVAL = 60 * 60 * 1000;
 
 // 数据源目录
-const SOURCE_DIR = 'D:/G36Branch/LumiGoProgram/LumiGoDesigner/Config/Luban/Datas/Table/data';
+const SOURCE_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data';
 
 // 目标目录
 const TARGET_DIR = 'D:/LumiWiki/public/data';

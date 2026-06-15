@@ -66,7 +66,7 @@ if netstat -ano | grep -q ":$PORT "; then
   echo "======================================"
   echo ""
   echo "📱 内网访问地址："
-  echo "   http://10.27.17.179:$PORT"
+  echo "   http://10.27.17.136:$PORT"
   echo ""
   echo "📊 服务器信息："
   echo "   端口：$PORT"

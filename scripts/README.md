@@ -88,7 +88,7 @@ rm -f D:/LumiWiki/public/data/*.encoded
 ## 🖥️ 页面访问
 
 - **开发环境**: http://localhost:3005/#/online-data
-- **内网访问**: http://10.27.17.179:3005/#/online-data
+- **内网访问**: http://10.27.17.136:3005/#/online-data
 
 ## 📁 相关文件
 

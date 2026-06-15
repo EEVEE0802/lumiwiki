@@ -5,7 +5,7 @@
 - Vue 3 + Vite、Vue Router 4（Hash 模式）
 - 静态 JSON 数据 + CSS Variables
 - 端口 **3005**（固定，严禁修改）
-- 内网地址：`http://10.27.17.179:3005`
+- 内网地址：`http://10.27.17.136:3005`
 
 ## 项目结构
 
@@ -51,8 +51,8 @@ LumiWiki/
 
 ## 数据源
 
-**游戏原始数据**：`D:\G36\LumiGoProgram\LumiGoDesigner\Config\Luban\Datas\Table\data`
-**枚举定义**：`D:\G36\LumiGoProgram\LumiGoDesigner\Config\Luban\Datas\__enums__.xlsx`
+**游戏原始数据**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\Table\data`
+**枚举定义**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\__enums__.xlsx`
 **项目数据**：`D:\LumiWiki\public\data\`
 
 ### 核心数据文件
@@ -77,7 +77,7 @@ LumiWiki/
 
 ```bash
 # 1. 复制核心数据文件
-SRC="D:/G36/LumiGoProgram/LumiGoDesigner/Config/Luban/Datas/Table/data"
+SRC="F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data"
 DST="D:/LumiWiki/public/data"
 cp "$SRC/ActiveSkill.json" "$SRC/BattlePassive.json" "$SRC/HomePassive.json" "$DST/"
 cp "$SRC/Lumi.json" "$SRC/LumiEvolution.json" "$SRC/LumiTypeCounter.json" "$DST/"
@@ -91,6 +91,32 @@ rm -f public/data/*.encoded
 ```
 
 **注意**：前端使用 `zh-CN.json` 等多语言文件，不是 `localization.json`，所以第 2 步是必须的。
+
+### 立绘资源更新
+
+从游戏客户端资源目录同步噜咪立绘图片：
+
+**立绘源目录**：`F:\G36\LumiGoProgram\Client\Assets\UIResource\Textures\Lumi\`
+**Wiki 目标目录**：`D:\LumiWiki\public\images\avatars\`
+
+```bash
+# 同步缺失的立绘（源文件本身就是 CA_ 前缀，无需重命名）
+SRC="F:/G36/LumiGoProgram/Client/Assets/UIResource/Textures/Lumi"
+DST="D:/LumiWiki/public/images/avatars"
+
+# 对比源和 wiki，找出缺失文件
+ls "$SRC"/CA_*.png | xargs -n1 basename | sort > /tmp/source_ca.txt
+ls "$DST"/CA_*.png | xargs -n1 basename | sort > /tmp/wiki_ca.txt
+comm -23 /tmp/source_ca.txt /tmp/wiki_ca.txt  # 查看缺失列表
+
+# 复制缺失文件
+comm -23 /tmp/source_ca.txt /tmp/wiki_ca.txt | while read f; do cp "$SRC/$f" "$DST/$f"; done
+```
+
+**⚠️ 重要注意事项**：
+- 源目录中同时存在 `Avatar_*.png` 和 `CA_*.png` 两种文件，**它们是不同的图片**，绝不能用 `Avatar_` 重命名为 `CA_` 来替代
+- wiki 独有的文件（如 `CA_None.png`、`CA_lumi.png`、`CA_3000*.png`）是 wiki 自定义的占位图，不需要同步
+- 更新数据时应一并检查立绘是否有新增，避免图鉴页面显示缺图
 
 ---
 

@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { loadData, TYPE_NAMES, TYPE_COLORS, getKeywordMap } from '../data'
+import MultiSelect from '../components/MultiSelect.vue'
 
 const activeSkills = ref([])
 const battlePassives = ref([])
@@ -12,7 +13,7 @@ const loading = ref(true)
 const selectedKeyword = ref(null)
 const showKeywordTooltip = ref(false)
 const searchQuery = ref('')
-const filterType = ref(0)
+const filterType = ref([])
 const tab = ref('active') // active | passive
 const skillCategory = ref('all') // all | common | exclusive
 const passiveCategory = ref('battle') // battle | home
@@ -180,7 +181,7 @@ function getPassiveDes(passive) {
 }
 
 const typeOptions = computed(() => {
-  const opts = [{ value: 0, label: '全部属性' }]
+  const opts = []
   for (const [k, v] of Object.entries(TYPE_NAMES)) {
     opts.push({ value: Number(k), label: v })
   }
@@ -208,8 +209,8 @@ const filteredActive = computed(() => {
       String(s.Id).includes(q)
     )
   }
-  if (filterType.value) {
-    list = list.filter(s => s.LumiTpye === filterType.value)
+  if (filterType.value.length) {
+    list = list.filter(s => filterType.value.includes(s.LumiTpye))
   }
   return list
 })
@@ -276,11 +277,14 @@ const skillCounts = computed(() => {
     <!-- 筛选栏 -->
     <div class="filter-bar">
       <input v-model="searchQuery" placeholder="搜索技能名称或 ID..." />
-      <select v-if="tab === 'active'" v-model="filterType">
-        <option v-for="opt in typeOptions" :key="opt.value" :value="opt.value">
-          {{ opt.label }}
-        </option>
-      </select>
+      <MultiSelect
+        v-if="tab === 'active'"
+        v-model="filterType"
+        :options="typeOptions"
+        placeholder="全部属性"
+        :colors="TYPE_COLORS"
+        searchable
+      />
     </div>
 
     <!-- 主动技能表格 -->

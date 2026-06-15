@@ -53,15 +53,12 @@
     <div class="filters" v-if="gameMode === 'ladder'">
       <div class="filter-group">
         <label>段位范围:</label>
-        <select v-model="selectedRankGroup" @change="updateData">
-          <option value="all">全段位</option>
-          <option value="bronze">青铜 (1-30)</option>
-          <option value="silver">白银 (31-60)</option>
-          <option value="gold">黄金 (61-90)</option>
-          <option value="diamond">钻石 (91-120)</option>
-          <option value="star">星耀 (121-150)</option>
-          <option value="legend">传说 (151)</option>
-        </select>
+        <MultiSelect
+          v-model="selectedRankGroup"
+          :options="rankOptions"
+          placeholder="全段位"
+          @update:modelValue="updateData"
+        />
       </div>
 
       <div class="filter-group">
@@ -364,6 +361,7 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
+import MultiSelect from '../components/MultiSelect.vue'
 
 const router = useRouter()
 
@@ -376,6 +374,81 @@ const rankGroups = [
   { key: 'star', label: '星耀', desc: '121-150 段', icon: '⭐' },
   { key: 'legend', label: '传说', desc: '151 段', icon: '👑' }
 ]
+
+// 段位多选选项（给 MultiSelect 用）
+const rankOptions = rankGroups.map(r => ({
+  value: r.key,
+  label: `${r.label} (${r.desc})`
+}))
+
+// 合并多个段位的统计数据
+function mergeStatsObjects(statsArray) {
+  if (!statsArray.length) return null
+  if (statsArray.length === 1) return statsArray[0]
+  const validStats = statsArray.filter(Boolean)
+  if (!validStats.length) return null
+  if (validStats.length === 1) return validStats[0]
+
+  // 合并总场次
+  const totalBattles = Math.round(validStats.reduce((sum, s) => sum + (s.totalBattles || 0), 0))
+
+  // 合并段位范围
+  const rankRange = {
+    min: Math.min(...validStats.map(s => s.rankRange?.min || 0)),
+    max: Math.max(...validStats.map(s => s.rankRange?.max || 0))
+  }
+
+  // 合并出场率数据
+  const appearanceMap = new Map()
+  for (const stats of validStats) {
+    for (const item of (stats.appearance || [])) {
+      const existing = appearanceMap.get(item.lumiId)
+      if (existing) {
+        existing.uniqueBattles += item.uniqueBattles
+      } else {
+        appearanceMap.set(item.lumiId, { ...item })
+      }
+    }
+  }
+  const appearance = [...appearanceMap.values()]
+    .map(item => ({
+      ...item,
+      uniqueBattles: Math.round(item.uniqueBattles),
+      appearanceRate: totalBattles > 0 ? (item.uniqueBattles / totalBattles * 100).toFixed(2) : '0'
+    }))
+    .sort((a, b) => b.uniqueBattles - a.uniqueBattles)
+
+  // 合并胜率数据（加权平均）
+  const winRateMap = new Map()
+  for (const stats of validStats) {
+    for (const item of (stats.winRate || [])) {
+      const existing = winRateMap.get(item.lumiId)
+      if (existing) {
+        existing.wins += parseFloat(item.winRate) / 100 * item.battles
+        existing.battles += item.battles
+      } else {
+        winRateMap.set(item.lumiId, {
+          ...item,
+          wins: parseFloat(item.winRate) / 100 * item.battles
+        })
+      }
+    }
+  }
+  const winRate = [...winRateMap.values()]
+    .map(item => {
+      const battles = Math.round(item.battles)
+      const wins = Math.round(item.wins)
+      return {
+        ...item,
+        battles,
+        wins,
+        winRate: battles > 0 ? (wins / battles * 100).toFixed(2) : '0'
+      }
+    })
+    .sort((a, b) => parseFloat(b.winRate) - parseFloat(a.winRate))
+
+  return { totalBattles, rankRange, appearance, winRate }
+}
 
 // 数据状态
 const data = ref({
@@ -406,7 +479,7 @@ const compareMode = ref(false)
 const compareWeek = ref(null)
 
 // UI 状态
-const selectedRankGroup = ref('all')
+const selectedRankGroup = ref([])
 const includeBot = ref(true)
 const activeTab = ref('appearance')
 const winRateSortBy = ref('winRate')
@@ -417,17 +490,25 @@ const chartCanvas = ref(null)
 const chartWrapper = ref(null)
 let chartInstance = null
 
-// 当前统计数据
+// 当前统计数据（支持多段位合并）
 const currentStats = computed(() => {
-  const key = getDataKey()
-  return data.value.stats[key]
+  const keys = getDataKeys()
+  if (keys.length === 1) {
+    return data.value.stats[keys[0]]
+  }
+  const statsArray = keys.map(k => data.value.stats[k]).filter(Boolean)
+  return mergeStatsObjects(statsArray)
 })
 
-// 对比统计数据
+// 对比统计数据（支持多段位合并）
 const compareStats = computed(() => {
   if (!compareData.value || !compareMode.value) return null
-  const key = getDataKey()
-  return compareData.value.stats[key]
+  const keys = getDataKeys()
+  if (keys.length === 1) {
+    return compareData.value.stats[keys[0]]
+  }
+  const statsArray = keys.map(k => compareData.value.stats[k]).filter(Boolean)
+  return mergeStatsObjects(statsArray)
 })
 
 // 当前出场率数据
@@ -494,14 +575,22 @@ const tournamentPlayerRankDistribution = computed(() => {
   }
 })
 
-// 获取数据键
-function getDataKey() {
+// 获取数据键（支持多选段位）
+function getDataKeys() {
   if (gameMode.value === 'tournament') {
-    return 'all'
+    return ['all']
   }
-  const rankPart = selectedRankGroup.value
   const botPart = includeBot.value ? 'with-bot' : 'no-bot'
-  return rankPart === 'all' ? `all-${botPart}` : `${rankPart}-${botPart}`
+  if (!selectedRankGroup.value.length) {
+    return [`all-${botPart}`]
+  }
+  return selectedRankGroup.value.map(r => `${r}-${botPart}`)
+}
+
+// 获取单个数据键（用于兼容旧逻辑）
+function getDataKey() {
+  const keys = getDataKeys()
+  return keys[0]
 }
 
 // 切换玩法
@@ -669,7 +758,7 @@ function getWinRateClass(winRate) {
 
 // 更新数据
 function updateData() {
-  console.log('切换到:', getDataKey())
+  console.log('切换到:', getDataKeys())
 }
 
 // 选择周
