@@ -1,5 +1,6 @@
 {
-  "updateTime": "2026-05-11T13:22:16.233Z",
+  "updateTime": "2026-07-04T09:00:27.464Z",
+  "note": "普通概率=解锁池权重占比；彩色=保底触发时池内分布近似（按 LumiDrop.WeightPool 取权）",
   "mainLineMaps": [
     {
       "mapId": 1,
@@ -10,556 +11,466 @@
         {
           "stage": 1,
           "status": "before",
-          "label": "阶段1 - 霸主解锁前",
+          "label": "阶段1 · 霸主出现前",
           "lumis": [
             {
               "id": 104801,
               "name": "草莱姆",
-              "nameKey": "LumiName_104801",
-              "weight": 1500,
-              "probability": "25.00"
-            },
-            {
-              "id": 100101,
-              "name": "卡皮巴拉",
-              "nameKey": "LumiName_100101",
-              "weight": 1500,
-              "probability": "25.00"
-            },
-            {
-              "id": 141401,
-              "name": "莓团团",
-              "nameKey": "LumiName_141401",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 114401,
               "name": "晴天娃娃",
-              "nameKey": "LumiName_114401",
-              "weight": 1500,
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
               "probability": "25.00"
             }
           ],
-          "totalWeight": 6000
+          "totalWeight": 4000
         },
         {
           "stage": 1,
           "status": "after",
-          "label": "阶段1 - 霸主解锁后",
+          "label": "阶段1 · 霸主已抓",
           "lumis": [
             {
               "id": 104801,
               "name": "草莱姆",
-              "nameKey": "LumiName_104801",
-              "weight": 1005,
-              "probability": "22.79"
-            },
-            {
-              "id": 100101,
-              "name": "卡皮巴拉",
-              "nameKey": "LumiName_100101",
-              "weight": 1500,
-              "probability": "34.01"
-            },
-            {
-              "id": 141401,
-              "name": "莓团团",
-              "nameKey": "LumiName_141401",
-              "weight": 1005,
-              "probability": "22.79"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 114401,
               "name": "晴天娃娃",
-              "nameKey": "LumiName_114401",
-              "weight": 600,
-              "probability": "13.61"
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 124001,
               "name": "六曜鹿",
-              "nameKey": "LumiName_124001",
-              "weight": 300,
-              "probability": "6.80"
+              "weight": 1000,
+              "probability": "20.00"
             }
           ],
-          "totalWeight": 4410
+          "totalWeight": 5000
         },
         {
           "stage": 2,
           "status": "before",
-          "label": "阶段2 - 霸主解锁前",
+          "label": "阶段2 · 霸主出现前",
           "lumis": [
             {
               "id": 104801,
               "name": "草莱姆",
-              "nameKey": "LumiName_104801",
-              "weight": 1005,
-              "probability": "9.65"
-            },
-            {
-              "id": 100101,
-              "name": "卡皮巴拉",
-              "nameKey": "LumiName_100101",
-              "weight": 1500,
-              "probability": "14.41"
-            },
-            {
-              "id": 141401,
-              "name": "莓团团",
-              "nameKey": "LumiName_141401",
-              "weight": 1005,
-              "probability": "9.65"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 114401,
               "name": "晴天娃娃",
-              "nameKey": "LumiName_114401",
-              "weight": 600,
-              "probability": "5.76"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
-              "id": 124001,
-              "name": "六曜鹿",
-              "nameKey": "LumiName_124001",
-              "weight": 300,
-              "probability": "2.88"
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 135901,
               "name": "莓果羊驼",
-              "nameKey": "LumiName_135901",
-              "weight": 1500,
-              "probability": "14.41"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 105701,
               "name": "盼盼",
-              "nameKey": "LumiName_105701",
-              "weight": 1500,
-              "probability": "14.41"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 101301,
               "name": "好运鸟",
-              "nameKey": "LumiName_101301",
-              "weight": 1500,
-              "probability": "14.41"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 123901,
               "name": "三彩鹿",
-              "nameKey": "LumiName_123901",
-              "weight": 1500,
-              "probability": "14.41"
+              "weight": 1000,
+              "probability": "12.50"
             }
           ],
-          "totalWeight": 10410
+          "totalWeight": 8000
         },
         {
           "stage": 2,
           "status": "after",
-          "label": "阶段2 - 霸主解锁后",
+          "label": "阶段2 · 霸主已抓",
           "lumis": [
             {
               "id": 104801,
               "name": "草莱姆",
-              "nameKey": "LumiName_104801",
-              "weight": 1005,
-              "probability": "11.41"
-            },
-            {
-              "id": 100101,
-              "name": "卡皮巴拉",
-              "nameKey": "LumiName_100101",
-              "weight": 1500,
-              "probability": "17.04"
-            },
-            {
-              "id": 141401,
-              "name": "莓团团",
-              "nameKey": "LumiName_141401",
-              "weight": 1005,
-              "probability": "11.41"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 114401,
               "name": "晴天娃娃",
-              "nameKey": "LumiName_114401",
-              "weight": 600,
-              "probability": "6.81"
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 124001,
               "name": "六曜鹿",
-              "nameKey": "LumiName_124001",
-              "weight": 300,
-              "probability": "3.41"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 135901,
               "name": "莓果羊驼",
-              "nameKey": "LumiName_135901",
-              "weight": 495,
-              "probability": "5.62"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 105701,
               "name": "盼盼",
-              "nameKey": "LumiName_105701",
-              "weight": 1500,
-              "probability": "17.04"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 101301,
               "name": "好运鸟",
-              "nameKey": "LumiName_101301",
-              "weight": 1500,
-              "probability": "17.04"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 123901,
               "name": "三彩鹿",
-              "nameKey": "LumiName_123901",
-              "weight": 600,
-              "probability": "6.81"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 114501,
               "name": "晴天精灵",
-              "nameKey": "LumiName_114501",
-              "weight": 300,
-              "probability": "3.41"
+              "weight": 1000,
+              "probability": "10.00"
             }
           ],
-          "totalWeight": 8805
+          "totalWeight": 10000
         },
         {
           "stage": 3,
           "status": "before",
-          "label": "阶段3 - 霸主解锁前",
+          "label": "阶段3 · 霸主出现前",
           "lumis": [
             {
               "id": 104801,
               "name": "草莱姆",
-              "nameKey": "LumiName_104801",
-              "weight": 1005,
-              "probability": "7.07"
-            },
-            {
-              "id": 100101,
-              "name": "卡皮巴拉",
-              "nameKey": "LumiName_100101",
-              "weight": 1500,
-              "probability": "10.56"
-            },
-            {
-              "id": 141401,
-              "name": "莓团团",
-              "nameKey": "LumiName_141401",
-              "weight": 1005,
-              "probability": "7.07"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 114401,
               "name": "晴天娃娃",
-              "nameKey": "LumiName_114401",
-              "weight": 600,
-              "probability": "4.22"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
-              "id": 124001,
-              "name": "六曜鹿",
-              "nameKey": "LumiName_124001",
-              "weight": 300,
-              "probability": "2.11"
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 135901,
               "name": "莓果羊驼",
-              "nameKey": "LumiName_135901",
-              "weight": 495,
-              "probability": "3.48"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 105701,
               "name": "盼盼",
-              "nameKey": "LumiName_105701",
-              "weight": 1500,
-              "probability": "10.56"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 101301,
               "name": "好运鸟",
-              "nameKey": "LumiName_101301",
-              "weight": 1500,
-              "probability": "10.56"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 123901,
               "name": "三彩鹿",
-              "nameKey": "LumiName_123901",
-              "weight": 600,
-              "probability": "4.22"
-            },
-            {
-              "id": 114501,
-              "name": "晴天精灵",
-              "nameKey": "LumiName_114501",
-              "weight": 300,
-              "probability": "2.11"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 109701,
               "name": "草冠莱姆",
-              "nameKey": "LumiName_109701",
-              "weight": 1500,
-              "probability": "10.56"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 108501,
               "name": "小叶鼠",
-              "nameKey": "LumiName_108501",
-              "weight": 900,
-              "probability": "6.34"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 116601,
               "name": "招财猫",
-              "nameKey": "LumiName_116601",
-              "weight": 1500,
-              "probability": "10.56"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 115301,
               "name": "口哨鸦",
-              "nameKey": "LumiName_115301",
-              "weight": 1500,
-              "probability": "10.56"
+              "weight": 1000,
+              "probability": "8.33"
             }
           ],
-          "totalWeight": 14205
+          "totalWeight": 12000
         },
         {
           "stage": 3,
           "status": "after",
-          "label": "阶段3 - 霸主解锁后",
+          "label": "阶段3 · 霸主已抓",
           "lumis": [
             {
               "id": 104801,
               "name": "草莱姆",
-              "nameKey": "LumiName_104801",
-              "weight": 1005,
-              "probability": "7.61"
-            },
-            {
-              "id": 100101,
-              "name": "卡皮巴拉",
-              "nameKey": "LumiName_100101",
-              "weight": 1500,
-              "probability": "11.36"
-            },
-            {
-              "id": 141401,
-              "name": "莓团团",
-              "nameKey": "LumiName_141401",
-              "weight": 1005,
-              "probability": "7.61"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 114401,
               "name": "晴天娃娃",
-              "nameKey": "LumiName_114401",
-              "weight": 600,
-              "probability": "4.55"
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 124001,
               "name": "六曜鹿",
-              "nameKey": "LumiName_124001",
-              "weight": 300,
-              "probability": "2.27"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 135901,
               "name": "莓果羊驼",
-              "nameKey": "LumiName_135901",
-              "weight": 495,
-              "probability": "3.75"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 105701,
               "name": "盼盼",
-              "nameKey": "LumiName_105701",
-              "weight": 1500,
-              "probability": "11.36"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 101301,
               "name": "好运鸟",
-              "nameKey": "LumiName_101301",
-              "weight": 1500,
-              "probability": "11.36"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 123901,
               "name": "三彩鹿",
-              "nameKey": "LumiName_123901",
-              "weight": 600,
-              "probability": "4.55"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 114501,
               "name": "晴天精灵",
-              "nameKey": "LumiName_114501",
-              "weight": 300,
-              "probability": "2.27"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 109701,
               "name": "草冠莱姆",
-              "nameKey": "LumiName_109701",
-              "weight": 495,
-              "probability": "3.75"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 108501,
               "name": "小叶鼠",
-              "nameKey": "LumiName_108501",
-              "weight": 600,
-              "probability": "4.55"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 116601,
               "name": "招财猫",
-              "nameKey": "LumiName_116601",
-              "weight": 1500,
-              "probability": "11.36"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 115301,
               "name": "口哨鸦",
-              "nameKey": "LumiName_115301",
-              "weight": 1500,
-              "probability": "11.36"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 101801,
               "name": "飞叶鼠",
-              "nameKey": "LumiName_101801",
-              "weight": 300,
-              "probability": "2.27"
+              "weight": 1000,
+              "probability": "6.67"
             }
           ],
-          "totalWeight": 13200
+          "totalWeight": 15000
         }
       ],
       "colorLumis": [
         {
           "id": 100101,
           "name": "卡皮巴拉",
-          "nameKey": "LumiName_100101",
-          "weight": 1500,
-          "probability": "11.60"
-        },
-        {
-          "id": 105701,
-          "name": "盼盼",
-          "nameKey": "LumiName_105701",
-          "weight": 1500,
-          "probability": "11.60"
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
           "id": 101301,
           "name": "好运鸟",
-          "nameKey": "LumiName_101301",
-          "weight": 1500,
-          "probability": "11.60"
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 116601,
-          "name": "招财猫",
-          "nameKey": "LumiName_116601",
-          "weight": 1500,
-          "probability": "11.60"
+          "id": 105701,
+          "name": "盼盼",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
           "id": 115301,
           "name": "口哨鸦",
-          "nameKey": "LumiName_115301",
-          "weight": 1500,
-          "probability": "11.60"
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 116601,
+          "name": "招财猫",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
           "id": 104801,
           "name": "草莱姆",
-          "nameKey": "LumiName_104801",
-          "weight": 1005,
-          "probability": "7.77"
+          "weight": 666,
+          "probability": "6.87"
         },
         {
           "id": 141401,
           "name": "莓团团",
-          "nameKey": "LumiName_141401",
-          "weight": 1005,
-          "probability": "7.77"
-        },
-        {
-          "id": 114401,
-          "name": "晴天娃娃",
-          "nameKey": "LumiName_114401",
-          "weight": 540,
-          "probability": "4.18"
-        },
-        {
-          "id": 123901,
-          "name": "三彩鹿",
-          "nameKey": "LumiName_123901",
-          "weight": 540,
-          "probability": "4.18"
+          "weight": 666,
+          "probability": "6.87"
         },
         {
           "id": 108501,
           "name": "小叶鼠",
-          "nameKey": "LumiName_108501",
-          "weight": 540,
-          "probability": "4.18"
+          "weight": 600,
+          "probability": "6.19"
         },
         {
-          "id": 135901,
-          "name": "莓果羊驼",
-          "nameKey": "LumiName_135901",
-          "weight": 495,
-          "probability": "3.83"
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 123901,
+          "name": "三彩鹿",
+          "weight": 600,
+          "probability": "6.19"
         },
         {
           "id": 109701,
           "name": "草冠莱姆",
-          "nameKey": "LumiName_109701",
-          "weight": 495,
-          "probability": "3.83"
+          "weight": 334,
+          "probability": "3.44"
         },
         {
-          "id": 124001,
-          "name": "六曜鹿",
-          "nameKey": "LumiName_124001",
-          "weight": 270,
-          "probability": "2.09"
-        },
-        {
-          "id": 114501,
-          "name": "晴天精灵",
-          "nameKey": "LumiName_114501",
-          "weight": 270,
-          "probability": "2.09"
+          "id": 135901,
+          "name": "莓果羊驼",
+          "weight": 334,
+          "probability": "3.44"
         },
         {
           "id": 101801,
           "name": "飞叶鼠",
-          "nameKey": "LumiName_101801",
-          "weight": 270,
-          "probability": "2.09"
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 124001,
+          "name": "六曜鹿",
+          "weight": 300,
+          "probability": "3.09"
         }
       ]
     },
@@ -572,556 +483,466 @@
         {
           "stage": 1,
           "status": "before",
-          "label": "阶段1 - 霸主解锁前",
+          "label": "阶段1 · 霸主出现前",
           "lumis": [
             {
               "id": 104601,
               "name": "水莱姆",
-              "nameKey": "LumiName_104601",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 113301,
               "name": "球蝌蚪",
-              "nameKey": "LumiName_113301",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 103501,
               "name": "软脚虾",
-              "nameKey": "LumiName_103501",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 103301,
               "name": "企鹅秋秋",
-              "nameKey": "LumiName_103301",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             }
           ],
-          "totalWeight": 6000
+          "totalWeight": 4000
         },
         {
           "stage": 1,
           "status": "after",
-          "label": "阶段1 - 霸主解锁后",
+          "label": "阶段1 · 霸主已抓",
           "lumis": [
             {
               "id": 104601,
               "name": "水莱姆",
-              "nameKey": "LumiName_104601",
-              "weight": 1005,
-              "probability": "23.33"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 113301,
               "name": "球蝌蚪",
-              "nameKey": "LumiName_113301",
-              "weight": 804,
-              "probability": "18.66"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 103501,
               "name": "软脚虾",
-              "nameKey": "LumiName_103501",
-              "weight": 603,
-              "probability": "14.00"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 103301,
               "name": "企鹅秋秋",
-              "nameKey": "LumiName_103301",
-              "weight": 1500,
-              "probability": "34.82"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 102801,
               "name": "传话蛙",
-              "nameKey": "LumiName_102801",
-              "weight": 396,
-              "probability": "9.19"
+              "weight": 1000,
+              "probability": "20.00"
             }
           ],
-          "totalWeight": 4308
+          "totalWeight": 5000
         },
         {
           "stage": 2,
           "status": "before",
-          "label": "阶段2 - 霸主解锁前",
+          "label": "阶段2 · 霸主出现前",
           "lumis": [
             {
               "id": 104601,
               "name": "水莱姆",
-              "nameKey": "LumiName_104601",
-              "weight": 1005,
-              "probability": "9.75"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 113301,
               "name": "球蝌蚪",
-              "nameKey": "LumiName_113301",
-              "weight": 804,
-              "probability": "7.80"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 103501,
               "name": "软脚虾",
-              "nameKey": "LumiName_103501",
-              "weight": 603,
-              "probability": "5.85"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 103301,
               "name": "企鹅秋秋",
-              "nameKey": "LumiName_103301",
-              "weight": 1500,
-              "probability": "14.55"
-            },
-            {
-              "id": 102801,
-              "name": "传话蛙",
-              "nameKey": "LumiName_102801",
-              "weight": 396,
-              "probability": "3.84"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 106601,
               "name": "美团团",
-              "nameKey": "LumiName_106601",
-              "weight": 1500,
-              "probability": "14.55"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 141301,
               "name": "冒险蜗牛",
-              "nameKey": "LumiName_141301",
-              "weight": 1500,
-              "probability": "14.55"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 119601,
               "name": "水牛宝宝",
-              "nameKey": "LumiName_119601",
-              "weight": 1500,
-              "probability": "14.55"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 101001,
               "name": "小菜鸡",
-              "nameKey": "LumiName_101001",
-              "weight": 1500,
-              "probability": "14.55"
+              "weight": 1000,
+              "probability": "12.50"
             }
           ],
-          "totalWeight": 10308
+          "totalWeight": 8000
         },
         {
           "stage": 2,
           "status": "after",
-          "label": "阶段2 - 霸主解锁后",
+          "label": "阶段2 · 霸主已抓",
           "lumis": [
             {
               "id": 104601,
               "name": "水莱姆",
-              "nameKey": "LumiName_104601",
-              "weight": 1005,
-              "probability": "9.94"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 113301,
               "name": "球蝌蚪",
-              "nameKey": "LumiName_113301",
-              "weight": 804,
-              "probability": "7.95"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 103501,
               "name": "软脚虾",
-              "nameKey": "LumiName_103501",
-              "weight": 603,
-              "probability": "5.96"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 103301,
               "name": "企鹅秋秋",
-              "nameKey": "LumiName_103301",
-              "weight": 1500,
-              "probability": "14.84"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 102801,
               "name": "传话蛙",
-              "nameKey": "LumiName_102801",
-              "weight": 396,
-              "probability": "3.92"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 106601,
               "name": "美团团",
-              "nameKey": "LumiName_106601",
-              "weight": 1500,
-              "probability": "14.84"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 141301,
               "name": "冒险蜗牛",
-              "nameKey": "LumiName_141301",
-              "weight": 1500,
-              "probability": "14.84"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 119601,
               "name": "水牛宝宝",
-              "nameKey": "LumiName_119601",
-              "weight": 1005,
-              "probability": "9.94"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 101001,
               "name": "小菜鸡",
-              "nameKey": "LumiName_101001",
-              "weight": 1500,
-              "probability": "14.84"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 127101,
               "name": "龙虾",
-              "nameKey": "LumiName_127101",
-              "weight": 297,
-              "probability": "2.94"
+              "weight": 1000,
+              "probability": "10.00"
             }
           ],
-          "totalWeight": 10110
+          "totalWeight": 10000
         },
         {
           "stage": 3,
           "status": "before",
-          "label": "阶段3 - 霸主解锁前",
+          "label": "阶段3 · 霸主出现前",
           "lumis": [
             {
               "id": 104601,
               "name": "水莱姆",
-              "nameKey": "LumiName_104601",
-              "weight": 1005,
-              "probability": "6.48"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 113301,
               "name": "球蝌蚪",
-              "nameKey": "LumiName_113301",
-              "weight": 804,
-              "probability": "5.18"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 103501,
               "name": "软脚虾",
-              "nameKey": "LumiName_103501",
-              "weight": 603,
-              "probability": "3.89"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 103301,
               "name": "企鹅秋秋",
-              "nameKey": "LumiName_103301",
-              "weight": 1500,
-              "probability": "9.67"
-            },
-            {
-              "id": 102801,
-              "name": "传话蛙",
-              "nameKey": "LumiName_102801",
-              "weight": 396,
-              "probability": "2.55"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 106601,
               "name": "美团团",
-              "nameKey": "LumiName_106601",
-              "weight": 1500,
-              "probability": "9.67"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 141301,
               "name": "冒险蜗牛",
-              "nameKey": "LumiName_141301",
-              "weight": 1500,
-              "probability": "9.67"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 119601,
               "name": "水牛宝宝",
-              "nameKey": "LumiName_119601",
-              "weight": 1005,
-              "probability": "6.48"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 101001,
               "name": "小菜鸡",
-              "nameKey": "LumiName_101001",
-              "weight": 1500,
-              "probability": "9.67"
-            },
-            {
-              "id": 127101,
-              "name": "龙虾",
-              "nameKey": "LumiName_127101",
-              "weight": 297,
-              "probability": "1.91"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 109501,
               "name": "水鳍莱姆",
-              "nameKey": "LumiName_109501",
-              "weight": 1500,
-              "probability": "9.67"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 108601,
               "name": "水母贝贝",
-              "nameKey": "LumiName_108601",
-              "weight": 900,
-              "probability": "5.80"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 119701,
               "name": "莽莽水牛",
-              "nameKey": "LumiName_119701",
-              "weight": 1500,
-              "probability": "9.67"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 124401,
               "name": "灯光鱼",
-              "nameKey": "LumiName_124401",
-              "weight": 1500,
-              "probability": "9.67"
+              "weight": 1000,
+              "probability": "8.33"
             }
           ],
-          "totalWeight": 15510
+          "totalWeight": 12000
         },
         {
           "stage": 3,
           "status": "after",
-          "label": "阶段3 - 霸主解锁后",
+          "label": "阶段3 · 霸主已抓",
           "lumis": [
             {
               "id": 104601,
               "name": "水莱姆",
-              "nameKey": "LumiName_104601",
-              "weight": 1005,
-              "probability": "7.44"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 113301,
               "name": "球蝌蚪",
-              "nameKey": "LumiName_113301",
-              "weight": 804,
-              "probability": "5.96"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 103501,
               "name": "软脚虾",
-              "nameKey": "LumiName_103501",
-              "weight": 603,
-              "probability": "4.47"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 103301,
               "name": "企鹅秋秋",
-              "nameKey": "LumiName_103301",
-              "weight": 1500,
-              "probability": "11.11"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 102801,
               "name": "传话蛙",
-              "nameKey": "LumiName_102801",
-              "weight": 396,
-              "probability": "2.93"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 106601,
               "name": "美团团",
-              "nameKey": "LumiName_106601",
-              "weight": 1500,
-              "probability": "11.11"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 141301,
               "name": "冒险蜗牛",
-              "nameKey": "LumiName_141301",
-              "weight": 1500,
-              "probability": "11.11"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 119601,
               "name": "水牛宝宝",
-              "nameKey": "LumiName_119601",
-              "weight": 1005,
-              "probability": "7.44"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 101001,
               "name": "小菜鸡",
-              "nameKey": "LumiName_101001",
-              "weight": 1500,
-              "probability": "11.11"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 127101,
               "name": "龙虾",
-              "nameKey": "LumiName_127101",
-              "weight": 297,
-              "probability": "2.20"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 109501,
               "name": "水鳍莱姆",
-              "nameKey": "LumiName_109501",
-              "weight": 495,
-              "probability": "3.67"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 108601,
               "name": "水母贝贝",
-              "nameKey": "LumiName_108601",
-              "weight": 600,
-              "probability": "4.44"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 119701,
               "name": "莽莽水牛",
-              "nameKey": "LumiName_119701",
-              "weight": 495,
-              "probability": "3.67"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 124401,
               "name": "灯光鱼",
-              "nameKey": "LumiName_124401",
-              "weight": 1500,
-              "probability": "11.11"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 103201,
               "name": "水母花花",
-              "nameKey": "LumiName_103201",
-              "weight": 300,
-              "probability": "2.22"
+              "weight": 1000,
+              "probability": "6.67"
             }
           ],
-          "totalWeight": 13500
+          "totalWeight": 15000
         }
       ],
       "colorLumis": [
         {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "10.10"
+        },
+        {
           "id": 103301,
           "name": "企鹅秋秋",
-          "nameKey": "LumiName_103301",
-          "weight": 1500,
-          "probability": "11.19"
+          "weight": 1000,
+          "probability": "10.10"
         },
         {
           "id": 106601,
           "name": "美团团",
-          "nameKey": "LumiName_106601",
-          "weight": 1500,
-          "probability": "11.19"
-        },
-        {
-          "id": 141301,
-          "name": "冒险蜗牛",
-          "nameKey": "LumiName_141301",
-          "weight": 1500,
-          "probability": "11.19"
-        },
-        {
-          "id": 101001,
-          "name": "小菜鸡",
-          "nameKey": "LumiName_101001",
-          "weight": 1500,
-          "probability": "11.19"
+          "weight": 1000,
+          "probability": "10.10"
         },
         {
           "id": 124401,
           "name": "灯光鱼",
-          "nameKey": "LumiName_124401",
-          "weight": 1500,
-          "probability": "11.19"
+          "weight": 1000,
+          "probability": "10.10"
         },
         {
-          "id": 104601,
-          "name": "水莱姆",
-          "nameKey": "LumiName_104601",
-          "weight": 1005,
-          "probability": "7.49"
-        },
-        {
-          "id": 119601,
-          "name": "水牛宝宝",
-          "nameKey": "LumiName_119601",
-          "weight": 1005,
-          "probability": "7.49"
-        },
-        {
-          "id": 113301,
-          "name": "球蝌蚪",
-          "nameKey": "LumiName_113301",
-          "weight": 804,
-          "probability": "6.00"
+          "id": 141301,
+          "name": "冒险蜗牛",
+          "weight": 1000,
+          "probability": "10.10"
         },
         {
           "id": 103501,
           "name": "软脚虾",
-          "nameKey": "LumiName_103501",
-          "weight": 603,
-          "probability": "4.50"
+          "weight": 666,
+          "probability": "6.73"
+        },
+        {
+          "id": 104601,
+          "name": "水莱姆",
+          "weight": 666,
+          "probability": "6.73"
+        },
+        {
+          "id": 113301,
+          "name": "球蝌蚪",
+          "weight": 666,
+          "probability": "6.73"
+        },
+        {
+          "id": 119601,
+          "name": "水牛宝宝",
+          "weight": 666,
+          "probability": "6.73"
         },
         {
           "id": 108601,
           "name": "水母贝贝",
-          "nameKey": "LumiName_108601",
-          "weight": 540,
-          "probability": "4.03"
-        },
-        {
-          "id": 109501,
-          "name": "水鳍莱姆",
-          "nameKey": "LumiName_109501",
-          "weight": 495,
-          "probability": "3.69"
-        },
-        {
-          "id": 119701,
-          "name": "莽莽水牛",
-          "nameKey": "LumiName_119701",
-          "weight": 495,
-          "probability": "3.69"
+          "weight": 600,
+          "probability": "6.06"
         },
         {
           "id": 102801,
           "name": "传话蛙",
-          "nameKey": "LumiName_102801",
-          "weight": 396,
-          "probability": "2.95"
+          "weight": 334,
+          "probability": "3.37"
+        },
+        {
+          "id": 109501,
+          "name": "水鳍莱姆",
+          "weight": 334,
+          "probability": "3.37"
+        },
+        {
+          "id": 119701,
+          "name": "莽莽水牛",
+          "weight": 334,
+          "probability": "3.37"
         },
         {
           "id": 127101,
           "name": "龙虾",
-          "nameKey": "LumiName_127101",
-          "weight": 297,
-          "probability": "2.21"
+          "weight": 334,
+          "probability": "3.37"
         },
         {
           "id": 103201,
           "name": "水母花花",
-          "nameKey": "LumiName_103201",
-          "weight": 270,
-          "probability": "2.01"
+          "weight": 300,
+          "probability": "3.03"
         }
       ]
     },
@@ -1134,556 +955,466 @@
         {
           "stage": 1,
           "status": "before",
-          "label": "阶段1 - 霸主解锁前",
+          "label": "阶段1 · 霸主出现前",
           "lumis": [
             {
               "id": 104501,
               "name": "火莱姆",
-              "nameKey": "LumiName_104501",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 100701,
               "name": "炸弹鸡",
-              "nameKey": "LumiName_100701",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
-              "id": 112101,
-              "name": "只鼬宝宝",
-              "nameKey": "LumiName_112101",
-              "weight": 1500,
+              "id": 103401,
+              "name": "小火狐",
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 104301,
               "name": "火马墩墩",
-              "nameKey": "LumiName_104301",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             }
           ],
-          "totalWeight": 6000
+          "totalWeight": 4000
         },
         {
           "stage": 1,
           "status": "after",
-          "label": "阶段1 - 霸主解锁后",
+          "label": "阶段1 · 霸主已抓",
           "lumis": [
             {
               "id": 104501,
               "name": "火莱姆",
-              "nameKey": "LumiName_104501",
-              "weight": 1005,
-              "probability": "23.34"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 100701,
               "name": "炸弹鸡",
-              "nameKey": "LumiName_100701",
-              "weight": 1500,
-              "probability": "34.84"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
-              "id": 112101,
-              "name": "只鼬宝宝",
-              "nameKey": "LumiName_112101",
-              "weight": 600,
-              "probability": "13.94"
+              "id": 103401,
+              "name": "小火狐",
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 104301,
               "name": "火马墩墩",
-              "nameKey": "LumiName_104301",
-              "weight": 804,
-              "probability": "18.68"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 113101,
               "name": "炽焰马",
-              "nameKey": "LumiName_113101",
-              "weight": 396,
-              "probability": "9.20"
+              "weight": 1000,
+              "probability": "20.00"
             }
           ],
-          "totalWeight": 4305
+          "totalWeight": 5000
         },
         {
           "stage": 2,
           "status": "before",
-          "label": "阶段2 - 霸主解锁前",
+          "label": "阶段2 · 霸主出现前",
           "lumis": [
             {
               "id": 104501,
               "name": "火莱姆",
-              "nameKey": "LumiName_104501",
-              "weight": 1005,
-              "probability": "9.75"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 100701,
               "name": "炸弹鸡",
-              "nameKey": "LumiName_100701",
-              "weight": 1500,
-              "probability": "14.56"
-            },
-            {
-              "id": 112101,
-              "name": "只鼬宝宝",
-              "nameKey": "LumiName_112101",
-              "weight": 600,
-              "probability": "5.82"
-            },
-            {
-              "id": 104301,
-              "name": "火马墩墩",
-              "nameKey": "LumiName_104301",
-              "weight": 804,
-              "probability": "7.80"
-            },
-            {
-              "id": 113101,
-              "name": "炽焰马",
-              "nameKey": "LumiName_113101",
-              "weight": 396,
-              "probability": "3.84"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 103401,
               "name": "小火狐",
-              "nameKey": "LumiName_103401",
-              "weight": 1500,
-              "probability": "14.56"
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 101101,
+              "name": "柴火熊",
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 112401,
               "name": "喷喷蟹",
-              "nameKey": "LumiName_112401",
-              "weight": 1500,
-              "probability": "14.56"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 105101,
               "name": "暗莱姆",
-              "nameKey": "LumiName_105101",
-              "weight": 1500,
-              "probability": "14.56"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
-              "id": 106201,
-              "name": "只鼬",
-              "nameKey": "LumiName_106201",
-              "weight": 1500,
-              "probability": "14.56"
+              "id": 112101,
+              "name": "只鼬宝宝",
+              "weight": 1000,
+              "probability": "12.50"
             }
           ],
-          "totalWeight": 10305
+          "totalWeight": 8000
         },
         {
           "stage": 2,
           "status": "after",
-          "label": "阶段2 - 霸主解锁后",
+          "label": "阶段2 · 霸主已抓",
           "lumis": [
             {
               "id": 104501,
               "name": "火莱姆",
-              "nameKey": "LumiName_104501",
-              "weight": 1005,
-              "probability": "10.24"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 100701,
               "name": "炸弹鸡",
-              "nameKey": "LumiName_100701",
-              "weight": 1500,
-              "probability": "15.29"
-            },
-            {
-              "id": 112101,
-              "name": "只鼬宝宝",
-              "nameKey": "LumiName_112101",
-              "weight": 600,
-              "probability": "6.12"
-            },
-            {
-              "id": 104301,
-              "name": "火马墩墩",
-              "nameKey": "LumiName_104301",
-              "weight": 804,
-              "probability": "8.20"
-            },
-            {
-              "id": 113101,
-              "name": "炽焰马",
-              "nameKey": "LumiName_113101",
-              "weight": 396,
-              "probability": "4.04"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 103401,
               "name": "小火狐",
-              "nameKey": "LumiName_103401",
-              "weight": 1500,
-              "probability": "15.29"
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 113101,
+              "name": "炽焰马",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 101101,
+              "name": "柴火熊",
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 112401,
               "name": "喷喷蟹",
-              "nameKey": "LumiName_112401",
-              "weight": 1500,
-              "probability": "15.29"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 105101,
               "name": "暗莱姆",
-              "nameKey": "LumiName_105101",
-              "weight": 1005,
-              "probability": "10.24"
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 112101,
+              "name": "只鼬宝宝",
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 106201,
               "name": "只鼬",
-              "nameKey": "LumiName_106201",
-              "weight": 300,
-              "probability": "3.06"
-            },
-            {
-              "id": 107801,
-              "name": "筋肉虎",
-              "nameKey": "LumiName_107801",
-              "weight": 1200,
-              "probability": "12.23"
+              "weight": 1000,
+              "probability": "10.00"
             }
           ],
-          "totalWeight": 9810
+          "totalWeight": 10000
         },
         {
           "stage": 3,
           "status": "before",
-          "label": "阶段3 - 霸主解锁前",
+          "label": "阶段3 · 霸主出现前",
           "lumis": [
             {
               "id": 104501,
               "name": "火莱姆",
-              "nameKey": "LumiName_104501",
-              "weight": 1005,
-              "probability": "6.61"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 100701,
               "name": "炸弹鸡",
-              "nameKey": "LumiName_100701",
-              "weight": 1500,
-              "probability": "9.86"
-            },
-            {
-              "id": 112101,
-              "name": "只鼬宝宝",
-              "nameKey": "LumiName_112101",
-              "weight": 600,
-              "probability": "3.94"
-            },
-            {
-              "id": 104301,
-              "name": "火马墩墩",
-              "nameKey": "LumiName_104301",
-              "weight": 804,
-              "probability": "5.29"
-            },
-            {
-              "id": 113101,
-              "name": "炽焰马",
-              "nameKey": "LumiName_113101",
-              "weight": 396,
-              "probability": "2.60"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 103401,
               "name": "小火狐",
-              "nameKey": "LumiName_103401",
-              "weight": 1500,
-              "probability": "9.86"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
-              "id": 112401,
-              "name": "喷喷蟹",
-              "nameKey": "LumiName_112401",
-              "weight": 1500,
-              "probability": "9.86"
-            },
-            {
-              "id": 105101,
-              "name": "暗莱姆",
-              "nameKey": "LumiName_105101",
-              "weight": 1005,
-              "probability": "6.61"
-            },
-            {
-              "id": 106201,
-              "name": "只鼬",
-              "nameKey": "LumiName_106201",
-              "weight": 300,
-              "probability": "1.97"
-            },
-            {
-              "id": 107801,
-              "name": "筋肉虎",
-              "nameKey": "LumiName_107801",
-              "weight": 1200,
-              "probability": "7.89"
-            },
-            {
-              "id": 109401,
-              "name": "火炎莱姆",
-              "nameKey": "LumiName_109401",
-              "weight": 1500,
-              "probability": "9.86"
-            },
-            {
-              "id": 108401,
-              "name": "小火喵",
-              "nameKey": "LumiName_108401",
-              "weight": 900,
-              "probability": "5.92"
-            },
-            {
-              "id": 105401,
-              "name": "怪盗蝠",
-              "nameKey": "LumiName_105401",
-              "weight": 1500,
-              "probability": "9.86"
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 101101,
               "name": "柴火熊",
-              "nameKey": "LumiName_101101",
-              "weight": 1500,
-              "probability": "9.86"
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 112401,
+              "name": "喷喷蟹",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 105101,
+              "name": "暗莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 112101,
+              "name": "只鼬宝宝",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 109401,
+              "name": "火炎莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 108401,
+              "name": "小火喵",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 105401,
+              "name": "怪盗蝠",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 107801,
+              "name": "筋肉虎",
+              "weight": 1000,
+              "probability": "8.33"
             }
           ],
-          "totalWeight": 15210
+          "totalWeight": 12000
         },
         {
           "stage": 3,
           "status": "after",
-          "label": "阶段3 - 霸主解锁后",
+          "label": "阶段3 · 霸主已抓",
           "lumis": [
             {
               "id": 104501,
               "name": "火莱姆",
-              "nameKey": "LumiName_104501",
-              "weight": 1005,
-              "probability": "7.07"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 100701,
               "name": "炸弹鸡",
-              "nameKey": "LumiName_100701",
-              "weight": 1500,
-              "probability": "10.56"
-            },
-            {
-              "id": 112101,
-              "name": "只鼬宝宝",
-              "nameKey": "LumiName_112101",
-              "weight": 600,
-              "probability": "4.22"
-            },
-            {
-              "id": 104301,
-              "name": "火马墩墩",
-              "nameKey": "LumiName_104301",
-              "weight": 804,
-              "probability": "5.66"
-            },
-            {
-              "id": 113101,
-              "name": "炽焰马",
-              "nameKey": "LumiName_113101",
-              "weight": 396,
-              "probability": "2.79"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 103401,
               "name": "小火狐",
-              "nameKey": "LumiName_103401",
-              "weight": 1500,
-              "probability": "10.56"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
-              "id": 112401,
-              "name": "喷喷蟹",
-              "nameKey": "LumiName_112401",
-              "weight": 1500,
-              "probability": "10.56"
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
-              "id": 105101,
-              "name": "暗莱姆",
-              "nameKey": "LumiName_105101",
-              "weight": 1005,
-              "probability": "7.07"
-            },
-            {
-              "id": 106201,
-              "name": "只鼬",
-              "nameKey": "LumiName_106201",
-              "weight": 300,
-              "probability": "2.11"
-            },
-            {
-              "id": 107801,
-              "name": "筋肉虎",
-              "nameKey": "LumiName_107801",
-              "weight": 1200,
-              "probability": "8.45"
-            },
-            {
-              "id": 109401,
-              "name": "火炎莱姆",
-              "nameKey": "LumiName_109401",
-              "weight": 495,
-              "probability": "3.48"
-            },
-            {
-              "id": 108401,
-              "name": "小火喵",
-              "nameKey": "LumiName_108401",
-              "weight": 600,
-              "probability": "4.22"
-            },
-            {
-              "id": 105401,
-              "name": "怪盗蝠",
-              "nameKey": "LumiName_105401",
-              "weight": 1500,
-              "probability": "10.56"
+              "id": 113101,
+              "name": "炽焰马",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 101101,
               "name": "柴火熊",
-              "nameKey": "LumiName_101101",
-              "weight": 1500,
-              "probability": "10.56"
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 112401,
+              "name": "喷喷蟹",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 105101,
+              "name": "暗莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 112101,
+              "name": "只鼬宝宝",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 106201,
+              "name": "只鼬",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 109401,
+              "name": "火炎莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 108401,
+              "name": "小火喵",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 105401,
+              "name": "怪盗蝠",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 107801,
+              "name": "筋肉虎",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 101201,
               "name": "火猫",
-              "nameKey": "LumiName_101201",
-              "weight": 300,
-              "probability": "2.11"
+              "weight": 1000,
+              "probability": "6.67"
             }
           ],
-          "totalWeight": 14205
+          "totalWeight": 15000
         }
       ],
       "colorLumis": [
         {
           "id": 100701,
           "name": "炸弹鸡",
-          "nameKey": "LumiName_100701",
-          "weight": 1500,
-          "probability": "10.70"
-        },
-        {
-          "id": 103401,
-          "name": "小火狐",
-          "nameKey": "LumiName_103401",
-          "weight": 1500,
-          "probability": "10.70"
-        },
-        {
-          "id": 112401,
-          "name": "喷喷蟹",
-          "nameKey": "LumiName_112401",
-          "weight": 1500,
-          "probability": "10.70"
-        },
-        {
-          "id": 105401,
-          "name": "怪盗蝠",
-          "nameKey": "LumiName_105401",
-          "weight": 1500,
-          "probability": "10.70"
+          "weight": 1000,
+          "probability": "9.55"
         },
         {
           "id": 101101,
           "name": "柴火熊",
-          "nameKey": "LumiName_101101",
-          "weight": 1500,
-          "probability": "10.70"
+          "weight": 1000,
+          "probability": "9.55"
+        },
+        {
+          "id": 103401,
+          "name": "小火狐",
+          "weight": 1000,
+          "probability": "9.55"
+        },
+        {
+          "id": 105401,
+          "name": "怪盗蝠",
+          "weight": 1000,
+          "probability": "9.55"
         },
         {
           "id": 107801,
           "name": "筋肉虎",
-          "nameKey": "LumiName_107801",
-          "weight": 1200,
-          "probability": "8.56"
+          "weight": 1000,
+          "probability": "9.55"
         },
         {
-          "id": 104501,
-          "name": "火莱姆",
-          "nameKey": "LumiName_104501",
-          "weight": 1005,
-          "probability": "7.17"
-        },
-        {
-          "id": 105101,
-          "name": "暗莱姆",
-          "nameKey": "LumiName_105101",
-          "weight": 1005,
-          "probability": "7.17"
+          "id": 112401,
+          "name": "喷喷蟹",
+          "weight": 1000,
+          "probability": "9.55"
         },
         {
           "id": 104301,
           "name": "火马墩墩",
-          "nameKey": "LumiName_104301",
-          "weight": 804,
+          "weight": 666,
+          "probability": "6.36"
+        },
+        {
+          "id": 104501,
+          "name": "火莱姆",
+          "weight": 666,
+          "probability": "6.36"
+        },
+        {
+          "id": 105101,
+          "name": "暗莱姆",
+          "weight": 666,
+          "probability": "6.36"
+        },
+        {
+          "id": 108401,
+          "name": "小火喵",
+          "weight": 600,
           "probability": "5.73"
         },
         {
           "id": 112101,
           "name": "只鼬宝宝",
-          "nameKey": "LumiName_112101",
-          "weight": 540,
-          "probability": "3.85"
-        },
-        {
-          "id": 108401,
-          "name": "小火喵",
-          "nameKey": "LumiName_108401",
-          "weight": 540,
-          "probability": "3.85"
+          "weight": 600,
+          "probability": "5.73"
         },
         {
           "id": 109401,
           "name": "火炎莱姆",
-          "nameKey": "LumiName_109401",
-          "weight": 495,
-          "probability": "3.53"
+          "weight": 334,
+          "probability": "3.19"
         },
         {
           "id": 113101,
           "name": "炽焰马",
-          "nameKey": "LumiName_113101",
-          "weight": 396,
-          "probability": "2.82"
-        },
-        {
-          "id": 106201,
-          "name": "只鼬",
-          "nameKey": "LumiName_106201",
-          "weight": 270,
-          "probability": "1.93"
+          "weight": 334,
+          "probability": "3.19"
         },
         {
           "id": 101201,
           "name": "火猫",
-          "nameKey": "LumiName_101201",
-          "weight": 270,
-          "probability": "1.93"
+          "weight": 300,
+          "probability": "2.87"
+        },
+        {
+          "id": 106201,
+          "name": "只鼬",
+          "weight": 300,
+          "probability": "2.87"
         }
       ]
     },
@@ -1696,556 +1427,466 @@
         {
           "stage": 1,
           "status": "before",
-          "label": "阶段1 - 霸主解锁前",
+          "label": "阶段1 · 霸主出现前",
           "lumis": [
             {
               "id": 105001,
               "name": "土莱姆",
-              "nameKey": "LumiName_105001",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 112501,
               "name": "石角龟",
-              "nameKey": "LumiName_112501",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 136201,
               "name": "冒险菇",
-              "nameKey": "LumiName_136201",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 100801,
               "name": "练习鸡",
-              "nameKey": "LumiName_100801",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             }
           ],
-          "totalWeight": 6000
+          "totalWeight": 4000
         },
         {
           "stage": 1,
           "status": "after",
-          "label": "阶段1 - 霸主解锁后",
+          "label": "阶段1 · 霸主已抓",
           "lumis": [
             {
               "id": 105001,
               "name": "土莱姆",
-              "nameKey": "LumiName_105001",
-              "weight": 1005,
-              "probability": "19.31"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 112501,
               "name": "石角龟",
-              "nameKey": "LumiName_112501",
-              "weight": 804,
-              "probability": "15.45"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 136201,
               "name": "冒险菇",
-              "nameKey": "LumiName_136201",
-              "weight": 1500,
-              "probability": "28.82"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 100801,
               "name": "练习鸡",
-              "nameKey": "LumiName_100801",
-              "weight": 1500,
-              "probability": "28.82"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 125901,
               "name": "巨岩角龟",
-              "nameKey": "LumiName_125901",
-              "weight": 396,
-              "probability": "7.61"
+              "weight": 1000,
+              "probability": "20.00"
             }
           ],
-          "totalWeight": 5205
+          "totalWeight": 5000
         },
         {
           "stage": 2,
           "status": "before",
-          "label": "阶段2 - 霸主解锁前",
+          "label": "阶段2 · 霸主出现前",
           "lumis": [
             {
               "id": 105001,
               "name": "土莱姆",
-              "nameKey": "LumiName_105001",
-              "weight": 1005,
-              "probability": "8.97"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 112501,
               "name": "石角龟",
-              "nameKey": "LumiName_112501",
-              "weight": 804,
-              "probability": "7.18"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 136201,
               "name": "冒险菇",
-              "nameKey": "LumiName_136201",
-              "weight": 1500,
-              "probability": "13.39"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 100801,
               "name": "练习鸡",
-              "nameKey": "LumiName_100801",
-              "weight": 1500,
-              "probability": "13.39"
-            },
-            {
-              "id": 125901,
-              "name": "巨岩角龟",
-              "nameKey": "LumiName_125901",
-              "weight": 396,
-              "probability": "3.53"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 127001,
               "name": "食木沙鼠",
-              "nameKey": "LumiName_127001",
-              "weight": 1500,
-              "probability": "13.39"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 102901,
               "name": "淘淘",
-              "nameKey": "LumiName_102901",
-              "weight": 1500,
-              "probability": "13.39"
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 112901,
+              "name": "刺啦汪",
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 122301,
               "name": "陆行鸟",
-              "nameKey": "LumiName_122301",
-              "weight": 1500,
-              "probability": "13.39"
-            },
-            {
-              "id": 108801,
-              "name": "石猩猩",
-              "nameKey": "LumiName_108801",
-              "weight": 1500,
-              "probability": "13.39"
+              "weight": 1000,
+              "probability": "12.50"
             }
           ],
-          "totalWeight": 11205
+          "totalWeight": 8000
         },
         {
           "stage": 2,
           "status": "after",
-          "label": "阶段2 - 霸主解锁后",
+          "label": "阶段2 · 霸主已抓",
           "lumis": [
             {
               "id": 105001,
               "name": "土莱姆",
-              "nameKey": "LumiName_105001",
-              "weight": 1005,
-              "probability": "8.10"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 112501,
               "name": "石角龟",
-              "nameKey": "LumiName_112501",
-              "weight": 804,
-              "probability": "6.48"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 136201,
               "name": "冒险菇",
-              "nameKey": "LumiName_136201",
-              "weight": 1500,
-              "probability": "12.09"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 100801,
               "name": "练习鸡",
-              "nameKey": "LumiName_100801",
-              "weight": 1500,
-              "probability": "12.09"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 125901,
               "name": "巨岩角龟",
-              "nameKey": "LumiName_125901",
-              "weight": 396,
-              "probability": "3.19"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 127001,
               "name": "食木沙鼠",
-              "nameKey": "LumiName_127001",
-              "weight": 1500,
-              "probability": "12.09"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 102901,
               "name": "淘淘",
-              "nameKey": "LumiName_102901",
-              "weight": 1500,
-              "probability": "12.09"
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 112901,
+              "name": "刺啦汪",
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 122301,
               "name": "陆行鸟",
-              "nameKey": "LumiName_122301",
-              "weight": 1500,
-              "probability": "12.09"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
-              "id": 108801,
-              "name": "石猩猩",
-              "nameKey": "LumiName_108801",
-              "weight": 1500,
-              "probability": "12.09"
-            },
-            {
-              "id": 111801,
-              "name": "许愿灯象",
-              "nameKey": "LumiName_111801",
-              "weight": 1200,
-              "probability": "9.67"
+              "id": 105501,
+              "name": "闪电狗",
+              "weight": 1000,
+              "probability": "10.00"
             }
           ],
-          "totalWeight": 12405
+          "totalWeight": 10000
         },
         {
           "stage": 3,
           "status": "before",
-          "label": "阶段3 - 霸主解锁前",
+          "label": "阶段3 · 霸主出现前",
           "lumis": [
             {
               "id": 105001,
               "name": "土莱姆",
-              "nameKey": "LumiName_105001",
-              "weight": 1005,
-              "probability": "5.46"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 112501,
               "name": "石角龟",
-              "nameKey": "LumiName_112501",
-              "weight": 804,
-              "probability": "4.37"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 136201,
               "name": "冒险菇",
-              "nameKey": "LumiName_136201",
-              "weight": 1500,
-              "probability": "8.15"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 100801,
               "name": "练习鸡",
-              "nameKey": "LumiName_100801",
-              "weight": 1500,
-              "probability": "8.15"
-            },
-            {
-              "id": 125901,
-              "name": "巨岩角龟",
-              "nameKey": "LumiName_125901",
-              "weight": 396,
-              "probability": "2.15"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 127001,
               "name": "食木沙鼠",
-              "nameKey": "LumiName_127001",
-              "weight": 1500,
-              "probability": "8.15"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 102901,
               "name": "淘淘",
-              "nameKey": "LumiName_102901",
-              "weight": 1500,
-              "probability": "8.15"
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 112901,
+              "name": "刺啦汪",
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 122301,
               "name": "陆行鸟",
-              "nameKey": "LumiName_122301",
-              "weight": 1500,
-              "probability": "8.15"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
-              "id": 108801,
-              "name": "石猩猩",
-              "nameKey": "LumiName_108801",
-              "weight": 1500,
-              "probability": "8.15"
-            },
-            {
-              "id": 111801,
-              "name": "许愿灯象",
-              "nameKey": "LumiName_111801",
-              "weight": 1200,
-              "probability": "6.52"
-            },
-            {
-              "id": 109801,
-              "name": "电鸣莱姆",
-              "nameKey": "LumiName_109801",
-              "weight": 1500,
-              "probability": "8.15"
+              "id": 109901,
+              "name": "土脉莱姆",
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 104101,
               "name": "小钢狼",
-              "nameKey": "LumiName_104101",
-              "weight": 1500,
-              "probability": "8.15"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 104401,
               "name": "地鼠方方",
-              "nameKey": "LumiName_104401",
-              "weight": 1500,
-              "probability": "8.15"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
-              "id": 112301,
-              "name": "吓吓团",
-              "nameKey": "LumiName_112301",
-              "weight": 1500,
-              "probability": "8.15"
+              "id": 108801,
+              "name": "石猩猩",
+              "weight": 1000,
+              "probability": "8.33"
             }
           ],
-          "totalWeight": 18405
+          "totalWeight": 12000
         },
         {
           "stage": 3,
           "status": "after",
-          "label": "阶段3 - 霸主解锁后",
+          "label": "阶段3 · 霸主已抓",
           "lumis": [
             {
               "id": 105001,
               "name": "土莱姆",
-              "nameKey": "LumiName_105001",
-              "weight": 1005,
-              "probability": "5.98"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 112501,
               "name": "石角龟",
-              "nameKey": "LumiName_112501",
-              "weight": 804,
-              "probability": "4.79"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 136201,
               "name": "冒险菇",
-              "nameKey": "LumiName_136201",
-              "weight": 1500,
-              "probability": "8.93"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 100801,
               "name": "练习鸡",
-              "nameKey": "LumiName_100801",
-              "weight": 1500,
-              "probability": "8.93"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 125901,
               "name": "巨岩角龟",
-              "nameKey": "LumiName_125901",
-              "weight": 396,
-              "probability": "2.36"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 127001,
               "name": "食木沙鼠",
-              "nameKey": "LumiName_127001",
-              "weight": 1500,
-              "probability": "8.93"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 102901,
               "name": "淘淘",
-              "nameKey": "LumiName_102901",
-              "weight": 1500,
-              "probability": "8.93"
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 112901,
+              "name": "刺啦汪",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 122301,
               "name": "陆行鸟",
-              "nameKey": "LumiName_122301",
-              "weight": 1500,
-              "probability": "8.93"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
-              "id": 108801,
-              "name": "石猩猩",
-              "nameKey": "LumiName_108801",
-              "weight": 1500,
-              "probability": "8.93"
+              "id": 105501,
+              "name": "闪电狗",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
-              "id": 111801,
-              "name": "许愿灯象",
-              "nameKey": "LumiName_111801",
-              "weight": 1200,
-              "probability": "7.14"
-            },
-            {
-              "id": 109801,
-              "name": "电鸣莱姆",
-              "nameKey": "LumiName_109801",
-              "weight": 495,
-              "probability": "2.95"
+              "id": 109901,
+              "name": "土脉莱姆",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 104101,
               "name": "小钢狼",
-              "nameKey": "LumiName_104101",
-              "weight": 603,
-              "probability": "3.59"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 104401,
               "name": "地鼠方方",
-              "nameKey": "LumiName_104401",
-              "weight": 1500,
-              "probability": "8.93"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
-              "id": 112301,
-              "name": "吓吓团",
-              "nameKey": "LumiName_112301",
-              "weight": 1500,
-              "probability": "8.93"
+              "id": 108801,
+              "name": "石猩猩",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 102401,
               "name": "金刚狼",
-              "nameKey": "LumiName_102401",
-              "weight": 297,
-              "probability": "1.77"
+              "weight": 1000,
+              "probability": "6.67"
             }
           ],
-          "totalWeight": 16800
+          "totalWeight": 15000
         }
       ],
       "colorLumis": [
         {
-          "id": 136201,
-          "name": "冒险菇",
-          "nameKey": "LumiName_136201",
-          "weight": 1500,
-          "probability": "8.93"
-        },
-        {
           "id": 100801,
           "name": "练习鸡",
-          "nameKey": "LumiName_100801",
-          "weight": 1500,
-          "probability": "8.93"
-        },
-        {
-          "id": 127001,
-          "name": "食木沙鼠",
-          "nameKey": "LumiName_127001",
-          "weight": 1500,
-          "probability": "8.93"
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
           "id": 102901,
           "name": "淘淘",
-          "nameKey": "LumiName_102901",
-          "weight": 1500,
-          "probability": "8.93"
-        },
-        {
-          "id": 122301,
-          "name": "陆行鸟",
-          "nameKey": "LumiName_122301",
-          "weight": 1500,
-          "probability": "8.93"
-        },
-        {
-          "id": 108801,
-          "name": "石猩猩",
-          "nameKey": "LumiName_108801",
-          "weight": 1500,
-          "probability": "8.93"
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
           "id": 104401,
           "name": "地鼠方方",
-          "nameKey": "LumiName_104401",
-          "weight": 1500,
-          "probability": "8.93"
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
-          "id": 112301,
-          "name": "吓吓团",
-          "nameKey": "LumiName_112301",
-          "weight": 1500,
-          "probability": "8.93"
+          "id": 108801,
+          "name": "石猩猩",
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
-          "id": 111801,
-          "name": "许愿灯象",
-          "nameKey": "LumiName_111801",
-          "weight": 1200,
-          "probability": "7.14"
+          "id": 122301,
+          "name": "陆行鸟",
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
-          "id": 105001,
-          "name": "土莱姆",
-          "nameKey": "LumiName_105001",
-          "weight": 1005,
-          "probability": "5.98"
+          "id": 127001,
+          "name": "食木沙鼠",
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
-          "id": 112501,
-          "name": "石角龟",
-          "nameKey": "LumiName_112501",
-          "weight": 804,
-          "probability": "4.79"
+          "id": 136201,
+          "name": "冒险菇",
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
           "id": 104101,
           "name": "小钢狼",
-          "nameKey": "LumiName_104101",
-          "weight": 603,
-          "probability": "3.59"
+          "weight": 666,
+          "probability": "6.05"
         },
         {
-          "id": 109801,
-          "name": "电鸣莱姆",
-          "nameKey": "LumiName_109801",
-          "weight": 495,
-          "probability": "2.95"
+          "id": 105001,
+          "name": "土莱姆",
+          "weight": 666,
+          "probability": "6.05"
         },
         {
-          "id": 125901,
-          "name": "巨岩角龟",
-          "nameKey": "LumiName_125901",
-          "weight": 396,
-          "probability": "2.36"
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 666,
+          "probability": "6.05"
+        },
+        {
+          "id": 112901,
+          "name": "刺啦汪",
+          "weight": 666,
+          "probability": "6.05"
         },
         {
           "id": 102401,
           "name": "金刚狼",
-          "nameKey": "LumiName_102401",
-          "weight": 297,
-          "probability": "1.77"
+          "weight": 334,
+          "probability": "3.04"
+        },
+        {
+          "id": 105501,
+          "name": "闪电狗",
+          "weight": 334,
+          "probability": "3.04"
+        },
+        {
+          "id": 109901,
+          "name": "土脉莱姆",
+          "weight": 334,
+          "probability": "3.04"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 334,
+          "probability": "3.04"
         }
       ]
     },
@@ -2258,446 +1899,371 @@
         {
           "stage": 1,
           "status": "before",
-          "label": "阶段1 - 霸主解锁前",
+          "label": "阶段1 · 霸主出现前",
           "lumis": [
             {
               "id": 104901,
               "name": "电莱姆",
-              "nameKey": "LumiName_104901",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
-              "id": 112901,
-              "name": "刺啦汪",
-              "nameKey": "LumiName_112901",
-              "weight": 1500,
+              "id": 105601,
+              "name": "小蜜蜂",
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 102501,
               "name": "发奋仓鼠",
-              "nameKey": "LumiName_102501",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 100601,
               "name": "咕咕鸡",
-              "nameKey": "LumiName_100601",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             }
           ],
-          "totalWeight": 6000
+          "totalWeight": 4000
         },
         {
           "stage": 1,
           "status": "after",
-          "label": "阶段1 - 霸主解锁后",
+          "label": "阶段1 · 霸主已抓",
           "lumis": [
             {
               "id": 104901,
               "name": "电莱姆",
-              "nameKey": "LumiName_104901",
-              "weight": 1005,
-              "probability": "19.31"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
-              "id": 112901,
-              "name": "刺啦汪",
-              "nameKey": "LumiName_112901",
-              "weight": 804,
-              "probability": "15.45"
+              "id": 105601,
+              "name": "小蜜蜂",
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 102501,
               "name": "发奋仓鼠",
-              "nameKey": "LumiName_102501",
-              "weight": 1500,
-              "probability": "28.82"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 100601,
               "name": "咕咕鸡",
-              "nameKey": "LumiName_100601",
-              "weight": 1500,
-              "probability": "28.82"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
-              "id": 105501,
-              "name": "闪电狗",
-              "nameKey": "LumiName_105501",
-              "weight": 396,
-              "probability": "7.61"
+              "id": 119101,
+              "name": "公主蜂",
+              "weight": 1000,
+              "probability": "20.00"
             }
           ],
-          "totalWeight": 5205
+          "totalWeight": 5000
         },
         {
           "stage": 2,
           "status": "before",
-          "label": "阶段2 - 霸主解锁前",
+          "label": "阶段2 · 霸主出现前",
           "lumis": [
             {
               "id": 104901,
               "name": "电莱姆",
-              "nameKey": "LumiName_104901",
-              "weight": 1005,
-              "probability": "8.97"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
-              "id": 112901,
-              "name": "刺啦汪",
-              "nameKey": "LumiName_112901",
-              "weight": 804,
-              "probability": "7.18"
+              "id": 105601,
+              "name": "小蜜蜂",
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 102501,
               "name": "发奋仓鼠",
-              "nameKey": "LumiName_102501",
-              "weight": 1500,
-              "probability": "13.39"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 100601,
               "name": "咕咕鸡",
-              "nameKey": "LumiName_100601",
-              "weight": 1500,
-              "probability": "13.39"
-            },
-            {
-              "id": 105501,
-              "name": "闪电狗",
-              "nameKey": "LumiName_105501",
-              "weight": 396,
-              "probability": "3.53"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 106301,
               "name": "狮鹫宝宝",
-              "nameKey": "LumiName_106301",
-              "weight": 1500,
-              "probability": "13.39"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 116501,
               "name": "噼啪蛋",
-              "nameKey": "LumiName_116501",
-              "weight": 1500,
-              "probability": "13.39"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 103701,
               "name": "呐喊君",
-              "nameKey": "LumiName_103701",
-              "weight": 1500,
-              "probability": "13.39"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 103601,
               "name": "奶牛哞哞",
-              "nameKey": "LumiName_103601",
-              "weight": 1500,
-              "probability": "13.39"
+              "weight": 1000,
+              "probability": "12.50"
             }
           ],
-          "totalWeight": 11205
+          "totalWeight": 8000
         },
         {
           "stage": 2,
           "status": "after",
-          "label": "阶段2 - 霸主解锁后",
+          "label": "阶段2 · 霸主已抓",
           "lumis": [
             {
               "id": 104901,
               "name": "电莱姆",
-              "nameKey": "LumiName_104901",
-              "weight": 1005,
-              "probability": "9.48"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
-              "id": 112901,
-              "name": "刺啦汪",
-              "nameKey": "LumiName_112901",
-              "weight": 804,
-              "probability": "7.58"
+              "id": 105601,
+              "name": "小蜜蜂",
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 102501,
               "name": "发奋仓鼠",
-              "nameKey": "LumiName_102501",
-              "weight": 1500,
-              "probability": "14.14"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 100601,
               "name": "咕咕鸡",
-              "nameKey": "LumiName_100601",
-              "weight": 1500,
-              "probability": "14.14"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
-              "id": 105501,
-              "name": "闪电狗",
-              "nameKey": "LumiName_105501",
-              "weight": 396,
-              "probability": "3.73"
+              "id": 119101,
+              "name": "公主蜂",
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 106301,
               "name": "狮鹫宝宝",
-              "nameKey": "LumiName_106301",
-              "weight": 600,
-              "probability": "5.66"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 116501,
               "name": "噼啪蛋",
-              "nameKey": "LumiName_116501",
-              "weight": 1500,
-              "probability": "14.14"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 103701,
               "name": "呐喊君",
-              "nameKey": "LumiName_103701",
-              "weight": 1500,
-              "probability": "14.14"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 103601,
               "name": "奶牛哞哞",
-              "nameKey": "LumiName_103601",
-              "weight": 1500,
-              "probability": "14.14"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 106401,
               "name": "英俊狮鹫",
-              "nameKey": "LumiName_106401",
-              "weight": 300,
-              "probability": "2.83"
+              "weight": 1000,
+              "probability": "10.00"
             }
           ],
-          "totalWeight": 10605
+          "totalWeight": 10000
         },
         {
           "stage": 3,
           "status": "before",
-          "label": "阶段3 - 霸主解锁前",
+          "label": "阶段3 · 霸主出现前",
           "lumis": [
             {
               "id": 104901,
               "name": "电莱姆",
-              "nameKey": "LumiName_104901",
-              "weight": 1005,
-              "probability": "6.05"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
-              "id": 112901,
-              "name": "刺啦汪",
-              "nameKey": "LumiName_112901",
-              "weight": 804,
-              "probability": "4.84"
+              "id": 105601,
+              "name": "小蜜蜂",
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 102501,
               "name": "发奋仓鼠",
-              "nameKey": "LumiName_102501",
-              "weight": 1500,
-              "probability": "9.03"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 100601,
               "name": "咕咕鸡",
-              "nameKey": "LumiName_100601",
-              "weight": 1500,
-              "probability": "9.03"
-            },
-            {
-              "id": 105501,
-              "name": "闪电狗",
-              "nameKey": "LumiName_105501",
-              "weight": 396,
-              "probability": "2.38"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 106301,
               "name": "狮鹫宝宝",
-              "nameKey": "LumiName_106301",
-              "weight": 600,
-              "probability": "3.61"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 116501,
               "name": "噼啪蛋",
-              "nameKey": "LumiName_116501",
-              "weight": 1500,
-              "probability": "9.03"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 103701,
               "name": "呐喊君",
-              "nameKey": "LumiName_103701",
-              "weight": 1500,
-              "probability": "9.03"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 103601,
               "name": "奶牛哞哞",
-              "nameKey": "LumiName_103601",
-              "weight": 1500,
-              "probability": "9.03"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
-              "id": 106401,
-              "name": "英俊狮鹫",
-              "nameKey": "LumiName_106401",
-              "weight": 300,
-              "probability": "1.81"
-            },
-            {
-              "id": 109901,
-              "name": "土脉莱姆",
-              "nameKey": "LumiName_109901",
-              "weight": 1500,
-              "probability": "9.03"
+              "id": 109801,
+              "name": "电鸣莱姆",
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 102601,
               "name": "筋肉狗",
-              "nameKey": "LumiName_102601",
-              "weight": 1500,
-              "probability": "9.03"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 103801,
               "name": "黄风大圣",
-              "nameKey": "LumiName_103801",
-              "weight": 1500,
-              "probability": "9.03"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 104201,
               "name": "土犀犀",
-              "nameKey": "LumiName_104201",
-              "weight": 1500,
-              "probability": "9.03"
+              "weight": 1000,
+              "probability": "8.33"
             }
           ],
-          "totalWeight": 16605
+          "totalWeight": 12000
         },
         {
           "stage": 3,
           "status": "after",
-          "label": "阶段3 - 霸主解锁后",
+          "label": "阶段3 · 霸主已抓",
           "lumis": [
             {
               "id": 104901,
               "name": "电莱姆",
-              "nameKey": "LumiName_104901",
-              "weight": 1005,
-              "probability": "6.70"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
-              "id": 112901,
-              "name": "刺啦汪",
-              "nameKey": "LumiName_112901",
-              "weight": 804,
-              "probability": "5.36"
+              "id": 105601,
+              "name": "小蜜蜂",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 102501,
               "name": "发奋仓鼠",
-              "nameKey": "LumiName_102501",
-              "weight": 1500,
-              "probability": "10.00"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 100601,
               "name": "咕咕鸡",
-              "nameKey": "LumiName_100601",
-              "weight": 1500,
-              "probability": "10.00"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
-              "id": 105501,
-              "name": "闪电狗",
-              "nameKey": "LumiName_105501",
-              "weight": 396,
-              "probability": "2.64"
+              "id": 119101,
+              "name": "公主蜂",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 106301,
               "name": "狮鹫宝宝",
-              "nameKey": "LumiName_106301",
-              "weight": 600,
-              "probability": "4.00"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 116501,
               "name": "噼啪蛋",
-              "nameKey": "LumiName_116501",
-              "weight": 1500,
-              "probability": "10.00"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 103701,
               "name": "呐喊君",
-              "nameKey": "LumiName_103701",
-              "weight": 1500,
-              "probability": "10.00"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 103601,
               "name": "奶牛哞哞",
-              "nameKey": "LumiName_103601",
-              "weight": 1500,
-              "probability": "10.00"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 106401,
               "name": "英俊狮鹫",
-              "nameKey": "LumiName_106401",
-              "weight": 300,
-              "probability": "2.00"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
-              "id": 109901,
-              "name": "土脉莱姆",
-              "nameKey": "LumiName_109901",
-              "weight": 495,
-              "probability": "3.30"
+              "id": 109801,
+              "name": "电鸣莱姆",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 102601,
               "name": "筋肉狗",
-              "nameKey": "LumiName_102601",
-              "weight": 1500,
-              "probability": "10.00"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 103801,
               "name": "黄风大圣",
-              "nameKey": "LumiName_103801",
-              "weight": 1500,
-              "probability": "10.00"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 104201,
               "name": "土犀犀",
-              "nameKey": "LumiName_104201",
-              "weight": 603,
-              "probability": "4.02"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 127301,
               "name": "铁甲土犀",
-              "nameKey": "LumiName_127301",
-              "weight": 297,
-              "probability": "1.98"
+              "weight": 1000,
+              "probability": "6.67"
             }
           ],
           "totalWeight": 15000
@@ -2705,109 +2271,94 @@
       ],
       "colorLumis": [
         {
-          "id": 102501,
-          "name": "发奋仓鼠",
-          "nameKey": "LumiName_102501",
-          "weight": 1500,
-          "probability": "10.06"
-        },
-        {
           "id": 100601,
           "name": "咕咕鸡",
-          "nameKey": "LumiName_100601",
-          "weight": 1500,
-          "probability": "10.06"
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
-          "id": 116501,
-          "name": "噼啪蛋",
-          "nameKey": "LumiName_116501",
-          "weight": 1500,
-          "probability": "10.06"
-        },
-        {
-          "id": 103701,
-          "name": "呐喊君",
-          "nameKey": "LumiName_103701",
-          "weight": 1500,
-          "probability": "10.06"
-        },
-        {
-          "id": 103601,
-          "name": "奶牛哞哞",
-          "nameKey": "LumiName_103601",
-          "weight": 1500,
-          "probability": "10.06"
+          "id": 102501,
+          "name": "发奋仓鼠",
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
           "id": 102601,
           "name": "筋肉狗",
-          "nameKey": "LumiName_102601",
-          "weight": 1500,
-          "probability": "10.06"
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 103601,
+          "name": "奶牛哞哞",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
           "id": 103801,
           "name": "黄风大圣",
-          "nameKey": "LumiName_103801",
-          "weight": 1500,
-          "probability": "10.06"
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
-          "id": 104901,
-          "name": "电莱姆",
-          "nameKey": "LumiName_104901",
-          "weight": 1005,
-          "probability": "6.74"
-        },
-        {
-          "id": 112901,
-          "name": "刺啦汪",
-          "nameKey": "LumiName_112901",
-          "weight": 804,
-          "probability": "5.39"
+          "id": 116501,
+          "name": "噼啪蛋",
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
           "id": 104201,
           "name": "土犀犀",
-          "nameKey": "LumiName_104201",
-          "weight": 603,
-          "probability": "4.04"
+          "weight": 666,
+          "probability": "6.11"
+        },
+        {
+          "id": 104901,
+          "name": "电莱姆",
+          "weight": 666,
+          "probability": "6.11"
+        },
+        {
+          "id": 105601,
+          "name": "小蜜蜂",
+          "weight": 666,
+          "probability": "6.11"
         },
         {
           "id": 106301,
           "name": "狮鹫宝宝",
-          "nameKey": "LumiName_106301",
-          "weight": 540,
-          "probability": "3.62"
+          "weight": 600,
+          "probability": "5.50"
         },
         {
-          "id": 109901,
-          "name": "土脉莱姆",
-          "nameKey": "LumiName_109901",
-          "weight": 495,
-          "probability": "3.32"
+          "id": 109801,
+          "name": "电鸣莱姆",
+          "weight": 334,
+          "probability": "3.06"
         },
         {
-          "id": 105501,
-          "name": "闪电狗",
-          "nameKey": "LumiName_105501",
-          "weight": 396,
-          "probability": "2.66"
+          "id": 119101,
+          "name": "公主蜂",
+          "weight": 334,
+          "probability": "3.06"
         },
         {
           "id": 127301,
           "name": "铁甲土犀",
-          "nameKey": "LumiName_127301",
-          "weight": 297,
-          "probability": "1.99"
+          "weight": 334,
+          "probability": "3.06"
         },
         {
           "id": 106401,
           "name": "英俊狮鹫",
-          "nameKey": "LumiName_106401",
-          "weight": 270,
-          "probability": "1.81"
+          "weight": 300,
+          "probability": "2.75"
         }
       ]
     },
@@ -2820,556 +2371,466 @@
         {
           "stage": 1,
           "status": "before",
-          "label": "阶段1 - 霸主解锁前",
+          "label": "阶段1 · 霸主出现前",
           "lumis": [
             {
               "id": 104701,
               "name": "冰莱姆",
-              "nameKey": "LumiName_104701",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
-              "id": 113601,
-              "name": "云朵毛毛",
-              "nameKey": "LumiName_113601",
-              "weight": 1500,
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 106101,
               "name": "月兔",
-              "nameKey": "LumiName_106101",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             },
             {
               "id": 101901,
               "name": "小鹿晶晶",
-              "nameKey": "LumiName_101901",
-              "weight": 1500,
+              "weight": 1000,
               "probability": "25.00"
             }
           ],
-          "totalWeight": 6000
+          "totalWeight": 4000
         },
         {
           "stage": 1,
           "status": "after",
-          "label": "阶段1 - 霸主解锁后",
+          "label": "阶段1 · 霸主已抓",
           "lumis": [
             {
               "id": 104701,
               "name": "冰莱姆",
-              "nameKey": "LumiName_104701",
-              "weight": 1005,
-              "probability": "23.18"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
-              "id": 113601,
-              "name": "云朵毛毛",
-              "nameKey": "LumiName_113601",
-              "weight": 630,
-              "probability": "14.53"
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 106101,
               "name": "月兔",
-              "nameKey": "LumiName_106101",
-              "weight": 1500,
-              "probability": "34.60"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 101901,
               "name": "小鹿晶晶",
-              "nameKey": "LumiName_101901",
-              "weight": 804,
-              "probability": "18.55"
+              "weight": 1000,
+              "probability": "20.00"
             },
             {
               "id": 102001,
               "name": "冰川鹿",
-              "nameKey": "LumiName_102001",
-              "weight": 396,
-              "probability": "9.13"
+              "weight": 1000,
+              "probability": "20.00"
             }
           ],
-          "totalWeight": 4335
+          "totalWeight": 5000
         },
         {
           "stage": 2,
           "status": "before",
-          "label": "阶段2 - 霸主解锁前",
+          "label": "阶段2 · 霸主出现前",
           "lumis": [
             {
               "id": 104701,
               "name": "冰莱姆",
-              "nameKey": "LumiName_104701",
-              "weight": 1005,
-              "probability": "9.72"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
-              "id": 113601,
-              "name": "云朵毛毛",
-              "nameKey": "LumiName_113601",
-              "weight": 630,
-              "probability": "6.10"
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 106101,
               "name": "月兔",
-              "nameKey": "LumiName_106101",
-              "weight": 1500,
-              "probability": "14.51"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 101901,
               "name": "小鹿晶晶",
-              "nameKey": "LumiName_101901",
-              "weight": 804,
-              "probability": "7.78"
-            },
-            {
-              "id": 102001,
-              "name": "冰川鹿",
-              "nameKey": "LumiName_102001",
-              "weight": 396,
-              "probability": "3.83"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 105201,
               "name": "光莱姆",
-              "nameKey": "LumiName_105201",
-              "weight": 1500,
-              "probability": "14.51"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 116701,
               "name": "甜梦",
-              "nameKey": "LumiName_116701",
-              "weight": 1500,
-              "probability": "14.51"
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
-              "id": 113701,
-              "name": "云朵蛹",
-              "nameKey": "LumiName_113701",
-              "weight": 1500,
-              "probability": "14.51"
+              "id": 102701,
+              "name": "筋肉鹅",
+              "weight": 1000,
+              "probability": "12.50"
             },
             {
               "id": 123101,
               "name": "冰壳龟",
-              "nameKey": "LumiName_123101",
-              "weight": 1500,
-              "probability": "14.51"
+              "weight": 1000,
+              "probability": "12.50"
             }
           ],
-          "totalWeight": 10335
+          "totalWeight": 8000
         },
         {
           "stage": 2,
           "status": "after",
-          "label": "阶段2 - 霸主解锁后",
+          "label": "阶段2 · 霸主已抓",
           "lumis": [
             {
               "id": 104701,
               "name": "冰莱姆",
-              "nameKey": "LumiName_104701",
-              "weight": 1005,
-              "probability": "11.72"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
-              "id": 113601,
-              "name": "云朵毛毛",
-              "nameKey": "LumiName_113601",
-              "weight": 630,
-              "probability": "7.35"
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 106101,
               "name": "月兔",
-              "nameKey": "LumiName_106101",
-              "weight": 1500,
-              "probability": "17.49"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 101901,
               "name": "小鹿晶晶",
-              "nameKey": "LumiName_101901",
-              "weight": 804,
-              "probability": "9.38"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 102001,
               "name": "冰川鹿",
-              "nameKey": "LumiName_102001",
-              "weight": 396,
-              "probability": "4.62"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 105201,
               "name": "光莱姆",
-              "nameKey": "LumiName_105201",
-              "weight": 1005,
-              "probability": "11.72"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 116701,
               "name": "甜梦",
-              "nameKey": "LumiName_116701",
-              "weight": 1500,
-              "probability": "17.49"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
-              "id": 113701,
-              "name": "云朵蛹",
-              "nameKey": "LumiName_113701",
-              "weight": 162,
-              "probability": "1.89"
+              "id": 102701,
+              "name": "筋肉鹅",
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
               "id": 123101,
               "name": "冰壳龟",
-              "nameKey": "LumiName_123101",
-              "weight": 1500,
-              "probability": "17.49"
+              "weight": 1000,
+              "probability": "10.00"
             },
             {
-              "id": 113801,
-              "name": "云朵蝶",
-              "nameKey": "LumiName_113801",
-              "weight": 72,
-              "probability": "0.84"
+              "id": 103901,
+              "name": "食梦貘",
+              "weight": 1000,
+              "probability": "10.00"
             }
           ],
-          "totalWeight": 8574
+          "totalWeight": 10000
         },
         {
           "stage": 3,
           "status": "before",
-          "label": "阶段3 - 霸主解锁前",
+          "label": "阶段3 · 霸主出现前",
           "lumis": [
             {
               "id": 104701,
               "name": "冰莱姆",
-              "nameKey": "LumiName_104701",
-              "weight": 1005,
-              "probability": "6.90"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
-              "id": 113601,
-              "name": "云朵毛毛",
-              "nameKey": "LumiName_113601",
-              "weight": 630,
-              "probability": "4.32"
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 106101,
               "name": "月兔",
-              "nameKey": "LumiName_106101",
-              "weight": 1500,
-              "probability": "10.29"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 101901,
               "name": "小鹿晶晶",
-              "nameKey": "LumiName_101901",
-              "weight": 804,
-              "probability": "5.52"
-            },
-            {
-              "id": 102001,
-              "name": "冰川鹿",
-              "nameKey": "LumiName_102001",
-              "weight": 396,
-              "probability": "2.72"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 105201,
               "name": "光莱姆",
-              "nameKey": "LumiName_105201",
-              "weight": 1005,
-              "probability": "6.90"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 116701,
               "name": "甜梦",
-              "nameKey": "LumiName_116701",
-              "weight": 1500,
-              "probability": "10.29"
-            },
-            {
-              "id": 113701,
-              "name": "云朵蛹",
-              "nameKey": "LumiName_113701",
-              "weight": 162,
-              "probability": "1.11"
-            },
-            {
-              "id": 123101,
-              "name": "冰壳龟",
-              "nameKey": "LumiName_123101",
-              "weight": 1500,
-              "probability": "10.29"
-            },
-            {
-              "id": 113801,
-              "name": "云朵蝶",
-              "nameKey": "LumiName_113801",
-              "weight": 72,
-              "probability": "0.49"
-            },
-            {
-              "id": 109601,
-              "name": "冰晶莱姆",
-              "nameKey": "LumiName_109601",
-              "weight": 1500,
-              "probability": "10.29"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 102701,
               "name": "筋肉鹅",
-              "nameKey": "LumiName_102701",
-              "weight": 1500,
-              "probability": "10.29"
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 123101,
+              "name": "冰壳龟",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 109601,
+              "name": "冰晶莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 113601,
+              "name": "云朵毛毛",
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 116901,
               "name": "呼呼兔",
-              "nameKey": "LumiName_116901",
-              "weight": 1500,
-              "probability": "10.29"
+              "weight": 1000,
+              "probability": "8.33"
             },
             {
               "id": 102201,
               "name": "小马嘟嘟",
-              "nameKey": "LumiName_102201",
-              "weight": 1500,
-              "probability": "10.29"
+              "weight": 1000,
+              "probability": "8.33"
             }
           ],
-          "totalWeight": 14574
+          "totalWeight": 12000
         },
         {
           "stage": 3,
           "status": "after",
-          "label": "阶段3 - 霸主解锁后",
+          "label": "阶段3 · 霸主已抓",
           "lumis": [
             {
               "id": 104701,
               "name": "冰莱姆",
-              "nameKey": "LumiName_104701",
-              "weight": 1005,
-              "probability": "7.75"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
-              "id": 113601,
-              "name": "云朵毛毛",
-              "nameKey": "LumiName_113601",
-              "weight": 630,
-              "probability": "4.86"
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 106101,
               "name": "月兔",
-              "nameKey": "LumiName_106101",
-              "weight": 1500,
-              "probability": "11.57"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 101901,
               "name": "小鹿晶晶",
-              "nameKey": "LumiName_101901",
-              "weight": 804,
-              "probability": "6.20"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 102001,
               "name": "冰川鹿",
-              "nameKey": "LumiName_102001",
-              "weight": 396,
-              "probability": "3.05"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 105201,
               "name": "光莱姆",
-              "nameKey": "LumiName_105201",
-              "weight": 1005,
-              "probability": "7.75"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 116701,
               "name": "甜梦",
-              "nameKey": "LumiName_116701",
-              "weight": 1500,
-              "probability": "11.57"
-            },
-            {
-              "id": 113701,
-              "name": "云朵蛹",
-              "nameKey": "LumiName_113701",
-              "weight": 162,
-              "probability": "1.25"
-            },
-            {
-              "id": 123101,
-              "name": "冰壳龟",
-              "nameKey": "LumiName_123101",
-              "weight": 1500,
-              "probability": "11.57"
-            },
-            {
-              "id": 113801,
-              "name": "云朵蝶",
-              "nameKey": "LumiName_113801",
-              "weight": 72,
-              "probability": "0.56"
-            },
-            {
-              "id": 109601,
-              "name": "冰晶莱姆",
-              "nameKey": "LumiName_109601",
-              "weight": 495,
-              "probability": "3.82"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 102701,
               "name": "筋肉鹅",
-              "nameKey": "LumiName_102701",
-              "weight": 1500,
-              "probability": "11.57"
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 123101,
+              "name": "冰壳龟",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 103901,
+              "name": "食梦貘",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 109601,
+              "name": "冰晶莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 113601,
+              "name": "云朵毛毛",
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 116901,
               "name": "呼呼兔",
-              "nameKey": "LumiName_116901",
-              "weight": 1500,
-              "probability": "11.57"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 102201,
               "name": "小马嘟嘟",
-              "nameKey": "LumiName_102201",
-              "weight": 603,
-              "probability": "4.65"
+              "weight": 1000,
+              "probability": "6.67"
             },
             {
               "id": 102301,
               "name": "独角兽",
-              "nameKey": "LumiName_102301",
-              "weight": 297,
-              "probability": "2.29"
+              "weight": 1000,
+              "probability": "6.67"
             }
           ],
-          "totalWeight": 12969
+          "totalWeight": 15000
         }
       ],
       "colorLumis": [
         {
+          "id": 102701,
+          "name": "筋肉鹅",
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
+          "id": 103901,
+          "name": "食梦貘",
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
           "id": 106101,
           "name": "月兔",
-          "nameKey": "LumiName_106101",
-          "weight": 1500,
-          "probability": "11.57"
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
+          "id": 112301,
+          "name": "吓吓团",
+          "weight": 1000,
+          "probability": "8.88"
         },
         {
           "id": 116701,
           "name": "甜梦",
-          "nameKey": "LumiName_116701",
-          "weight": 1500,
-          "probability": "11.57"
-        },
-        {
-          "id": 123101,
-          "name": "冰壳龟",
-          "nameKey": "LumiName_123101",
-          "weight": 1500,
-          "probability": "11.57"
-        },
-        {
-          "id": 102701,
-          "name": "筋肉鹅",
-          "nameKey": "LumiName_102701",
-          "weight": 1500,
-          "probability": "11.57"
+          "weight": 1000,
+          "probability": "8.88"
         },
         {
           "id": 116901,
           "name": "呼呼兔",
-          "nameKey": "LumiName_116901",
-          "weight": 1500,
-          "probability": "11.57"
+          "weight": 1000,
+          "probability": "8.88"
         },
         {
-          "id": 104701,
-          "name": "冰莱姆",
-          "nameKey": "LumiName_104701",
-          "weight": 1005,
-          "probability": "7.75"
-        },
-        {
-          "id": 105201,
-          "name": "光莱姆",
-          "nameKey": "LumiName_105201",
-          "weight": 1005,
-          "probability": "7.75"
+          "id": 123101,
+          "name": "冰壳龟",
+          "weight": 1000,
+          "probability": "8.88"
         },
         {
           "id": 101901,
           "name": "小鹿晶晶",
-          "nameKey": "LumiName_101901",
-          "weight": 804,
-          "probability": "6.20"
-        },
-        {
-          "id": 113601,
-          "name": "云朵毛毛",
-          "nameKey": "LumiName_113601",
-          "weight": 630,
-          "probability": "4.86"
+          "weight": 666,
+          "probability": "5.91"
         },
         {
           "id": 102201,
           "name": "小马嘟嘟",
-          "nameKey": "LumiName_102201",
-          "weight": 603,
-          "probability": "4.65"
+          "weight": 666,
+          "probability": "5.91"
         },
         {
-          "id": 109601,
-          "name": "冰晶莱姆",
-          "nameKey": "LumiName_109601",
-          "weight": 495,
-          "probability": "3.82"
+          "id": 104701,
+          "name": "冰莱姆",
+          "weight": 666,
+          "probability": "5.91"
+        },
+        {
+          "id": 105201,
+          "name": "光莱姆",
+          "weight": 666,
+          "probability": "5.91"
+        },
+        {
+          "id": 113601,
+          "name": "云朵毛毛",
+          "weight": 600,
+          "probability": "5.33"
         },
         {
           "id": 102001,
           "name": "冰川鹿",
-          "nameKey": "LumiName_102001",
-          "weight": 396,
-          "probability": "3.05"
+          "weight": 334,
+          "probability": "2.96"
         },
         {
           "id": 102301,
           "name": "独角兽",
-          "nameKey": "LumiName_102301",
-          "weight": 297,
-          "probability": "2.29"
+          "weight": 334,
+          "probability": "2.96"
         },
         {
-          "id": 113701,
-          "name": "云朵蛹",
-          "nameKey": "LumiName_113701",
-          "weight": 162,
-          "probability": "1.25"
-        },
-        {
-          "id": 113801,
-          "name": "云朵蝶",
-          "nameKey": "LumiName_113801",
-          "weight": 72,
-          "probability": "0.56"
+          "id": 109601,
+          "name": "冰晶莱姆",
+          "weight": 334,
+          "probability": "2.96"
         }
       ]
     }
@@ -3382,232 +2843,187 @@
       "type": "season",
       "lumis": [
         {
-          "id": 104801,
-          "name": "草莱姆",
-          "nameKey": "LumiName_104801",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "7.23"
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 100101,
-          "name": "卡皮巴拉",
-          "nameKey": "LumiName_100101",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.79"
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 135901,
-          "name": "莓果羊驼",
-          "nameKey": "LumiName_135901",
-          "weight": 495,
-          "pool": "normal",
-          "probability": "3.56"
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 105701,
-          "name": "盼盼",
-          "nameKey": "LumiName_105701",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.79"
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 109701,
-          "name": "草冠莱姆",
-          "nameKey": "LumiName_109701",
-          "weight": 495,
-          "pool": "normal",
-          "probability": "3.56"
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 141401,
-          "name": "莓团团",
-          "nameKey": "LumiName_141401",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "7.23"
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 115301,
-          "name": "口哨鸦",
-          "nameKey": "LumiName_115301",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.79"
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 118901,
           "name": "草龙",
-          "nameKey": "LumiName_118901",
-          "weight": 200,
-          "pool": "season",
-          "probability": "1.44"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 112801,
           "name": "草龙宝宝",
-          "nameKey": "LumiName_112801",
-          "weight": 400,
-          "pool": "season",
-          "probability": "2.88"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 120801,
-          "name": "含苞",
-          "nameKey": "LumiName_120801",
-          "weight": 670,
-          "pool": "season",
-          "probability": "4.82"
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 120901,
           "name": "绽放",
-          "nameKey": "LumiName_120901",
-          "weight": 330,
-          "pool": "season",
-          "probability": "2.37"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 116801,
-          "name": "梦游羊",
-          "nameKey": "LumiName_116801",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.63"
+          "id": 120801,
+          "name": "含苞",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 100501,
-          "name": "多肉猫",
-          "nameKey": "LumiName_100501",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.63"
-        },
-        {
-          "id": 115801,
-          "name": "战甲海獭",
-          "nameKey": "LumiName_115801",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.63"
-        },
-        {
-          "id": 120401,
-          "name": "大脚树猿",
-          "nameKey": "LumiName_120401",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.63"
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "6.67"
         }
       ],
-      "totalWeight": 13900,
+      "totalWeight": 15000,
       "colorLumis": [
         {
-          "id": 100101,
-          "name": "卡皮巴拉",
-          "nameKey": "LumiName_100101",
-          "weight": 1500,
-          "probability": "10.84"
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 105701,
-          "name": "盼盼",
-          "nameKey": "LumiName_105701",
-          "weight": 1500,
-          "probability": "10.84"
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 115301,
-          "name": "口哨鸦",
-          "nameKey": "LumiName_115301",
-          "weight": 1500,
-          "probability": "10.84"
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 116801,
-          "name": "梦游羊",
-          "nameKey": "LumiName_116801",
-          "weight": 1200,
-          "probability": "8.67"
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 100501,
-          "name": "多肉猫",
-          "nameKey": "LumiName_100501",
-          "weight": 1200,
-          "probability": "8.67"
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 115801,
-          "name": "战甲海獭",
-          "nameKey": "LumiName_115801",
-          "weight": 1200,
-          "probability": "8.67"
-        },
-        {
-          "id": 120401,
-          "name": "大脚树猿",
-          "nameKey": "LumiName_120401",
-          "weight": 1200,
-          "probability": "8.67"
-        },
-        {
-          "id": 104801,
-          "name": "草莱姆",
-          "nameKey": "LumiName_104801",
-          "weight": 1005,
-          "probability": "7.26"
-        },
-        {
-          "id": 141401,
-          "name": "莓团团",
-          "nameKey": "LumiName_141401",
-          "weight": 1005,
-          "probability": "7.26"
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 666,
+          "probability": "6.87"
         },
         {
           "id": 120801,
           "name": "含苞",
-          "nameKey": "LumiName_120801",
-          "weight": 670,
-          "probability": "4.84"
-        },
-        {
-          "id": 135901,
-          "name": "莓果羊驼",
-          "nameKey": "LumiName_135901",
-          "weight": 495,
-          "probability": "3.58"
-        },
-        {
-          "id": 109701,
-          "name": "草冠莱姆",
-          "nameKey": "LumiName_109701",
-          "weight": 495,
-          "probability": "3.58"
+          "weight": 666,
+          "probability": "6.87"
         },
         {
           "id": 112801,
           "name": "草龙宝宝",
-          "nameKey": "LumiName_112801",
-          "weight": 360,
-          "probability": "2.60"
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "6.19"
         },
         {
           "id": 120901,
           "name": "绽放",
-          "nameKey": "LumiName_120901",
-          "weight": 330,
-          "probability": "2.38"
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 300,
+          "probability": "3.09"
         },
         {
           "id": 118901,
           "name": "草龙",
-          "nameKey": "LumiName_118901",
-          "weight": 180,
-          "probability": "1.30"
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "3.09"
         }
       ]
     },
@@ -3618,232 +3034,187 @@
       "type": "season",
       "lumis": [
         {
-          "id": 104701,
-          "name": "冰莱姆",
-          "nameKey": "LumiName_104701",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "8.39"
-        },
-        {
-          "id": 109601,
-          "name": "冰晶莱姆",
-          "nameKey": "LumiName_109601",
-          "weight": 495,
-          "pool": "normal",
-          "probability": "4.13"
+          "id": 102001,
+          "name": "冰川鹿",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 101901,
           "name": "小鹿晶晶",
-          "nameKey": "LumiName_101901",
-          "weight": 804,
-          "pool": "normal",
-          "probability": "6.72"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 105201,
-          "name": "光莱姆",
-          "nameKey": "LumiName_105201",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "8.39"
+          "id": 127301,
+          "name": "铁甲土犀",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 113601,
-          "name": "云朵毛毛",
-          "nameKey": "LumiName_113601",
-          "weight": 630,
-          "pool": "normal",
-          "probability": "5.26"
+          "id": 104201,
+          "name": "土犀犀",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 113701,
-          "name": "云朵蛹",
-          "nameKey": "LumiName_113701",
-          "weight": 162,
-          "pool": "normal",
-          "probability": "1.35"
+          "id": 103801,
+          "name": "黄风大圣",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 113801,
-          "name": "云朵蝶",
-          "nameKey": "LumiName_113801",
-          "weight": 72,
-          "pool": "normal",
-          "probability": "0.60"
+          "id": 103301,
+          "name": "企鹅秋秋",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 106101,
+          "name": "月兔",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 114101,
           "name": "冰晶狼",
-          "nameKey": "LumiName_114101",
-          "weight": 266,
-          "pool": "season",
-          "probability": "2.22"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 114001,
           "name": "冰狼崽",
-          "nameKey": "LumiName_114001",
-          "weight": 533,
-          "pool": "season",
-          "probability": "4.45"
-        },
-        {
-          "id": 103901,
-          "name": "食梦貘",
-          "nameKey": "LumiName_103901",
           "weight": 1000,
-          "pool": "season",
-          "probability": "8.35"
+          "probability": "6.67"
         },
         {
-          "id": 117501,
-          "name": "摸鱼雪貂",
-          "nameKey": "LumiName_117501",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "10.02"
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 125801,
           "name": "魔魔猪",
-          "nameKey": "LumiName_125801",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "10.02"
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 139801,
           "name": "松果猫头鹰",
-          "nameKey": "LumiName_139801",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "10.02"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 115701,
-          "name": "粉拳海獭",
-          "nameKey": "LumiName_115701",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "10.02"
-        },
-        {
-          "id": 120101,
-          "name": "鳄鱼轰炸机",
-          "nameKey": "LumiName_120101",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "10.02"
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "6.67"
         }
       ],
-      "totalWeight": 11972,
+      "totalWeight": 15000,
       "colorLumis": [
+        {
+          "id": 103301,
+          "name": "企鹅秋秋",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 103801,
+          "name": "黄风大圣",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 106101,
+          "name": "月兔",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "8.40"
+        },
         {
           "id": 117501,
           "name": "摸鱼雪貂",
-          "nameKey": "LumiName_117501",
-          "weight": 1200,
-          "probability": "10.09"
+          "weight": 1000,
+          "probability": "8.40"
         },
         {
           "id": 125801,
           "name": "魔魔猪",
-          "nameKey": "LumiName_125801",
-          "weight": 1200,
-          "probability": "10.09"
+          "weight": 1000,
+          "probability": "8.40"
         },
         {
           "id": 139801,
           "name": "松果猫头鹰",
-          "nameKey": "LumiName_139801",
-          "weight": 1200,
-          "probability": "10.09"
-        },
-        {
-          "id": 115701,
-          "name": "粉拳海獭",
-          "nameKey": "LumiName_115701",
-          "weight": 1200,
-          "probability": "10.09"
-        },
-        {
-          "id": 120101,
-          "name": "鳄鱼轰炸机",
-          "nameKey": "LumiName_120101",
-          "weight": 1200,
-          "probability": "10.09"
-        },
-        {
-          "id": 104701,
-          "name": "冰莱姆",
-          "nameKey": "LumiName_104701",
-          "weight": 1005,
-          "probability": "8.45"
-        },
-        {
-          "id": 105201,
-          "name": "光莱姆",
-          "nameKey": "LumiName_105201",
-          "weight": 1005,
-          "probability": "8.45"
-        },
-        {
-          "id": 103901,
-          "name": "食梦貘",
-          "nameKey": "LumiName_103901",
           "weight": 1000,
-          "probability": "8.41"
+          "probability": "8.40"
         },
         {
           "id": 101901,
           "name": "小鹿晶晶",
-          "nameKey": "LumiName_101901",
-          "weight": 804,
-          "probability": "6.76"
+          "weight": 666,
+          "probability": "5.60"
         },
         {
-          "id": 113601,
-          "name": "云朵毛毛",
-          "nameKey": "LumiName_113601",
-          "weight": 630,
-          "probability": "5.30"
-        },
-        {
-          "id": 109601,
-          "name": "冰晶莱姆",
-          "nameKey": "LumiName_109601",
-          "weight": 495,
-          "probability": "4.16"
+          "id": 104201,
+          "name": "土犀犀",
+          "weight": 666,
+          "probability": "5.60"
         },
         {
           "id": 114001,
           "name": "冰狼崽",
-          "nameKey": "LumiName_114001",
-          "weight": 480,
-          "probability": "4.04"
+          "weight": 600,
+          "probability": "5.04"
+        },
+        {
+          "id": 102001,
+          "name": "冰川鹿",
+          "weight": 334,
+          "probability": "2.81"
+        },
+        {
+          "id": 127301,
+          "name": "铁甲土犀",
+          "weight": 334,
+          "probability": "2.81"
         },
         {
           "id": 114101,
           "name": "冰晶狼",
-          "nameKey": "LumiName_114101",
-          "weight": 240,
-          "probability": "2.02"
-        },
-        {
-          "id": 113701,
-          "name": "云朵蛹",
-          "nameKey": "LumiName_113701",
-          "weight": 162,
-          "probability": "1.36"
-        },
-        {
-          "id": 113801,
-          "name": "云朵蝶",
-          "nameKey": "LumiName_113801",
-          "weight": 72,
-          "probability": "0.61"
+          "weight": 300,
+          "probability": "2.52"
         }
       ]
     },
@@ -3854,232 +3225,187 @@
       "type": "season",
       "lumis": [
         {
-          "id": 114501,
-          "name": "晴天精灵",
-          "nameKey": "LumiName_114501",
-          "weight": 300,
-          "pool": "normal",
-          "probability": "2.09"
+          "id": 113101,
+          "name": "炽焰马",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 114401,
-          "name": "晴天娃娃",
-          "nameKey": "LumiName_114401",
-          "weight": 600,
-          "pool": "normal",
-          "probability": "4.18"
+          "id": 104301,
+          "name": "火马墩墩",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 141301,
-          "name": "冒险蜗牛",
-          "nameKey": "LumiName_141301",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.44"
+          "id": 106401,
+          "name": "英俊狮鹫",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 116601,
-          "name": "招财猫",
-          "nameKey": "LumiName_116601",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.44"
+          "id": 106301,
+          "name": "狮鹫宝宝",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 119701,
-          "name": "莽莽水牛",
-          "nameKey": "LumiName_119701",
-          "weight": 495,
-          "pool": "normal",
-          "probability": "3.44"
+          "id": 102501,
+          "name": "发奋仓鼠",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 119601,
-          "name": "水牛宝宝",
-          "nameKey": "LumiName_119601",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "6.99"
+          "id": 115301,
+          "name": "口哨鸦",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 101301,
-          "name": "好运鸟",
-          "nameKey": "LumiName_101301",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.44"
+          "id": 107801,
+          "name": "筋肉虎",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 114801,
-          "name": "光兔",
-          "nameKey": "LumiName_114801",
-          "weight": 266,
-          "pool": "season",
-          "probability": "1.85"
+          "id": 101601,
+          "name": "火龙",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 114701,
-          "name": "光兔宝",
-          "nameKey": "LumiName_114701",
-          "weight": 533,
-          "pool": "season",
-          "probability": "3.71"
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 108901,
           "name": "花牌孔雀",
-          "nameKey": "LumiName_108901",
-          "weight": 670,
-          "pool": "season",
-          "probability": "4.66"
-        },
-        {
-          "id": 130001,
-          "name": "石雕树懒",
-          "nameKey": "LumiName_130001",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.35"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 124301,
           "name": "灵光鸟",
-          "nameKey": "LumiName_124301",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.35"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 115501,
-          "name": "宝剑海獭",
-          "nameKey": "LumiName_115501",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.35"
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 120501,
-          "name": "蕉蕉猩",
-          "nameKey": "LumiName_120501",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.35"
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 119801,
-          "name": "木棍人",
-          "nameKey": "LumiName_119801",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.35"
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "6.67"
         }
       ],
-      "totalWeight": 14369,
+      "totalWeight": 15000,
       "colorLumis": [
         {
-          "id": 141301,
-          "name": "冒险蜗牛",
-          "nameKey": "LumiName_141301",
-          "weight": 1500,
-          "probability": "10.56"
+          "id": 102501,
+          "name": "发奋仓鼠",
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
-          "id": 116601,
-          "name": "招财猫",
-          "nameKey": "LumiName_116601",
-          "weight": 1500,
-          "probability": "10.56"
+          "id": 107801,
+          "name": "筋肉虎",
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
-          "id": 101301,
-          "name": "好运鸟",
-          "nameKey": "LumiName_101301",
-          "weight": 1500,
-          "probability": "10.56"
+          "id": 115301,
+          "name": "口哨鸦",
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
-          "id": 130001,
-          "name": "石雕树懒",
-          "nameKey": "LumiName_130001",
-          "weight": 1200,
-          "probability": "8.45"
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
           "id": 124301,
           "name": "灵光鸟",
-          "nameKey": "LumiName_124301",
-          "weight": 1200,
-          "probability": "8.45"
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
-          "id": 115501,
-          "name": "宝剑海獭",
-          "nameKey": "LumiName_115501",
-          "weight": 1200,
-          "probability": "8.45"
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "9.09"
         },
         {
-          "id": 120501,
-          "name": "蕉蕉猩",
-          "nameKey": "LumiName_120501",
-          "weight": 1200,
-          "probability": "8.45"
+          "id": 104301,
+          "name": "火马墩墩",
+          "weight": 666,
+          "probability": "6.05"
         },
         {
-          "id": 119801,
-          "name": "木棍人",
-          "nameKey": "LumiName_119801",
-          "weight": 1200,
-          "probability": "8.45"
+          "id": 106301,
+          "name": "狮鹫宝宝",
+          "weight": 600,
+          "probability": "5.45"
         },
         {
-          "id": 119601,
-          "name": "水牛宝宝",
-          "nameKey": "LumiName_119601",
-          "weight": 1005,
-          "probability": "7.08"
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "5.45"
         },
         {
           "id": 108901,
           "name": "花牌孔雀",
-          "nameKey": "LumiName_108901",
-          "weight": 670,
-          "probability": "4.72"
+          "weight": 600,
+          "probability": "5.45"
         },
         {
-          "id": 114401,
-          "name": "晴天娃娃",
-          "nameKey": "LumiName_114401",
-          "weight": 540,
-          "probability": "3.80"
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "5.45"
         },
         {
-          "id": 119701,
-          "name": "莽莽水牛",
-          "nameKey": "LumiName_119701",
-          "weight": 495,
-          "probability": "3.49"
+          "id": 113101,
+          "name": "炽焰马",
+          "weight": 334,
+          "probability": "3.04"
         },
         {
-          "id": 114701,
-          "name": "光兔宝",
-          "nameKey": "LumiName_114701",
-          "weight": 480,
-          "probability": "3.38"
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "2.73"
         },
         {
-          "id": 114501,
-          "name": "晴天精灵",
-          "nameKey": "LumiName_114501",
-          "weight": 270,
-          "probability": "1.90"
-        },
-        {
-          "id": 114801,
-          "name": "光兔",
-          "nameKey": "LumiName_114801",
-          "weight": 240,
-          "probability": "1.69"
+          "id": 106401,
+          "name": "英俊狮鹫",
+          "weight": 300,
+          "probability": "2.73"
         }
       ]
     },
@@ -4090,232 +3416,187 @@
       "type": "season",
       "lumis": [
         {
-          "id": 104501,
-          "name": "火莱姆",
-          "nameKey": "LumiName_104501",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "8.28"
+          "id": 102801,
+          "name": "传话蛙",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 100701,
-          "name": "炸弹鸡",
-          "nameKey": "LumiName_100701",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "12.36"
+          "id": 113301,
+          "name": "球蝌蚪",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 105101,
-          "name": "暗莱姆",
-          "nameKey": "LumiName_105101",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "8.28"
+          "id": 102401,
+          "name": "金刚狼",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 112101,
-          "name": "只鼬宝宝",
-          "nameKey": "LumiName_112101",
-          "weight": 600,
-          "pool": "normal",
-          "probability": "4.94"
+          "id": 104101,
+          "name": "小钢狼",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 106201,
-          "name": "只鼬",
-          "nameKey": "LumiName_106201",
-          "weight": 300,
-          "pool": "normal",
-          "probability": "2.47"
+          "id": 102601,
+          "name": "筋肉狗",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 109401,
-          "name": "火炎莱姆",
-          "nameKey": "LumiName_109401",
-          "weight": 495,
-          "pool": "normal",
-          "probability": "4.08"
+          "id": 105701,
+          "name": "盼盼",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 105401,
-          "name": "怪盗蝠",
-          "nameKey": "LumiName_105401",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "12.36"
+          "id": 103601,
+          "name": "奶牛哞哞",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 101601,
-          "name": "火龙",
-          "nameKey": "LumiName_101601",
-          "weight": 200,
-          "pool": "season",
-          "probability": "1.65"
+          "id": 114801,
+          "name": "光兔",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "nameKey": "LumiName_107901",
-          "weight": 400,
-          "pool": "season",
-          "probability": "3.30"
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 121001,
           "name": "战螂",
-          "nameKey": "LumiName_121001",
-          "weight": 330,
-          "pool": "season",
-          "probability": "2.72"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 121101,
           "name": "战螂宝宝",
-          "nameKey": "LumiName_121101",
-          "weight": 670,
-          "pool": "season",
-          "probability": "5.52"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 123401,
-          "name": "头铁牛",
-          "nameKey": "LumiName_123401",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "9.89"
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 121201,
-          "name": "火龙果",
-          "nameKey": "LumiName_121201",
-          "weight": 533,
-          "pool": "season",
-          "probability": "4.39"
+          "id": 119801,
+          "name": "木棍人",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 120601,
-          "name": "卡布奇诺刺客",
-          "nameKey": "LumiName_120601",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "9.89"
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 120701,
-          "name": "卡布奇诺小姐",
-          "nameKey": "LumiName_120701",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "9.89"
+          "id": 120501,
+          "name": "蕉蕉猩",
+          "weight": 1000,
+          "probability": "6.67"
         }
       ],
-      "totalWeight": 12138,
+      "totalWeight": 15000,
       "colorLumis": [
         {
-          "id": 100701,
-          "name": "炸弹鸡",
-          "nameKey": "LumiName_100701",
-          "weight": 1500,
-          "probability": "12.57"
+          "id": 102601,
+          "name": "筋肉狗",
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
-          "id": 105401,
-          "name": "怪盗蝠",
-          "nameKey": "LumiName_105401",
-          "weight": 1500,
-          "probability": "12.57"
+          "id": 103601,
+          "name": "奶牛哞哞",
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
-          "id": 123401,
-          "name": "头铁牛",
-          "nameKey": "LumiName_123401",
-          "weight": 1200,
-          "probability": "10.05"
+          "id": 105701,
+          "name": "盼盼",
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
-          "id": 120601,
-          "name": "卡布奇诺刺客",
-          "nameKey": "LumiName_120601",
-          "weight": 1200,
-          "probability": "10.05"
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
-          "id": 120701,
-          "name": "卡布奇诺小姐",
-          "nameKey": "LumiName_120701",
-          "weight": 1200,
-          "probability": "10.05"
+          "id": 119801,
+          "name": "木棍人",
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
-          "id": 104501,
-          "name": "火莱姆",
-          "nameKey": "LumiName_104501",
-          "weight": 1005,
-          "probability": "8.42"
+          "id": 120501,
+          "name": "蕉蕉猩",
+          "weight": 1000,
+          "probability": "9.17"
         },
         {
-          "id": 105101,
-          "name": "暗莱姆",
-          "nameKey": "LumiName_105101",
-          "weight": 1005,
-          "probability": "8.42"
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 104101,
+          "name": "小钢狼",
+          "weight": 666,
+          "probability": "6.11"
+        },
+        {
+          "id": 113301,
+          "name": "球蝌蚪",
+          "weight": 666,
+          "probability": "6.11"
         },
         {
           "id": 121101,
           "name": "战螂宝宝",
-          "nameKey": "LumiName_121101",
-          "weight": 670,
-          "probability": "5.61"
+          "weight": 666,
+          "probability": "6.11"
         },
         {
-          "id": 112101,
-          "name": "只鼬宝宝",
-          "nameKey": "LumiName_112101",
-          "weight": 540,
-          "probability": "4.52"
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 600,
+          "probability": "5.50"
         },
         {
-          "id": 109401,
-          "name": "火炎莱姆",
-          "nameKey": "LumiName_109401",
-          "weight": 495,
-          "probability": "4.15"
+          "id": 102401,
+          "name": "金刚狼",
+          "weight": 334,
+          "probability": "3.06"
         },
         {
-          "id": 121201,
-          "name": "火龙果",
-          "nameKey": "LumiName_121201",
-          "weight": 480,
-          "probability": "4.02"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "nameKey": "LumiName_107901",
-          "weight": 360,
-          "probability": "3.02"
+          "id": 102801,
+          "name": "传话蛙",
+          "weight": 334,
+          "probability": "3.06"
         },
         {
           "id": 121001,
           "name": "战螂",
-          "nameKey": "LumiName_121001",
-          "weight": 330,
-          "probability": "2.76"
+          "weight": 334,
+          "probability": "3.06"
         },
         {
-          "id": 106201,
-          "name": "只鼬",
-          "nameKey": "LumiName_106201",
-          "weight": 270,
-          "probability": "2.26"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "nameKey": "LumiName_101601",
-          "weight": 180,
-          "probability": "1.51"
+          "id": 114801,
+          "name": "光兔",
+          "weight": 300,
+          "probability": "2.75"
         }
       ]
     },
@@ -4326,232 +3607,187 @@
       "type": "season",
       "lumis": [
         {
-          "id": 105001,
-          "name": "土莱姆",
-          "nameKey": "LumiName_105001",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "7.08"
+          "id": 106201,
+          "name": "只鼬",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 109901,
-          "name": "土脉莱姆",
-          "nameKey": "LumiName_109901",
-          "weight": 495,
-          "pool": "normal",
-          "probability": "3.49"
+          "id": 112101,
+          "name": "只鼬宝宝",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 100801,
-          "name": "练习鸡",
-          "nameKey": "LumiName_100801",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.57"
+          "id": 119101,
+          "name": "公主蜂",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 127001,
-          "name": "食木沙鼠",
-          "nameKey": "LumiName_127001",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.57"
+          "id": 105601,
+          "name": "小蜜蜂",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 109801,
-          "name": "电鸣莱姆",
-          "nameKey": "LumiName_109801",
-          "weight": 495,
-          "pool": "normal",
-          "probability": "3.49"
+          "id": 101101,
+          "name": "柴火熊",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 104401,
-          "name": "地鼠方方",
-          "nameKey": "LumiName_104401",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.57"
+          "id": 105401,
+          "name": "怪盗蝠",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 112301,
-          "name": "吓吓团",
-          "nameKey": "LumiName_112301",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "10.57"
+          "id": 108801,
+          "name": "石猩猩",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 115101,
           "name": "暗兔",
-          "nameKey": "LumiName_115101",
-          "weight": 266,
-          "pool": "season",
-          "probability": "1.87"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 115001,
           "name": "暗兔宝",
-          "nameKey": "LumiName_115001",
-          "weight": 533,
-          "pool": "season",
-          "probability": "3.76"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 108701,
-          "name": "响尾眼镜蛇",
-          "nameKey": "LumiName_108701",
-          "weight": 800,
-          "pool": "season",
-          "probability": "5.64"
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 118101,
-          "name": "拳拳袋鼠",
-          "nameKey": "LumiName_118101",
-          "weight": 670,
-          "pool": "season",
-          "probability": "4.72"
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 118201,
           "name": "搏击袋鼠",
-          "nameKey": "LumiName_118201",
-          "weight": 330,
-          "pool": "season",
-          "probability": "2.32"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 115601,
-          "name": "蓝拳海獭",
-          "nameKey": "LumiName_115601",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.45"
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "nameKey": "LumiName_115901",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.45"
-        },
-        {
-          "id": 120001,
-          "name": "仙人掌大象",
-          "nameKey": "LumiName_120001",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "8.45"
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "6.67"
         }
       ],
-      "totalWeight": 14194,
+      "totalWeight": 15000,
       "colorLumis": [
         {
-          "id": 100801,
-          "name": "练习鸡",
-          "nameKey": "LumiName_100801",
-          "weight": 1500,
-          "probability": "10.63"
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 127001,
-          "name": "食木沙鼠",
-          "nameKey": "LumiName_127001",
-          "weight": 1500,
-          "probability": "10.63"
+          "id": 101101,
+          "name": "柴火熊",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 104401,
-          "name": "地鼠方方",
-          "nameKey": "LumiName_104401",
-          "weight": 1500,
-          "probability": "10.63"
+          "id": 105401,
+          "name": "怪盗蝠",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 112301,
-          "name": "吓吓团",
-          "nameKey": "LumiName_112301",
-          "weight": 1500,
-          "probability": "10.63"
+          "id": 108801,
+          "name": "石猩猩",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 115601,
-          "name": "蓝拳海獭",
-          "nameKey": "LumiName_115601",
-          "weight": 1200,
-          "probability": "8.50"
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "10.31"
         },
         {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "nameKey": "LumiName_115901",
-          "weight": 1200,
-          "probability": "8.50"
-        },
-        {
-          "id": 120001,
-          "name": "仙人掌大象",
-          "nameKey": "LumiName_120001",
-          "weight": 1200,
-          "probability": "8.50"
-        },
-        {
-          "id": 105001,
-          "name": "土莱姆",
-          "nameKey": "LumiName_105001",
-          "weight": 1005,
-          "probability": "7.12"
-        },
-        {
-          "id": 108701,
-          "name": "响尾眼镜蛇",
-          "nameKey": "LumiName_108701",
-          "weight": 800,
-          "probability": "5.67"
+          "id": 105601,
+          "name": "小蜜蜂",
+          "weight": 666,
+          "probability": "6.87"
         },
         {
           "id": 118101,
           "name": "拳拳袋鼠",
-          "nameKey": "LumiName_118101",
-          "weight": 670,
-          "probability": "4.75"
+          "weight": 666,
+          "probability": "6.87"
         },
         {
-          "id": 109901,
-          "name": "土脉莱姆",
-          "nameKey": "LumiName_109901",
-          "weight": 495,
-          "probability": "3.51"
-        },
-        {
-          "id": 109801,
-          "name": "电鸣莱姆",
-          "nameKey": "LumiName_109801",
-          "weight": 495,
-          "probability": "3.51"
+          "id": 112101,
+          "name": "只鼬宝宝",
+          "weight": 600,
+          "probability": "6.19"
         },
         {
           "id": 115001,
           "name": "暗兔宝",
-          "nameKey": "LumiName_115001",
-          "weight": 480,
-          "probability": "3.40"
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 600,
+          "probability": "6.19"
         },
         {
           "id": 118201,
           "name": "搏击袋鼠",
-          "nameKey": "LumiName_118201",
-          "weight": 330,
-          "probability": "2.34"
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 119101,
+          "name": "公主蜂",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 106201,
+          "name": "只鼬",
+          "weight": 300,
+          "probability": "3.09"
         },
         {
           "id": 115101,
           "name": "暗兔",
-          "nameKey": "LumiName_115101",
-          "weight": 240,
-          "probability": "1.70"
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 300,
+          "probability": "3.09"
         }
       ]
     },
@@ -4562,252 +3798,189 @@
       "type": "season",
       "lumis": [
         {
-          "id": 104601,
-          "name": "水莱姆",
-          "nameKey": "LumiName_104601",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "8.66"
-        },
-        {
-          "id": 109501,
-          "name": "水鳍莱姆",
-          "nameKey": "LumiName_109501",
-          "weight": 495,
-          "pool": "normal",
-          "probability": "4.27"
-        },
-        {
-          "id": 103301,
-          "name": "企鹅秋秋",
-          "nameKey": "LumiName_103301",
-          "weight": 1500,
-          "pool": "normal",
-          "probability": "12.93"
-        },
-        {
-          "id": 119601,
-          "name": "水牛宝宝",
-          "nameKey": "LumiName_119601",
-          "weight": 1005,
-          "pool": "normal",
-          "probability": "8.66"
-        },
-        {
-          "id": 119701,
-          "name": "莽莽水牛",
-          "nameKey": "LumiName_119701",
-          "weight": 495,
-          "pool": "normal",
-          "probability": "4.27"
+          "id": 127101,
+          "name": "龙虾",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 103501,
           "name": "软脚虾",
-          "nameKey": "LumiName_103501",
-          "weight": 603,
-          "pool": "normal",
-          "probability": "5.20"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 127101,
-          "name": "龙虾",
-          "nameKey": "LumiName_127101",
-          "weight": 297,
-          "pool": "normal",
-          "probability": "2.56"
+          "id": 103901,
+          "name": "食梦貘",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 119601,
+          "name": "水牛宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 119701,
+          "name": "莽莽水牛",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 112301,
+          "name": "吓吓团",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 124401,
+          "name": "灯光鱼",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 118301,
           "name": "水龙",
-          "nameKey": "LumiName_118301",
-          "weight": 200,
-          "pool": "season",
-          "probability": "1.72"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 112001,
           "name": "水龙宝宝",
-          "nameKey": "LumiName_112001",
-          "weight": 400,
-          "pool": "season",
-          "probability": "3.45"
-        },
-        {
-          "id": 114301,
-          "name": "海宝宝",
-          "nameKey": "LumiName_114301",
-          "weight": 533,
-          "pool": "season",
-          "probability": "4.60"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 119201,
           "name": "海精灵",
-          "nameKey": "LumiName_119201",
-          "weight": 266,
-          "pool": "season",
-          "probability": "2.29"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "nameKey": "LumiName_136101",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "10.35"
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 123801,
           "name": "螳螂虾",
-          "nameKey": "LumiName_123801",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "10.35"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
           "id": 119901,
           "name": "耐氪鲨",
-          "nameKey": "LumiName_119901",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "10.35"
+          "weight": 1000,
+          "probability": "6.67"
         },
         {
-          "id": 120301,
-          "name": "轮胎青蛙",
-          "nameKey": "LumiName_120301",
-          "weight": 1200,
-          "pool": "season",
-          "probability": "10.35"
+          "id": 120701,
+          "name": "卡布奇诺小姐",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 120601,
+          "name": "卡布奇诺刺客",
+          "weight": 1000,
+          "probability": "6.67"
         }
       ],
-      "totalWeight": 11599,
+      "totalWeight": 15000,
       "colorLumis": [
         {
-          "id": 103301,
-          "name": "企鹅秋秋",
-          "nameKey": "LumiName_103301",
-          "weight": 1500,
-          "probability": "13.09"
+          "id": 103901,
+          "name": "食梦貘",
+          "weight": 1000,
+          "probability": "9.26"
         },
         {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "nameKey": "LumiName_136101",
-          "weight": 1200,
-          "probability": "10.47"
-        },
-        {
-          "id": 123801,
-          "name": "螳螂虾",
-          "nameKey": "LumiName_123801",
-          "weight": 1200,
-          "probability": "10.47"
+          "id": 112301,
+          "name": "吓吓团",
+          "weight": 1000,
+          "probability": "9.26"
         },
         {
           "id": 119901,
           "name": "耐氪鲨",
-          "nameKey": "LumiName_119901",
-          "weight": 1200,
-          "probability": "10.47"
+          "weight": 1000,
+          "probability": "9.26"
         },
         {
-          "id": 120301,
-          "name": "轮胎青蛙",
-          "nameKey": "LumiName_120301",
-          "weight": 1200,
-          "probability": "10.47"
+          "id": 120601,
+          "name": "卡布奇诺刺客",
+          "weight": 1000,
+          "probability": "9.26"
         },
         {
-          "id": 104601,
-          "name": "水莱姆",
-          "nameKey": "LumiName_104601",
-          "weight": 1005,
-          "probability": "8.77"
+          "id": 120701,
+          "name": "卡布奇诺小姐",
+          "weight": 1000,
+          "probability": "9.26"
         },
         {
-          "id": 119601,
-          "name": "水牛宝宝",
-          "nameKey": "LumiName_119601",
-          "weight": 1005,
-          "probability": "8.77"
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "9.26"
+        },
+        {
+          "id": 124401,
+          "name": "灯光鱼",
+          "weight": 1000,
+          "probability": "9.26"
         },
         {
           "id": 103501,
           "name": "软脚虾",
-          "nameKey": "LumiName_103501",
-          "weight": 603,
-          "probability": "5.26"
+          "weight": 666,
+          "probability": "6.17"
         },
         {
-          "id": 109501,
-          "name": "水鳍莱姆",
-          "nameKey": "LumiName_109501",
-          "weight": 495,
-          "probability": "4.32"
-        },
-        {
-          "id": 119701,
-          "name": "莽莽水牛",
-          "nameKey": "LumiName_119701",
-          "weight": 495,
-          "probability": "4.32"
-        },
-        {
-          "id": 114301,
-          "name": "海宝宝",
-          "nameKey": "LumiName_114301",
-          "weight": 480,
-          "probability": "4.19"
+          "id": 119601,
+          "name": "水牛宝宝",
+          "weight": 666,
+          "probability": "6.17"
         },
         {
           "id": 112001,
           "name": "水龙宝宝",
-          "nameKey": "LumiName_112001",
-          "weight": 360,
-          "probability": "3.14"
+          "weight": 600,
+          "probability": "5.56"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 600,
+          "probability": "5.56"
+        },
+        {
+          "id": 119701,
+          "name": "莽莽水牛",
+          "weight": 334,
+          "probability": "3.09"
         },
         {
           "id": 127101,
           "name": "龙虾",
-          "nameKey": "LumiName_127101",
-          "weight": 297,
-          "probability": "2.59"
-        },
-        {
-          "id": 119201,
-          "name": "海精灵",
-          "nameKey": "LumiName_119201",
-          "weight": 240,
-          "probability": "2.09"
+          "weight": 334,
+          "probability": "3.09"
         },
         {
           "id": 118301,
           "name": "水龙",
-          "nameKey": "LumiName_118301",
-          "weight": 180,
-          "probability": "1.57"
+          "weight": 300,
+          "probability": "2.78"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 300,
+          "probability": "2.78"
         }
       ]
-    },
-    {
-      "mapId": 2010,
-      "mapName": "敬请期待",
-      "mapNameKey": "MapName_17",
-      "type": "season",
-      "lumis": [],
-      "totalWeight": 0,
-      "colorLumis": []
-    },
-    {
-      "mapId": 2020,
-      "mapName": "S1火山",
-      "mapNameKey": "MapName_13",
-      "type": "season",
-      "lumis": [],
-      "totalWeight": 0,
-      "colorLumis": []
     }
   ]
 }

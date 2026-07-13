@@ -17,6 +17,7 @@ const filterTag = ref([])
 const filterMinScore = ref('')
 const filterMaxScore = ref('')
 const filterWorkType = ref([])
+const filterCardBack = ref('all') // 卡背类型筛选：all 全部 / 0普通 50异色 80王 98 3D 99全景
 const sortBy = ref('id')
 
 onMounted(async () => {
@@ -124,6 +125,12 @@ const filtered = computed(() => {
     )
   }
 
+  // 卡背类型筛选（LumiCardType: 0普通/50异色/80王/98 3D/99全景）
+  if (filterCardBack.value !== 'all') {
+    const v = Number(filterCardBack.value)
+    list = list.filter(l => (l.CardBack || 0) === v)
+  }
+
   // 排序（默认按 PokedexId 升序）
   list = [...list].sort((a, b) => {
     if (sortBy.value === 'id') return a.PokedexId - b.PokedexId
@@ -181,6 +188,14 @@ const filtered = computed(() => {
         placeholder="全部打工"
         searchable
       />
+      <select v-model="filterCardBack">
+        <option value="all">全部个体</option>
+        <option value="0">普通</option>
+        <option value="50">异色</option>
+        <option value="80">王</option>
+        <option value="98">3D</option>
+        <option value="99">全景</option>
+      </select>
       <select v-model="sortBy">
         <option value="id">按 ID 排序</option>
         <option value="name">按名称排序</option>

@@ -387,6 +387,27 @@
     "ExtraItem": []
   },
   {
+    "Id": 2106104,
+    "icon": "WorkType_Experience Leaves",
+    "icon2": "comConfig_skill_enhance_S",
+    "name": "H_Skill_2106104",
+    "Des": "H_SkillText_2106104",
+    "DesParam": [
+      40
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 55,
+        "Y": 4000
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
     "Id": 2106601,
     "icon": "WorkType_Exploration",
     "icon2": "comConfig_skill_enhance_S",
@@ -840,6 +861,27 @@
     "icon2": "comConfig_skill_enhance_M",
     "name": "H_Skill_2123401",
     "Des": "H_SkillText_2123401",
+    "DesParam": [
+      55
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
+      {
+        "X": 24,
+        "Y": 5500
+      }
+    ],
+    "HungryBuff": 0,
+    "ExtraItem": []
+  },
+  {
+    "Id": 2123404,
+    "icon": "WorkType_Mining",
+    "icon2": "comConfig_skill_enhance_M",
+    "name": "H_Skill_2123404",
+    "Des": "H_SkillText_2123404",
     "DesParam": [
       55
     ],

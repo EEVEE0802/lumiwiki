@@ -10,7 +10,10 @@
     "process-data": "node scripts/process-battle-data.js",
     "process-data:week": "node scripts/process-battle-data.js --week",
     "process-tournament": "node scripts/process-tournament-data.js",
-    "process-tournament:week": "node scripts/process-tournament-data.js --week"
+    "process-tournament:week": "node scripts/process-tournament-data.js --week",
+    "process-robot-teams": "node scripts/process-robot-teams.js",
+    "process-adventure": "node scripts/convert-adventure-drop.mjs",
+    "process-egg-drop": "node scripts/process-egg-drop.mjs"
   },
   "dependencies": {
     "vue": "^3.5.32",

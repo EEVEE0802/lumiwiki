@@ -1,6 +1,17 @@
 /**
- * 冒险掉落数据转换脚本
- * 从 AdventureMap.json 生成各地图噜咪出现概率数据
+ * 冒险掉落数据转换脚本（v2 - 对齐服务端真实逻辑）
+ *
+ * 服务端真实逻辑（F:/G36/LumiServer/.../cacheRoleAdventure.cpp getUnlockedLumiByCurMap）：
+ *   1. 多阶段累积：遍历同 mapId 且 stage≤当前 的地图，【同 ID 噜咪后者覆盖前者权重】（非相加）
+ *   2. 霸主权重在 LumiWeight / LumiWeight2 数组的【最后一个元素】（长度 = NormalLumi.length + 1）
+ *   3. LumiWeight = 霸主出现前权重；LumiWeight2 = 霸主被捕获后权重（赛季地图为空）
+ *   4. 彩色噜咪走独立保底（GachaParameter → LumiDrop → LumiDropData），
+ *      权重按 LumiDrop.WeightPool 从 LumiDropData.weight[[key,value]] 取对应 key 的值
+ *
+ * ⚠️ 简化点（动态逻辑无法静态精确）：
+ *   - 彩色受保底机制影响（1/2/5 倍率不出彩、次数/概率保底），此为「保底触发时池内分布」近似
+ *   - 赛季不放回抽取（SamplingWithoutReplacement）未建模，此为首次遇到分布
+ *   - 普通概率用「解锁池权重占比」近似综合出现率（未按品质两步加权）
  */
 
 import fs from 'fs'
@@ -8,458 +19,232 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const SOURCE_DIR = 'D:/G36/LumiGoProgram/LumiGoDesigner/Config/Luban/Datas/Table/data'
-const SERVER_DATA_DIR = 'D:/G36/LumiGoProgram/LumiGoDesigner/Config/Luban/Datas/server/data'
+const SOURCE_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data'
+const SERVER_DATA_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/server/data'
 const OUTPUT_DIR = path.resolve('D:/LumiWiki/public/data/adventure')
 const PUBLIC_DATA_DIR = path.resolve('D:/LumiWiki/public/data')
 
-// 确保输出目录存在
-if (!fs.existsSync(OUTPUT_DIR)) {
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true })
+if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true })
+
+function readJson(p) {
+  return JSON.parse(fs.readFileSync(p, 'utf-8'))
+}
+function loadTable(src, name) {
+  const d = readJson(path.join(src, name))
+  return Array.isArray(d) ? d : Object.values(d)
 }
 
-// 读取源数据
 function loadSourceData() {
   console.log('📖 读取源数据...')
-
-  const adventureMapPath = path.join(SOURCE_DIR, 'AdventureMap.json')
-  const lumisPath = path.join(PUBLIC_DATA_DIR, 'Lumi.json')
-  const localizationPath = path.join(PUBLIC_DATA_DIR, 'zh-CN.json')
-  const lumiDropDataPath = path.join(SERVER_DATA_DIR, 'LumiDropData.json')
-
-  const adventureMap = JSON.parse(fs.readFileSync(adventureMapPath, 'utf-8'))
-  const lumis = JSON.parse(fs.readFileSync(lumisPath, 'utf-8'))
-  const localization = JSON.parse(fs.readFileSync(localizationPath, 'utf-8'))
-  const lumiDropData = JSON.parse(fs.readFileSync(lumiDropDataPath, 'utf-8'))
-
-  console.log(`   - AdventureMap: ${adventureMap.length} 条记录`)
-  console.log(`   - Lumi: ${lumis.length} 条记录`)
-  console.log(`   - LumiDropData: ${lumiDropData.length} 条记录`)
-
-  return { adventureMap, lumis, localization, lumiDropData }
+  const adventureMap = loadTable(SOURCE_DIR, 'AdventureMap.json')
+  const lumis = loadTable(PUBLIC_DATA_DIR, 'Lumi.json')
+  const localization = readJson(path.join(PUBLIC_DATA_DIR, 'zh-CN.json'))
+  const lumiDropData = loadTable(SERVER_DATA_DIR, 'LumiDropData.json')
+  const lumiDrop = loadTable(SERVER_DATA_DIR, 'LumiDrop.json')
+  const gachaParameter = loadTable(SERVER_DATA_DIR, 'GachaParameter.json')
+  console.log(`   - AdventureMap: ${adventureMap.length} | Lumi: ${lumis.length} | LumiDrop: ${lumiDrop.length} | LumiDropData: ${lumiDropData.length}`)
+  return { adventureMap, lumis, localization, lumiDropData, lumiDrop, gachaParameter }
 }
 
-// 获取地图名称
-function getMapName(mapNameKey, localization) {
-  return localization[mapNameKey] || mapNameKey
-}
-
-// 获取噜咪名称
-function getLumiName(lumiId, lumis) {
+function getLumiName(lumiId, lumis, localization) {
   const lumi = lumis.find(l => l.Id === lumiId)
-  return lumi ? lumi.Name : `Lumi_${lumiId}`
+  if (!lumi) return `Lumi_${lumiId}`
+  return localization[lumi.Name] || lumi.Name
+}
+function getMapName(key, localization) {
+  return localization[key] || key
+}
+function pct(weight, total) {
+  return total > 0 ? ((weight / total) * 100).toFixed(2) : '0.00'
 }
 
-// 获取噜咪详细信息
-function getLumiInfo(lumiId, lumis, localization) {
-  const lumi = lumis.find(l => l.Id === lumiId)
-  if (!lumi) return null
-
-  const nameKey = lumi.Name
-  const name = localization[nameKey] || nameKey
-
-  return {
-    id: lumiId,
-    name: name,
-    nameKey: nameKey
-  }
+// 把 pool（Map<lumiId, weight>）转为带概率的数组
+function poolToList(pool, lumis, localization) {
+  const total = [...pool.values()].reduce((s, w) => s + w, 0)
+  return [...pool.entries()]
+    .map(([lumiId, weight]) => ({
+      id: lumiId,
+      name: getLumiName(lumiId, lumis, localization),
+      weight,
+      probability: pct(weight, total),
+    }))
+    .sort((a, b) => b.weight - a.weight)
 }
 
-// 计算概率
-function calculateProbability(weight, totalWeight) {
-  if (totalWeight === 0) return 0
-  return ((weight / totalWeight) * 100).toFixed(2)
-}
-
-// 获取噜咪的彩色权重（weight数组的第二个数值，第一个参数忽略）
-function getColorWeight(lumiId, lumiDropData) {
-  const dropData = lumiDropData.find(d => d.Id === lumiId)
-  if (!dropData || !dropData.weight || dropData.weight.length === 0) return 0
-
-  // 直接取第一个weight项的第二个数值作为权重
-  // weight格式: [[参数1, 权重值], ...]，参数1忽略，只用权重值
-  return dropData.weight[0][1] || 0
-}
-
-// 计算彩色噜咪概率
-function calculateColorProbabilities(lumiIds, lumis, localization, lumiDropData) {
-  const lumiList = []
-
-  lumiIds.forEach(lumiId => {
-    const lumiInfo = getLumiInfo(lumiId, lumis, localization)
-    if (!lumiInfo) return
-
-    const weight = getColorWeight(lumiId, lumiDropData)
-    if (weight > 0) {
-      lumiList.push({
-        ...lumiInfo,
-        weight
-      })
+/**
+ * 构造解锁池：遍历 records（stage 升序），【同 ID 后者覆盖前者】。
+ * weightField: 'LumiWeight' | 'LumiWeight2'
+ * includeOverlord: 是否把霸主（数组末尾权重）加入池
+ */
+function buildPool(records, weightField, includeOverlord) {
+  const pool = new Map()
+  records.forEach(r => {
+    const weights = r[weightField] || []
+    const normal = r.NormalLumi || []
+    normal.forEach((lumiId, i) => {
+      pool.set(lumiId, weights[i] || 0) // 覆盖
+    })
+    // 霸主权重在数组最后一个元素（长度 = NormalLumi.length + 1）
+    if (includeOverlord && r.SpecialLumi && weights.length > normal.length) {
+      pool.set(r.SpecialLumi, weights[weights.length - 1])
     }
   })
-
-  const totalWeight = lumiList.reduce((sum, l) => sum + l.weight, 0)
-
-  return lumiList.map(l => ({
-    ...l,
-    probability: calculateProbability(l.weight, totalWeight)
-  })).sort((a, b) => b.weight - a.weight)
+  return pool
 }
 
-// 处理主线地图数据
-function processMainLineMaps(adventureMap, lumis, localization, lumiDropData) {
+// 彩色噜咪池：走 GachaParameter → LumiDrop → LumiDropData，按 WeightPool 取权重
+function calcColorLumis(mapLumiIds, ctx) {
+  const { lumiDrop, lumiDropData, lumis, localization, gachaParameter } = ctx
+  // GachaParameter 各入口都指向同一个 LumiDropId（实测 Id=99）
+  const dropId = gachaParameter[0]?.middleProbId?.Id
+  const drop = lumiDrop.find(d => d.Id === dropId)
+  if (!drop) return []
+
+  const mapSet = new Set(mapLumiIds)
+  const lumiById = new Map(lumis.map(l => [l.Id, l]))
+  const candidates = []
+
+  lumiDropData.forEach(ld => {
+    // 池子过滤：LumiDropData.LumiDropPool 须包含 drop.LumiDropPool
+    if (!(ld.LumiDropPool || []).includes(drop.LumiDropPool)) return
+    // MapOwner=1 时限定为该地图能遇到的噜咪
+    if (drop.MapOwner === 1 && !mapSet.has(ld.Id)) return
+    const lumi = lumiById.get(ld.Id)
+    if (!lumi) return
+    // Score 评分下限过滤（实测 70）
+    if (drop.Score && lumi.MaxScore < drop.Score) return
+    // 关键：按 WeightPool 从 weight[[key,value]] 取对应 key 的值
+    const w = (ld.weight || []).find(([k]) => k === drop.WeightPool)?.[1] || 0
+    if (w > 0) candidates.push({ lumiId: ld.Id, weight: w })
+  })
+
+  const total = candidates.reduce((s, c) => s + c.weight, 0)
+  return candidates
+    .map(c => ({
+      id: c.lumiId,
+      name: getLumiName(c.lumiId, lumis, localization),
+      weight: c.weight,
+      probability: pct(c.weight, total),
+    }))
+    .sort((a, b) => b.weight - a.weight)
+}
+
+// 主线地图：每 mapId 多 stage，每 stage 构造「霸主出现前 / 霸主已抓」两个池
+function processMainLineMaps(adventureMap, lumis, localization, colorCtx) {
   console.log('\n📊 处理主线地图...')
-
-  // 按地图分组
-  const mapGroups = new Map()
-
-  adventureMap.forEach(record => {
-    // 跳过赛季地图（SpecialLumi 为 0 或 null）
-    if (!record.SpecialLumi || record.SpecialLumi === 0) {
-      return
-    }
-
-    // Order 格式: [地图ID, 阶段]
-    const [mapId, stage] = record.Order
-    const key = mapId
-
-    if (!mapGroups.has(key)) {
-      mapGroups.set(key, {
-        mapId,
-        mapNameKey: record.MapName,
-        stages: new Map()
-      })
-    }
-
-    const group = mapGroups.get(key)
-    group.stages.set(stage, record)
+  // 按 mapId 分组（Order[0]），跳过赛季地图（IsUp=true）
+  const groups = new Map()
+  adventureMap.forEach(r => {
+    if (r.IsUp) return
+    if (!r.SpecialLumi) return
+    const [mapId] = r.Order
+    if (!groups.has(mapId)) groups.set(mapId, { mapId, mapNameKey: r.MapName, records: [] })
+    groups.get(mapId).records.push(r)
   })
 
-  // 构建主线地图数据
-  const mainLineMaps = []
-
-  mapGroups.forEach((group, mapId) => {
+  const result = []
+  groups.forEach(group => {
+    group.records.sort((a, b) => a.Order[1] - b.Order[1]) // stage 升序
     const stages = []
-    let stage = 1
-
-    // 获取所有阶段
-    while (group.stages.has(stage)) {
-      stages.push(group.stages.get(stage))
-      stage++
-    }
-
-    if (stages.length === 0) return
-
-    // 计算每个阶段的概率分布
-    const stageData = []
-
-    // 累积的噜咪和权重（用于后续阶段）
-    let cumulativeLumis = [] // { lumiId, weightBefore, weightAfter }
-    let cumulativeWeightBefore = 0
-    let cumulativeWeightAfter = 0
-
-    stages.forEach((stageRecord, index) => {
-      const stageNum = index + 1
-      const normalLumis = stageRecord.NormalLumi || []
-      const specialLumi = stageRecord.SpecialLumi
-      const weightsBefore = stageRecord.LumiWeight || []
-      const weightsAfter = stageRecord.LumiWeight2 || []
-
-      // 阶段1 霸主解锁前
-      if (stageNum === 1) {
-        const lumiList = normalLumis.map(lumiId => {
-          const lumiInfo = getLumiInfo(lumiId, lumis, localization)
-          const idx = normalLumis.indexOf(lumiId)
-          return {
-            ...lumiInfo,
-            weight: weightsBefore[idx] || 0
-          }
-        })
-
-        const totalWeight = lumiList.reduce((sum, l) => sum + l.weight, 0)
-
-        stageData.push({
-          stage: stageNum,
-          status: 'before',
-          label: `阶段${stageNum} - 霸主解锁前`,
-          lumis: lumiList.map(l => ({
-            ...l,
-            probability: calculateProbability(l.weight, totalWeight)
-          })),
-          totalWeight
-        })
-
-        // 阶段1 霸主解锁后
-        const lumiListAfter = [...normalLumis, specialLumi].map(lumiId => {
-          const lumiInfo = getLumiInfo(lumiId, lumis, localization)
-          const idx = [...normalLumis, specialLumi].indexOf(lumiId)
-          return {
-            ...lumiInfo,
-            weight: weightsAfter[idx] || 0
-          }
-        })
-
-        const totalWeightAfter = lumiListAfter.reduce((sum, l) => sum + l.weight, 0)
-
-        stageData.push({
-          stage: stageNum,
-          status: 'after',
-          label: `阶段${stageNum} - 霸主解锁后`,
-          lumis: lumiListAfter.map(l => ({
-            ...l,
-            probability: calculateProbability(l.weight, totalWeightAfter)
-          })),
-          totalWeight: totalWeightAfter
-        })
-
-        // 设置累积数据
-        cumulativeLumis = lumiListAfter.map(l => ({
-          lumiId: l.id,
-          weightBefore: l.weight,
-          weightAfter: l.weight
-        }))
-        cumulativeWeightBefore = totalWeightAfter
-        cumulativeWeightAfter = totalWeightAfter
-      } else {
-        // 阶段2及以后
-
-        // 霸主解锁前 = 前一阶段霸主解锁后 + 当前阶段NormalLumi
-        const newLumis = normalLumis.map(lumiId => {
-          const lumiInfo = getLumiInfo(lumiId, lumis, localization)
-          const idx = normalLumis.indexOf(lumiId)
-          return {
-            lumiId: lumiId,
-            ...lumiInfo,
-            weightBefore: weightsBefore[idx] || 0,
-            weightAfter: weightsAfter[idx] || 0
-          }
-        })
-
-        // 合并累积数据
-        const mergedBefore = [...cumulativeLumis]
-        newLumis.forEach(newLumi => {
-          const existing = mergedBefore.find(l => l.lumiId === newLumi.lumiId)
-          if (existing) {
-            existing.weightBefore += newLumi.weightBefore
-          } else {
-            mergedBefore.push({
-              lumiId: newLumi.lumiId,
-              ...newLumi,
-              weightBefore: newLumi.weightBefore,
-              weightAfter: newLumi.weightAfter
-            })
-          }
-        })
-
-        const totalWeightBefore = mergedBefore.reduce((sum, l) => sum + l.weightBefore, 0)
-
-        stageData.push({
-          stage: stageNum,
-          status: 'before',
-          label: `阶段${stageNum} - 霸主解锁前`,
-          lumis: mergedBefore.map(l => {
-            const lumiInfo = getLumiInfo(l.lumiId, lumis, localization)
-            return {
-              ...lumiInfo,
-              weight: l.weightBefore,
-              probability: calculateProbability(l.weightBefore, totalWeightBefore)
-            }
-          }),
-          totalWeight: totalWeightBefore
-        })
-
-        // 霸主解锁后 = 霸主解锁前 + 更新权重 + 添加当前阶段的SpecialLumi
-        const mergedAfter = mergedBefore.map(l => {
-          const newLumi = newLumis.find(n => n.lumiId === l.lumiId)
-          return {
-            ...l,
-            weightAfter: newLumi ? newLumi.weightAfter : l.weightAfter
-          }
-        })
-
-        // 添加当前阶段的SpecialLumi
-        const specialLumiInfo = getLumiInfo(specialLumi, lumis, localization)
-        const specialWeightIndex = normalLumis.length // SpecialLumi的权重在LumiWeight2数组的最后
-        mergedAfter.push({
-          lumiId: specialLumi,
-          ...specialLumiInfo,
-          weightBefore: 0,
-          weightAfter: weightsAfter[specialWeightIndex] || 0
-        })
-
-        const totalWeightAfter = mergedAfter.reduce((sum, l) => sum + l.weightAfter, 0)
-
-        stageData.push({
-          stage: stageNum,
-          status: 'after',
-          label: `阶段${stageNum} - 霸主解锁后`,
-          lumis: mergedAfter.map(l => {
-            const lumiInfo = getLumiInfo(l.lumiId, lumis, localization)
-            return {
-              ...lumiInfo,
-              weight: l.weightAfter,
-              probability: calculateProbability(l.weightAfter, totalWeightAfter)
-            }
-          }),
-          totalWeight: totalWeightAfter
-        })
-
-        // 更新累积数据
-        cumulativeLumis = mergedAfter.map(l => ({
-          lumiId: l.lumiId,
-          weightBefore: l.weightAfter,
-          weightAfter: l.weightAfter
-        }))
-        cumulativeWeightBefore = totalWeightAfter
-        cumulativeWeightAfter = totalWeightAfter
-      }
+    // 收集该 mapId 所有噜咪（彩色 MapOwner 过滤用）
+    const allLumiIds = new Set()
+    group.records.forEach(r => {
+      ;(r.NormalLumi || []).forEach(id => allLumiIds.add(id))
+      if (r.SpecialLumi) allLumiIds.add(r.SpecialLumi)
     })
 
-    // 计算彩色概率（基于地图中所有出现过的噜咪）
-    const allLumiIdsInMap = new Set()
-    stages.forEach(stageRecord => {
-      const normalLumis = stageRecord.NormalLumi || []
-      const specialLumi = stageRecord.SpecialLumi
-      normalLumis.forEach(id => allLumiIdsInMap.add(id))
-      if (specialLumi) allLumiIdsInMap.add(specialLumi)
+    group.records.forEach((r, idx) => {
+      const stageNum = idx + 1
+      const subRecords = group.records.slice(0, idx + 1) // stage≤当前（覆盖累积）
+      // 霸主出现前：LumiWeight，不含霸主（玩家尚未抓齐普通）
+      const beforePool = buildPool(subRecords, 'LumiWeight', false)
+      // 霸主已抓：LumiWeight2，含霸主（末尾权重）
+      const afterPool = buildPool(subRecords, 'LumiWeight2', true)
+
+      const beforeTotal = [...beforePool.values()].reduce((s, w) => s + w, 0)
+      const afterTotal = [...afterPool.values()].reduce((s, w) => s + w, 0)
+
+      stages.push({
+        stage: stageNum,
+        status: 'before',
+        label: `阶段${stageNum} · 霸主出现前`,
+        lumis: poolToList(beforePool, lumis, localization),
+        totalWeight: beforeTotal,
+      })
+      stages.push({
+        stage: stageNum,
+        status: 'after',
+        label: `阶段${stageNum} · 霸主已抓`,
+        lumis: poolToList(afterPool, lumis, localization),
+        totalWeight: afterTotal,
+      })
     })
 
-    const colorLumis = calculateColorProbabilities(
-      Array.from(allLumiIdsInMap),
-      lumis,
-      localization,
-      lumiDropData
-    )
-
-    mainLineMaps.push({
+    result.push({
       mapId: group.mapId,
       mapName: getMapName(group.mapNameKey, localization),
       mapNameKey: group.mapNameKey,
       type: 'mainline',
-      stages: stageData,
-      colorLumis
+      stages,
+      colorLumis: calcColorLumis([...allLumiIds], colorCtx),
     })
   })
-
-  // 按地图ID排序
-  return mainLineMaps.sort((a, b) => a.mapId - b.mapId)
+  return result.sort((a, b) => a.mapId - b.mapId)
 }
 
-// 处理赛季地图数据
-function processSeasonMaps(adventureMap, lumis, localization, lumiDropData) {
+// 赛季地图：NormalLumi + LumiWeight（若有）与 SeasonPool + SeasonLumiWeight 合并
+function processSeasonMaps(adventureMap, lumis, localization, colorCtx) {
   console.log('\n📊 处理赛季地图...')
+  const result = []
+  adventureMap.forEach(r => {
+    if (!r.IsUp) return // 只处理赛季
+    const pool = new Map()
+    ;(r.NormalLumi || []).forEach((id, i) => pool.set(id, r.LumiWeight?.[i] || 0))
+    ;(r.SeasonPool || []).forEach((id, i) => pool.set(id, r.SeasonLumiWeight?.[i] || 0))
 
-  const seasonMaps = []
+    const allLumiIds = [...(r.NormalLumi || []), ...(r.SeasonPool || [])]
+    const total = [...pool.values()].reduce((s, w) => s + w, 0)
 
-  adventureMap.forEach(record => {
-    // 只处理赛季地图（SpecialLumi 为 0 或 null）
-    if (record.SpecialLumi && record.SpecialLumi !== 0) {
-      return
-    }
-
-    // Order 格式: [地图ID, 阶段] - 赛季地图通常是 [1000+, 1]
-    const [mapId, stage] = record.Order
-
-    const normalLumis = record.NormalLumi || []
-    const seasonPool = record.SeasonPool || []
-    const lumiWeights = record.LumiWeight || []
-    const seasonLumiWeights = record.SeasonLumiWeight || []
-
-    // 合并所有噜咪
-    const allLumis = []
-
-    // NormalLumi + 对应权重
-    normalLumis.forEach((lumiId, idx) => {
-      const lumiInfo = getLumiInfo(lumiId, lumis, localization)
-      allLumis.push({
-        ...lumiInfo,
-        weight: lumiWeights[idx] || 0,
-        pool: 'normal'
-      })
-    })
-
-    // SeasonPool + 对应权重
-    seasonPool.forEach((lumiId, idx) => {
-      const lumiInfo = getLumiInfo(lumiId, lumis, localization)
-      allLumis.push({
-        ...lumiInfo,
-        weight: seasonLumiWeights[idx] || 0,
-        pool: 'season'
-      })
-    })
-
-    const totalWeight = allLumis.reduce((sum, l) => sum + l.weight, 0)
-
-    // 计算彩色概率
-    const allLumiIds = [...normalLumis, ...seasonPool]
-    const colorLumis = calculateColorProbabilities(
-      allLumiIds,
-      lumis,
-      localization,
-      lumiDropData
-    )
-
-    seasonMaps.push({
-      mapId: record.Id,
-      mapName: getMapName(record.MapName, localization),
-      mapNameKey: record.MapName,
+    result.push({
+      mapId: r.Id,
+      mapName: getMapName(r.MapName, localization),
+      mapNameKey: r.MapName,
       type: 'season',
-      lumis: allLumis.map(l => ({
-        ...l,
-        probability: calculateProbability(l.weight, totalWeight)
-      })),
-      totalWeight,
-      colorLumis
+      lumis: poolToList(pool, lumis, localization),
+      totalWeight: total,
+      colorLumis: calcColorLumis(allLumiIds, colorCtx),
     })
   })
-
-  // 按地图ID排序
-  return seasonMaps.sort((a, b) => a.mapId - b.mapId)
+  return result.sort((a, b) => a.mapId - b.mapId)
 }
 
-// 主函数
 async function main() {
-  console.log('🔄 开始转换冒险掉落数据...\n')
+  console.log('🔄 开始转换冒险掉落数据（v2 对齐服务端逻辑）...\n')
+  const { adventureMap, lumis, localization, lumiDropData, lumiDrop, gachaParameter } = loadSourceData()
+  const colorCtx = { lumiDrop, lumiDropData, lumis, localization, gachaParameter }
 
-  // 读取源数据
-  const { adventureMap, lumis, localization, lumiDropData } = loadSourceData()
+  const mainLineMaps = processMainLineMaps(adventureMap, lumis, localization, colorCtx)
+  const seasonMaps = processSeasonMaps(adventureMap, lumis, localization, colorCtx)
 
-  // 处理主线地图
-  const mainLineMaps = processMainLineMaps(adventureMap, lumis, localization, lumiDropData)
-
-  // 处理赛季地图
-  const seasonMaps = processSeasonMaps(adventureMap, lumis, localization, lumiDropData)
-
-  // 构建输出数据
   const outputData = {
     updateTime: new Date().toISOString(),
+    note: '普通概率=解锁池权重占比；彩色=保底触发时池内分布近似（按 LumiDrop.WeightPool 取权）',
     mainLineMaps,
-    seasonMaps
+    seasonMaps,
   }
-
-  // 写入文件
   const outputPath = path.join(OUTPUT_DIR, 'drop-rates.json')
   fs.writeFileSync(outputPath, JSON.stringify(outputData, null, 2), 'utf-8')
 
   console.log('\n✅ 转换完成！')
-  console.log(`📁 输出文件: ${outputPath}`)
-  console.log(`📊 文件大小: ${(fs.statSync(outputPath).size / 1024).toFixed(2)} KB`)
-
-  // 输出统计摘要
-  console.log('\n📈 数据摘要:')
-  console.log(`   - 主线地图数量: ${mainLineMaps.length}`)
-  console.log(`   - 赛季地图数量: ${seasonMaps.length}`)
-
-  mainLineMaps.forEach(map => {
-    console.log(`   - ${map.mapName}(${map.mapId}): ${map.stages.length} 个阶段状态, ${map.colorLumis?.length || 0} 只彩色噜咪`)
-  })
-
-  seasonMaps.forEach(map => {
-    console.log(`   - ${map.mapName}(${map.mapId}): ${map.lumis.length} 只噜咪`)
-  })
+  console.log(`📁 ${outputPath}  (${(fs.statSync(outputPath).size / 1024).toFixed(2)} KB)`)
+  console.log(`📊 主线 ${mainLineMaps.length} / 赛季 ${seasonMaps.length}`)
+  console.log('\n📈 主线样例（首个地图各 stage 霸主前后）：')
+  if (mainLineMaps[0]) {
+    mainLineMaps[0].stages.forEach(s => {
+      console.log(`   - ${s.label}: ${s.lumis.length} 只, 总权重 ${s.totalWeight}`)
+    })
+    console.log(`   - 彩色池: ${mainLineMaps[0].colorLumis.length} 只`)
+  }
 }
 
-main().catch(err => {
-  console.error('❌ 错误:', err)
-  process.exit(1)
-})
+main().catch(err => { console.error('❌', err); process.exit(1) })

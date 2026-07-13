@@ -64,7 +64,7 @@ function streamToArrayBuffer(stream) {
 
 // 属性名称映射
 const TYPE_NAMES = {
-  1: '无属性', 2: '水', 3: '火', 4: '草', 5: '电',
+  1: '无', 2: '水', 3: '火', 4: '草', 5: '电',
   6: '土', 7: '飞', 8: '冰', 9: '龙', 10: '光',
   11: '暗', 12: '格斗', 13: '超能', 14: '精灵', 15: '钢',
   16: '王', 17: '神',
@@ -92,6 +92,10 @@ const WORK_TYPE_NAMES = {
   10: '制冷', 11: '种苹果', 12: '养鱼', 13: '牧场2', 14: '产花蜜',
   15: '水产养殖',
 }
+
+// 卡背类型（LumiCardType 枚举 → Lumi.CardBack 字段；0 普通，其余为特殊个体）
+const LUMI_CARD_TYPE = { 0: '普通', 50: '异色', 80: '王', 98: '3D', 99: '全景' }
+const LUMI_CARD_TYPE_COLORS = { 0: '#9e9e9e', 50: '#e91e63', 80: '#FFD700', 98: '#2196f3', 99: '#9c27b0' }
 
 // 多语言映射
 let locMap = null
@@ -154,5 +158,6 @@ function keywordSync(id) {
 
 export {
   loadData, TYPE_NAMES, TYPE_COLORS, RARITY_MAP, RARITY_COLORS,
-  WORK_TYPE_NAMES, LUMI_TAG_NAMES, getKeywordMap, keywordSync,
+  WORK_TYPE_NAMES, LUMI_TAG_NAMES, LUMI_CARD_TYPE, LUMI_CARD_TYPE_COLORS,
+  getKeywordMap, keywordSync,
 }

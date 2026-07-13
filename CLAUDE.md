@@ -20,6 +20,10 @@ LumiWiki/
 │   │   │       ├── ladder-weekN.json
 │   │   │       └── tournament-weekN.json
 │   │   ├── extra.json               # 社区维护扩展数据
+│   │   ├── robot-teams.json         # 机器人阵容（道馆/天梯/家园，由脚本生成）
+│   │   ├── adventure/               # 冒险掉落
+│   │   │   └── drop-rates.json      # 各地图噜咪出现概率（由脚本生成）
+│   │   ├── egg-drop.json            # 蛋掉落（各蛋开出噜咪概率，由脚本生成）
 │   │   ├── zh-CN.json 等            # 多语言文件
 │   │   └── ...                      # 游戏核心数据
 │   └── images/                      # 图片资源
@@ -31,7 +35,10 @@ LumiWiki/
 │           └── tournament_weekN.csv
 ├── scripts/
 │   ├── process-battle-data.js       # 天梯数据处理
-│   └── process-tournament-data.js   # 周赛数据处理
+│   ├── process-tournament-data.js   # 周赛数据处理
+│   ├── process-robot-teams.js       # 机器人阵容数据处理
+│   ├── convert-adventure-drop.mjs   # 冒险掉落数据处理
+│   └── process-egg-drop.mjs         # 蛋掉落数据处理
 ├── src/
 │   ├── components/                  # Vue 组件
 │   ├── composables/useLanguage.js   # 多语言状态
@@ -40,7 +47,10 @@ LumiWiki/
 │   │   ├── OnlineData.vue           # 线上数据页面
 │   │   ├── LumiDetail.vue           # 噜咪详情
 │   │   ├── SkillList.vue            # 技能图鉴
-│   │   └── TypeChart.vue            # 属性克制表
+│   │   ├── TypeChart.vue            # 属性克制表
+│   │   ├── RobotTeam.vue            # 机器人阵容
+│   │   ├── AdventureDrop.vue        # 冒险掉落
+│   │   └── EggDrop.vue              # 蛋掉落
 │   └── router/
 ├── prepare-i18n-data.cjs            # 多语言数据转换
 ├── sync-extra-data.cjs              # 扩展数据同步
@@ -51,7 +61,12 @@ LumiWiki/
 
 ## 数据源
 
-**游戏原始数据**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\Table\data`
+游戏原始数据（Luban 导表）分两套：
+- **客户端导表**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\Table\data` —— 展示/配置类（Lumi、技能、物品、属性克制、道馆 Gym、MonsterGroup、Monster、RobotData 等）
+- **服务端导表**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\server\data` —— 逻辑/匹配类（RobotLvMatching 天梯等级匹配、MatchLadder、MatchGroup 等）
+
+> ⚠️ 找表时先确认属于客户端还是服务端，匹配/逻辑相关的表（如 RobotLvMatching）在 server 目录，别只在 Table 下找。
+
 **枚举定义**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\__enums__.xlsx`
 **项目数据**：`D:\LumiWiki\public\data\`
 
@@ -190,6 +205,103 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 
 ---
 
+## 机器人阵容更新
+
+机器人阵容页面（`/#/robot-team`）展示道馆 / 天梯 / 家园三类机器人阵容，数据由 `scripts/process-robot-teams.js` 从游戏导表生成到 `public/data/robot-teams.json`。
+
+### 数据链路
+
+```
+MonsterGroup[MonsterGroupID] → MonsterIdList[].Id → Monster[MonsterId]
+  → LumiId → Lumi[Id]（头像 CA / 名字 / 属性 / MaxScore）
+评分 = (HpState + AtkState + DefState + WorkState) / 4，取整
+等级/突破 取自 MonsterGroup.MonsterIdList 的 Lv / BreakLv
+```
+
+三类阵容的入口：
+
+| 类型   | 链路                                                                          |
+| ------ | ----------------------------------------------------------------------------- |
+| 道馆   | `gym.EnemyTeam` → MonsterGroup（客户端表）                                    |
+| 天梯   | `RobotLvMatching[Id=等级档位].RobotList` → `RobotData[Id].Team` → MonsterGroup（匹配表在服务端，阵容在客户端） |
+| 家园   | `MonsterGroup` 中 MonsterGroupID 在 20000~29999 范围的阵容（客户端表，直接筛选） |
+
+### 常用命令
+
+```bash
+npm run process-robot-teams   # 重新生成 robot-teams.json（道馆+天梯+家园）
+```
+
+游戏数据更新后跑一遍即可。脚本会跳过引用了不存在 MonsterGroup 的脏数据（如天梯 Lv.100 末尾几个未启用的 RobotId）并打印警告。
+
+### 注意事项
+
+- **服务端表**：天梯等级匹配表 `RobotLvMatching.json` 在 `Datas\server\data`（不在客户端 `Table\data`），见上方「数据源」。
+- **天梯等级档位**是稀疏的（5~51 连续，56/71/100），目标等级不在档位里时由前端「匹配 ≤ 它的最大档位」处理。
+- **输出结构**：`{ dojo: [{teamId, name, lumis}], ladder: [{level, teamId, lumis}], home: [{teamId, lumis}] }`。ladder 每个阵容多一个 `level` 字段供等级选择器过滤；道馆按关卡平铺、天梯用等级选择器、家园按 MonsterGroupID 平铺。
+- 噜咪「最大评分」不存进 JSON，前端运行时查 `Lumi.json` 的 `MaxScore`。
+
+---
+
+## 冒险掉落更新
+
+冒险掉落页面（`/#/adventure-drop`）展示各地图噜咪出现概率，数据由 `scripts/convert-adventure-drop.mjs` 从游戏导表生成到 `public/data/adventure/drop-rates.json`。
+
+> 📌 **算法逻辑文档**：`scripts/adventure-drop-logic.md` 记录了服务端真实逻辑（`getUnlockedLumiByCurMap` 等）、各权重字段含义、霸主状态矩阵、彩色保底流程、脚本简化点、以及**改逻辑时的修正指引**。游戏更新掉落逻辑后，先看这份文档对照服务端代码再改脚本。
+
+### 数据链路
+
+```
+AdventureMap（客户端）→ 各地图 NormalLumi / SpecialLumi / SeasonPool + LumiWeight
+LumiDropData（服务端）→ 彩色噜咪权重
+→ 结合 Lumi.json / zh-CN.json 计算出现概率
+```
+
+### 常用命令
+
+```bash
+npm run process-adventure   # 重新生成 drop-rates.json
+```
+
+### 注意事项
+
+- **混用两个数据目录**：`AdventureMap` 在客户端 `Table\data`，`LumiDropData` 在服务端 `server\data`（见「数据源」）。
+- **前端直接 fetch**：`AdventureDrop.vue` 用 `fetch('/data/adventure/drop-rates.json')` 读取（不走 `loadData` 的 `.encoded` 机制），更新后**无需清缓存**，刷新即可。
+- 输出含主线地图（多阶段：霸主解锁前/后）和赛季地图两类。
+- ⚠️ 该脚本原先硬编码了旧机器路径 `D:/G36/LumiGoProgram/...`，已修正为 `F:/G36/LumiGoDesigner/...`。换机器时记得改脚本顶部的 `SOURCE_DIR` / `SERVER_DATA_DIR`。
+
+---
+
+## 蛋掉落更新
+
+蛋掉落页面（`/#/egg-drop`）展示各噜咪蛋开启时能开出的噜咪及概率，数据由 `scripts/process-egg-drop.mjs` 生成到 `public/data/egg-drop.json`。
+
+### 数据链路
+
+```
+Item(type=6 LumiEgg) → itemUseId → ItemUse → 按 type 分支：
+  type=10/12（随机蛋/自选先选后随）→ Param1[].Id → LumiDrop → LumiDropData
+      （按 WeightPool 取权 + Score 过滤，复用冒险掉落的 getLumiRandIdByLumiDrop 算法）
+  type=14（自选多选一）→ Param1[].Id 是固定 LumiRandId → 查 LumiRand 得 LumiId，每只 1/N
+  type=16（巢穴蛋）→ 无固定掉落，跳过
+```
+
+### 常用命令
+
+```bash
+npm run process-egg-drop   # 重新生成 egg-drop.json
+```
+
+### 注意事项
+
+- **复用冒险掉落算法**：随机蛋（type=10/12）走 `getLumiRandIdByLumiDrop`，跟冒险掉落共用，只是 `MapOwner=0`（不限地图解锁）。
+- **综合概率近似**：服务端是「先品质后噜咪」两步，脚本用候选池权重占比作综合概率近似（跨品质合并），非精确品质分布。
+- **4 种蛋类型**差异见数据链路；巢穴蛋（type=16）无固定掉落已跳过。
+- 部分蛋引用了已废弃的 LumiDrop 池（如 Id=60000），会显示「数据缺失」。
+- 前端直接 fetch `/data/egg-drop.json`，无需清缓存。
+
+---
+
 ## 协作编辑
 
 同事通过腾讯文档维护噜咪扩展信息（体型、活动地图、关键特质、行为习惯）。
@@ -246,6 +358,12 @@ CSV 表头：`噜咪ID,体型,活动地图,关键特质,行为习惯`
 
 0:无 1:白 2:绿 3:蓝 4:紫 5:金 6:彩
 
+### LumiCardType - 卡背类型（Lumi.CardBack）
+
+0:普通 50:异色 80:王 98:3D 99:全景（枚举定义：`LumiCardType.cs`）
+
+> 噜咪详情页「个体类型」+ 图鉴页筛选都用此映射（`src/data/index.js` 的 `LUMI_CARD_TYPE` / `LUMI_CARD_TYPE_COLORS`）。0/空=普通，其余为特殊个体。
+
 ---
 
 ## 技能描述格式
@@ -277,6 +395,8 @@ bash publish.sh   # 自动：构建 → 停旧服务 → 启新服务（端口 3
 ```
 
 手动发布：`npm run build` → 杀掉 3005 端口 → `cd dist && python -m http.server 3005`
+
+> 💡 **自定义域名访问 dev server**：`npm run dev`（Vite）默认只允许 `localhost`，用内网域名（如 `*.bilibili.local`）访问会报 `Blocked request`。需在 `vite.config.js` 的 `server.allowedHosts` 添加对应域名（已配 `.bilibili.local` 子域通配）。`publish.sh` 的静态服务（python http.server）无此限制。
 
 ---
 

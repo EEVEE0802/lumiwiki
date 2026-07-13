@@ -18,6 +18,8 @@ const navLinks = [
   { path: '/damage-calculator', label: '伤害计算器' },
   { path: '/online-data', label: '线上数据' },
   { path: '/adventure-drop', label: '冒险掉落' },
+  { path: '/egg-drop', label: '🥚 蛋掉落' },
+  { path: '/robot-team', label: '🤖 机器人阵容' },
   { path: '/claude-code-guide', label: '🤖 Claude 教程' },
 ]
 

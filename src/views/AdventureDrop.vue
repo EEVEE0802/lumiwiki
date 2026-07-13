@@ -234,9 +234,10 @@ function getLumiAvatar(lumiId) {
   return `/images/avatars/CA_${lumiId}.png`
 }
 
-// 处理图片加载失败
+// 处理图片加载失败（防 onerror 死循环）
 function handleImageError(e) {
-  e.target.src = '/images/avatars/unknown.png'
+  e.target.onerror = null
+  e.target.src = '/images/avatars/CA_lumi.png'
 }
 
 // 跳转到噜咪详情

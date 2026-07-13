@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { loadData, t, TYPE_NAMES, TYPE_COLORS, WORK_TYPE_NAMES, LUMI_TAG_NAMES, getKeywordMap, keywordSync } from '../data'
+import { loadData, t, TYPE_NAMES, TYPE_COLORS, WORK_TYPE_NAMES, LUMI_TAG_NAMES, LUMI_CARD_TYPE, LUMI_CARD_TYPE_COLORS, getKeywordMap, keywordSync } from '../data'
 
 const route = useRoute()
 const router = useRouter()
@@ -73,6 +73,25 @@ watch(() => route.params.id, () => {
 onMounted(() => {
   loadLumiData()
 })
+
+// 上一只 / 下一只导航（按 PokedexId 图鉴顺序）
+const sortedLumis = computed(() => [...allLumis.value].sort((a, b) => a.PokedexId - b.PokedexId))
+const currentIndex = computed(() => lumi.value ? sortedLumis.value.findIndex(l => l.Id === lumi.value.Id) : -1)
+const prevLumi = computed(() => {
+  const i = currentIndex.value
+  return i > 0 ? sortedLumis.value[i - 1] : null
+})
+const nextLumi = computed(() => {
+  const i = currentIndex.value
+  const list = sortedLumis.value
+  return i >= 0 && i < list.length - 1 ? list[i + 1] : null
+})
+function goPrev() {
+  if (prevLumi.value) router.push(`/lumi/${prevLumi.value.Id}`)
+}
+function goNext() {
+  if (nextLumi.value) router.push(`/lumi/${nextLumi.value.Id}`)
+}
 
 // 工具函数
 function getName(key) { return locMap.value[key] || key || '???' }
@@ -526,7 +545,13 @@ const weaknesses = computed(() => {
   <div v-if="loading" class="loading">加载中...</div>
   <div v-else-if="!lumi" class="empty">未找到该噜咪</div>
   <div v-else>
-    <router-link to="/lumi" class="back-btn">← 返回图鉴</router-link>
+    <div class="detail-nav">
+      <router-link to="/lumi" class="back-btn">← 返回图鉴</router-link>
+      <div class="nav-buttons">
+        <button class="nav-btn" :disabled="!prevLumi" @click="goPrev">← 上一只</button>
+        <button class="nav-btn" :disabled="!nextLumi" @click="goNext">下一只 →</button>
+      </div>
+    </div>
 
     <!-- 头部信息 -->
     <div class="detail-header">
@@ -572,6 +597,15 @@ const weaknesses = computed(() => {
         <div class="info-item">
           <div class="label">赛季</div>
           <div class="value">{{ LUMI_TAG_NAMES[lumi.LumiTag] || '-' }}</div>
+        </div>
+        <div class="info-item">
+          <div class="label">个体类型</div>
+          <div class="value">
+            <span v-if="lumi.CardBack" :style="{ color: LUMI_CARD_TYPE_COLORS[lumi.CardBack] || '#ff9800', fontWeight: 600 }">
+              ⭐ {{ LUMI_CARD_TYPE[lumi.CardBack] || '特殊个体' }}
+            </span>
+            <span v-else style="color: var(--text-dim)">普通</span>
+          </div>
         </div>
         <div class="info-item">
           <div class="label">性别比例</div>
@@ -1403,5 +1437,36 @@ const weaknesses = computed(() => {
   .detail-header { flex-direction: column; text-align: center; }
   .detail-types { justify-content: center; }
   .weakness-grid { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); }
+}
+/* 详情页导航条（返回 + 上一只/下一只） */
+.detail-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+.nav-btn {
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.2s;
+}
+.nav-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 </style>

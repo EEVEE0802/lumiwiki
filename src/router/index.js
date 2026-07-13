@@ -11,6 +11,8 @@ const routes = [
   { path: '/damage-calculator', name: 'DamageCalculator', component: () => import('../views/DamageCalculator.vue') },
   { path: '/online-data', name: 'OnlineData', component: () => import('../views/OnlineData.vue') },
   { path: '/adventure-drop', name: 'AdventureDrop', component: () => import('../views/AdventureDrop.vue') },
+  { path: '/egg-drop', name: 'EggDrop', component: () => import('../views/EggDrop.vue') },
+  { path: '/robot-team', name: 'RobotTeam', component: () => import('../views/RobotTeam.vue') },
   { path: '/claude-code-guide', name: 'ClaudeCodeGuide', component: () => import('../views/ClaudeCodeGuide.vue') },
 ]
 
