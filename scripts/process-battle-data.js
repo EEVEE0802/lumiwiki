@@ -131,7 +131,7 @@ async function processBattleData() {
     if (!gameHasBotMap.has(game_id_str)) {
       gameHasBotMap.set(game_id_str, false)
     }
-    if (playerType === 3) {
+    if (playerType !== 1) {
       gameHasBotMap.set(game_id_str, true)
     }
 
