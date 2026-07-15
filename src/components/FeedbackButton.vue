@@ -7,10 +7,10 @@
     :title="tooltip"
   >
     <span v-if="loading">⏳ 发送中</span>
-    <span v-else-if="justSent">✅ 已反馈</span>
+    <span v-else-if="justSent">✅ 已发送</span>
     <span v-else-if="justFailed">❌ 失败,稍后再试</span>
     <span v-else-if="cooldownLeft > 0">⏱️ {{ cooldownLeft }}min</span>
-    <span v-else>📢 反馈</span>
+    <span v-else>📢 求更新</span>
   </button>
 </template>
 
