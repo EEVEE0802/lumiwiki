@@ -220,9 +220,15 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 
 ---
 
-## 自动化数据拉取（数数平台）
+## 自动化数据更新
 
-天梯和周赛数据每天自动从数数平台（`game-data-ta.bilibili.co`）拉取、处理、发布，无需人工干预。失败时通过飞书机器人通知。
+每天凌晨 03:00 自动更新所有 wiki 数据：游戏核心数据（噜咪/技能/物品等，来自本地 SVN 导表）+ 天梯战斗数据（来自数数平台 API）+ 衍生数据（机器人阵容/冒险掉落/蛋掉落）+ 立绘资源。失败时通过飞书机器人通知。
+
+### 前置要求
+
+- **svn 命令行**：TortoiseSVN 安装时必须勾选「Command line client tools」（默认不勾）。验证：`svn --version` 能输出版本号
+- **数数平台账号**：token/refreshToken 配在 `ta-config.json`（token 自动续期，refresh_token 失效时手动更新）
+- **飞书群机器人**：webhook URL 配在 `ta-config.json`（自定义关键词 `LumiWiki`）
 
 ### 脚本结构
 
@@ -231,8 +237,11 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 | `scripts/ta-fetch.mjs` | 3 步异步 API 拉取：发起任务 → 轮询状态 → 下载 CSV |
 | `scripts/ta-auth.mjs` | 用 refresh_token 自动续期 access_token |
 | `scripts/notify.mjs` | 飞书/企业微信通知（根据 webhook URL 自动判断平台） |
-| `scripts/auto-update.mjs` | 总控：续期 → 拉取 → process-data → publish |
-| `scripts/auto-update.bat` | Windows 任务计划 wrapper（重定向日志到 `auto-update.log`） |
+| `scripts/update-game-data.mjs` | 游戏数据更新：svn update → 复制 JSON → 多语言 → 衍生脚本 → 立绘同步 |
+| `scripts/auto-update.mjs` | 天梯/周赛更新（可被 all 调用，`skipPublish` 参数控制是否发布） |
+| `scripts/auto-update-all.mjs` | **每日总控**：游戏数据 + 天梯 → 统一 publish（一次 build/重启） |
+| `scripts/auto-update-all.bat` | 每日全量任务 wrapper（03:00 跑） |
+| `scripts/auto-update.bat` | 周赛任务 wrapper（周一 08:00 跑） |
 | `scripts/ta-config.json` | 配置（token/refreshToken/webhook，**不进 git**） |
 | `scripts/ta-config.example.json` | 配置模板（进 git） |
 
@@ -240,13 +249,13 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 
 | 任务名 | 频率 | 时间 | 模式 |
 |---|---|---|---|
-| `LumiWiki_Ladder` | 每天 | 03:00 | 天梯（PVP1V1） |
+| `LumiWiki_Ladder` | 每天 | 03:00 | **全量更新**（游戏数据 + 天梯 + 衍生 + 立绘） |
 | `LumiWiki_Tournament` | 每周一 | 08:00 | 周赛（Week1v1，首周 Week 1 跳过） |
 
 注册命令（Git Bash 里执行，需 `MSYS_NO_PATHCONV=1` 防止 `/create` 等参数被误转成路径）：
 
 ```bash
-MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Ladder" /tr "D:\lumiwiki\scripts\auto-update.bat" /sc DAILY /st 03:00 /f
+MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Ladder" /tr "D:\lumiwiki\scripts\auto-update-all.bat" /sc DAILY /st 03:00 /f
 MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Tournament" /tr "D:\lumiwiki\scripts\auto-update.bat --tournament" /sc WEEKLY /d MON /st 08:00 /f
 ```
 
@@ -305,17 +314,29 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Ladder
 ### 数据流（完整链路）
 
 ```
-[03:00 定时任务触发]
-  → auto-update.bat 调 node auto-update.mjs
-  → ensureValidToken() 用 refresh_token 换新 access_token
-  → computeWeekInfo() 算游戏周编号 + 时间范围
-  → ta-fetch.mjs：POST eventSearchDownloadAsync → 轮询 asyncTaskProgress → 下载 CSV
-  → 存到 data/archive/weekN/ladder_weekN.csv
-  → process-battle-data.js --week N（生成 ladder-weekN.json）
-  → cp ladder-weekN.json → battle-stats.json
-  → 更新 weeks.json（追加新周）
-  → bash publish.sh（build + 停旧服务 + 启新服务）
-  → notify 推送成功消息到飞书
+[03:00 定时任务触发：auto-update-all.bat → auto-update-all.mjs]
+
+  ensureValidToken() 用 refresh_token 换新 access_token
+  computeWeekInfo() 算游戏周编号
+
+  [1/3] updateGameData() —— 游戏数据
+    → svn update F:\G36\LumiGoDesigner\Config\Luban\Datas
+    → 复制核心 JSON（Lumi/ActiveSkill/BattlePassive/Item 等）到 public/data
+    → prepare-i18n-data.cjs 转换多语言
+    → 删除 public/data/*.encoded 缓存
+    → 跑衍生脚本：process-robot-teams / convert-adventure-drop / process-egg-drop
+    → 同步立绘（F:\G36\LumiGoProgram\...\Lumi 的 CA_*.png，仅复制缺失）
+
+  [2/3] updateMode('ladder', skipPublish) —— 天梯
+    → ta-fetch.mjs：POST eventSearchDownloadAsync → 轮询 asyncTaskProgress → 下载 CSV
+    → 存到 data/archive/weekN/ladder_weekN.csv
+    → process-battle-data.js --week N
+    → cp ladder-weekN.json → battle-stats.json
+    → 更新 weeks.json（追加新周）
+
+  [3/3] 统一 publish（一次 build + 一次重启，避免并行冲突）
+    → bash publish.sh
+    → notify 推送"全量更新完成"到飞书
 ```
 
 ---

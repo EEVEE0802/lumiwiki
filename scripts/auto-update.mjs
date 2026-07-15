@@ -60,8 +60,9 @@ function ensureWeekInJson(week) {
   }
 }
 
-async function updateMode(mode, weekInfo) {
+export async function updateMode(mode, weekInfo, options = {}) {
   const { week, startTime, endTime } = weekInfo
+  const { skipPublish = false } = options
   const fileName = mode === 'tournament' ? `tournament_week${week}.csv` : `ladder_week${week}.csv`
   const outputPath = path.join(PROJECT_ROOT, 'data', 'archive', `week${week}`, fileName)
 
@@ -79,7 +80,9 @@ async function updateMode(mode, weekInfo) {
     ensureWeekInJson(week)
   }
 
-  runCommand('bash', ['publish.sh'])
+  if (!skipPublish) {
+    runCommand('bash', ['publish.sh'])
+  }
 }
 
 async function main() {
