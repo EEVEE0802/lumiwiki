@@ -2,8 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 function loadConfig() {
   const configPath = path.join(__dirname, 'ta-config.json')
@@ -18,6 +17,25 @@ const LEVEL_EMOJI = {
   info: 'ℹ️',
   warn: '⚠️',
   error: '❌'
+}
+
+// 根据 Webhook URL 判断平台，构造对应的消息体
+function buildPayload(webhook, content) {
+  if (webhook.includes('qyapi.weixin.qq.com')) {
+    // 企业微信
+    return { msgtype: 'text', text: { content } }
+  }
+  // 飞书（默认）
+  return { msg_type: 'text', content: { text: content } }
+}
+
+// 判断推送是否成功（不同平台字段不同）
+function isPushSuccess(webhook, data) {
+  if (webhook.includes('qyapi.weixin.qq.com')) {
+    return data.errcode === 0
+  }
+  // 飞书：StatusCode 或 code 为 0 表示成功
+  return data.StatusCode === 0 || data.code === 0
 }
 
 export async function notify(message, level = 'info') {
@@ -39,14 +57,11 @@ export async function notify(message, level = 'info') {
     const resp = await fetch(webhook, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        msgtype: 'text',
-        text: { content }
-      })
+      body: JSON.stringify(buildPayload(webhook, content))
     })
     const data = await resp.json()
-    if (data.errcode !== 0) {
-      console.error('[notify] 企业微信返回错误:', data)
+    if (!isPushSuccess(webhook, data)) {
+      console.error('[notify] 推送返回错误:', data)
     }
   } catch (e) {
     console.error('[notify] 推送失败:', e.message)
