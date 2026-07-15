@@ -1,5 +1,6 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
+import FeedbackButton from './components/FeedbackButton.vue'
 </script>
 
 <template>
@@ -8,5 +9,6 @@ import NavBar from './components/NavBar.vue'
     <main class="main-content">
       <router-view />
     </main>
+    <FeedbackButton />
   </div>
 </template>

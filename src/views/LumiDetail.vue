@@ -430,13 +430,21 @@ const genderRatio = computed(() => {
   return result.length > 0 ? result : null
 })
 
-// 身高体重（LumiAttribute: [[1,[h_min,h_max]], [2,[w_min,w_max]]]）
+// 身高体重（LumiAttribute: [[1, [h_min,h_max] 或 单值], [2, [w_min,w_max] 或 单值]]）
+// min===max 或单值表示固定值，只显示一个数；否则显示 min~max 范围
 const lumiAttribute = computed(() => {
   if (!lumi.value?.LumiAttribute?.length) return null
+  const formatVal = val => {
+    if (Array.isArray(val)) {
+      if (val.length === 1) return String(val[0])
+      return val[0] === val[1] ? String(val[0]) : val[0] + '~' + val[1]
+    }
+    return String(val)
+  }
   const result = {}
-  for (const [type, range] of lumi.value.LumiAttribute) {
-    if (type === 1) result.height = range
-    else if (type === 2) result.weight = range
+  for (const [type, val] of lumi.value.LumiAttribute) {
+    if (type === 1) result.height = formatVal(val)
+    else if (type === 2) result.weight = formatVal(val)
   }
   return (result.height || result.weight) ? result : null
 })
@@ -632,8 +640,8 @@ const weaknesses = computed(() => {
         <div class="info-item" v-if="lumiAttribute">
           <div class="label">身高体重</div>
           <div class="value">
-            <div v-if="lumiAttribute.height">身高 {{ lumiAttribute.height[0] }}~{{ lumiAttribute.height[1] }} cm</div>
-            <div v-if="lumiAttribute.weight">体重 {{ lumiAttribute.weight[0] }}~{{ lumiAttribute.weight[1] }} kg</div>
+            <div v-if="lumiAttribute.height">身高 {{ lumiAttribute.height }} cm</div>
+            <div v-if="lumiAttribute.weight">体重 {{ lumiAttribute.weight }} kg</div>
           </div>
         </div>
         <div class="info-item">
