@@ -1,0 +1,10 @@
+{
+  "_comment": "复制本文件为 ta-config.json 并填入真实值。ta-config.json 不进 git（含 Bearer Token + RefreshToken）",
+  "token": "your-access-token-here",
+  "refreshToken": "your-refresh-token-here",
+  "projectId": 29,
+  "bZoneId": "1888",
+  "notifyWebhook": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=your-bot-key",
+  "baseFriday": "2026-07-10",
+  "baseUrl": "https://game-data-ta.bilibili.co"
+}

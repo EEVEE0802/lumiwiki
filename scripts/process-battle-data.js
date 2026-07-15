@@ -152,7 +152,7 @@ async function processBattleData() {
 
   // 按组合存储统计
   const lumiStatsMap = new Map()
-  const teamUsage = new Map()
+  const teamUsageMap = new Map()
   const battleCountMap = new Map()
 
   // 初始化
@@ -168,6 +168,7 @@ async function processBattleData() {
 
   combinations.forEach(key => {
     lumiStatsMap.set(key, new Map())
+    teamUsageMap.set(key, new Map())
     battleCountMap.set(key, 0)
   })
 
@@ -243,15 +244,16 @@ async function processBattleData() {
       })
     })
 
-    // 高级段位队伍（只用原始 rank 判断）
-    if (rank >= 151) {
-      const teamLumiIds = lumis
-        .map(l => l.lumi_id)
-        .sort()
-        .join('-')
+    // 队伍统计（按当前组合分组，不再限定传说段位）
+    const teamLumiIds = lumis
+      .map(l => l.lumi_id)
+      .sort()
+      .join('-')
 
-      if (!teamUsage.has(teamLumiIds)) {
-        teamUsage.set(teamLumiIds, {
+    updateCombos.forEach(key => {
+      const teamMap = teamUsageMap.get(key)
+      if (!teamMap.has(teamLumiIds)) {
+        teamMap.set(teamLumiIds, {
           teamLumiIds: lumis.map(l => l.lumi_id),
           lumis: lumis.map(l => ({
             lumiId: l.lumi_id,
@@ -261,13 +263,12 @@ async function processBattleData() {
           wins: 0
         })
       }
-
-      const team = teamUsage.get(teamLumiIds)
+      const team = teamMap.get(teamLumiIds)
       team.battles++
       if (isWin) {
         team.wins++
       }
-    }
+    })
 
     successCount++
   })
@@ -305,22 +306,23 @@ async function processBattleData() {
       }))
       .sort((a, b) => parseFloat(b.winRate) - parseFloat(a.winRate))
 
+    // 构建该组合的热门队伍（top 50）
+    const teamsData = Array.from(teamUsageMap.get(key).values())
+      .sort((a, b) => b.battles - a.battles)
+      .slice(0, 50)
+      .map(team => ({
+        ...team,
+        winRate: ((team.wins / team.battles) * 100).toFixed(2)
+      }))
+
     stats[key] = {
       appearance: appearanceData,
       winRate: winRateData,
+      teams: teamsData,
       totalBattles,
       rankRange: { min: 1, max: 151 }
     }
   })
-
-  // 构建高级段位热门队伍
-  const highRankTeams = Array.from(teamUsage.values())
-    .sort((a, b) => b.battles - a.battles)
-    .slice(0, 50)
-    .map(team => ({
-      ...team,
-      winRate: ((team.wins / team.battles) * 100).toFixed(2)
-    }))
 
   // 统计玩家段位分布
   const playerRankDistribution = {
@@ -369,7 +371,6 @@ async function processBattleData() {
     rankGroups,
     allRanks: Array.from(allRanks).sort((a, b) => a - b),
     stats,
-    highRankTeams,
     playerRankDistribution
   }
 
@@ -383,7 +384,7 @@ async function processBattleData() {
     console.log(`  ${key}: ${battleCountMap.get(key)} 场`)
   })
   console.log(`\n噜咪数量 (all-with-bot): ${lumiStatsMap.get('all-with-bot').size}`)
-  console.log(`高级段位队伍数量: ${highRankTeams.length}`)
+  console.log(`队伍数量 (all-with-bot): ${teamUsageMap.get('all-with-bot').size}`)
   console.log(`\n玩家段位分布:`)
   console.log(`  青铜 (1-30): ${playerRankDistribution.bronze} 人`)
   console.log(`  白银 (31-60): ${playerRankDistribution.silver} 人`)

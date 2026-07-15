@@ -25,3 +25,6 @@ dist-ssr
 
 # Large data files (too big for GitHub)
 auto-watch.log
+
+# Sensitive config (contains Bearer Token for game-data-ta)
+scripts/ta-config.json

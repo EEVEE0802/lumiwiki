@@ -240,7 +240,7 @@
           </table>
         </div>
         <div v-else class="no-data">
-          <p>暂无高级段位队伍数据</p>
+          <p>暂无队伍数据</p>
         </div>
       </div>
 
@@ -525,12 +525,36 @@ const currentWinRateData = computed(() => {
   return data
 })
 
-// 队伍数据（天梯显示高级段位，周赛显示所有场次）
+// 队伍数据（根据选中段位和人机筛选合并，取出现次数前 50）
 const highRankTeams = computed(() => {
   if (gameMode.value === 'tournament') {
     return data.value.popularTeams || []
   }
-  return data.value.highRankTeams || []
+  const keys = getDataKeys()
+  const merged = new Map()
+  keys.forEach(key => {
+    const teams = data.value.stats?.[key]?.teams || []
+    teams.forEach(team => {
+      const id = team.teamLumiIds.join('-')
+      if (!merged.has(id)) {
+        merged.set(id, {
+          ...team,
+          battles: 0,
+          wins: 0
+        })
+      }
+      const existing = merged.get(id)
+      existing.battles += team.battles
+      existing.wins += team.wins
+    })
+  })
+  return Array.from(merged.values())
+    .sort((a, b) => b.battles - a.battles)
+    .slice(0, 50)
+    .map(team => ({
+      ...team,
+      winRate: ((team.wins / team.battles) * 100).toFixed(2)
+    }))
 })
 
 // 玩家段位分布
@@ -797,7 +821,7 @@ async function loadCompareData() {
     } else {
       url = `/data/online/weekly/ladder-week${compareWeek.value}.json`
     }
-    const response = await fetch(url)
+    const response = await fetch(url, { cache: 'no-cache' })
     if (response.ok) {
       compareData.value = await response.json()
     } else {
@@ -910,7 +934,7 @@ function updateChart() {
 // 加载可用周列表
 async function loadAvailableWeeks() {
   try {
-    const response = await fetch('/data/online/weekly/weeks.json')
+    const response = await fetch('/data/online/weekly/weeks.json', { cache: 'no-cache' })
     if (response.ok) {
       const weeks = await response.json()
       availableWeeks.value = weeks.map(w => ({
@@ -925,7 +949,7 @@ async function loadAvailableWeeks() {
       availableWeeks.value = []
       for (let i = 1; i <= 10; i++) {
         try {
-          const resp = await fetch(`/data/online/weekly/battle-stats-week${i}.json`, { method: 'HEAD' })
+          const resp = await fetch(`/data/online/weekly/battle-stats-week${i}.json`, { method: 'HEAD', cache: 'no-cache' })
           if (resp.ok) {
             availableWeeks.value.push({
               value: i,
@@ -955,7 +979,7 @@ async function loadData() {
         ? `/data/online/weekly/ladder-week${selectedWeek.value}.json`
         : '/data/online/battle-stats.json'
     }
-    const response = await fetch(url)
+    const response = await fetch(url, { cache: 'no-cache' })
     if (!response.ok) {
       throw new Error(`加载失败: ${response.status}`)
     }

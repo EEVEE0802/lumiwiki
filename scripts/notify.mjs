@@ -1,0 +1,54 @@
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+function loadConfig() {
+  const configPath = path.join(__dirname, 'ta-config.json')
+  if (!fs.existsSync(configPath)) {
+    throw new Error('ta-config.json 不存在，请复制 ta-config.example.json 为 ta-config.json 并填入配置')
+  }
+  return JSON.parse(fs.readFileSync(configPath, 'utf-8'))
+}
+
+const LEVEL_EMOJI = {
+  success: '✅',
+  info: 'ℹ️',
+  warn: '⚠️',
+  error: '❌'
+}
+
+export async function notify(message, level = 'info') {
+  const config = loadConfig()
+  const webhook = config.notifyWebhook
+
+  const timestamp = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })
+  const emoji = LEVEL_EMOJI[level] || 'ℹ️'
+  const content = `${emoji} LumiWiki 自动更新\n${timestamp}\n\n${message}`
+
+  console.log(`[notify:${level}] ${message}`)
+
+  if (!webhook) {
+    console.log('[notify] 未配置 notifyWebhook，仅控制台输出')
+    return
+  }
+
+  try {
+    const resp = await fetch(webhook, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        msgtype: 'text',
+        text: { content }
+      })
+    })
+    const data = await resp.json()
+    if (data.errcode !== 0) {
+      console.error('[notify] 企业微信返回错误:', data)
+    }
+  } catch (e) {
+    console.error('[notify] 推送失败:', e.message)
+  }
+}
