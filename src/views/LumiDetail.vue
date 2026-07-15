@@ -430,6 +430,17 @@ const genderRatio = computed(() => {
   return result.length > 0 ? result : null
 })
 
+// 身高体重（LumiAttribute: [[1,[h_min,h_max]], [2,[w_min,w_max]]]）
+const lumiAttribute = computed(() => {
+  if (!lumi.value?.LumiAttribute?.length) return null
+  const result = {}
+  for (const [type, range] of lumi.value.LumiAttribute) {
+    if (type === 1) result.height = range
+    else if (type === 2) result.weight = range
+  }
+  return (result.height || result.weight) ? result : null
+})
+
 // 初见内容
 const firstMeet = computed(() => {
   if (!lumi.value || !avgData.value || !avgData.value.length) {
@@ -616,6 +627,13 @@ const weaknesses = computed(() => {
               </span>
             </template>
             <span v-else>-</span>
+          </div>
+        </div>
+        <div class="info-item" v-if="lumiAttribute">
+          <div class="label">身高体重</div>
+          <div class="value">
+            <div v-if="lumiAttribute.height">身高 {{ lumiAttribute.height[0] }}~{{ lumiAttribute.height[1] }} cm</div>
+            <div v-if="lumiAttribute.weight">体重 {{ lumiAttribute.weight[0] }}~{{ lumiAttribute.weight[1] }} kg</div>
           </div>
         </div>
         <div class="info-item">
