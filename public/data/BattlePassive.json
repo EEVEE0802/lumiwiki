@@ -1147,6 +1147,12 @@
         "BuffId": 10620201,
         "BuffLv": 1,
         "Duration": 0,
+        "Target": 3
+      },
+      {
+        "BuffId": 10620203,
+        "BuffLv": 1,
+        "Duration": 0,
         "Target": 1
       }
     ]
@@ -2485,6 +2491,14 @@
     "BuffList": []
   },
   {
+    "Id": 1118601,
+    "name": "P_Skill_1118601",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1118601",
+    "DesParam": [],
+    "BuffList": []
+  },
+  {
     "Id": 1119601,
     "name": "P_Skill_1119601",
     "icon": "Release_HurtPlus",
@@ -2877,6 +2891,14 @@
     ]
   },
   {
+    "Id": 1124501,
+    "name": "P_Skill_1124501",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1124501",
+    "DesParam": [],
+    "BuffList": []
+  },
+  {
     "Id": 1125401,
     "name": "P_Skill_1125401",
     "icon": "Odd_HurtPlus",
@@ -3031,7 +3053,7 @@
     "icon": "Start_Palsy",
     "Des": "P_SkillText_1127401",
     "DesParam": [
-      20
+      15
     ],
     "BuffList": [
       {
@@ -3101,6 +3123,30 @@
     "BuffList": []
   },
   {
+    "Id": 1127701,
+    "name": "P_Skill_1127701",
+    "icon": "Start_Palsy",
+    "Des": "P_SkillText_1127701",
+    "DesParam": [],
+    "BuffList": []
+  },
+  {
+    "Id": 1140001,
+    "name": "P_Skill_1140001",
+    "icon": "Start_Palsy",
+    "Des": "P_SkillText_1140001",
+    "DesParam": [],
+    "BuffList": []
+  },
+  {
+    "Id": 1142101,
+    "name": "P_Skill_1142101",
+    "icon": "Start_Palsy",
+    "Des": "P_SkillText_1142101",
+    "DesParam": [],
+    "BuffList": []
+  },
+  {
     "Id": 1142301,
     "name": "P_Skill_1142301",
     "icon": "Die_Poison",
@@ -3110,8 +3156,8 @@
       10,
       30,
       50,
-      70,
       90,
+      95,
       0,
       1,
       2,
@@ -3134,6 +3180,14 @@
         "Target": 1
       }
     ]
+  },
+  {
+    "Id": 1142601,
+    "name": "P_Skill_1142601",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1142601",
+    "DesParam": [],
+    "BuffList": []
   },
   {
     "Id": 11002101,

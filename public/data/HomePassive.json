@@ -20,13 +20,13 @@
     "name": "H_Skill_2100101",
     "Des": "H_SkillText_2100101",
     "DesParam": [
-      25
+      30
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 4,
-        "Param": 2500
+        "Param": 3000
       }
     ],
     "ArchBuff": [],
@@ -62,7 +62,7 @@
     "name": "H_Skill_2100501",
     "Des": "H_SkillText_2100501",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -70,7 +70,7 @@
     "RecipeBuff": [
       {
         "X": 44,
-        "Y": 5500
+        "Y": 4500
       }
     ],
     "HungryBuff": 0,
@@ -104,13 +104,13 @@
     "name": "H_Skill_2100701",
     "Des": "H_SkillText_2100701",
     "DesParam": [
-      25
+      30
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 9,
-        "Param": 2500
+        "Param": 3000
       }
     ],
     "ArchBuff": [],
@@ -188,13 +188,13 @@
     "name": "H_Skill_2101301",
     "Des": "H_SkillText_2101301",
     "DesParam": [
-      25
+      30
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 2,
-        "Param": 2500
+        "Param": 3000
       }
     ],
     "ArchBuff": [],
@@ -230,13 +230,13 @@
     "name": "H_Skill_2102501",
     "Des": "H_SkillText_2102501",
     "DesParam": [
-      25
+      30
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 1,
-        "Param": 2500
+        "Param": 3000
       }
     ],
     "ArchBuff": [],
@@ -393,7 +393,7 @@
     "name": "H_Skill_2106104",
     "Des": "H_SkillText_2106104",
     "DesParam": [
-      40
+      50
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -401,7 +401,7 @@
     "RecipeBuff": [
       {
         "X": 55,
-        "Y": 4000
+        "Y": 5000
       }
     ],
     "HungryBuff": 0,
@@ -491,13 +491,13 @@
     "name": "H_Skill_2112401",
     "Des": "H_SkillText_2112401",
     "DesParam": [
-      25
+      30
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 5,
-        "Param": 2500
+        "Param": 3000
       }
     ],
     "ArchBuff": [],
@@ -533,13 +533,13 @@
     "name": "H_Skill_2116501",
     "Des": "H_SkillText_2116501",
     "DesParam": [
-      25
+      30
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 8,
-        "Param": 2500
+        "Param": 3000
       }
     ],
     "ArchBuff": [],
@@ -820,13 +820,13 @@
     "name": "H_Skill_2123001",
     "Des": "H_SkillText_2123001",
     "DesParam": [
-      55
+      40
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 10,
-        "Param": 5500
+        "Param": 4000
       }
     ],
     "ArchBuff": [],
@@ -841,13 +841,13 @@
     "name": "H_Skill_2123101",
     "Des": "H_SkillText_2123101",
     "DesParam": [
-      25
+      30
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 10,
-        "Param": 2500
+        "Param": 3000
       }
     ],
     "ArchBuff": [],
@@ -862,7 +862,7 @@
     "name": "H_Skill_2123401",
     "Des": "H_SkillText_2123401",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -870,7 +870,7 @@
     "RecipeBuff": [
       {
         "X": 24,
-        "Y": 5500
+        "Y": 4500
       }
     ],
     "HungryBuff": 0,
@@ -1055,7 +1055,7 @@
     "name": "H_Skill_2130001",
     "Des": "H_SkillText_2130001",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1063,7 +1063,7 @@
     "RecipeBuff": [
       {
         "X": 17,
-        "Y": 5500
+        "Y": 4500
       }
     ],
     "HungryBuff": 0,
@@ -1076,7 +1076,7 @@
     "name": "H_Skill_2135901",
     "Des": "H_SkillText_2135901",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1084,7 +1084,7 @@
     "RecipeBuff": [
       {
         "X": 9,
-        "Y": 5500
+        "Y": 4500
       }
     ],
     "HungryBuff": 0,
@@ -1188,7 +1188,7 @@
     "name": "H_Skill_21000101",
     "Des": "H_SkillText_21000101",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1196,7 +1196,7 @@
     "RecipeBuff": [
       {
         "X": 8,
-        "Y": 5500
+        "Y": 4500
       }
     ],
     "HungryBuff": 0,
@@ -1209,7 +1209,7 @@
     "name": "H_Skill_21000201",
     "Des": "H_SkillText_21000201",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1225,7 +1225,7 @@
     "name": "H_Skill_21000801",
     "Des": "H_SkillText_21000801",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1241,7 +1241,7 @@
     "name": "H_Skill_21001001",
     "Des": "H_SkillText_21001001",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1257,7 +1257,7 @@
     "name": "H_Skill_21001101",
     "Des": "H_SkillText_21001101",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1273,7 +1273,7 @@
     "name": "H_Skill_21001201",
     "Des": "H_SkillText_21001201",
     "DesParam": [
-      55
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1303,13 +1303,13 @@
     "name": "H_Skill_21001401",
     "Des": "H_SkillText_21001401",
     "DesParam": [
-      50
+      40
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 3,
-        "Param": 5000
+        "Param": 4000
       }
     ],
     "ArchBuff": [],
