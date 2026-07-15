@@ -7,6 +7,12 @@
 - 端口 **3005**（固定，严禁修改）
 - 内网地址：`http://10.27.17.136:3005`
 
+## Git 偏好
+
+- **提交后直接 push 到远程**，不需要单独询问
+- commit message 用中文，多个改动点用顿号分隔，正文用列表说明细节
+- 敏感配置（token、webhook URL）写进 `.gitignore` 不进 git，配套提供 `.example` 模板
+
 ## 项目结构
 
 ```
@@ -38,7 +44,13 @@ LumiWiki/
 │   ├── process-tournament-data.js   # 周赛数据处理
 │   ├── process-robot-teams.js       # 机器人阵容数据处理
 │   ├── convert-adventure-drop.mjs   # 冒险掉落数据处理
-│   └── process-egg-drop.mjs         # 蛋掉落数据处理
+│   ├── process-egg-drop.mjs         # 蛋掉落数据处理
+│   ├── ta-fetch.mjs                 # 数数平台 API 拉取（自动）
+│   ├── ta-auth.mjs                  # Bearer Token 自动续期
+│   ├── notify.mjs                   # 飞书/企业微信通知
+│   ├── auto-update.mjs              # 自动更新总控（拉取+处理+发布）
+│   ├── auto-update.bat              # Windows 任务计划 wrapper
+│   └── ta-config.example.json       # 配置模板（ta-config.json 含 token 不进 git）
 ├── src/
 │   ├── components/                  # Vue 组件
 │   ├── composables/useLanguage.js   # 多语言状态
@@ -202,6 +214,109 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 - `rank=151` 且有人机的战斗归到星耀段位
 - 传说段位（151）的 with-bot 和 no-bot 数据应相同
 - 玩家段位取每个 `b_role_id` 的 `rank` 最大值
+- **player_type 字段**：`1`=真人，`2`=离线玩家镜像（性质同机器人），`3`=机器人。判断"是否含人机"用 `playerType !== 1`（含 2 和 3 都算 with-bot）
+- **队伍统计**：每个段位组合（如 `bronze-with-bot`）独立统计出现次数 top 50 的队伍，输出到 `stats[key].teams`。前端根据选中段位+人机筛选合并取 top 50
+- **前端缓存**：`OnlineData.vue` 的 fetch 加 `cache: 'no-cache'`，避免浏览器缓存旧 JSON（每次发条件请求，数据没变返回 304 秒回，变了才下载）
+
+---
+
+## 自动化数据拉取（数数平台）
+
+天梯和周赛数据每天自动从数数平台（`game-data-ta.bilibili.co`）拉取、处理、发布，无需人工干预。失败时通过飞书机器人通知。
+
+### 脚本结构
+
+| 脚本 | 职责 |
+|---|---|
+| `scripts/ta-fetch.mjs` | 3 步异步 API 拉取：发起任务 → 轮询状态 → 下载 CSV |
+| `scripts/ta-auth.mjs` | 用 refresh_token 自动续期 access_token |
+| `scripts/notify.mjs` | 飞书/企业微信通知（根据 webhook URL 自动判断平台） |
+| `scripts/auto-update.mjs` | 总控：续期 → 拉取 → process-data → publish |
+| `scripts/auto-update.bat` | Windows 任务计划 wrapper（重定向日志到 `auto-update.log`） |
+| `scripts/ta-config.json` | 配置（token/refreshToken/webhook，**不进 git**） |
+| `scripts/ta-config.example.json` | 配置模板（进 git） |
+
+### 定时任务（Windows 任务计划程序）
+
+| 任务名 | 频率 | 时间 | 模式 |
+|---|---|---|---|
+| `LumiWiki_Ladder` | 每天 | 03:00 | 天梯（PVP1V1） |
+| `LumiWiki_Tournament` | 每周一 | 08:00 | 周赛（Week1v1，首周 Week 1 跳过） |
+
+注册命令（Git Bash 里执行，需 `MSYS_NO_PATHCONV=1` 防止 `/create` 等参数被误转成路径）：
+
+```bash
+MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Ladder" /tr "D:\lumiwiki\scripts\auto-update.bat" /sc DAILY /st 03:00 /f
+MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Tournament" /tr "D:\lumiwiki\scripts\auto-update.bat --tournament" /sc WEEKLY /d MON /st 08:00 /f
+```
+
+### 游戏周期
+
+- **游戏周**：周五 0:00 ~ 下周四 23:59:59
+- **首周（Week 1）**：2026-07-10 开始，**无周赛**
+- **数据范围**：每次拉取"本周周五 0:00 ~ 当前"，覆盖更新 `data/archive/weekN/ladder_weekN.csv`
+- **周编号算法**：`week = floor((今天 - 2026-07-10) / 7天) + 1`（基准日 `baseFriday` 在 `ta-config.json` 里）
+
+### Token 续期机制
+
+- access_token 有效期 7 小时（对应 localStorage 的 `EXPIRE_TIME: 7`），会自动过期
+- refresh_token 长期有效，**不轮换**（调续期接口后值不变），可反复用来换新 access_token
+- 每次跑脚本前先调 `/v1/oauth/refreshForToken` 续期，新 token 落盘到 `ta-config.json`
+- 只有 refresh_token 也失效（极少，可能几个月一次）才需要手动重新登录
+
+### 通知（飞书机器人）
+
+- 企业微信群机器人权限被公司关掉，改用飞书自定义机器人
+- webhook URL 配在 `ta-config.json` 的 `notifyWebhook`
+- `notify.mjs` 根据 URL 自动判断平台（`qyapi.weixin.qq.com` → 企业微信格式，`open.feishu.cn` → 飞书格式）
+- 飞书机器人安全策略：自定义关键词 `LumiWiki`（脚本每条消息都带这个前缀）
+
+### 常用命令
+
+```bash
+# 手动触发一次天梯更新（绕开定时任务）
+node scripts/auto-update.mjs
+
+# 手动触发一次周赛更新
+node scripts/auto-update.mjs --tournament
+
+# 查看运行日志
+cat auto-update.log
+
+# 手动触发定时任务（测试 .bat wrapper）
+MSYS_NO_PATHCONV=1 schtasks /run /tn LumiWiki_Ladder
+
+# 查看任务状态/下次运行时间
+MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Ladder
+```
+
+### 维护指引
+
+**token/refresh_token 都失效时**（飞书收到 token 失效告警）：
+1. 浏览器打开数数平台重新登录（企业微信一键登录）
+2. F12 → Console 跑 `Object.entries(localStorage)`，找 `ACCESS_TOKEN` 和 `REFRESH_TOKEN`
+3. 更新 `scripts/ta-config.json` 的 `token` 和 `refreshToken` 字段
+
+**接口失败排查**：
+- 看 `auto-update.log` 的错误信息
+- token 失效：脚本会自动续期；refresh_token 也失效才需要手动更新
+- 网络问题：脚本推送失败通知到飞书，下次定时任务自动重试
+
+### 数据流（完整链路）
+
+```
+[03:00 定时任务触发]
+  → auto-update.bat 调 node auto-update.mjs
+  → ensureValidToken() 用 refresh_token 换新 access_token
+  → computeWeekInfo() 算游戏周编号 + 时间范围
+  → ta-fetch.mjs：POST eventSearchDownloadAsync → 轮询 asyncTaskProgress → 下载 CSV
+  → 存到 data/archive/weekN/ladder_weekN.csv
+  → process-battle-data.js --week N（生成 ladder-weekN.json）
+  → cp ladder-weekN.json → battle-stats.json
+  → 更新 weeks.json（追加新周）
+  → bash publish.sh（build + 停旧服务 + 启新服务）
+  → notify 推送成功消息到飞书
+```
 
 ---
 
