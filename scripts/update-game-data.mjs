@@ -13,7 +13,21 @@ const TABLE_DATA_DIR = path.join(LUBAN_DATA_DIR, 'Table/data')
 const AVATAR_SRC_DIR = 'F:/G36/LumiGoProgram/Client/Assets/UIResource/Textures/Lumi'
 const AVATAR_DST_DIR = path.join(PROJECT_ROOT, 'public/images/avatars')
 
+// 定时任务环境 PATH 可能不含 bash，预先查找完整路径
+function findBash() {
+  if (process.platform !== 'win32') return 'bash'
+  const candidates = [
+    'C:\\Program Files\\Git\\bin\\bash.exe',
+    'C:\\Program Files\\Git\\usr\\bin\\bash.exe',
+    'C:\\Program Files (x86)\\Git\\bin\\bash.exe'
+  ]
+  return candidates.find(p => fs.existsSync(p)) || 'bash'
+}
+
 function runCommand(cmd, args = []) {
+  if (cmd === 'bash' && process.platform === 'win32') {
+    cmd = findBash()
+  }
   console.log(`\n$ ${cmd} ${args.join(' ')}`)
   const result = spawnSync(cmd, args, {
     cwd: PROJECT_ROOT,
@@ -21,6 +35,9 @@ function runCommand(cmd, args = []) {
     stdio: 'pipe'
   })
   if (result.stdout) console.log(result.stdout.slice(-2000))
+  if (result.error) {
+    throw new Error(`命令启动失败: ${result.error.message}`)
+  }
   if (result.status !== 0) {
     throw new Error(`命令失败 (exit ${result.status}): ${cmd} ${args.join(' ')}`)
   }
