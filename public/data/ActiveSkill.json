@@ -2976,9 +2976,19 @@
     "DefCalculate": false,
     "SkillEffect": [
       {
+        "TriggerType": 1,
+        "TriggerCondition": 9004,
+        "TriggerEffect": 9004
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 90041,
+        "TriggerEffect": 100002
+      },
+      {
         "TriggerType": 6,
         "TriggerCondition": 100,
-        "TriggerEffect": 100002
+        "TriggerEffect": 90041
       }
     ],
     "SkillValueChange": [],
