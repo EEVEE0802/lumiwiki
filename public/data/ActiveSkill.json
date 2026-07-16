@@ -19815,7 +19815,14 @@
     "Piercing": 0,
     "DefCalculate": false,
     "SkillEffect": [],
-    "SkillValueChange": [],
+    "SkillValueChange": [
+      {
+        "TriggerCondition": 1600,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": -5000
+      }
+    ],
     "CastCondition": []
   },
   {
@@ -19872,7 +19879,14 @@
     "Piercing": 0,
     "DefCalculate": false,
     "SkillEffect": [],
-    "SkillValueChange": [],
+    "SkillValueChange": [
+      {
+        "TriggerCondition": 1600,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": -5000
+      }
+    ],
     "CastCondition": []
   },
   {
