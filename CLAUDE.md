@@ -261,17 +261,19 @@ MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Tournament" /tr "D:\lumiwiki\s
 
 ### 游戏周期
 
-- **游戏周**：周五 0:00 ~ 下周四 23:59:59
-- **首周（Week 1）**：2026-07-10 开始，**无周赛**
-- **数据范围**：每次拉取"本周周五 0:00 ~ 当前"，覆盖更新 `data/archive/weekN/ladder_weekN.csv`
-- **周编号算法**：`week = floor((今天 - 2026-07-10) / 7天) + 1`（基准日 `baseFriday` 在 `ta-config.json` 里）
+- **游戏周**：周五 03:00 ~ 下周五 03:00（凌晨 3 点定时任务触发时间为周分界）
+- **首周（Week 1）**：2026-07-10 03:00 开始，**无周赛**
+- **数据范围**：每次拉取"本周周五 03:00 ~ 当前"，覆盖更新 `data/archive/weekN/ladder_weekN.csv`
+- **周编号算法**：`week = floor((现在 - 2026-07-10 03:00) / 7天) + 1`；周五 03:00 ~ 03:59 跑的算上一周（让定时任务周五凌晨产生上一周完整数据）
+- **每周独立**：Week N 只含第 N 周的战斗，不累积之前周
 
 ### Token 续期机制
 
 - access_token 有效期 7 小时（对应 localStorage 的 `EXPIRE_TIME: 7`），会自动过期
-- refresh_token 长期有效，**不轮换**（调续期接口后值不变），可反复用来换新 access_token
+- refresh_token 平时续期**不轮换**（调续期接口后值不变），可反复用来换新 access_token
+- **重新登录会生成新 refresh_token**，旧的失效——所以重新登录数数平台后必须更新 `ta-config.json` 的 `refreshToken` 字段
 - 每次跑脚本前先调 `/v1/oauth/refreshForToken` 续期，新 token 落盘到 `ta-config.json`
-- 只有 refresh_token 也失效（极少，可能几个月一次）才需要手动重新登录
+- refresh_token 失效时（飞书收到"未登录"告警）需要手动重新登录 + 更新 token/refreshToken
 
 ### 通知（飞书机器人）
 
