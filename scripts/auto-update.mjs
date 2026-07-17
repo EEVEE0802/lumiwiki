@@ -50,11 +50,17 @@ function formatDateTime(date) {
 }
 
 // 计算当前游戏周编号和时间范围
-// 游戏周：每周五 0:00 ~ 下周四 23:59:59，首周从 config.baseFriday 开始
+// 游戏周：每周五 03:00 ~ 下周五 03:00（凌晨 3 点定时任务触发时间为周分界）
+// 首周从 config.baseFriday 03:00 开始
 export function computeWeekInfo(baseFriday) {
   const now = new Date()
-  const base = new Date(baseFriday + 'T00:00:00')
-  const week = Math.floor((now - base) / (7 * 24 * 60 * 60 * 1000)) + 1
+  const base = new Date(baseFriday + 'T03:00:00')
+  let week = Math.floor((now - base) / (7 * 24 * 60 * 60 * 1000)) + 1
+
+  // 周五 03:00 ~ 03:59 跑的算上一周（定时任务周五凌晨产生上一周的完整数据）
+  if (now.getDay() === 5 && now.getHours() === 3) {
+    week -= 1
+  }
 
   const weekStart = new Date(base)
   weekStart.setDate(weekStart.getDate() + (week - 1) * 7)
