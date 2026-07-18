@@ -112,7 +112,7 @@ function buildQueryParams(mode, startTime, endTime, bZoneId) {
       timeParticleSize: 'T1',
       endTime,
       graphShape: 'L0',
-      recentDay: '0-5',
+      recentDay: '',
       groupBy: buildGroupBy(mode),
       rowSpanType: 'fold',
       stageInfo,
