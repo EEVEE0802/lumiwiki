@@ -554,10 +554,12 @@ const allTeams = computed(() => {
   keys.forEach(key => {
     const teams = data.value.stats?.[key]?.teams || []
     teams.forEach(team => {
-      const id = team.teamLumiIds.join('-')
+      // 防御性排序：用排序后的 teamLumiIds 作为合并 key，避免后端规范化失效时同组合不同顺序被当成不同队伍
+      const id = [...team.teamLumiIds].sort().join('-')
       if (!merged.has(id)) {
         merged.set(id, {
           ...team,
+          teamLumiIds: [...team.teamLumiIds].sort(),
           battles: 0,
           wins: 0
         })

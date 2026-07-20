@@ -176,6 +176,9 @@ async function processTournamentData() {
     // 跳过阵容为空的异常记录（玩家断线/上报错误）
     if (lumis.length === 0) return
 
+    // 规范化：按 lumi_id 排序，确保同组合的队伍在任何场景下被视为相同
+    lumis.sort((a, b) => String(a.lumi_id).localeCompare(String(b.lumi_id)))
+
     const isWin = battleResult === 1
 
     totalBattles++
