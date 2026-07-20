@@ -2829,7 +2829,7 @@
     "Des": "A_SkillText_9002",
     "DesParam": [
       1,
-      50
+      25
     ],
     "LumiTpye": 9,
     "UnlockCost": 1000,
@@ -2861,31 +2861,31 @@
         "TriggerCondition": 966,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 3500
+        "Num": 2500
       },
       {
         "TriggerCondition": 967,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 7000
+        "Num": 5000
       },
       {
         "TriggerCondition": 968,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 10500
+        "Num": 7500
       },
       {
         "TriggerCondition": 969,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 14000
+        "Num": 10000
       },
       {
         "TriggerCondition": 970,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 17500
+        "Num": 12500
       }
     ],
     "CastCondition": []
@@ -9238,9 +9238,9 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      120
+      110
     ],
-    "SkillCost": 80,
+    "SkillCost": 70,
     "BaseCrit": 500,
     "AddEnergy": 0,
     "HealthSteal": 0,
@@ -9316,9 +9316,9 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      120
+      110
     ],
-    "SkillCost": 80,
+    "SkillCost": 70,
     "BaseCrit": 500,
     "AddEnergy": 0,
     "HealthSteal": 0,
@@ -11276,7 +11276,7 @@
     "name": "A_Skill_10830102",
     "Des": "A_SkillText_10830102",
     "DesParam": [
-      3
+      4
     ],
     "LumiTpye": 2,
     "UnlockCost": 0,
@@ -11332,7 +11332,7 @@
       {
         "TriggerType": 1,
         "TriggerCondition": 207,
-        "TriggerEffect": 363
+        "TriggerEffect": 364
       },
       {
         "TriggerType": 3,
@@ -11430,7 +11430,7 @@
       {
         "TriggerType": 1,
         "TriggerCondition": 207,
-        "TriggerEffect": 363
+        "TriggerEffect": 364
       },
       {
         "TriggerType": 3,
@@ -11691,9 +11691,9 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      30
+      20
     ],
-    "SkillCost": 50,
+    "SkillCost": 40,
     "BaseCrit": 500,
     "AddEnergy": 0,
     "HealthSteal": 0,
@@ -26104,7 +26104,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      80
+      70
     ],
     "SkillCost": 60,
     "BaseCrit": 500,
