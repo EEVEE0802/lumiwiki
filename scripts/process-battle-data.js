@@ -199,6 +199,9 @@ async function processBattleData() {
       return
     }
 
+    // 跳过阵容为空的异常记录（玩家断线/上报错误）
+    if (lumis.length === 0) return
+
     const battleResult = parseInt(row.battle_result)
     const isWin = battleResult === 1
 

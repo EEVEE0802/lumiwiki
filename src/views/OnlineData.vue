@@ -3,7 +3,7 @@
     <div class="page-header">
       <h1>📊 线上数据</h1>
       <p class="subtitle">{{ gameMode === 'ladder' ? '天梯1v1实时统计数据' : '周赛高端对战数据' }}</p>
-      <p class="update-time">数据更新时间: {{ formatTime(data.updateTime) }}</p>
+      <p class="update-time" v-if="!noData">数据更新时间: {{ formatTime(data.updateTime) }}</p>
     </div>
 
     <!-- 玩法切换 -->
@@ -49,8 +49,16 @@
       </div>
     </div>
 
-    <!-- 筛选器（仅天梯显示） -->
-    <div class="filters" v-if="gameMode === 'ladder'">
+    <!-- 空状态：该周无数据（如首周无周赛） -->
+    <div v-if="noData" class="empty-state">
+      <p class="empty-icon">📭</p>
+      <p class="empty-text">该周暂无{{ gameMode === 'tournament' ? '周赛' : '天梯' }}数据</p>
+    </div>
+
+    <!-- 数据展示区（无数据时整体隐藏） -->
+    <template v-else>
+      <!-- 筛选器（仅天梯显示） -->
+      <div class="filters" v-if="gameMode === 'ladder'">
       <div class="filter-group">
         <label>段位范围:</label>
         <MultiSelect
@@ -355,6 +363,7 @@
         </div>
       </div>
     </div>
+    </template>
   </div>
 </template>
 
@@ -484,6 +493,7 @@ const includeBot = ref(true)
 const activeTab = ref('appearance')
 const winRateSortBy = ref('winRate')
 const tournamentChartMode = ref('wins') // wins | ladder-rank
+const noData = ref(false) // 该周数据加载失败时置 true（如首周无周赛）
 
 // 图表相关
 const chartCanvas = ref(null)
@@ -985,8 +995,10 @@ async function loadData() {
     }
     const json = await response.json()
     data.value = json
+    noData.value = false
   } catch (error) {
     console.error('加载数据失败:', error)
+    noData.value = true
   }
 }
 
@@ -1036,6 +1048,21 @@ watch(currentStats, () => {
 .page-header {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #888;
+}
+
+.empty-state .empty-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.empty-state .empty-text {
+  font-size: 16px;
 }
 
 .page-header h1 {
