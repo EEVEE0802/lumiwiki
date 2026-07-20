@@ -309,10 +309,9 @@ async function processBattleData() {
       }))
       .sort((a, b) => parseFloat(b.winRate) - parseFloat(a.winRate))
 
-    // 构建该组合的热门队伍（top 50）
+    // 构建该组合的全部队伍（前端按需 slice 展示 + 下载全部）
     const teamsData = Array.from(teamUsageMap.get(key).values())
       .sort((a, b) => b.battles - a.battles)
-      .slice(0, 50)
       .map(team => ({
         ...team,
         winRate: ((team.wins / team.battles) * 100).toFixed(2)

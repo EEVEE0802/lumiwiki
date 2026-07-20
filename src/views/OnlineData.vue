@@ -213,6 +213,12 @@
 
       <!-- 队伍列表 -->
       <div v-if="activeTab === 'teams'" class="teams-list">
+        <div class="teams-toolbar">
+          <span class="teams-count">显示前 {{ highRankTeams.length }} / {{ allTeams.length }} 个队伍</span>
+          <button class="download-teams-btn" @click="downloadTeamsCSV" :disabled="!allTeams.length">
+            📥 下载完整阵容（CSV）
+          </button>
+        </div>
         <div v-if="highRankTeams && highRankTeams.length > 0">
           <table>
             <thead>
@@ -535,10 +541,13 @@ const currentWinRateData = computed(() => {
   return data
 })
 
-// 队伍数据（根据选中段位和人机筛选合并，取出现次数前 50）
-const highRankTeams = computed(() => {
+// 队伍数据（根据选中段位和人机筛选合并，按 battles 降序，含全部队伍）
+const allTeams = computed(() => {
   if (gameMode.value === 'tournament') {
-    return data.value.popularTeams || []
+    return (data.value.popularTeams || []).map(t => ({
+      ...t,
+      winRate: ((t.wins / t.battles) * 100).toFixed(2)
+    }))
   }
   const keys = getDataKeys()
   const merged = new Map()
@@ -560,12 +569,48 @@ const highRankTeams = computed(() => {
   })
   return Array.from(merged.values())
     .sort((a, b) => b.battles - a.battles)
-    .slice(0, 50)
     .map(team => ({
       ...team,
       winRate: ((team.wins / team.battles) * 100).toFixed(2)
     }))
 })
+
+// 展示用：仅取前 50
+const highRankTeams = computed(() => allTeams.value.slice(0, 50))
+
+// 下载全部队伍（按当前筛选）为 CSV
+function downloadTeamsCSV() {
+  const teams = allTeams.value
+  if (!teams.length) return
+
+  const header = ['rank', 'lumi1_id', 'lumi1_name', 'lumi2_id', 'lumi2_name', 'lumi3_id', 'lumi3_name', 'battles', 'wins', 'winRate']
+  const rows = teams.map((t, i) => {
+    const lumis = t.lumis || []
+    const row = [i + 1]
+    for (let k = 0; k < 3; k++) {
+      const l = lumis[k]
+      row.push(l ? l.lumiId : '', l ? l.lumiName : '')
+    }
+    row.push(t.battles, t.wins, t.winRate)
+    return row
+  })
+
+  const escape = v => {
+    const s = String(v ?? '')
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+  }
+  const csv = [header.join(','), ...rows.map(r => r.map(escape).join(','))].join('\n')
+
+  const mode = gameMode.value === 'tournament' ? 'tournament' : `ladder-${getDataKey()}`
+  const filename = `${mode}-week${selectedWeek.value}-teams.csv`
+  const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  a.click()
+  URL.revokeObjectURL(url)
+}
 
 // 玩家段位分布
 const playerDistribution = computed(() => {
@@ -1493,6 +1538,41 @@ td {
 }
 
 /* 队伍列表 */
+.teams-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+.teams-count {
+  font-size: 13px;
+  color: #888;
+}
+
+.download-teams-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.download-teams-btn:hover:not(:disabled) {
+  background: #43a047;
+}
+
+.download-teams-btn:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
 .team-info {
   padding: 10px 20px;
 }

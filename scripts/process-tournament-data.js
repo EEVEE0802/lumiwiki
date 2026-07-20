@@ -266,10 +266,9 @@ async function processTournamentData() {
     rankRange: { min: 1, max: Math.max(...Array.from(allRanks)) }
   }
 
-  // 构建热门队伍
+  // 构建全部队伍（前端按需 slice 展示 + 下载全部）
   const popularTeams = Array.from(teamUsage.values())
     .sort((a, b) => b.battles - a.battles)
-    .slice(0, 50)
     .map(team => ({
       ...team,
       winRate: ((team.wins / team.battles) * 100).toFixed(2)
