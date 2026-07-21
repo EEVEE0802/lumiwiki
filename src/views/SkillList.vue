@@ -1,18 +1,18 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { loadData, TYPE_NAMES, TYPE_COLORS, getKeywordMap } from '../data'
+import { loadData, TYPE_NAMES, TYPE_COLORS } from '../data'
 import MultiSelect from '../components/MultiSelect.vue'
+import { useBattleText } from '../composables/useBattleText'
 
 const activeSkills = ref([])
 const battlePassives = ref([])
 const homePassives = ref([])
 const lumis = ref([])
 const locMap = ref({})
-const keywordMap = ref([])
 const loading = ref(true)
-const selectedKeyword = ref(null)
-const showKeywordTooltip = ref(false)
 const searchQuery = ref('')
+
+const { replacePlaceholders, selectedKeyword, showKeywordTooltip } = useBattleText(locMap)
 const filterType = ref([])
 const tab = ref('active') // active | passive
 const skillCategory = ref('all') // all | common | exclusive
@@ -34,14 +34,12 @@ onMounted(async () => {
     loadData('HomePassive'),
     loadData('Lumi'),
     loadData('localization'),
-    getKeywordMap(),
   ])
   activeSkills.value = skills
   battlePassives.value = bPassives
   homePassives.value = hPassives
   lumis.value = lumiData
   locMap.value = loc
-  keywordMap.value = keywords
 
   // 建立被动技能到噜咪的映射
   const pMap = new Map()
@@ -95,13 +93,7 @@ onMounted(async () => {
 
   loading.value = false
 
-  // 注册 showKeyword 到 window 对象
-  window.showKeyword = (id) => {
-    selectedKeyword.value = keywordMap.value.find(k => k.Id === parseInt(id))
-    if (selectedKeyword.value) {
-      showKeywordTooltip.value = true
-    }
-  }
+  // showKeyword 由 useBattleText composable 注册
 })
 
 function getName(key) { return locMap.value[key] || key || '???' }
@@ -138,34 +130,6 @@ function getSkillPowerSum(skill) {
   if (!skill.SkillPowerList || !skill.SkillPowerList.length) return '-'
   const sum = skill.SkillPowerList.reduce((a, b) => a + b, 0)
   return sum
-}
-
-// 替换描述中的占位符 [xxx] 为多语言文本，{0}{1} 等为参数
-// 并处理颜色标签 <color=xxx> 和链接标签 <link=xxx>
-function replacePlaceholders(text, desParam = []) {
-  if (!text) return ''
-  let result = text
-  // 先替换所有 [xxx] 格式的占位符
-  result = result.replace(/\[([^\]]+)\]/g, (match, key) => {
-    return locMap.value[key] || key
-  })
-  // 再替换 {0}, {1} 等参数
-  if (desParam && desParam.length) {
-    result = result.replace(/\{(\d+)\}/g, (match, index) => {
-      const paramIndex = parseInt(index)
-      return desParam[paramIndex] !== undefined ? desParam[paramIndex] : match
-    })
-  }
-  // 处理 <link=数字><color=xxx>文字</color></link> 转换为可点击元素
-  result = result.replace(/<link=(\d+)><color=([^>]+)>([^<]+)<\/color><\/link>/gi, (match, linkId, color, content) => {
-    return `<span class="keyword-link" style="color: ${color}; text-decoration: underline; cursor: pointer;" onclick="window.showKeyword(${linkId})">${content}</span>`
-  })
-  // 处理独立的 <color=xxx> 标签
-  result = result.replace(/<color=([^>]+)>/gi, '<span style="color: $1">')
-  result = result.replace(/<\/color>/gi, '</span>')
-  // 移除剩余的 link 标签
-  result = result.replace(/<\/?link=\d+>/gi, '')
-  return result
 }
 
 // 获取技能的完整描述（包含参数替换）

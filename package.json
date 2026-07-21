@@ -16,6 +16,7 @@
     "process-egg-drop": "node scripts/process-egg-drop.mjs"
   },
   "dependencies": {
+    "dompurify": "^3.4.12",
     "vue": "^3.5.32",
     "vue-router": "^4.6.4"
   },

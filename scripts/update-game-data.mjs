@@ -131,8 +131,16 @@ function syncBuffIcons() {
   const dstFiles = new Set(fs.readdirSync(BUFF_ICON_DST_DIR).filter(f => f.endsWith('.png')))
   let added = 0
   let missing = 0
+  let invalid = 0
   for (const icon of icons) {
-    const fileName = icon + '.png'
+    // path.basename 防御 path traversal（如 icon="../../etc/foo"）
+    const safeName = path.basename(icon)
+    if (safeName !== icon) {
+      console.log(`  ⚠ 跳过非法 icon 名: ${icon}`)
+      invalid++
+      continue
+    }
+    const fileName = safeName + '.png'
     if (dstFiles.has(fileName)) continue
     const src = path.join(BUFF_ICON_SRC_DIR, fileName)
     if (fs.existsSync(src)) {
@@ -143,6 +151,7 @@ function syncBuffIcons() {
       missing++
     }
   }
+  if (invalid) console.log(`  ⚠ 共 ${invalid} 个非法 icon 名已跳过`)
   console.log(`  ✓ 新增 ${added} 个图标，缺失 ${missing} 个`)
 }
 
