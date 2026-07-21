@@ -9249,52 +9249,46 @@
     "SkillEffect": [],
     "SkillValueChange": [
       {
-        "TriggerCondition": 1607,
+        "TriggerCondition": 1606,
         "ValueType": 1,
         "ModifyType": 2,
         "Num": 2000
       },
       {
-        "TriggerCondition": 1606,
+        "TriggerCondition": 1605,
         "ValueType": 1,
         "ModifyType": 2,
         "Num": 4000
       },
       {
-        "TriggerCondition": 1605,
+        "TriggerCondition": 1604,
         "ValueType": 1,
         "ModifyType": 2,
         "Num": 6000
       },
       {
-        "TriggerCondition": 1604,
+        "TriggerCondition": 1603,
         "ValueType": 1,
         "ModifyType": 2,
         "Num": 8000
       },
       {
-        "TriggerCondition": 1603,
+        "TriggerCondition": 1602,
         "ValueType": 1,
         "ModifyType": 2,
         "Num": 10000
       },
       {
-        "TriggerCondition": 1602,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 14000
-      },
-      {
         "TriggerCondition": 1601,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 16000
+        "Num": 12000
       },
       {
         "TriggerCondition": 1600,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 18000
+        "Num": 14000
       }
     ],
     "CastCondition": []
@@ -25333,8 +25327,8 @@
     "Des": "A_SkillText_12740102",
     "DesParam": [
       1,
-      10,
-      300
+      6,
+      180
     ],
     "LumiTpye": 2,
     "UnlockCost": 0,
@@ -25709,8 +25703,8 @@
     "Des": "A_SkillText_12910102",
     "DesParam": [
       1,
-      10,
-      300
+      8,
+      240
     ],
     "LumiTpye": 2,
     "UnlockCost": 0,
