@@ -91,6 +91,11 @@ onMounted(async () => {
           <div class="nav-card-title">技能图鉴</div>
           <div class="nav-card-desc">查看所有主动技能和被动技能</div>
         </router-link>
+        <router-link to="/battle-buff" class="card nav-card">
+          <div class="nav-card-icon">✨</div>
+          <div class="nav-card-title">Buff 图鉴</div>
+          <div class="nav-card-desc">战斗中显示的所有状态效果</div>
+        </router-link>
         <router-link to="/type-chart" class="card nav-card">
           <div class="nav-card-icon">🔥</div>
           <div class="nav-card-title">属性克制表</div>

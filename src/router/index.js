@@ -6,6 +6,7 @@ const routes = [
   { path: '/lumi', name: 'LumiList', component: () => import('../views/LumiList.vue') },
   { path: '/lumi/:id', name: 'LumiDetail', component: () => import('../views/LumiDetail.vue') },
   { path: '/skill', name: 'SkillList', component: () => import('../views/SkillList.vue') },
+  { path: '/battle-buff', name: 'BattleBuffList', component: () => import('../views/BattleBuffList.vue') },
   { path: '/item', name: 'ItemList', component: () => import('../views/ItemList.vue') },
   { path: '/type-chart', name: 'TypeChart', component: () => import('../views/TypeChart.vue') },
   { path: '/damage-calculator', name: 'DamageCalculator', component: () => import('../views/DamageCalculator.vue') },

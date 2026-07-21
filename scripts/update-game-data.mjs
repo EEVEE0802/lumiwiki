@@ -12,6 +12,8 @@ const LUBAN_DATA_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas'
 const TABLE_DATA_DIR = path.join(LUBAN_DATA_DIR, 'Table/data')
 const AVATAR_SRC_DIR = 'F:/G36/LumiGoProgram/Client/Assets/UIResource/Textures/Lumi'
 const AVATAR_DST_DIR = path.join(PROJECT_ROOT, 'public/images/avatars')
+const BUFF_ICON_SRC_DIR = 'F:/G36/LumiGoProgram/Client/Assets/UIResource/Atlas/IconSkill'
+const BUFF_ICON_DST_DIR = path.join(PROJECT_ROOT, 'public/images/buffs')
 
 // 定时任务环境 PATH 可能不含 bash，预先查找完整路径
 function findBash() {
@@ -52,7 +54,8 @@ const CORE_FILES = [
   'LumiEvolution.json',
   'LumiTypeCounter.json',
   'Item.json',
-  'BattleKeywordDes.json'
+  'BattleKeywordDes.json',
+  'BattleBuff.json'
 ]
 
 function svnUpdate() {
@@ -108,6 +111,41 @@ function syncAvatars() {
   console.log(`  ✓ 新增 ${added} 张立绘`)
 }
 
+function syncBuffIcons() {
+  console.log('\n🎨 同步 Buff 图标（数据驱动按需复制）...')
+  fs.mkdirSync(BUFF_ICON_DST_DIR, { recursive: true })
+
+  // 从 BattleBuff.json 收集所有 Icon 名（跨前缀：Buff_*, LumiType_*, TrainerSkill_* 等）
+  const buffDataPath = path.join(PROJECT_ROOT, 'public/data/BattleBuff.json')
+  if (!fs.existsSync(buffDataPath)) {
+    console.log('  ⚠ BattleBuff.json 不存在，跳过')
+    return
+  }
+  const buffData = JSON.parse(fs.readFileSync(buffDataPath, 'utf-8'))
+  const arr = Array.isArray(buffData) ? buffData : (buffData.data || Object.values(buffData))
+  const icons = new Set()
+  arr.forEach(b => {
+    if (b.Icon && b.Icon[0]) icons.add(b.Icon[0])
+  })
+
+  const dstFiles = new Set(fs.readdirSync(BUFF_ICON_DST_DIR).filter(f => f.endsWith('.png')))
+  let added = 0
+  let missing = 0
+  for (const icon of icons) {
+    const fileName = icon + '.png'
+    if (dstFiles.has(fileName)) continue
+    const src = path.join(BUFF_ICON_SRC_DIR, fileName)
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, path.join(BUFF_ICON_DST_DIR, fileName))
+      added++
+    } else {
+      console.log(`  ⚠ 缺失源文件: ${fileName}`)
+      missing++
+    }
+  }
+  console.log(`  ✓ 新增 ${added} 个图标，缺失 ${missing} 个`)
+}
+
 export async function updateGameData() {
   svnUpdate()
   copyCoreFiles()
@@ -115,6 +153,7 @@ export async function updateGameData() {
   deleteEncodedCache()
   runDerivativeScripts()
   syncAvatars()
+  syncBuffIcons()
 }
 
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))
