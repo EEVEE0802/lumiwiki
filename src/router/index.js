@@ -14,6 +14,7 @@ const routes = [
   { path: '/adventure-drop', name: 'AdventureDrop', component: () => import('../views/AdventureDrop.vue') },
   { path: '/egg-drop', name: 'EggDrop', component: () => import('../views/EggDrop.vue') },
   { path: '/robot-team', name: 'RobotTeam', component: () => import('../views/RobotTeam.vue') },
+  { path: '/star-exchange', name: 'StarExchange', component: () => import('../views/StarExchange.vue') },
   { path: '/claude-code-guide', name: 'ClaudeCodeGuide', component: () => import('../views/ClaudeCodeGuide.vue') },
 ]
 

@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-07-21T19:00:02.933Z",
+  "updateTime": "2026-07-22T19:00:06.870Z",
   "note": "普通概率=解锁池权重占比；彩色=保底触发时池内分布近似（按 LumiDrop.WeightPool 取权）",
   "mainLineMaps": [
     {
@@ -3225,197 +3225,6 @@
       "type": "season",
       "lumis": [
         {
-          "id": 113101,
-          "name": "炽焰马",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 104301,
-          "name": "火马墩墩",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 106401,
-          "name": "英俊狮鹫",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 106301,
-          "name": "狮鹫宝宝",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 102501,
-          "name": "发奋仓鼠",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 115301,
-          "name": "口哨鸦",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 107801,
-          "name": "筋肉虎",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 108901,
-          "name": "花牌孔雀",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 124301,
-          "name": "灵光鸟",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 121201,
-          "name": "火龙果",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "weight": 1000,
-          "probability": "6.67"
-        },
-        {
-          "id": 123401,
-          "name": "头铁牛",
-          "weight": 1000,
-          "probability": "6.67"
-        }
-      ],
-      "totalWeight": 15000,
-      "colorLumis": [
-        {
-          "id": 102501,
-          "name": "发奋仓鼠",
-          "weight": 1000,
-          "probability": "9.09"
-        },
-        {
-          "id": 107801,
-          "name": "筋肉虎",
-          "weight": 1000,
-          "probability": "9.09"
-        },
-        {
-          "id": 115301,
-          "name": "口哨鸦",
-          "weight": 1000,
-          "probability": "9.09"
-        },
-        {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "weight": 1000,
-          "probability": "9.09"
-        },
-        {
-          "id": 123401,
-          "name": "头铁牛",
-          "weight": 1000,
-          "probability": "9.09"
-        },
-        {
-          "id": 124301,
-          "name": "灵光鸟",
-          "weight": 1000,
-          "probability": "9.09"
-        },
-        {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "weight": 1000,
-          "probability": "9.09"
-        },
-        {
-          "id": 104301,
-          "name": "火马墩墩",
-          "weight": 666,
-          "probability": "6.05"
-        },
-        {
-          "id": 106301,
-          "name": "狮鹫宝宝",
-          "weight": 600,
-          "probability": "5.45"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "weight": 600,
-          "probability": "5.45"
-        },
-        {
-          "id": 108901,
-          "name": "花牌孔雀",
-          "weight": 600,
-          "probability": "5.45"
-        },
-        {
-          "id": 121201,
-          "name": "火龙果",
-          "weight": 600,
-          "probability": "5.45"
-        },
-        {
-          "id": 113101,
-          "name": "炽焰马",
-          "weight": 334,
-          "probability": "3.04"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "weight": 300,
-          "probability": "2.73"
-        },
-        {
-          "id": 106401,
-          "name": "英俊狮鹫",
-          "weight": 300,
-          "probability": "2.73"
-        }
-      ]
-    },
-    {
-      "mapId": 1030,
-      "mapName": "余烬龙谷",
-      "mapNameKey": "MapName_S1_04",
-      "type": "season",
-      "lumis": [
-        {
           "id": 102801,
           "name": "传话蛙",
           "weight": 1000,
@@ -3597,6 +3406,197 @@
           "name": "光兔",
           "weight": 300,
           "probability": "2.75"
+        }
+      ]
+    },
+    {
+      "mapId": 1030,
+      "mapName": "余烬龙谷",
+      "mapNameKey": "MapName_S1_04",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 113101,
+          "name": "炽焰马",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 104301,
+          "name": "火马墩墩",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 106401,
+          "name": "英俊狮鹫",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 106301,
+          "name": "狮鹫宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 102501,
+          "name": "发奋仓鼠",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115301,
+          "name": "口哨鸦",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 107801,
+          "name": "筋肉虎",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "6.67"
+        }
+      ],
+      "totalWeight": 15000,
+      "colorLumis": [
+        {
+          "id": 102501,
+          "name": "发奋仓鼠",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 107801,
+          "name": "筋肉虎",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 115301,
+          "name": "口哨鸦",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 104301,
+          "name": "火马墩墩",
+          "weight": 666,
+          "probability": "6.05"
+        },
+        {
+          "id": 106301,
+          "name": "狮鹫宝宝",
+          "weight": 600,
+          "probability": "5.45"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "5.45"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 600,
+          "probability": "5.45"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "5.45"
+        },
+        {
+          "id": 113101,
+          "name": "炽焰马",
+          "weight": 334,
+          "probability": "3.04"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "2.73"
+        },
+        {
+          "id": 106401,
+          "name": "英俊狮鹫",
+          "weight": 300,
+          "probability": "2.73"
         }
       ]
     },

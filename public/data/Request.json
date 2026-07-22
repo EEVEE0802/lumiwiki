@@ -1,0 +1,3499 @@
+[
+  {
+    "RequestGroupID": 1,
+    "RequestGroupName": "i_200190",
+    "GroupBanner": "",
+    "Page": 2,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 1,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 259200,
+    "StartTime": "",
+    "EndTime": "",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "i_200174",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10003,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 10018,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      },
+      {
+        "RequestID": 2,
+        "RequestDes": "i_200175",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10002,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 10018,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      },
+      {
+        "RequestID": 3,
+        "RequestDes": "i_200176",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10008,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 10018,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      },
+      {
+        "RequestID": 4,
+        "RequestDes": "i_200177",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10004,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 10018,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      },
+      {
+        "RequestID": 5,
+        "RequestDes": "i_200178",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10005,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 10018,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      },
+      {
+        "RequestID": 6,
+        "RequestDes": "i_200179",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 100
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10006,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 10018,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 999,
+    "RequestGroupName": "sbc_005",
+    "GroupBanner": "sbc_bg_slmw",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [
+      {
+        "Type": 8,
+        "Id": 1053010,
+        "Count": 1
+      }
+    ],
+    "GroupReward": [
+      {
+        "Type": 8,
+        "Id": 1053010,
+        "Count": 1
+      }
+    ],
+    "CountDown": 0,
+    "StartTime": "2026/3/30 5:00:00",
+    "EndTime": "2030/5/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_005_01",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 500
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 500
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20012,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 8,
+            "Z": 1
+          }
+        ]
+      },
+      {
+        "RequestID": 2,
+        "RequestDes": "sbc_005_02",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 500
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 500
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20002,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 8,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 6,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 1,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 4,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/3/30 5:00:00",
+    "EndTime": "2030/5/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "测试星彩",
+        "RequestNum": 3,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 60105,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 60105,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20049,
+            "Y": 3,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 7,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 1,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 4,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/3/30 5:00:00",
+    "EndTime": "2030/5/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_007",
+        "RequestNum": 1,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 60105,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 60105,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10021,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 8,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 1,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 4,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/3/30 5:00:00",
+    "EndTime": "2030/5/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_008",
+        "RequestNum": 3,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 60104,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 60104,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10021,
+            "Y": 3,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 9,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 1,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 4,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/3/30 5:00:00",
+    "EndTime": "2030/5/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_009",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 60102,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 60102,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10018,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 33,
+    "RequestGroupName": "sbc_033",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/10 5:00:00",
+    "EndTime": "2026/7/24 5:00:00",
+    "SeasonShow": true,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_033",
+        "RequestNum": 2,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1037040,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1037040,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 2,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 30,
+    "RequestGroupName": "sbc_030",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/17 5:00:00",
+    "EndTime": "2026/7/31 5:00:00",
+    "SeasonShow": true,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_030",
+        "RequestNum": 3,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1038040,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1038040,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10006,
+            "Y": 2,
+            "Z": 1
+          },
+          {
+            "X": 20045,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 31,
+    "RequestGroupName": "sbc_031",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/24 5:00:00",
+    "EndTime": "2026/8/7 5:00:00",
+    "SeasonShow": true,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_031",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1110040,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1110040,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20046,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20044,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 20011,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 32,
+    "RequestGroupName": "sbc_032",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/31 5:00:00",
+    "EndTime": "2026/8/14 5:00:00",
+    "SeasonShow": true,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_032",
+        "RequestNum": 4,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1213040,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1213040,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20006,
+            "Y": 2,
+            "Z": 1
+          },
+          {
+            "X": 20028,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 11,
+    "RequestGroupName": "sbc_011",
+    "GroupBanner": "sbc_bg_jgl",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/7 5:00:00",
+    "EndTime": "2026/8/21 5:00:00",
+    "SeasonShow": true,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_011",
+        "RequestNum": 4,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1182040,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1182040,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 2,
+            "Z": 1
+          },
+          {
+            "X": 20047,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20011,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 34,
+    "RequestGroupName": "sbc_034",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/14 5:00:00",
+    "EndTime": "2026/8/28 5:00:00",
+    "SeasonShow": true,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_034",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1263040,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1263040,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20008,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 20027,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 35,
+    "RequestGroupName": "sbc_035",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/21 5:00:00",
+    "EndTime": "2026/9/4 5:00:00",
+    "SeasonShow": true,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_035",
+        "RequestNum": 7,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1024040,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1024040,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 25,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20044,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 20038,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 36,
+    "RequestGroupName": "sbc_036",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/28 5:00:00",
+    "EndTime": "2026/9/11 5:00:00",
+    "SeasonShow": true,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_036",
+        "RequestNum": 6,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1210040,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1210040,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 6,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 10004,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20027,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 37,
+    "RequestGroupName": "sbc_037",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/9/4 5:00:00",
+    "EndTime": "2026/9/18 5:00:00",
+    "SeasonShow": true,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_037",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1234040,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1234040,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20005,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 998,
+    "RequestGroupName": "sbc_012",
+    "GroupBanner": "sbc_bg_qsk",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 3,
+    "GroupRewardShow": [
+      {
+        "Type": 8,
+        "Id": 1160010,
+        "Count": 1
+      }
+    ],
+    "GroupReward": [
+      {
+        "Type": 8,
+        "Id": 1160010,
+        "Count": 1
+      }
+    ],
+    "CountDown": 0,
+    "StartTime": "2026/7/10 5:00:00",
+    "EndTime": "2026/9/11 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_012_01",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 500
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 500
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20013,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      },
+      {
+        "RequestID": 2,
+        "RequestDes": "sbc_012_02",
+        "RequestNum": 10,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 500
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10004,
+            "Count": 500
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20014,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 12,
+    "RequestGroupName": "sbc_12",
+    "GroupBanner": "",
+    "Page": 1,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 4,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/3/30 5:00:00",
+    "EndTime": "2030/5/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_12",
+        "RequestNum": 10,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 60021,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 60021,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10018,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 20005,
+            "Y": 8,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 13,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 1,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 4,
+    "RefreshType": 4,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/3/30 5:00:00",
+    "EndTime": "2030/5/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_013",
+        "RequestNum": 1,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10020,
+            "Count": 500
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10020,
+            "Count": 500
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10018,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 14,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 1,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 5,
+    "RefreshType": 4,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/3/30 5:00:00",
+    "EndTime": "2030/5/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_014",
+        "RequestNum": 1,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10024,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10024,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 15,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 1,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 4,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/3/30 5:00:00",
+    "EndTime": "2030/5/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_015",
+        "RequestNum": 7,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61021,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61021,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 6,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 18,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 3,
+    "RefreshType": 5,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "",
+    "EndTime": "",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_018",
+        "RequestNum": 20,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 20,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 24,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 99,
+    "RefreshType": 5,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "",
+    "EndTime": "",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_024",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 100000,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 100000,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10018,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 25,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 10,
+    "RefreshType": 5,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "",
+    "EndTime": "",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_025",
+        "RequestNum": 2,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10024,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10024,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 2,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 27,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 5,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "",
+    "EndTime": "",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_027",
+        "RequestNum": 4,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61026,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61026,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20014,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 10022,
+            "Y": 4,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 28,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 5,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "",
+    "EndTime": "",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_028",
+        "RequestNum": 4,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61027,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61027,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20014,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 10023,
+            "Y": 4,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 39,
+    "RequestGroupName": "sbc_CLGX",
+    "GroupBanner": "化金为彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/10 5:00:00",
+    "EndTime": "2026/7/17 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_026",
+        "RequestNum": 10,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 60100,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 60100,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 20008,
+            "Y": 10,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 40,
+    "RequestGroupName": "sbc_40",
+    "GroupBanner": "森林生态研究",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/13 5:00:00",
+    "EndTime": "2026/7/20 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_40",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61205,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61205,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 20033,
+            "Y": 8,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 41,
+    "RequestGroupName": "sbc_41",
+    "GroupBanner": "小海獭的潜力",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/16 5:00:00",
+    "EndTime": "2026/7/23 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_41",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61022,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61022,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20014,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 4,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 42,
+    "RequestGroupName": "sbc_42",
+    "GroupBanner": "雪山生态研究",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/19 5:00:00",
+    "EndTime": "2026/7/26 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_42",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61208,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61208,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20041,
+            "Y": 8,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 43,
+    "RequestGroupName": "sbc_43",
+    "GroupBanner": "化金为彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/22 5:00:00",
+    "EndTime": "2026/7/29 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_43",
+        "RequestNum": 10,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 60100,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 60100,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 10007,
+            "Y": 8,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 44,
+    "RequestGroupName": "sbc_44",
+    "GroupBanner": "小海獭的潜力",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/25 5:00:00",
+    "EndTime": "2026/8/1 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_44",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61022,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61022,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20014,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 4,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 45,
+    "RequestGroupName": "sbc_45",
+    "GroupBanner": "化金为彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/28 5:00:00",
+    "EndTime": "2026/8/4 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_45",
+        "RequestNum": 12,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 12,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 46,
+    "RequestGroupName": "sbc_46",
+    "GroupBanner": "中彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/31 5:00:00",
+    "EndTime": "2026/8/7 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_46",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61216,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61216,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 4,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 47,
+    "RequestGroupName": "sbc_47",
+    "GroupBanner": "光与影之歌",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/3 5:00:00",
+    "EndTime": "2026/8/10 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_47",
+        "RequestNum": 3,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61024,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61024,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20042,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 2,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 48,
+    "RequestGroupName": "sbc_48",
+    "GroupBanner": "化金为彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/6 5:00:00",
+    "EndTime": "2026/8/13 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_48",
+        "RequestNum": 10,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 20008,
+            "Y": 10,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 49,
+    "RequestGroupName": "sbc_49",
+    "GroupBanner": "小海獭的潜力",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/9 5:00:00",
+    "EndTime": "2026/8/16 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_49",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61022,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61022,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20014,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 4,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 50,
+    "RequestGroupName": "sbc_50",
+    "GroupBanner": "来撸猫了",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/12 5:00:00",
+    "EndTime": "2026/8/19 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_50",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61216,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61216,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 4,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 51,
+    "RequestGroupName": "sbc_51",
+    "GroupBanner": "大彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/15 5:00:00",
+    "EndTime": "2026/8/22 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_51",
+        "RequestNum": 4,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61027,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61027,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20005,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 2,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 52,
+    "RequestGroupName": "sbc_52",
+    "GroupBanner": "化金为彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/18 5:00:00",
+    "EndTime": "2026/8/25 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_52",
+        "RequestNum": 10,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 10002,
+            "Y": 8,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 53,
+    "RequestGroupName": "sbc_53",
+    "GroupBanner": "巨龙降临",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/21 5:00:00",
+    "EndTime": "2026/8/28 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_53",
+        "RequestNum": 4,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61023,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61023,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20014,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 20027,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 20044,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 54,
+    "RequestGroupName": "sbc_54",
+    "GroupBanner": "中彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/24 5:00:00",
+    "EndTime": "2026/8/31 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_54",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61216,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61216,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 4,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 55,
+    "RequestGroupName": "sbc_55",
+    "GroupBanner": "化金为彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/27 5:00:00",
+    "EndTime": "2026/9/3 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_55",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20036,
+            "Y": 6,
+            "Z": 1
+          },
+          {
+            "X": 20008,
+            "Y": 6,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 8,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 56,
+    "RequestGroupName": "sbc_56",
+    "GroupBanner": "史莱姆生态研究",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/30 5:00:00",
+    "EndTime": "2026/9/6 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_56",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61214,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61214,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 10013,
+            "Y": 4,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 57,
+    "RequestGroupName": "sbc_57",
+    "GroupBanner": "化金为彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/9/2 5:00:00",
+    "EndTime": "2026/9/9 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_57",
+        "RequestNum": 12,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61100,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 12,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 58,
+    "RequestGroupName": "sbc_58",
+    "GroupBanner": "中彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/9/5 5:00:00",
+    "EndTime": "2026/9/12 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_58",
+        "RequestNum": 8,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61203,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61203,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 7,
+            "Z": 1
+          },
+          {
+            "X": 20048,
+            "Y": 8,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 59,
+    "RequestGroupName": "sbc_59",
+    "GroupBanner": "大彩",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/9/8 5:00:00",
+    "EndTime": "2026/9/15 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_59",
+        "RequestNum": 3,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61027,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61027,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20006,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 20014,
+            "Y": 2,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 62,
+    "RequestGroupName": "sbc_62",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/14 5:00:00",
+    "EndTime": "2026/7/17 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_62",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61102,
+            "Count": 6
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61102,
+            "Count": 6
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 20005,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 63,
+    "RequestGroupName": "sbc_63",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/18 5:00:00",
+    "EndTime": "2026/7/21 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_63",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61013,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61013,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 64,
+    "RequestGroupName": "sbc_64",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/30 5:00:00",
+    "EndTime": "2026/8/2 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_64",
+        "RequestNum": 10,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61003,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61003,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 20043,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 20044,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 65,
+    "RequestGroupName": "sbc_65",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/24 5:00:00",
+    "EndTime": "2026/7/27 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_65",
+        "RequestNum": 10,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10024,
+            "Count": 10
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10024,
+            "Count": 10
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20008,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 10019,
+            "Y": 10,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 66,
+    "RequestGroupName": "sbc_66",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/5 5:00:00",
+    "EndTime": "2026/8/8 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_66",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61013,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61013,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 67,
+    "RequestGroupName": "sbc_67",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/13 5:00:00",
+    "EndTime": "2026/8/16 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_67",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61102,
+            "Count": 6
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61102,
+            "Count": 6
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 5,
+            "Z": 1
+          },
+          {
+            "X": 20005,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 68,
+    "RequestGroupName": "sbc_68",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/19 5:00:00",
+    "EndTime": "2026/8/22 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_68",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61013,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61013,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 69,
+    "RequestGroupName": "sbc_69",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/25 5:00:00",
+    "EndTime": "2026/8/28 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_69",
+        "RequestNum": 10,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 61003,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 61003,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10019,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 20043,
+            "Y": 10,
+            "Z": 1
+          },
+          {
+            "X": 20044,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 70,
+    "RequestGroupName": "sbc_70",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/31 5:00:00",
+    "EndTime": "2026/9/3 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_70",
+        "RequestNum": 4,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10053,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10053,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20014,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 20005,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 20028,
+            "Y": 1,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 71,
+    "RequestGroupName": "sbc_71",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 101,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 1,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/21 5:00:00",
+    "EndTime": "2026/9/4 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_71",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 8,
+            "Id": 1037010,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 8,
+            "Id": 1037010,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 39,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 4,
+            "Z": 1
+          },
+          {
+            "X": 10015,
+            "Y": 3,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 1001,
+    "RequestGroupName": "sbc_1001",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 202,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 510,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/10 5:00:00",
+    "EndTime": "2026/9/11 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_1001",
+        "RequestNum": 2,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10054,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10054,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20014,
+            "Y": 1,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 2,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 10011,
+    "RequestGroupName": "sbc_1001",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 202,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 510,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/7/10 5:00:00",
+    "EndTime": "2026/9/11 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_1001",
+        "RequestNum": 3,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 10054,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 10054,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10020,
+            "Y": 3,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  }
+]

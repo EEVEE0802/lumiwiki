@@ -7980,7 +7980,7 @@
       {
         "TriggerCondition": 10390101,
         "ValueType": 4,
-        "ModifyType": 2,
+        "ModifyType": 1,
         "Num": 1000
       },
       {
@@ -7992,7 +7992,7 @@
       {
         "TriggerCondition": 10390102,
         "ValueType": 4,
-        "ModifyType": 2,
+        "ModifyType": 1,
         "Num": 2000
       },
       {
@@ -8004,7 +8004,7 @@
       {
         "TriggerCondition": 10390103,
         "ValueType": 4,
-        "ModifyType": 2,
+        "ModifyType": 1,
         "Num": 3000
       },
       {
@@ -8016,7 +8016,7 @@
       {
         "TriggerCondition": 10390104,
         "ValueType": 4,
-        "ModifyType": 2,
+        "ModifyType": 1,
         "Num": 4000
       },
       {
@@ -8028,7 +8028,7 @@
       {
         "TriggerCondition": 10390105,
         "ValueType": 4,
-        "ModifyType": 2,
+        "ModifyType": 1,
         "Num": 5000
       }
     ],
@@ -14880,7 +14880,7 @@
         "TriggerEffect": 11180129
       },
       {
-        "TriggerType": 3,
+        "TriggerType": 6,
         "TriggerCondition": 100,
         "TriggerEffect": 11180103
       },
@@ -14998,11 +14998,6 @@
       },
       {
         "TriggerType": 6,
-        "TriggerCondition": 11180104,
-        "TriggerEffect": 1000
-      },
-      {
-        "TriggerType": 6,
         "TriggerCondition": 11180107,
         "TriggerEffect": 11180117
       },
@@ -15050,6 +15045,11 @@
         "TriggerType": 6,
         "TriggerCondition": 100,
         "TriggerEffect": 11180137
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 11180104,
+        "TriggerEffect": 1000
       }
     ],
     "SkillValueChange": [],
@@ -25817,6 +25817,114 @@
     "LumiTpye": 2,
     "UnlockCost": 0,
     "SA": "SA_13080102",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      60
+    ],
+    "SkillCost": 40,
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 13150101,
+    "name": "",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 14,
+    "UnlockCost": 0,
+    "SA": "SA_13150101",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "",
+    "SkillType": 0,
+    "TargetType": 1,
+    "AttackInterval": 1000,
+    "SkillPowerList": [
+      10
+    ],
+    "SkillCost": 0,
+    "BaseCrit": 500,
+    "AddEnergy": 7,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 13150102,
+    "name": "A_Skill_13150102",
+    "Des": "A_SkillText_13150102",
+    "DesParam": [],
+    "LumiTpye": 14,
+    "UnlockCost": 0,
+    "SA": "SA_13150102",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      60
+    ],
+    "SkillCost": 40,
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 13150201,
+    "name": "",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 5,
+    "UnlockCost": 0,
+    "SA": "SA_13150201",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "",
+    "SkillType": 0,
+    "TargetType": 1,
+    "AttackInterval": 1000,
+    "SkillPowerList": [
+      10
+    ],
+    "SkillCost": 0,
+    "BaseCrit": 500,
+    "AddEnergy": 7,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 13150202,
+    "name": "A_Skill_13150202",
+    "Des": "A_SkillText_13150202",
+    "DesParam": [],
+    "LumiTpye": 5,
+    "UnlockCost": 0,
+    "SA": "SA_13150202",
     "AssSkill": [],
     "MontageType": 0,
     "icon": "Netral_01",

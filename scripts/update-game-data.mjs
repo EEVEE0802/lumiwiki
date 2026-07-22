@@ -10,10 +10,13 @@ const PROJECT_ROOT = path.resolve(__dirname, '..')
 // 数据源（游戏 SVN 导表 + 客户端资源）
 const LUBAN_DATA_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas'
 const TABLE_DATA_DIR = path.join(LUBAN_DATA_DIR, 'Table/data')
+const SERVER_DATA_DIR = path.join(LUBAN_DATA_DIR, 'server/data')
 const AVATAR_SRC_DIR = 'F:/G36/LumiGoProgram/Client/Assets/UIResource/Textures/Lumi'
 const AVATAR_DST_DIR = path.join(PROJECT_ROOT, 'public/images/avatars')
 const BUFF_ICON_SRC_DIR = 'F:/G36/LumiGoProgram/Client/Assets/UIResource/Atlas/IconSkill'
 const BUFF_ICON_DST_DIR = path.join(PROJECT_ROOT, 'public/images/buffs')
+const ITEM_ICON_BASE_DIR = 'F:/G36/LumiGoProgram/Client/Assets/UIResource/Atlas'
+const ITEM_ICON_DST_DIR = path.join(PROJECT_ROOT, 'public/images/items')
 
 // 定时任务环境 PATH 可能不含 bash，预先查找完整路径
 function findBash() {
@@ -55,7 +58,13 @@ const CORE_FILES = [
   'LumiTypeCounter.json',
   'Item.json',
   'BattleKeywordDes.json',
-  'BattleBuff.json'
+  'BattleBuff.json',
+  'Request.json'
+]
+
+// 服务端导表（不在 Table/data，需独立复制）
+const SERVER_FILES = [
+  ['LumiCondition.json', 'LumiCondition.json']
 ]
 
 function svnUpdate() {
@@ -68,6 +77,11 @@ function copyCoreFiles() {
   for (const file of CORE_FILES) {
     fs.copyFileSync(path.join(TABLE_DATA_DIR, file), path.join(PROJECT_ROOT, 'public/data', file))
     console.log(`  ✓ ${file}`)
+  }
+  console.log('\n📋 复制服务端 JSON...')
+  for (const [src, dst] of SERVER_FILES) {
+    fs.copyFileSync(path.join(SERVER_DATA_DIR, src), path.join(PROJECT_ROOT, 'public/data', dst))
+    console.log(`  ✓ ${dst}`)
   }
 }
 
@@ -155,6 +169,60 @@ function syncBuffIcons() {
   console.log(`  ✓ 新增 ${added} 个图标，缺失 ${missing} 个`)
 }
 
+// 同步归星玩法奖励物品图标（数据驱动：按 Request.json 引用的 Item ID）
+function syncRequestItemIcons() {
+  console.log('\n🎁 同步归星奖励物品图标（数据驱动）...')
+  const reqPath = path.join(PROJECT_ROOT, 'public/data/Request.json')
+  const itemPath = path.join(PROJECT_ROOT, 'public/data/Item.json')
+  if (!fs.existsSync(reqPath) || !fs.existsSync(itemPath)) {
+    console.log('  ⚠ Request.json 或 Item.json 不存在，跳过')
+    return
+  }
+  const reqArr = (() => {
+    const d = JSON.parse(fs.readFileSync(reqPath, 'utf-8'))
+    return Array.isArray(d) ? d : (d.data || Object.values(d))
+  })()
+  const itemArr = (() => {
+    const d = JSON.parse(fs.readFileSync(itemPath, 'utf-8'))
+    return Array.isArray(d) ? d : (d.data || Object.values(d))
+  })()
+  const itemMap = new Map(itemArr.map(x => [x.key1, x]))
+
+  // 收集正式组（有 StartTime）的奖励物品 ID
+  const itemIds = new Set()
+  reqArr.filter(g => g.StartTime && g.EndTime).forEach(g => {
+    (g.RequestData || []).forEach(r => {
+      (r.Rewards || []).forEach(rw => {
+        if (rw.Type === 2) itemIds.add(rw.Id)
+      })
+    })
+  })
+
+  const dstFiles = new Set(fs.readdirSync(ITEM_ICON_DST_DIR).filter(f => f.endsWith('.png')))
+  let added = 0, missing = 0, invalid = 0
+  for (const id of itemIds) {
+    const it = itemMap.get(id)
+    if (!it || !it.icon) continue
+    // path.basename 防御 path traversal
+    const safeIcon = path.basename(it.icon)
+    if (safeIcon !== it.icon) { invalid++; continue }
+    const fileName = safeIcon + '.png'
+    if (dstFiles.has(fileName)) continue
+    // 按 Atlas 字段决定源子目录
+    const atlas = path.basename(it.Atlas || 'IconItem')
+    const src = path.join(ITEM_ICON_BASE_DIR, atlas, fileName)
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, path.join(ITEM_ICON_DST_DIR, fileName))
+      added++
+    } else {
+      console.log(`  ⚠ 缺失源文件: ${atlas}/${fileName}`)
+      missing++
+    }
+  }
+  if (invalid) console.log(`  ⚠ 共 ${invalid} 个非法 icon 名已跳过`)
+  console.log(`  ✓ 新增 ${added} 个图标，缺失 ${missing} 个`)
+}
+
 export async function updateGameData() {
   svnUpdate()
   copyCoreFiles()
@@ -163,6 +231,7 @@ export async function updateGameData() {
   runDerivativeScripts()
   syncAvatars()
   syncBuffIcons()
+  syncRequestItemIcons()
 }
 
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))

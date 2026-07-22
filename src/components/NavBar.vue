@@ -20,6 +20,7 @@ const navLinks = [
   { path: '/adventure-drop', label: '冒险掉落' },
   { path: '/battle-buff', label: '✨ Buff 图鉴' },
   { path: '/robot-team', label: '🤖 机器人阵容' },
+  { path: '/star-exchange', label: '🌟 归星预览' },
   { path: '/claude-code-guide', label: '🤖 Claude 教程' },
 ]
 
