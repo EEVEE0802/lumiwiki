@@ -632,13 +632,32 @@ function downloadTeamsCSV() {
   const teams = allTeams.value
   if (!teams.length) return
 
-  const header = ['rank', 'lumi1_id', 'lumi1_name', 'lumi2_id', 'lumi2_name', 'lumi3_id', 'lumi3_name', 'battles', 'wins', 'winRate']
+  const formatTop3 = (lumi, teamBattles) => {
+    return getTopSecondSkills(lumi, teamBattles)
+      .map(ss => {
+        const name = ss.isNone ? '未携带' : (ss.meta?.name || `技能#${ss.skillId}`)
+        return `${name} ${ss.rate}%`
+      })
+      .join('; ')
+  }
+
+  const header = [
+    'rank',
+    'lumi1_id', 'lumi1_name', 'lumi1_top3_skills',
+    'lumi2_id', 'lumi2_name', 'lumi2_top3_skills',
+    'lumi3_id', 'lumi3_name', 'lumi3_top3_skills',
+    'battles', 'wins', 'winRate'
+  ]
   const rows = teams.map((t, i) => {
     const lumis = t.lumis || []
     const row = [i + 1]
     for (let k = 0; k < 3; k++) {
       const l = lumis[k]
-      row.push(l ? l.lumiId : '', l ? l.lumiName : '')
+      if (l) {
+        row.push(l.lumiId, l.lumiName, formatTop3(l, t.battles))
+      } else {
+        row.push('', '', '')
+      }
     }
     row.push(t.battles, t.wins, t.winRate)
     return row
