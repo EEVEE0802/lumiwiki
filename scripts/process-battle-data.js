@@ -263,7 +263,8 @@ async function processBattleData() {
           teamLumiIds: lumis.map(l => l.lumi_id),
           lumis: lumis.map(l => ({
             lumiId: l.lumi_id,
-            lumiName: l.lumi_name
+            lumiName: l.lumi_name,
+            secondSkills: {}
           })),
           battles: 0,
           wins: 0
@@ -274,6 +275,15 @@ async function processBattleData() {
       if (isWin) {
         team.wins++
       }
+      // 累加每只噜咪的第二技能计数（lumis 已按 lumiId 排序，index 一一对应）
+      lumis.forEach((lumi, idx) => {
+        const skillId = parseInt(lumi.lumi_secondskill)
+        // 过滤 NaN 和 0（0 = 未携带第二技能）
+        if (!isNaN(skillId) && skillId > 0) {
+          const ssMap = team.lumis[idx].secondSkills
+          ssMap[skillId] = (ssMap[skillId] || 0) + 1
+        }
+      })
     })
 
     successCount++
@@ -317,6 +327,13 @@ async function processBattleData() {
       .sort((a, b) => b.battles - a.battles)
       .map(team => ({
         ...team,
+        lumis: team.lumis.map(l => ({
+          lumiId: l.lumiId,
+          lumiName: l.lumiName,
+          secondSkills: Object.entries(l.secondSkills)
+            .map(([skillId, count]) => ({ skillId: Number(skillId), count }))
+            .sort((a, b) => b.count - a.count)
+        })),
         winRate: ((team.wins / team.battles) * 100).toFixed(2)
       }))
 

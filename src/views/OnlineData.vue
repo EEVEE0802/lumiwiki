@@ -241,8 +241,26 @@
                       class="team-lumi"
                       @click="goToLumi(lumi.lumiId)"
                     >
-                      <img :src="getLumiAvatar(lumi.lumiId)" :alt="lumi.lumiName" class="team-lumi-avatar" @error="handleImageError">
-                      <span class="team-lumi-name">{{ lumi.lumiName }}</span>
+                      <div class="team-lumi-header">
+                        <img :src="getLumiAvatar(lumi.lumiId)" :alt="lumi.lumiName" class="team-lumi-avatar" @error="handleImageError">
+                        <span class="team-lumi-name">{{ lumi.lumiName }}</span>
+                      </div>
+                      <div class="team-lumi-skills" v-if="getTopSecondSkills(lumi, team.battles).length">
+                        <div
+                          v-for="ss in getTopSecondSkills(lumi, team.battles)"
+                          :key="ss.skillId"
+                          class="skill-row"
+                        >
+                          <img
+                            :src="`/images/skills/${ss.meta?.icon || 'unknown'}.png`"
+                            :alt="ss.meta?.name || ''"
+                            class="skill-icon"
+                            @error="handleSkillIconError"
+                          >
+                          <span class="skill-name">{{ ss.meta?.name || `技能#${ss.skillId}` }}</span>
+                          <span class="skill-rate">{{ ss.rate }}%</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -377,8 +395,12 @@
 import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import MultiSelect from '../components/MultiSelect.vue'
+import { loadData as loadGameData, tSync } from '../data'
 
 const router = useRouter()
+
+// 第二技能元数据：skillId → { name, icon }
+const skillMeta = ref(new Map())
 
 // 段位配置
 const rankGroups = [
@@ -557,9 +579,14 @@ const allTeams = computed(() => {
       // 防御性排序：用排序后的 teamLumiIds 作为合并 key，避免后端规范化失效时同组合不同顺序被当成不同队伍
       const id = [...team.teamLumiIds].sort().join('-')
       if (!merged.has(id)) {
+        // 用 Map 累加 secondSkills 计数（跨段位合并）
         merged.set(id, {
-          ...team,
           teamLumiIds: [...team.teamLumiIds].sort(),
+          lumis: (team.lumis || []).map(l => ({
+            lumiId: l.lumiId,
+            lumiName: l.lumiName,
+            secondSkillsMap: new Map()
+          })),
           battles: 0,
           wins: 0
         })
@@ -567,12 +594,29 @@ const allTeams = computed(() => {
       const existing = merged.get(id)
       existing.battles += team.battles
       existing.wins += team.wins
+      // 按 index 对齐累加每只噜咪的第二技能计数
+      ;(team.lumis || []).forEach((lumi, idx) => {
+        const target = existing.lumis[idx]
+        if (!target) return
+        ;(lumi.secondSkills || []).forEach(ss => {
+          target.secondSkillsMap.set(ss.skillId, (target.secondSkillsMap.get(ss.skillId) || 0) + ss.count)
+        })
+      })
     })
   })
   return Array.from(merged.values())
     .sort((a, b) => b.battles - a.battles)
     .map(team => ({
-      ...team,
+      teamLumiIds: team.teamLumiIds,
+      lumis: team.lumis.map(l => ({
+        lumiId: l.lumiId,
+        lumiName: l.lumiName,
+        secondSkills: Array.from(l.secondSkillsMap.entries())
+          .map(([skillId, count]) => ({ skillId, count }))
+          .sort((a, b) => b.count - a.count)
+      })),
+      battles: team.battles,
+      wins: team.wins,
       winRate: ((team.wins / team.battles) * 100).toFixed(2)
     }))
 })
@@ -819,6 +863,21 @@ function getLumiAvatar(lumiId) {
   return `/images/avatars/CA_${lumiId}.png`
 }
 
+// 获取队伍中某只噜咪的第二技能 Top 3（按携带率）
+function getTopSecondSkills(lumi, teamBattles) {
+  const list = lumi.secondSkills || []
+  return list.slice(0, 3).map(ss => ({
+    skillId: ss.skillId,
+    meta: skillMeta.value.get(ss.skillId),
+    rate: teamBattles > 0 ? (ss.count / teamBattles * 100).toFixed(1) : '0.0'
+  }))
+}
+
+// 技能图标加载失败时隐藏
+function handleSkillIconError(e) {
+  e.target.style.visibility = 'hidden'
+}
+
 // 处理图片加载失败
 function handleImageError(e) {
   e.target.src = '/images/avatars/unknown.png'
@@ -1052,6 +1111,23 @@ async function loadData() {
 onMounted(async () => {
   await loadAvailableWeeks()
   await loadData()
+  // 加载技能元数据（用于队伍列表显示第二技能）
+  try {
+    const [skills, loc] = await Promise.all([
+      loadGameData('ActiveSkill'),
+      loadGameData('localization')
+    ])
+    const meta = new Map()
+    for (const sk of skills) {
+      meta.set(sk.Id, {
+        name: loc[sk.name] || sk.name,
+        icon: sk.icon
+      })
+    }
+    skillMeta.value = meta
+  } catch (e) {
+    console.error('加载技能元数据失败:', e)
+  }
   nextTick(() => {
     initChart()
   })
@@ -1588,13 +1664,14 @@ td {
 
 .team-lumi {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
   cursor: pointer;
-  padding: 8px 12px;
+  padding: 10px 12px;
   border-radius: 8px;
   background: #f8f9ff;
   transition: all 0.2s;
+  min-width: 160px;
 }
 
 .team-lumi:hover {
@@ -1603,18 +1680,62 @@ td {
   box-shadow: 0 4px 8px rgba(102, 126, 234, 0.2);
 }
 
+.team-lumi-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .team-lumi-avatar {
   width: 40px;
   height: 40px;
   border-radius: 6px;
   object-fit: cover;
   border: 2px solid #e0e0e0;
+  flex-shrink: 0;
 }
 
 .team-lumi-name {
   font-size: 0.9rem;
   font-weight: bold;
   color: #333;
+}
+
+.team-lumi-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 6px;
+  border-top: 1px dashed #d8dcff;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+.skill-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.skill-name {
+  flex: 1;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skill-rate {
+  color: #888;
+  font-weight: bold;
+  flex-shrink: 0;
 }
 
 .no-data {
