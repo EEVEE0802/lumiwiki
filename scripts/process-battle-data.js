@@ -276,10 +276,10 @@ async function processBattleData() {
         team.wins++
       }
       // 累加每只噜咪的第二技能计数（lumis 已按 lumiId 排序，index 一一对应）
+      // skillId=0 表示未携带，也参与统计（前端展示为「未携带」选项）
       lumis.forEach((lumi, idx) => {
         const skillId = parseInt(lumi.lumi_secondskill)
-        // 过滤 NaN 和 0（0 = 未携带第二技能）
-        if (!isNaN(skillId) && skillId > 0) {
+        if (!isNaN(skillId)) {
           const ssMap = team.lumis[idx].secondSkills
           ssMap[skillId] = (ssMap[skillId] || 0) + 1
         }

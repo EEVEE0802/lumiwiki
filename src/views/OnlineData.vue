@@ -250,8 +250,11 @@
                           v-for="ss in getTopSecondSkills(lumi, team.battles)"
                           :key="ss.skillId"
                           class="skill-row"
+                          :class="{ 'skill-none': ss.isNone }"
                         >
+                          <span v-if="ss.isNone" class="skill-icon-placeholder">—</span>
                           <img
+                            v-else
                             :src="`/images/skills/${ss.meta?.icon || 'unknown'}.png`"
                             :alt="ss.meta?.name || ''"
                             class="skill-icon"
@@ -864,13 +867,24 @@ function getLumiAvatar(lumiId) {
 }
 
 // 获取队伍中某只噜咪的第二技能 Top 3（按携带率）
+// skillId=0 视为「未携带」整体作为一种选择参与排序
 function getTopSecondSkills(lumi, teamBattles) {
   const list = lumi.secondSkills || []
-  return list.slice(0, 3).map(ss => ({
-    skillId: ss.skillId,
-    meta: skillMeta.value.get(ss.skillId),
-    rate: teamBattles > 0 ? (ss.count / teamBattles * 100).toFixed(1) : '0.0'
-  }))
+  return list.slice(0, 3).map(ss => {
+    if (ss.skillId === 0) {
+      return {
+        skillId: 0,
+        isNone: true,
+        meta: { name: '未携带', icon: null },
+        rate: teamBattles > 0 ? (ss.count / teamBattles * 100).toFixed(1) : '0.0'
+      }
+    }
+    return {
+      skillId: ss.skillId,
+      meta: skillMeta.value.get(ss.skillId),
+      rate: teamBattles > 0 ? (ss.count / teamBattles * 100).toFixed(1) : '0.0'
+    }
+  })
 }
 
 // 技能图标加载失败时隐藏
@@ -1722,6 +1736,22 @@ td {
   height: 18px;
   border-radius: 3px;
   flex-shrink: 0;
+}
+
+.skill-icon-placeholder {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.skill-row.skill-none .skill-name {
+  color: #aaa;
+  font-style: italic;
 }
 
 .skill-name {
