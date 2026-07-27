@@ -318,55 +318,6 @@
     ]
   },
   {
-    "RequestGroupID": 6,
-    "RequestGroupName": "",
-    "GroupBanner": "",
-    "Page": 1,
-    "ChallengePage": 0,
-    "Switch": true,
-    "AutoCommit": true,
-    "Unlockconditon": 0,
-    "GroupRepeatTime": 1,
-    "RefreshType": 4,
-    "GroupRewardShow": [],
-    "GroupReward": [],
-    "CountDown": 0,
-    "StartTime": "2026/3/30 5:00:00",
-    "EndTime": "2030/5/7 5:00:00",
-    "SeasonShow": false,
-    "DefaultBuyList": 1,
-    "RequestData": [
-      {
-        "RequestID": 1,
-        "RequestDes": "测试星彩",
-        "RequestNum": 3,
-        "Tag": "",
-        "RequestConditions": [],
-        "Rewards": [
-          {
-            "Type": 2,
-            "Id": 60105,
-            "Count": 1
-          }
-        ],
-        "RewardsShow": [
-          {
-            "Type": 2,
-            "Id": 60105,
-            "Count": 1
-          }
-        ],
-        "RequestConditions1": [
-          {
-            "X": 20049,
-            "Y": 3,
-            "Z": 1
-          }
-        ]
-      }
-    ]
-  },
-  {
     "RequestGroupID": 7,
     "RequestGroupName": "",
     "GroupBanner": "",
