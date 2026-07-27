@@ -453,7 +453,9 @@
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2106601",
     "Des": "H_SkillText_2106601",
-    "DesParam": [],
+    "DesParam": [
+      50
+    ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
     "ArchBuff": [],
@@ -888,7 +890,9 @@
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2122301",
     "Des": "H_SkillText_2122301",
-    "DesParam": [],
+    "DesParam": [
+      50
+    ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
     "ArchBuff": [],
@@ -1258,7 +1262,9 @@
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2139801",
     "Des": "H_SkillText_2139801",
-    "DesParam": [],
+    "DesParam": [
+      50
+    ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
     "ArchBuff": [],
@@ -1279,7 +1285,9 @@
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2141301",
     "Des": "H_SkillText_2141301",
-    "DesParam": [],
+    "DesParam": [
+      20
+    ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
     "ArchBuff": [],
@@ -1500,7 +1508,9 @@
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_21001301",
     "Des": "H_SkillText_21001301",
-    "DesParam": [],
+    "DesParam": [
+      25
+    ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
     "ArchBuff": [],
