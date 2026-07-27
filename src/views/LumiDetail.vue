@@ -16,7 +16,6 @@ const typeCounters = ref([])
 const keywordMap = ref([])
 const avgData = ref([])
 const extraData = ref({})
-const marketPrices = ref({})
 const loading = ref(true)
 const selectedKeyword = ref(null)
 const showKeywordTooltip = ref(false)
@@ -25,7 +24,7 @@ const showKeywordTooltip = ref(false)
 async function loadLumiData() {
   loading.value = true
   const id = Number(route.params.id)
-  const [data, loc, skills, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra, market] = await Promise.all([
+  const [data, loc, skills, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra] = await Promise.all([
     loadData('Lumi'),
     loadData('localization'),
     loadData('ActiveSkill'),
@@ -37,7 +36,6 @@ async function loadLumiData() {
     getKeywordMap(),
     loadData('Avg'),
     loadData('extra').catch(() => ({})),
-    loadData('MarketPrice').catch(() => []),
   ])
 
   lumi.value = data.find(l => l.Id === id)
@@ -51,7 +49,6 @@ async function loadLumiData() {
   keywordMap.value = keywords
   avgData.value = avg
   extraData.value = extra
-  marketPrices.value = Array.isArray(market) ? market : []
   loading.value = false
 
   // 注册 showKeyword 到 window 对象供 HTML onclick 调用
@@ -477,15 +474,6 @@ const currentExtra = computed(() => {
   return extraData.value[lumi.value.Id] || null
 })
 
-// 获取金色基础价格
-const goldPrice = computed(() => {
-  if (!lumi.value || !marketPrices.value.length) {
-    return null
-  }
-  const priceData = marketPrices.value.find(p => p.id === lumi.value.Id)
-  return priceData?.priceDefault ?? null
-})
-
 // 属性类型键名（用于查找克制关系）
 const TYPE_KEYS = [
   'Neutral', 'Water', 'Fire', 'Grass', 'Lighting', 'Earth',
@@ -610,8 +598,8 @@ const weaknesses = computed(() => {
           <div class="value">{{ lumi.MinScore }} ~ {{ lumi.MaxScore }}</div>
         </div>
         <div class="info-item">
-          <div class="label">金色基础价格</div>
-          <div class="value">{{ goldPrice !== null ? goldPrice : '--' }}</div>
+          <div class="label">内部 ID</div>
+          <div class="value">{{ lumi.Id }}</div>
         </div>
         <div class="info-item">
           <div class="label">赛季</div>
