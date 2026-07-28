@@ -3506,6 +3506,252 @@
     "SynthesisId": 0
   },
   {
+    "key1": 20050,
+    "name": "Item_20050",
+    "quality": 5,
+    "WorkAmount": 500,
+    "type": 4,
+    "Atlas": "IconItem",
+    "icon": "Item_20050",
+    "HdIcon": "",
+    "des": "ItemD_20050",
+    "order": 200039,
+    "isShow": true,
+    "JumpTo": [
+      206
+    ],
+    "LackJumpto": [
+      206
+    ],
+    "IsMarket": false,
+    "goldPrice": 1,
+    "DefaultBasePrice": -1,
+    "DefaultBasePriceMin": -1,
+    "MarketPurchaseNum": 0,
+    "maxStack": 9999,
+    "isUse": false,
+    "itemUseId": 0,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 1,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 1,
+    "homeProportion": "",
+    "maxModelCountHome": 10,
+    "maxModelCount": 50,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
+    "key1": 20051,
+    "name": "Item_20051",
+    "quality": 5,
+    "WorkAmount": 500,
+    "type": 4,
+    "Atlas": "IconItem",
+    "icon": "Item_20051",
+    "HdIcon": "",
+    "des": "ItemD_20051",
+    "order": 200040,
+    "isShow": true,
+    "JumpTo": [
+      206
+    ],
+    "LackJumpto": [
+      206
+    ],
+    "IsMarket": false,
+    "goldPrice": 1,
+    "DefaultBasePrice": -1,
+    "DefaultBasePriceMin": -1,
+    "MarketPurchaseNum": 0,
+    "maxStack": 9999,
+    "isUse": false,
+    "itemUseId": 0,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 1,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 1,
+    "homeProportion": "",
+    "maxModelCountHome": 10,
+    "maxModelCount": 50,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
+    "key1": 20052,
+    "name": "Item_20052",
+    "quality": 5,
+    "WorkAmount": 500,
+    "type": 4,
+    "Atlas": "IconItem",
+    "icon": "Item_20052",
+    "HdIcon": "",
+    "des": "ItemD_20052",
+    "order": 200041,
+    "isShow": true,
+    "JumpTo": [
+      206
+    ],
+    "LackJumpto": [
+      206
+    ],
+    "IsMarket": false,
+    "goldPrice": 1,
+    "DefaultBasePrice": -1,
+    "DefaultBasePriceMin": -1,
+    "MarketPurchaseNum": 0,
+    "maxStack": 9999,
+    "isUse": false,
+    "itemUseId": 0,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 1,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 1,
+    "homeProportion": "",
+    "maxModelCountHome": 10,
+    "maxModelCount": 50,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
+    "key1": 20053,
+    "name": "Item_20053",
+    "quality": 5,
+    "WorkAmount": 500,
+    "type": 4,
+    "Atlas": "IconItem",
+    "icon": "Item_20053",
+    "HdIcon": "",
+    "des": "ItemD_20053",
+    "order": 200042,
+    "isShow": true,
+    "JumpTo": [
+      206
+    ],
+    "LackJumpto": [
+      206
+    ],
+    "IsMarket": false,
+    "goldPrice": 1,
+    "DefaultBasePrice": -1,
+    "DefaultBasePriceMin": -1,
+    "MarketPurchaseNum": 0,
+    "maxStack": 9999,
+    "isUse": false,
+    "itemUseId": 0,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 1,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 1,
+    "homeProportion": "",
+    "maxModelCountHome": 10,
+    "maxModelCount": 50,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
+    "key1": 20054,
+    "name": "Item_20054",
+    "quality": 5,
+    "WorkAmount": 500,
+    "type": 4,
+    "Atlas": "IconItem",
+    "icon": "Item_20054",
+    "HdIcon": "",
+    "des": "ItemD_20054",
+    "order": 200043,
+    "isShow": true,
+    "JumpTo": [
+      206
+    ],
+    "LackJumpto": [
+      206
+    ],
+    "IsMarket": false,
+    "goldPrice": 1,
+    "DefaultBasePrice": -1,
+    "DefaultBasePriceMin": -1,
+    "MarketPurchaseNum": 0,
+    "maxStack": 9999,
+    "isUse": false,
+    "itemUseId": 0,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 1,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 1,
+    "homeProportion": "",
+    "maxModelCountHome": 10,
+    "maxModelCount": 50,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
+    "key1": 20055,
+    "name": "Item_20055",
+    "quality": 5,
+    "WorkAmount": 500,
+    "type": 4,
+    "Atlas": "IconItem",
+    "icon": "Item_20055",
+    "HdIcon": "",
+    "des": "ItemD_20055",
+    "order": 200044,
+    "isShow": true,
+    "JumpTo": [
+      206
+    ],
+    "LackJumpto": [
+      206
+    ],
+    "IsMarket": false,
+    "goldPrice": 1,
+    "DefaultBasePrice": -1,
+    "DefaultBasePriceMin": -1,
+    "MarketPurchaseNum": 0,
+    "maxStack": 9999,
+    "isUse": false,
+    "itemUseId": 0,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 1,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 1,
+    "homeProportion": "",
+    "maxModelCountHome": 10,
+    "maxModelCount": 50,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
     "key1": 21001,
     "name": "Item_21001",
     "quality": 1,
@@ -8852,7 +9098,9 @@
     "JumpTo": [
       212
     ],
-    "LackJumpto": [],
+    "LackJumpto": [
+      212
+    ],
     "IsMarket": false,
     "goldPrice": 0,
     "DefaultBasePrice": -1,
@@ -8928,7 +9176,9 @@
     "JumpTo": [
       65
     ],
-    "LackJumpto": [],
+    "LackJumpto": [
+      65
+    ],
     "IsMarket": false,
     "goldPrice": 0,
     "DefaultBasePrice": -1,
@@ -23565,6 +23815,51 @@
     "HdIcon": "",
     "des": "ItemD_100101",
     "order": 3000129,
+    "isShow": false,
+    "JumpTo": [
+      48,
+      40,
+      49
+    ],
+    "LackJumpto": [
+      48,
+      40,
+      49
+    ],
+    "IsMarket": false,
+    "goldPrice": 300,
+    "DefaultBasePrice": -1,
+    "DefaultBasePriceMin": -1,
+    "MarketPurchaseNum": 0,
+    "maxStack": 9999,
+    "isUse": false,
+    "itemUseId": 0,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 1,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 1,
+    "homeProportion": "",
+    "maxModelCountHome": 10,
+    "maxModelCount": 50,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
+    "key1": 145801,
+    "name": "Item_145801",
+    "quality": 5,
+    "WorkAmount": 0,
+    "type": 5,
+    "Atlas": "IconItemShard3",
+    "icon": "Item_145801",
+    "HdIcon": "",
+    "des": "ItemD_100101",
+    "order": 3000130,
     "isShow": false,
     "JumpTo": [
       48,
@@ -40131,6 +40426,49 @@
     "SynthesisId": 0
   },
   {
+    "key1": 1458010,
+    "name": "Item_1458010",
+    "quality": 6,
+    "WorkAmount": 0,
+    "type": 14,
+    "Atlas": "IconItem",
+    "icon": "Item_1458010",
+    "HdIcon": "",
+    "des": "ItemD_1001010",
+    "order": 3000129,
+    "isShow": true,
+    "JumpTo": [
+      103,
+      104
+    ],
+    "LackJumpto": [
+      103,
+      104
+    ],
+    "IsMarket": false,
+    "goldPrice": 0,
+    "DefaultBasePrice": -1,
+    "DefaultBasePriceMin": -1,
+    "MarketPurchaseNum": 0,
+    "maxStack": 9999,
+    "isUse": false,
+    "itemUseId": 0,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 1,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 0,
+    "homeProportion": "1",
+    "maxModelCountHome": 0,
+    "maxModelCount": 10,
+    "Audio": "50",
+    "ItemParam": "UI_CollectionItems",
+    "SynthesisId": 0
+  },
+  {
     "key1": 1500010,
     "name": "Item_1500010",
     "quality": 6,
@@ -40140,7 +40478,7 @@
     "icon": "Item_1500010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40183,7 +40521,7 @@
     "icon": "Item_1500020",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40226,7 +40564,7 @@
     "icon": "Item_1500030",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40269,7 +40607,7 @@
     "icon": "Item_1500040",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40312,7 +40650,7 @@
     "icon": "Item_1500050",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40355,7 +40693,7 @@
     "icon": "Item_1500060",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40398,7 +40736,7 @@
     "icon": "Item_1500070",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40441,7 +40779,7 @@
     "icon": "Item_1500080",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40484,7 +40822,7 @@
     "icon": "Item_1500090",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40527,7 +40865,7 @@
     "icon": "Item_1500100",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40570,7 +40908,7 @@
     "icon": "Item_1500110",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000130,
+    "order": 3000131,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40613,7 +40951,7 @@
     "icon": "Item_1500120",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000130,
+    "order": 3000131,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40656,7 +40994,7 @@
     "icon": "Item_1500130",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000130,
+    "order": 3000131,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40699,7 +41037,7 @@
     "icon": "Item_1500140",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000130,
+    "order": 3000131,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40742,7 +41080,7 @@
     "icon": "Item_1500150",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000130,
+    "order": 3000131,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40785,7 +41123,7 @@
     "icon": "Item_1500160",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000130,
+    "order": 3000131,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40828,7 +41166,7 @@
     "icon": "Item_1500170",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000131,
+    "order": 3000132,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40871,7 +41209,7 @@
     "icon": "Item_10001010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000129,
+    "order": 3000130,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40914,7 +41252,7 @@
     "icon": "Item_10002010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000130,
+    "order": 3000131,
     "isShow": true,
     "JumpTo": [
       103,
@@ -40957,7 +41295,7 @@
     "icon": "Item_10003010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000131,
+    "order": 3000132,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41000,7 +41338,7 @@
     "icon": "Item_10004010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000132,
+    "order": 3000133,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41043,7 +41381,7 @@
     "icon": "Item_10005010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000133,
+    "order": 3000134,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41086,7 +41424,7 @@
     "icon": "Item_10005020",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000134,
+    "order": 3000135,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41129,7 +41467,7 @@
     "icon": "Item_10006010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000135,
+    "order": 3000136,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41172,7 +41510,7 @@
     "icon": "Item_10007010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000136,
+    "order": 3000137,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41215,7 +41553,7 @@
     "icon": "Item_10008010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000137,
+    "order": 3000138,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41258,7 +41596,7 @@
     "icon": "Item_10009020",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000138,
+    "order": 3000139,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41301,7 +41639,7 @@
     "icon": "Item_10010010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000139,
+    "order": 3000140,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41344,7 +41682,7 @@
     "icon": "Item_10011010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000140,
+    "order": 3000141,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41387,7 +41725,7 @@
     "icon": "Item_10012010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000141,
+    "order": 3000142,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41430,7 +41768,7 @@
     "icon": "Item_10013010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000142,
+    "order": 3000143,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41473,7 +41811,7 @@
     "icon": "Item_10014010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000143,
+    "order": 3000144,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41516,7 +41854,7 @@
     "icon": "Item_10015010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000144,
+    "order": 3000145,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41559,7 +41897,7 @@
     "icon": "Item_10016010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000145,
+    "order": 3000146,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41602,7 +41940,7 @@
     "icon": "Item_10017010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000146,
+    "order": 3000147,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41645,7 +41983,7 @@
     "icon": "Item_10018010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000147,
+    "order": 3000148,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41688,7 +42026,7 @@
     "icon": "Item_10019010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000148,
+    "order": 3000149,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41731,7 +42069,7 @@
     "icon": "Item_10020010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000149,
+    "order": 3000150,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41774,7 +42112,7 @@
     "icon": "Item_10021010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000150,
+    "order": 3000151,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41817,7 +42155,7 @@
     "icon": "Item_10021010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000150,
+    "order": 3000151,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41860,7 +42198,7 @@
     "icon": "Item_10023010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000151,
+    "order": 3000152,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41903,7 +42241,7 @@
     "icon": "Item_10024010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000152,
+    "order": 3000153,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41946,7 +42284,7 @@
     "icon": "Item_10025010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000153,
+    "order": 3000154,
     "isShow": true,
     "JumpTo": [
       103,
@@ -41989,7 +42327,7 @@
     "icon": "Item_10026020",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000154,
+    "order": 3000155,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42032,7 +42370,7 @@
     "icon": "Item_10027010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000155,
+    "order": 3000156,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42075,7 +42413,7 @@
     "icon": "Item_10028010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000156,
+    "order": 3000157,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42118,7 +42456,7 @@
     "icon": "Item_10029010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000157,
+    "order": 3000158,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42161,7 +42499,7 @@
     "icon": "Item_10032010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000158,
+    "order": 3000159,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42204,7 +42542,7 @@
     "icon": "Item_10033010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000159,
+    "order": 3000160,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42247,7 +42585,7 @@
     "icon": "Item_10034010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000160,
+    "order": 3000161,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42290,7 +42628,7 @@
     "icon": "Item_10035010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000161,
+    "order": 3000162,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42333,7 +42671,7 @@
     "icon": "Item_10036010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000162,
+    "order": 3000163,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42376,7 +42714,7 @@
     "icon": "Item_10037010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000163,
+    "order": 3000164,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42419,7 +42757,7 @@
     "icon": "Item_10038010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000164,
+    "order": 3000165,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42462,7 +42800,7 @@
     "icon": "Item_10039010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000165,
+    "order": 3000166,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42505,7 +42843,7 @@
     "icon": "Item_10040010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000166,
+    "order": 3000167,
     "isShow": true,
     "JumpTo": [
       103,
@@ -42548,7 +42886,7 @@
     "icon": "Item_10041010",
     "HdIcon": "",
     "des": "ItemD_1001010",
-    "order": 3000167,
+    "order": 3000168,
     "isShow": true,
     "JumpTo": [
       103,
