@@ -13,7 +13,8 @@
     "process-tournament:week": "node scripts/process-tournament-data.js --week",
     "process-robot-teams": "node scripts/process-robot-teams.js",
     "process-adventure": "node scripts/convert-adventure-drop.mjs",
-    "process-egg-drop": "node scripts/process-egg-drop.mjs"
+    "process-egg-drop": "node scripts/process-egg-drop.mjs",
+    "process-lumi-teams": "node scripts/process-lumi-teams.mjs"
   },
   "dependencies": {
     "dompurify": "^3.4.12",

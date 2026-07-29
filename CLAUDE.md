@@ -30,6 +30,7 @@ LumiWiki/
 │   │   ├── adventure/               # 冒险掉落
 │   │   │   └── drop-rates.json      # 各地图噜咪出现概率（由脚本生成）
 │   │   ├── egg-drop.json            # 蛋掉落（各蛋开出噜咪概率，由脚本生成）
+│   │   ├── lumi-teams.json          # 噜咪推荐配队（每只噜咪 top 3 队伍，由脚本生成）
 │   │   ├── zh-CN.json 等            # 多语言文件
 │   │   └── ...                      # 游戏核心数据
 │   └── images/                      # 图片资源
@@ -45,6 +46,7 @@ LumiWiki/
 │   ├── process-robot-teams.js       # 机器人阵容数据处理
 │   ├── convert-adventure-drop.mjs   # 冒险掉落数据处理
 │   ├── process-egg-drop.mjs         # 蛋掉落数据处理
+│   ├── process-lumi-teams.mjs       # 噜咪推荐配队数据处理
 │   ├── ta-fetch.mjs                 # 数数平台 API 拉取（自动）
 │   ├── ta-auth.mjs                  # Bearer Token 自动续期
 │   ├── notify.mjs                   # 飞书/企业微信通知
@@ -327,6 +329,7 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Ladder
     → prepare-i18n-data.cjs 转换多语言
     → 删除 public/data/*.encoded 缓存
     → 跑衍生脚本：process-robot-teams / convert-adventure-drop / process-egg-drop
+    → updateMode 末尾自动跑 process-lumi-teams（依赖 ladder + tournament）
     → 同步立绘（F:\G36\LumiGoProgram\...\Lumi 的 CA_*.png，仅复制缺失）
 
   [2/3] updateMode('ladder', skipPublish) —— 天梯
@@ -437,6 +440,41 @@ npm run process-egg-drop   # 重新生成 egg-drop.json
 - **4 种蛋类型**差异见数据链路；巢穴蛋（type=16）无固定掉落已跳过。
 - 部分蛋引用了已废弃的 LumiDrop 池（如 Id=60000），会显示「数据缺失」。
 - 前端直接 fetch `/data/egg-drop.json`，无需清缓存。
+
+---
+
+## 推荐配队更新
+
+噜咪详情页「推荐配队」section 展示每只噜咪 top 3 配队，数据由 `scripts/process-lumi-teams.mjs` 生成到 `public/data/lumi-teams.json`。
+
+### 数据链路
+
+```
+ladder-weekN.json (stats['all-no-bot'].teams)  ┐
+                                                ├→ 按 teamLumiIds 聚合 → 按 lumiId 索引
+tournament-weekN.json (popularTeams)            ┘   → 每只 lumiId 取 battles top 3 队伍
+                                                    → 队伍中每只噜咪输出 top 1 携带技能
+```
+
+### 常用命令
+
+```bash
+npm run process-lumi-teams             # 默认用"上一周"（maxWeek - 1）
+npm run process-lumi-teams -- --week 2 # 指定周次
+```
+
+### 集成位置
+
+- `auto-update.mjs` 的 `updateMode()` 末尾自动跑：天梯或周赛数据落盘后、publish 前调用
+- 全量任务（每天 03:00）和周赛任务（每周一 08:00）都会触发
+
+### 注意事项
+
+- **数据源**：ladder `all-no-bot`（不含人机）+ tournament `popularTeams`，按 `teamLumiIds` 排序聚合
+- **默认周次**：`weeks.json` 最新周 - 1（"上一周"），因为本周数据不完整（只到当天累积）
+- **secondSkills 合并**：跨 ladder/tournament 同一队伍的同类技能计数累加
+- **输出大小**：约 400 KB（183 噜咪 × 平均 3 队伍），前端通过 `loadData('lumi-teams')` 加载
+- **当前噜咪高亮**：前端在配队卡片中给当前查看的噜咪加 `.is-current` 样式（紫色边框）
 
 ---
 

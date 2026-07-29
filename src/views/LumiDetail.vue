@@ -16,6 +16,7 @@ const typeCounters = ref([])
 const keywordMap = ref([])
 const avgData = ref([])
 const extraData = ref({})
+const lumiTeamsData = ref(null)
 const loading = ref(true)
 const selectedKeyword = ref(null)
 const showKeywordTooltip = ref(false)
@@ -24,7 +25,7 @@ const showKeywordTooltip = ref(false)
 async function loadLumiData() {
   loading.value = true
   const id = Number(route.params.id)
-  const [data, loc, skills, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra] = await Promise.all([
+  const [data, loc, skills, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra, teams] = await Promise.all([
     loadData('Lumi'),
     loadData('localization'),
     loadData('ActiveSkill'),
@@ -36,6 +37,7 @@ async function loadLumiData() {
     getKeywordMap(),
     loadData('Avg'),
     loadData('extra').catch(() => ({})),
+    loadData('lumi-teams').catch(() => null),
   ])
 
   lumi.value = data.find(l => l.Id === id)
@@ -49,6 +51,7 @@ async function loadLumiData() {
   keywordMap.value = keywords
   avgData.value = avg
   extraData.value = extra
+  lumiTeamsData.value = teams
   loading.value = false
 
   // 注册 showKeyword 到 window 对象供 HTML onclick 调用
@@ -136,6 +139,30 @@ function getSkillType(skillId) {
   const s = activeSkills.value.find(x => x.Id === skillId)
   return s ? s.LumiTpye : null
 }
+
+// 推荐配队相关 helper
+function getWinRateClass(rate) {
+  const r = parseFloat(rate)
+  if (r >= 60) return 'high'
+  if (r >= 50) return 'medium'
+  return 'low'
+}
+function handleAvatarError(e) {
+  e.target.src = '/images/avatars/unknown.png'
+}
+function handleSkillIconError(e) {
+  e.target.style.visibility = 'hidden'
+}
+
+// 推荐配队：基于上一周天梯(不含人机)+周赛的 top 3 队伍
+const recommendTeams = computed(() => {
+  if (!lumi.value || !lumiTeamsData.value) return []
+  const teams = lumiTeamsData.value.lumiTeams?.[lumi.value.Id] || []
+  return teams
+})
+
+// 推荐配队数据来源周次
+const recommendWeek = computed(() => lumiTeamsData.value?.week || null)
 
 // 获取技能消耗
 function getSkillCost(skillId) {
@@ -654,6 +681,48 @@ const weaknesses = computed(() => {
       </div>
     </div>
 
+    <!-- 推荐配队 -->
+    <div class="section" v-if="recommendTeams.length">
+      <h2>推荐配队 <span class="section-subtitle">基于 Week {{ recommendWeek }} 天梯（不含人机）+ 周赛，Top {{ recommendTeams.length }}</span></h2>
+      <div class="recommend-teams">
+        <div v-for="(team, idx) in recommendTeams" :key="idx" class="recommend-team-card">
+          <div class="recommend-team-rank">#{{ idx + 1 }}</div>
+          <div class="recommend-team-body">
+            <div class="recommend-team-lumis">
+              <div
+                v-for="l in team.lumis"
+                :key="l.lumiId"
+                class="recommend-lumi"
+                :class="{ 'is-current': l.lumiId === lumi.Id }"
+                @click="l.lumiId !== lumi.Id && router.push(`/lumi/${l.lumiId}`)"
+              >
+                <img :src="`/images/avatars/CA_${l.lumiId}.png`" :alt="getLumiName(l.lumiId)" class="recommend-lumi-avatar" @error="handleAvatarError">
+                <div class="recommend-lumi-info">
+                  <span class="recommend-lumi-name">{{ getLumiName(l.lumiId) }}</span>
+                  <span v-if="l.topSkill" class="recommend-lumi-skill">
+                    <img
+                      v-if="l.topSkill.skillId !== 0 && getSkillIcon(l.topSkill.skillId)"
+                      :src="`/images/skills/${getSkillIcon(l.topSkill.skillId)}.png`"
+                      :alt="getSkillName(l.topSkill.skillId)"
+                      class="recommend-skill-icon"
+                      @error="handleSkillIconError"
+                    >
+                    <span class="recommend-skill-name" :class="{ 'is-none': l.topSkill.skillId === 0 }">
+                      {{ l.topSkill.skillId === 0 ? '未携带' : getSkillName(l.topSkill.skillId) }}
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="recommend-team-stats">
+              <span class="recommend-stat">📊 {{ team.battles.toLocaleString() }} 场</span>
+              <span class="recommend-stat" :class="getWinRateClass(team.winRate)">🏆 {{ team.winRate }}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- 关键特质 -->
     <div class="section" v-if="currentExtra?.keyTraits">
       <h2>关键特质</h2>
@@ -1012,6 +1081,114 @@ const weaknesses = computed(() => {
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
 }
+.section-subtitle {
+  font-size: 0.75em;
+  color: var(--text-dim);
+  font-weight: normal;
+  margin-left: 8px;
+}
+
+/* 推荐配队 */
+.recommend-teams {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.recommend-team-card {
+  display: flex;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+.recommend-team-rank {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: var(--accent);
+  min-width: 36px;
+  text-align: center;
+}
+.recommend-team-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.recommend-team-lumis {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.recommend-lumi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 160px;
+}
+.recommend-lumi:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+.recommend-lumi.is-current {
+  border-color: var(--accent);
+  background: rgba(102, 126, 234, 0.12);
+  cursor: default;
+}
+.recommend-lumi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+.recommend-lumi-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.recommend-lumi-name {
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.95em;
+}
+.recommend-lumi-skill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78em;
+}
+.recommend-skill-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+}
+.recommend-skill-name {
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.recommend-skill-name.is-none {
+  color: #888;
+  font-style: italic;
+}
+.recommend-team-stats {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85em;
+  color: var(--text-dim);
+}
+.recommend-stat.high { color: #4caf50; font-weight: bold; }
+.recommend-stat.medium { color: #ff9800; font-weight: bold; }
+.recommend-stat.low { color: #f44336; font-weight: bold; }
 .story-content {
   color: var(--text-dim);
   line-height: 1.8;

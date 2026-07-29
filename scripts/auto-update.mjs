@@ -103,6 +103,10 @@ export async function updateMode(mode, weekInfo, options = {}) {
     ensureWeekInJson(week)
   }
 
+  // 推荐配队数据派生（依赖 ladder + tournament 最新一周）
+  console.log('→ 生成推荐配队数据 (lumi-teams.json)...')
+  runCommand(process.execPath, ['scripts/process-lumi-teams.mjs', '--week', String(week)])
+
   if (!skipPublish) {
     runCommand('bash', ['publish.sh'])
   }
