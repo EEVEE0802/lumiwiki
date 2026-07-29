@@ -4,6 +4,7 @@ import { loadData, t, TYPE_NAMES, TYPE_COLORS } from '../data'
 
 const stats = ref({})
 const loading = ref(true)
+const exporting = ref(false)
 
 onMounted(async () => {
   const lumis = await loadData('Lumi')
@@ -27,6 +28,56 @@ onMounted(async () => {
   }
   loading.value = false
 })
+
+// 导出所有推荐阵容为 CSV
+async function exportRecommendTeams() {
+  if (exporting.value) return
+  exporting.value = true
+  try {
+    const data = await loadData('lumi-teams')
+    if (!data || !data.lumiTeams) {
+      alert('暂无推荐配队数据')
+      return
+    }
+
+    const header = ['内部ID', '阵容序号', '一号位噜咪ID', '一号位技能ID', '二号位噜咪ID', '二号位技能ID', '三号位噜咪ID', '三号位技能ID']
+    const rows = []
+    const sortedIds = Object.keys(data.lumiTeams).sort((a, b) => Number(a) - Number(b))
+    for (const lumiId of sortedIds) {
+      data.lumiTeams[lumiId].forEach((team, idx) => {
+        const row = [lumiId, idx + 1]
+        for (let i = 0; i < 3; i++) {
+          const l = team.lumis[i]
+          if (l) {
+            row.push(l.lumiId, l.topSkill?.skillId ?? '')
+          } else {
+            row.push('', '')
+          }
+        }
+        rows.push(row)
+      })
+    }
+
+    const escape = v => {
+      const s = String(v ?? '')
+      return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+    }
+    const csv = [header.join(','), ...rows.map(r => r.map(escape).join(','))].join('\n')
+
+    const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `recommend-teams-week${data.week}.csv`
+    a.click()
+    URL.revokeObjectURL(url)
+  } catch (e) {
+    console.error('导出失败:', e)
+    alert('导出失败: ' + e.message)
+  } finally {
+    exporting.value = false
+  }
+}
 </script>
 
 <template>
@@ -36,6 +87,13 @@ onMounted(async () => {
     <div class="hero">
       <h1>🌟 LumiWiki</h1>
       <p class="hero-desc">噜咪（Lumi）图鉴百科 · 本地局域网 Wiki</p>
+    </div>
+
+    <!-- 数据导出工具 -->
+    <div class="export-toolbar">
+      <button class="export-btn" :disabled="exporting" @click="exportRecommendTeams">
+        {{ exporting ? '⏳ 导出中...' : '📥 导出所有推荐阵容（CSV）' }}
+      </button>
     </div>
 
     <!-- 数据统计卡片 -->
@@ -129,6 +187,33 @@ onMounted(async () => {
 .hero-desc {
   color: var(--text-dim);
   font-size: 1.1em;
+}
+
+/* 数据导出工具 */
+.export-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+.export-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+.export-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+.export-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 .stat-cards {
   margin-bottom: 32px;
