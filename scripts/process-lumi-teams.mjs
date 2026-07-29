@@ -6,32 +6,32 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const PROJECT_ROOT = path.join(__dirname, '..')
 
-// 解析 --week 参数；默认 = weeks.json 最新周 - 1（"上一周"）
+// 解析 --week 参数；默认 = 当周 + 上周（weeks.json 最新两周）
 const args = process.argv.slice(2)
 const weekIdx = args.indexOf('--week')
-let week = weekIdx !== -1 ? parseInt(args[weekIdx + 1]) : null
+const explicitWeek = weekIdx !== -1 ? parseInt(args[weekIdx + 1]) : null
 
 const weeksJsonPath = path.join(PROJECT_ROOT, 'public/data/online/weekly/weeks.json')
 const weeksJson = JSON.parse(fs.readFileSync(weeksJsonPath, 'utf-8'))
-const maxWeek = Math.max(...weeksJson.map(w => w.week))
-if (isNaN(week) || week < 1) {
-  week = Math.max(1, maxWeek - 1)
-  console.log(`未指定 --week，使用上一周: Week ${week}`)
+const availableWeeks = weeksJson.map(w => w.week).filter(w => w >= 1).sort((a, b) => a - b)
+
+let weeks
+if (!isNaN(explicitWeek) && explicitWeek >= 1) {
+  weeks = [explicitWeek]
+  console.log(`指定周次: Week ${explicitWeek}`)
+} else {
+  const maxWeek = availableWeeks[availableWeeks.length - 1]
+  // 默认取最新两周（当周+上周）；maxWeek=1 时只有一周
+  weeks = availableWeeks.filter(w => w >= maxWeek - 1)
+  console.log(`未指定 --week，使用: ${weeks.map(w => 'Week ' + w).join(' + ')}`)
 }
 
-const ladderPath = path.join(PROJECT_ROOT, `public/data/online/weekly/ladder-week${week}.json`)
-const tournamentPath = path.join(PROJECT_ROOT, `public/data/online/weekly/tournament-week${week}.json`)
 const outputPath = path.join(PROJECT_ROOT, 'public/data/lumi-teams.json')
 
-if (!fs.existsSync(ladderPath)) {
-  console.error(`❌ 找不到天梯数据: ${ladderPath}`)
-  process.exit(1)
-}
-
 console.log(`\n===== LumiWiki 噜咪推荐配队处理 =====`)
-console.log(`数据周次: Week ${week}`)
+console.log(`数据周次: ${weeks.map(w => 'Week ' + w).join(' + ')}`)
 
-// 合并 ladder no-bot + tournament 的所有队伍
+// 合并多周 ladder no-bot + tournament 的所有队伍
 // key = 排序后的 teamLumiIds join('-')；累加 battles/wins、合并 secondSkills
 const mergedTeams = new Map()
 
@@ -63,20 +63,26 @@ function ingestTeam(team) {
   })
 }
 
-// 1. 天梯不含人机
-const ladder = JSON.parse(fs.readFileSync(ladderPath, 'utf-8'))
-const ladderTeams = ladder.stats?.['all-no-bot']?.teams || []
-console.log(`天梯 (all-no-bot) 队伍数: ${ladderTeams.length}`)
-ladderTeams.forEach(ingestTeam)
+// 遍历每周，读 ladder + tournament 合并
+for (const w of weeks) {
+  const ladderPath = path.join(PROJECT_ROOT, `public/data/online/weekly/ladder-week${w}.json`)
+  const tournamentPath = path.join(PROJECT_ROOT, `public/data/online/weekly/tournament-week${w}.json`)
 
-// 2. 周赛
-if (fs.existsSync(tournamentPath)) {
-  const tournament = JSON.parse(fs.readFileSync(tournamentPath, 'utf-8'))
-  const tournamentTeams = tournament.popularTeams || []
-  console.log(`周赛队伍数: ${tournamentTeams.length}`)
-  tournamentTeams.forEach(ingestTeam)
-} else {
-  console.log(`⚠️  无周赛数据: ${tournamentPath}`)
+  if (fs.existsSync(ladderPath)) {
+    const ladder = JSON.parse(fs.readFileSync(ladderPath, 'utf-8'))
+    const ladderTeams = ladder.stats?.['all-no-bot']?.teams || []
+    console.log(`[Week ${w}] 天梯 (all-no-bot) 队伍数: ${ladderTeams.length}`)
+    ladderTeams.forEach(ingestTeam)
+  } else {
+    console.log(`[Week ${w}] ⚠️  无天梯数据: ${ladderPath}`)
+  }
+
+  if (fs.existsSync(tournamentPath)) {
+    const tournament = JSON.parse(fs.readFileSync(tournamentPath, 'utf-8'))
+    const tournamentTeams = tournament.popularTeams || []
+    console.log(`[Week ${w}] 周赛队伍数: ${tournamentTeams.length}`)
+    tournamentTeams.forEach(ingestTeam)
+  }
 }
 
 console.log(`合并后独立队伍数: ${mergedTeams.size}`)
@@ -230,11 +236,7 @@ for (const X of allLumiIds) {
 // 输出
 const output = {
   updateTime: new Date().toISOString(),
-  week,
-  sources: {
-    ladder: `ladder-week${week}.json (all-no-bot)`,
-    tournament: fs.existsSync(tournamentPath) ? `tournament-week${week}.json` : null
-  },
+  weeks,
   lumiTeams: result
 }
 

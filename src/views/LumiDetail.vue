@@ -161,8 +161,8 @@ const recommendTeams = computed(() => {
   return teams
 })
 
-// 推荐配队数据来源周次
-const recommendWeek = computed(() => lumiTeamsData.value?.week || null)
+// 推荐配队数据来源周次（数组）
+const recommendWeeks = computed(() => lumiTeamsData.value?.weeks || [])
 
 // 获取技能消耗
 function getSkillCost(skillId) {
@@ -683,7 +683,7 @@ const weaknesses = computed(() => {
 
     <!-- 推荐配队 -->
     <div class="section" v-if="recommendTeams.length">
-      <h2>推荐配队 <span class="section-subtitle">基于 Week {{ recommendWeek }} 天梯（不含人机）+ 周赛，Top {{ recommendTeams.length }}</span></h2>
+      <h2>推荐配队 <span class="section-subtitle">基于 Week {{ recommendWeeks.join('-') }} 天梯（不含人机）+ 周赛，Top {{ recommendTeams.length }}</span></h2>
       <div class="recommend-teams">
         <div v-for="(team, idx) in recommendTeams" :key="idx" class="recommend-team-card">
           <div class="recommend-team-rank">#{{ idx + 1 }}</div>

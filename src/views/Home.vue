@@ -68,7 +68,7 @@ async function exportRecommendTeams() {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `recommend-teams-week${data.week}.csv`
+    a.download = `recommend-teams-week${(data.weeks || []).join('-')}.csv`
     a.click()
     URL.revokeObjectURL(url)
   } catch (e) {
