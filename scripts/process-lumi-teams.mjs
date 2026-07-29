@@ -81,6 +81,15 @@ if (fs.existsSync(tournamentPath)) {
 
 console.log(`合并后独立队伍数: ${mergedTeams.size}`)
 
+// === 加载 Lumi.json，标记打工噜咪（仅有家园被动，不参与战斗配队）===
+const lumiData = JSON.parse(fs.readFileSync(
+  path.join(PROJECT_ROOT, 'public/data/Lumi.json'), 'utf-8')
+)
+const homeLumis = new Set(
+  lumiData.filter(l => l.HomePassive).map(l => String(l.Id))
+)
+console.log(`打工噜咪（家园被动，跳过推荐配队）: ${homeLumis.size} 只`)
+
 // === 构建进化链（union-find）===
 // 同一进化链的所有形态（基础/中间阶/顶端/性别分支）视为同一组，可互相替代
 const evoData = JSON.parse(fs.readFileSync(
@@ -144,6 +153,9 @@ let totalEntries = 0
 let mergedGroupCount = 0  // 统计有多少 lumiId 受益于进化链合并
 
 for (const X of allLumiIds) {
+  // 跳过打工噜咪（家园被动）——不生成推荐配队
+  if (homeLumis.has(X)) continue
+
   const groupSet = rootToLumis.get(find(X)) || new Set([X])
   if (groupSet.size > 1) mergedGroupCount++
 
