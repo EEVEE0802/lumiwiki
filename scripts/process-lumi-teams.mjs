@@ -81,42 +81,138 @@ if (fs.existsSync(tournamentPath)) {
 
 console.log(`合并后独立队伍数: ${mergedTeams.size}`)
 
-// 按每个 lumiId 收集含它的队伍
-const lumiToTeams = new Map()
+// === 构建进化链（union-find）===
+// 同一进化链的所有形态（基础/中间阶/顶端/性别分支）视为同一组，可互相替代
+const evoData = JSON.parse(fs.readFileSync(
+  path.join(PROJECT_ROOT, 'public/data/LumiEvolution.json'), 'utf-8'
+))
+const parent = new Map()
+function find(x) {
+  if (!parent.has(x)) parent.set(x, x)
+  let root = x
+  while (parent.get(root) !== root) root = parent.get(root)
+  while (parent.get(x) !== root) {
+    const next = parent.get(x)
+    parent.set(x, root)
+    x = next
+  }
+  return root
+}
+function union(a, b) {
+  const ra = find(a), rb = find(b)
+  if (ra !== rb) parent.set(ra, rb)
+}
+for (const entry of evoData) {
+  const base = String(entry.Lumi)
+  if (entry.evoLumiID) union(base, String(entry.evoLumiID))
+  for (const [gender, target] of (entry.GenderEvo || [])) {
+    union(base, String(target))
+  }
+}
+// root -> Set<lumiId>（只含实际出现在战斗数据中的形态）
+const rootToLumis = new Map()
 for (const team of mergedTeams.values()) {
-  // 先把每只 lumi 的 secondSkills Map 转成 top 1
-  const lumisWithTop = team.lumis.map(l => {
-    const sorted = Array.from(l.secondSkills.entries())
-      .map(([skillId, count]) => ({ skillId, count }))
-      .sort((a, b) => b.count - a.count)
-    return {
-      lumiId: l.lumiId,
-      lumiName: l.lumiName,
-      topSkill: sorted[0] || null
-    }
-  })
-  // 给每只 lumi 注册该队伍
-  for (const lumi of lumisWithTop) {
-    if (!lumiToTeams.has(lumi.lumiId)) {
-      lumiToTeams.set(lumi.lumiId, [])
-    }
-    lumiToTeams.get(lumi.lumiId).push({
-      teamLumiIds: team.teamLumiIds,
-      lumis: lumisWithTop,
-      battles: team.battles,
-      wins: team.wins,
-      winRate: team.battles > 0 ? ((team.wins / team.battles) * 100).toFixed(2) : '0'
-    })
+  for (const l of team.lumis) {
+    const root = find(l.lumiId)
+    if (!rootToLumis.has(root)) rootToLumis.set(root, new Set())
+    rootToLumis.get(root).add(l.lumiId)
   }
 }
 
-// 每只 lumiId 取 top 3（按 battles 降序）
+// 构建 lumiId -> 中文名 映射（来自战斗数据中的 lumiName 字段）
+const lumiNameMap = new Map()
+for (const team of mergedTeams.values()) {
+  for (const l of team.lumis) {
+    if (!lumiNameMap.has(l.lumiId)) lumiNameMap.set(l.lumiId, l.lumiName)
+  }
+}
+
+// Map<skillId, count> -> top 1 {skillId, count}（按 count 降序）
+function top1OfMap(map) {
+  if (!map || map.size === 0) return null
+  let best = null
+  for (const [skillId, count] of map) {
+    if (!best || count > best.count) best = { skillId, count }
+  }
+  return best
+}
+
+// === 主循环：对每只 lumi X，按进化组聚合推荐阵容 ===
+const allLumiIds = new Set(lumiNameMap.keys())
 const result = {}
 let totalEntries = 0
-for (const [lumiId, teams] of lumiToTeams) {
-  teams.sort((a, b) => b.battles - a.battles)
-  result[lumiId] = teams.slice(0, 3)
-  totalEntries += result[lumiId].length
+let mergedGroupCount = 0  // 统计有多少 lumiId 受益于进化链合并
+
+for (const X of allLumiIds) {
+  const groupSet = rootToLumis.get(find(X)) || new Set([X])
+  if (groupSet.size > 1) mergedGroupCount++
+
+  // 收集含 groupSet 中任意形态的队伍，按"非进化组队友"做 key 聚合
+  const aggregated = new Map()
+  for (const team of mergedTeams.values()) {
+    const groupIdx = team.lumis.findIndex(l => groupSet.has(l.lumiId))
+    if (groupIdx === -1) continue
+
+    const otherLumis = team.lumis.filter((_, i) => i !== groupIdx)
+    const key = otherLumis.map(l => l.lumiId).sort().join('-')
+
+    if (!aggregated.has(key)) {
+      aggregated.set(key, {
+        otherLumis: otherLumis.map(l => ({
+          lumiId: l.lumiId,
+          lumiName: l.lumiName,
+          secondSkills: new Map()
+        })),
+        chainSecondSkills: new Map(),
+        battles: 0,
+        wins: 0
+      })
+    }
+    const agg = aggregated.get(key)
+    agg.battles += team.battles
+    agg.wins += team.wins
+
+    // 合并 X 位置（进化链）的技能
+    const chainLumi = team.lumis[groupIdx]
+    for (const [sid, cnt] of chainLumi.secondSkills) {
+      agg.chainSecondSkills.set(sid, (agg.chainSecondSkills.get(sid) || 0) + cnt)
+    }
+    // 合并其他位置的技能
+    otherLumis.forEach((l, i) => {
+      for (const [sid, cnt] of l.secondSkills) {
+        agg.otherLumis[i].secondSkills.set(sid, (agg.otherLumis[i].secondSkills.get(sid) || 0) + cnt)
+      }
+    })
+  }
+
+  // 按 battles 降序取 top 3
+  const top3 = Array.from(aggregated.values())
+    .sort((a, b) => b.battles - a.battles)
+    .slice(0, 3)
+    .map(agg => {
+      const sortedOthers = [...agg.otherLumis]
+        .map(l => ({
+          lumiId: l.lumiId,
+          lumiName: l.lumiName,
+          topSkill: top1OfMap(l.secondSkills)
+        }))
+        .sort((a, b) => String(a.lumiId).localeCompare(String(b.lumiId)))
+      return {
+        teamLumiIds: [X, ...sortedOthers.map(l => l.lumiId)].sort(),
+        lumis: [
+          { lumiId: X, lumiName: lumiNameMap.get(X), topSkill: top1OfMap(agg.chainSecondSkills) },
+          ...sortedOthers
+        ],
+        battles: agg.battles,
+        wins: agg.wins,
+        winRate: agg.battles > 0 ? ((agg.wins / agg.battles) * 100).toFixed(2) : '0'
+      }
+    })
+
+  if (top3.length > 0) {
+    result[X] = top3
+    totalEntries += top3.length
+  }
 }
 
 // 输出
@@ -134,4 +230,5 @@ fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf-8')
 console.log(`\n✓ 输出: ${outputPath}`)
 console.log(`  覆盖噜咪数: ${Object.keys(result).length}`)
 console.log(`  队伍条目总数: ${totalEntries}`)
+console.log(`  其中受益于进化链合并的噜咪: ${mergedGroupCount} 只`)
 console.log(`  文件大小: ${(fs.statSync(outputPath).size / 1024).toFixed(1)} KB`)
