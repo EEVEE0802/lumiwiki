@@ -14,6 +14,7 @@ const loading = ref(true)
 const leftLumi = ref(null)
 const leftLevel = ref(50)
 const leftBreakLevel = ref(5)
+const leftGrowth = ref(0)
 const leftSkill = ref(null)
 const leftAtkBuff = ref(0)
 const leftDefBuff = ref(0)
@@ -24,6 +25,7 @@ const leftReductionCoeffs = ref([]) // 减伤系数
 const rightLumi = ref(null)
 const rightLevel = ref(50)
 const rightBreakLevel = ref(5)
+const rightGrowth = ref(0)
 const rightSkill = ref(null)
 const rightAtkBuff = ref(0)
 const rightDefBuff = ref(0)
@@ -163,10 +165,10 @@ function setRightLumi(lumi) {
 }
 
 // 计算实际战斗资质
-function calcBattleStats(lumi, level, breakLevel) {
+function calcBattleStats(lumi, level, breakLevel, growth) {
   if (!lumi) return { hp: 0, atk: 0, def: 0 }
 
-  const power = Math.pow(1.1, breakLevel)
+  const power = 1 + breakLevel * 0.05 + (breakLevel * 10 + growth) * 0.002
   const base = 4 * (level + 10) * power
 
   const hp = Math.floor(lumi.MaxHpState * base / 5)
@@ -178,12 +180,12 @@ function calcBattleStats(lumi, level, breakLevel) {
 
 // 左侧实际战斗资质
 const leftBattleStats = computed(() => {
-  return calcBattleStats(leftLumi.value, leftLevel.value, leftBreakLevel.value)
+  return calcBattleStats(leftLumi.value, leftLevel.value, leftBreakLevel.value, leftGrowth.value)
 })
 
 // 右侧实际战斗资质
 const rightBattleStats = computed(() => {
-  return calcBattleStats(rightLumi.value, rightLevel.value, rightBreakLevel.value)
+  return calcBattleStats(rightLumi.value, rightLevel.value, rightBreakLevel.value, rightGrowth.value)
 })
 
 // 获取技能威力总和
@@ -261,8 +263,9 @@ const rightNormalAttackInfo = computed(() => {
 })
 
 // F(Lv) 函数
-function calcF(level, breakLevel) {
-  return 400 * ((level + 10) * Math.pow(1.1, breakLevel)) / 1875
+function calcF(level, breakLevel, growth) {
+  const power = 1 + breakLevel * 0.05 + (breakLevel * 10 + growth) * 0.002
+  return 400 * ((level + 10) * power) / 1875
 }
 
 // 属性一致加成
@@ -353,7 +356,7 @@ function calcSingleDamage(params) {
   const { attacker, defender, skill, isCrit, bonusCoeffs, reductionCoeffs } = params
 
   // F(Lv)
-  const fLv = calcF(attacker.level, attacker.breakLevel)
+  const fLv = calcF(attacker.level, attacker.breakLevel, attacker.growth)
 
   // 先应用攻防等级到属性值
   const { adjustedAtk, adjustedDef } = applyBuffsToStats(
@@ -420,6 +423,7 @@ async function calculateDamage() {
     lumi: leftLumi.value,
     level: leftLevel.value,
     breakLevel: leftBreakLevel.value,
+    growth: leftGrowth.value,
     skill: leftSkill.value,
     atkBuff: leftAtkBuff.value,
     defBuff: leftDefBuff.value,
@@ -433,6 +437,7 @@ async function calculateDamage() {
     lumi: rightLumi.value,
     level: rightLevel.value,
     breakLevel: rightBreakLevel.value,
+    growth: rightGrowth.value,
     skill: rightSkill.value,
     atkBuff: rightAtkBuff.value,
     defBuff: rightDefBuff.value,
@@ -554,13 +559,13 @@ async function calculateDamage() {
     calculationLog: [
       `=== 左侧 ===`,
       `噜咪: ${getLumiName(leftLumi.value)}`,
-      `等级: ${leftLevel}, 突破: +${leftBreakLevel}`,
+      `等级: ${leftLevel}, 突破: +${leftBreakLevel}, 成长: ${leftGrowth}`,
       `战斗资质 - HP: ${leftStats.hp}, 攻击: ${leftStats.atk}, 防御: ${leftStats.def}`,
       `攻击等级: ${leftAtkBuff >= 0 ? '+' : ''}${leftAtkBuff}, 防御等级: ${leftDefBuff >= 0 ? '+' : ''}${leftDefBuff}`,
       ``,
       `=== 右侧 ===`,
       `噜咪: ${getLumiName(rightLumi.value)}`,
-      `等级: ${rightLevel}, 突破: +${rightBreakLevel}`,
+      `等级: ${rightLevel}, 突破: +${rightBreakLevel}, 成长: ${rightGrowth}`,
       `战斗资质 - HP: ${rightStats.hp}, 攻击: ${rightStats.atk}, 防御: ${rightStats.def}`,
       `攻击等级: ${rightAtkBuff >= 0 ? '+' : ''}${rightAtkBuff}, 防御等级: ${rightDefBuff >= 0 ? '+' : ''}${rightDefBuff}`,
       ``,
@@ -585,7 +590,7 @@ async function calculateDamage() {
 // 重置计算结果
 watch([
   leftLumi, rightLumi, leftLevel, rightLevel,
-  leftBreakLevel, rightBreakLevel, leftSkill, rightSkill,
+  leftBreakLevel, rightBreakLevel, leftGrowth, rightGrowth, leftSkill, rightSkill,
   leftAtkBuff, rightAtkBuff, leftDefBuff, rightDefBuff
 ], () => {
   if (showResults.value) {
@@ -714,10 +719,14 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
             <label class="input-label">突破 (0-5)</label>
             <input v-model.number="leftBreakLevel" type="number" min="0" max="5" class="form-input" />
           </div>
+          <div class="input-group half">
+            <label class="input-label">成长</label>
+            <input v-model.number="leftGrowth" type="number" min="0" class="form-input" />
+          </div>
         </div>
 
         <div class="input-group" v-if="leftLumi">
-          <label class="input-label">战斗资质 (等级{{ leftLevel }} 突破+{{ leftBreakLevel }})</label>
+          <label class="input-label">战斗资质 (等级{{ leftLevel }} 突破+{{ leftBreakLevel }} 成长{{ leftGrowth }})</label>
           <div class="stats-display">
             <div class="stat-item-inline">
               <span class="stat-label">HP</span>
@@ -884,10 +893,14 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
             <label class="input-label">突破 (0-5)</label>
             <input v-model.number="rightBreakLevel" type="number" min="0" max="5" class="form-input" />
           </div>
+          <div class="input-group half">
+            <label class="input-label">成长</label>
+            <input v-model.number="rightGrowth" type="number" min="0" class="form-input" />
+          </div>
         </div>
 
         <div class="input-group" v-if="rightLumi">
-          <label class="input-label">战斗资质 (等级{{ rightLevel }} 突破+{{ rightBreakLevel }})</label>
+          <label class="input-label">战斗资质 (等级{{ rightLevel }} 突破+{{ rightBreakLevel }} 成长{{ rightGrowth }})</label>
           <div class="stats-display">
             <div class="stat-item-inline">
               <span class="stat-label">HP</span>
@@ -1317,7 +1330,7 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
 
 .input-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 10px;
 }
 
