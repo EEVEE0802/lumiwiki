@@ -212,6 +212,10 @@ async function processTournamentData() {
       .sort()
       .join('-')
 
+    // 训练家技能 ID（行级字段；0 = 未携带，保留参与统计）
+    const trainerId = parseInt(row.trainer_id)
+    const trainerIdKey = !isNaN(trainerId) ? trainerId : 0
+
     if (!teamUsage.has(teamLumiIds)) {
       teamUsage.set(teamLumiIds, {
         teamLumiIds: lumis.map(l => l.lumi_id),
@@ -220,6 +224,7 @@ async function processTournamentData() {
           lumiName: l.lumi_name,
           secondSkills: {}
         })),
+        trainerSkills: {},
         battles: 0,
         wins: 0
       })
@@ -239,6 +244,8 @@ async function processTournamentData() {
         ssMap[skillId] = (ssMap[skillId] || 0) + 1
       }
     })
+    // 累加训练家技能计数（行级，每场战斗一个）
+    team.trainerSkills[trainerIdKey] = (team.trainerSkills[trainerIdKey] || 0) + 1
   })
 
   console.log(`处理完成！`)
@@ -291,6 +298,9 @@ async function processTournamentData() {
           .map(([skillId, count]) => ({ skillId: Number(skillId), count }))
           .sort((a, b) => b.count - a.count)
       })),
+      trainerSkills: Object.entries(team.trainerSkills)
+        .map(([trainerId, count]) => ({ trainerId: Number(trainerId), count }))
+        .sort((a, b) => b.count - a.count),
       winRate: ((team.wins / team.battles) * 100).toFixed(2)
     }))
 

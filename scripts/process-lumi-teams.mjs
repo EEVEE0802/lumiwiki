@@ -46,6 +46,7 @@ function ingestTeam(team) {
         lumiName: l.lumiName,
         secondSkills: new Map()  // skillId -> count
       })),
+      trainerSkills: new Map(),  // trainerId -> count
       battles: 0,
       wins: 0
     })
@@ -60,6 +61,10 @@ function ingestTeam(team) {
     ;(l.secondSkills || []).forEach(ss => {
       target.secondSkills.set(ss.skillId, (target.secondSkills.get(ss.skillId) || 0) + ss.count)
     })
+  })
+  // 合并训练家技能计数
+  ;(team.trainerSkills || []).forEach(ts => {
+    merged.trainerSkills.set(ts.trainerId, (merged.trainerSkills.get(ts.trainerId) || 0) + ts.count)
   })
 }
 
@@ -142,12 +147,12 @@ for (const team of mergedTeams.values()) {
   }
 }
 
-// Map<skillId, count> -> top 1 {skillId, count}（按 count 降序）
-function top1OfMap(map) {
+// Map<id, count> -> top 1 {<idKey>, count}（按 count 降序）
+function top1OfMap(map, idKey = 'skillId') {
   if (!map || map.size === 0) return null
   let best = null
-  for (const [skillId, count] of map) {
-    if (!best || count > best.count) best = { skillId, count }
+  for (const [id, count] of map) {
+    if (!best || count > best.count) best = { [idKey]: id, count }
   }
   return best
 }
@@ -182,6 +187,7 @@ for (const X of allLumiIds) {
           secondSkills: new Map()
         })),
         chainSecondSkills: new Map(),
+        trainerSkills: new Map(),
         battles: 0,
         wins: 0
       })
@@ -201,6 +207,10 @@ for (const X of allLumiIds) {
         agg.otherLumis[i].secondSkills.set(sid, (agg.otherLumis[i].secondSkills.get(sid) || 0) + cnt)
       }
     })
+    // 合并训练家技能计数
+    for (const [tid, cnt] of team.trainerSkills) {
+      agg.trainerSkills.set(tid, (agg.trainerSkills.get(tid) || 0) + cnt)
+    }
   }
 
   // 按 battles 降序取 top 3
@@ -221,6 +231,7 @@ for (const X of allLumiIds) {
           { lumiId: X, lumiName: lumiNameMap.get(X), topSkill: top1OfMap(agg.chainSecondSkills) },
           ...sortedOthers
         ],
+        topTrainerSkill: top1OfMap(agg.trainerSkills, 'trainerId'),
         battles: agg.battles,
         wins: agg.wins,
         winRate: agg.battles > 0 ? ((agg.wins / agg.battles) * 100).toFixed(2) : '0'

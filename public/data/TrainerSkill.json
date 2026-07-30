@@ -1,0 +1,51 @@
+[
+  {
+    "Id": 1,
+    "name": "T_skill_1",
+    "icon": "TrainerSkill_04",
+    "Des": "T_SkillText_1",
+    "InitNum": 1,
+    "ChargeNum": 300,
+    "EffectId": [
+      10000
+    ],
+    "Condition": 50006
+  },
+  {
+    "Id": 2,
+    "name": "T_skill_2",
+    "icon": "TrainerSkill_02",
+    "Des": "T_SkillText_2",
+    "InitNum": 1,
+    "ChargeNum": 300,
+    "EffectId": [
+      10001,
+      10002
+    ],
+    "Condition": 90009
+  },
+  {
+    "Id": 3,
+    "name": "T_skill_3",
+    "icon": "TrainerSkill_03",
+    "Des": "T_SkillText_3",
+    "InitNum": 1,
+    "ChargeNum": 300,
+    "EffectId": [
+      10003
+    ],
+    "Condition": 90009
+  },
+  {
+    "Id": 4,
+    "name": "T_skill_4",
+    "icon": "TrainerSkill_05",
+    "Des": "T_SkillText_4",
+    "InitNum": 1,
+    "ChargeNum": 300,
+    "EffectId": [
+      10005
+    ],
+    "Condition": 90009
+  }
+]

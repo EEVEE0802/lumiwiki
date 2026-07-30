@@ -1,6 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { Readable } from 'node:stream'
+import { pipeline } from 'node:stream/promises'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -41,7 +43,8 @@ function buildGroupBy(mode) {
     buildField('player_rank', 'double', 'number', 'LATEST'),
     buildField('player_type', 'double', 'number', 'LATEST'),
     buildField('player_lumis', 'varchar', 'string', null),
-    buildField('battle_result', 'double', 'number', 'LATEST')
+    buildField('battle_result', 'double', 'number', 'LATEST'),
+    buildField('trainer_id', 'double', 'number', 'LATEST')
   ]
   if (mode === 'tournament') {
     fields.push(buildField('player_week_win', 'double', 'number', 'LATEST'))
@@ -214,13 +217,19 @@ async function pollTask(config, taskId, { maxWait = 300000, interval = 3000 } = 
   throw new Error(`任务 ${taskId} 超时（>${maxWait / 1000}s）`)
 }
 
-async function downloadCsv(config, taskId) {
+async function downloadCsv(config, taskId, outputPath) {
   const url = `${config.baseUrl}/v1/ta/auth/manage/task/taskFileDownload?access_token=${config.token}&projectId=${config.projectId}&taskId=${taskId}`
   const resp = await fetch(url)
   if (!resp.ok) {
     throw new Error(`下载失败: HTTP ${resp.status}`)
   }
-  return await resp.text()
+  // 流式写入文件，避免大文件触发 Node.js 字符串上限（~512 MB）
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true })
+  const fileStream = fs.createWriteStream(outputPath)
+  await pipeline(Readable.fromWeb(resp.body), fileStream)
+  const size = fs.statSync(outputPath).size
+  console.log(`💾 已保存: ${outputPath} (${(size / 1024 / 1024).toFixed(2)} MB)`)
+  return size
 }
 
 export async function fetchCsv(mode, startTime, endTime, outputPath) {
@@ -237,13 +246,9 @@ export async function fetchCsv(mode, startTime, endTime, outputPath) {
   await pollTask(config, taskId)
 
   console.log(`📥 下载 CSV...`)
-  const csv = await downloadCsv(config, taskId)
+  const size = await downloadCsv(config, taskId, outputPath)
 
-  fs.mkdirSync(path.dirname(outputPath), { recursive: true })
-  fs.writeFileSync(outputPath, csv, 'utf-8')
-  console.log(`💾 已保存: ${outputPath} (${(csv.length / 1024 / 1024).toFixed(2)} MB)`)
-
-  return { taskId, outputPath, size: csv.length }
+  return { taskId, outputPath, size }
 }
 
 // 命令行直接运行
@@ -263,7 +268,11 @@ if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToP
     process.exit(1)
   }
 
-  fetchCsv(mode, start, end, out).catch(e => {
+  // CLI 模式也先续期 token，避免直接用过期 access_token
+  import('./ta-auth.mjs').then(async ({ ensureValidToken }) => {
+    await ensureValidToken()
+    return fetchCsv(mode, start, end, out)
+  }).catch(e => {
     console.error(`\n❌ ${e.message}`)
     process.exit(1)
   })

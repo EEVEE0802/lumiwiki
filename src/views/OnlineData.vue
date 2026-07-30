@@ -266,6 +266,28 @@
                       </div>
                     </div>
                   </div>
+                  <div class="team-trainer" v-if="getTopTrainerSkills(team, team.battles).length">
+                    <span class="trainer-label">训练家</span>
+                    <div class="trainer-list">
+                      <div
+                        v-for="ts in getTopTrainerSkills(team, team.battles)"
+                        :key="ts.trainerId"
+                        class="trainer-row"
+                        :class="{ 'trainer-none': ts.isNone }"
+                      >
+                        <span v-if="ts.isNone" class="trainer-icon-placeholder">—</span>
+                        <img
+                          v-else
+                          :src="`/images/skills/${ts.meta?.icon || 'unknown'}.png`"
+                          :alt="ts.meta?.name || ''"
+                          class="trainer-icon"
+                          @error="handleSkillIconError"
+                        >
+                        <span class="trainer-name">{{ ts.meta?.name || `训练家#${ts.trainerId}` }}</span>
+                        <span class="trainer-rate">{{ ts.rate }}%</span>
+                      </div>
+                    </div>
+                  </div>
                 </td>
                 <td class="battles">{{ formatNumber(team.battles) }}</td>
                 <td class="wins">{{ formatNumber(team.wins) }}</td>
@@ -404,6 +426,7 @@ const router = useRouter()
 
 // 第二技能元数据：skillId → { name, icon }
 const skillMeta = ref(new Map())
+const trainerSkillMeta = ref(new Map())
 
 // 段位配置
 const rankGroups = [
@@ -590,6 +613,7 @@ const allTeams = computed(() => {
             lumiName: l.lumiName,
             secondSkillsMap: new Map()
           })),
+          trainerSkillsMap: new Map(),
           battles: 0,
           wins: 0
         })
@@ -605,6 +629,10 @@ const allTeams = computed(() => {
           target.secondSkillsMap.set(ss.skillId, (target.secondSkillsMap.get(ss.skillId) || 0) + ss.count)
         })
       })
+      // 累加训练家技能计数
+      ;(team.trainerSkills || []).forEach(ts => {
+        existing.trainerSkillsMap.set(ts.trainerId, (existing.trainerSkillsMap.get(ts.trainerId) || 0) + ts.count)
+      })
     })
   })
   return Array.from(merged.values())
@@ -618,6 +646,9 @@ const allTeams = computed(() => {
           .map(([skillId, count]) => ({ skillId, count }))
           .sort((a, b) => b.count - a.count)
       })),
+      trainerSkills: Array.from(team.trainerSkillsMap.entries())
+        .map(([trainerId, count]) => ({ trainerId, count }))
+        .sort((a, b) => b.count - a.count),
       battles: team.battles,
       wins: team.wins,
       winRate: ((team.wins / team.battles) * 100).toFixed(2)
@@ -906,6 +937,27 @@ function getTopSecondSkills(lumi, teamBattles) {
   })
 }
 
+// 获取队伍的训练家技能 Top 3（按携带率）
+// trainerId=0 视为「未携带」整体作为一种选择参与排序
+function getTopTrainerSkills(team, teamBattles) {
+  const list = team.trainerSkills || []
+  return list.slice(0, 3).map(ts => {
+    if (ts.trainerId === 0) {
+      return {
+        trainerId: 0,
+        isNone: true,
+        meta: { name: '未携带', icon: null },
+        rate: teamBattles > 0 ? (ts.count / teamBattles * 100).toFixed(1) : '0.0'
+      }
+    }
+    return {
+      trainerId: ts.trainerId,
+      meta: trainerSkillMeta.value.get(ts.trainerId),
+      rate: teamBattles > 0 ? (ts.count / teamBattles * 100).toFixed(1) : '0.0'
+    }
+  })
+}
+
 // 技能图标加载失败时隐藏
 function handleSkillIconError(e) {
   e.target.style.visibility = 'hidden'
@@ -1144,10 +1196,11 @@ async function loadData() {
 onMounted(async () => {
   await loadAvailableWeeks()
   await loadData()
-  // 加载技能元数据（用于队伍列表显示第二技能）
+  // 加载技能元数据（用于队伍列表显示第二技能 + 训练家技能）
   try {
-    const [skills, loc] = await Promise.all([
+    const [skills, trainers, loc] = await Promise.all([
       loadGameData('ActiveSkill'),
+      loadGameData('TrainerSkill'),
       loadGameData('localization')
     ])
     const meta = new Map()
@@ -1158,6 +1211,15 @@ onMounted(async () => {
       })
     }
     skillMeta.value = meta
+
+    const tMeta = new Map()
+    for (const ts of trainers) {
+      tMeta.set(ts.Id, {
+        name: loc[ts.name] || ts.name,
+        icon: ts.icon
+      })
+    }
+    trainerSkillMeta.value = tMeta
   } catch (e) {
     console.error('加载技能元数据失败:', e)
   }
@@ -1686,6 +1748,69 @@ td {
 
 .team-info {
   padding: 10px 20px;
+}
+
+/* 队伍训练家技能 */
+.team-trainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed #d8dcff;
+}
+.trainer-label {
+  font-size: 0.75rem;
+  color: #667eea;
+  font-weight: bold;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.trainer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+.trainer-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+.trainer-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.trainer-icon-placeholder {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.trainer-row.trainer-none .trainer-name {
+  color: #aaa;
+  font-style: italic;
+}
+.trainer-name {
+  flex: 1;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.trainer-rate {
+  color: #888;
+  font-weight: bold;
+  flex-shrink: 0;
 }
 
 .team-lumis {

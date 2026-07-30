@@ -59,7 +59,8 @@ const CORE_FILES = [
   'Item.json',
   'BattleKeywordDes.json',
   'BattleBuff.json',
-  'Request.json'
+  'Request.json',
+  'TrainerSkill.json'
 ]
 
 // 服务端导表（不在 Table/data，需独立复制）

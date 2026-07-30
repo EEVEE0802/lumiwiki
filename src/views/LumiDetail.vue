@@ -8,6 +8,7 @@ const router = useRouter()
 const lumi = ref(null)
 const locMap = ref({})
 const activeSkills = ref([])
+const trainerSkills = ref([])
 const battlePassives = ref([])
 const homePassives = ref([])
 const evolutions = ref([])
@@ -25,10 +26,11 @@ const showKeywordTooltip = ref(false)
 async function loadLumiData() {
   loading.value = true
   const id = Number(route.params.id)
-  const [data, loc, skills, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra, teams] = await Promise.all([
+  const [data, loc, skills, trainers, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra, teams] = await Promise.all([
     loadData('Lumi'),
     loadData('localization'),
     loadData('ActiveSkill'),
+    loadData('TrainerSkill'),
     loadData('BattlePassive'),
     loadData('HomePassive'),
     loadData('LumiEvolution'),
@@ -43,6 +45,7 @@ async function loadLumiData() {
   lumi.value = data.find(l => l.Id === id)
   locMap.value = loc
   activeSkills.value = skills
+  trainerSkills.value = trainers
   battlePassives.value = bPassives
   homePassives.value = hPassives
   evolutions.value = evos
@@ -127,6 +130,16 @@ function getSkillName(skillId) {
 function getSkillIcon(skillId) {
   const s = activeSkills.value.find(x => x.Id === skillId)
   return s ? s.icon : null
+}
+
+// 获取训练家技能名称和图标
+function getTrainerSkillName(trainerId) {
+  const t = trainerSkills.value.find(x => x.Id === trainerId)
+  return t ? (locMap.value[t.name] || t.name) : `训练家#${trainerId}`
+}
+function getTrainerSkillIcon(trainerId) {
+  const t = trainerSkills.value.find(x => x.Id === trainerId)
+  return t ? t.icon : null
 }
 function getSkillDes(skillId) {
   const s = activeSkills.value.find(x => x.Id === skillId)
@@ -714,6 +727,22 @@ const weaknesses = computed(() => {
                 </div>
               </div>
             </div>
+            <div class="recommend-team-trainer" v-if="team.topTrainerSkill">
+              <span class="trainer-label">训练家</span>
+              <span class="trainer-skill">
+                <img
+                  v-if="team.topTrainerSkill.trainerId !== 0 && getTrainerSkillIcon(team.topTrainerSkill.trainerId)"
+                  :src="`/images/skills/${getTrainerSkillIcon(team.topTrainerSkill.trainerId)}.png`"
+                  :alt="getTrainerSkillName(team.topTrainerSkill.trainerId)"
+                  class="trainer-icon"
+                  @error="handleSkillIconError"
+                >
+                <span v-else-if="team.topTrainerSkill.trainerId === 0" class="trainer-icon-placeholder">—</span>
+                <span class="trainer-name" :class="{ 'is-none': team.topTrainerSkill.trainerId === 0 }">
+                  {{ team.topTrainerSkill.trainerId === 0 ? '未携带' : getTrainerSkillName(team.topTrainerSkill.trainerId) }}
+                </span>
+              </span>
+            </div>
             <div class="recommend-team-stats">
               <span class="recommend-stat">📊 {{ team.battles.toLocaleString() }} 场</span>
               <span class="recommend-stat" :class="getWinRateClass(team.winRate)">🏆 {{ team.winRate }}%</span>
@@ -1185,6 +1214,44 @@ const weaknesses = computed(() => {
   gap: 16px;
   font-size: 0.85em;
   color: var(--text-dim);
+}
+
+/* 推荐配队训练家技能 */
+.recommend-team-trainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85em;
+}
+.recommend-team-trainer .trainer-label {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 0.85em;
+}
+.recommend-team-trainer .trainer-skill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.recommend-team-trainer .trainer-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+.recommend-team-trainer .trainer-icon-placeholder {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+.recommend-team-trainer .trainer-name {
+  color: var(--text-dim);
+}
+.recommend-team-trainer .trainer-name.is-none {
+  color: #888;
+  font-style: italic;
 }
 .recommend-stat.high { color: #4caf50; font-weight: bold; }
 .recommend-stat.medium { color: #ff9800; font-weight: bold; }
