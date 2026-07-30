@@ -561,15 +561,23 @@ async function calculateDamage() {
   calculationResults.value = {
     leftToRight: {
       normalAttack: leftToRightNormalPercent,
+      normalAttackDamage: leftToRightNormal,
       normalAttackCrit: leftToRightNormalCritPercent,
+      normalAttackCritDamage: leftToRightNormalCrit,
       skill: leftToRightSkillNormalPercent,
-      skillCrit: leftToRightSkillPercent
+      skillDamage: leftToRightSkillNormal,
+      skillCrit: leftToRightSkillPercent,
+      skillCritDamage: leftToRightSkill
     },
     rightToLeft: {
       normalAttack: rightToLeftNormalPercent,
+      normalAttackDamage: rightToLeftNormal,
       normalAttackCrit: rightToLeftNormalCritPercent,
+      normalAttackCritDamage: rightToLeftNormalCrit,
       skill: rightToLeftSkillNormalPercent,
-      skillCrit: rightToLeftSkillPercent
+      skillDamage: rightToLeftSkillNormal,
+      skillCrit: rightToLeftSkillPercent,
+      skillCritDamage: rightToLeftSkill
     },
     calculationLog: [
       `=== 左侧 ===`,
@@ -1232,24 +1240,28 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
             <div class="result-icon">⚔️</div>
             <h4 class="result-label">普攻</h4>
             <div class="result-value">{{ calculationResults.leftToRight.normalAttack }}%</div>
+            <div class="result-damage">{{ calculationResults.leftToRight.normalAttackDamage.toLocaleString() }} 伤害</div>
             <div class="result-desc">非暴击</div>
           </div>
           <div class="result-card">
             <div class="result-icon">💥</div>
             <h4 class="result-label">普攻</h4>
             <div class="result-value">{{ calculationResults.leftToRight.normalAttackCrit }}%</div>
+            <div class="result-damage">{{ calculationResults.leftToRight.normalAttackCritDamage.toLocaleString() }} 伤害</div>
             <div class="result-desc">暴击</div>
           </div>
           <div class="result-card">
             <div class="result-icon">✨</div>
             <h4 class="result-label">技能</h4>
             <div class="result-value">{{ calculationResults.leftToRight.skill }}%</div>
+            <div class="result-damage">{{ calculationResults.leftToRight.skillDamage.toLocaleString() }} 伤害</div>
             <div class="result-desc">非暴击</div>
           </div>
           <div class="result-card">
             <div class="result-icon">💫</div>
             <h4 class="result-label">技能</h4>
             <div class="result-value">{{ calculationResults.leftToRight.skillCrit }}%</div>
+            <div class="result-damage">{{ calculationResults.leftToRight.skillCritDamage.toLocaleString() }} 伤害</div>
             <div class="result-desc">暴击</div>
           </div>
         </div>
@@ -1263,24 +1275,28 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
             <div class="result-icon">⚔️</div>
             <h4 class="result-label">普攻</h4>
             <div class="result-value">{{ calculationResults.rightToLeft.normalAttack }}%</div>
+            <div class="result-damage">{{ calculationResults.rightToLeft.normalAttackDamage.toLocaleString() }} 伤害</div>
             <div class="result-desc">非暴击</div>
           </div>
           <div class="result-card">
             <div class="result-icon">💥</div>
             <h4 class="result-label">普攻</h4>
             <div class="result-value">{{ calculationResults.rightToLeft.normalAttackCrit }}%</div>
+            <div class="result-damage">{{ calculationResults.rightToLeft.normalAttackCritDamage.toLocaleString() }} 伤害</div>
             <div class="result-desc">暴击</div>
           </div>
           <div class="result-card">
             <div class="result-icon">✨</div>
             <h4 class="result-label">技能</h4>
             <div class="result-value">{{ calculationResults.rightToLeft.skill }}%</div>
+            <div class="result-damage">{{ calculationResults.rightToLeft.skillDamage.toLocaleString() }} 伤害</div>
             <div class="result-desc">非暴击</div>
           </div>
           <div class="result-card">
             <div class="result-icon">💫</div>
             <h4 class="result-label">技能</h4>
             <div class="result-value">{{ calculationResults.rightToLeft.skillCrit }}%</div>
+            <div class="result-damage">{{ calculationResults.rightToLeft.skillCritDamage.toLocaleString() }} 伤害</div>
             <div class="result-desc">暴击</div>
           </div>
         </div>
@@ -1732,6 +1748,13 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
   font-weight: bold;
   color: var(--accent);
   margin-bottom: 2px;
+}
+
+.result-damage {
+  color: var(--text-dim);
+  font-size: 0.85em;
+  margin-bottom: 4px;
+  font-weight: 500;
 }
 
 .result-desc {
