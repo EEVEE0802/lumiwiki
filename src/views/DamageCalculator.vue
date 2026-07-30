@@ -587,6 +587,10 @@ async function calculateDamage() {
   showResults.value = true
 }
 
+// 突破=10 时强制 growth=0
+watch([leftBreakLevel], ([v]) => { if (v >= 10) leftGrowth.value = 0 })
+watch([rightBreakLevel], ([v]) => { if (v >= 10) rightGrowth.value = 0 })
+
 // 重置计算结果
 watch([
   leftLumi, rightLumi, leftLevel, rightLevel,
@@ -716,12 +720,12 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
             <input v-model.number="leftLevel" type="number" min="1" max="50" class="form-input" />
           </div>
           <div class="input-group half">
-            <label class="input-label">突破 (0-5)</label>
-            <input v-model.number="leftBreakLevel" type="number" min="0" max="5" class="form-input" />
+            <label class="input-label">突破 (0-10)</label>
+            <input v-model.number="leftBreakLevel" type="number" min="0" max="10" class="form-input" />
           </div>
           <div class="input-group half">
-            <label class="input-label">成长</label>
-            <input v-model.number="leftGrowth" type="number" min="0" class="form-input" />
+            <label class="input-label">成长<span v-if="leftBreakLevel >= 10" class="growth-locked-hint">（突破10时锁定）</span></label>
+            <input v-model.number="leftGrowth" type="number" min="0" class="form-input" :disabled="leftBreakLevel >= 10" />
           </div>
         </div>
 
@@ -890,12 +894,12 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
             <input v-model.number="rightLevel" type="number" min="1" max="50" class="form-input" />
           </div>
           <div class="input-group half">
-            <label class="input-label">突破 (0-5)</label>
-            <input v-model.number="rightBreakLevel" type="number" min="0" max="5" class="form-input" />
+            <label class="input-label">突破 (0-10)</label>
+            <input v-model.number="rightBreakLevel" type="number" min="0" max="10" class="form-input" />
           </div>
           <div class="input-group half">
-            <label class="input-label">成长</label>
-            <input v-model.number="rightGrowth" type="number" min="0" class="form-input" />
+            <label class="input-label">成长<span v-if="rightBreakLevel >= 10" class="growth-locked-hint">（突破10时锁定）</span></label>
+            <input v-model.number="rightGrowth" type="number" min="0" class="form-input" :disabled="rightBreakLevel >= 10" />
           </div>
         </div>
 
@@ -1364,6 +1368,20 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
   background: rgba(255, 255, 255, 0.03);
   color: var(--text-dim);
   cursor: not-allowed;
+}
+
+.form-input:disabled {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-dim);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.growth-locked-hint {
+  font-size: 0.75em;
+  color: var(--text-dim);
+  font-weight: normal;
+  margin-left: 4px;
 }
 
 .stats-display {
