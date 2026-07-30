@@ -40,7 +40,7 @@ async function exportRecommendTeams() {
       return
     }
 
-    const header = ['内部ID', '阵容序号', '一号位噜咪ID', '一号位技能ID', '二号位噜咪ID', '二号位技能ID', '三号位噜咪ID', '三号位技能ID']
+    const header = ['内部ID', '阵容序号', '一号位噜咪ID', '一号位技能ID', '二号位噜咪ID', '二号位技能ID', '三号位噜咪ID', '三号位技能ID', '训练家技能ID']
     const rows = []
     const sortedIds = Object.keys(data.lumiTeams).sort((a, b) => Number(a) - Number(b))
     for (const lumiId of sortedIds) {
@@ -54,6 +54,8 @@ async function exportRecommendTeams() {
             row.push('', '')
           }
         }
+        // 训练家技能（携带率最高，0=未携带）
+        row.push(team.topTrainerSkill?.trainerId ?? '')
         rows.push(row)
       })
     }
