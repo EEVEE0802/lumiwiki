@@ -3795,5 +3795,31 @@
         "Target": 1
       }
     ]
+  },
+  {
+    "Id": 11004401,
+    "name": "P_Skill_11004401",
+    "icon": "Start_Palsy",
+    "Des": "P_SkillText_11004401",
+    "DesParam": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "BuffList": [
+      {
+        "BuffId": 12710101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 12710102,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      }
+    ]
   }
 ]

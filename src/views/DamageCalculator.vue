@@ -425,6 +425,7 @@ function calcSingleDamage(params) {
 
 // 伤害计算函数
 async function calculateDamage() {
+  console.log('[debug] calculateDamage clicked, canCalculate=', canCalculate.value, 'leftLumi=', leftLumi.value?.Id, 'rightLumi=', rightLumi.value?.Id)
   if (!canCalculate.value) return
 
   const leftStats = leftBattleStats.value
