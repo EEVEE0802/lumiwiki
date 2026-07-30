@@ -26,6 +26,12 @@ const rightLumi = ref(null)
 const rightLevel = ref(50)
 const rightBreakLevel = ref(5)
 const rightGrowth = ref(0)
+
+// 极化/钝化：突破 6 开始每级 +0.05
+const leftPolarize = computed(() => Math.max(0, leftBreakLevel.value - 5) * 0.05)
+const leftPassivate = computed(() => Math.max(0, leftBreakLevel.value - 5) * 0.05)
+const rightPolarize = computed(() => Math.max(0, rightBreakLevel.value - 5) * 0.05)
+const rightPassivate = computed(() => Math.max(0, rightBreakLevel.value - 5) * 0.05)
 const rightSkill = ref(null)
 const rightAtkBuff = ref(0)
 const rightDefBuff = ref(0)
@@ -275,7 +281,8 @@ function calcTypeBonus(atkType, defType1, defType2) {
 }
 
 // 属性克制系数
-function calcTypeCounter(atkType, defType1, defType2, counters) {
+// 极化/钝化：克制因子 16000 (1.6x) 替换为 (1.6 + 极化 - 钝化)
+function calcTypeCounter(atkType, defType1, defType2, counters, polarize = 0, passivate = 0) {
   // 查找攻击属性的数据
   const atkData = counters.find(t => t.LumiType === atkType)
   if (!atkData) return 1
@@ -287,6 +294,10 @@ function calcTypeCounter(atkType, defType1, defType2, counters) {
     'Fairy', 'Steel', 'King', 'God'
   ]
 
+  // 极化系数：每个 1.6 因子替换为 (1.6 + δ)，δ = 极化 - 钝化
+  const delta = (polarize || 0) - (passivate || 0)
+  const adjustedRate = rawRate => rawRate === 16000 ? 16000 + delta * 10000 : rawRate
+
   // 计算克制倍率
   let multiplier = 10000
 
@@ -294,7 +305,7 @@ function calcTypeCounter(atkType, defType1, defType2, counters) {
   if (defType1) {
     const defKey1 = TYPE_KEYS[defType1 - 1]
     if (defKey1 && atkData[defKey1] !== undefined) {
-      multiplier = (multiplier * atkData[defKey1]) / 10000
+      multiplier = (multiplier * adjustedRate(atkData[defKey1])) / 10000
     }
   }
 
@@ -302,7 +313,7 @@ function calcTypeCounter(atkType, defType1, defType2, counters) {
   if (defType2) {
     const defKey2 = TYPE_KEYS[defType2 - 1]
     if (defKey2 && atkData[defKey2] !== undefined) {
-      multiplier = (multiplier * atkData[defKey2]) / 10000
+      multiplier = (multiplier * adjustedRate(atkData[defKey2])) / 10000
     }
   }
 
@@ -382,7 +393,7 @@ function calcSingleDamage(params) {
   const typeBonus = calcTypeBonus(attacker.type1, defender.type1, defender.type2)
 
   // 属性克制系数
-  const typeCounter = calcTypeCounter(attacker.type1, defender.type1, defender.type2, typeCounters.value)
+  const typeCounter = calcTypeCounter(attacker.type1, defender.type1, defender.type2, typeCounters.value, attacker.polarize, defender.passivate)
 
   // 基础伤害
   let baseDamage = fLv * atkDefRatio * skillPower * typeBonus * typeCounter
@@ -424,6 +435,8 @@ async function calculateDamage() {
     level: leftLevel.value,
     breakLevel: leftBreakLevel.value,
     growth: leftGrowth.value,
+    polarize: leftPolarize.value,
+    passivate: leftPassivate.value,
     skill: leftSkill.value,
     atkBuff: leftAtkBuff.value,
     defBuff: leftDefBuff.value,
@@ -438,6 +451,8 @@ async function calculateDamage() {
     level: rightLevel.value,
     breakLevel: rightBreakLevel.value,
     growth: rightGrowth.value,
+    polarize: rightPolarize.value,
+    passivate: rightPassivate.value,
     skill: rightSkill.value,
     atkBuff: rightAtkBuff.value,
     defBuff: rightDefBuff.value,
@@ -730,7 +745,7 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
         </div>
 
         <div class="input-group" v-if="leftLumi">
-          <label class="input-label">战斗资质 (等级{{ leftLevel }} 突破+{{ leftBreakLevel }} 成长{{ leftGrowth }})</label>
+          <label class="input-label">战斗资质 (等级{{ leftLevel }} 突破+{{ leftBreakLevel }} 成长{{ leftGrowth }} 极化{{ leftPolarize.toFixed(2) }} 钝化{{ leftPassivate.toFixed(2) }})</label>
           <div class="stats-display">
             <div class="stat-item-inline">
               <span class="stat-label">HP</span>
@@ -904,7 +919,7 @@ watch([mmrLeft, mmrRight, mmrKLeft, mmrKRight, mmrScaleFactor, winner], () => {
         </div>
 
         <div class="input-group" v-if="rightLumi">
-          <label class="input-label">战斗资质 (等级{{ rightLevel }} 突破+{{ rightBreakLevel }} 成长{{ rightGrowth }})</label>
+          <label class="input-label">战斗资质 (等级{{ rightLevel }} 突破+{{ rightBreakLevel }} 成长{{ rightGrowth }} 极化{{ rightPolarize.toFixed(2) }} 钝化{{ rightPassivate.toFixed(2) }})</label>
           <div class="stats-display">
             <div class="stat-item-inline">
               <span class="stat-label">HP</span>
