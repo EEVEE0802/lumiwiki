@@ -425,7 +425,6 @@ function calcSingleDamage(params) {
 
 // 伤害计算函数
 async function calculateDamage() {
-  console.log('[debug] calculateDamage clicked, canCalculate=', canCalculate.value, 'leftLumi=', leftLumi.value?.Id, 'rightLumi=', rightLumi.value?.Id)
   if (!canCalculate.value) return
 
   const leftStats = leftBattleStats.value
@@ -988,6 +987,90 @@ watch([
       <button @click="calculateDamage" :disabled="!canCalculate" class="calculate-btn">
         计算相互伤害
       </button>
+    </div>
+
+    <div v-if="showResults" class="results-section">
+      <h2 class="results-title">计算结果</h2>
+
+      <!-- 左对右伤害 -->
+      <div class="result-group">
+        <h3 class="result-group-title">👈 左侧对右侧的伤害</h3>
+        <div class="result-cards-4">
+          <div class="result-card">
+            <div class="result-icon">⚔️</div>
+            <h4 class="result-label">普攻</h4>
+            <div class="result-value">{{ calculationResults.leftToRight.normalAttack }}%</div>
+            <div class="result-damage">{{ calculationResults.leftToRight.normalAttackDamage.toLocaleString() }} 伤害</div>
+            <div class="result-desc">非暴击</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">💥</div>
+            <h4 class="result-label">普攻</h4>
+            <div class="result-value">{{ calculationResults.leftToRight.normalAttackCrit }}%</div>
+            <div class="result-damage">{{ calculationResults.leftToRight.normalAttackCritDamage.toLocaleString() }} 伤害</div>
+            <div class="result-desc">暴击</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">✨</div>
+            <h4 class="result-label">技能</h4>
+            <div class="result-value">{{ calculationResults.leftToRight.skill }}%</div>
+            <div class="result-damage">{{ calculationResults.leftToRight.skillDamage.toLocaleString() }} 伤害</div>
+            <div class="result-desc">非暴击</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">💫</div>
+            <h4 class="result-label">技能</h4>
+            <div class="result-value">{{ calculationResults.leftToRight.skillCrit }}%</div>
+            <div class="result-damage">{{ calculationResults.leftToRight.skillCritDamage.toLocaleString() }} 伤害</div>
+            <div class="result-desc">暴击</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右对左伤害 -->
+      <div class="result-group">
+        <h3 class="result-group-title">右侧对左侧的伤害 👉</h3>
+        <div class="result-cards-4">
+          <div class="result-card">
+            <div class="result-icon">⚔️</div>
+            <h4 class="result-label">普攻</h4>
+            <div class="result-value">{{ calculationResults.rightToLeft.normalAttack }}%</div>
+            <div class="result-damage">{{ calculationResults.rightToLeft.normalAttackDamage.toLocaleString() }} 伤害</div>
+            <div class="result-desc">非暴击</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">💥</div>
+            <h4 class="result-label">普攻</h4>
+            <div class="result-value">{{ calculationResults.rightToLeft.normalAttackCrit }}%</div>
+            <div class="result-damage">{{ calculationResults.rightToLeft.normalAttackCritDamage.toLocaleString() }} 伤害</div>
+            <div class="result-desc">暴击</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">✨</div>
+            <h4 class="result-label">技能</h4>
+            <div class="result-value">{{ calculationResults.rightToLeft.skill }}%</div>
+            <div class="result-damage">{{ calculationResults.rightToLeft.skillDamage.toLocaleString() }} 伤害</div>
+            <div class="result-desc">非暴击</div>
+          </div>
+          <div class="result-card">
+            <div class="result-icon">💫</div>
+            <h4 class="result-label">技能</h4>
+            <div class="result-value">{{ calculationResults.rightToLeft.skillCrit }}%</div>
+            <div class="result-damage">{{ calculationResults.rightToLeft.skillCritDamage.toLocaleString() }} 伤害</div>
+            <div class="result-desc">暴击</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 计算详情 -->
+      <details class="calculation-details">
+        <summary>查看计算详情</summary>
+        <div class="calculation-log">
+          <div v-for="(log, index) in calculationResults.calculationLog" :key="index" class="log-item">
+            {{ log }}
+          </div>
+        </div>
+      </details>
     </div>
 
   </div>
