@@ -37,6 +37,12 @@ function buildField(columnName, columnType, selectType, clusterDatePolicy) {
 }
 
 function buildGroupBy(mode) {
+  // 登录事件只需要 b_role_id（参与走势用）
+  if (mode === 'login') {
+    return [
+      buildField('b_role_id', 'varchar', 'string', null)
+    ]
+  }
   const fields = [
     buildField('game_id_str', 'varchar', 'string', null),
     buildField('b_role_id', 'varchar', 'string', null),
@@ -68,14 +74,20 @@ function buildFilts(bZoneId, gameType, todayStr) {
     clusterDatePolicyConfigurable: false,
     specifiedClusterDate: todayStr
   })
-  return [make('b_zone_id', bZoneId), make('game_type', gameType)]
+  // 登录事件无 game_type 区分
+  const filts = [make('b_zone_id', bZoneId)]
+  if (gameType) {
+    filts.push(make('game_type', gameType))
+  }
+  return filts
 }
 
 function buildQueryParams(mode, startTime, endTime, bZoneId) {
-  const gameType = mode === 'tournament' ? 'Week1v1' : 'PVP1V1'
+  const eventName = mode === 'login' ? 'player_login' : 'battle_end'
+  const gameType = mode === 'login' ? null : (mode === 'tournament' ? 'Week1v1' : 'PVP1V1')
   const todayStr = new Date().toISOString().slice(0, 10)
   const stageInfo = [{ eventUuid: 'saN0CpyP', stage: 'sum' }]
-  const visualInfo = [{ name: 'battle_end.   ', type: 'line', show: false, isSplit: false, eventUuid: 'saN0CpyP' }]
+  const visualInfo = [{ name: `${eventName}.   `, type: 'line', show: false, isSplit: false, eventUuid: 'saN0CpyP' }]
 
   return {
     events: [{
@@ -86,12 +98,12 @@ function buildQueryParams(mode, startTime, endTime, bZoneId) {
       customEvent: '',
       customFilters: [],
       quotaEntities: null,
-      eventName: 'battle_end',
-      eventDesc: 'battle_end',
+      eventName,
+      eventDesc: eventName,
       metricName: null,
       metric: null,
       eventType: 'event',
-      eventNameDisplay: 'battle_end.   ',
+      eventNameDisplay: `${eventName}.   `,
       eventSplitIndexes: null,
       filts: [],
       quota: '',

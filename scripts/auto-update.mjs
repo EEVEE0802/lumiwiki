@@ -107,6 +107,17 @@ export async function updateMode(mode, weekInfo, options = {}) {
   console.log('→ 生成推荐配队数据 (lumi-teams.json)...')
   runCommand(process.execPath, ['scripts/process-lumi-teams.mjs', '--week', String(week)])
 
+  // 参与走势数据（仅 ladder 更新时跑：拉 login CSV + 按日 distinct 聚合）
+  // tournament 单独更新周（周一 08:00）时 ladder CSV 是上周的，跳过避免生成错误数据
+  if (mode === 'ladder') {
+    console.log('→ 生成参与走势数据 (participation-weekN.json)...')
+    try {
+      runCommand(process.execPath, ['scripts/fetch-participation-trend.mjs', '--week', String(week)])
+    } catch (e) {
+      console.error(`⚠️  参与走势生成失败（不阻塞发布）: ${e.message}`)
+    }
+  }
+
   if (!skipPublish) {
     runCommand('bash', ['publish.sh'])
   }

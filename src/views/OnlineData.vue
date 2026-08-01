@@ -128,6 +128,12 @@
       >
         👤 玩家分布
       </button>
+      <button
+        :class="['tab', { active: activeTab === 'participation' }]"
+        @click="activeTab = 'participation'"
+      >
+        📈 参与走势
+      </button>
     </div>
 
     <!-- 排行榜内容 -->
@@ -411,6 +417,31 @@
           <canvas ref="chartCanvas"></canvas>
         </div>
       </div>
+
+      <!-- 参与走势 -->
+      <div v-if="activeTab === 'participation'" class="participation-section">
+        <div v-if="!participationData" class="no-data-box">
+          <p>😅 该周暂无参与走势数据</p>
+          <p class="no-data-desc">可能是该周未拉取 player_login 数据</p>
+        </div>
+        <template v-else>
+          <div class="participation-chart-block">
+            <h3>每日参与玩家数走势</h3>
+            <p class="chart-subtitle">登录 / 天梯 / 周赛的独立玩家数（去重）</p>
+            <div class="chart-wrapper" style="min-height: 320px">
+              <canvas ref="participationCountCanvas"></canvas>
+            </div>
+          </div>
+
+          <div class="participation-chart-block">
+            <h3>每日参与占比走势</h3>
+            <p class="chart-subtitle">天梯/周赛参与玩家数 ÷ 当日登录玩家数</p>
+            <div class="chart-wrapper" style="min-height: 320px">
+              <canvas ref="participationRateCanvas"></canvas>
+            </div>
+          </div>
+        </template>
+      </div>
     </div>
     </template>
   </div>
@@ -553,6 +584,13 @@ const noData = ref(false) // 该周数据加载失败时置 true（如首周无�
 const chartCanvas = ref(null)
 const chartWrapper = ref(null)
 let chartInstance = null
+
+// 参与走势相关
+const participationData = ref(null)
+const participationCountCanvas = ref(null)
+const participationRateCanvas = ref(null)
+let participationCountChart = null
+let participationRateChart = null
 
 // 当前统计数据（支持多段位合并）
 const currentStats = computed(() => {
@@ -996,6 +1034,7 @@ function selectWeek(week) {
     if (prevWeek) loadCompareData()
   }
   loadData()
+  loadParticipationData()
 }
 
 // 对比模式切换
@@ -1193,9 +1232,90 @@ async function loadData() {
   }
 }
 
+// 加载参与走势数据
+async function loadParticipationData() {
+  try {
+    const url = `/data/online/weekly/participation-week${selectedWeek.value}.json`
+    const response = await fetch(url, { cache: 'no-cache' })
+    if (response.ok) {
+      participationData.value = await response.json()
+    } else {
+      participationData.value = null
+    }
+  } catch (e) {
+    participationData.value = null
+  }
+}
+
+// 参与走势 computed
+const participationDates = computed(() => (participationData.value?.dates || []).map(d => d.date.slice(5))) // MM-DD
+const participationCounts = computed(() => {
+  const d = participationData.value?.dates || []
+  return {
+    ladder: d.map(x => x.ladder),
+    tournament: d.map(x => x.tournament),
+    login: d.map(x => x.login)
+  }
+})
+const participationRates = computed(() => {
+  const d = participationData.value?.dates || []
+  return {
+    ladder: d.map(x => x.ladderRate),
+    tournament: d.map(x => x.tournamentRate)
+  }
+})
+
+function initParticipationCharts() {
+  if (!participationData.value) return
+
+  // 玩家数走势
+  if (participationCountCanvas.value) {
+    if (participationCountChart) participationCountChart.destroy()
+    const ctx = participationCountCanvas.value.getContext('2d')
+    participationCountChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: participationDates.value,
+        datasets: [
+          { label: '登录', data: participationCounts.value.login, borderColor: '#888', backgroundColor: 'rgba(136,136,136,0.1)', tension: 0.3, fill: true },
+          { label: '天梯参与', data: participationCounts.value.ladder, borderColor: '#667eea', backgroundColor: 'rgba(102,126,234,0.15)', tension: 0.3, fill: true },
+          { label: '周赛参与', data: participationCounts.value.tournament, borderColor: '#f97316', backgroundColor: 'rgba(249,115,22,0.15)', tension: 0.3, fill: true }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' } },
+        scales: { y: { beginAtZero: true } }
+      }
+    })
+  }
+
+  // 占比走势
+  if (participationRateCanvas.value) {
+    if (participationRateChart) participationRateChart.destroy()
+    const ctx = participationRateCanvas.value.getContext('2d')
+    participationRateChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: participationDates.value,
+        datasets: [
+          { label: '天梯占比 %', data: participationRates.value.ladder, borderColor: '#667eea', tension: 0.3 },
+          { label: '周赛占比 %', data: participationRates.value.tournament, borderColor: '#f97316', tension: 0.3 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.raw}%` } } },
+        scales: { y: { beginAtZero: true, ticks: { callback: v => v + '%' } } }
+      }
+    })
+  }
+}
+
 onMounted(async () => {
   await loadAvailableWeeks()
   await loadData()
+  await loadParticipationData()
   // 加载技能元数据（用于队伍列表显示第二技能 + 训练家技能）
   try {
     const [skills, trainers, loc] = await Promise.all([
@@ -1237,6 +1357,15 @@ watch(activeTab, (newTab) => {
       }
       updateChart()
     })
+  } else if (newTab === 'participation') {
+    nextTick(() => initParticipationCharts())
+  }
+})
+
+// 监听参与走势数据加载完成
+watch(participationData, () => {
+  if (activeTab.value === 'participation') {
+    nextTick(() => initParticipationCharts())
   }
 })
 
@@ -2072,6 +2201,25 @@ td {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+
+/* 参与走势 */
+.participation-section {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.participation-chart-block {
+  margin-bottom: 32px;
+}
+.participation-chart-block:last-child {
+  margin-bottom: 0;
+}
+.participation-chart-block h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 5px;
 }
 
 .no-data-box {

@@ -24,7 +24,8 @@ LumiWiki/
 │   │   │   └── weekly/              # 周数据
 │   │   │       ├── weeks.json       # 周列表配置
 │   │   │       ├── ladder-weekN.json
-│   │   │       └── tournament-weekN.json
+│   │   │       ├── tournament-weekN.json
+│   │   │       └── participation-weekN.json  # 每日参与走势（登录/天梯/周赛 UV）
 │   │   ├── extra.json               # 社区维护扩展数据
 │   │   ├── robot-teams.json         # 机器人阵容（道馆/天梯/家园，由脚本生成）
 │   │   ├── adventure/               # 冒险掉落
@@ -39,7 +40,8 @@ LumiWiki/
 │   └── archive/                     # 历史数据归档
 │       └── weekN/
 │           ├── ladder_weekN.csv
-│           └── tournament_weekN.csv
+│           ├── tournament_weekN.csv
+│           └── login_weekN.csv      # 参与走势用（player_login 事件）
 ├── scripts/
 │   ├── process-battle-data.js       # 天梯数据处理
 │   ├── process-tournament-data.js   # 周赛数据处理
@@ -47,7 +49,8 @@ LumiWiki/
 │   ├── convert-adventure-drop.mjs   # 冒险掉落数据处理
 │   ├── process-egg-drop.mjs         # 蛋掉落数据处理
 │   ├── process-lumi-teams.mjs       # 噜咪推荐配队数据处理
-│   ├── ta-fetch.mjs                 # 数数平台 API 拉取（自动）
+│   ├── fetch-participation-trend.mjs # 参与走势数据处理（拉 login + 按日 distinct 聚合）
+│   ├── ta-fetch.mjs                 # 数数平台 API 拉取（自动，支持 ladder/tournament/login 模式）
 │   ├── ta-auth.mjs                  # Bearer Token 自动续期
 │   ├── notify.mjs                   # 飞书/企业微信通知
 │   ├── auto-update.mjs              # 自动更新总控（拉取+处理+发布）
@@ -236,7 +239,8 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 
 | 脚本 | 职责 |
 |---|---|
-| `scripts/ta-fetch.mjs` | 3 步异步 API 拉取：发起任务 → 轮询状态 → 下载 CSV |
+| `scripts/ta-fetch.mjs` | 3 步异步 API 拉取：发起任务 → 轮询状态 → 下载 CSV（支持 `ladder` / `tournament` / `login` 三种模式） |
+| `scripts/fetch-participation-trend.mjs` | 参与走势：拉 `player_login` CSV，跨 ladder/tournament/login 按日 distinct 聚合 UV |
 | `scripts/ta-auth.mjs` | 用 refresh_token 自动续期 access_token |
 | `scripts/notify.mjs` | 飞书/企业微信通知（根据 webhook URL 自动判断平台） |
 | `scripts/update-game-data.mjs` | 游戏数据更新：svn update → 复制 JSON → 多语言 → 衍生脚本 → 立绘同步 |
@@ -338,6 +342,8 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Ladder
     → process-battle-data.js --week N
     → cp ladder-weekN.json → battle-stats.json
     → 更新 weeks.json（追加新周）
+    → process-lumi-teams.mjs（推荐配队）
+    → fetch-participation-trend.mjs --week N（参与走势：拉 login CSV + 聚合）
 
   [3/3] 统一 publish（一次 build + 一次重启，避免并行冲突）
     → bash publish.sh
@@ -440,6 +446,47 @@ npm run process-egg-drop   # 重新生成 egg-drop.json
 - **4 种蛋类型**差异见数据链路；巢穴蛋（type=16）无固定掉落已跳过。
 - 部分蛋引用了已废弃的 LumiDrop 池（如 Id=60000），会显示「数据缺失」。
 - 前端直接 fetch `/data/egg-drop.json`，无需清缓存。
+
+---
+
+## 参与走势更新
+
+线上数据页「📈 参与走势」tab 展示每周每日 UV 走势（登录 / 天梯 / 周赛），数据由 `scripts/fetch-participation-trend.mjs` 生成到 `public/data/online/weekly/participation-weekN.json`。
+
+### 数据链路
+
+```
+数数平台 player_login 事件 → login_weekN.csv           ┐
+data/archive/weekN/ladder_weekN.csv（按日拆列 CSV）    ├→ 按日 distinct b_role_id
+data/archive/weekN/tournament_weekN.csv                ┘   → 汇总登录/天梯/周赛 UV 及占比
+```
+
+CSV 里每个 `b_role_id` 对应一行，日期是**列**（每天一列，值为该玩家当天事件数）。脚本按列扫，每列开 `Set<b_role_id>` 收集 count > 0 的玩家。
+
+### 常用命令
+
+```bash
+# 指定周次（必需参数）
+node scripts/fetch-participation-trend.mjs --week 2
+
+# --skip-fetch：CSV 已存在时跳过 API 拉取，仅重新聚合（本地调试用）
+node scripts/fetch-participation-trend.mjs --week 2 --skip-fetch
+```
+
+### 集成位置
+
+- `auto-update.mjs` 的 `updateMode('ladder')` 末尾自动跑：ladder CSV 落盘后、publish 前调用
+- 每天 03:00 全量任务里跟着 ladder 一起更新，`login_weekN.csv` 每天覆盖拉取（本周累积到当天）
+- 周赛任务（周一 08:00）**不触发**，因为那时 ladder CSV 是上周数据，会产生错误结果
+- 参与走势失败**不阻塞发布**（`try/catch` 包裹），仅日志报错
+
+### 注意事项
+
+- **ta-fetch.mjs 的 login 模式**：`buildGroupBy('login')` 只 groupBy `b_role_id`（无 game_id_str/player_type）；`buildFilts` 不加 `game_type`（登录事件无此字段）；事件名是 `player_login` 不是 `battle_end`
+- **跨周同日 UV 重复**：Thinkingdata 按自然日分桶，跨周分界日（周五）在两周 CSV 里都会出现全量 UV（例如 07-17 03:00 是 Week 1/2 分界，两周 CSV 里这天的 login UV 相同）。前端展示时每周独立看，用户能理解。
+- **输出结构**：`{ updateTime, week, startTime, endTime, dates: [{date, ladder, tournament, login, ladderRate, tournamentRate}] }`
+- **前端**：`OnlineData.vue` 新增「📈 参与走势」tab，用 Chart.js 画两张折线图（UV 数走势 + 占比走势）；切换周次自动重新 fetch `participation-week{N}.json`，缺失时显示"该周暂无参与走势数据"占位
+- **首周（Week 1）**：无周赛，`tournament_week1.csv` 不存在，脚本 `dailyDistinct` 返回 `{}`，前端图例仍显示"周赛=0"
 
 ---
 

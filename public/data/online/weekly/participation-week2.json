@@ -1,0 +1,72 @@
+{
+  "updateTime": "2026-07-31T06:55:49.082Z",
+  "week": 2,
+  "startTime": "2026-07-17 03:00:00",
+  "endTime": "2026-07-24 03:00:00",
+  "dates": [
+    {
+      "date": "2026-07-17",
+      "ladder": 8923,
+      "tournament": 535,
+      "login": 54887,
+      "ladderRate": 16.26,
+      "tournamentRate": 0.97
+    },
+    {
+      "date": "2026-07-18",
+      "ladder": 9794,
+      "tournament": 1085,
+      "login": 45733,
+      "ladderRate": 21.42,
+      "tournamentRate": 2.37
+    },
+    {
+      "date": "2026-07-19",
+      "ladder": 9117,
+      "tournament": 1032,
+      "login": 39524,
+      "ladderRate": 23.07,
+      "tournamentRate": 2.61
+    },
+    {
+      "date": "2026-07-20",
+      "ladder": 8526,
+      "tournament": 217,
+      "login": 43835,
+      "ladderRate": 19.45,
+      "tournamentRate": 0.5
+    },
+    {
+      "date": "2026-07-21",
+      "ladder": 8412,
+      "tournament": 0,
+      "login": 40941,
+      "ladderRate": 20.55,
+      "tournamentRate": 0
+    },
+    {
+      "date": "2026-07-22",
+      "ladder": 7925,
+      "tournament": 0,
+      "login": 40599,
+      "ladderRate": 19.52,
+      "tournamentRate": 0
+    },
+    {
+      "date": "2026-07-23",
+      "ladder": 7223,
+      "tournament": 0,
+      "login": 37699,
+      "ladderRate": 19.16,
+      "tournamentRate": 0
+    },
+    {
+      "date": "2026-07-24",
+      "ladder": 7752,
+      "tournament": 1095,
+      "login": 39125,
+      "ladderRate": 19.81,
+      "tournamentRate": 2.8
+    }
+  ]
+}
