@@ -103,9 +103,9 @@ export async function updateMode(mode, weekInfo, options = {}) {
     ensureWeekInJson(week)
   }
 
-  // 推荐配队数据派生（依赖 ladder + tournament 最新一周）
+  // 推荐配队数据派生（默认取本周+上周，避免每周第一天样本太少）
   console.log('→ 生成推荐配队数据 (lumi-teams.json)...')
-  runCommand(process.execPath, ['scripts/process-lumi-teams.mjs', '--week', String(week)])
+  runCommand(process.execPath, ['scripts/process-lumi-teams.mjs'])
 
   // 参与走势数据（仅 ladder 更新时跑：拉 login CSV + 按日 distinct 聚合）
   // tournament 单独更新周（周一 08:00）时 ladder CSV 是上周的，跳过避免生成错误数据

@@ -2,8 +2,9 @@
   <div class="online-data">
     <div class="page-header">
       <h1>📊 线上数据</h1>
-      <p class="subtitle">{{ gameMode === 'ladder' ? '天梯1v1实时统计数据' : '周赛高端对战数据' }}</p>
-      <p class="update-time" v-if="!noData">数据更新时间: {{ formatTime(data.updateTime) }}</p>
+      <p class="subtitle">{{ subtitleText }}</p>
+      <p class="update-time" v-if="!noData && gameMode !== 'participation'">数据更新时间: {{ formatTime(data.updateTime) }}</p>
+      <p class="update-time" v-else-if="gameMode === 'participation' && participationUpdateTime">数据更新时间: {{ formatTime(participationUpdateTime) }}</p>
     </div>
 
     <!-- 玩法切换 -->
@@ -20,10 +21,71 @@
       >
         🏆 周赛
       </button>
+      <button
+        :class="['mode-btn', { active: gameMode === 'participation' }]"
+        @click="switchGameMode('participation')"
+      >
+        📈 参与走势
+      </button>
+    </div>
+
+    <!-- 参与走势独立视图 -->
+    <div v-if="gameMode === 'participation'" class="participation-view">
+      <div v-if="!participationAllData.size" class="no-data-box">
+        <p>😅 暂无参与走势数据</p>
+        <p class="no-data-desc">请等待每日 03:00 定时任务生成数据</p>
+      </div>
+      <template v-else>
+        <div class="participation-date-picker">
+          <label>
+            <span class="date-label">开始日期</span>
+            <input
+              type="date"
+              v-model="participationStartDate"
+              :min="allDatesMin"
+              :max="participationEndDate || allDatesMax"
+            >
+          </label>
+          <span class="date-sep">~</span>
+          <label>
+            <span class="date-label">结束日期</span>
+            <input
+              type="date"
+              v-model="participationEndDate"
+              :min="participationStartDate || allDatesMin"
+              :max="allDatesMax"
+            >
+          </label>
+          <span class="date-range-hint">共 {{ filteredParticipationDates.length }} 天</span>
+        </div>
+
+        <div v-if="!filteredParticipationDates.length" class="no-data-box">
+          <p>😅 所选日期范围无数据</p>
+          <p class="no-data-desc">请调整日期范围（可选：{{ allDatesMin }} ~ {{ allDatesMax }}）</p>
+        </div>
+
+        <div v-else class="participation-section">
+          <div class="participation-chart-block">
+            <h3>每日参与玩家数走势</h3>
+            <p class="chart-subtitle">登录 / 天梯 / 周赛的独立玩家数（去重）</p>
+            <div class="chart-wrapper" style="min-height: 320px">
+              <canvas ref="participationCountCanvas"></canvas>
+            </div>
+          </div>
+
+          <div class="participation-chart-block">
+            <h3>每日参与占比走势</h3>
+            <p class="chart-subtitle">天梯/周赛参与玩家数 ÷ 当日登录玩家数</p>
+            <div class="chart-wrapper" style="min-height: 320px">
+              <canvas ref="participationRateCanvas"></canvas>
+            </div>
+          </div>
+        </div>
+      </template>
     </div>
 
     <!-- 周选择器 -->
-    <div class="week-selector">
+    <div v-if="gameMode !== 'participation'" class="week-selector">
       <div class="week-tabs">
         <button
           v-for="week in availableWeeks"
@@ -49,6 +111,7 @@
       </div>
     </div>
 
+    <template v-if="gameMode !== 'participation'">
     <!-- 空状态：该周无数据（如首周无周赛） -->
     <div v-if="noData" class="empty-state">
       <p class="empty-icon">📭</p>
@@ -127,12 +190,6 @@
         @click="activeTab = 'chart'"
       >
         👤 玩家分布
-      </button>
-      <button
-        :class="['tab', { active: activeTab === 'participation' }]"
-        @click="activeTab = 'participation'"
-      >
-        📈 参与走势
       </button>
     </div>
 
@@ -417,32 +474,8 @@
           <canvas ref="chartCanvas"></canvas>
         </div>
       </div>
-
-      <!-- 参与走势 -->
-      <div v-if="activeTab === 'participation'" class="participation-section">
-        <div v-if="!participationData" class="no-data-box">
-          <p>😅 该周暂无参与走势数据</p>
-          <p class="no-data-desc">可能是该周未拉取 player_login 数据</p>
-        </div>
-        <template v-else>
-          <div class="participation-chart-block">
-            <h3>每日参与玩家数走势</h3>
-            <p class="chart-subtitle">登录 / 天梯 / 周赛的独立玩家数（去重）</p>
-            <div class="chart-wrapper" style="min-height: 320px">
-              <canvas ref="participationCountCanvas"></canvas>
-            </div>
-          </div>
-
-          <div class="participation-chart-block">
-            <h3>每日参与占比走势</h3>
-            <p class="chart-subtitle">天梯/周赛参与玩家数 ÷ 当日登录玩家数</p>
-            <div class="chart-wrapper" style="min-height: 320px">
-              <canvas ref="participationRateCanvas"></canvas>
-            </div>
-          </div>
-        </template>
-      </div>
     </div>
+    </template>
     </template>
   </div>
 </template>
@@ -585,8 +618,11 @@ const chartCanvas = ref(null)
 const chartWrapper = ref(null)
 let chartInstance = null
 
-// 参与走势相关
-const participationData = ref(null)
+// 参与走势相关（跨周合并）
+const participationAllData = ref(new Map()) // date -> { ladder, tournament, login, ladderRate, tournamentRate }
+const participationUpdateTime = ref('')
+const participationStartDate = ref('')
+const participationEndDate = ref('')
 const participationCountCanvas = ref(null)
 const participationRateCanvas = ref(null)
 let participationCountChart = null
@@ -815,8 +851,18 @@ function switchGameMode(mode) {
   // 切换玩法时重置对比模式
   compareMode.value = false
   compareData.value = null
-  loadData()
+  // 参与走势模式不需要加载天梯/周赛数据，图表刷新由 watch(gameMode) 触发
+  if (mode !== 'participation') {
+    loadData()
+  }
 }
+
+// 页面副标题
+const subtitleText = computed(() => {
+  if (gameMode.value === 'participation') return '玩家每日参与走势（登录 / 天梯 / 周赛 UV）'
+  if (gameMode.value === 'tournament') return '周赛高端对战数据'
+  return '天梯1v1实时统计数据'
+})
 
 // 格式化时间
 function formatTime(isoString) {
@@ -1034,7 +1080,6 @@ function selectWeek(week) {
     if (prevWeek) loadCompareData()
   }
   loadData()
-  loadParticipationData()
 }
 
 // 对比模式切换
@@ -1232,41 +1277,84 @@ async function loadData() {
   }
 }
 
-// 加载参与走势数据
-async function loadParticipationData() {
-  try {
-    const url = `/data/online/weekly/participation-week${selectedWeek.value}.json`
-    const response = await fetch(url, { cache: 'no-cache' })
-    if (response.ok) {
-      participationData.value = await response.json()
-    } else {
-      participationData.value = null
+// 加载所有周的参与走势数据并合并（同日期后写覆盖，因为跨周分界日 UV 相同）
+async function loadAllParticipationData() {
+  const weeks = availableWeeks.value
+  if (!weeks.length) return
+  const results = await Promise.all(
+    weeks.map(w =>
+      fetch(`/data/online/weekly/participation-week${w.value}.json`, { cache: 'no-cache' })
+        .then(r => (r.ok ? r.json() : null))
+        .catch(() => null)
+    )
+  )
+  const map = new Map()
+  let latestUpdate = ''
+  for (const json of results.filter(Boolean)) {
+    if (json.updateTime && json.updateTime > latestUpdate) latestUpdate = json.updateTime
+    for (const row of json.dates || []) {
+      map.set(row.date, {
+        ladder: row.ladder,
+        tournament: row.tournament,
+        login: row.login,
+        ladderRate: row.ladderRate,
+        tournamentRate: row.tournamentRate
+      })
     }
-  } catch (e) {
-    participationData.value = null
+  }
+  participationAllData.value = map
+  participationUpdateTime.value = latestUpdate
+
+  // 默认日期范围：最近 7 天（结束=有数据的最新日期，跳过未来 0 值日期）
+  const allDates = [...map.keys()].sort()
+  const validDates = allDates.filter(d => (map.get(d)?.login || 0) > 0)
+  if (validDates.length) {
+    const end = validDates[validDates.length - 1]
+    const endDateObj = new Date(end)
+    const startDateObj = new Date(endDateObj)
+    startDateObj.setDate(startDateObj.getDate() - 6)
+    const y = startDateObj.getFullYear()
+    const m = String(startDateObj.getMonth() + 1).padStart(2, '0')
+    const d = String(startDateObj.getDate()).padStart(2, '0')
+    const startStr = `${y}-${m}-${d}`
+    participationStartDate.value = startStr < allDates[0] ? allDates[0] : startStr
+    participationEndDate.value = end
   }
 }
 
-// 参与走势 computed
-const participationDates = computed(() => (participationData.value?.dates || []).map(d => d.date.slice(5))) // MM-DD
-const participationCounts = computed(() => {
-  const d = participationData.value?.dates || []
-  return {
-    ladder: d.map(x => x.ladder),
-    tournament: d.map(x => x.tournament),
-    login: d.map(x => x.login)
+// 按当前日期范围筛选后的数据（升序）
+const filteredParticipationDates = computed(() => {
+  const map = participationAllData.value
+  const s = participationStartDate.value
+  const e = participationEndDate.value
+  if (!s || !e || !map.size) return []
+  const rows = []
+  for (const [date, row] of map.entries()) {
+    if (date >= s && date <= e) rows.push({ date, ...row })
   }
+  rows.sort((a, b) => (a.date < b.date ? -1 : 1))
+  return rows
 })
-const participationRates = computed(() => {
-  const d = participationData.value?.dates || []
-  return {
-    ladder: d.map(x => x.ladderRate),
-    tournament: d.map(x => x.tournamentRate)
-  }
+
+const allDatesMin = computed(() => {
+  const dates = [...participationAllData.value.keys()].sort()
+  return dates[0] || ''
+})
+const allDatesMax = computed(() => {
+  const dates = [...participationAllData.value.keys()].sort()
+  return dates[dates.length - 1] || ''
 })
 
 function initParticipationCharts() {
-  if (!participationData.value) return
+  const rows = filteredParticipationDates.value
+  if (!rows.length) return
+
+  const labels = rows.map(r => r.date.slice(5)) // MM-DD
+  const login = rows.map(r => r.login)
+  const ladder = rows.map(r => r.ladder)
+  const tournament = rows.map(r => r.tournament)
+  const ladderRate = rows.map(r => r.ladderRate)
+  const tournamentRate = rows.map(r => r.tournamentRate)
 
   // 玩家数走势
   if (participationCountCanvas.value) {
@@ -1275,11 +1363,11 @@ function initParticipationCharts() {
     participationCountChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: participationDates.value,
+        labels,
         datasets: [
-          { label: '登录', data: participationCounts.value.login, borderColor: '#888', backgroundColor: 'rgba(136,136,136,0.1)', tension: 0.3, fill: true },
-          { label: '天梯参与', data: participationCounts.value.ladder, borderColor: '#667eea', backgroundColor: 'rgba(102,126,234,0.15)', tension: 0.3, fill: true },
-          { label: '周赛参与', data: participationCounts.value.tournament, borderColor: '#f97316', backgroundColor: 'rgba(249,115,22,0.15)', tension: 0.3, fill: true }
+          { label: '登录', data: login, borderColor: '#888', backgroundColor: 'rgba(136,136,136,0.1)', tension: 0.3, fill: true },
+          { label: '天梯参与', data: ladder, borderColor: '#667eea', backgroundColor: 'rgba(102,126,234,0.15)', tension: 0.3, fill: true },
+          { label: '周赛参与', data: tournament, borderColor: '#f97316', backgroundColor: 'rgba(249,115,22,0.15)', tension: 0.3, fill: true }
         ]
       },
       options: {
@@ -1297,10 +1385,10 @@ function initParticipationCharts() {
     participationRateChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: participationDates.value,
+        labels,
         datasets: [
-          { label: '天梯占比 %', data: participationRates.value.ladder, borderColor: '#667eea', tension: 0.3 },
-          { label: '周赛占比 %', data: participationRates.value.tournament, borderColor: '#f97316', tension: 0.3 }
+          { label: '天梯占比 %', data: ladderRate, borderColor: '#667eea', tension: 0.3 },
+          { label: '周赛占比 %', data: tournamentRate, borderColor: '#f97316', tension: 0.3 }
         ]
       },
       options: {
@@ -1315,7 +1403,8 @@ function initParticipationCharts() {
 onMounted(async () => {
   await loadAvailableWeeks()
   await loadData()
-  await loadParticipationData()
+  // 并发加载所有周的参与走势数据（合并去重）
+  loadAllParticipationData()
   // 加载技能元数据（用于队伍列表显示第二技能 + 训练家技能）
   try {
     const [skills, trainers, loc] = await Promise.all([
@@ -1357,14 +1446,19 @@ watch(activeTab, (newTab) => {
       }
       updateChart()
     })
-  } else if (newTab === 'participation') {
+  }
+})
+
+// 监听玩法切换到参与走势
+watch(gameMode, (newMode) => {
+  if (newMode === 'participation') {
     nextTick(() => initParticipationCharts())
   }
 })
 
-// 监听参与走势数据加载完成
-watch(participationData, () => {
-  if (activeTab.value === 'participation') {
+// 参与走势：日期范围或数据变化时重新画图
+watch(filteredParticipationDates, () => {
+  if (gameMode.value === 'participation') {
     nextTick(() => initParticipationCharts())
   }
 })
@@ -2204,6 +2298,60 @@ td {
 }
 
 /* 参与走势 */
+.participation-view {
+  max-width: 100%;
+}
+
+.participation-date-picker {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+.participation-date-picker label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  color: #444;
+}
+.participation-date-picker .date-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+.participation-date-picker input[type="date"] {
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  background: white;
+}
+.participation-date-picker input[type="date"]:hover,
+.participation-date-picker input[type="date"]:focus {
+  border-color: #667eea;
+  outline: none;
+}
+.participation-date-picker .date-sep {
+  color: #999;
+  font-weight: bold;
+}
+.participation-date-picker .date-range-hint {
+  margin-left: 8px;
+  padding: 6px 12px;
+  background: #667eea;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
 .participation-section {
   background: white;
   border-radius: 12px;

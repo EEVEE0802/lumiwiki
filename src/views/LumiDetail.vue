@@ -154,6 +154,11 @@ function getSkillType(skillId) {
 }
 
 // 推荐配队相关 helper
+const TAG_LABEL = {
+  'most-used': '使用最多',
+  'highest-winrate': '胜率最高',
+  'other': '其他推荐'
+}
 function getWinRateClass(rate) {
   const r = parseFloat(rate)
   if (r >= 60) return 'high'
@@ -696,10 +701,17 @@ const weaknesses = computed(() => {
 
     <!-- 推荐配队 -->
     <div class="section" v-if="recommendTeams.length">
-      <h2>推荐配队 <span class="section-subtitle">基于 Week {{ recommendWeeks.join('-') }} 天梯（不含人机）+ 周赛，Top {{ recommendTeams.length }}</span></h2>
+      <h2>推荐配队 <span class="section-subtitle">基于 Week {{ recommendWeeks.join('-') }} 天梯（不含人机）+ 周赛</span></h2>
       <div class="recommend-teams">
         <div v-for="(team, idx) in recommendTeams" :key="idx" class="recommend-team-card">
-          <div class="recommend-team-rank">#{{ idx + 1 }}</div>
+          <div class="recommend-team-tags">
+            <span
+              v-for="tag in (team.tags && team.tags.length ? team.tags : ['other'])"
+              :key="tag"
+              class="recommend-team-tag"
+              :class="`tag-${tag}`"
+            >{{ TAG_LABEL[tag] }}</span>
+          </div>
           <div class="recommend-team-body">
             <div class="recommend-team-lumis">
               <div
@@ -1131,12 +1143,36 @@ const weaknesses = computed(() => {
   border-radius: 10px;
   padding: 14px;
 }
-.recommend-team-rank {
-  font-size: 1.4em;
+.recommend-team-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 68px;
+  align-items: flex-start;
+}
+.recommend-team-tag {
+  font-size: 0.78em;
   font-weight: bold;
-  color: var(--accent);
-  min-width: 36px;
-  text-align: center;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.recommend-team-tag.tag-most-used {
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.12);
+  border-color: rgba(167, 139, 250, 0.35);
+}
+.recommend-team-tag.tag-highest-winrate {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.12);
+  border-color: rgba(74, 222, 128, 0.35);
+}
+.recommend-team-tag.tag-other {
+  color: #94a3b8;
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.3);
 }
 .recommend-team-body {
   flex: 1;

@@ -102,7 +102,8 @@ const homeLumis = new Set(
 console.log(`打工噜咪（家园被动，跳过推荐配队）: ${homeLumis.size} 只`)
 
 // === 构建进化链（union-find）===
-// 同一进化链的所有形态（基础/中间阶/顶端/性别分支）视为同一组，可互相替代
+// 线性进化链的所有形态（基础/中间阶/顶端）视为同一组，可互相替代
+// 分支进化（GenderEvo）不 union：起点和各分支末端各自独立，避免不同噜咪共用配队
 const evoData = JSON.parse(fs.readFileSync(
   path.join(PROJECT_ROOT, 'public/data/LumiEvolution.json'), 'utf-8'
 ))
@@ -122,12 +123,43 @@ function union(a, b) {
   const ra = find(a), rb = find(b)
   if (ra !== rb) parent.set(ra, rb)
 }
+// 预扫：按 Lumi 分组 evoLumiID 目标去重集合（判定是否为分支起点）
+// - 目标集合 size > 1 → 多目标分支（如喵鲨 → 猫鲨/雨鳍猫鲨/迷梦猫鲨等）
+// - GenderEvo 非空 → 性别分支（如花牌孔雀 → 发牌雀圣/粉扇雀圣）
+const lumiToEvoTargets = new Map()
+for (const entry of evoData) {
+  if (!entry.evoLumiID) continue
+  const base = String(entry.Lumi)
+  if (!lumiToEvoTargets.has(base)) lumiToEvoTargets.set(base, new Set())
+  lumiToEvoTargets.get(base).add(String(entry.evoLumiID))
+}
+const branchLumis = new Set()
+for (const [id, targets] of lumiToEvoTargets) {
+  if (targets.size > 1) branchLumis.add(id)
+}
+for (const entry of evoData) {
+  if (Array.isArray(entry.GenderEvo) && entry.GenderEvo.length > 0) {
+    branchLumis.add(String(entry.Lumi))
+  }
+}
+
+let branchSkipCount = 0
 for (const entry of evoData) {
   const base = String(entry.Lumi)
+  if (branchLumis.has(base)) {
+    // 分支进化起点：所有 evoLumiID + GenderEvo 边都不 union，每个分支独立计算
+    if (entry.evoLumiID) branchSkipCount++
+    if (Array.isArray(entry.GenderEvo)) branchSkipCount += entry.GenderEvo.length
+    continue
+  }
+  // 线性进化：正常 union
   if (entry.evoLumiID) union(base, String(entry.evoLumiID))
-  for (const [gender, target] of (entry.GenderEvo || [])) {
+  for (const [, target] of (entry.GenderEvo || [])) {
     union(base, String(target))
   }
+}
+if (branchLumis.size > 0) {
+  console.log(`分支进化起点: ${branchLumis.size} 只，跳过 union 边: ${branchSkipCount} 条`)
 }
 // root -> Set<lumiId>（只含实际出现在战斗数据中的形态）
 const rootToLumis = new Map()
@@ -213,11 +245,30 @@ for (const X of allLumiIds) {
     }
   }
 
-  // 按 battles 降序取 top 3
-  const top3 = Array.from(aggregated.values())
-    .sort((a, b) => b.battles - a.battles)
-    .slice(0, 3)
-    .map(agg => {
+  // 按规则选 top 3：
+  //   #1 使用最多（battles 最高）
+  //   #2 胜率最高（winRate 最高，需 battles ≥ #1 的 10%，避免小样本极端胜率；可与 #1 重复）
+  //   #3 其他推荐（排除 #1、#2 后 battles 最高）
+  const allAggs = Array.from(aggregated.values())
+  const byBattles = [...allAggs].sort((a, b) => b.battles - a.battles)
+  const slot1 = byBattles[0] || null
+  const minBattlesForWinRate = slot1 ? slot1.battles * 0.1 : 0
+  const winRateOf = agg => agg.battles > 0 ? agg.wins / agg.battles : 0
+  const slot2 = allAggs
+    .filter(a => a.battles >= minBattlesForWinRate)
+    .sort((a, b) => winRateOf(b) - winRateOf(a))[0] || null
+  const slot3 = byBattles.find(a => a !== slot1 && a !== slot2) || null
+
+  // 按 slot 顺序输出，不去重：slot1 === slot2 时前两条队伍内容相同、tags 不同
+  const slots = [
+    { agg: slot1, tag: 'most-used' },
+    { agg: slot2, tag: 'highest-winrate' },
+    { agg: slot3, tag: 'other' }
+  ].filter(s => s.agg)
+
+  const top3 = slots
+    .map(({ agg, tag }) => {
+      const tags = [tag]
       const sortedOthers = [...agg.otherLumis]
         .map(l => ({
           lumiId: l.lumiId,
@@ -234,7 +285,8 @@ for (const X of allLumiIds) {
         topTrainerSkill: top1OfMap(agg.trainerSkills, 'trainerId'),
         battles: agg.battles,
         wins: agg.wins,
-        winRate: agg.battles > 0 ? ((agg.wins / agg.battles) * 100).toFixed(2) : '0'
+        winRate: agg.battles > 0 ? ((agg.wins / agg.battles) * 100).toFixed(2) : '0',
+        tags
       }
     })
 
