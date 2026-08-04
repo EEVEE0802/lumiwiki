@@ -37,10 +37,11 @@ function buildField(columnName, columnType, selectType, clusterDatePolicy) {
 }
 
 function buildGroupBy(mode) {
-  // 登录事件只需要 b_role_id（参与走势用）
+  // 登录事件需要 b_role_id + b_create_time_str（创号时间，留存玩家过滤用）
   if (mode === 'login') {
     return [
-      buildField('b_role_id', 'varchar', 'string', null)
+      buildField('b_role_id', 'varchar', 'string', null),
+      buildField('b_create_time_str', 'varchar', 'string', null)
     ]
   }
   const fields = [

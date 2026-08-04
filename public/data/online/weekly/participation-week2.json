@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-03T08:20:05.464Z",
+  "updateTime": "2026-08-04T15:00:33.470Z",
   "week": 2,
   "startTime": "2026-07-17 03:00:00",
   "endTime": "2026-07-24 03:00:00",
@@ -12,7 +12,16 @@
       "ladderRate": 16.26,
       "tournamentRate": 0.97,
       "ladderBattlesPerUser": 10.24,
-      "tournamentBattlesPerUser": 4.1
+      "tournamentBattlesPerUser": 4.1,
+      "retention": {
+        "login": 275,
+        "ladder": 81,
+        "tournament": 23,
+        "ladderRate": 29.45,
+        "tournamentRate": 8.36,
+        "ladderBattlesPerUser": 12.88,
+        "tournamentBattlesPerUser": 18.3
+      }
     },
     {
       "date": "2026-07-18",
@@ -22,7 +31,16 @@
       "ladderRate": 21.42,
       "tournamentRate": 2.37,
       "ladderBattlesPerUser": 11.2,
-      "tournamentBattlesPerUser": 4.17
+      "tournamentBattlesPerUser": 4.17,
+      "retention": {
+        "login": 435,
+        "ladder": 110,
+        "tournament": 63,
+        "ladderRate": 25.29,
+        "tournamentRate": 14.48,
+        "ladderBattlesPerUser": 13.34,
+        "tournamentBattlesPerUser": 13.78
+      }
     },
     {
       "date": "2026-07-19",
@@ -32,7 +50,16 @@
       "ladderRate": 23.07,
       "tournamentRate": 2.61,
       "ladderBattlesPerUser": 11.52,
-      "tournamentBattlesPerUser": 4.13
+      "tournamentBattlesPerUser": 4.13,
+      "retention": {
+        "login": 582,
+        "ladder": 147,
+        "tournament": 58,
+        "ladderRate": 25.26,
+        "tournamentRate": 9.97,
+        "ladderBattlesPerUser": 11.63,
+        "tournamentBattlesPerUser": 12.43
+      }
     },
     {
       "date": "2026-07-20",
@@ -42,7 +69,16 @@
       "ladderRate": 19.45,
       "tournamentRate": 0.5,
       "ladderBattlesPerUser": 11.22,
-      "tournamentBattlesPerUser": 3.83
+      "tournamentBattlesPerUser": 3.83,
+      "retention": {
+        "login": 1055,
+        "ladder": 209,
+        "tournament": 20,
+        "ladderRate": 19.81,
+        "tournamentRate": 1.9,
+        "ladderBattlesPerUser": 14.88,
+        "tournamentBattlesPerUser": 9.2
+      }
     },
     {
       "date": "2026-07-21",
@@ -52,7 +88,16 @@
       "ladderRate": 20.55,
       "tournamentRate": 0,
       "ladderBattlesPerUser": 12.25,
-      "tournamentBattlesPerUser": 0
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 2401,
+        "ladder": 477,
+        "tournament": 0,
+        "ladderRate": 19.87,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 14.4,
+        "tournamentBattlesPerUser": 0
+      }
     },
     {
       "date": "2026-07-22",
@@ -62,7 +107,16 @@
       "ladderRate": 19.52,
       "tournamentRate": 0,
       "ladderBattlesPerUser": 11.87,
-      "tournamentBattlesPerUser": 0
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 4210,
+        "ladder": 883,
+        "tournament": 0,
+        "ladderRate": 20.97,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 13.19,
+        "tournamentBattlesPerUser": 0
+      }
     },
     {
       "date": "2026-07-23",
@@ -72,7 +126,16 @@
       "ladderRate": 19.16,
       "tournamentRate": 0,
       "ladderBattlesPerUser": 11.85,
-      "tournamentBattlesPerUser": 0
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 6198,
+        "ladder": 1269,
+        "tournament": 0,
+        "ladderRate": 20.47,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 12.65,
+        "tournamentBattlesPerUser": 0
+      }
     },
     {
       "date": "2026-07-24",
@@ -82,7 +145,16 @@
       "ladderRate": 19.81,
       "tournamentRate": 2.8,
       "ladderBattlesPerUser": 10.92,
-      "tournamentBattlesPerUser": 6.54
+      "tournamentBattlesPerUser": 6.54,
+      "retention": {
+        "login": 8581,
+        "ladder": 2273,
+        "tournament": 484,
+        "ladderRate": 26.49,
+        "tournamentRate": 5.64,
+        "ladderBattlesPerUser": 11.85,
+        "tournamentBattlesPerUser": 8.52
+      }
     }
   ]
 }

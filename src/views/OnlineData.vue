@@ -59,6 +59,12 @@
           <span class="date-range-hint">共 {{ filteredParticipationDates.length }} 天</span>
         </div>
 
+        <div class="participation-view-mode" v-if="hasRetentionData">
+          <span class="view-mode-label">统计口径</span>
+          <button :class="['view-mode-btn', { active: !participationRetention }]" @click="participationRetention = false">全量</button>
+          <button :class="['view-mode-btn', { active: participationRetention }]" @click="participationRetention = true">留存（创号≥7天）</button>
+        </div>
+
         <div v-if="!filteredParticipationDates.length" class="no-data-box">
           <p>😅 所选日期范围无数据</p>
           <p class="no-data-desc">请调整日期范围（可选：{{ allDatesMin }} ~ {{ allDatesMax }}）</p>
@@ -637,6 +643,7 @@ const participationBpuCanvas = ref(null)
 let participationCountChart = null
 let participationRateChart = null
 let participationBpuChart = null
+const participationRetention = ref(false) // false=全量, true=留存玩家（创号≥7天）
 
 // 当前统计数据（支持多段位合并）
 const currentStats = computed(() => {
@@ -1310,7 +1317,8 @@ async function loadAllParticipationData() {
         ladderRate: row.ladderRate,
         tournamentRate: row.tournamentRate,
         ladderBattlesPerUser: row.ladderBattlesPerUser || 0,
-        tournamentBattlesPerUser: row.tournamentBattlesPerUser || 0
+        tournamentBattlesPerUser: row.tournamentBattlesPerUser || 0,
+        retention: row.retention || null
       })
     }
   }
@@ -1357,18 +1365,29 @@ const allDatesMax = computed(() => {
   return dates[dates.length - 1] || ''
 })
 
+// 数据集中是否含留存维度（老数据无 retention，此时隐藏切换、默认全量）
+const hasRetentionData = computed(() => {
+  for (const row of participationAllData.value.values()) {
+    if (row.retention) return true
+  }
+  return false
+})
+
 function initParticipationCharts() {
   const rows = filteredParticipationDates.value
   if (!rows.length) return
 
   const labels = rows.map(r => r.date.slice(5)) // MM-DD
-  const login = rows.map(r => r.login)
-  const ladder = rows.map(r => r.ladder)
-  const tournament = rows.map(r => r.tournament)
-  const ladderRate = rows.map(r => r.ladderRate)
-  const tournamentRate = rows.map(r => r.tournamentRate)
-  const ladderBpu = rows.map(r => r.ladderBattlesPerUser || 0)
-  const tournamentBpu = rows.map(r => r.tournamentBattlesPerUser || 0)
+  // 留存模式下从 retention 取值（无 retention 字段时回退 0）
+  const useRetention = participationRetention.value
+  const pick = r => (useRetention ? (r.retention || {}) : r)
+  const login = rows.map(r => pick(r).login ?? 0)
+  const ladder = rows.map(r => pick(r).ladder ?? 0)
+  const tournament = rows.map(r => pick(r).tournament ?? 0)
+  const ladderRate = rows.map(r => pick(r).ladderRate ?? 0)
+  const tournamentRate = rows.map(r => pick(r).tournamentRate ?? 0)
+  const ladderBpu = rows.map(r => pick(r).ladderBattlesPerUser ?? 0)
+  const tournamentBpu = rows.map(r => pick(r).tournamentBattlesPerUser ?? 0)
 
   // 玩家数走势
   if (participationCountCanvas.value) {
@@ -1493,6 +1512,13 @@ watch(gameMode, (newMode) => {
 
 // 参与走势：日期范围或数据变化时重新画图
 watch(filteredParticipationDates, () => {
+  if (gameMode.value === 'participation') {
+    nextTick(() => initParticipationCharts())
+  }
+})
+
+// 参与走势：切换全量/留存统计口径时重新画图
+watch(participationRetention, () => {
   if (gameMode.value === 'participation') {
     nextTick(() => initParticipationCharts())
   }
@@ -2385,6 +2411,40 @@ td {
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: bold;
+}
+
+.participation-view-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.participation-view-mode .view-mode-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: bold;
+}
+.participation-view-mode .view-mode-btn {
+  padding: 7px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.participation-view-mode .view-mode-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+.participation-view-mode .view-mode-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
 }
 
 .participation-section {

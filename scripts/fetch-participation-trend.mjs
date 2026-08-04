@@ -80,18 +80,66 @@ function parseCSVLine(line) {
   return result
 }
 
-// 按日 distinct b_role_id 同时累加场次
-// 返回: { uv: {date -> UV}, battles: {date -> 场次总和} }
-async function dailyDistinct(csvPath) {
-  if (!fs.existsSync(csvPath)) return { uv: {}, battles: {} }
+const ONE_DAY_MS = 24 * 60 * 60 * 1000
+
+// 判定玩家在某天是否算"留存玩家"（创号满 7 天）
+// date / createDay 均为 "YYYY-MM-DD"
+function isRetention(date, createDay) {
+  const diff = (new Date(date) - new Date(createDay.slice(0, 10))) / ONE_DAY_MS
+  return diff >= 7
+}
+
+// 从 login CSV 建立 b_role_id -> 创号日期(YYYY-MM-DD) 的映射
+// （login CSV 带 b_create_time_str 列；天梯/周赛 CSV 复用此映射判定留存）
+async function buildCreateTimeMap(csvPath) {
+  const map = new Map()
+  if (!fs.existsSync(csvPath)) return map
+  const fileStream = fs.createReadStream(csvPath)
+  const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity })
+
+  let headers = null
+  let bRoleIdIdx = -1
+  let createTimeIdx = -1
+  for await (const line of rl) {
+    if (!line.trim()) continue
+    const values = parseCSVLine(line)
+    if (!headers) {
+      headers = values.map(h => h.replace(/^﻿/, '').trim())
+      bRoleIdIdx = headers.indexOf('b_role_id')
+      createTimeIdx = headers.indexOf('b_create_time_str')
+      if (bRoleIdIdx === -1 || createTimeIdx === -1) {
+        console.warn(`⚠️ login CSV 缺少 b_role_id / b_create_time_str 列，留存统计不可用`)
+        return map
+      }
+      continue
+    }
+    const bRoleId = values[bRoleIdIdx]
+    const createTimeStr = values[createTimeIdx]
+    if (bRoleId && createTimeStr) {
+      // b_create_time_str 形如 "2026-07-15 10:23:00"，取日期部分
+      map.set(bRoleId, createTimeStr.slice(0, 10))
+    }
+  }
+  console.log(`  创号时间映射: ${map.size} 个玩家`)
+  return map
+}
+
+// 按日 distinct b_role_id 同时累加场次，可附带留存统计
+// createTimeMap: b_role_id -> 创号日期（来自 login CSV，可选；无则不统计留存）
+// 返回: { uv, retentionUv, battles, retentionBattles }（各为 date -> 数值）
+async function dailyDistinct(csvPath, createTimeMap) {
+  const empty = { uv: {}, retentionUv: {}, battles: {}, retentionBattles: {} }
+  if (!fs.existsSync(csvPath)) return empty
   const fileStream = fs.createReadStream(csvPath)
   const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity })
 
   let headers = null
   let dateCols = []  // [{idx, date}]
   let bRoleIdIdx = -1
-  const dailySets = {}     // date -> Set<b_role_id>
-  const dailyBattles = {}  // date -> 场次累加
+  const dailySets = {}          // date -> Set<b_role_id>（全量）
+  const retentionSets = {}      // date -> Set<b_role_id>（留存）
+  const dailyBattles = {}       // date -> 场次累加（全量）
+  const retentionBattles = {}   // date -> 场次累加（留存）
 
   for await (const line of rl) {
     if (!line.trim()) continue
@@ -104,67 +152,98 @@ async function dailyDistinct(csvPath) {
       bRoleIdIdx = headers.indexOf('b_role_id')
       if (bRoleIdIdx === -1) {
         console.error(`❌ CSV 未找到 b_role_id 列: ${csvPath}`)
-        return { uv: {}, battles: {} }
+        return empty
       }
       dateCols.forEach(({ date }) => {
         dailySets[date] = new Set()
+        retentionSets[date] = new Set()
         dailyBattles[date] = 0
+        retentionBattles[date] = 0
       })
       continue
     }
     const bRoleId = values[bRoleIdIdx]
     if (!bRoleId) continue
+    const createDay = createTimeMap ? createTimeMap.get(bRoleId) : null
     for (const { idx, date } of dateCols) {
       const count = parseInt(values[idx])
       if (count > 0) {
         dailySets[date].add(bRoleId)
         dailyBattles[date] += count
+        if (createDay && isRetention(date, createDay)) {
+          retentionSets[date].add(bRoleId)
+          retentionBattles[date] += count
+        }
       }
     }
   }
 
   const uv = {}
-  for (const [date, set] of Object.entries(dailySets)) uv[date] = set.size
-  return { uv, battles: dailyBattles }
+  const retentionUv = {}
+  for (const [date, set] of Object.entries(dailySets)) {
+    uv[date] = set.size
+    retentionUv[date] = retentionSets[date].size
+  }
+  return { uv, retentionUv, battles: dailyBattles, retentionBattles }
 }
 
+console.log(`\n建立创号时间映射（login CSV）...`)
+const createTimeMap = await buildCreateTimeMap(loginCsvPath)
+
 console.log(`\n处理 ladder CSV...`)
-const ladderResult = await dailyDistinct(ladderCsvPath)
+const ladderResult = await dailyDistinct(ladderCsvPath, createTimeMap)
 console.log(`  天梯每日 UV:`, ladderResult.uv)
-console.log(`  天梯每日场次:`, ladderResult.battles)
+console.log(`  天梯每日留存 UV:`, ladderResult.retentionUv)
 
 console.log(`处理 tournament CSV...`)
-const tournamentResult = await dailyDistinct(tournamentCsvPath)
+const tournamentResult = await dailyDistinct(tournamentCsvPath, createTimeMap)
 console.log(`  周赛每日 UV:`, tournamentResult.uv)
-console.log(`  周赛每日场次:`, tournamentResult.battles)
+console.log(`  周赛每日留存 UV:`, tournamentResult.retentionUv)
 
 console.log(`处理 login CSV...`)
-const loginResult = await dailyDistinct(loginCsvPath)
+const loginResult = await dailyDistinct(loginCsvPath, createTimeMap)
 console.log(`  登录每日 UV:`, loginResult.uv)
+console.log(`  登录每日留存 UV:`, loginResult.retentionUv)
 
-// 合并所有日期，计算比例 + 场均
+// 合并所有日期，计算比例 + 场均（全量 + 留存）
 const allDates = [...new Set([
   ...Object.keys(ladderResult.uv),
   ...Object.keys(tournamentResult.uv),
   ...Object.keys(loginResult.uv)
 ])].sort()
 
+// 取某个 result 在某天的指标（全量 uv/battles + 留存 retUv/retBattles）
+const dayMetrics = (res, date) => ({
+  uv: res.uv[date] || 0,
+  battles: res.battles[date] || 0,
+  retUv: res.retentionUv[date] || 0,
+  retBattles: res.retentionBattles[date] || 0,
+})
+
 const result = allDates.map(date => {
-  const ladder = ladderResult.uv[date] || 0
-  const tournament = tournamentResult.uv[date] || 0
-  const login = loginResult.uv[date] || 0
-  const ladderBattles = ladderResult.battles[date] || 0
-  const tournamentBattles = tournamentResult.battles[date] || 0
+  const L = dayMetrics(ladderResult, date)
+  const T = dayMetrics(tournamentResult, date)
+  const G = dayMetrics(loginResult, date)
   return {
     date,
-    ladder,
-    tournament,
-    login,
-    ladderRate: login > 0 ? +(ladder / login * 100).toFixed(2) : 0,
-    tournamentRate: login > 0 ? +(tournament / login * 100).toFixed(2) : 0,
+    ladder: L.uv,
+    tournament: T.uv,
+    login: G.uv,
+    ladderRate: G.uv > 0 ? +(L.uv / G.uv * 100).toFixed(2) : 0,
+    tournamentRate: G.uv > 0 ? +(T.uv / G.uv * 100).toFixed(2) : 0,
     // 平均每个参与玩家当天场次（UV=0 时为 0，避免除零）
-    ladderBattlesPerUser: ladder > 0 ? +(ladderBattles / ladder).toFixed(2) : 0,
-    tournamentBattlesPerUser: tournament > 0 ? +(tournamentBattles / tournament).toFixed(2) : 0,
+    ladderBattlesPerUser: L.uv > 0 ? +(L.battles / L.uv).toFixed(2) : 0,
+    tournamentBattlesPerUser: T.uv > 0 ? +(T.battles / T.uv).toFixed(2) : 0,
+    // 留存玩家（创号满 7 天）维度
+    retention: {
+      login: G.retUv,
+      ladder: L.retUv,
+      tournament: T.retUv,
+      ladderRate: G.retUv > 0 ? +(L.retUv / G.retUv * 100).toFixed(2) : 0,
+      tournamentRate: G.retUv > 0 ? +(T.retUv / G.retUv * 100).toFixed(2) : 0,
+      ladderBattlesPerUser: L.retUv > 0 ? +(L.retBattles / L.retUv).toFixed(2) : 0,
+      tournamentBattlesPerUser: T.retUv > 0 ? +(T.retBattles / T.retUv).toFixed(2) : 0,
+    },
   }
 })
 
@@ -181,5 +260,6 @@ fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf-8')
 console.log(`\n✓ 输出: ${outputPath}`)
 console.log(`  共 ${result.length} 天`)
 result.forEach(r => {
-  console.log(`  ${r.date}: 天梯=${r.ladder}(${r.ladderBattlesPerUser}场/人) 周赛=${r.tournament}(${r.tournamentBattlesPerUser}场/人) 登录=${r.login}`)
+  const ret = r.retention
+  console.log(`  ${r.date}: 天梯=${r.ladder}(留存${ret.ladder}) 周赛=${r.tournament}(留存${ret.tournament}) 登录=${r.login}(留存${ret.login})`)
 })
