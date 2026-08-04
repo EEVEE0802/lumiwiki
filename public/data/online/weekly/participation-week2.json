@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-07-31T06:55:49.082Z",
+  "updateTime": "2026-08-03T08:20:05.464Z",
   "week": 2,
   "startTime": "2026-07-17 03:00:00",
   "endTime": "2026-07-24 03:00:00",
@@ -10,7 +10,9 @@
       "tournament": 535,
       "login": 54887,
       "ladderRate": 16.26,
-      "tournamentRate": 0.97
+      "tournamentRate": 0.97,
+      "ladderBattlesPerUser": 10.24,
+      "tournamentBattlesPerUser": 4.1
     },
     {
       "date": "2026-07-18",
@@ -18,7 +20,9 @@
       "tournament": 1085,
       "login": 45733,
       "ladderRate": 21.42,
-      "tournamentRate": 2.37
+      "tournamentRate": 2.37,
+      "ladderBattlesPerUser": 11.2,
+      "tournamentBattlesPerUser": 4.17
     },
     {
       "date": "2026-07-19",
@@ -26,7 +30,9 @@
       "tournament": 1032,
       "login": 39524,
       "ladderRate": 23.07,
-      "tournamentRate": 2.61
+      "tournamentRate": 2.61,
+      "ladderBattlesPerUser": 11.52,
+      "tournamentBattlesPerUser": 4.13
     },
     {
       "date": "2026-07-20",
@@ -34,7 +40,9 @@
       "tournament": 217,
       "login": 43835,
       "ladderRate": 19.45,
-      "tournamentRate": 0.5
+      "tournamentRate": 0.5,
+      "ladderBattlesPerUser": 11.22,
+      "tournamentBattlesPerUser": 3.83
     },
     {
       "date": "2026-07-21",
@@ -42,7 +50,9 @@
       "tournament": 0,
       "login": 40941,
       "ladderRate": 20.55,
-      "tournamentRate": 0
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 12.25,
+      "tournamentBattlesPerUser": 0
     },
     {
       "date": "2026-07-22",
@@ -50,7 +60,9 @@
       "tournament": 0,
       "login": 40599,
       "ladderRate": 19.52,
-      "tournamentRate": 0
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 11.87,
+      "tournamentBattlesPerUser": 0
     },
     {
       "date": "2026-07-23",
@@ -58,7 +70,9 @@
       "tournament": 0,
       "login": 37699,
       "ladderRate": 19.16,
-      "tournamentRate": 0
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 11.85,
+      "tournamentBattlesPerUser": 0
     },
     {
       "date": "2026-07-24",
@@ -66,7 +80,9 @@
       "tournament": 1095,
       "login": 39125,
       "ladderRate": 19.81,
-      "tournamentRate": 2.8
+      "tournamentRate": 2.8,
+      "ladderBattlesPerUser": 10.92,
+      "tournamentBattlesPerUser": 6.54
     }
   ]
 }

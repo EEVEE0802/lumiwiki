@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闪耀吧噜咪 · 噜咪生产小组 M4 里程碑总结</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-1: #0f0b1e;
+    --bg-2: #1a1235;
+    --bg-3: #241a4a;
+    --ink-1: #f5f0ff;
+    --ink-2: #c9bfe8;
+    --ink-3: #8879b8;
+    --accent-pink: #ff6ec7;
+    --accent-cyan: #4dd8ff;
+    --accent-yellow: #ffd93d;
+    --accent-purple: #b78dff;
+    --accent-green: #6ee7a8;
+    --accent-orange: #ffa26b;
+    --accent-red: #ff7a7a;
+    --gradient-hero: linear-gradient(135deg, #ff6ec7 0%, #b78dff 50%, #4dd8ff 100%);
+    --gradient-card: linear-gradient(145deg, rgba(183,141,255,0.15), rgba(77,216,255,0.08));
+    --gradient-star: linear-gradient(135deg, #ffd93d, #ff6ec7, #b78dff, #4dd8ff, #6ee7a8);
+    --shadow-glow: 0 0 40px rgba(255,110,199,0.25), 0 0 80px rgba(77,216,255,0.15);
+    --border-glow: 1px solid rgba(183,141,255,0.3);
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--bg-1);
+    color: var(--ink-1);
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'HarmonyOS Sans SC', -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(255,110,199,0.15) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 70%, rgba(77,216,255,0.15) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 50%, rgba(183,141,255,0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(2px 2px at 15% 20%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 40% 60%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 70% 30%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(2px 2px at 25% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 15%, rgba(255,255,255,0.6) 0%, transparent 100%);
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 0;
+    animation: twinkle 8s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.4; }
+  }
+
+  .presentation {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    padding: 4vh 6vw;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    overflow-y: auto;
+  }
+
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .slide-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    background: rgba(255,110,199,0.15);
+    border: 1px solid rgba(255,110,199,0.4);
+    color: var(--accent-pink);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
+    align-self: flex-start;
+  }
+
+  h1.slide-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--ink-2);
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* ========== 封面页 ========== */
+  .cover {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4vh 8vw;
+  }
+  .cover .emoji-hero {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  .cover h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    background: var(--gradient-star);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 6s ease infinite;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  @keyframes shine {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .cover .cover-sub {
+    font-size: 1.8rem;
+    color: var(--ink-2);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+  .cover .cover-meta {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    color: var(--ink-3);
+    font-size: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  .cover .cover-meta span::before {
+    content: '✦';
+    color: var(--accent-pink);
+    margin-right: 8px;
+  }
+
+  /* ========== 卡片 ========== */
+  .card {
+    background: var(--gradient-card);
+    border: var(--border-glow);
+    border-radius: 16px;
+    padding: 1.2rem 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+  }
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink-1);
+    margin-bottom: 0.4rem;
+  }
+  .card-desc {
+    font-size: 0.95rem;
+    color: var(--ink-2);
+    line-height: 1.6;
+  }
+
+  /* ========== 目录页 ========== */
+  .toc-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(183,141,255,0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  .toc-item:hover {
+    background: rgba(183,141,255,0.1);
+    transform: translateX(6px);
+  }
+  .toc-num {
+    font-size: 2rem;
+    font-weight: 900;
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    min-width: 45px;
+  }
+  .toc-text {
+    font-size: 1.05rem;
+    color: var(--ink-1);
+    font-weight: 500;
+  }
+
+  /* ========== 重点方向 4 卡 ========== */
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 1rem;
+  }
+  .grid-4 .card {
+    padding: 1.5rem;
+  }
+
+  /* ========== 表格 ========== */
+  .result-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: 0.5rem;
+  }
+  .result-table th {
+    text-align: left;
+    padding: 10px 16px;
+    color: var(--accent-cyan);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .result-table td {
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.04);
+    border-top: 1px solid rgba(183,141,255,0.15);
+    border-bottom: 1px solid rgba(183,141,255,0.15);
+    color: var(--ink-1);
+    font-size: 0.95rem;
+  }
+  .result-table tr td:first-child {
+    border-left: 1px solid rgba(183,141,255,0.15);
+    border-radius: 10px 0 0 10px;
+    font-weight: 600;
+  }
+  .result-table tr td:last-child {
+    border-right: 1px solid rgba(183,141,255,0.15);
+    border-radius: 0 10px 10px 0;
+  }
+  .status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .status-done { background: rgba(110,231,168,0.15); color: var(--accent-green); border: 1px solid rgba(110,231,168,0.4); }
+  .status-star { background: rgba(255,217,61,0.15); color: var(--accent-yellow); border: 1px solid rgba(255,217,61,0.4); }
+  .status-change { background: rgba(255,162,107,0.15); color: var(--accent-orange); border: 1px solid rgba(255,162,107,0.4); }
+  .status-delay { background: rgba(255,122,122,0.15); color: var(--accent-red); border: 1px solid rgba(255,122,122,0.4); }
+
+  /* ========== 数据对比 ========== */
+  .compare-box {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255,110,199,0.1), rgba(77,216,255,0.1));
+    border: 1px solid rgba(255,110,199,0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 1rem 0;
+  }
+  .compare-item {
+    text-align: center;
+  }
+  .compare-label {
+    font-size: 0.9rem;
+    color: var(--ink-3);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+  }
+  .compare-value {
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .compare-before .compare-value { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--accent-red); }
+  .compare-after .compare-value { background: var(--gradient-hero); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .compare-arrow {
+    font-size: 2.5rem;
+    color: var(--accent-yellow);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+  .compare-boost {
+    text-align: center;
+    margin-top: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent-yellow);
+  }
+
+  /* ========== 突出星彩 ========== */
+  .highlight-star {
+    background: linear-gradient(135deg, rgba(255,110,199,0.2), rgba(255,217,61,0.15), rgba(77,216,255,0.15));
+    border: 2px solid rgba(255,217,61,0.5);
+    border-radius: 20px;
+    padding: 1.5rem 1.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .highlight-star::before {
+    content: '⭐';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 8rem;
+    opacity: 0.1;
+    transform: rotate(15deg);
+  }
+  .highlight-star h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    background: var(--gradient-star);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 6s ease infinite;
+  }
+  .highlight-star .star-desc {
+    font-size: 1.05rem;
+    color: var(--ink-1);
+    line-height: 1.7;
+  }
+  .highlight-star ul {
+    margin-top: 0.8rem;
+    padding-left: 1.5rem;
+  }
+  .highlight-star li {
+    color: var(--ink-2);
+    line-height: 2;
+  }
+
+  /* ========== 通用列表 ========== */
+  .info-block {
+    background: rgba(255,255,255,0.03);
+    border-left: 4px solid var(--accent-purple);
+    border-radius: 4px 12px 12px 4px;
+    padding: 1rem 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+  .info-block.pink { border-left-color: var(--accent-pink); }
+  .info-block.cyan { border-left-color: var(--accent-cyan); }
+  .info-block.yellow { border-left-color: var(--accent-yellow); }
+  .info-block.green { border-left-color: var(--accent-green); }
+  .info-block.orange { border-left-color: var(--accent-orange); }
+  .info-block.red { border-left-color: var(--accent-red); }
+
+  .info-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink-1);
+    margin-bottom: 0.4rem;
+  }
+  .info-body {
+    color: var(--ink-2);
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+  .info-body ul {
+    padding-left: 1.3rem;
+    margin-top: 0.3rem;
+  }
+  .info-body li {
+    margin-bottom: 0.3rem;
+  }
+
+  strong.hl { color: var(--accent-yellow); font-weight: 700; }
+  strong.hl-pink { color: var(--accent-pink); font-weight: 700; }
+  strong.hl-cyan { color: var(--accent-cyan); font-weight: 700; }
+  strong.hl-green { color: var(--accent-green); font-weight: 700; }
+
+  .quote-box {
+    background: linear-gradient(135deg, rgba(255,217,61,0.1), rgba(255,110,199,0.05));
+    border: 1px dashed rgba(255,217,61,0.5);
+    border-radius: 12px;
+    padding: 1rem 1.3rem;
+    margin-top: 0.8rem;
+    color: var(--accent-yellow);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .quote-box::before {
+    content: '💡';
+    margin-right: 8px;
+  }
+
+  /* ========== 反思页 · 双反思 ========== */
+  .reflection {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,162,107,0.3);
+    border-radius: 14px;
+    padding: 1rem 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+  .reflection h4 {
+    color: var(--accent-orange);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .reflection .r-body {
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    line-height: 1.6;
+  }
+  .reflection .r-take {
+    margin-top: 0.6rem;
+    padding: 0.6rem 0.9rem;
+    background: rgba(255,217,61,0.1);
+    border-left: 3px solid var(--accent-yellow);
+    color: var(--ink-1);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    border-radius: 4px;
+  }
+
+  /* ========== M5 规划 ========== */
+  .plan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+  .plan-item {
+    padding: 0.8rem 1rem;
+    background: rgba(183,141,255,0.08);
+    border: 1px solid rgba(183,141,255,0.25);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: var(--ink-1);
+  }
+  .plan-icon {
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  /* ========== 致谢页 ========== */
+  .thanks {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .thanks h2 {
+    font-size: 3rem;
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2rem;
+  }
+  .thanks .team {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 340px));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .thanks .member {
+    padding: 1rem 1.4rem;
+    background: var(--gradient-card);
+    border: var(--border-glow);
+    border-radius: 12px;
+    text-align: left;
+  }
+  .thanks .m-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    margin-bottom: 0.3rem;
+  }
+  .thanks .m-role {
+    font-size: 0.9rem;
+    color: var(--ink-2);
+  }
+  .thanks .final {
+    font-size: 1.6rem;
+    background: var(--gradient-star);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 6s ease infinite;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+
+  /* ========== 导航控件 ========== */
+  .nav {
+    position: fixed;
+    bottom: 20px;
+    right: 24px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+    align-items: center;
+  }
+  .nav button {
+    width: 40px; height: 40px;
+    background: rgba(183,141,255,0.15);
+    border: 1px solid rgba(183,141,255,0.4);
+    color: var(--ink-1);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+  }
+  .nav button:hover {
+    background: rgba(255,110,199,0.3);
+    border-color: var(--accent-pink);
+    transform: scale(1.1);
+  }
+  .page-info {
+    padding: 0 14px;
+    color: var(--ink-2);
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(15,11,30,0.6);
+    border-radius: 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(183,141,255,0.3);
+    backdrop-filter: blur(10px);
+  }
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: var(--gradient-hero);
+    z-index: 200;
+    transition: width 0.4s ease;
+  }
+
+  /* 内容太多时的滚动条美化 */
+  .slide::-webkit-scrollbar { width: 8px; }
+  .slide::-webkit-scrollbar-track { background: transparent; }
+  .slide::-webkit-scrollbar-thumb {
+    background: rgba(183,141,255,0.3);
+    border-radius: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .grid-4, .toc-list, .plan-grid, .thanks .team {
+      grid-template-columns: 1fr;
+    }
+    h1.slide-title { font-size: 1.8rem; }
+    .cover h1 { font-size: 2.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<div class="presentation" id="presentation">
+
+  <!-- ==================== Page 1 · 封面 ==================== -->
+  <section class="slide cover active">
+    <div class="emoji-hero">✨🎮✨</div>
+    <h1>闪耀吧噜咪</h1>
+    <div class="cover-sub">噜咪生产小组 · M4 里程碑总结</div>
+    <div class="cover-meta">
+      <span>周期 2026.5.25 - 2026.8.2</span>
+      <span>汇报人 EEVEE</span>
+      <span>团队内部汇报</span>
+    </div>
+  </section>
+
+  <!-- ==================== Page 2 · 目录 ==================== -->
+  <section class="slide">
+    <span class="slide-tag">CONTENTS</span>
+    <h1 class="slide-title">目录</h1>
+    <div class="subtitle">这份总结,我们会聊这些 ✍️</div>
+    <div class="content">
+      <div class="toc-list">
+        <div class="toc-item"><div class="toc-num">01</div><div class="toc-text">M4 工作重点</div></div>
+        <div class="toc-item"><div class="toc-num">02</div><div class="toc-text">核心成果一览</div></div>
+        <div class="toc-item"><div class="toc-num">03</div><div class="toc-text">重点模块 · 噜咪生产</div></div>
+        <div class="toc-item"><div class="toc-num">04</div><div class="toc-text">重点模块 · 品质感 &amp; 个性化</div></div>
+        <div class="toc-item"><div class="toc-num">05</div><div class="toc-text">重点模块 · AI 工具突破</div></div>
+        <div class="toc-item"><div class="toc-num">06</div><div class="toc-text">重点模块 · PVE &amp; PVP</div></div>
+        <div class="toc-item"><div class="toc-num">07</div><div class="toc-text">线上数据 · lumiwiki</div></div>
+        <div class="toc-item"><div class="toc-num">08</div><div class="toc-text">反思与经验沉淀</div></div>
+        <div class="toc-item"><div class="toc-num">09</div><div class="toc-text">M5 规划展望</div></div>
+        <div class="toc-item"><div class="toc-num">10</div><div class="toc-text">致谢 🙌</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Page 3 · M4 工作重点 ==================== -->
+  <section class="slide">
+    <span class="slide-tag">01 · 工作重点</span>
+    <h1 class="slide-title">M4 四大重点方向</h1>
+    <div class="subtitle">本里程碑,我们主要在这四条战线发力 🚀</div>
+    <div class="content">
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-icon">🌟</div>
+          <div class="card-title">噜咪生产</div>
+          <div class="card-desc">小组的核心工作 —— 新噜咪设计 + 老技能重构</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚔️</div>
+          <div class="card-title">战斗系统 &amp; 工具优化</div>
+          <div class="card-desc">底层能力建设 + AI 工具突破,效率大跃升</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎨</div>
+          <div class="card-title">品质感 &amp; 个性化</div>
+          <div class="card-desc">星彩玩法 + 高品质卡牌表现,拉高玩家喜爱度</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏟️</div>
+          <div class="card-title">PVE / PVP 玩法</div>
+          <div class="card-desc">道馆战 · 无限爬塔 · 天梯 · 周赛全面迭代</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Page 4 · 核心成果一览 ==================== -->
+  <section class="slide">
+    <span class="slide-tag">02 · 成果一览</span>
+    <h1 class="slide-title">M4 核心成果一览 🏆</h1>
+    <div class="subtitle">一张表看完这 10 周的产出</div>
+    <div class="content">
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th>模块</th>
+            <th>关键产出</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🌟 噜咪生产</td>
+            <td>新增 10+ 噜咪 · 重构 20+ 技能</td>
+            <td><span class="status-badge status-done">正常推进</span></td>
+          </tr>
+          <tr>
+            <td>🎨 品质感 &amp; 个性化</td>
+            <td>噜咪星彩 · 卡牌表现拔高 · 体型 · 徽章</td>
+            <td><span class="status-badge status-star">效果超预期</span></td>
+          </tr>
+          <tr>
+            <td>🤖 战斗工具 AI 化</td>
+            <td>配置效率 2-3h → 30min(提效 80%+)</td>
+            <td><span class="status-badge status-star">重点突破</span></td>
+          </tr>
+          <tr>
+            <td>⚔️ 战斗底层优化</td>
+            <td>疲劳机制 · 按键缓存(竞技公平性)</td>
+            <td><span class="status-badge status-done">正常推进</span></td>
+          </tr>
+          <tr>
+            <td>🏟️ PVE 玩法</td>
+            <td>道馆战优化 + 无限爬塔(本周外放)</td>
+            <td><span class="status-badge status-change">方向调整</span></td>
+          </tr>
+          <tr>
+            <td>🏆 PVP 玩法</td>
+            <td>天梯优化 · 周赛 2v2 落地</td>
+            <td><span class="status-badge status-done">已完成</span></td>
+          </tr>
+          <tr>
+            <td>📅 月赛 / AI 拓展</td>
+            <td>因优先级排期延后</td>
+            <td><span class="status-badge status-delay">延期</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== Page 5 · 噜咪生产 ==================== -->
+  <section class="slide">
+    <span class="slide-tag">03 · 核心工作</span>
+    <h1 class="slide-title">🌟 重点模块 ① · 噜咪生产</h1>
+    <div class="subtitle">小组的头号任务 —— 让噜咪世界持续闪耀</div>
+    <div class="content">
+      <div class="info-block pink">
+        <div class="info-title">👥 参与人</div>
+        <div class="info-body">EEVEE · 远超 · yinkang · xiexiangyu</div>
+      </div>
+
+      <div class="grid-4" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">🆕</div>
+          <div class="card-title" style="font-size:2rem;background:var(--gradient-hero);-webkit-background-clip:text;background-clip:text;color:transparent;">10+</div>
+          <div class="card-desc">新增 S1 赛季噜咪</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">🔧</div>
+          <div class="card-title" style="font-size:2rem;background:var(--gradient-hero);-webkit-background-clip:text;background-clip:text;color:transparent;">20+</div>
+          <div class="card-desc">重构噜咪技能</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">📦</div>
+          <div class="card-title" style="font-size:2rem;background:var(--gradient-hero);-webkit-background-clip:text;background-clip:text;color:transparent;">若干</div>
+          <div class="card-desc">后续噜咪已储备</div>
+        </div>
+      </div>
+
+      <div class="info-block cyan">
+        <div class="info-title">🔍 技能重构背景</div>
+        <div class="info-body">
+          部分已有技能<strong class="hl">可玩性较差、强度较低、玩家使用率低</strong>,通过重构提升可用性和玩家体验。
+        </div>
+      </div>
+
+      <div class="quote-box">整体<strong class="hl">正常推进</strong>,是本里程碑最稳定输出的模块 ✅</div>
+    </div>
+  </section>
+
+  <!-- ==================== Page 6 · 品质感 & 个性化 ==================== -->
+  <section class="slide">
+    <span class="slide-tag">04 · 明星成果</span>
+    <h1 class="slide-title">🎨 重点模块 ② · 品质感 &amp; 个性化</h1>
+    <div class="subtitle">主导:乔博璐</div>
+    <div class="content">
+      <div class="highlight-star">
+        <h3>⭐ 核心亮点 · 噜咪星彩</h3>
+        <div class="star-desc">
+          🌈 <strong class="hl">给噜咪染色的全新玩法</strong> —— 玩家可以自由为噜咪染色,打造专属外观!
+        </div>
+        <ul>
+          <li>💖 上线后<strong class="hl-pink">广受玩家喜爱</strong>,成为本里程碑最受欢迎的功能之一</li>
+          <li>🎨 极大丰富了噜咪的<strong class="hl">个性化表达空间</strong></li>
+        </ul>
+      </div>
+
+      <div class="grid-4" style="margin-top:0.8rem;">
+        <div class="card">
+          <div class="card-icon">📐</div>
+          <div class="card-title">体型变化</div>
+          <div class="card-desc">让不同噜咪展现独特身形,提升辨识度</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏅</div>
+          <div class="card-title">徽章系统</div>
+          <div class="card-desc">完善噜咪身份标识,战斗成就可视化</div>
+        </div>
+      </div>
+
+      <div class="info-block yellow">
+        <div class="info-title">💎 高品质噜咪卡牌表现整体拔高</div>
+        <div class="info-body">
+          卡面表现优化 + 展示品质/逻辑/空间升级,高品质噜咪付费认同同步提升。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Page 7 · AI 工具突破 ==================== -->
+  <section class="slide">
+    <span class="slide-tag">05 · 王炸成果</span>
+    <h1 class="slide-title">🤖 重点模块 ③ · AI 工具突破</h1>
+    <div class="subtitle">EEVEE &amp; 远超 —— 让 AI 帮我们把苦力活变成自动化</div>
+    <div class="content">
+      <div class="info-block pink">
+        <div class="info-title">🚀 AI 自动化配置工具</div>
+        <div class="info-body">利用 AI 打造噜咪配置工具,将噜咪配置流程<strong class="hl">极大自动化</strong>。</div>
+      </div>
+
+      <div class="compare-box">
+        <div class="compare-item compare-before">
+          <div class="compare-label">优化前</div>
+          <div class="compare-value">2-3h</div>
+        </div>
+        <div class="compare-arrow">➜</div>
+        <div class="compare-item compare-after">
+          <div class="compare-label">优化后</div>
+          <div class="compare-value">30min</div>
+        </div>
+      </div>
+      <div class="compare-boost">✨ 单只噜咪配置效率 提升 80%+ ✨</div>
+
+      <div class="info-block cyan" style="margin-top:0.8rem;">
+        <div class="info-title">其他战斗底层工作</div>
+        <div class="info-body">
+          <ul>
+            <li>✅ <strong class="hl-green">战斗疲劳机制</strong> —— 正常推进</li>
+            <li>✅ <strong class="hl-green">战斗服按键缓存逻辑</strong> —— 提升竞技公平性</li>
+            <li>⏸️ <strong>战斗 AI 拓展</strong> —— 排期延后,近期推至外测服(功能本身完成 OK)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Page 8 · PVE & PVP ==================== -->
+  <section class="slide">
+    <span class="slide-tag">06 · 玩法迭代</span>
+    <h1 class="slide-title">🏟️ 重点模块 ④ · PVE &amp; PVP</h1>
+    <div class="subtitle">持续丰富玩家的核心玩法体验</div>
+    <div class="content">
+      <div class="info-block orange">
+        <div class="info-title">🏟️ PVE 玩法(远超)</div>
+        <div class="info-body">
+          <ul>
+            <li>方向调整:「道馆战 + 噜咪巢穴」→ <strong class="hl-pink">「道馆战 + 无限爬塔」</strong></li>
+            <li>⏸️ 噜咪巢穴暂停开发</li>
+            <li>🆕 无限爬塔本周外放,等待玩家反馈</li>
+            <li>💡 <strong class="hl">团队响应需求变化,快速调整交付方向</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="info-block cyan">
+        <div class="info-title">🏆 PVP 玩法(EEVEE)</div>
+        <div class="info-body">
+          <ul>
+            <li>✅ <strong>天梯优化</strong>:段位向下兼容 · 金币奖励</li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;⭐ 经过多次优化,<strong class="hl-green">匹配体验丝滑,未再收到玩家负面反馈</strong></li>
+            <li>✅ <strong>周赛 2v2</strong>:正常落地上线</li>
+            <li>⏸️ <strong>月赛</strong>:受团队工作量与优先级限制推迟</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Page 9 · lumiwiki ==================== -->
+  <section class="slide">
+    <span class="slide-tag">07 · 数据可视化</span>
+    <h1 class="slide-title">📊 线上数据 · lumiwiki</h1>
+    <div class="subtitle">AI 打造的游戏数据 wiki,一个入口看全部</div>
+    <div class="content">
+      <div class="info-block pink">
+        <div class="info-title">💫 lumiwiki 是什么</div>
+        <div class="info-body">
+          <ul>
+            <li>📊 集中呈现<strong class="hl-cyan">游戏内数据 &amp; 线上运营数据</strong></li>
+            <li>🔍 支持小组和团队随时查阅、复盘、决策依据</li>
+            <li>🤖 由 <strong class="hl">AI 辅助搭建</strong>,落地成本大幅降低</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-star">
+        <h3>⭐ 本里程碑新突破 · 自动更新流程打通</h3>
+        <ul>
+          <li>✅ <strong class="hl-green">线上数据</strong> 自动更新</li>
+          <li>✅ <strong class="hl-green">游戏内数据</strong> 自动更新</li>
+          <li>📌 从「手动同步」→「<strong class="hl">全自动</strong>」,彻底解放人力,数据实时性大幅提升</li>
+        </ul>
+      </div>
+
+      <div class="quote-box">现场演示环节:直接对着 wiki 网页讲解本里程碑关键数据表现 👉</div>
+    </div>
+  </section>
+
+  <!-- ==================== Page 10 · 反思与经验 ==================== -->
+  <section class="slide">
+    <span class="slide-tag">08 · 反思沉淀</span>
+    <h1 class="slide-title">🧠 反思与经验沉淀</h1>
+    <div class="subtitle">复盘 · 让下一个里程碑走得更稳</div>
+    <div class="content">
+      <div class="reflection">
+        <h4>反思 ① · 周赛 2v2 延期 2 周</h4>
+        <div class="r-body">
+          <strong>现象</strong>:周赛 2v2 实际比排期多花 <strong class="hl">2 周</strong> 完成<br>
+          <strong>原因</strong>:
+          <ul style="padding-left:1.3rem;margin-top:0.3rem;">
+            <li>① 程序侧过程中有其他功能插单</li>
+            <li>② 服务端功能是很早以前写过的「功能重启」,当时只安排了联调单,客户端开发中才发现<strong class="hl-pink">大量服务端功能需要重新开发</strong></li>
+          </ul>
+        </div>
+        <div class="r-take">
+          📌 对于「重启型」历史功能,不能默认历史工作依然生效,需重新对各端(尤其是服务端)进行<strong class="hl">完整排期评估</strong>。
+        </div>
+      </div>
+
+      <div class="reflection">
+        <h4>反思 ② · 首周玄武强度不及预期</h4>
+        <div class="r-body">
+          <strong>现象</strong>:玄武(大 R 才能获得的高价值噜咪)首周上线后,<strong class="hl">强度不及预期</strong><br>
+          <strong>原因</strong>:数值平衡性调整时,过度侧重「公平性」考量,未充分考虑付费玩家的心理预期。事实上玄武获取门槛极高,普通玩家几乎遇不到,过度平衡反而导致氪佬体验不佳,影响付费热情。
+        </div>
+        <div class="r-take">
+          📌 高稀有度、高付费门槛的噜咪,数值设计需<strong class="hl">兼顾商业价值与玩家体验</strong>,为付费玩家保留应有的强度感和获得感。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Page 11 · M5 规划 ==================== -->
+  <section class="slide">
+    <span class="slide-tag">09 · 未来展望</span>
+    <h1 class="slide-title">🚀 M5 规划展望</h1>
+    <div class="subtitle">下一个里程碑,我们已经准备好了 ✨</div>
+    <div class="content">
+      <div class="info-block pink">
+        <div class="info-title">🌟 噜咪生产方向</div>
+        <div class="info-body">
+          S2 噜咪生产 &amp; 配置完成 · 主线&amp;S1 命座补充 · S3 噜咪设计 · S4/S5/S6 规划储备
+        </div>
+      </div>
+
+      <div class="info-title" style="margin-top:0.5rem;font-size:1.05rem;color:var(--accent-cyan);">⚔️ M5 战斗总单 · 重点方向</div>
+      <div class="plan-grid">
+        <div class="plan-item"><span class="plan-icon">🎨</span>品质感:战斗内效果实装、全景卡效果优化</div>
+        <div class="plan-item"><span class="plan-icon">🌈</span>个性化:星彩 3 期、装饰系统、徽章调整</div>
+        <div class="plan-item"><span class="plan-icon">⚙️</span>养成系统:底层公式、光灵技能迭代</div>
+        <div class="plan-item"><span class="plan-icon">🤖</span>战斗工具:AI 玩家镜像/自动战斗/AI 配置</div>
+        <div class="plan-item"><span class="plan-icon">🏟️</span>PVE:传统道馆 + 无限爬塔 + 属性爬塔 + 万圣 BOSS</div>
+        <div class="plan-item"><span class="plan-icon">⚔️</span>PVP:天梯公平竞技改造</div>
+        <div class="plan-item" style="grid-column: span 2;"><span class="plan-icon">🎃</span>活动玩法:万圣活动 · 圣诞活动</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Page 12 · 致谢 ==================== -->
+  <section class="slide thanks">
+    <h2>感谢每一位小组成员 🙌</h2>
+    <div class="team">
+      <div class="member">
+        <div class="m-name">🔧 远超</div>
+        <div class="m-role">战斗系统 &amp; AI 工具攻坚主力</div>
+      </div>
+      <div class="member">
+        <div class="m-name">🎨 乔博璐</div>
+        <div class="m-role">品质感 &amp; 星彩的灵魂设计者</div>
+      </div>
+      <div class="member">
+        <div class="m-name">⚙️ yinkang</div>
+        <div class="m-role">稳扎稳打的中坚力量</div>
+      </div>
+      <div class="member">
+        <div class="m-name">✨ xiexiangyu</div>
+        <div class="m-role">新加入即快速融入战斗</div>
+      </div>
+    </div>
+    <div style="color:var(--ink-2);font-size:1rem;margin-bottom:1.5rem;">
+      以及所有跨组协作的小伙伴,让 M4 顺利收官 🎉
+    </div>
+    <div class="final">M5,我们继续闪耀!✨🎮✨</div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev" title="上一页">‹</button>
+  <div class="page-info"><span id="current">1</span> / <span id="total">12</span></div>
+  <button id="next" title="下一页">›</button>
+  <button id="fullscreen" title="全屏">⛶</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+
+  document.getElementById('total').textContent = total;
+
+  function show(i) {
+    current = (i + total) % total;
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+    document.getElementById('current').textContent = current + 1;
+    document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+  }
+
+  document.getElementById('prev').addEventListener('click', () => show(current - 1));
+  document.getElementById('next').addEventListener('click', () => show(current + 1));
+  document.getElementById('fullscreen').addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); show(current + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(current - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); show(0); }
+    else if (e.key === 'End') { e.preventDefault(); show(total - 1); }
+    else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+
+  // 触屏支持
+  let touchStartX = 0;
+  document.addEventListener('touchstart', (e) => touchStartX = e.touches[0].clientX);
+  document.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+  });
+
+  show(0);
+</script>
+
+</body>
+</html>

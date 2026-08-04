@@ -80,6 +80,14 @@
               <canvas ref="participationRateCanvas"></canvas>
             </div>
           </div>
+
+          <div class="participation-chart-block">
+            <h3>平均每人参与场次走势</h3>
+            <p class="chart-subtitle">天梯/周赛每个参与玩家当天的平均对战场次（含人机场）</p>
+            <div class="chart-wrapper" style="min-height: 320px">
+              <canvas ref="participationBpuCanvas"></canvas>
+            </div>
+          </div>
         </div>
       </template>
     </div>
@@ -625,8 +633,10 @@ const participationStartDate = ref('')
 const participationEndDate = ref('')
 const participationCountCanvas = ref(null)
 const participationRateCanvas = ref(null)
+const participationBpuCanvas = ref(null)
 let participationCountChart = null
 let participationRateChart = null
+let participationBpuChart = null
 
 // 当前统计数据（支持多段位合并）
 const currentStats = computed(() => {
@@ -1298,7 +1308,9 @@ async function loadAllParticipationData() {
         tournament: row.tournament,
         login: row.login,
         ladderRate: row.ladderRate,
-        tournamentRate: row.tournamentRate
+        tournamentRate: row.tournamentRate,
+        ladderBattlesPerUser: row.ladderBattlesPerUser || 0,
+        tournamentBattlesPerUser: row.tournamentBattlesPerUser || 0
       })
     }
   }
@@ -1355,6 +1367,8 @@ function initParticipationCharts() {
   const tournament = rows.map(r => r.tournament)
   const ladderRate = rows.map(r => r.ladderRate)
   const tournamentRate = rows.map(r => r.tournamentRate)
+  const ladderBpu = rows.map(r => r.ladderBattlesPerUser || 0)
+  const tournamentBpu = rows.map(r => r.tournamentBattlesPerUser || 0)
 
   // 玩家数走势
   if (participationCountCanvas.value) {
@@ -1395,6 +1409,27 @@ function initParticipationCharts() {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.raw}%` } } },
         scales: { y: { beginAtZero: true, ticks: { callback: v => v + '%' } } }
+      }
+    })
+  }
+
+  // 平均每人参与场次走势
+  if (participationBpuCanvas.value) {
+    if (participationBpuChart) participationBpuChart.destroy()
+    const ctx = participationBpuCanvas.value.getContext('2d')
+    participationBpuChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          { label: '天梯场均', data: ladderBpu, borderColor: '#667eea', tension: 0.3 },
+          { label: '周赛场均', data: tournamentBpu, borderColor: '#f97316', tension: 0.3 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.raw} 场/人` } } },
+        scales: { y: { beginAtZero: true, ticks: { callback: v => v + ' 场' } } }
       }
     })
   }

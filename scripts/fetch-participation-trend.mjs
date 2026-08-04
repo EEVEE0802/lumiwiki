@@ -80,16 +80,18 @@ function parseCSVLine(line) {
   return result
 }
 
-// 按日 distinct b_role_id
+// 按日 distinct b_role_id 同时累加场次
+// 返回: { uv: {date -> UV}, battles: {date -> 场次总和} }
 async function dailyDistinct(csvPath) {
-  if (!fs.existsSync(csvPath)) return {}
+  if (!fs.existsSync(csvPath)) return { uv: {}, battles: {} }
   const fileStream = fs.createReadStream(csvPath)
   const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity })
 
   let headers = null
   let dateCols = []  // [{idx, date}]
   let bRoleIdIdx = -1
-  const dailySets = {}  // date -> Set<b_role_id>
+  const dailySets = {}     // date -> Set<b_role_id>
+  const dailyBattles = {}  // date -> 场次累加
 
   for await (const line of rl) {
     if (!line.trim()) continue
@@ -102,9 +104,12 @@ async function dailyDistinct(csvPath) {
       bRoleIdIdx = headers.indexOf('b_role_id')
       if (bRoleIdIdx === -1) {
         console.error(`❌ CSV 未找到 b_role_id 列: ${csvPath}`)
-        return {}
+        return { uv: {}, battles: {} }
       }
-      dateCols.forEach(({ date }) => dailySets[date] = new Set())
+      dateCols.forEach(({ date }) => {
+        dailySets[date] = new Set()
+        dailyBattles[date] = 0
+      })
       continue
     }
     const bRoleId = values[bRoleIdIdx]
@@ -113,40 +118,43 @@ async function dailyDistinct(csvPath) {
       const count = parseInt(values[idx])
       if (count > 0) {
         dailySets[date].add(bRoleId)
+        dailyBattles[date] += count
       }
     }
   }
 
-  const result = {}
-  for (const [date, set] of Object.entries(dailySets)) {
-    result[date] = set.size
-  }
-  return result
+  const uv = {}
+  for (const [date, set] of Object.entries(dailySets)) uv[date] = set.size
+  return { uv, battles: dailyBattles }
 }
 
 console.log(`\n处理 ladder CSV...`)
-const ladderDaily = await dailyDistinct(ladderCsvPath)
-console.log(`  天梯每日 distinct:`, ladderDaily)
+const ladderResult = await dailyDistinct(ladderCsvPath)
+console.log(`  天梯每日 UV:`, ladderResult.uv)
+console.log(`  天梯每日场次:`, ladderResult.battles)
 
 console.log(`处理 tournament CSV...`)
-const tournamentDaily = await dailyDistinct(tournamentCsvPath)
-console.log(`  周赛每日 distinct:`, tournamentDaily)
+const tournamentResult = await dailyDistinct(tournamentCsvPath)
+console.log(`  周赛每日 UV:`, tournamentResult.uv)
+console.log(`  周赛每日场次:`, tournamentResult.battles)
 
 console.log(`处理 login CSV...`)
-const loginDaily = await dailyDistinct(loginCsvPath)
-console.log(`  登录每日 distinct:`, loginDaily)
+const loginResult = await dailyDistinct(loginCsvPath)
+console.log(`  登录每日 UV:`, loginResult.uv)
 
-// 合并所有日期，计算比例
+// 合并所有日期，计算比例 + 场均
 const allDates = [...new Set([
-  ...Object.keys(ladderDaily),
-  ...Object.keys(tournamentDaily),
-  ...Object.keys(loginDaily)
+  ...Object.keys(ladderResult.uv),
+  ...Object.keys(tournamentResult.uv),
+  ...Object.keys(loginResult.uv)
 ])].sort()
 
 const result = allDates.map(date => {
-  const ladder = ladderDaily[date] || 0
-  const tournament = tournamentDaily[date] || 0
-  const login = loginDaily[date] || 0
+  const ladder = ladderResult.uv[date] || 0
+  const tournament = tournamentResult.uv[date] || 0
+  const login = loginResult.uv[date] || 0
+  const ladderBattles = ladderResult.battles[date] || 0
+  const tournamentBattles = tournamentResult.battles[date] || 0
   return {
     date,
     ladder,
@@ -154,6 +162,9 @@ const result = allDates.map(date => {
     login,
     ladderRate: login > 0 ? +(ladder / login * 100).toFixed(2) : 0,
     tournamentRate: login > 0 ? +(tournament / login * 100).toFixed(2) : 0,
+    // 平均每个参与玩家当天场次（UV=0 时为 0，避免除零）
+    ladderBattlesPerUser: ladder > 0 ? +(ladderBattles / ladder).toFixed(2) : 0,
+    tournamentBattlesPerUser: tournament > 0 ? +(tournamentBattles / tournament).toFixed(2) : 0,
   }
 })
 
@@ -170,5 +181,5 @@ fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf-8')
 console.log(`\n✓ 输出: ${outputPath}`)
 console.log(`  共 ${result.length} 天`)
 result.forEach(r => {
-  console.log(`  ${r.date}: 天梯=${r.ladder} 周赛=${r.tournament} 登录=${r.login} (天梯占比=${r.ladderRate}% 周赛占比=${r.tournamentRate}%)`)
+  console.log(`  ${r.date}: 天梯=${r.ladder}(${r.ladderBattlesPerUser}场/人) 周赛=${r.tournament}(${r.tournamentBattlesPerUser}场/人) 登录=${r.login}`)
 })

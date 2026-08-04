@@ -5,6 +5,7 @@ import { loadData, TYPE_COLORS } from '../data'
 const typeData = ref([])
 const locMap = ref({})
 const loading = ref(true)
+const selectedDefTypes = ref([])  // 选中的防御属性 id（最多 2 个）
 
 onMounted(async () => {
   const [data, loc] = await Promise.all([
@@ -66,6 +67,90 @@ function getCellText(mult) {
     default: return ''
   }
 }
+
+// === 双属性克制查询 ===
+function toggleDefType(typeId) {
+  const idx = selectedDefTypes.value.indexOf(typeId)
+  if (idx !== -1) {
+    selectedDefTypes.value.splice(idx, 1)
+  } else if (selectedDefTypes.value.length < 2) {
+    selectedDefTypes.value.push(typeId)
+  } else {
+    // 已选 2 个：替换掉第一个（FIFO）
+    selectedDefTypes.value.shift()
+    selectedDefTypes.value.push(typeId)
+  }
+}
+
+function clearDefTypes() {
+  selectedDefTypes.value = []
+}
+
+// 组合倍率：多个防御属性的倍率相乘（宝可梦机制），基准 10000
+function getComboMultiplier(atkType, defTypeIds) {
+  if (defTypeIds.length === 0) return 10000
+  let result = 10000
+  for (const defId of defTypeIds) {
+    const defKey = TYPE_KEYS[defId - 1]
+    const m = getMultiplier(atkType, defKey)
+    result = Math.floor(result * m / 10000)
+  }
+  return result
+}
+
+// 组合克制的效果分级（含双箭头）
+function getComboEffectiveness(mult) {
+  if (mult === 0) return 'immune'
+  if (mult < 5000) return 'resist-strong'      // <0.5x → ↓↓
+  if (mult < 10000) return 'resist'            // 0.5-0.9x → ↓
+  if (mult === 10000) return 'normal'          // 1.0x → —
+  if (mult < 20000) return 'effective'         // 1.1-1.9x → ↑
+  return 'effective-strong'                    // ≥2.0x → ↑↑
+}
+
+function getComboText(mult) {
+  const eff = getComboEffectiveness(mult)
+  switch (eff) {
+    case 'immune': return '0'
+    case 'resist-strong': return '↓↓'
+    case 'resist': return '↓'
+    case 'normal': return '—'
+    case 'effective': return '↑'
+    case 'effective-strong': return '↑↑'
+    default: return '—'
+  }
+}
+
+// 结果列表：17 攻击属性 × 当前防御组合
+const comboResults = computed(() => {
+  if (selectedDefTypes.value.length === 0) return []
+  return typeData.value.map(atk => {
+    const mult = getComboMultiplier(atk, selectedDefTypes.value)
+    return {
+      atkId: atk.LumiType,
+      atkName: locMap.value[atk.name] || `属性${atk.LumiType}`,
+      atkColor: TYPE_COLORS[atk.LumiType] || '#666',
+      atkIcon: atk.icon,
+      mult,
+      eff: getComboEffectiveness(mult),
+      text: getComboText(mult),
+      ratio: (mult / 10000).toFixed(2)
+    }
+  })
+})
+
+// 已选属性的展示信息
+const selectedDefInfos = computed(() =>
+  selectedDefTypes.value.map(id => {
+    const t = typeData.value.find(x => x.LumiType === id)
+    return {
+      id,
+      name: t ? (locMap.value[t.name] || `属性${id}`) : `属性${id}`,
+      color: TYPE_COLORS[id] || '#666',
+      icon: t?.icon
+    }
+  })
+)
 </script>
 
 <template>
@@ -111,26 +196,55 @@ function getCellText(mult) {
       </table>
     </div>
 
-    <!-- 属性详情卡片 -->
+    <!-- 双属性克制查询 -->
     <div class="section" style="margin-top:32px">
-      <h2>属性详情</h2>
-      <div class="grid grid-4">
-        <div v-for="t in typeData" :key="t.LumiType" class="card type-detail-card">
-          <div class="type-detail-header" :style="{ borderColor: TYPE_COLORS[t.LumiType] }">
-            <span class="type-dot" :style="{ background: TYPE_COLORS[t.LumiType] }"></span>
-            <strong>{{ locMap[t.name] || `属性${t.LumiType}` }}</strong>
+      <h2>🎯 双属性克制查询</h2>
+      <p class="chart-desc">选择最多 2 个属性作为「防御方」，查看其他所有属性攻击该属性组合时的克制关系（双箭头 = 双重克制/双重抵抗）。</p>
+
+      <!-- 属性选择器 -->
+      <div class="type-selector">
+        <button
+          v-for="t in types"
+          :key="t.id"
+          class="type-chip"
+          :class="{ 'is-selected': selectedDefTypes.includes(t.id) }"
+          :style="selectedDefTypes.includes(t.id) ? { background: t.color, borderColor: t.color } : {}"
+          @click="toggleDefType(t.id)"
+        >
+          <img v-if="t.icon" :src="`/images/types/${t.icon}.png`" class="type-icon-sm" @error="($event.target).style.display='none'" />
+          <span>{{ t.name }}</span>
+        </button>
+      </div>
+
+      <!-- 已选防御组合 -->
+      <div class="selected-info">
+        <template v-if="selectedDefInfos.length > 0">
+          <span class="selected-label">当前防御组合：</span>
+          <span v-for="(s, i) in selectedDefInfos" :key="s.id" class="selected-type" :style="{ background: s.color }">
+            <img v-if="s.icon" :src="`/images/types/${s.icon}.png`" class="type-icon-sm" @error="($event.target).style.display='none'" />
+            <span>{{ s.name }}</span>
+          </span>
+          <button class="clear-btn" @click="clearDefTypes">✕ 清空</button>
+        </template>
+        <template v-else>
+          <span class="hint">👆 点击上方属性 chip 选择（最多 2 个；已选 2 个时再点新属性会替换最早选的）</span>
+        </template>
+      </div>
+
+      <!-- 结果网格 -->
+      <div v-if="comboResults.length > 0" class="combo-results">
+        <div v-for="r in comboResults" :key="r.atkId" class="combo-card" :class="`eff-${r.eff}`">
+          <div class="combo-atk" :style="{ background: r.atkColor }">
+            <img v-if="r.atkIcon" :src="`/images/types/${r.atkIcon}.png`" class="type-icon-sm" @error="($event.target).style.display='none'" />
+            <span>{{ r.atkName }}</span>
           </div>
-          <div class="type-detail-body">
-            <div v-for="dk in TYPE_KEYS" :key="dk" class="type-detail-row">
-              <span class="tdr-name">{{ locMap[typeData.find(x => x.LumiType === TYPE_KEYS.indexOf(dk) + 1)?.name] || dk }}</span>
-              <span class="tdr-val" :class="getEffectiveness(getMultiplier(t, dk))">
-                {{ getCellText(getMultiplier(t, dk)) }}
-              </span>
-            </div>
-          </div>
+          <div class="combo-effect">{{ r.text }}</div>
+          <div class="combo-ratio">{{ r.ratio }}x</div>
         </div>
       </div>
     </div>
+
+    <!-- 属性详情卡片 -->
   </div>
 </template>
 
@@ -203,39 +317,146 @@ function getCellText(mult) {
   font-size: 1.2em;
   margin-bottom: 16px;
 }
-.type-detail-card {
-  padding: 12px;
-  max-height: 300px;
-  overflow-y: auto;
+
+/* 双属性克制查询 */
+.type-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
 }
-.type-detail-header {
+.type-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: #ddd;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.type-chip:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+.type-chip.is-selected {
+  color: #fff;
+  font-weight: bold;
+}
+.type-chip .type-icon-sm {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+.selected-info {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding-bottom: 8px;
-  margin-bottom: 8px;
-  border-bottom: 2px solid;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  min-height: 46px;
 }
-.type-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  flex-shrink: 0;
+.selected-label {
+  color: var(--text-dim);
+  font-size: 0.9em;
 }
-.type-detail-body {
+.selected-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.selected-type .type-icon-sm {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+.clear-btn {
+  margin-left: auto;
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-dim);
   font-size: 0.85em;
+  cursor: pointer;
 }
-.type-detail-row {
+.clear-btn:hover {
+  color: #e57373;
+  border-color: #e57373;
+}
+.hint {
+  color: var(--text-dim);
+  font-size: 0.9em;
+}
+.combo-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+.combo-card {
   display: flex;
-  justify-content: space-between;
-  padding: 2px 0;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: 6px;
+  transition: transform 0.15s;
 }
-.tdr-name { color: var(--text-dim); }
-.tdr-val { font-weight: 600; font-size: 1.3em; }
-.tdr-val.super { color: #e57373; }
-.tdr-val.effective { color: #66bb6a; }
-.tdr-val.resist { color: #e57373; }
-.tdr-val.weak { color: #66bb6a; }
-.tdr-val.immune { color: #666; }
-.tdr-val.normal { color: var(--text-dim); }
+.combo-card:hover {
+  transform: translateY(-2px);
+}
+.combo-atk {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.85em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.combo-atk .type-icon-sm {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+.combo-effect {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: auto;
+  line-height: 1;
+}
+.combo-ratio {
+  font-size: 0.75em;
+  color: var(--text-dim);
+  min-width: 42px;
+  text-align: right;
+}
+.combo-card.eff-immune { border-left-color: #666; }
+.combo-card.eff-immune .combo-effect { color: #888; font-size: 1em; }
+.combo-card.eff-resist-strong { border-left-color: #c62828; }
+.combo-card.eff-resist-strong .combo-effect { color: #ff5252; }
+.combo-card.eff-resist { border-left-color: #ef5350; }
+.combo-card.eff-resist .combo-effect { color: #e57373; }
+.combo-card.eff-normal { border-left-color: var(--border); }
+.combo-card.eff-normal .combo-effect { color: var(--text-dim); }
+.combo-card.eff-effective { border-left-color: #66bb6a; }
+.combo-card.eff-effective .combo-effect { color: #81c784; }
+.combo-card.eff-effective-strong { border-left-color: #2e7d32; }
+.combo-card.eff-effective-strong .combo-effect { color: #4caf50; }
 </style>

@@ -21,6 +21,7 @@ const navLinks = [
   { path: '/battle-buff', label: '✨ Buff 图鉴' },
   { path: '/robot-team', label: '🤖 机器人阵容' },
   { path: '/star-exchange', label: '🌟 归星预览' },
+  { path: '/work-report', label: '📋 工作记录' },
   { path: '/claude-code-guide', label: '🤖 Claude 教程' },
 ]
 

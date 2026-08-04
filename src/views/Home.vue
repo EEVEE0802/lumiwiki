@@ -29,7 +29,7 @@ onMounted(async () => {
   loading.value = false
 })
 
-// 导出所有推荐阵容为 CSV
+// 导出所有推荐阵容为 CSV（对齐 Luban 匹配.xlsx / LumiRecommendedTeam 表结构）
 async function exportRecommendTeams() {
   if (exporting.value) return
   exporting.value = true
@@ -39,22 +39,39 @@ async function exportRecommendTeams() {
       alert('暂无推荐配队数据')
       return
     }
+    // 从 lumi-teams.json 里的 lumis 字段反查中文名（战斗数据里就带了名字）
+    const nameById = new Map()
+    for (const teams of Object.values(data.lumiTeams)) {
+      for (const t of teams) {
+        for (const l of t.lumis) {
+          if (!nameById.has(String(l.lumiId))) nameById.set(String(l.lumiId), l.lumiName)
+        }
+      }
+    }
+    const getName = id => nameById.get(String(id)) || ''
 
-    const header = ['内部ID', '阵容序号', '一号位噜咪ID', '一号位技能ID', '二号位噜咪ID', '二号位技能ID', '三号位噜咪ID', '三号位技能ID', '训练家技能ID']
-    const rows = []
+    // Luban 头 4 行
+    const metaRows = [
+      ['##var', 'LumiID', '*TeamInfo', '', '', '', '', '', '', ''],
+      ['##type', 'int', 'list,Table.LumiTeam', '', '', '', '', '', '', ''],
+      ['##', '噜咪编号', '阵容编号', '一号噜咪', '一号噜咪技能', '二号噜咪', '二号噜咪技能', '三号噜咪', '三号噜咪技能', '光灵技能'],
+      ['##group', 'c', 'c', '', '', '', '', '', '', '']
+    ]
+    const rows = [...metaRows]
     const sortedIds = Object.keys(data.lumiTeams).sort((a, b) => Number(a) - Number(b))
+    const shortage = []  // 阵容数 < 3 的噜咪清单
     for (const lumiId of sortedIds) {
-      data.lumiTeams[lumiId].forEach((team, idx) => {
-        const row = [lumiId, idx + 1]
+      const teams = data.lumiTeams[lumiId]
+      if (teams.length < 3) {
+        shortage.push({ lumiId, name: getName(lumiId), count: teams.length })
+      }
+      teams.forEach((team, idx) => {
+        // 同一噜咪只在阵容序号 1 那行填 LumiID，后续留空（Luban 稀疏格式）
+        const row = [idx === 0 ? lumiId : '', idx + 1]
         for (let i = 0; i < 3; i++) {
           const l = team.lumis[i]
-          if (l) {
-            row.push(l.lumiId, l.topSkill?.skillId ?? '')
-          } else {
-            row.push('', '')
-          }
+          row.push(l ? l.lumiId : '', l ? (l.topSkill?.skillId ?? '') : '')
         }
-        // 训练家技能（携带率最高，0=未携带）
         row.push(team.topTrainerSkill?.trainerId ?? '')
         rows.push(row)
       })
@@ -64,15 +81,43 @@ async function exportRecommendTeams() {
       const s = String(v ?? '')
       return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
     }
-    const csv = [header.join(','), ...rows.map(r => r.map(escape).join(','))].join('\n')
+    const csv = rows.map(r => r.map(escape).join(',')).join('\n')
 
-    const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `recommend-teams-week${(data.weeks || []).join('-')}.csv`
-    a.click()
-    URL.revokeObjectURL(url)
+    const weekSuffix = (data.weeks || []).join('-')
+    const download = (filename, text) => {
+      const blob = new Blob(['﻿' + text], { type: 'text/plain;charset=utf-8' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = filename
+      a.click()
+      URL.revokeObjectURL(url)
+    }
+
+    download(`LumiRecommendedTeam-week${weekSuffix}.csv`, csv)
+
+    if (shortage.length > 0) {
+      // 生成清单 txt
+      const txtLines = [
+        `# 推荐阵容不足 3 支的噜咪（Week ${weekSuffix}）`,
+        `# 共 ${shortage.length} 只，需手动补足`,
+        `# 格式: 噜咪ID | 噜咪名 | 现有阵容数 | 缺 N 支`,
+        '',
+        ...shortage.map(s => `${s.lumiId}\t${s.name}\t${s.count}/3\t缺 ${3 - s.count} 支`)
+      ]
+      download(`LumiRecommendedTeam-shortage-week${weekSuffix}.txt`, txtLines.join('\n'))
+
+      // 弹窗提示（最多显示前 10 只）
+      const preview = shortage.slice(0, 10)
+        .map(s => `  ${s.lumiId} ${s.name}（${s.count}/3）`)
+        .join('\n')
+      const more = shortage.length > 10 ? `\n  ...还有 ${shortage.length - 10} 只，详见 shortage txt` : ''
+      alert(
+        `⚠️ 以下 ${shortage.length} 只噜咪推荐阵容不足 3 支，需手动补足：\n\n` +
+        preview + more +
+        `\n\n已同时下载 shortage 清单 txt`
+      )
+    }
   } catch (e) {
     console.error('导出失败:', e)
     alert('导出失败: ' + e.message)
