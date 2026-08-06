@@ -39,6 +39,10 @@ async function exportRecommendTeams() {
       alert('暂无推荐配队数据')
       return
     }
+    // 加载 Lumi 表 + 当前语言字典，用于兜底"完全 0 场次"噜咪的中文名
+    const lumis = await loadData('Lumi')
+    const loc = await loadData('localization')
+    const battleLumis = lumis.filter(l => !l.HomePassive)
     // 从 lumi-teams.json 里的 lumis 字段反查中文名（战斗数据里就带了名字）
     const nameById = new Map()
     for (const teams of Object.values(data.lumiTeams)) {
@@ -47,6 +51,11 @@ async function exportRecommendTeams() {
           if (!nameById.has(String(l.lumiId))) nameById.set(String(l.lumiId), l.lumiName)
         }
       }
+    }
+    // 兜底：Lumi 表里有、但战斗数据里没出现过的噜咪，用 localization 查名
+    for (const l of battleLumis) {
+      const idStr = String(l.Id)
+      if (!nameById.has(idStr)) nameById.set(idStr, loc[l.Name] || l.Name)
     }
     const getName = id => nameById.get(String(id)) || ''
 
@@ -59,12 +68,8 @@ async function exportRecommendTeams() {
     ]
     const rows = [...metaRows]
     const sortedIds = Object.keys(data.lumiTeams).sort((a, b) => Number(a) - Number(b))
-    const shortage = []  // 阵容数 < 3 的噜咪清单
     for (const lumiId of sortedIds) {
       const teams = data.lumiTeams[lumiId]
-      if (teams.length < 3) {
-        shortage.push({ lumiId, name: getName(lumiId), count: teams.length })
-      }
       teams.forEach((team, idx) => {
         // 同一噜咪只在阵容序号 1 那行填 LumiID，后续留空（Luban 稀疏格式）
         const row = [idx === 0 ? lumiId : '', idx + 1]
@@ -76,6 +81,19 @@ async function exportRecommendTeams() {
         rows.push(row)
       })
     }
+
+    // shortage 清单：阵容数 < 3 的所有战斗噜咪（含"完全 0 支"）
+    // 排序: count 升序（0 最前），再按 id 升序
+    const shortage = []
+    for (const l of battleLumis) {
+      const idStr = String(l.Id)
+      const teams = data.lumiTeams[idStr]
+      const count = teams ? teams.length : 0
+      if (count < 3) {
+        shortage.push({ lumiId: idStr, name: getName(idStr), count })
+      }
+    }
+    shortage.sort((a, b) => a.count - b.count || Number(a.lumiId) - Number(b.lumiId))
 
     const escape = v => {
       const s = String(v ?? '')

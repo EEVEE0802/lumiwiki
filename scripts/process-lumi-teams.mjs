@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const PROJECT_ROOT = path.join(__dirname, '..')
 
-// 解析 --week 参数；默认 = 当周 + 上周（weeks.json 最新两周）
+// 解析 --week 参数；默认 = 所有周（weeks.json 里全部可用周）
 const args = process.argv.slice(2)
 const weekIdx = args.indexOf('--week')
 const explicitWeek = weekIdx !== -1 ? parseInt(args[weekIdx + 1]) : null
@@ -20,10 +20,8 @@ if (!isNaN(explicitWeek) && explicitWeek >= 1) {
   weeks = [explicitWeek]
   console.log(`指定周次: Week ${explicitWeek}`)
 } else {
-  const maxWeek = availableWeeks[availableWeeks.length - 1]
-  // 默认取最新两周（当周+上周）；maxWeek=1 时只有一周
-  weeks = availableWeeks.filter(w => w >= maxWeek - 1)
-  console.log(`未指定 --week，使用: ${weeks.map(w => 'Week ' + w).join(' + ')}`)
+  weeks = availableWeeks
+  console.log(`未指定 --week，使用全部 ${weeks.length} 周: ${weeks.map(w => 'Week ' + w).join(' + ')}`)
 }
 
 const outputPath = path.join(PROJECT_ROOT, 'public/data/lumi-teams.json')
@@ -293,6 +291,24 @@ for (const X of allLumiIds) {
   if (top3.length > 0) {
     result[X] = top3
     totalEntries += top3.length
+  }
+}
+
+// 扫描"无推荐配队的战斗噜咪"（Lumi.json 中非打工、且未出现在 result 中）
+const zhData = JSON.parse(fs.readFileSync(
+  path.join(PROJECT_ROOT, 'public/data/zh-CN.json'), 'utf-8'
+))
+const battleLumis = lumiData.filter(l => !l.HomePassive)
+const missingLumis = []
+for (const l of battleLumis) {
+  const idStr = String(l.Id)
+  if (result[idStr]) continue
+  missingLumis.push({ id: idStr, name: zhData[l.Name] || l.Name })
+}
+if (missingLumis.length > 0) {
+  console.log(`\n⚠️  无推荐配队的战斗噜咪 (${missingLumis.length}/${battleLumis.length}):`)
+  for (const m of missingLumis) {
+    console.log(`   - ${m.id} ${m.name}`)
   }
 }
 
