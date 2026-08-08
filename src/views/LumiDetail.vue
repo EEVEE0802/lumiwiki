@@ -2,6 +2,7 @@
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { loadData, t, TYPE_NAMES, TYPE_COLORS, WORK_TYPE_NAMES, LUMI_TAG_NAMES, LUMI_CARD_TYPE, LUMI_CARD_TYPE_COLORS, getKeywordMap, keywordSync } from '../data'
+import { avatarUrl, skillIconUrl, handleAvatarError as handleAvatarErrorHelper } from '../data/imageUrl'
 
 const route = useRoute()
 const router = useRouter()
@@ -166,7 +167,7 @@ function getWinRateClass(rate) {
   return 'low'
 }
 function handleAvatarError(e) {
-  e.target.src = '/images/avatars/unknown.png'
+  handleAvatarErrorHelper(e)
 }
 function handleSkillIconError(e) {
   e.target.style.visibility = 'hidden'
@@ -610,7 +611,7 @@ const weaknesses = computed(() => {
       <div class="detail-icon">
         <img
           v-if="lumi.CA"
-          :src="`/images/avatars/${lumi.CA}.png`"
+          :src="avatarUrl(lumi.CA)"
           :alt="getName(lumi.Name)"
           class="detail-avatar-img"
         />
@@ -721,13 +722,13 @@ const weaknesses = computed(() => {
                 :class="{ 'is-current': l.lumiId === lumi.Id }"
                 @click="l.lumiId !== lumi.Id && router.push(`/lumi/${l.lumiId}`)"
               >
-                <img :src="`/images/avatars/CA_${l.lumiId}.png`" :alt="getLumiName(l.lumiId)" class="recommend-lumi-avatar" @error="handleAvatarError">
+                <img :src="avatarUrl(l.lumiId)" :alt="getLumiName(l.lumiId)" class="recommend-lumi-avatar" @error="handleAvatarError">
                 <div class="recommend-lumi-info">
                   <span class="recommend-lumi-name">{{ getLumiName(l.lumiId) }}</span>
                   <span v-if="l.topSkill" class="recommend-lumi-skill">
                     <img
                       v-if="l.topSkill.skillId !== 0 && getSkillIcon(l.topSkill.skillId)"
-                      :src="`/images/skills/${getSkillIcon(l.topSkill.skillId)}.png`"
+                      :src="skillIconUrl(getSkillIcon(l.topSkill.skillId))"
                       :alt="getSkillName(l.topSkill.skillId)"
                       class="recommend-skill-icon"
                       @error="handleSkillIconError"
@@ -744,7 +745,7 @@ const weaknesses = computed(() => {
               <span class="trainer-skill">
                 <img
                   v-if="team.topTrainerSkill.trainerId !== 0 && getTrainerSkillIcon(team.topTrainerSkill.trainerId)"
-                  :src="`/images/skills/${getTrainerSkillIcon(team.topTrainerSkill.trainerId)}.png`"
+                  :src="skillIconUrl(getTrainerSkillIcon(team.topTrainerSkill.trainerId))"
                   :alt="getTrainerSkillName(team.topTrainerSkill.trainerId)"
                   class="trainer-icon"
                   @error="handleSkillIconError"
@@ -848,7 +849,7 @@ const weaknesses = computed(() => {
       <div class="skill-item na-item">
         <img
           v-if="normalAttack.icon"
-          :src="`/images/skills/${normalAttack.icon}.png`"
+          :src="skillIconUrl(normalAttack.icon)"
           class="skill-icon-img"
           @error="($event.target).style.display='none'"
         />
@@ -879,7 +880,7 @@ const weaknesses = computed(() => {
       <div class="skill-item">
         <img
           v-if="inherentSkill.icon"
-          :src="`/images/skills/${inherentSkill.icon}.png`"
+          :src="skillIconUrl(inherentSkill.icon)"
           class="skill-icon-img"
           @error="($event.target).style.display='none'"
         />
@@ -909,7 +910,7 @@ const weaknesses = computed(() => {
         <div v-for="sk in skillPoolList" :key="sk.id" class="skill-item">
           <img
             v-if="sk.icon"
-            :src="`/images/skills/${sk.icon}.png`"
+            :src="skillIconUrl(sk.icon)"
             class="skill-icon-img"
             @error="($event.target).style.display='none'"
           />
@@ -950,7 +951,7 @@ const weaknesses = computed(() => {
             <div class="evo-chain-card">
               <img
                 v-if="item.lumi.CA"
-                :src="`/images/avatars/${item.lumi.CA}.png`"
+                :src="avatarUrl(item.lumi.CA)"
                 :alt="getLumiName(item.lumi.Id)"
                 class="evo-chain-img"
                 @error="($event.target).style.display='none'"
@@ -987,7 +988,7 @@ const weaknesses = computed(() => {
               <div class="evo-chain-card">
                 <img
                   v-if="item.lumi.CA"
-                  :src="`/images/avatars/${item.lumi.CA}.png`"
+                  :src="avatarUrl(item.lumi.CA)"
                   :alt="getLumiName(item.lumi.Id)"
                   class="evo-chain-img"
                   @error="($event.target).style.display='none'"
@@ -1013,7 +1014,7 @@ const weaknesses = computed(() => {
           <div class="evo-current-card">
             <img
               v-if="lumi.CA"
-              :src="`/images/avatars/${lumi.CA}.png`"
+              :src="avatarUrl(lumi.CA)"
               :alt="getLumiName(lumi.Id)"
               class="evo-chain-img"
               @error="($event.target).style.display='none'"
@@ -1041,7 +1042,7 @@ const weaknesses = computed(() => {
               <div class="evo-chain-card">
                 <img
                   v-if="item.lumi.CA"
-                  :src="`/images/avatars/${item.lumi.CA}.png`"
+                  :src="avatarUrl(item.lumi.CA)"
                   :alt="getLumiName(item.lumi.Id)"
                   class="evo-chain-img"
                   @error="($event.target).style.display='none'"

@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
+import { avatarUrl } from '../data/imageUrl'
 
 const props = defineProps({
   modelValue: {
@@ -76,7 +77,7 @@ function clearSelection(e) {
       <div v-else class="selected-content">
         <img
           v-if="modelValue.CA"
-          :src="`/images/avatars/${modelValue.CA}.png`"
+          :src="avatarUrl(modelValue.CA)"
           class="lumi-mini-avatar"
           @error="($event.target).style.display='none'"
         />
@@ -104,7 +105,7 @@ function clearSelection(e) {
           >
             <img
               v-if="lumi.CA"
-              :src="`/images/avatars/${lumi.CA}.png`"
+              :src="avatarUrl(lumi.CA)"
               class="lumi-mini-avatar"
               @error="($event.target).style.display='none'"
             />

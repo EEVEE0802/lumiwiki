@@ -1,7 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { loadData, t, TYPE_NAMES, TYPE_COLORS } from '../data'
+import { useVersion } from '../composables/useVersion'
 
+const { currentVersion, versions, setVersion, isInternal } = useVersion()
 const stats = ref({})
 const loading = ref(true)
 const exporting = ref(false)
@@ -154,6 +156,34 @@ async function exportRecommendTeams() {
       <p class="hero-desc">噜咪（Lumi）图鉴百科 · 本地局域网 Wiki</p>
     </div>
 
+    <!-- 数据版本切换（对外 / 对内） -->
+    <div class="version-switcher">
+      <div class="version-label-row">
+        <span class="version-label">数据版本</span>
+        <span v-if="isInternal" class="version-badge">🔒 对内</span>
+      </div>
+      <div class="version-btn-group">
+        <button
+          v-for="(cfg, code) in versions"
+          :key="code"
+          :class="['version-btn', { active: currentVersion === code, [`version-${code}`]: true }]"
+          @click="setVersion(code)"
+        >
+          <span class="version-btn-icon">{{ cfg.icon }}</span>
+          <span class="version-btn-text">{{ cfg.label }}</span>
+          <span v-if="currentVersion === code" class="version-btn-check">✓</span>
+        </button>
+      </div>
+      <p class="version-hint">
+        <span v-if="isInternal">
+          🔒 当前显示 <strong>对内开发分支</strong> 数据（含未上线内容）；「线上数据」页面仍使用对外数据
+        </span>
+        <span v-else>
+          🌐 当前显示 <strong>对外稳定分支</strong> 数据（与正式服一致）
+        </span>
+      </p>
+    </div>
+
     <!-- 数据导出工具 -->
     <div class="export-toolbar">
       <button class="export-btn" :disabled="exporting" @click="exportRecommendTeams">
@@ -242,7 +272,7 @@ async function exportRecommendTeams() {
 <style scoped>
 .hero {
   text-align: center;
-  padding: 40px 0 30px;
+  padding: 40px 0 20px;
 }
 .hero h1 {
   font-size: 2.5em;
@@ -252,6 +282,91 @@ async function exportRecommendTeams() {
 .hero-desc {
   color: var(--text-dim);
   font-size: 1.1em;
+}
+
+/* 数据版本切换 */
+.version-switcher {
+  max-width: 640px;
+  margin: 0 auto 32px;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border: 1px solid rgba(102, 126, 234, 0.25);
+  border-radius: 12px;
+  text-align: center;
+}
+.version-label-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.version-label {
+  color: var(--text-dim);
+  font-size: 0.95em;
+  letter-spacing: 0.5px;
+}
+.version-badge {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(245, 87, 108, 0.4);
+}
+.version-btn-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.version-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  min-width: 160px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background: #16213e;
+  color: #ccc;
+  font-size: 1.05em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.version-btn:hover {
+  border-color: rgba(233, 69, 96, 0.5);
+  color: #fff;
+}
+.version-btn.active.version-external {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+.version-btn.active.version-internal {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  border-color: #f5576c;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(245, 87, 108, 0.4);
+}
+.version-btn-icon {
+  font-size: 1.2em;
+}
+.version-btn-check {
+  margin-left: 4px;
+  font-weight: bold;
+}
+.version-hint {
+  margin-top: 14px;
+  color: var(--text-dim);
+  font-size: 0.88em;
+  line-height: 1.5;
+}
+.version-hint strong {
+  color: #fff;
 }
 
 /* 数据导出工具 */

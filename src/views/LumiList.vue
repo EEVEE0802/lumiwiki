@@ -2,6 +2,7 @@
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { loadData, t, TYPE_NAMES, TYPE_COLORS, LUMI_TAG_NAMES, WORK_TYPE_NAMES } from '../data'
+import { avatarUrl } from '../data/imageUrl'
 import MultiSelect from '../components/MultiSelect.vue'
 
 const route = useRoute()
@@ -217,7 +218,7 @@ const filtered = computed(() => {
         <div class="lumi-avatar">
           <div class="lumi-id">#{{ lumi.PokedexId }}</div>
           <img
-            :src="`/images/avatars/${lumi.CA}.png`"
+            :src="avatarUrl(lumi.CA)"
             :alt="getName(lumi)"
             class="lumi-img"
             @error="($event.target).style.display='none';($event.target).nextElementSibling.style.display='block'"

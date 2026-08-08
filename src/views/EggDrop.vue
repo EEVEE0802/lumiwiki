@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { loadData } from '../data'
+import { avatarUrl, itemIconUrl, handleAvatarError } from '../data/imageUrl'
 
 const router = useRouter()
 const data = ref({ eggs: [] })
@@ -12,8 +14,7 @@ const QUALITY_COLORS = { 1: '#9e9e9e', 2: '#4caf50', 3: '#2196f3', 4: '#9c27b0',
 
 onMounted(async () => {
   try {
-    const res = await fetch('/data/egg-drop.json')
-    data.value = await res.json()
+    data.value = await loadData('egg-drop')
     if (data.value.eggs?.length) selectedEgg.value = data.value.eggs[0]
   } catch (e) {
     console.error('加载蛋掉落数据失败:', e)
@@ -22,11 +23,6 @@ onMounted(async () => {
 })
 
 function selectEgg(egg) { selectedEgg.value = egg }
-function getAvatar(id) { return `/images/avatars/CA_${id}.png` }
-function handleImgError(e) {
-  e.target.onerror = null
-  e.target.src = '/images/avatars/CA_lumi.png'
-}
 function goToLumi(id) { router.push(`/lumi/${id}`) }
 </script>
 
@@ -47,10 +43,10 @@ function goToLumi(id) { router.push(`/lumi/${id}`) }
       >
         <img
           v-if="egg.icon"
-          :src="`/images/items/${egg.icon}.png`"
+          :src="itemIconUrl(egg.icon)"
           :alt="egg.name"
           class="egg-icon"
-          @error="handleImgError"
+          @error="handleAvatarError"
         />
         <div class="egg-name">{{ egg.name }}</div>
         <span class="egg-mode">{{ egg.modeName }}</span>
@@ -78,10 +74,10 @@ function goToLumi(id) { router.push(`/lumi/${id}`) }
         >
           <div class="lumi-avatar-box">
             <img
-              :src="getAvatar(lumi.id)"
+              :src="avatarUrl(lumi.id)"
               :alt="lumi.name"
               class="lumi-avatar"
-              @error="handleImgError"
+              @error="handleAvatarError"
             />
           </div>
           <div class="lumi-name">{{ lumi.name }}</div>

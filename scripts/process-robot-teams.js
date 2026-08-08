@@ -14,14 +14,16 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { parseBranch } from './branch-cfg.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// 游戏原始数据：客户端 / 服务端两套（见 CLAUDE.md「数据源」）
-const SRC_CLIENT = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data'
-const SRC_SERVER = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/server/data'
-const DST = path.join(__dirname, '../public/data')
+// 支持 --branch=external|internal，见 branch-cfg.mjs
+const cfg = parseBranch()
+const SRC_CLIENT = cfg.TABLE_DATA_DIR
+const SRC_SERVER = cfg.SERVER_DATA_DIR
+const DST = cfg.DATA_DST_DIR
 
 let warnCount = 0
 function warn(msg) {

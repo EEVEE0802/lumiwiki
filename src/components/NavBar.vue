@@ -2,11 +2,14 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLanguage } from '../composables/useLanguage'
+import { useVersion } from '../composables/useVersion'
 
 const router = useRouter()
 const searchQuery = ref('')
 const mobileMenuOpen = ref(false)
 const langMenuOpen = ref(false)
+
+const { isInternal } = useVersion()
 
 // 导航链接
 const navLinks = [
@@ -42,6 +45,7 @@ function doSearch() {
     <div class="nav-brand" @click="router.push('/')">
       <span class="brand-icon">🌟</span>
       <span class="brand-text">LumiWiki</span>
+      <span v-if="isInternal" class="internal-badge" title="当前为对内开发分支数据">🔒 对内</span>
     </div>
 
     <button class="mobile-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
@@ -118,6 +122,16 @@ function doSearch() {
   white-space: nowrap;
 }
 .brand-icon { font-size: 1.4em; }
+.internal-badge {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-left: 4px;
+  box-shadow: 0 2px 6px rgba(245, 87, 108, 0.4);
+}
 .nav-links {
   display: flex;
   gap: 4px;

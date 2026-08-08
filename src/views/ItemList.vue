@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { loadData } from '../data'
+import { itemIconUrl } from '../data/imageUrl'
 import MultiSelect from '../components/MultiSelect.vue'
 
 const items = ref([])
@@ -88,7 +89,7 @@ const filtered = computed(() => {
             <td>
               <img
                 v-if="item.icon"
-                :src="`/images/items/${item.icon}.png`"
+                :src="itemIconUrl(item.icon)"
                 class="table-item-icon"
                 @error="($event.target).style.display='none'"
               />

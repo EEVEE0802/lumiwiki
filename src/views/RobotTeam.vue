@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { loadData, TYPE_NAMES, TYPE_COLORS, LUMI_TAG_NAMES } from '../data'
+import { avatarUrl } from '../data/imageUrl'
 
 const loading = ref(true)
 const activeTab = ref('dojo')
@@ -60,7 +61,7 @@ function getName(id) {
 }
 function getAvatar(id) {
   const l = getLumi(id)
-  return l?.CA ? `/images/avatars/${l.CA}.png` : ''
+  return l?.CA ? avatarUrl(l.CA) : ''
 }
 function getTypeName(typeId) { return TYPE_NAMES[typeId] || '无' }
 function getMaxScore(id) { return getLumi(id)?.MaxScore ?? 0 }

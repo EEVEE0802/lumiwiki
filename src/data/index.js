@@ -1,5 +1,6 @@
 // 全局数据加载与工具函数
 import { ref } from 'vue'
+import { getVersionSync, dataPrefix } from '../composables/useVersion'
 
 const cache = {}
 
@@ -9,16 +10,20 @@ function getCurrentLanguage() {
 }
 
 // 通用数据加载器（带缓存）
+// name 可含路径分隔符（如 'adventure/drop-rates'），会作为相对路径拼在 prefix 后
 async function loadData(name) {
   // 如果请求的是 localization，使用当前语言
   const dataName = name === 'localization' ? getCurrentLanguage() : name
-  const cacheKey = `${getCurrentLanguage()}_${name}`
+  // cache key 包含版本 + 语言维度，切换版本后自动落到新 key
+  const cacheKey = `${getVersionSync()}_${getCurrentLanguage()}_${name}`
   if (cache[cacheKey]) return cache[cacheKey]
+
+  const prefix = dataPrefix()
 
   // 先尝试加载加密版本 (.encoded)
   let data
   try {
-    const encodedResp = await fetch(`/data/${dataName}.json.encoded`)
+    const encodedResp = await fetch(`${prefix}/${dataName}.json.encoded`)
     if (encodedResp.ok) {
       const encoded = await encodedResp.text()
       // 解密：Base64 解码 → Gzip 解压 → JSON 解析
@@ -30,7 +35,7 @@ async function loadData(name) {
     }
   } catch {
     // 加密版本不存在或失败，加载原始 JSON
-    const resp = await fetch(`/data/${dataName}.json`)
+    const resp = await fetch(`${prefix}/${dataName}.json`)
     data = await resp.json()
   }
 

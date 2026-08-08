@@ -15,12 +15,14 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { parseBranch } from './branch-cfg.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const SOURCE_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data'
-const SERVER_DATA_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/server/data'
-const OUTPUT_DIR = path.resolve('D:/LumiWiki/public/data')
-const PUBLIC_DATA_DIR = path.resolve('D:/LumiWiki/public/data')
+const cfg = parseBranch()
+const SOURCE_DIR = cfg.TABLE_DATA_DIR
+const SERVER_DATA_DIR = cfg.SERVER_DATA_DIR
+const OUTPUT_DIR = cfg.DATA_DST_DIR
+const PUBLIC_DATA_DIR = cfg.DATA_DST_DIR
 
 function readJson(p) { return JSON.parse(fs.readFileSync(p, 'utf-8')) }
 function loadTable(src, name) {

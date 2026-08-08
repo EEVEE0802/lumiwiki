@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { loadData } from '../data'
+import { buffIconUrl } from '../data/imageUrl'
 import { useBattleText } from '../composables/useBattleText'
 
 const allBuffs = ref([])
@@ -70,7 +71,7 @@ function getKeywordName(key) {
 }
 
 function getIconUrl(icon) {
-  return `/images/buffs/${icon}.png`
+  return buffIconUrl(icon)
 }
 
 function handleImageError(e) {

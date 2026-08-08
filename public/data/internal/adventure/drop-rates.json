@@ -1,0 +1,3986 @@
+{
+  "updateTime": "2026-08-08T02:32:17.323Z",
+  "note": "普通概率=解锁池权重占比；彩色=保底触发时池内分布近似（按 LumiDrop.WeightPool 取权）",
+  "mainLineMaps": [
+    {
+      "mapId": 1,
+      "mapName": "雨林",
+      "mapNameKey": "MapName_1",
+      "type": "mainline",
+      "stages": [
+        {
+          "stage": 1,
+          "status": "before",
+          "label": "阶段1 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104801,
+              "name": "草莱姆",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 114401,
+              "name": "晴天娃娃",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "25.00"
+            }
+          ],
+          "totalWeight": 4000
+        },
+        {
+          "stage": 1,
+          "status": "after",
+          "label": "阶段1 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104801,
+              "name": "草莱姆",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 114401,
+              "name": "晴天娃娃",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 124001,
+              "name": "六曜鹿",
+              "weight": 1000,
+              "probability": "20.00"
+            }
+          ],
+          "totalWeight": 5000
+        },
+        {
+          "stage": 2,
+          "status": "before",
+          "label": "阶段2 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104801,
+              "name": "草莱姆",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 114401,
+              "name": "晴天娃娃",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 135901,
+              "name": "莓果羊驼",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 105701,
+              "name": "盼盼",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 101301,
+              "name": "好运鸟",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 123901,
+              "name": "三彩鹿",
+              "weight": 1000,
+              "probability": "12.50"
+            }
+          ],
+          "totalWeight": 8000
+        },
+        {
+          "stage": 2,
+          "status": "after",
+          "label": "阶段2 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104801,
+              "name": "草莱姆",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 114401,
+              "name": "晴天娃娃",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 124001,
+              "name": "六曜鹿",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 135901,
+              "name": "莓果羊驼",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 105701,
+              "name": "盼盼",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 101301,
+              "name": "好运鸟",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 123901,
+              "name": "三彩鹿",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 114501,
+              "name": "晴天精灵",
+              "weight": 1000,
+              "probability": "10.00"
+            }
+          ],
+          "totalWeight": 10000
+        },
+        {
+          "stage": 3,
+          "status": "before",
+          "label": "阶段3 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104801,
+              "name": "草莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 114401,
+              "name": "晴天娃娃",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 135901,
+              "name": "莓果羊驼",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 105701,
+              "name": "盼盼",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 101301,
+              "name": "好运鸟",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 123901,
+              "name": "三彩鹿",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 109701,
+              "name": "草冠莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 108501,
+              "name": "小叶鼠",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 116601,
+              "name": "招财猫",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 115301,
+              "name": "口哨鸦",
+              "weight": 1000,
+              "probability": "8.33"
+            }
+          ],
+          "totalWeight": 12000
+        },
+        {
+          "stage": 3,
+          "status": "after",
+          "label": "阶段3 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104801,
+              "name": "草莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 114401,
+              "name": "晴天娃娃",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 141401,
+              "name": "莓团团",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 100101,
+              "name": "卡皮巴拉",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 124001,
+              "name": "六曜鹿",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 135901,
+              "name": "莓果羊驼",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 105701,
+              "name": "盼盼",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 101301,
+              "name": "好运鸟",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 123901,
+              "name": "三彩鹿",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 114501,
+              "name": "晴天精灵",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 109701,
+              "name": "草冠莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 108501,
+              "name": "小叶鼠",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 116601,
+              "name": "招财猫",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 115301,
+              "name": "口哨鸦",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 101801,
+              "name": "飞叶鼠",
+              "weight": 1000,
+              "probability": "6.67"
+            }
+          ],
+          "totalWeight": 15000
+        }
+      ],
+      "colorLumis": [
+        {
+          "id": 100101,
+          "name": "卡皮巴拉",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 105701,
+          "name": "盼盼",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 115301,
+          "name": "口哨鸦",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 116601,
+          "name": "招财猫",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 104801,
+          "name": "草莱姆",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 141401,
+          "name": "莓团团",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 108501,
+          "name": "小叶鼠",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 123901,
+          "name": "三彩鹿",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 109701,
+          "name": "草冠莱姆",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 135901,
+          "name": "莓果羊驼",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 101801,
+          "name": "飞叶鼠",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 124001,
+          "name": "六曜鹿",
+          "weight": 300,
+          "probability": "3.09"
+        }
+      ]
+    },
+    {
+      "mapId": 2,
+      "mapName": "海滩",
+      "mapNameKey": "MapName_2",
+      "type": "mainline",
+      "stages": [
+        {
+          "stage": 1,
+          "status": "before",
+          "label": "阶段1 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104601,
+              "name": "水莱姆",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 113301,
+              "name": "球蝌蚪",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 103501,
+              "name": "软脚虾",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 103301,
+              "name": "企鹅秋秋",
+              "weight": 1000,
+              "probability": "25.00"
+            }
+          ],
+          "totalWeight": 4000
+        },
+        {
+          "stage": 1,
+          "status": "after",
+          "label": "阶段1 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104601,
+              "name": "水莱姆",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 113301,
+              "name": "球蝌蚪",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 103501,
+              "name": "软脚虾",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 103301,
+              "name": "企鹅秋秋",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 102801,
+              "name": "传话蛙",
+              "weight": 1000,
+              "probability": "20.00"
+            }
+          ],
+          "totalWeight": 5000
+        },
+        {
+          "stage": 2,
+          "status": "before",
+          "label": "阶段2 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104601,
+              "name": "水莱姆",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 113301,
+              "name": "球蝌蚪",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 103501,
+              "name": "软脚虾",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 103301,
+              "name": "企鹅秋秋",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 106601,
+              "name": "美团团",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 141301,
+              "name": "冒险蜗牛",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 119601,
+              "name": "水牛宝宝",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 101001,
+              "name": "小菜鸡",
+              "weight": 1000,
+              "probability": "12.50"
+            }
+          ],
+          "totalWeight": 8000
+        },
+        {
+          "stage": 2,
+          "status": "after",
+          "label": "阶段2 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104601,
+              "name": "水莱姆",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 113301,
+              "name": "球蝌蚪",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 103501,
+              "name": "软脚虾",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 103301,
+              "name": "企鹅秋秋",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 102801,
+              "name": "传话蛙",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 106601,
+              "name": "美团团",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 141301,
+              "name": "冒险蜗牛",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 119601,
+              "name": "水牛宝宝",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 101001,
+              "name": "小菜鸡",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 127101,
+              "name": "龙虾",
+              "weight": 1000,
+              "probability": "10.00"
+            }
+          ],
+          "totalWeight": 10000
+        },
+        {
+          "stage": 3,
+          "status": "before",
+          "label": "阶段3 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104601,
+              "name": "水莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 113301,
+              "name": "球蝌蚪",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 103501,
+              "name": "软脚虾",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 103301,
+              "name": "企鹅秋秋",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 106601,
+              "name": "美团团",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 141301,
+              "name": "冒险蜗牛",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 119601,
+              "name": "水牛宝宝",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 101001,
+              "name": "小菜鸡",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 109501,
+              "name": "水鳍莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 108601,
+              "name": "水母贝贝",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 119701,
+              "name": "莽莽水牛",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 124401,
+              "name": "灯光鱼",
+              "weight": 1000,
+              "probability": "8.33"
+            }
+          ],
+          "totalWeight": 12000
+        },
+        {
+          "stage": 3,
+          "status": "after",
+          "label": "阶段3 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104601,
+              "name": "水莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 113301,
+              "name": "球蝌蚪",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 103501,
+              "name": "软脚虾",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 103301,
+              "name": "企鹅秋秋",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 102801,
+              "name": "传话蛙",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 106601,
+              "name": "美团团",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 141301,
+              "name": "冒险蜗牛",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 119601,
+              "name": "水牛宝宝",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 101001,
+              "name": "小菜鸡",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 127101,
+              "name": "龙虾",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 109501,
+              "name": "水鳍莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 108601,
+              "name": "水母贝贝",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 119701,
+              "name": "莽莽水牛",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 124401,
+              "name": "灯光鱼",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 103201,
+              "name": "水母花花",
+              "weight": 1000,
+              "probability": "6.67"
+            }
+          ],
+          "totalWeight": 15000
+        }
+      ],
+      "colorLumis": [
+        {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "10.10"
+        },
+        {
+          "id": 103301,
+          "name": "企鹅秋秋",
+          "weight": 1000,
+          "probability": "10.10"
+        },
+        {
+          "id": 106601,
+          "name": "美团团",
+          "weight": 1000,
+          "probability": "10.10"
+        },
+        {
+          "id": 124401,
+          "name": "灯光鱼",
+          "weight": 1000,
+          "probability": "10.10"
+        },
+        {
+          "id": 141301,
+          "name": "冒险蜗牛",
+          "weight": 1000,
+          "probability": "10.10"
+        },
+        {
+          "id": 103501,
+          "name": "软脚虾",
+          "weight": 666,
+          "probability": "6.73"
+        },
+        {
+          "id": 104601,
+          "name": "水莱姆",
+          "weight": 666,
+          "probability": "6.73"
+        },
+        {
+          "id": 113301,
+          "name": "球蝌蚪",
+          "weight": 666,
+          "probability": "6.73"
+        },
+        {
+          "id": 119601,
+          "name": "水牛宝宝",
+          "weight": 666,
+          "probability": "6.73"
+        },
+        {
+          "id": 108601,
+          "name": "水母贝贝",
+          "weight": 600,
+          "probability": "6.06"
+        },
+        {
+          "id": 102801,
+          "name": "传话蛙",
+          "weight": 334,
+          "probability": "3.37"
+        },
+        {
+          "id": 109501,
+          "name": "水鳍莱姆",
+          "weight": 334,
+          "probability": "3.37"
+        },
+        {
+          "id": 119701,
+          "name": "莽莽水牛",
+          "weight": 334,
+          "probability": "3.37"
+        },
+        {
+          "id": 127101,
+          "name": "龙虾",
+          "weight": 334,
+          "probability": "3.37"
+        },
+        {
+          "id": 103201,
+          "name": "水母花花",
+          "weight": 300,
+          "probability": "3.03"
+        }
+      ]
+    },
+    {
+      "mapId": 3,
+      "mapName": "火山",
+      "mapNameKey": "MapName_3",
+      "type": "mainline",
+      "stages": [
+        {
+          "stage": 1,
+          "status": "before",
+          "label": "阶段1 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104501,
+              "name": "火莱姆",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 100701,
+              "name": "炸弹鸡",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 103401,
+              "name": "小火狐",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "25.00"
+            }
+          ],
+          "totalWeight": 4000
+        },
+        {
+          "stage": 1,
+          "status": "after",
+          "label": "阶段1 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104501,
+              "name": "火莱姆",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 100701,
+              "name": "炸弹鸡",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 103401,
+              "name": "小火狐",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 113101,
+              "name": "炽焰马",
+              "weight": 1000,
+              "probability": "20.00"
+            }
+          ],
+          "totalWeight": 5000
+        },
+        {
+          "stage": 2,
+          "status": "before",
+          "label": "阶段2 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104501,
+              "name": "火莱姆",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 100701,
+              "name": "炸弹鸡",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 103401,
+              "name": "小火狐",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 101101,
+              "name": "柴火熊",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 112401,
+              "name": "喷喷蟹",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 105101,
+              "name": "暗莱姆",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 112101,
+              "name": "只鼬宝宝",
+              "weight": 1000,
+              "probability": "12.50"
+            }
+          ],
+          "totalWeight": 8000
+        },
+        {
+          "stage": 2,
+          "status": "after",
+          "label": "阶段2 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104501,
+              "name": "火莱姆",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 100701,
+              "name": "炸弹鸡",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 103401,
+              "name": "小火狐",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 113101,
+              "name": "炽焰马",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 101101,
+              "name": "柴火熊",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 112401,
+              "name": "喷喷蟹",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 105101,
+              "name": "暗莱姆",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 112101,
+              "name": "只鼬宝宝",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 106201,
+              "name": "只鼬",
+              "weight": 1000,
+              "probability": "10.00"
+            }
+          ],
+          "totalWeight": 10000
+        },
+        {
+          "stage": 3,
+          "status": "before",
+          "label": "阶段3 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104501,
+              "name": "火莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 100701,
+              "name": "炸弹鸡",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 103401,
+              "name": "小火狐",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 101101,
+              "name": "柴火熊",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 112401,
+              "name": "喷喷蟹",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 105101,
+              "name": "暗莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 112101,
+              "name": "只鼬宝宝",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 109401,
+              "name": "火炎莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 108401,
+              "name": "小火喵",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 105401,
+              "name": "怪盗蝠",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 107801,
+              "name": "筋肉虎",
+              "weight": 1000,
+              "probability": "8.33"
+            }
+          ],
+          "totalWeight": 12000
+        },
+        {
+          "stage": 3,
+          "status": "after",
+          "label": "阶段3 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104501,
+              "name": "火莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 100701,
+              "name": "炸弹鸡",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 103401,
+              "name": "小火狐",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 104301,
+              "name": "火马墩墩",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 113101,
+              "name": "炽焰马",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 101101,
+              "name": "柴火熊",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 112401,
+              "name": "喷喷蟹",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 105101,
+              "name": "暗莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 112101,
+              "name": "只鼬宝宝",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 106201,
+              "name": "只鼬",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 109401,
+              "name": "火炎莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 108401,
+              "name": "小火喵",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 105401,
+              "name": "怪盗蝠",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 107801,
+              "name": "筋肉虎",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 101201,
+              "name": "火猫",
+              "weight": 1000,
+              "probability": "6.67"
+            }
+          ],
+          "totalWeight": 15000
+        }
+      ],
+      "colorLumis": [
+        {
+          "id": 100701,
+          "name": "炸弹鸡",
+          "weight": 1000,
+          "probability": "9.55"
+        },
+        {
+          "id": 101101,
+          "name": "柴火熊",
+          "weight": 1000,
+          "probability": "9.55"
+        },
+        {
+          "id": 103401,
+          "name": "小火狐",
+          "weight": 1000,
+          "probability": "9.55"
+        },
+        {
+          "id": 105401,
+          "name": "怪盗蝠",
+          "weight": 1000,
+          "probability": "9.55"
+        },
+        {
+          "id": 107801,
+          "name": "筋肉虎",
+          "weight": 1000,
+          "probability": "9.55"
+        },
+        {
+          "id": 112401,
+          "name": "喷喷蟹",
+          "weight": 1000,
+          "probability": "9.55"
+        },
+        {
+          "id": 104301,
+          "name": "火马墩墩",
+          "weight": 666,
+          "probability": "6.36"
+        },
+        {
+          "id": 104501,
+          "name": "火莱姆",
+          "weight": 666,
+          "probability": "6.36"
+        },
+        {
+          "id": 105101,
+          "name": "暗莱姆",
+          "weight": 666,
+          "probability": "6.36"
+        },
+        {
+          "id": 108401,
+          "name": "小火喵",
+          "weight": 600,
+          "probability": "5.73"
+        },
+        {
+          "id": 112101,
+          "name": "只鼬宝宝",
+          "weight": 600,
+          "probability": "5.73"
+        },
+        {
+          "id": 109401,
+          "name": "火炎莱姆",
+          "weight": 334,
+          "probability": "3.19"
+        },
+        {
+          "id": 113101,
+          "name": "炽焰马",
+          "weight": 334,
+          "probability": "3.19"
+        },
+        {
+          "id": 101201,
+          "name": "火猫",
+          "weight": 300,
+          "probability": "2.87"
+        },
+        {
+          "id": 106201,
+          "name": "只鼬",
+          "weight": 300,
+          "probability": "2.87"
+        }
+      ]
+    },
+    {
+      "mapId": 4,
+      "mapName": "沙漠",
+      "mapNameKey": "MapName_4",
+      "type": "mainline",
+      "stages": [
+        {
+          "stage": 1,
+          "status": "before",
+          "label": "阶段1 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 105001,
+              "name": "土莱姆",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 112501,
+              "name": "石角龟",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 136201,
+              "name": "冒险菇",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 100801,
+              "name": "练习鸡",
+              "weight": 1000,
+              "probability": "25.00"
+            }
+          ],
+          "totalWeight": 4000
+        },
+        {
+          "stage": 1,
+          "status": "after",
+          "label": "阶段1 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 105001,
+              "name": "土莱姆",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 112501,
+              "name": "石角龟",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 136201,
+              "name": "冒险菇",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 100801,
+              "name": "练习鸡",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 125901,
+              "name": "巨岩角龟",
+              "weight": 1000,
+              "probability": "20.00"
+            }
+          ],
+          "totalWeight": 5000
+        },
+        {
+          "stage": 2,
+          "status": "before",
+          "label": "阶段2 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 105001,
+              "name": "土莱姆",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 112501,
+              "name": "石角龟",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 136201,
+              "name": "冒险菇",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 100801,
+              "name": "练习鸡",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 127001,
+              "name": "食木沙鼠",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 102901,
+              "name": "淘淘",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 112901,
+              "name": "刺啦汪",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 122301,
+              "name": "陆行鸟",
+              "weight": 1000,
+              "probability": "12.50"
+            }
+          ],
+          "totalWeight": 8000
+        },
+        {
+          "stage": 2,
+          "status": "after",
+          "label": "阶段2 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 105001,
+              "name": "土莱姆",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 112501,
+              "name": "石角龟",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 136201,
+              "name": "冒险菇",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 100801,
+              "name": "练习鸡",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 125901,
+              "name": "巨岩角龟",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 127001,
+              "name": "食木沙鼠",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 102901,
+              "name": "淘淘",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 112901,
+              "name": "刺啦汪",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 122301,
+              "name": "陆行鸟",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 105501,
+              "name": "闪电狗",
+              "weight": 1000,
+              "probability": "10.00"
+            }
+          ],
+          "totalWeight": 10000
+        },
+        {
+          "stage": 3,
+          "status": "before",
+          "label": "阶段3 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 105001,
+              "name": "土莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 112501,
+              "name": "石角龟",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 136201,
+              "name": "冒险菇",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 100801,
+              "name": "练习鸡",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 127001,
+              "name": "食木沙鼠",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 102901,
+              "name": "淘淘",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 112901,
+              "name": "刺啦汪",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 122301,
+              "name": "陆行鸟",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 109901,
+              "name": "土脉莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 104101,
+              "name": "小钢狼",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 104401,
+              "name": "地鼠方方",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 108801,
+              "name": "石猩猩",
+              "weight": 1000,
+              "probability": "8.33"
+            }
+          ],
+          "totalWeight": 12000
+        },
+        {
+          "stage": 3,
+          "status": "after",
+          "label": "阶段3 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 105001,
+              "name": "土莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 112501,
+              "name": "石角龟",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 136201,
+              "name": "冒险菇",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 100801,
+              "name": "练习鸡",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 125901,
+              "name": "巨岩角龟",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 127001,
+              "name": "食木沙鼠",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 102901,
+              "name": "淘淘",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 112901,
+              "name": "刺啦汪",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 122301,
+              "name": "陆行鸟",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 105501,
+              "name": "闪电狗",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 109901,
+              "name": "土脉莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 104101,
+              "name": "小钢狼",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 104401,
+              "name": "地鼠方方",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 108801,
+              "name": "石猩猩",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 102401,
+              "name": "金刚狼",
+              "weight": 1000,
+              "probability": "6.67"
+            }
+          ],
+          "totalWeight": 15000
+        }
+      ],
+      "colorLumis": [
+        {
+          "id": 100801,
+          "name": "练习鸡",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 102901,
+          "name": "淘淘",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 104401,
+          "name": "地鼠方方",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 108801,
+          "name": "石猩猩",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 122301,
+          "name": "陆行鸟",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 127001,
+          "name": "食木沙鼠",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 136201,
+          "name": "冒险菇",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 104101,
+          "name": "小钢狼",
+          "weight": 666,
+          "probability": "6.05"
+        },
+        {
+          "id": 105001,
+          "name": "土莱姆",
+          "weight": 666,
+          "probability": "6.05"
+        },
+        {
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 666,
+          "probability": "6.05"
+        },
+        {
+          "id": 112901,
+          "name": "刺啦汪",
+          "weight": 666,
+          "probability": "6.05"
+        },
+        {
+          "id": 102401,
+          "name": "金刚狼",
+          "weight": 334,
+          "probability": "3.04"
+        },
+        {
+          "id": 105501,
+          "name": "闪电狗",
+          "weight": 334,
+          "probability": "3.04"
+        },
+        {
+          "id": 109901,
+          "name": "土脉莱姆",
+          "weight": 334,
+          "probability": "3.04"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 334,
+          "probability": "3.04"
+        }
+      ]
+    },
+    {
+      "mapId": 5,
+      "mapName": "峡谷",
+      "mapNameKey": "MapName_5",
+      "type": "mainline",
+      "stages": [
+        {
+          "stage": 1,
+          "status": "before",
+          "label": "阶段1 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104901,
+              "name": "电莱姆",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 105601,
+              "name": "小蜜蜜",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 102501,
+              "name": "发奋仓鼠",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 100601,
+              "name": "咕咕鸡",
+              "weight": 1000,
+              "probability": "25.00"
+            }
+          ],
+          "totalWeight": 4000
+        },
+        {
+          "stage": 1,
+          "status": "after",
+          "label": "阶段1 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104901,
+              "name": "电莱姆",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 105601,
+              "name": "小蜜蜜",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 102501,
+              "name": "发奋仓鼠",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 100601,
+              "name": "咕咕鸡",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 119101,
+              "name": "公主蜂",
+              "weight": 1000,
+              "probability": "20.00"
+            }
+          ],
+          "totalWeight": 5000
+        },
+        {
+          "stage": 2,
+          "status": "before",
+          "label": "阶段2 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104901,
+              "name": "电莱姆",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 105601,
+              "name": "小蜜蜜",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 102501,
+              "name": "发奋仓鼠",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 100601,
+              "name": "咕咕鸡",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 106301,
+              "name": "狮鹫宝宝",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 116501,
+              "name": "噼啪蛋",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 103701,
+              "name": "呐喊君",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 103601,
+              "name": "奶牛哞哞",
+              "weight": 1000,
+              "probability": "12.50"
+            }
+          ],
+          "totalWeight": 8000
+        },
+        {
+          "stage": 2,
+          "status": "after",
+          "label": "阶段2 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104901,
+              "name": "电莱姆",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 105601,
+              "name": "小蜜蜜",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 102501,
+              "name": "发奋仓鼠",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 100601,
+              "name": "咕咕鸡",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 119101,
+              "name": "公主蜂",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 106301,
+              "name": "狮鹫宝宝",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 116501,
+              "name": "噼啪蛋",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 103701,
+              "name": "呐喊君",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 103601,
+              "name": "奶牛哞哞",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 106401,
+              "name": "英俊狮鹫",
+              "weight": 1000,
+              "probability": "10.00"
+            }
+          ],
+          "totalWeight": 10000
+        },
+        {
+          "stage": 3,
+          "status": "before",
+          "label": "阶段3 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104901,
+              "name": "电莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 105601,
+              "name": "小蜜蜜",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 102501,
+              "name": "发奋仓鼠",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 100601,
+              "name": "咕咕鸡",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 106301,
+              "name": "狮鹫宝宝",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 116501,
+              "name": "噼啪蛋",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 103701,
+              "name": "呐喊君",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 103601,
+              "name": "奶牛哞哞",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 109801,
+              "name": "电鸣莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 102601,
+              "name": "筋肉狗",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 103801,
+              "name": "黄风大圣",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 104201,
+              "name": "土犀犀",
+              "weight": 1000,
+              "probability": "8.33"
+            }
+          ],
+          "totalWeight": 12000
+        },
+        {
+          "stage": 3,
+          "status": "after",
+          "label": "阶段3 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104901,
+              "name": "电莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 105601,
+              "name": "小蜜蜜",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 102501,
+              "name": "发奋仓鼠",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 100601,
+              "name": "咕咕鸡",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 119101,
+              "name": "公主蜂",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 106301,
+              "name": "狮鹫宝宝",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 116501,
+              "name": "噼啪蛋",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 103701,
+              "name": "呐喊君",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 103601,
+              "name": "奶牛哞哞",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 106401,
+              "name": "英俊狮鹫",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 109801,
+              "name": "电鸣莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 102601,
+              "name": "筋肉狗",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 103801,
+              "name": "黄风大圣",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 104201,
+              "name": "土犀犀",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 127301,
+              "name": "铁甲土犀",
+              "weight": 1000,
+              "probability": "6.67"
+            }
+          ],
+          "totalWeight": 15000
+        }
+      ],
+      "colorLumis": [
+        {
+          "id": 100601,
+          "name": "咕咕鸡",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 102501,
+          "name": "发奋仓鼠",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 102601,
+          "name": "筋肉狗",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 103601,
+          "name": "奶牛哞哞",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 103801,
+          "name": "黄风大圣",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 116501,
+          "name": "噼啪蛋",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 104201,
+          "name": "土犀犀",
+          "weight": 666,
+          "probability": "6.11"
+        },
+        {
+          "id": 104901,
+          "name": "电莱姆",
+          "weight": 666,
+          "probability": "6.11"
+        },
+        {
+          "id": 105601,
+          "name": "小蜜蜜",
+          "weight": 666,
+          "probability": "6.11"
+        },
+        {
+          "id": 106301,
+          "name": "狮鹫宝宝",
+          "weight": 600,
+          "probability": "5.50"
+        },
+        {
+          "id": 109801,
+          "name": "电鸣莱姆",
+          "weight": 334,
+          "probability": "3.06"
+        },
+        {
+          "id": 119101,
+          "name": "公主蜂",
+          "weight": 334,
+          "probability": "3.06"
+        },
+        {
+          "id": 127301,
+          "name": "铁甲土犀",
+          "weight": 334,
+          "probability": "3.06"
+        },
+        {
+          "id": 106401,
+          "name": "英俊狮鹫",
+          "weight": 300,
+          "probability": "2.75"
+        }
+      ]
+    },
+    {
+      "mapId": 6,
+      "mapName": "雪山",
+      "mapNameKey": "MapName_6",
+      "type": "mainline",
+      "stages": [
+        {
+          "stage": 1,
+          "status": "before",
+          "label": "阶段1 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104701,
+              "name": "冰莱姆",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 106101,
+              "name": "月兔",
+              "weight": 1000,
+              "probability": "25.00"
+            },
+            {
+              "id": 101901,
+              "name": "小鹿晶晶",
+              "weight": 1000,
+              "probability": "25.00"
+            }
+          ],
+          "totalWeight": 4000
+        },
+        {
+          "stage": 1,
+          "status": "after",
+          "label": "阶段1 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104701,
+              "name": "冰莱姆",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 106101,
+              "name": "月兔",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 101901,
+              "name": "小鹿晶晶",
+              "weight": 1000,
+              "probability": "20.00"
+            },
+            {
+              "id": 102001,
+              "name": "冰川鹿",
+              "weight": 1000,
+              "probability": "20.00"
+            }
+          ],
+          "totalWeight": 5000
+        },
+        {
+          "stage": 2,
+          "status": "before",
+          "label": "阶段2 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104701,
+              "name": "冰莱姆",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 106101,
+              "name": "月兔",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 101901,
+              "name": "小鹿晶晶",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 105201,
+              "name": "光莱姆",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 116701,
+              "name": "甜梦",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 102701,
+              "name": "筋肉鹅",
+              "weight": 1000,
+              "probability": "12.50"
+            },
+            {
+              "id": 123101,
+              "name": "冰壳龟",
+              "weight": 1000,
+              "probability": "12.50"
+            }
+          ],
+          "totalWeight": 8000
+        },
+        {
+          "stage": 2,
+          "status": "after",
+          "label": "阶段2 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104701,
+              "name": "冰莱姆",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 106101,
+              "name": "月兔",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 101901,
+              "name": "小鹿晶晶",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 102001,
+              "name": "冰川鹿",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 105201,
+              "name": "光莱姆",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 116701,
+              "name": "甜梦",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 102701,
+              "name": "筋肉鹅",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 123101,
+              "name": "冰壳龟",
+              "weight": 1000,
+              "probability": "10.00"
+            },
+            {
+              "id": 103901,
+              "name": "食梦貘",
+              "weight": 1000,
+              "probability": "10.00"
+            }
+          ],
+          "totalWeight": 10000
+        },
+        {
+          "stage": 3,
+          "status": "before",
+          "label": "阶段3 · 霸主出现前",
+          "lumis": [
+            {
+              "id": 104701,
+              "name": "冰莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 106101,
+              "name": "月兔",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 101901,
+              "name": "小鹿晶晶",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 105201,
+              "name": "光莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 116701,
+              "name": "甜梦",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 102701,
+              "name": "筋肉鹅",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 123101,
+              "name": "冰壳龟",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 109601,
+              "name": "冰晶莱姆",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 113601,
+              "name": "云朵毛毛",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 116901,
+              "name": "呼呼兔",
+              "weight": 1000,
+              "probability": "8.33"
+            },
+            {
+              "id": 102201,
+              "name": "小马嘟嘟",
+              "weight": 1000,
+              "probability": "8.33"
+            }
+          ],
+          "totalWeight": 12000
+        },
+        {
+          "stage": 3,
+          "status": "after",
+          "label": "阶段3 · 霸主已抓",
+          "lumis": [
+            {
+              "id": 104701,
+              "name": "冰莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 112301,
+              "name": "吓吓团",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 106101,
+              "name": "月兔",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 101901,
+              "name": "小鹿晶晶",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 102001,
+              "name": "冰川鹿",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 105201,
+              "name": "光莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 116701,
+              "name": "甜梦",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 102701,
+              "name": "筋肉鹅",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 123101,
+              "name": "冰壳龟",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 103901,
+              "name": "食梦貘",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 109601,
+              "name": "冰晶莱姆",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 113601,
+              "name": "云朵毛毛",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 116901,
+              "name": "呼呼兔",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 102201,
+              "name": "小马嘟嘟",
+              "weight": 1000,
+              "probability": "6.67"
+            },
+            {
+              "id": 102301,
+              "name": "独角兽",
+              "weight": 1000,
+              "probability": "6.67"
+            }
+          ],
+          "totalWeight": 15000
+        }
+      ],
+      "colorLumis": [
+        {
+          "id": 102701,
+          "name": "筋肉鹅",
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
+          "id": 103901,
+          "name": "食梦貘",
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
+          "id": 106101,
+          "name": "月兔",
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
+          "id": 112301,
+          "name": "吓吓团",
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
+          "id": 116701,
+          "name": "甜梦",
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
+          "id": 116901,
+          "name": "呼呼兔",
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
+          "id": 123101,
+          "name": "冰壳龟",
+          "weight": 1000,
+          "probability": "8.88"
+        },
+        {
+          "id": 101901,
+          "name": "小鹿晶晶",
+          "weight": 666,
+          "probability": "5.91"
+        },
+        {
+          "id": 102201,
+          "name": "小马嘟嘟",
+          "weight": 666,
+          "probability": "5.91"
+        },
+        {
+          "id": 104701,
+          "name": "冰莱姆",
+          "weight": 666,
+          "probability": "5.91"
+        },
+        {
+          "id": 105201,
+          "name": "光莱姆",
+          "weight": 666,
+          "probability": "5.91"
+        },
+        {
+          "id": 113601,
+          "name": "云朵毛毛",
+          "weight": 600,
+          "probability": "5.33"
+        },
+        {
+          "id": 102001,
+          "name": "冰川鹿",
+          "weight": 334,
+          "probability": "2.96"
+        },
+        {
+          "id": 102301,
+          "name": "独角兽",
+          "weight": 334,
+          "probability": "2.96"
+        },
+        {
+          "id": 109601,
+          "name": "冰晶莱姆",
+          "weight": 334,
+          "probability": "2.96"
+        }
+      ]
+    }
+  ],
+  "seasonMaps": [
+    {
+      "mapId": 1000,
+      "mapName": "绿林龙森",
+      "mapNameKey": "MapName_S1_01",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "6.67"
+        }
+      ],
+      "totalWeight": 15000,
+      "colorLumis": [
+        {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "3.09"
+        }
+      ]
+    },
+    {
+      "mapId": 1010,
+      "mapName": "霜脊狼原",
+      "mapNameKey": "MapName_S1_02",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 102001,
+          "name": "冰川鹿",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 101901,
+          "name": "小鹿晶晶",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 127301,
+          "name": "铁甲土犀",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 104201,
+          "name": "土犀犀",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 103801,
+          "name": "黄风大圣",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 103301,
+          "name": "企鹅秋秋",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 106101,
+          "name": "月兔",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 114101,
+          "name": "冰晶狼",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 114001,
+          "name": "冰狼崽",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 125801,
+          "name": "魔魔猪",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 139801,
+          "name": "松果猫头鹰",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "6.67"
+        }
+      ],
+      "totalWeight": 15000,
+      "colorLumis": [
+        {
+          "id": 103301,
+          "name": "企鹅秋秋",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 103801,
+          "name": "黄风大圣",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 106101,
+          "name": "月兔",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 125801,
+          "name": "魔魔猪",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 139801,
+          "name": "松果猫头鹰",
+          "weight": 1000,
+          "probability": "8.40"
+        },
+        {
+          "id": 101901,
+          "name": "小鹿晶晶",
+          "weight": 666,
+          "probability": "5.60"
+        },
+        {
+          "id": 104201,
+          "name": "土犀犀",
+          "weight": 666,
+          "probability": "5.60"
+        },
+        {
+          "id": 114001,
+          "name": "冰狼崽",
+          "weight": 600,
+          "probability": "5.04"
+        },
+        {
+          "id": 102001,
+          "name": "冰川鹿",
+          "weight": 334,
+          "probability": "2.81"
+        },
+        {
+          "id": 127301,
+          "name": "铁甲土犀",
+          "weight": 334,
+          "probability": "2.81"
+        },
+        {
+          "id": 114101,
+          "name": "冰晶狼",
+          "weight": 300,
+          "probability": "2.52"
+        }
+      ]
+    },
+    {
+      "mapId": 1020,
+      "mapName": "守光雨林",
+      "mapNameKey": "MapName_S1_03",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 102801,
+          "name": "传话蛙",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 113301,
+          "name": "球蝌蚪",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 102401,
+          "name": "金刚狼",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 104101,
+          "name": "小钢狼",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 102601,
+          "name": "筋肉狗",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 105701,
+          "name": "盼盼",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 103601,
+          "name": "奶牛哞哞",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 114801,
+          "name": "光兔",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 121001,
+          "name": "战螂",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 121101,
+          "name": "战螂宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 119801,
+          "name": "木棍人",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 120501,
+          "name": "蕉蕉猩",
+          "weight": 1000,
+          "probability": "6.67"
+        }
+      ],
+      "totalWeight": 15000,
+      "colorLumis": [
+        {
+          "id": 102601,
+          "name": "筋肉狗",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 103601,
+          "name": "奶牛哞哞",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 105701,
+          "name": "盼盼",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 119801,
+          "name": "木棍人",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 120501,
+          "name": "蕉蕉猩",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "9.17"
+        },
+        {
+          "id": 104101,
+          "name": "小钢狼",
+          "weight": 666,
+          "probability": "6.11"
+        },
+        {
+          "id": 113301,
+          "name": "球蝌蚪",
+          "weight": 666,
+          "probability": "6.11"
+        },
+        {
+          "id": 121101,
+          "name": "战螂宝宝",
+          "weight": 666,
+          "probability": "6.11"
+        },
+        {
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 600,
+          "probability": "5.50"
+        },
+        {
+          "id": 102401,
+          "name": "金刚狼",
+          "weight": 334,
+          "probability": "3.06"
+        },
+        {
+          "id": 102801,
+          "name": "传话蛙",
+          "weight": 334,
+          "probability": "3.06"
+        },
+        {
+          "id": 121001,
+          "name": "战螂",
+          "weight": 334,
+          "probability": "3.06"
+        },
+        {
+          "id": 114801,
+          "name": "光兔",
+          "weight": 300,
+          "probability": "2.75"
+        }
+      ]
+    },
+    {
+      "mapId": 1030,
+      "mapName": "余烬龙谷",
+      "mapNameKey": "MapName_S1_04",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 113101,
+          "name": "炽焰马",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 104301,
+          "name": "火马墩墩",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 106401,
+          "name": "英俊狮鹫",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 106301,
+          "name": "狮鹫宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 102501,
+          "name": "发奋仓鼠",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115301,
+          "name": "口哨鸦",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 107801,
+          "name": "筋肉虎",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "6.67"
+        }
+      ],
+      "totalWeight": 15000,
+      "colorLumis": [
+        {
+          "id": 102501,
+          "name": "发奋仓鼠",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 107801,
+          "name": "筋肉虎",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 115301,
+          "name": "口哨鸦",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "9.09"
+        },
+        {
+          "id": 104301,
+          "name": "火马墩墩",
+          "weight": 666,
+          "probability": "6.05"
+        },
+        {
+          "id": 106301,
+          "name": "狮鹫宝宝",
+          "weight": 600,
+          "probability": "5.45"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "5.45"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 600,
+          "probability": "5.45"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "5.45"
+        },
+        {
+          "id": 113101,
+          "name": "炽焰马",
+          "weight": 334,
+          "probability": "3.04"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "2.73"
+        },
+        {
+          "id": 106401,
+          "name": "英俊狮鹫",
+          "weight": 300,
+          "probability": "2.73"
+        }
+      ]
+    },
+    {
+      "mapId": 1040,
+      "mapName": "影伏荒漠",
+      "mapNameKey": "MapName_S1_05",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 106201,
+          "name": "只鼬",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 112101,
+          "name": "只鼬宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 119101,
+          "name": "公主蜂",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 105601,
+          "name": "小蜜蜜",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 101101,
+          "name": "柴火熊",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 105401,
+          "name": "怪盗蝠",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 108801,
+          "name": "石猩猩",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115101,
+          "name": "暗兔",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115001,
+          "name": "暗兔宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 118201,
+          "name": "搏击袋鼠",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "6.67"
+        }
+      ],
+      "totalWeight": 15000,
+      "colorLumis": [
+        {
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 101101,
+          "name": "柴火熊",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 105401,
+          "name": "怪盗蝠",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 108801,
+          "name": "石猩猩",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 105601,
+          "name": "小蜜蜜",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 112101,
+          "name": "只鼬宝宝",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 115001,
+          "name": "暗兔宝",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 118201,
+          "name": "搏击袋鼠",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 119101,
+          "name": "公主蜂",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 106201,
+          "name": "只鼬",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 115101,
+          "name": "暗兔",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 300,
+          "probability": "3.09"
+        }
+      ]
+    },
+    {
+      "mapId": 1050,
+      "mapName": "游龙海滨",
+      "mapNameKey": "MapName_S1_06",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 127101,
+          "name": "龙虾",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 103501,
+          "name": "软脚虾",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 103901,
+          "name": "食梦貘",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 119601,
+          "name": "水牛宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 119701,
+          "name": "莽莽水牛",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 112301,
+          "name": "吓吓团",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 124401,
+          "name": "灯光鱼",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 118301,
+          "name": "水龙",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 112001,
+          "name": "水龙宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 119901,
+          "name": "耐氪鲨",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 120701,
+          "name": "卡布奇诺小姐",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 120601,
+          "name": "卡布奇诺刺客",
+          "weight": 1000,
+          "probability": "6.67"
+        }
+      ],
+      "totalWeight": 15000,
+      "colorLumis": [
+        {
+          "id": 103901,
+          "name": "食梦貘",
+          "weight": 1000,
+          "probability": "9.26"
+        },
+        {
+          "id": 112301,
+          "name": "吓吓团",
+          "weight": 1000,
+          "probability": "9.26"
+        },
+        {
+          "id": 119901,
+          "name": "耐氪鲨",
+          "weight": 1000,
+          "probability": "9.26"
+        },
+        {
+          "id": 120601,
+          "name": "卡布奇诺刺客",
+          "weight": 1000,
+          "probability": "9.26"
+        },
+        {
+          "id": 120701,
+          "name": "卡布奇诺小姐",
+          "weight": 1000,
+          "probability": "9.26"
+        },
+        {
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "9.26"
+        },
+        {
+          "id": 124401,
+          "name": "灯光鱼",
+          "weight": 1000,
+          "probability": "9.26"
+        },
+        {
+          "id": 103501,
+          "name": "软脚虾",
+          "weight": 666,
+          "probability": "6.17"
+        },
+        {
+          "id": 119601,
+          "name": "水牛宝宝",
+          "weight": 666,
+          "probability": "6.17"
+        },
+        {
+          "id": 112001,
+          "name": "水龙宝宝",
+          "weight": 600,
+          "probability": "5.56"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 600,
+          "probability": "5.56"
+        },
+        {
+          "id": 119701,
+          "name": "莽莽水牛",
+          "weight": 334,
+          "probability": "3.09"
+        },
+        {
+          "id": 127101,
+          "name": "龙虾",
+          "weight": 334,
+          "probability": "3.09"
+        },
+        {
+          "id": 118301,
+          "name": "水龙",
+          "weight": 300,
+          "probability": "2.78"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 300,
+          "probability": "2.78"
+        }
+      ]
+    }
+  ]
+}

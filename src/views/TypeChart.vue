@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { loadData, TYPE_COLORS } from '../data'
+import { typeIconUrl } from '../data/imageUrl'
 
 const typeData = ref([])
 const locMap = ref({})
@@ -172,7 +173,7 @@ const selectedDefInfos = computed(() =>
           <tr>
             <th class="corner">攻 \\ 守</th>
             <th v-for="t in types" :key="t.id" class="type-header" :style="{ background: t.color }">
-              <img v-if="t.icon" :src="`/images/types/${t.icon}.png`" class="type-icon-sm" @error="($event.target).style.display='none'" />
+              <img v-if="t.icon" :src="typeIconUrl(t.icon)" class="type-icon-sm" @error="($event.target).style.display='none'" />
               <span>{{ t.name }}</span>
             </th>
           </tr>
@@ -180,7 +181,7 @@ const selectedDefInfos = computed(() =>
         <tbody>
           <tr v-for="(atk, i) in typeData" :key="atk.LumiType">
             <td class="type-header-row" :style="{ background: TYPE_COLORS[atk.LumiType] }">
-              <img v-if="types[i].icon" :src="`/images/types/${types[i].icon}.png`" class="type-icon-sm" @error="($event.target).style.display='none'" />
+              <img v-if="types[i].icon" :src="typeIconUrl(types[i].icon)" class="type-icon-sm" @error="($event.target).style.display='none'" />
               <span>{{ types[i].name }}</span>
             </td>
             <td
@@ -211,7 +212,7 @@ const selectedDefInfos = computed(() =>
           :style="selectedDefTypes.includes(t.id) ? { background: t.color, borderColor: t.color } : {}"
           @click="toggleDefType(t.id)"
         >
-          <img v-if="t.icon" :src="`/images/types/${t.icon}.png`" class="type-icon-sm" @error="($event.target).style.display='none'" />
+          <img v-if="t.icon" :src="typeIconUrl(t.icon)" class="type-icon-sm" @error="($event.target).style.display='none'" />
           <span>{{ t.name }}</span>
         </button>
       </div>
@@ -221,7 +222,7 @@ const selectedDefInfos = computed(() =>
         <template v-if="selectedDefInfos.length > 0">
           <span class="selected-label">当前防御组合：</span>
           <span v-for="(s, i) in selectedDefInfos" :key="s.id" class="selected-type" :style="{ background: s.color }">
-            <img v-if="s.icon" :src="`/images/types/${s.icon}.png`" class="type-icon-sm" @error="($event.target).style.display='none'" />
+            <img v-if="s.icon" :src="typeIconUrl(s.icon)" class="type-icon-sm" @error="($event.target).style.display='none'" />
             <span>{{ s.name }}</span>
           </span>
           <button class="clear-btn" @click="clearDefTypes">✕ 清空</button>
@@ -235,7 +236,7 @@ const selectedDefInfos = computed(() =>
       <div v-if="comboResults.length > 0" class="combo-results">
         <div v-for="r in comboResults" :key="r.atkId" class="combo-card" :class="`eff-${r.eff}`">
           <div class="combo-atk" :style="{ background: r.atkColor }">
-            <img v-if="r.atkIcon" :src="`/images/types/${r.atkIcon}.png`" class="type-icon-sm" @error="($event.target).style.display='none'" />
+            <img v-if="r.atkIcon" :src="typeIconUrl(r.atkIcon)" class="type-icon-sm" @error="($event.target).style.display='none'" />
             <span>{{ r.atkName }}</span>
           </div>
           <div class="combo-effect">{{ r.text }}</div>

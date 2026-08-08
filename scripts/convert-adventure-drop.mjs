@@ -17,12 +17,14 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { parseBranch } from './branch-cfg.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const SOURCE_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data'
-const SERVER_DATA_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/server/data'
-const OUTPUT_DIR = path.resolve('D:/LumiWiki/public/data/adventure')
-const PUBLIC_DATA_DIR = path.resolve('D:/LumiWiki/public/data')
+const cfg = parseBranch()
+const SOURCE_DIR = cfg.TABLE_DATA_DIR
+const SERVER_DATA_DIR = cfg.SERVER_DATA_DIR
+const OUTPUT_DIR = path.join(cfg.DATA_DST_DIR, 'adventure')
+const PUBLIC_DATA_DIR = cfg.DATA_DST_DIR
 
 if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true })
 

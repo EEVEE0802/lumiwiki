@@ -131,6 +131,8 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { loadData } from '../data'
+import { avatarUrl, handleAvatarError } from '../data/imageUrl'
 
 const router = useRouter()
 
@@ -229,15 +231,14 @@ function formatTime(isoString) {
   })
 }
 
-// 获取噜咪头像
+// 获取噜咪头像（走版本感知的 imageUrl helper）
 function getLumiAvatar(lumiId) {
-  return `/images/avatars/CA_${lumiId}.png`
+  return avatarUrl(lumiId)
 }
 
 // 处理图片加载失败（防 onerror 死循环）
 function handleImageError(e) {
-  e.target.onerror = null
-  e.target.src = '/images/avatars/CA_lumi.png'
+  handleAvatarError(e)
 }
 
 // 跳转到噜咪详情
@@ -254,11 +255,10 @@ function getProbabilityClass(probability) {
   return 'low'
 }
 
-// 加载数据
-async function loadData() {
+// 加载数据（走版本感知的 loadData，自动挑对外 / 对内目录）
+async function loadDropData() {
   try {
-    const response = await fetch('/data/adventure/drop-rates.json')
-    const json = await response.json()
+    const json = await loadData('adventure/drop-rates')
     data.value = json
 
     // 默认选择第一个主线地图
@@ -271,7 +271,7 @@ async function loadData() {
 }
 
 onMounted(() => {
-  loadData()
+  loadDropData()
 })
 </script>
 

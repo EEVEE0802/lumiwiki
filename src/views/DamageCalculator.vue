@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import { loadData, TYPE_NAMES, TYPE_COLORS } from '../data'
+import { avatarUrl } from '../data/imageUrl'
 import LumiSelector from '../components/LumiSelector.vue'
 
 // 主要数据
@@ -656,7 +657,7 @@ watch([
         <div v-if="leftLumi" class="lumi-preview">
           <img
             v-if="leftLumi.CA"
-            :src="`/images/avatars/${leftLumi.CA}.png`"
+            :src="avatarUrl(leftLumi.CA)"
             class="preview-avatar"
             @error="($event.target).style.display='none'"
           />
@@ -830,7 +831,7 @@ watch([
         <div v-if="rightLumi" class="lumi-preview">
           <img
             v-if="rightLumi.CA"
-            :src="`/images/avatars/${rightLumi.CA}.png`"
+            :src="avatarUrl(rightLumi.CA)"
             class="preview-avatar"
             @error="($event.target).style.display='none'"
           />

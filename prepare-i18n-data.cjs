@@ -11,10 +11,21 @@
 const fs = require('fs')
 const path = require('path')
 
-// 源数据目录
-const SRC_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data'
+// 解析 --branch=internal 参数
+const branchArg = process.argv.find(a => a.startsWith('--branch='))
+const branch = branchArg ? branchArg.split('=')[1] : 'external'
+const isInternal = branch === 'internal'
+if (branch !== 'external' && branch !== 'internal') {
+  console.error(`未知 --branch 值: ${branch}（仅支持 external / internal）`)
+  process.exit(1)
+}
+
+// 源数据目录（对外多一层 LumiGoDesigner，对内直接 Designer）
+const SRC_DIR = isInternal
+  ? 'F:/G36Branch/Designer/Config/Luban/Datas/Table/data'
+  : 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data'
 // 目标目录
-const DST_DIR = path.join(__dirname, 'public/data')
+const DST_DIR = path.join(__dirname, 'public/data', isInternal ? 'internal' : '')
 
 // 语言配置
 const LANGUAGES = {
@@ -26,7 +37,7 @@ const LANGUAGES = {
 }
 
 console.log('======================================')
-console.log('   LumiWiki 多语言数据准备工具')
+console.log(`   LumiWiki 多语言数据准备工具（${branch}）`)
 console.log('======================================')
 console.log('')
 

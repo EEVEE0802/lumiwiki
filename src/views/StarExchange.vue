@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { loadData, TYPE_NAMES } from '../data'
+import { avatarUrl, itemIconUrl } from '../data/imageUrl'
 
 const groups = ref([])
 const locMap = ref({})
@@ -71,7 +72,7 @@ function getLumiName(id) {
 
 function getLumiAvatar(id) {
   const l = lumiMap.value.get(id)
-  return l?.CA ? `/images/avatars/${l.CA}.png` : ''
+  return l?.CA ? avatarUrl(l.CA) : ''
 }
 
 function getItemInfo(id) {
@@ -79,7 +80,7 @@ function getItemInfo(id) {
   if (!it) return { name: `Item#${id}`, icon: '' }
   return {
     name: locMap.value[it.name] || it.name,
-    icon: it.icon ? `/images/items/${it.icon}.png` : ''
+    icon: it.icon ? itemIconUrl(it.icon) : ''
   }
 }
 

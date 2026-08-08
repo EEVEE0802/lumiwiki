@@ -7,6 +7,11 @@
       <p class="update-time" v-else-if="gameMode === 'participation' && participationUpdateTime">数据更新时间: {{ formatTime(participationUpdateTime) }}</p>
     </div>
 
+    <!-- 对内模式下的提示条：线上数据只有对外，不受版本切换影响 -->
+    <div v-if="isInternal" class="external-data-notice">
+      ⚠️ 当前应用切换为「对内版」，但线上数据（天梯 / 周赛 / 参与走势）只来源于对外正式服，与版本切换无关。
+    </div>
+
     <!-- 玩法切换 -->
     <div class="game-mode-selector">
       <button
@@ -332,7 +337,7 @@
                           <span v-if="ss.isNone" class="skill-icon-placeholder">—</span>
                           <img
                             v-else
-                            :src="`/images/skills/${ss.meta?.icon || 'unknown'}.png`"
+                            :src="skillIconUrl(ss.meta?.icon)"
                             :alt="ss.meta?.name || ''"
                             class="skill-icon"
                             @error="handleSkillIconError"
@@ -355,7 +360,7 @@
                         <span v-if="ts.isNone" class="trainer-icon-placeholder">—</span>
                         <img
                           v-else
-                          :src="`/images/skills/${ts.meta?.icon || 'unknown'}.png`"
+                          :src="skillIconUrl(ts.meta?.icon)"
                           :alt="ts.meta?.name || ''"
                           class="trainer-icon"
                           @error="handleSkillIconError"
@@ -499,6 +504,10 @@ import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import MultiSelect from '../components/MultiSelect.vue'
 import { loadData as loadGameData, tSync } from '../data'
+import { avatarUrl, skillIconUrl, handleAvatarError } from '../data/imageUrl'
+import { useVersion } from '../composables/useVersion'
+
+const { isInternal } = useVersion()
 
 const router = useRouter()
 
@@ -1012,9 +1021,9 @@ function getTournamentRankDistributionPercent(key) {
   return ((tournamentPlayerRankDistribution.value[key] / total) * 100).toFixed(1)
 }
 
-// 获取噜咪头像
+// 获取噜咪头像（版本感知）
 function getLumiAvatar(lumiId) {
-  return `/images/avatars/CA_${lumiId}.png`
+  return avatarUrl(lumiId)
 }
 
 // 获取队伍中某只噜咪的第二技能 Top 3（按携带率）
@@ -1066,7 +1075,7 @@ function handleSkillIconError(e) {
 
 // 处理图片加载失败
 function handleImageError(e) {
-  e.target.src = '/images/avatars/unknown.png'
+  handleAvatarError(e)
 }
 
 // 跳转到噜咪详情
@@ -1550,6 +1559,19 @@ watch(currentStats, () => {
 .page-header {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.external-data-notice {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 87, 108, 0.12) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  border-radius: 8px;
+  color: #fbbf24;
+  font-size: 0.95em;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .empty-state {

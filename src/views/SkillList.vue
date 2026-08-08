@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { loadData, TYPE_NAMES, TYPE_COLORS } from '../data'
+import { skillIconUrl } from '../data/imageUrl'
 import MultiSelect from '../components/MultiSelect.vue'
 import { useBattleText } from '../composables/useBattleText'
 
@@ -277,7 +278,7 @@ const skillCounts = computed(() => {
             <td>
               <img
                 v-if="sk.icon"
-                :src="`/images/skills/${sk.icon}.png`"
+                :src="skillIconUrl(sk.icon)"
                 class="table-skill-icon"
                 @error="($event.target).style.display='none'"
               />
