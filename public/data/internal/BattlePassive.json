@@ -3735,6 +3735,21 @@
     ]
   },
   {
+    "Id": 1147801,
+    "name": "P_Skill_1147801",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1147801",
+    "DesParam": [],
+    "BuffList": [
+      {
+        "BuffId": 14730101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      }
+    ]
+  },
+  {
     "Id": 11002101,
     "name": "P_Skill_11002101",
     "icon": "Start_Palsy",

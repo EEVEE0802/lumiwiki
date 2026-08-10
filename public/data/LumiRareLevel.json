@@ -11,7 +11,9 @@
     "ShowSecondPartFx": "",
     "ShowThreePartFx": "",
     "CardModelBg": "",
-    "CardBg": ""
+    "CardBg": "",
+    "CriticalRate": 0,
+    "CriticalMultipler": 0
   },
   {
     "Id": 2,
@@ -25,7 +27,9 @@
     "ShowSecondPartFx": "",
     "ShowThreePartFx": "",
     "CardModelBg": "Tex_Lumi_Card_Base_Green",
-    "CardBg": "Card_xl_2"
+    "CardBg": "Card_xl_2",
+    "CriticalRate": 0,
+    "CriticalMultipler": 0
   },
   {
     "Id": 3,
@@ -39,7 +43,9 @@
     "ShowSecondPartFx": "",
     "ShowThreePartFx": "",
     "CardModelBg": "Tex_Lumi_Card_Base_Blue",
-    "CardBg": "Card_xl_3"
+    "CardBg": "Card_xl_3",
+    "CriticalRate": 0,
+    "CriticalMultipler": 0
   },
   {
     "Id": 4,
@@ -53,7 +59,9 @@
     "ShowSecondPartFx": "FX_MX_Chouka_Part02_Purple",
     "ShowThreePartFx": "FX_MX_Chouka_Part03_Purple",
     "CardModelBg": "Tex_Lumi_Card_Base_Purple",
-    "CardBg": "Card_xl_4"
+    "CardBg": "Card_xl_4",
+    "CriticalRate": 40,
+    "CriticalMultipler": 5
   },
   {
     "Id": 5,
@@ -67,7 +75,9 @@
     "ShowSecondPartFx": "FX_MX_Chouka_Part02_Golden",
     "ShowThreePartFx": "FX_MX_Chouka_Part03_Golden",
     "CardModelBg": "Tex_Lumi_Card_Base_Gold",
-    "CardBg": "Card_xl_5"
+    "CardBg": "Card_xl_5",
+    "CriticalRate": 120,
+    "CriticalMultipler": 10
   },
   {
     "Id": 6,
@@ -81,6 +91,8 @@
     "ShowSecondPartFx": "FX_MX_Chouka_Part02_Color",
     "ShowThreePartFx": "FX_MX_Chouka_Part03_Color",
     "CardModelBg": "Tex_Lumi_Card_Base_Color",
-    "CardBg": "Card_xl_6"
+    "CardBg": "Card_xl_6",
+    "CriticalRate": 255,
+    "CriticalMultipler": 20
   }
 ]

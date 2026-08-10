@@ -8963,13 +8963,13 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 1000,
+    "AttackInterval": 800,
     "SkillPowerList": [
-      10
+      8
     ],
     "SkillCost": 0,
     "BaseCrit": 500,
-    "AddEnergy": 7,
+    "AddEnergy": 6,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
@@ -25904,13 +25904,13 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 1200,
+    "AttackInterval": 1000,
     "SkillPowerList": [
-      12
+      10
     ],
     "SkillCost": 0,
     "BaseCrit": 500,
-    "AddEnergy": 9,
+    "AddEnergy": 7,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
@@ -26664,13 +26664,13 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 800,
+    "AttackInterval": 1000,
     "SkillPowerList": [
-      8
+      10
     ],
     "SkillCost": 0,
     "BaseCrit": 500,
-    "AddEnergy": 6,
+    "AddEnergy": 7,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
@@ -27316,13 +27316,13 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 1200,
+    "AttackInterval": 1000,
     "SkillPowerList": [
-      12
+      10
     ],
     "SkillCost": 0,
     "BaseCrit": 500,
-    "AddEnergy": 9,
+    "AddEnergy": 7,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
