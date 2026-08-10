@@ -256,9 +256,9 @@ async function main() {
   console.log(`  覆盖层数: ${floors.size}`)
   console.log(`  CSV 行数: ${rowCount}`)
 
-  // 构建 floors 输出（按 floor 升序）
+  // 构建 floors 输出（按 floor 降序 —— 高层在前，方便玩家看到"卡关点"和进度峰值）
   const floorsOutput = [...floors.entries()]
-    .sort(([a], [b]) => a - b)
+    .sort(([a], [b]) => b - a)
     .map(([floor, f]) => {
       // 平均通过尝试次数：总场次 / 通过独立玩家数
       const uniqueClearers = f.uniqueClearers.size
