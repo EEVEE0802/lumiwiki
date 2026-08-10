@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-10T15:14:54.846Z",
+  "updateTime": "2026-08-10T16:15:03.622Z",
   "weeks": [
     1,
     2,
@@ -676,7 +676,7 @@
             "lumiName": "Tinkdeer",
             "topSkill": {
               "skillId": 8001,
-              "count": 105
+              "count": 106
             }
           },
           {
@@ -698,11 +698,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 151
+          "count": 152
         },
-        "battles": 188,
+        "battles": 189,
         "wins": 74,
-        "winRate": "39.36",
+        "winRate": "39.15",
         "tags": [
           "most-used"
         ]
@@ -807,7 +807,7 @@
             "lumiName": "Rimedeer",
             "topSkill": {
               "skillId": 8001,
-              "count": 105
+              "count": 106
             }
           },
           {
@@ -829,11 +829,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 151
+          "count": 152
         },
-        "battles": 188,
+        "battles": 189,
         "wins": 74,
-        "winRate": "39.36",
+        "winRate": "39.15",
         "tags": [
           "most-used"
         ]
@@ -972,42 +972,42 @@
       {
         "teamLumiIds": [
           "102004",
-          "114202",
-          "116001"
+          "102601",
+          "120901"
         ],
         "lumis": [
           {
             "lumiId": "102004",
             "lumiName": "Rimedeer - Variant",
             "topSkill": {
-              "skillId": 8003,
-              "count": 7
+              "skillId": 6002,
+              "count": 3
             }
           },
           {
-            "lumiId": "114202",
-            "lumiName": "Skollfang",
+            "lumiId": "102601",
+            "lumiName": "Muscledog",
             "topSkill": {
-              "skillId": 1001,
-              "count": 6
+              "skillId": 6002,
+              "count": 3
             }
           },
           {
-            "lumiId": "116001",
-            "lumiName": "Otterknight",
+            "lumiId": "120901",
+            "lumiName": "Bloom",
             "topSkill": {
-              "skillId": 1003,
-              "count": 4
+              "skillId": 4003,
+              "count": 3
             }
           }
         ],
         "topTrainerSkill": {
-          "trainerId": 2,
-          "count": 7
+          "trainerId": 1,
+          "count": 3
         },
-        "battles": 7,
-        "wins": 5,
-        "winRate": "71.43",
+        "battles": 3,
+        "wins": 2,
+        "winRate": "66.67",
         "tags": [
           "highest-winrate"
         ]
@@ -1767,7 +1767,7 @@
             "lumiName": "Cyclodoge",
             "topSkill": {
               "skillId": 6002,
-              "count": 11
+              "count": 12
             }
           },
           {
@@ -1775,7 +1775,7 @@
             "lumiName": "Sunbelle",
             "topSkill": {
               "skillId": 3004,
-              "count": 11
+              "count": 12
             }
           },
           {
@@ -1783,16 +1783,16 @@
             "lumiName": "Petrokat",
             "topSkill": {
               "skillId": 6003,
-              "count": 11
+              "count": 12
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 4,
-          "count": 11
+          "count": 12
         },
-        "battles": 11,
-        "wins": 11,
+        "battles": 12,
+        "wins": 12,
         "winRate": "100.00",
         "tags": [
           "highest-winrate"
@@ -12597,7 +12597,7 @@
             "lumiName": "Skollfang",
             "topSkill": {
               "skillId": 1001,
-              "count": 6
+              "count": 7
             }
           },
           {
@@ -12605,7 +12605,7 @@
             "lumiName": "Rimedeer - Variant",
             "topSkill": {
               "skillId": 8003,
-              "count": 7
+              "count": 8
             }
           },
           {
@@ -12619,11 +12619,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 7
+          "count": 8
         },
-        "battles": 7,
+        "battles": 8,
         "wins": 5,
-        "winRate": "71.43",
+        "winRate": "62.50",
         "tags": [
           "most-used"
         ]
@@ -18342,8 +18342,8 @@
       },
       {
         "teamLumiIds": [
-          "107001",
-          "116001",
+          "102602",
+          "114601",
           "123201"
         ],
         "lumis": [
@@ -18351,34 +18351,34 @@
             "lumiId": "123201",
             "lumiName": "Petrokat",
             "topSkill": {
+              "skillId": 6003,
+              "count": 12
+            }
+          },
+          {
+            "lumiId": "102602",
+            "lumiName": "Cyclodoge",
+            "topSkill": {
               "skillId": 6002,
-              "count": 28
+              "count": 12
             }
           },
           {
-            "lumiId": "107001",
-            "lumiName": "Psykat",
+            "lumiId": "114601",
+            "lumiName": "Sunbelle",
             "topSkill": {
-              "skillId": 13003,
-              "count": 32
-            }
-          },
-          {
-            "lumiId": "116001",
-            "lumiName": "Otterknight",
-            "topSkill": {
-              "skillId": 6004,
-              "count": 17
+              "skillId": 3004,
+              "count": 12
             }
           }
         ],
         "topTrainerSkill": {
-          "trainerId": 1,
-          "count": 38
+          "trainerId": 4,
+          "count": 12
         },
-        "battles": 49,
-        "wins": 36,
-        "winRate": "73.47",
+        "battles": 12,
+        "wins": 12,
+        "winRate": "100.00",
         "tags": [
           "highest-winrate"
         ]
