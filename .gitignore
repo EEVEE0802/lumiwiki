@@ -29,5 +29,11 @@ auto-watch.log
 # Sensitive config (contains Bearer Token for game-data-ta)
 scripts/ta-config.json
 
-# 大文件：天梯/周赛原始 CSV（中间产物，前端用 JSON 即可）
+# 大文件：天梯/周赛/登录原始 CSV（中间产物，前端用 JSON 即可）
 data/archive/**/*.csv
+data/domestic/archive/**/*.csv
+data/overseas/archive/**/*.csv
+
+# 探测用临时文件
+tmp-*.json
+tmp-*.js

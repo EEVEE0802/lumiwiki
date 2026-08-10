@@ -48,9 +48,10 @@ export const CSV_HEADERS = {
 function buildSql(mode, startDate, endDate, cfg) {
   const { projectId, bZoneIds } = cfg
   const tableName = `ta.v_event_${projectId}`
-  const zoneIn = inClause(bZoneIds)
-  // b_zone_id 在国内是 varchar，在海外是 double，统一用 CAST 与字符串比
-  const zoneFilter = `CAST(b_zone_id AS varchar) IN (${zoneIn})`
+  // b_zone_id 在国内是 varchar（如 '1888'），在海外是 double（如 2888.0）
+  // 用 TRY_CAST(... AS bigint) 统一转成整数比较，两边都能命中
+  const zoneNums = bZoneIds.map(z => String(z).trim()).join(', ')
+  const zoneFilter = `TRY_CAST(b_zone_id AS bigint) IN (${zoneNums})`
 
   if (mode === 'ladder') {
     return `
@@ -135,6 +136,7 @@ async function submitSql(cfg, sql, format = 'csv') {
 }
 
 // 拉取单页；同时能识别"任务还在跑"的错误码，返回 { done, running, errored, chunk }
+// pageId=0 时收到 -1008 说明任务还没跑完（返回 running）；pageId>0 收到 -1008 才是到末尾
 async function fetchResultPage(cfg, taskId, pageId) {
   const url = `${cfg.baseUrl}/open/sql-result-page?token=${cfg.token}&projectId=${cfg.projectId}&taskId=${taskId}&pageId=${pageId}`
   const resp = await fetch(url)
@@ -151,7 +153,11 @@ async function fetchResultPage(cfg, taskId, pageId) {
     if (data.return_code === -1 && /running|processing|pending/i.test(msg)) {
       return { running: true }
     }
-    // 页面数据不存在（已到最后一页）
+    // pageId=0 时的 -1008 说明任务还没开始产出（还在跑）
+    if (pageId === 0 && (data.return_code === -1008 || /page data does not exist/i.test(msg))) {
+      return { running: true }
+    }
+    // 后续 pageId 的 -1008 = 到末尾
     if (data.return_code === -1008 || /page data does not exist/i.test(msg)) {
       return { done: true }
     }
@@ -165,7 +171,7 @@ async function fetchResultPage(cfg, taskId, pageId) {
   return { chunk: buf }
 }
 
-async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs = 300000, pollIntervalMs = 2000 } = {}) {
+async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs = 600000, pollIntervalMs = 2500 } = {}) {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true })
   const out = fs.createWriteStream(outputPath)
   // 数数开放 API 返回的 CSV 不含表头，按 SELECT 列顺序手动补上

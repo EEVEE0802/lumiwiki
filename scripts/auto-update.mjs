@@ -86,6 +86,16 @@ export function isTournamentActive(now = new Date()) {
   return false
 }
 
+// 是否应该拉周赛数据：窗口内 + 窗口关闭后 1 小时（周一 07:00-07:59 收尾一次，
+// 抓上 06:59 前最后一场对战；否则最后一小时的数据会被漏掉）
+export function shouldFetchTournament(now = new Date()) {
+  if (isTournamentActive(now)) return true
+  const day = now.getDay()
+  const hour = now.getHours()
+  if (day === 1 && hour === 7) return true          // 周一 07:00 ~ 07:59 收尾
+  return false
+}
+
 function ensureWeekInJson(region, week) {
   const weeksJsonPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/weeks.json`)
   fs.mkdirSync(path.dirname(weeksJsonPath), { recursive: true })
@@ -150,14 +160,16 @@ export function updateRegionLumiTeams(region) {
 async function main() {
   const args = process.argv.slice(2)
   const onlyMode = args.find(a => a === '--tournament' || a === '--ladder')?.slice(2) || null
+  const forceTournament = args.includes('--force-tournament')
   const config = loadConfig()
   const weekInfo = computeWeekInfo(config.baseFriday)
   const tournamentOpen = isTournamentActive()
+  const shouldTournament = shouldFetchTournament() || forceTournament
 
   console.log(`\n===== LumiWiki 线上数据自动更新 =====`)
   console.log(`游戏周: Week ${weekInfo.week} (${weekInfo.startDate} ~ ${weekInfo.endDate})`)
   console.log(`区域: ${REGIONS.join(', ')}`)
-  console.log(`周赛窗口: ${tournamentOpen ? '开放中' : '未开放'}`)
+  console.log(`周赛窗口: ${tournamentOpen ? '开放中' : '未开放'}${shouldTournament && !tournamentOpen ? '（本次为收尾拉取）' : ''}${forceTournament ? '（--force-tournament 强制拉取）' : ''}`)
 
   const modeFilter = onlyMode // 'ladder' / 'tournament' / null
   const modeSummary = []
@@ -171,10 +183,11 @@ async function main() {
       modeSummary.push(`${region}: 天梯`)
     }
 
-    // 2. 周赛（仅在窗口期，且非首周）
-    if ((!modeFilter || modeFilter === 'tournament') && weekInfo.week > 1 && tournamentOpen) {
+    // 2. 周赛（仅在窗口期，且非首周；窗口关闭后 1 小时内再拉一次收尾，抓上 06:59 前最后一场对战）
+    //    可用 --force-tournament 手动补跑（例如某次窗口内故障错过）
+    if ((!modeFilter || modeFilter === 'tournament') && weekInfo.week > 1 && shouldTournament) {
       await updateRegionMode(region, 'tournament', weekInfo)
-      modeSummary.push(`${region}: 周赛`)
+      modeSummary.push(`${region}: 周赛${tournamentOpen ? '' : '(收尾)'}`)
     }
 
     // 3. 参与走势（跟着 ladder 一起，失败不阻塞）

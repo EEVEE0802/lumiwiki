@@ -19,29 +19,31 @@
 LumiWiki/
 ├── public/
 │   ├── data/                        # JSON 数据文件
-│   │   ├── online/                  # 线上战斗数据
-│   │   │   ├── battle-stats.json    # 最新天梯数据（兼容性保留）
-│   │   │   └── weekly/              # 周数据
-│   │   │       ├── weeks.json       # 周列表配置
-│   │   │       ├── ladder-weekN.json
-│   │   │       ├── tournament-weekN.json
-│   │   │       └── participation-weekN.json  # 每日参与走势（登录/天梯/周赛 UV）
+│   │   ├── online/                  # 线上战斗数据（按区域分区）
+│   │   │   ├── domestic/            # 国内服
+│   │   │   │   ├── battle-stats.json
+│   │   │   │   └── weekly/          # ladder-weekN / tournament-weekN / participation-weekN / weeks.json
+│   │   │   └── overseas/            # 海外服（同结构）
+│   │   ├── domestic/lumi-teams.json # 推荐配队（国内，依赖 online 数据生成）
+│   │   ├── overseas/lumi-teams.json # 推荐配队（海外）
+│   │   ├── internal/                # 对内游戏配置分支（版本切换）
+│   │   │   ├── domestic/lumi-teams.json
+│   │   │   └── overseas/lumi-teams.json
 │   │   ├── extra.json               # 社区维护扩展数据
 │   │   ├── robot-teams.json         # 机器人阵容（道馆/天梯/家园，由脚本生成）
 │   │   ├── adventure/               # 冒险掉落
 │   │   │   └── drop-rates.json      # 各地图噜咪出现概率（由脚本生成）
 │   │   ├── egg-drop.json            # 蛋掉落（各蛋开出噜咪概率，由脚本生成）
-│   │   ├── lumi-teams.json          # 噜咪推荐配队（每只噜咪 top 3 队伍，由脚本生成）
+│   ├── lumi-teams.json 已迁移到 domestic/overseas 子目录（前端 loadData 自动注入 region 前缀）
 │   │   ├── zh-CN.json 等            # 多语言文件
 │   │   └── ...                      # 游戏核心数据
 │   └── images/                      # 图片资源
-├── data/
-│   ├── battle_end.csv               # 当前天梯工作文件
-│   └── archive/                     # 历史数据归档
-│       └── weekN/
-│           ├── ladder_weekN.csv
-│           ├── tournament_weekN.csv
-│           └── login_weekN.csv      # 参与走势用（player_login 事件）
+├── data/                            # 中间产物（CSV 不进 git）
+│   ├── domestic/archive/weekN/      # 国内 CSV 归档
+│   │   ├── ladder_weekN.csv
+│   │   ├── tournament_weekN.csv
+│   │   └── login_weekN.csv          # 参与走势用（player_login 事件）
+│   └── overseas/archive/weekN/      # 海外 CSV 归档（同结构）
 ├── scripts/
 │   ├── process-battle-data.js       # 天梯数据处理
 │   ├── process-tournament-data.js   # 周赛数据处理
@@ -50,11 +52,12 @@ LumiWiki/
 │   ├── process-egg-drop.mjs         # 蛋掉落数据处理
 │   ├── process-lumi-teams.mjs       # 噜咪推荐配队数据处理
 │   ├── fetch-participation-trend.mjs # 参与走势数据处理（拉 login + 按日 distinct 聚合）
-│   ├── ta-fetch.mjs                 # 数数平台 API 拉取（自动，支持 ladder/tournament/login 模式）
-│   ├── ta-auth.mjs                  # Bearer Token 自动续期
+│   ├── ta-fetch.mjs                 # 数数开放 API 拉取（长期 token，支持 domestic/overseas 双区）
 │   ├── notify.mjs                   # 飞书/企业微信通知
-│   ├── auto-update.mjs              # 自动更新总控（拉取+处理+发布）
-│   ├── auto-update.bat              # Windows 任务计划 wrapper
+│   ├── auto-update.mjs              # 每小时线上数据总控（拉取+处理+发布，双区）
+│   ├── auto-update-all.mjs          # 每日游戏数据总控（对外+对内 + 立绘 + 衍生）
+│   ├── auto-update.bat              # 每小时任务 wrapper
+│   ├── auto-update-all.bat          # 每日任务 wrapper
 │   └── ta-config.example.json       # 配置模板（ta-config.json 含 token 不进 git）
 ├── src/
 │   ├── components/                  # Vue 组件
