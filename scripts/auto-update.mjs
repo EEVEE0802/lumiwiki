@@ -160,6 +160,7 @@ export function updateRegionLumiTeams(region) {
 /**
  * 无限道馆数据：CSV 累计（从 baseFriday 到今天覆盖式拉全量），处理后输出 JSON
  * 因为是一次性玩法（没有周概念），累计存到 data/{region}/archive/gym_infinity.csv
+ * process 用 --max-old-space-size=4096（累计 CSV 会到几百 MB，加大 heap 保底）
  */
 export async function updateRegionInfinityGym(region, baseFriday) {
   const csvPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'gym_infinity.csv')
@@ -168,7 +169,7 @@ export async function updateRegionInfinityGym(region, baseFriday) {
   const pad = n => String(n).padStart(2, '0')
   const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`
   await fetchCsv(region, 'infinity-gym', baseFriday, today, csvPath)
-  runCommand(process.execPath, ['scripts/process-infinity-gym.mjs', '--region', region])
+  runCommand(process.execPath, ['--max-old-space-size=4096', 'scripts/process-infinity-gym.mjs', '--region', region])
 }
 
 async function main() {

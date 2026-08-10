@@ -209,9 +209,9 @@ async function main() {
     try {
       lumis = JSON.parse(row.player_lumis.replace(/""/g, '"'))
     } catch {
-      continue
+      return
     }
-    if (lumis.length === 0) continue
+    if (lumis.length === 0) return
     lumis.sort((a, b) => String(a.lumi_id).localeCompare(String(b.lumi_id)))
 
     // 全局噜咪出场率（所有场次都算，不限胜负）
