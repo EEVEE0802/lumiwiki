@@ -40,9 +40,10 @@ function inClause(values) {
 // 三种查询模式的 SELECT 列（与老 CSV 兼容，process-battle-data.js / process-tournament-data.js / fetch-participation-trend.mjs 期望的列名）
 // 各模式对应的 CSV 表头（数数 open API 返回的 CSV 不含表头，我们自己按 SELECT 列顺序补上）
 export const CSV_HEADERS = {
-  ladder:     ['part_date', 'game_id_str', 'b_role_id', 'player_rank', 'player_type', 'player_lumis', 'battle_result', 'trainer_id'],
-  tournament: ['part_date', 'game_id_str', 'b_role_id', 'player_rank', 'player_type', 'player_lumis', 'battle_result', 'trainer_id', 'player_week_win'],
-  login:      ['part_date', 'b_role_id', 'b_create_time_str'],
+  ladder:         ['part_date', 'game_id_str', 'b_role_id', 'player_rank', 'player_type', 'player_lumis', 'battle_result', 'trainer_id'],
+  tournament:     ['part_date', 'game_id_str', 'b_role_id', 'player_rank', 'player_type', 'player_lumis', 'battle_result', 'trainer_id', 'player_week_win'],
+  login:          ['part_date', 'b_role_id', 'b_create_time_str'],
+  'infinity-gym': ['part_date', 'game_id_str', 'b_role_id', 'gym_uid', 'player_lumis', 'battle_result', 'trainer_id'],
 }
 
 function buildSql(mode, startDate, endDate, cfg) {
@@ -105,6 +106,32 @@ function buildSql(mode, startDate, endDate, cfg) {
         AND "$part_date" <= '${endDate}'
         AND "#event_name" = 'player_login'
         AND ${zoneFilter}
+    `.trim().replace(/\s+/g, ' ')
+  }
+
+  if (mode === 'infinity-gym') {
+    // 无限道馆：每场道馆战斗上报两条 battle_end（同 game_id_str）
+    //   player_type=1: 玩家视角（有 player_lumis / battle_result / trainer_id，player_uid_str = 玩家自己的 role_id）
+    //   player_type=4: NPC 视角（player_uid_str 是道馆 NPC 编号 = MonsterGroupID）
+    // 用 GROUP BY game_id_str + MAX(CASE WHEN) 把两条合并成一场
+    // 只保留 gym_uid 在 128100001~128101000 范围的无限道馆记录
+    return `
+      SELECT
+        MIN("$part_date") AS part_date,
+        game_id_str,
+        b_role_id,
+        MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) AS gym_uid,
+        MAX(CASE WHEN player_type = 1 THEN player_lumis END) AS player_lumis,
+        MAX(CASE WHEN player_type = 1 THEN battle_result END) AS battle_result,
+        MAX(CASE WHEN player_type = 1 THEN trainer_id END) AS trainer_id
+      FROM ${tableName}
+      WHERE "$part_date" >= '${startDate}'
+        AND "$part_date" <= '${endDate}'
+        AND "#event_name" = 'battle_end'
+        AND ${zoneFilter}
+        AND game_type = 'Gym1v1'
+      GROUP BY game_id_str, b_role_id
+      HAVING MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) BETWEEN 128100001 AND 128101000
     `.trim().replace(/\s+/g, ' ')
   }
 

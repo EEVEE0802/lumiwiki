@@ -54,6 +54,8 @@ if (skipFetch && fs.existsSync(loginCsvPath)) {
 
 const ladderCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/ladder_week${week}.csv`)
 const tournamentCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/tournament_week${week}.csv`)
+// 无限道馆 CSV 是累计的（不按周分），所有周共用一份；参与走势按 part_date 过滤到本周
+const gymCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/gym_infinity.csv`)
 
 // CSV 解析（处理引号 + 双引号转义）
 function parseCSVLine(line) {
@@ -203,11 +205,32 @@ const loginResult = await dailyDistinct(loginCsvPath, createTimeMap)
 console.log(`  登录每日 UV:`, loginResult.uv)
 console.log(`  登录每日留存 UV:`, loginResult.retentionUv)
 
+console.log(`处理 gym_infinity CSV（累计，按本周日期过滤）...`)
+const gymResultAll = await dailyDistinct(gymCsvPath, createTimeMap)
+// 只保留本周的日期（gym 是累计 CSV，可能包含前几周）
+const weekDates = new Set()
+{
+  const s = new Date(startTime), e = new Date(endTime)
+  for (let d = new Date(s); d < e; d.setDate(d.getDate() + 1)) {
+    weekDates.add(fmtDate(d))
+  }
+}
+const filterToWeek = obj => Object.fromEntries(Object.entries(obj).filter(([k]) => weekDates.has(k)))
+const gymResult = {
+  uv: filterToWeek(gymResultAll.uv),
+  retentionUv: filterToWeek(gymResultAll.retentionUv),
+  battles: filterToWeek(gymResultAll.battles),
+  retentionBattles: filterToWeek(gymResultAll.retentionBattles),
+}
+console.log(`  无限道馆每日 UV:`, gymResult.uv)
+console.log(`  无限道馆每日留存 UV:`, gymResult.retentionUv)
+
 // 合并所有日期，计算比例 + 场均（全量 + 留存）
 const allDates = [...new Set([
   ...Object.keys(ladderResult.uv),
   ...Object.keys(tournamentResult.uv),
-  ...Object.keys(loginResult.uv)
+  ...Object.keys(loginResult.uv),
+  ...Object.keys(gymResult.uv),
 ])].sort()
 
 const dayMetrics = (res, date) => ({
@@ -221,23 +244,30 @@ const result = allDates.map(date => {
   const L = dayMetrics(ladderResult, date)
   const T = dayMetrics(tournamentResult, date)
   const G = dayMetrics(loginResult, date)
+  const M = dayMetrics(gymResult, date)     // M = infinity gyM
   return {
     date,
     ladder: L.uv,
     tournament: T.uv,
+    infinityGym: M.uv,
     login: G.uv,
     ladderRate: G.uv > 0 ? +(L.uv / G.uv * 100).toFixed(2) : 0,
     tournamentRate: G.uv > 0 ? +(T.uv / G.uv * 100).toFixed(2) : 0,
+    infinityGymRate: G.uv > 0 ? +(M.uv / G.uv * 100).toFixed(2) : 0,
     ladderBattlesPerUser: L.uv > 0 ? +(L.battles / L.uv).toFixed(2) : 0,
     tournamentBattlesPerUser: T.uv > 0 ? +(T.battles / T.uv).toFixed(2) : 0,
+    infinityGymBattlesPerUser: M.uv > 0 ? +(M.battles / M.uv).toFixed(2) : 0,
     retention: {
       login: G.retUv,
       ladder: L.retUv,
       tournament: T.retUv,
+      infinityGym: M.retUv,
       ladderRate: G.retUv > 0 ? +(L.retUv / G.retUv * 100).toFixed(2) : 0,
       tournamentRate: G.retUv > 0 ? +(T.retUv / G.retUv * 100).toFixed(2) : 0,
+      infinityGymRate: G.retUv > 0 ? +(M.retUv / G.retUv * 100).toFixed(2) : 0,
       ladderBattlesPerUser: L.retUv > 0 ? +(L.retBattles / L.retUv).toFixed(2) : 0,
       tournamentBattlesPerUser: T.retUv > 0 ? +(T.retBattles / T.retUv).toFixed(2) : 0,
+      infinityGymBattlesPerUser: M.retUv > 0 ? +(M.retBattles / M.retUv).toFixed(2) : 0,
     },
   }
 })
@@ -258,5 +288,5 @@ console.log(`\n✓ 输出: ${outputPath}`)
 console.log(`  共 ${result.length} 天`)
 result.forEach(r => {
   const ret = r.retention
-  console.log(`  ${r.date}: 天梯=${r.ladder}(留存${ret.ladder}) 周赛=${r.tournament}(留存${ret.tournament}) 登录=${r.login}(留存${ret.login})`)
+  console.log(`  ${r.date}: 天梯=${r.ladder}(留存${ret.ladder}) 周赛=${r.tournament}(留存${ret.tournament}) 无限道馆=${r.infinityGym}(留存${ret.infinityGym}) 登录=${r.login}(留存${ret.login})`)
 })

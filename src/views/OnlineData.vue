@@ -39,6 +39,12 @@
         🏆 周赛
       </button>
       <button
+        :class="['mode-btn', { active: gameMode === 'infinityGym' }]"
+        @click="switchGameMode('infinityGym')"
+      >
+        ⚔️ 无限道馆
+      </button>
+      <button
         :class="['mode-btn', { active: gameMode === 'participation' }]"
         @click="switchGameMode('participation')"
       >
@@ -90,7 +96,7 @@
         <div v-else class="participation-section">
           <div class="participation-chart-block">
             <h3>每日参与玩家数走势</h3>
-            <p class="chart-subtitle">登录 / 天梯 / 周赛的独立玩家数（去重）</p>
+            <p class="chart-subtitle">登录 / 天梯 / 周赛 / 无限道馆的独立玩家数（去重）</p>
             <div class="chart-wrapper" style="min-height: 320px">
               <canvas ref="participationCountCanvas"></canvas>
             </div>
@@ -98,7 +104,7 @@
 
           <div class="participation-chart-block">
             <h3>每日参与占比走势</h3>
-            <p class="chart-subtitle">天梯/周赛参与玩家数 ÷ 当日登录玩家数</p>
+            <p class="chart-subtitle">天梯 / 周赛 / 无限道馆参与玩家数 ÷ 当日登录玩家数</p>
             <div class="chart-wrapper" style="min-height: 320px">
               <canvas ref="participationRateCanvas"></canvas>
             </div>
@@ -115,8 +121,8 @@
       </template>
     </div>
 
-    <!-- 周选择器 -->
-    <div v-if="gameMode !== 'participation'" class="week-selector">
+    <!-- 周选择器（仅天梯 / 周赛） -->
+    <div v-if="gameMode === 'ladder' || gameMode === 'tournament'" class="week-selector">
       <div class="week-tabs">
         <button
           v-for="week in availableWeeks"
@@ -142,7 +148,7 @@
       </div>
     </div>
 
-    <template v-if="gameMode !== 'participation'">
+    <template v-if="gameMode === 'ladder' || gameMode === 'tournament'">
     <!-- 空状态：该周无数据（如首周无周赛） -->
     <div v-if="noData" class="empty-state">
       <p class="empty-icon">📭</p>
@@ -508,6 +514,136 @@
     </div>
     </template>
     </template>
+
+    <!-- 无限道馆独立视图 -->
+    <div v-if="gameMode === 'infinityGym'" class="infinity-gym-view">
+      <div v-if="!gymData" class="no-data-box">
+        <p>😅 无限道馆数据加载中或尚未生成</p>
+        <p class="no-data-desc">请等待每小时任务生成数据</p>
+      </div>
+      <template v-else>
+        <!-- 顶部概览 -->
+        <div class="gym-overview">
+          <div class="gym-stat-card">
+            <div class="gym-stat-value">{{ formatNumber(gymData.totalChallengers) }}</div>
+            <div class="gym-stat-label">总挑战玩家数</div>
+          </div>
+          <div class="gym-stat-card">
+            <div class="gym-stat-value">{{ formatNumber(gymData.totalBattles) }}</div>
+            <div class="gym-stat-label">总战斗场次</div>
+          </div>
+          <div class="gym-stat-card">
+            <div class="gym-stat-value">{{ gymData.floors.length }}</div>
+            <div class="gym-stat-label">已被挑战层数</div>
+          </div>
+          <div class="gym-stat-card">
+            <div class="gym-stat-value">{{ maxFloorReached }}</div>
+            <div class="gym-stat-label">最高层数</div>
+          </div>
+        </div>
+
+        <!-- 层数分布图 -->
+        <div class="gym-chart-block">
+          <h3>玩家最高层数分布</h3>
+          <p class="chart-subtitle">每个玩家历史挑战过的最高层（含胜负）</p>
+          <div class="chart-wrapper" style="min-height: 320px">
+            <canvas ref="gymFloorDistCanvas"></canvas>
+          </div>
+        </div>
+
+        <!-- 全局噜咪出场率 -->
+        <div class="gym-chart-block">
+          <h3>玩家阵容中噜咪出场率 Top 30</h3>
+          <p class="chart-subtitle">所有无限道馆战斗（含胜负）中，玩家阵容里出现最多的噜咪</p>
+          <div class="gym-lumi-grid">
+            <div
+              v-for="l in gymData.globalLumiUsage.slice(0, 30)"
+              :key="l.lumiId"
+              class="gym-lumi-item"
+              @click="goToLumi(l.lumiId)"
+            >
+              <img :src="avatarUrl(l.lumiId)" :alt="l.lumiName" @error="handleAvatarError" class="gym-lumi-avatar" />
+              <div class="gym-lumi-name">{{ l.lumiName }}</div>
+              <div class="gym-lumi-rate">{{ l.appearanceRate }}%</div>
+              <div class="gym-lumi-count">{{ formatNumber(l.battles) }} 场</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 关卡列表 -->
+        <div class="gym-floors-block">
+          <div class="gym-floors-header">
+            <h3>关卡数据（共 {{ gymData.floors.length }} 层有玩家挑战）</h3>
+            <div class="gym-jump">
+              <label>跳转到第
+                <input type="number" v-model.number="gymJumpFloor" min="1" :max="maxFloorReached" @keyup.enter="jumpToFloor">
+                层
+              </label>
+              <button class="gym-jump-btn" @click="jumpToFloor">跳转</button>
+            </div>
+          </div>
+          <div class="gym-floor-list">
+            <div
+              v-for="floor in gymData.floors"
+              :key="floor.floor"
+              :ref="el => registerFloorRef(floor.floor, el)"
+              :class="['gym-floor-card', { expanded: expandedFloors.has(floor.floor) }]"
+            >
+              <div class="gym-floor-summary" @click="toggleFloor(floor.floor)">
+                <div class="gym-floor-num">第 {{ floor.floor }} 层</div>
+                <div class="gym-floor-metrics">
+                  <span>挑战 <b>{{ formatNumber(floor.totalBattles) }}</b></span>
+                  <span>通过率 <b>{{ floor.winRate }}%</b></span>
+                  <span>通过玩家 <b>{{ formatNumber(floor.uniqueClearers) }}</b></span>
+                  <span>通过玩家平均挑战次数 <b>{{ floor.avgAttempts }}</b></span>
+                </div>
+                <div class="gym-floor-toggle">{{ expandedFloors.has(floor.floor) ? '▲' : '▼' }}</div>
+              </div>
+              <div v-if="expandedFloors.has(floor.floor)" class="gym-floor-detail">
+                <!-- NPC 阵容 -->
+                <div class="gym-team-section">
+                  <h4>🤖 道馆 NPC 阵容</h4>
+                  <div class="gym-team-row">
+                    <div v-for="lumi in floor.npcTeam" :key="'npc-' + lumi.lumiId" class="gym-team-lumi" @click="goToLumi(lumi.lumiId)">
+                      <img :src="avatarUrl(lumi.lumiId)" :alt="lumi.lumiName" @error="handleAvatarError" class="gym-team-avatar" />
+                      <div class="gym-team-name">{{ lumi.lumiName }}</div>
+                      <div class="gym-team-info">Lv.{{ lumi.level }}<span v-if="lumi.breakthrough"> · 突破{{ lumi.breakthrough }}</span></div>
+                      <div class="gym-team-info" v-if="lumi.score">评分 {{ lumi.score }}</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 玩家通关阵容 top 3 -->
+                <div class="gym-team-section">
+                  <h4>🏆 通关玩家阵容 Top 3</h4>
+                  <div v-if="!floor.topTeams.length" class="gym-empty-hint">暂无通关玩家阵容数据</div>
+                  <div v-else class="gym-teams-list">
+                    <div v-for="(team, idx) in floor.topTeams.slice(0, 3)" :key="idx" class="gym-player-team">
+                      <div class="gym-team-rank">#{{ idx + 1 }}</div>
+                      <div class="gym-team-row">
+                        <div v-for="lumi in team.lumis" :key="'p-' + lumi.lumiId" class="gym-team-lumi" @click="goToLumi(lumi.lumiId)">
+                          <img :src="avatarUrl(lumi.lumiId)" :alt="lumi.lumiName" @error="handleAvatarError" class="gym-team-avatar" />
+                          <div class="gym-team-name">{{ lumi.lumiName }}</div>
+                          <div v-if="gymTopSkill(lumi)" class="gym-team-info gym-team-skill">
+                            <img v-if="gymTopSkill(lumi).icon" :src="skillIconUrl(gymTopSkill(lumi).icon)" class="gym-skill-icon" @error="e => e.target.style.display='none'" />
+                            <span>{{ gymTopSkill(lumi).name }}</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="gym-team-stats">
+                        <span>{{ team.battles }} 次通关</span>
+                        <span v-if="gymTopTrainer(team)">
+                          训练家：<img v-if="gymTopTrainer(team).icon" :src="skillIconUrl(gymTopTrainer(team).icon)" class="gym-skill-icon" @error="e => e.target.style.display='none'" />{{ gymTopTrainer(team).name }}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -634,7 +770,7 @@ const data = ref({
 const compareData = ref(null)
 
 // 玩法选择
-const gameMode = ref('ladder') // ladder | tournament
+const gameMode = ref('ladder') // ladder | tournament | infinityGym | participation
 
 // 周选择
 const availableWeeks = ref([])
@@ -649,6 +785,14 @@ const activeTab = ref('appearance')
 const winRateSortBy = ref('winRate')
 const tournamentChartMode = ref('wins') // wins | ladder-rank
 const noData = ref(false) // 该周数据加载失败时置 true（如首周无周赛）
+
+// 无限道馆状态
+const gymData = ref(null)
+const expandedFloors = ref(new Set())
+const gymJumpFloor = ref(1)
+const gymFloorRefs = new Map()
+const gymFloorDistCanvas = ref(null)
+let gymFloorDistChart = null
 
 // 图表相关
 const chartCanvas = ref(null)
@@ -891,10 +1035,12 @@ function switchGameMode(mode) {
   // 切换玩法时重置对比模式
   compareMode.value = false
   compareData.value = null
-  // 参与走势模式不需要加载天梯/周赛数据，图表刷新由 watch(gameMode) 触发
-  if (mode !== 'participation') {
+  if (mode === 'ladder' || mode === 'tournament') {
     loadData()
+  } else if (mode === 'infinityGym') {
+    loadGymData()
   }
+  // participation 由 watch(gameMode) 触发图表刷新
 }
 
 // 切换区域（国内 / 海外）
@@ -907,6 +1053,8 @@ async function switchRegion(region) {
   await loadAvailableWeeks()
   if (gameMode.value === 'participation') {
     await loadAllParticipationData()
+  } else if (gameMode.value === 'infinityGym') {
+    await loadGymData()
   } else {
     await loadData()
   }
@@ -914,8 +1062,9 @@ async function switchRegion(region) {
 
 // 页面副标题
 const subtitleText = computed(() => {
-  if (gameMode.value === 'participation') return '玩家每日参与走势（登录 / 天梯 / 周赛 UV）'
+  if (gameMode.value === 'participation') return '玩家每日参与走势（登录 / 天梯 / 周赛 / 无限道馆 UV）'
   if (gameMode.value === 'tournament') return '周赛高端对战数据'
+  if (gameMode.value === 'infinityGym') return '无限道馆爬塔玩法数据统计（累计）'
   return '天梯1v1实时统计数据'
 })
 
@@ -1318,6 +1467,119 @@ async function loadData() {
   }
 }
 
+// 加载无限道馆数据
+async function loadGymData() {
+  try {
+    const url = `/data/online/${currentRegion.value}/infinity-gym.json`
+    const resp = await fetch(url, { cache: 'no-cache' })
+    if (!resp.ok) {
+      console.warn('无限道馆数据加载失败:', resp.status)
+      gymData.value = null
+      return
+    }
+    gymData.value = await resp.json()
+    expandedFloors.value = new Set()
+    // 下一轮 tick 画图
+    nextTick(() => drawFloorDistChart())
+  } catch (e) {
+    console.error('加载无限道馆数据失败:', e)
+    gymData.value = null
+  }
+}
+
+// 最高层数（用于顶部展示 + jump 输入的 max）
+const maxFloorReached = computed(() => {
+  if (!gymData.value) return 0
+  const keys = Object.keys(gymData.value.maxFloorDistribution || {}).map(Number)
+  return keys.length ? Math.max(...keys) : 0
+})
+
+// 画层数分布图
+function drawFloorDistChart() {
+  if (!gymData.value || !gymFloorDistCanvas.value) return
+  const dist = gymData.value.maxFloorDistribution || {}
+  const floors = Object.keys(dist).map(Number).sort((a, b) => a - b)
+  const counts = floors.map(f => dist[f])
+
+  if (gymFloorDistChart) gymFloorDistChart.destroy()
+  const ctx = gymFloorDistCanvas.value.getContext('2d')
+  gymFloorDistChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: floors.map(f => `第${f}层`),
+      datasets: [{
+        label: '停留玩家数',
+        data: counts,
+        backgroundColor: 'rgba(118, 75, 162, 0.6)',
+        borderColor: 'rgba(118, 75, 162, 1)',
+        borderWidth: 1,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: { callbacks: { label: ctx => `${ctx.parsed.y.toLocaleString('zh-CN')} 人` } },
+        legend: { display: false },
+      },
+      scales: {
+        x: { ticks: { autoSkip: true, maxTicksLimit: 30 } },
+        y: { beginAtZero: true, ticks: { callback: v => v.toLocaleString('zh-CN') } },
+      }
+    }
+  })
+}
+
+// 展开/收起某层
+function toggleFloor(floor) {
+  if (expandedFloors.value.has(floor)) {
+    expandedFloors.value.delete(floor)
+  } else {
+    expandedFloors.value.add(floor)
+  }
+  // 触发响应式更新（Set 需要重新赋值才能触发）
+  expandedFloors.value = new Set(expandedFloors.value)
+}
+
+function registerFloorRef(floor, el) {
+  if (el) gymFloorRefs.set(floor, el)
+}
+
+// 跳转到指定层
+function jumpToFloor() {
+  const floor = Number(gymJumpFloor.value)
+  if (!floor || floor < 1) return
+  const el = gymFloorRefs.get(floor)
+  if (el) {
+    // 展开并滚动
+    if (!expandedFloors.value.has(floor)) {
+      expandedFloors.value = new Set([...expandedFloors.value, floor])
+    }
+    nextTick(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+  } else {
+    // 该层暂无数据
+    alert(`第 ${floor} 层暂无玩家挑战数据`)
+  }
+}
+
+// 获取某只 lumi 的 top 技能（无限道馆通关阵容里）
+function gymTopSkill(lumi) {
+  const ss = lumi.secondSkills?.[0]
+  if (!ss) return null
+  if (ss.skillId === 0) return { name: '未携带', icon: null }
+  const meta = skillMeta.value.get(ss.skillId)
+  return { name: meta?.name || `技能 ${ss.skillId}`, icon: meta?.icon }
+}
+
+// 获取某队伍的 top 训练家技能
+function gymTopTrainer(team) {
+  const ts = team.trainerSkills?.[0]
+  if (!ts) return null
+  if (ts.trainerId === 0) return { name: '未携带', icon: null }
+  const meta = trainerSkillMeta.value.get(ts.trainerId)
+  return { name: meta?.name || `训练家 ${ts.trainerId}`, icon: meta?.icon }
+}
+
 // 加载所有周的参与走势数据并合并（同日期后写覆盖，因为跨周分界日 UV 相同）
 async function loadAllParticipationData() {
   const weeks = availableWeeks.value
@@ -1408,10 +1670,13 @@ function initParticipationCharts() {
   const login = rows.map(r => pick(r).login ?? 0)
   const ladder = rows.map(r => pick(r).ladder ?? 0)
   const tournament = rows.map(r => pick(r).tournament ?? 0)
+  const infinityGym = rows.map(r => pick(r).infinityGym ?? 0)
   const ladderRate = rows.map(r => pick(r).ladderRate ?? 0)
   const tournamentRate = rows.map(r => pick(r).tournamentRate ?? 0)
+  const infinityGymRate = rows.map(r => pick(r).infinityGymRate ?? 0)
   const ladderBpu = rows.map(r => pick(r).ladderBattlesPerUser ?? 0)
   const tournamentBpu = rows.map(r => pick(r).tournamentBattlesPerUser ?? 0)
+  const infinityGymBpu = rows.map(r => pick(r).infinityGymBattlesPerUser ?? 0)
 
   // 玩家数走势
   if (participationCountCanvas.value) {
@@ -1424,7 +1689,8 @@ function initParticipationCharts() {
         datasets: [
           { label: '登录', data: login, borderColor: '#888', backgroundColor: 'rgba(136,136,136,0.1)', tension: 0.3, fill: true },
           { label: '天梯参与', data: ladder, borderColor: '#667eea', backgroundColor: 'rgba(102,126,234,0.15)', tension: 0.3, fill: true },
-          { label: '周赛参与', data: tournament, borderColor: '#f97316', backgroundColor: 'rgba(249,115,22,0.15)', tension: 0.3, fill: true }
+          { label: '周赛参与', data: tournament, borderColor: '#f97316', backgroundColor: 'rgba(249,115,22,0.15)', tension: 0.3, fill: true },
+          { label: '无限道馆参与', data: infinityGym, borderColor: '#764ba2', backgroundColor: 'rgba(118,75,162,0.15)', tension: 0.3, fill: true },
         ]
       },
       options: {
@@ -1445,7 +1711,8 @@ function initParticipationCharts() {
         labels,
         datasets: [
           { label: '天梯占比 %', data: ladderRate, borderColor: '#667eea', tension: 0.3 },
-          { label: '周赛占比 %', data: tournamentRate, borderColor: '#f97316', tension: 0.3 }
+          { label: '周赛占比 %', data: tournamentRate, borderColor: '#f97316', tension: 0.3 },
+          { label: '无限道馆占比 %', data: infinityGymRate, borderColor: '#764ba2', tension: 0.3 },
         ]
       },
       options: {
@@ -1466,7 +1733,8 @@ function initParticipationCharts() {
         labels,
         datasets: [
           { label: '天梯场均', data: ladderBpu, borderColor: '#667eea', tension: 0.3 },
-          { label: '周赛场均', data: tournamentBpu, borderColor: '#f97316', tension: 0.3 }
+          { label: '周赛场均', data: tournamentBpu, borderColor: '#f97316', tension: 0.3 },
+          { label: '无限道馆场均', data: infinityGymBpu, borderColor: '#764ba2', tension: 0.3 },
         ]
       },
       options: {
@@ -1483,6 +1751,8 @@ onMounted(async () => {
   await loadData()
   // 并发加载所有周的参与走势数据（合并去重）
   loadAllParticipationData()
+  // 提前预加载无限道馆数据（切 tab 后立即能看到）
+  loadGymData()
   // 加载技能元数据（用于队伍列表显示第二技能 + 训练家技能）
   try {
     const [skills, trainers, loc] = await Promise.all([
@@ -1677,6 +1947,317 @@ watch(currentStats, () => {
   background: linear-gradient(135deg, #a493e0 0%, #764ba2 100%);
   color: white;
   box-shadow: 0 3px 10px rgba(118, 75, 162, 0.3);
+}
+
+/* === 无限道馆样式 === */
+.infinity-gym-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.gym-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.gym-stat-card {
+  background: linear-gradient(135deg, #f5f0ff 0%, #ede4ff 100%);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #d9c8ff;
+}
+
+.gym-stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5a3d7a;
+  margin-bottom: 6px;
+}
+
+.gym-stat-label {
+  font-size: 0.9rem;
+  color: #7c6fb3;
+}
+
+.gym-chart-block, .gym-floors-block {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.gym-chart-block h3, .gym-floors-block h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.gym-lumi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.gym-lumi-item {
+  text-align: center;
+  padding: 10px 6px;
+  border-radius: 10px;
+  background: #fafaff;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid #ecebff;
+}
+
+.gym-lumi-item:hover {
+  transform: translateY(-2px);
+  border-color: #a493e0;
+}
+
+.gym-lumi-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+.gym-lumi-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gym-lumi-rate {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #764ba2;
+  margin-top: 4px;
+}
+
+.gym-lumi-count {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.gym-floors-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.gym-jump {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.gym-jump input {
+  width: 80px;
+  padding: 4px 8px;
+  border: 1px solid #d0c8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin: 0 4px;
+}
+
+.gym-jump-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #a493e0 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gym-floor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gym-floor-card {
+  border: 1px solid #ecebff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.gym-floor-card.expanded {
+  border-color: #a493e0;
+  box-shadow: 0 2px 12px rgba(118, 75, 162, 0.15);
+}
+
+.gym-floor-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  cursor: pointer;
+  background: #fafaff;
+  transition: background 0.15s;
+}
+
+.gym-floor-summary:hover {
+  background: #f0ebff;
+}
+
+.gym-floor-num {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #5a3d7a;
+  min-width: 90px;
+}
+
+.gym-floor-metrics {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.gym-floor-metrics b {
+  color: #333;
+  font-weight: 600;
+}
+
+.gym-floor-toggle {
+  color: #a493e0;
+  font-size: 0.9rem;
+}
+
+.gym-floor-detail {
+  padding: 16px;
+  background: white;
+  border-top: 1px solid #ecebff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gym-team-section h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.gym-team-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gym-team-lumi {
+  min-width: 90px;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  background: #fafaff;
+  border: 1px solid #ecebff;
+  transition: all 0.2s;
+}
+
+.gym-team-lumi:hover {
+  transform: translateY(-2px);
+  border-color: #a493e0;
+}
+
+.gym-team-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 4px;
+}
+
+.gym-team-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.gym-team-info {
+  font-size: 0.72rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+.gym-team-skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #764ba2;
+}
+
+.gym-skill-icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+.gym-teams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gym-player-team {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+  background: #fafaff;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.gym-team-rank {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #764ba2;
+  min-width: 40px;
+}
+
+.gym-team-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: auto;
+}
+
+.gym-empty-hint {
+  color: #999;
+  font-size: 0.9rem;
+  padding: 12px;
+  text-align: center;
+}
+
+.no-data-box {
+  padding: 40px 20px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  color: #999;
+}
+
+.no-data-desc {
+  font-size: 0.85rem;
+  color: #bbb;
 }
 
 .mode-btn {

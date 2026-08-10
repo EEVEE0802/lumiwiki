@@ -157,6 +157,20 @@ export function updateRegionLumiTeams(region) {
   runCommand(process.execPath, ['scripts/process-lumi-teams.mjs', '--region', region])
 }
 
+/**
+ * 无限道馆数据：CSV 累计（从 baseFriday 到今天覆盖式拉全量），处理后输出 JSON
+ * 因为是一次性玩法（没有周概念），累计存到 data/{region}/archive/gym_infinity.csv
+ */
+export async function updateRegionInfinityGym(region, baseFriday) {
+  const csvPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'gym_infinity.csv')
+  // 拉从开服到今天全部无限道馆数据（无限道馆 08-07 才上线，但用 baseFriday 兜底也没事，SQL 会自然过滤为空）
+  const now = new Date()
+  const pad = n => String(n).padStart(2, '0')
+  const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`
+  await fetchCsv(region, 'infinity-gym', baseFriday, today, csvPath)
+  runCommand(process.execPath, ['scripts/process-infinity-gym.mjs', '--region', region])
+}
+
 async function main() {
   const args = process.argv.slice(2)
   const onlyMode = args.find(a => a === '--tournament' || a === '--ladder')?.slice(2) || null
@@ -190,12 +204,23 @@ async function main() {
       modeSummary.push(`${region}: 周赛${tournamentOpen ? '' : '(收尾)'}`)
     }
 
-    // 3. 参与走势（跟着 ladder 一起，失败不阻塞）
+    // 3. 无限道馆（累计口径，每次拉从 baseFriday 到今天全量）
+    //    只在没有 --tournament 显式 filter 时跑（跟 ladder 一起）
+    if (!modeFilter || modeFilter === 'ladder') {
+      try {
+        await updateRegionInfinityGym(region, config.baseFriday)
+        modeSummary.push(`${region}: 无限道馆`)
+      } catch (e) {
+        console.error(`⚠️  [${region}] 无限道馆更新失败（不阻塞其他）: ${e.message}`)
+      }
+    }
+
+    // 4. 参与走势（跟着 ladder 一起，失败不阻塞；读取 ladder/tournament/login/gym CSV 聚合）
     if (!modeFilter || modeFilter === 'ladder') {
       await updateRegionParticipation(region, weekInfo.week)
     }
 
-    // 4. 推荐配队（跟着最新的 ladder/tournament 数据重算）
+    // 5. 推荐配队（跟着最新的 ladder/tournament 数据重算）
     updateRegionLumiTeams(region)
   }
 

@@ -9,7 +9,8 @@
 // 道馆（dojo）：gym.EnemyTeam → MonsterGroup
 // 天梯（ladder）：RobotLvMatching[Id=等级档位].RobotList → RobotData[Id].Team → MonsterGroup
 //   （目标等级不在档位里时，匹配 ≤ 它的最大档位，由前端选择器处理）
-// 家园（home）：待后续接入。
+// 家园（home）：MonsterGroupID 在 20000~29999 范围的阵容
+// 无限道馆（infinityGym）：MonsterGroupID 在 128100001~128101000 范围的阵容（对应 1000 关）
 
 import fs from 'fs'
 import path from 'path'
@@ -126,8 +127,21 @@ function main() {
     })
     .sort((a, b) => a.teamId - b.teamId)
 
+  // —— 无限道馆：MonsterGroupID 在 128100001~128101000 范围（对应 1000 关）——
+  // 玩家挑战后 battle_end 上报 player_uid = MonsterGroupID，减 128100000 得层数
+  const infinityGym = monsterGroups
+    .filter(g => g.MonsterGroupID >= 128100001 && g.MonsterGroupID <= 128101000)
+    .map(g => {
+      const floor = g.MonsterGroupID - 128100000
+      const lumis = (g.MonsterIdList || [])
+        .map(m => resolveMember(m, `MonsterGroup=${g.MonsterGroupID}`))
+        .filter(Boolean)
+      return { floor, teamId: g.MonsterGroupID, lumis }
+    })
+    .sort((a, b) => a.floor - b.floor)
+
   // 输出
-  const result = { dojo, ladder, home }
+  const result = { dojo, ladder, home, infinityGym }
   const outPath = path.join(DST, 'robot-teams.json')
   fs.writeFileSync(outPath, JSON.stringify(result, null, 2))
 
@@ -135,7 +149,8 @@ function main() {
   const dojoLumis = dojo.reduce((s, t) => s + t.lumis.length, 0)
   const ladderLumis = ladder.reduce((s, t) => s + t.lumis.length, 0)
   const homeLumis = home.reduce((s, t) => s + t.lumis.length, 0)
-  console.log(`✅ 道馆 ${dojo.length} 个阵容（${dojoLumis} 只）/ 天梯 ${ladder.length} 个阵容（${ladderLevels} 个等级档位，${ladderLumis} 只）/ 家园 ${home.length} 个阵容（${homeLumis} 只）`)
+  const gymLumis = infinityGym.reduce((s, t) => s + t.lumis.length, 0)
+  console.log(`✅ 道馆 ${dojo.length} / 天梯 ${ladder.length}（${ladderLevels} 档位，${ladderLumis} 只）/ 家园 ${home.length}（${homeLumis} 只）/ 无限道馆 ${infinityGym.length} 层（${gymLumis} 只）`)
   if (warnCount) console.log(`⚠️  共 ${warnCount} 条警告，请检查上方日志`)
   console.log(`→ ${outPath}`)
 }
