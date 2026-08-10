@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-10T08:24:29.498Z",
+  "updateTime": "2026-08-10T09:09:10.617Z",
   "week": 5,
   "region": "overseas",
   "startTime": "2026-08-07",
@@ -64,20 +64,20 @@
     },
     {
       "date": "2026-08-10",
-      "ladder": 246,
+      "ladder": 257,
       "tournament": 17,
-      "login": 1607,
-      "ladderRate": 15.31,
-      "tournamentRate": 1.06,
-      "ladderBattlesPerUser": 10.67,
+      "login": 1660,
+      "ladderRate": 15.48,
+      "tournamentRate": 1.02,
+      "ladderBattlesPerUser": 10.89,
       "tournamentBattlesPerUser": 3.18,
       "retention": {
-        "login": 1309,
-        "ladder": 184,
+        "login": 1341,
+        "ladder": 192,
         "tournament": 16,
-        "ladderRate": 14.06,
-        "tournamentRate": 1.22,
-        "ladderBattlesPerUser": 10.29,
+        "ladderRate": 14.32,
+        "tournamentRate": 1.19,
+        "ladderBattlesPerUser": 10.54,
         "tournamentBattlesPerUser": 3.31
       }
     }
