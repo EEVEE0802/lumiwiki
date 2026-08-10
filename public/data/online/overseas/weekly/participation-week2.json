@@ -1,0 +1,161 @@
+{
+  "updateTime": "2026-08-10T08:29:26.046Z",
+  "week": 2,
+  "region": "overseas",
+  "startTime": "2026-07-17",
+  "endTime": "2026-07-24",
+  "dates": [
+    {
+      "date": "2026-07-17",
+      "ladder": 1037,
+      "tournament": 140,
+      "login": 4653,
+      "ladderRate": 22.29,
+      "tournamentRate": 3.01,
+      "ladderBattlesPerUser": 12.92,
+      "tournamentBattlesPerUser": 4.37,
+      "retention": {
+        "login": 689,
+        "ladder": 193,
+        "tournament": 44,
+        "ladderRate": 28.01,
+        "tournamentRate": 6.39,
+        "ladderBattlesPerUser": 13.36,
+        "tournamentBattlesPerUser": 6.36
+      }
+    },
+    {
+      "date": "2026-07-18",
+      "ladder": 1138,
+      "tournament": 255,
+      "login": 4686,
+      "ladderRate": 24.29,
+      "tournamentRate": 5.44,
+      "ladderBattlesPerUser": 12.93,
+      "tournamentBattlesPerUser": 4.12,
+      "retention": {
+        "login": 1012,
+        "ladder": 281,
+        "tournament": 119,
+        "ladderRate": 27.77,
+        "tournamentRate": 11.76,
+        "ladderBattlesPerUser": 12.36,
+        "tournamentBattlesPerUser": 5.62
+      }
+    },
+    {
+      "date": "2026-07-19",
+      "ladder": 1165,
+      "tournament": 222,
+      "login": 4472,
+      "ladderRate": 26.05,
+      "tournamentRate": 4.96,
+      "ladderBattlesPerUser": 13.95,
+      "tournamentBattlesPerUser": 3.95,
+      "retention": {
+        "login": 1207,
+        "ladder": 304,
+        "tournament": 114,
+        "ladderRate": 25.19,
+        "tournamentRate": 9.44,
+        "ladderBattlesPerUser": 11.84,
+        "tournamentBattlesPerUser": 5.08
+      }
+    },
+    {
+      "date": "2026-07-20",
+      "ladder": 1032,
+      "tournament": 17,
+      "login": 4145,
+      "ladderRate": 24.9,
+      "tournamentRate": 0.41,
+      "ladderBattlesPerUser": 12.22,
+      "tournamentBattlesPerUser": 4.24,
+      "retention": {
+        "login": 1326,
+        "ladder": 295,
+        "tournament": 9,
+        "ladderRate": 22.25,
+        "tournamentRate": 0.68,
+        "ladderBattlesPerUser": 12.96,
+        "tournamentBattlesPerUser": 5.33
+      }
+    },
+    {
+      "date": "2026-07-21",
+      "ladder": 998,
+      "tournament": 0,
+      "login": 4083,
+      "ladderRate": 24.44,
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 13.17,
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 1378,
+        "ladder": 335,
+        "tournament": 0,
+        "ladderRate": 24.31,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 12.7,
+        "tournamentBattlesPerUser": 0
+      }
+    },
+    {
+      "date": "2026-07-22",
+      "ladder": 968,
+      "tournament": 0,
+      "login": 4084,
+      "ladderRate": 23.7,
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 13.47,
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 1476,
+        "ladder": 336,
+        "tournament": 0,
+        "ladderRate": 22.76,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 12.05,
+        "tournamentBattlesPerUser": 0
+      }
+    },
+    {
+      "date": "2026-07-23",
+      "ladder": 928,
+      "tournament": 0,
+      "login": 3925,
+      "ladderRate": 23.64,
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 12.3,
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 1505,
+        "ladder": 311,
+        "tournament": 0,
+        "ladderRate": 20.66,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 12.29,
+        "tournamentBattlesPerUser": 0
+      }
+    },
+    {
+      "date": "2026-07-24",
+      "ladder": 0,
+      "tournament": 0,
+      "login": 3809,
+      "ladderRate": 0,
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 0,
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 1659,
+        "ladder": 0,
+        "tournament": 0,
+        "ladderRate": 0,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 0,
+        "tournamentBattlesPerUser": 0
+      }
+    }
+  ]
+}
