@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-10T19:15:16.304Z",
+  "updateTime": "2026-08-10T20:20:35.739Z",
   "weeks": [
     1,
     2,
@@ -676,7 +676,7 @@
             "lumiName": "Tinkdeer",
             "topSkill": {
               "skillId": 8001,
-              "count": 106
+              "count": 108
             }
           },
           {
@@ -698,11 +698,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 152
+          "count": 154
         },
-        "battles": 189,
+        "battles": 191,
         "wins": 74,
-        "winRate": "39.15",
+        "winRate": "38.74",
         "tags": [
           "most-used"
         ]
@@ -807,7 +807,7 @@
             "lumiName": "Rimedeer",
             "topSkill": {
               "skillId": 8001,
-              "count": 106
+              "count": 108
             }
           },
           {
@@ -829,11 +829,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 152
+          "count": 154
         },
-        "battles": 189,
+        "battles": 191,
         "wins": 74,
-        "winRate": "39.15",
+        "winRate": "38.74",
         "tags": [
           "most-used"
         ]
@@ -17609,7 +17609,7 @@
             "lumiName": "Battlantis",
             "topSkill": {
               "skillId": 4003,
-              "count": 42
+              "count": 43
             }
           },
           {
@@ -17631,11 +17631,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 63
+          "count": 64
         },
-        "battles": 73,
+        "battles": 74,
         "wins": 26,
-        "winRate": "35.62",
+        "winRate": "35.14",
         "tags": [
           "other"
         ]
@@ -17740,7 +17740,7 @@
             "lumiName": "Hatchmantis",
             "topSkill": {
               "skillId": 4003,
-              "count": 42
+              "count": 43
             }
           },
           {
@@ -17762,11 +17762,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 63
+          "count": 64
         },
-        "battles": 73,
+        "battles": 74,
         "wins": 26,
-        "winRate": "35.62",
+        "winRate": "35.14",
         "tags": [
           "other"
         ]
