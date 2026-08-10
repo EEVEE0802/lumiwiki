@@ -3,19 +3,25 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import readline from 'readline'
 import { fetchCsv } from './ta-fetch.mjs'
-import { ensureValidToken } from './ta-auth.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const PROJECT_ROOT = path.join(__dirname, '..')
 
-// 解析 --week 参数
+// 解析参数
 const args = process.argv.slice(2)
 const weekIdx = args.indexOf('--week')
 const week = weekIdx !== -1 ? parseInt(args[weekIdx + 1]) : null
+const regionIdx = args.indexOf('--region')
+const region = regionIdx !== -1 ? args[regionIdx + 1] : 'domestic'
+const skipFetch = args.includes('--skip-fetch')
 
 if (isNaN(week) || week < 1) {
-  console.error('用法: node fetch-participation-trend.mjs --week N')
+  console.error('用法: node fetch-participation-trend.mjs --week N [--region domestic|overseas]')
+  process.exit(1)
+}
+if (!['domestic', 'overseas'].includes(region)) {
+  console.error(`未知 --region: ${region}（仅支持 domestic / overseas）`)
   process.exit(1)
 }
 
@@ -29,27 +35,25 @@ startTime.setDate(startTime.getDate() + (week - 1) * 7)
 const endTime = new Date(startTime)
 endTime.setDate(endTime.getDate() + 7)
 
-const fmt = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')} 03:00:00`
-const startTimeStr = fmt(startTime)
-const endTimeStr = fmt(endTime)
+// 新 SQL 用日期粒度（YYYY-MM-DD），跟 "$part_date" 一致
+const fmtDate = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+const startDate = fmtDate(startTime)
+const endDate = fmtDate(new Date(endTime - 1000)) // 结束当天算最后一天（endTime 是下周五 03:00）
 
-console.log(`\n===== 参与走势拉取 Week ${week} =====`)
-console.log(`时间范围: ${startTimeStr} ~ ${endTimeStr}`)
+console.log(`\n===== 参与走势拉取 Week ${week} (${region}) =====`)
+console.log(`日期范围: ${startDate} ~ ${endDate}`)
 
-// 拉 player_login CSV
-// --skip-fetch 参数：跳过拉取（用于本地测试已有 CSV 时）
-const skipFetch = args.includes('--skip-fetch')
-const loginCsvPath = path.join(PROJECT_ROOT, `data/archive/week${week}/login_week${week}.csv`)
+// login CSV 路径
+const loginCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/login_week${week}.csv`)
 if (skipFetch && fs.existsSync(loginCsvPath)) {
   console.log(`✓ --skip-fetch 且 login CSV 已存在，跳过拉取`)
 } else {
-  console.log(`\n📤 拉取 player_login 数据...`)
-  await ensureValidToken()
-  await fetchCsv('login', startTimeStr, endTimeStr, loginCsvPath)
+  console.log(`\n📤 拉取 player_login 数据 (${region})...`)
+  await fetchCsv(region, 'login', startDate, endDate, loginCsvPath)
 }
 
-const ladderCsvPath = path.join(PROJECT_ROOT, `data/archive/week${week}/ladder_week${week}.csv`)
-const tournamentCsvPath = path.join(PROJECT_ROOT, `data/archive/week${week}/tournament_week${week}.csv`)
+const ladderCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/ladder_week${week}.csv`)
+const tournamentCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/tournament_week${week}.csv`)
 
 // CSV 解析（处理引号 + 双引号转义）
 function parseCSVLine(line) {
@@ -83,14 +87,13 @@ function parseCSVLine(line) {
 const ONE_DAY_MS = 24 * 60 * 60 * 1000
 
 // 判定玩家在某天是否算"留存玩家"（创号满 7 天）
-// date / createDay 均为 "YYYY-MM-DD"
 function isRetention(date, createDay) {
   const diff = (new Date(date) - new Date(createDay.slice(0, 10))) / ONE_DAY_MS
   return diff >= 7
 }
 
 // 从 login CSV 建立 b_role_id -> 创号日期(YYYY-MM-DD) 的映射
-// （login CSV 带 b_create_time_str 列；天梯/周赛 CSV 复用此映射判定留存）
+// 新 CSV 是长表（每行一次 login），同一 b_role_id 可能出现多次，取第一次遇到即可
 async function buildCreateTimeMap(csvPath) {
   const map = new Map()
   if (!fs.existsSync(csvPath)) return map
@@ -115,7 +118,7 @@ async function buildCreateTimeMap(csvPath) {
     }
     const bRoleId = values[bRoleIdIdx]
     const createTimeStr = values[createTimeIdx]
-    if (bRoleId && createTimeStr) {
+    if (bRoleId && createTimeStr && !map.has(bRoleId)) {
       // b_create_time_str 形如 "2026-07-15 10:23:00"，取日期部分
       map.set(bRoleId, createTimeStr.slice(0, 10))
     }
@@ -124,8 +127,7 @@ async function buildCreateTimeMap(csvPath) {
   return map
 }
 
-// 按日 distinct b_role_id 同时累加场次，可附带留存统计
-// createTimeMap: b_role_id -> 创号日期（来自 login CSV，可选；无则不统计留存）
+// 长表 CSV：每行一场事件。按 part_date 分组，distinct b_role_id + 累加行数（=事件数）
 // 返回: { uv, retentionUv, battles, retentionBattles }（各为 date -> 数值）
 async function dailyDistinct(csvPath, createTimeMap) {
   const empty = { uv: {}, retentionUv: {}, battles: {}, retentionBattles: {} }
@@ -134,47 +136,43 @@ async function dailyDistinct(csvPath, createTimeMap) {
   const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity })
 
   let headers = null
-  let dateCols = []  // [{idx, date}]
+  let dateIdx = -1
   let bRoleIdIdx = -1
   const dailySets = {}          // date -> Set<b_role_id>（全量）
   const retentionSets = {}      // date -> Set<b_role_id>（留存）
-  const dailyBattles = {}       // date -> 场次累加（全量）
-  const retentionBattles = {}   // date -> 场次累加（留存）
+  const dailyBattles = {}       // date -> 事件行数累加
+  const retentionBattles = {}
 
   for await (const line of rl) {
     if (!line.trim()) continue
     const values = parseCSVLine(line)
     if (!headers) {
       headers = values.map(h => h.replace(/^﻿/, '').trim())
-      dateCols = headers
-        .map((h, i) => /^\d{4}-\d{2}-\d{2}$/.test(h) ? { idx: i, date: h } : null)
-        .filter(Boolean)
+      dateIdx = headers.indexOf('part_date')
       bRoleIdIdx = headers.indexOf('b_role_id')
-      if (bRoleIdIdx === -1) {
-        console.error(`❌ CSV 未找到 b_role_id 列: ${csvPath}`)
+      if (dateIdx === -1 || bRoleIdIdx === -1) {
+        console.error(`❌ CSV 未找到 part_date/b_role_id 列: ${csvPath}`)
         return empty
       }
-      dateCols.forEach(({ date }) => {
-        dailySets[date] = new Set()
-        retentionSets[date] = new Set()
-        dailyBattles[date] = 0
-        retentionBattles[date] = 0
-      })
       continue
     }
+    const date = values[dateIdx]
     const bRoleId = values[bRoleIdIdx]
-    if (!bRoleId) continue
+    if (!date || !bRoleId) continue
+
+    if (!dailySets[date]) {
+      dailySets[date] = new Set()
+      retentionSets[date] = new Set()
+      dailyBattles[date] = 0
+      retentionBattles[date] = 0
+    }
+
+    dailySets[date].add(bRoleId)
+    dailyBattles[date]++
     const createDay = createTimeMap ? createTimeMap.get(bRoleId) : null
-    for (const { idx, date } of dateCols) {
-      const count = parseInt(values[idx])
-      if (count > 0) {
-        dailySets[date].add(bRoleId)
-        dailyBattles[date] += count
-        if (createDay && isRetention(date, createDay)) {
-          retentionSets[date].add(bRoleId)
-          retentionBattles[date] += count
-        }
-      }
+    if (createDay && isRetention(date, createDay)) {
+      retentionSets[date].add(bRoleId)
+      retentionBattles[date]++
     }
   }
 
@@ -212,7 +210,6 @@ const allDates = [...new Set([
   ...Object.keys(loginResult.uv)
 ])].sort()
 
-// 取某个 result 在某天的指标（全量 uv/battles + 留存 retUv/retBattles）
 const dayMetrics = (res, date) => ({
   uv: res.uv[date] || 0,
   battles: res.battles[date] || 0,
@@ -231,10 +228,8 @@ const result = allDates.map(date => {
     login: G.uv,
     ladderRate: G.uv > 0 ? +(L.uv / G.uv * 100).toFixed(2) : 0,
     tournamentRate: G.uv > 0 ? +(T.uv / G.uv * 100).toFixed(2) : 0,
-    // 平均每个参与玩家当天场次（UV=0 时为 0，避免除零）
     ladderBattlesPerUser: L.uv > 0 ? +(L.battles / L.uv).toFixed(2) : 0,
     tournamentBattlesPerUser: T.uv > 0 ? +(T.battles / T.uv).toFixed(2) : 0,
-    // 留存玩家（创号满 7 天）维度
     retention: {
       login: G.retUv,
       ladder: L.retUv,
@@ -250,12 +245,14 @@ const result = allDates.map(date => {
 const output = {
   updateTime: new Date().toISOString(),
   week,
-  startTime: startTimeStr,
-  endTime: endTimeStr,
+  region,
+  startTime: startDate,
+  endTime: endDate,
   dates: result
 }
 
-const outputPath = path.join(PROJECT_ROOT, `public/data/online/weekly/participation-week${week}.json`)
+const outputPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/participation-week${week}.json`)
+fs.mkdirSync(path.dirname(outputPath), { recursive: true })
 fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf-8')
 console.log(`\n✓ 输出: ${outputPath}`)
 console.log(`  共 ${result.length} 天`)

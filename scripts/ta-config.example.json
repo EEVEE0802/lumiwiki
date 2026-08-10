@@ -1,10 +1,19 @@
 {
-  "_comment": "复制本文件为 ta-config.json 并填入真实值。ta-config.json 不进 git（含 Bearer Token + RefreshToken）",
-  "token": "your-access-token-here",
-  "refreshToken": "your-refresh-token-here",
-  "projectId": 29,
-  "bZoneId": "1888",
-  "notifyWebhook": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=your-bot-key",
-  "baseFriday": "2026-07-10",
-  "baseUrl": "https://game-data-ta.bilibili.co"
+  "_comment": "复制本文件为 ta-config.json 并填入真实值。ta-config.json 不进 git（含 API Token）",
+  "regions": {
+    "domestic": {
+      "baseUrl": "http://47.103.103.174:8992",
+      "token": "your-domestic-open-api-token",
+      "projectId": 29,
+      "bZoneIds": ["1888"]
+    },
+    "overseas": {
+      "baseUrl": "http://8.219.166.50:8992",
+      "token": "your-overseas-open-api-token",
+      "projectId": 83,
+      "bZoneIds": ["2888", "2889"]
+    }
+  },
+  "notifyWebhook": "https://open.feishu.cn/open-apis/bot/v2/hook/xxx",
+  "baseFriday": "2026-07-10"
 }

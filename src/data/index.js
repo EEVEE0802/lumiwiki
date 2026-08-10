@@ -1,6 +1,7 @@
 // 全局数据加载与工具函数
 import { ref } from 'vue'
 import { getVersionSync, dataPrefix } from '../composables/useVersion'
+import { getRegionSync } from '../composables/useRegion'
 
 const cache = {}
 
@@ -9,21 +10,42 @@ function getCurrentLanguage() {
   return localStorage.getItem('lumiwiki-lang') || 'zh-CN'
 }
 
+// 判断某个数据名是否需要按 region（国内/海外）分区加载
+// - lumi-teams：推荐配队，依赖天梯数据 → 分区
+// - online/*：线上战斗数据 → 分区
+function needsRegion(name) {
+  return name === 'lumi-teams' || name.startsWith('online/')
+}
+
 // 通用数据加载器（带缓存）
 // name 可含路径分隔符（如 'adventure/drop-rates'），会作为相对路径拼在 prefix 后
+// 对 lumi-teams / online/* 会自动加上 region 前缀（如 'domestic/lumi-teams'）
 async function loadData(name) {
   // 如果请求的是 localization，使用当前语言
   const dataName = name === 'localization' ? getCurrentLanguage() : name
-  // cache key 包含版本 + 语言维度，切换版本后自动落到新 key
-  const cacheKey = `${getVersionSync()}_${getCurrentLanguage()}_${name}`
+  const region = getRegionSync()
+  // cache key 包含版本 + 语言 + 区域维度，切换任意维度后自动落到新 key
+  const cacheKey = `${getVersionSync()}_${region}_${getCurrentLanguage()}_${name}`
   if (cache[cacheKey]) return cache[cacheKey]
 
   const prefix = dataPrefix()
 
+  // 需要分区的数据：把 name 变成 {region}/{name}
+  // - lumi-teams → domestic/lumi-teams
+  // - online/battle-stats → online/domestic/battle-stats
+  let effectiveName = dataName
+  if (needsRegion(name)) {
+    if (name.startsWith('online/')) {
+      effectiveName = `online/${region}/${name.slice('online/'.length)}`
+    } else {
+      effectiveName = `${region}/${dataName}`
+    }
+  }
+
   // 先尝试加载加密版本 (.encoded)
   let data
   try {
-    const encodedResp = await fetch(`${prefix}/${dataName}.json.encoded`)
+    const encodedResp = await fetch(`${prefix}/${effectiveName}.json.encoded`)
     if (encodedResp.ok) {
       const encoded = await encodedResp.text()
       // 解密：Base64 解码 → Gzip 解压 → JSON 解析
@@ -35,7 +57,7 @@ async function loadData(name) {
     }
   } catch {
     // 加密版本不存在或失败，加载原始 JSON
-    const resp = await fetch(`${prefix}/${dataName}.json`)
+    const resp = await fetch(`${prefix}/${effectiveName}.json`)
     data = await resp.json()
   }
 

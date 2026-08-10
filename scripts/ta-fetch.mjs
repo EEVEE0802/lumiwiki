@@ -1,265 +1,247 @@
+// 数数开放 API 数据拉取（新版）
+// - endpoint: POST /open/submit-sql → GET /open/sql-result-page?pageId=N（从 0 开始，逐页拉直到空）
+// - 认证：form 里带 token（长期有效）
+// - 表名 ta.v_event_{projectId}（国内 v_event_29 / 海外 v_event_83），元数据列用 "#event_name"，业务列直接用
+// - 输出 CSV，格式与老 fetch 一致（下游 process-battle-data.js 不用改）
+
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { Readable } from 'node:stream'
-import { pipeline } from 'node:stream/promises'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+const CONFIG_PATH = path.join(__dirname, 'ta-config.json')
+
 function loadConfig() {
-  const configPath = path.join(__dirname, 'ta-config.json')
-  if (!fs.existsSync(configPath)) {
+  if (!fs.existsSync(CONFIG_PATH)) {
     throw new Error('ta-config.json 不存在，请复制 ta-config.example.json 为 ta-config.json 并填入配置')
   }
-  return JSON.parse(fs.readFileSync(configPath, 'utf-8'))
+  return JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'))
+}
+
+function getRegionConfig(region) {
+  const cfg = loadConfig()
+  const r = cfg.regions?.[region]
+  if (!r) throw new Error(`ta-config.json 缺少 regions.${region} 配置`)
+  if (!r.token || r.token.startsWith('your-')) throw new Error(`ta-config.json regions.${region}.token 未配置`)
+  return r
 }
 
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 
-// 构建 groupBy 字段定义
-function buildField(columnName, columnType, selectType, clusterDatePolicy) {
-  return {
-    columnDesc: columnName,
-    columnName,
-    columnType,
-    selectType,
-    propertyRange: '',
-    propertyRangeType: selectType === 'number' ? '0' : '',
-    tableType: '0',
-    subTableType: '',
-    timeTypeColumnFormart: '',
-    arrayGroupType: '',
-    clusterDatePolicy: clusterDatePolicy || null,
-    clusterDatePolicyConfigurable: false,
-    specifiedClusterDate: '',
-    dimRelateName: columnName
-  }
+function escapeSqlString(s) {
+  return String(s).replace(/'/g, "''")
 }
 
-function buildGroupBy(mode) {
-  // 登录事件需要 b_role_id + b_create_time_str（创号时间，留存玩家过滤用）
-  if (mode === 'login') {
-    return [
-      buildField('b_role_id', 'varchar', 'string', null),
-      buildField('b_create_time_str', 'varchar', 'string', null)
-    ]
+function inClause(values) {
+  return values.map(v => `'${escapeSqlString(v)}'`).join(', ')
+}
+
+// 三种查询模式的 SELECT 列（与老 CSV 兼容，process-battle-data.js / process-tournament-data.js / fetch-participation-trend.mjs 期望的列名）
+// 各模式对应的 CSV 表头（数数 open API 返回的 CSV 不含表头，我们自己按 SELECT 列顺序补上）
+export const CSV_HEADERS = {
+  ladder:     ['part_date', 'game_id_str', 'b_role_id', 'player_rank', 'player_type', 'player_lumis', 'battle_result', 'trainer_id'],
+  tournament: ['part_date', 'game_id_str', 'b_role_id', 'player_rank', 'player_type', 'player_lumis', 'battle_result', 'trainer_id', 'player_week_win'],
+  login:      ['part_date', 'b_role_id', 'b_create_time_str'],
+}
+
+function buildSql(mode, startDate, endDate, cfg) {
+  const { projectId, bZoneIds } = cfg
+  const tableName = `ta.v_event_${projectId}`
+  const zoneIn = inClause(bZoneIds)
+  // b_zone_id 在国内是 varchar，在海外是 double，统一用 CAST 与字符串比
+  const zoneFilter = `CAST(b_zone_id AS varchar) IN (${zoneIn})`
+
+  if (mode === 'ladder') {
+    return `
+      SELECT
+        "$part_date" AS part_date,
+        game_id_str,
+        b_role_id,
+        player_rank,
+        player_type,
+        player_lumis,
+        battle_result,
+        trainer_id
+      FROM ${tableName}
+      WHERE "$part_date" >= '${startDate}'
+        AND "$part_date" <= '${endDate}'
+        AND "#event_name" = 'battle_end'
+        AND ${zoneFilter}
+        AND game_type = 'PVP1V1'
+    `.trim().replace(/\s+/g, ' ')
   }
-  const fields = [
-    buildField('game_id_str', 'varchar', 'string', null),
-    buildField('b_role_id', 'varchar', 'string', null),
-    buildField('player_rank', 'double', 'number', 'LATEST'),
-    buildField('player_type', 'double', 'number', 'LATEST'),
-    buildField('player_lumis', 'varchar', 'string', null),
-    buildField('battle_result', 'double', 'number', 'LATEST'),
-    buildField('trainer_id', 'double', 'number', 'LATEST')
-  ]
+
   if (mode === 'tournament') {
-    fields.push(buildField('player_week_win', 'double', 'number', 'LATEST'))
+    return `
+      SELECT
+        "$part_date" AS part_date,
+        game_id_str,
+        b_role_id,
+        player_rank,
+        player_type,
+        player_lumis,
+        battle_result,
+        trainer_id,
+        player_week_win
+      FROM ${tableName}
+      WHERE "$part_date" >= '${startDate}'
+        AND "$part_date" <= '${endDate}'
+        AND "#event_name" = 'battle_end'
+        AND ${zoneFilter}
+        AND game_type = 'Week1v1'
+    `.trim().replace(/\s+/g, ' ')
   }
-  return fields
+
+  if (mode === 'login') {
+    return `
+      SELECT
+        "$part_date" AS part_date,
+        b_role_id,
+        b_create_time_str
+      FROM ${tableName}
+      WHERE "$part_date" >= '${startDate}'
+        AND "$part_date" <= '${endDate}'
+        AND "#event_name" = 'player_login'
+        AND ${zoneFilter}
+    `.trim().replace(/\s+/g, ' ')
+  }
+
+  throw new Error(`未知 mode: ${mode}`)
 }
 
-function buildFilts(bZoneId, gameType, todayStr) {
-  const make = (columnName, value) => ({
-    calcuSymbol: 'C00',
-    columnDesc: columnName,
-    columnName,
-    columnType: 'varchar',
-    ftv: [value],
-    selectType: 'string',
-    tableType: '0',
-    subTableType: '',
-    timeRelative: '',
-    timeUnit: '',
-    clusterDatePolicy: null,
-    clusterDatePolicyConfigurable: false,
-    specifiedClusterDate: todayStr
-  })
-  // 登录事件无 game_type 区分
-  const filts = [make('b_zone_id', bZoneId)]
-  if (gameType) {
-    filts.push(make('game_type', gameType))
-  }
-  return filts
-}
+async function submitSql(cfg, sql, format = 'csv') {
+  const body = new URLSearchParams({
+    token: cfg.token,
+    projectId: String(cfg.projectId),
+    sql,
+    format
+  }).toString()
 
-function buildQueryParams(mode, startTime, endTime, bZoneId) {
-  const eventName = mode === 'login' ? 'player_login' : 'battle_end'
-  const gameType = mode === 'login' ? null : (mode === 'tournament' ? 'Week1v1' : 'PVP1V1')
-  const todayStr = new Date().toISOString().slice(0, 10)
-  const stageInfo = [{ eventUuid: 'saN0CpyP', stage: 'sum' }]
-  const visualInfo = [{ name: `${eventName}.   `, type: 'line', show: false, isSplit: false, eventUuid: 'saN0CpyP' }]
-
-  return {
-    events: [{
-      analysis: 'A100',
-      analysisDesc: '   ',
-      eventUuid: 'saN0CpyP',
-      analysisParams: '',
-      customEvent: '',
-      customFilters: [],
-      quotaEntities: null,
-      eventName,
-      eventDesc: eventName,
-      metricName: null,
-      metric: null,
-      eventType: 'event',
-      eventNameDisplay: `${eventName}.   `,
-      eventSplitIndexes: null,
-      filts: [],
-      quota: '',
-      quotaDesc: '',
-      subTableType: '',
-      relation: 1,
-      type: 0,
-      bubbleInfo: {
-        bubbleType: 'super_event',
-        dataStatus: 'normal',
-        desc: '',
-        displayName: '',
-        hasConnected: true,
-        id: 13321,
-        name: 'battle_end',
-        sourceType: 'report'
-      }
-    }],
-    eventView: {
-      startTime,
-      timeParticleSize: 'T1',
-      endTime,
-      graphShape: 'L0',
-      recentDay: '',
-      groupBy: buildGroupBy(mode),
-      rowSpanType: 'fold',
-      stageInfo,
-      stageFlag: true,
-      visualInfo,
-      retentionType: null,
-      retentionDisplaySet: null,
-      retentionCollectSet: null,
-      startToNow: -1,
-      startToYesterday: -1,
-      comparedTimeList: [],
-      markLineInfo: [],
-      byType: 'date',
-      uiCommonConfig: JSON.stringify({
-        tableSorts: [],
-        chartSort: 'num-desc',
-        stageInfo,
-        visualInfo,
-        markLineInfo: [],
-        stageFlag: true,
-        showChartLabel: false,
-        showChartPercent: true,
-        topNOptions: 10,
-        pieNums: 2,
-        byType: 'date',
-        comparedTimeStage: null,
-        comparedTimeStages: [],
-        layerExpandedIndex: '',
-        startToNow: -1,
-        startToYesterday: -1
-      }),
-      filts: buildFilts(bZoneId, gameType, todayStr),
-      relation: 1,
-      comparedByTime: false,
-      eventSplit: null
-    },
-    origin: 1
-  }
-}
-
-async function submitTask(config, qp) {
-  const formData = new FormData()
-  formData.append('projectId', String(config.projectId))
-  formData.append('eventModel', '0')
-  formData.append('qp', JSON.stringify(qp))
-  formData.append('format', 'BY_DATE')
-  formData.append('periodAverage', 'false')
-  formData.append('stageConfigOnTime', JSON.stringify({
-    stageFlag: true,
-    stageInfo: [{ eventUuid: 'saN0CpyP', stage: 'sum' }],
-    byType: 'date',
-    columnSortType: ''
-  }))
-
-  const resp = await fetch(`${config.baseUrl}/v1/ta/event/eventSearchDownloadAsync`, {
+  const resp = await fetch(`${cfg.baseUrl}/open/submit-sql`, {
     method: 'POST',
-    headers: { Authorization: `bearer ${config.token}` },
-    body: formData
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body
   })
-
-  if (resp.status === 401) {
-    throw new Error('TOKEN 失效（HTTP 401）—— 请重新登录数数平台，更新 ta-config.json 里的 token')
-  }
-
   const data = await resp.json()
   if (data.return_code !== 0) {
     const msg = data.return_message || ''
-    if (msg.includes('token') || msg.includes('auth') || msg.includes('login')) {
-      throw new Error(`TOKEN 失效: ${msg} —— 请更新 ta-config.json 里的 token`)
+    if (msg.includes('token') || msg.includes('auth') || msg.includes('登录')) {
+      throw new Error(`TOKEN 失效: ${msg} —— 请更新 ta-config.json 里对应 region 的 token`)
     }
-    throw new Error(`发起任务失败: ${msg}`)
+    throw new Error(`提交 SQL 失败: ${msg}`)
   }
   return data.data.taskId
 }
 
-async function pollTask(config, taskId, { maxWait = 300000, interval = 3000 } = {}) {
-  const start = Date.now()
-  let lastProgress = -1
-  while (Date.now() - start < maxWait) {
-    await sleep(interval)
-    const url = `${config.baseUrl}/v1/ta/auth/manage/task/asyncTaskProgress?@t=${Date.now()}&projectId=${config.projectId}&taskIds=${taskId}`
-    const resp = await fetch(url, {
-      headers: { Authorization: `bearer ${config.token}` }
-    })
-    const data = await resp.json()
-    if (data.return_code !== 0) {
-      throw new Error(`查询任务状态失败: ${data.return_message}`)
+// 拉取单页；同时能识别"任务还在跑"的错误码，返回 { done, running, errored, chunk }
+async function fetchResultPage(cfg, taskId, pageId) {
+  const url = `${cfg.baseUrl}/open/sql-result-page?token=${cfg.token}&projectId=${cfg.projectId}&taskId=${taskId}&pageId=${pageId}`
+  const resp = await fetch(url)
+  const ct = resp.headers.get('content-type') || ''
+
+  // JSON 响应意味着错误或状态提示（成功的 CSV 是 application/octet-stream）
+  if (ct.includes('application/json')) {
+    const text = await resp.text()
+    let data
+    try { data = JSON.parse(text) } catch { return { errored: true, msg: text.slice(0, 500) } }
+
+    // 任务还在跑：直接返回状态提示
+    const msg = data.return_message || ''
+    if (data.return_code === -1 && /running|processing|pending/i.test(msg)) {
+      return { running: true }
     }
-    const task = data.data[0]
-    if (task.asyncTaskStatus === 'async_ok') {
-      console.log(`  任务 ${taskId} 完成 (100%)`)
-      return
+    // 页面数据不存在（已到最后一页）
+    if (data.return_code === -1008 || /page data does not exist/i.test(msg)) {
+      return { done: true }
     }
-    if (task.progress !== lastProgress) {
-      console.log(`  任务 ${taskId} 进度: ${task.progress}% (${task.asyncTaskStatus})`)
-      lastProgress = task.progress
-    }
+    return { errored: true, msg }
   }
-  throw new Error(`任务 ${taskId} 超时（>${maxWait / 1000}s）`)
+
+  // 二进制流 = CSV chunk
+  const buf = Buffer.from(await resp.arrayBuffer())
+  // 数数会把空页返回为空 body（0 字节）
+  if (buf.length === 0) return { done: true }
+  return { chunk: buf }
 }
 
-async function downloadCsv(config, taskId, outputPath) {
-  const url = `${config.baseUrl}/v1/ta/auth/manage/task/taskFileDownload?access_token=${config.token}&projectId=${config.projectId}&taskId=${taskId}`
-  const resp = await fetch(url)
-  if (!resp.ok) {
-    throw new Error(`下载失败: HTTP ${resp.status}`)
-  }
-  // 流式写入文件，避免大文件触发 Node.js 字符串上限（~512 MB）
+async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs = 300000, pollIntervalMs = 2000 } = {}) {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true })
-  const fileStream = fs.createWriteStream(outputPath)
-  await pipeline(Readable.fromWeb(resp.body), fileStream)
+  const out = fs.createWriteStream(outputPath)
+  // 数数开放 API 返回的 CSV 不含表头，按 SELECT 列顺序手动补上
+  const headerLine = CSV_HEADERS[mode].join(',') + '\n'
+  out.write(headerLine)
+  let totalBytes = headerLine.length
+  let pageId = 0
+  const start = Date.now()
+
+  while (true) {
+    const r = await fetchResultPage(cfg, taskId, pageId)
+
+    if (r.running) {
+      if (Date.now() - start > maxWaitPerPollMs) {
+        out.close()
+        throw new Error(`任务 ${taskId} 等待超时（>${maxWaitPerPollMs / 1000}s 仍在跑）`)
+      }
+      if ((Date.now() - start) % 10000 < pollIntervalMs) {
+        console.log(`  任务 ${taskId} 运行中... (等 ${Math.round((Date.now() - start) / 1000)}s)`)
+      }
+      await sleep(pollIntervalMs)
+      continue
+    }
+    if (r.errored) {
+      out.close()
+      throw new Error(`拉取 pageId=${pageId} 失败: ${r.msg}`)
+    }
+    if (r.done) {
+      // 一页数据都没拉到就已 done → 是空结果（查询区间无数据）；仍算成功
+      break
+    }
+
+    // 写入 chunk（数数开放 API 每页都是纯数据，不含表头）
+    out.write(r.chunk)
+    totalBytes += r.chunk.length
+
+    if (pageId % 5 === 0 || pageId < 3) {
+      console.log(`  已下载 pageId=${pageId} (${(totalBytes / 1024 / 1024).toFixed(2)} MB)`)
+    }
+    pageId++
+
+    // 保护：万一有 bug 无限循环
+    if (pageId > 100000) {
+      out.close()
+      throw new Error(`异常：pageId 超过 10 万，可能进入死循环`)
+    }
+  }
+
+  await new Promise(res => out.end(res))
   const size = fs.statSync(outputPath).size
-  console.log(`💾 已保存: ${outputPath} (${(size / 1024 / 1024).toFixed(2)} MB)`)
+  console.log(`💾 已保存: ${outputPath} (${(size / 1024 / 1024).toFixed(2)} MB, 共 ${pageId} 页)`)
   return size
 }
 
-export async function fetchCsv(mode, startTime, endTime, outputPath) {
-  const config = loadConfig()
-  console.log(`\n📤 发起 ${mode} 导出任务`)
-  console.log(`   时间范围: ${startTime} ~ ${endTime}`)
-  console.log(`   区服: ${config.bZoneId}, 玩法: ${mode === 'tournament' ? 'Week1v1' : 'PVP1V1'}`)
+/**
+ * 拉取指定区域、指定模式的数据到 CSV 文件
+ * @param {'domestic'|'overseas'} region
+ * @param {'ladder'|'tournament'|'login'} mode
+ * @param {string} startDate 'YYYY-MM-DD'（含）
+ * @param {string} endDate 'YYYY-MM-DD'（含）
+ * @param {string} outputPath 输出 CSV 绝对路径
+ */
+export async function fetchCsv(region, mode, startDate, endDate, outputPath) {
+  const cfg = getRegionConfig(region)
+  console.log(`\n📤 发起 ${region}/${mode} 拉取任务`)
+  console.log(`   时间范围: ${startDate} ~ ${endDate}`)
+  console.log(`   projectId: ${cfg.projectId}, bZoneIds: [${cfg.bZoneIds.join(', ')}]`)
 
-  const qp = buildQueryParams(mode, startTime, endTime, config.bZoneId)
-  const taskId = await submitTask(config, qp)
+  const sql = buildSql(mode, startDate, endDate, cfg)
+  console.log(`   SQL: ${sql.length > 200 ? sql.slice(0, 200) + '...' : sql}`)
+
+  const taskId = await submitSql(cfg, sql, 'csv')
   console.log(`   任务 ID: ${taskId}`)
 
-  console.log(`⏳ 轮询任务状态...`)
-  await pollTask(config, taskId)
-
-  console.log(`📥 下载 CSV...`)
-  const size = await downloadCsv(config, taskId, outputPath)
+  console.log(`📥 分页下载...`)
+  const size = await pollAndDownload(cfg, taskId, mode, outputPath)
 
   return { taskId, outputPath, size }
 }
@@ -271,21 +253,18 @@ if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToP
     const i = args.indexOf(name)
     return i !== -1 ? args[i + 1] : null
   }
+  const region = getArg('--region') || 'domestic'
   const mode = getArg('--mode') || 'ladder'
   const start = getArg('--start')
   const end = getArg('--end')
   const out = getArg('--out')
 
   if (!start || !end || !out) {
-    console.log('用法: node ta-fetch.mjs --mode ladder --start "2026-07-10 00:00:00" --end "2026-07-15 23:59:59" --out data/archive/week1/ladder_week1.csv')
+    console.log('用法: node ta-fetch.mjs --region domestic --mode ladder --start 2026-08-08 --end 2026-08-10 --out data/domestic/archive/week5/ladder_week5.csv')
     process.exit(1)
   }
 
-  // CLI 模式也先续期 token，避免直接用过期 access_token
-  import('./ta-auth.mjs').then(async ({ ensureValidToken }) => {
-    await ensureValidToken()
-    return fetchCsv(mode, start, end, out)
-  }).catch(e => {
+  fetchCsv(region, mode, start, end, out).catch(e => {
     console.error(`\n❌ ${e.message}`)
     process.exit(1)
   })

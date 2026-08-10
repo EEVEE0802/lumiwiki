@@ -10,16 +10,22 @@ const __dirname = path.dirname(__filename)
 const args = process.argv.slice(2)
 const weekIndex = args.indexOf('--week')
 const week = weekIndex !== -1 ? parseInt(args[weekIndex + 1]) : null
+const regionIndex = args.indexOf('--region')
+const region = regionIndex !== -1 ? args[regionIndex + 1] : 'domestic'
+if (!['domestic', 'overseas'].includes(region)) {
+  console.error(`未知 --region: ${region}（仅支持 domestic / overseas）`)
+  process.exit(1)
+}
 
 // CSV 文件路径 - 如果指定周次，从归档目录读取
 const battleEndPath = week
-  ? path.join(__dirname, `../data/archive/week${week}/ladder_week${week}.csv`)
-  : path.join(__dirname, '../data/battle_end.csv')
+  ? path.join(__dirname, `../data/${region}/archive/week${week}/ladder_week${week}.csv`)
+  : path.join(__dirname, `../data/${region}/battle_end.csv`)
 
 // 根据周次决定输出路径
 const outputPath = week
-  ? path.join(__dirname, `../public/data/online/weekly/ladder-week${week}.json`)
-  : path.join(__dirname, '../public/data/online/battle-stats.json')
+  ? path.join(__dirname, `../public/data/online/${region}/weekly/ladder-week${week}.json`)
+  : path.join(__dirname, `../public/data/online/${region}/battle-stats.json`)
 
 // 改进的 CSV 解析器
 function parseCSVLine(line) {

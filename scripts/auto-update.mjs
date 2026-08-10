@@ -3,11 +3,12 @@ import path from 'path'
 import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'url'
 import { fetchCsv } from './ta-fetch.mjs'
-import { ensureValidToken } from './ta-auth.mjs'
 import { notify } from './notify.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const PROJECT_ROOT = path.resolve(__dirname, '..')
+
+const REGIONS = ['domestic', 'overseas']
 
 function loadConfig() {
   return JSON.parse(fs.readFileSync(path.join(__dirname, 'ta-config.json'), 'utf-8'))
@@ -44,20 +45,21 @@ function runCommand(cmd, args = []) {
   return result.stdout || ''
 }
 
-function formatDateTime(date) {
+function formatDate(date) {
   const pad = n => String(n).padStart(2, '0')
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`
 }
 
 // 计算当前游戏周编号和时间范围
-// 游戏周：每周五 03:00 ~ 下周五 03:00（凌晨 3 点定时任务触发时间为周分界）
+// 游戏周：每周五 03:00 ~ 下周五 03:00
 // 首周从 config.baseFriday 03:00 开始
+// 国内 / 海外全球通服，共用同一套 baseFriday
 export function computeWeekInfo(baseFriday) {
   const now = new Date()
   const base = new Date(baseFriday + 'T03:00:00')
   let week = Math.floor((now - base) / (7 * 24 * 60 * 60 * 1000)) + 1
 
-  // 周五 03:00 ~ 03:59 跑的算上一周（定时任务周五凌晨产生上一周的完整数据）
+  // 周五 03:00 ~ 03:59 跑的算上一周
   if (now.getDay() === 5 && now.getHours() === 3) {
     week -= 1
   }
@@ -67,91 +69,169 @@ export function computeWeekInfo(baseFriday) {
 
   return {
     week,
-    startTime: formatDateTime(weekStart),
-    endTime: formatDateTime(now)
+    startDate: formatDate(weekStart),  // 'YYYY-MM-DD'
+    endDate: formatDate(now)
   }
 }
 
-function ensureWeekInJson(week) {
-  const weeksJsonPath = path.join(PROJECT_ROOT, 'public/data/online/weekly/weeks.json')
-  const weeks = JSON.parse(fs.readFileSync(weeksJsonPath, 'utf-8'))
+// 周赛是否开放：全球通服，用国内时间的窗口
+// 周五 19:00 ~ 周一 07:00
+export function isTournamentActive(now = new Date()) {
+  const day = now.getDay()  // 0=周日, 1=周一, ..., 5=周五
+  const hour = now.getHours()
+  if (day === 5 && hour >= 19) return true          // 周五 19:00+
+  if (day === 6) return true                         // 周六全天
+  if (day === 0) return true                         // 周日全天
+  if (day === 1 && hour < 7) return true            // 周一 <07:00
+  return false
+}
+
+function ensureWeekInJson(region, week) {
+  const weeksJsonPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/weeks.json`)
+  fs.mkdirSync(path.dirname(weeksJsonPath), { recursive: true })
+  let weeks = []
+  if (fs.existsSync(weeksJsonPath)) {
+    weeks = JSON.parse(fs.readFileSync(weeksJsonPath, 'utf-8'))
+  }
   if (!weeks.some(w => w.week === week)) {
     weeks.push({ week, label: `第${week}周`, fileName: `ladder-week${week}.json` })
     weeks.sort((a, b) => a.week - b.week)
     fs.writeFileSync(weeksJsonPath, JSON.stringify(weeks, null, 2) + '\n', 'utf-8')
-    console.log(`✓ weeks.json 已添加第 ${week} 周`)
+    console.log(`  ✓ [${region}] weeks.json 已添加第 ${week} 周`)
   }
 }
 
-export async function updateMode(mode, weekInfo, options = {}) {
-  const { week, startTime, endTime } = weekInfo
-  const { skipPublish = false } = options
+/**
+ * 拉取并处理某区域某模式（ladder / tournament）的数据
+ * @param {'domestic'|'overseas'} region
+ * @param {'ladder'|'tournament'} mode
+ * @param {object} weekInfo { week, startDate, endDate }
+ */
+export async function updateRegionMode(region, mode, weekInfo) {
+  const { week, startDate, endDate } = weekInfo
   const fileName = mode === 'tournament' ? `tournament_week${week}.csv` : `ladder_week${week}.csv`
-  const outputPath = path.join(PROJECT_ROOT, 'data', 'archive', `week${week}`, fileName)
+  const outputPath = path.join(PROJECT_ROOT, 'data', region, 'archive', `week${week}`, fileName)
 
-  await fetchCsv(mode, startTime, endTime, outputPath)
+  await fetchCsv(region, mode, startDate, endDate, outputPath)
 
   const scriptFile = mode === 'tournament' ? 'scripts/process-tournament-data.js' : 'scripts/process-battle-data.js'
-  runCommand(process.execPath, [scriptFile, '--week', String(week)])
+  runCommand(process.execPath, [scriptFile, '--week', String(week), '--region', region])
 
   if (mode === 'ladder') {
-    fs.copyFileSync(
-      path.join(PROJECT_ROOT, `public/data/online/weekly/ladder-week${week}.json`),
-      path.join(PROJECT_ROOT, 'public/data/online/battle-stats.json')
-    )
-    console.log('✓ battle-stats.json 已更新')
-    ensureWeekInJson(week)
-  }
-
-  // 推荐配队数据派生（默认取本周+上周，避免每周第一天样本太少）
-  console.log('→ 生成推荐配队数据 (lumi-teams.json)...')
-  runCommand(process.execPath, ['scripts/process-lumi-teams.mjs'])
-
-  // 参与走势数据（仅 ladder 更新时跑：拉 login CSV + 按日 distinct 聚合）
-  // tournament 单独更新周（周一 08:00）时 ladder CSV 是上周的，跳过避免生成错误数据
-  if (mode === 'ladder') {
-    console.log('→ 生成参与走势数据 (participation-weekN.json)...')
-    try {
-      runCommand(process.execPath, ['scripts/fetch-participation-trend.mjs', '--week', String(week)])
-    } catch (e) {
-      console.error(`⚠️  参与走势生成失败（不阻塞发布）: ${e.message}`)
+    const src = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/ladder-week${week}.json`)
+    const dst = path.join(PROJECT_ROOT, `public/data/online/${region}/battle-stats.json`)
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, dst)
+      console.log(`  ✓ [${region}] battle-stats.json 已更新`)
     }
+    ensureWeekInJson(region, week)
   }
+}
 
-  if (!skipPublish) {
-    runCommand('bash', ['publish.sh'])
+/**
+ * 拉取参与走势（内部会拉 login CSV + 聚合），失败不阻塞
+ */
+export async function updateRegionParticipation(region, week) {
+  try {
+    runCommand(process.execPath, ['scripts/fetch-participation-trend.mjs', '--week', String(week), '--region', region])
+  } catch (e) {
+    console.error(`⚠️  [${region}] 参与走势生成失败（不阻塞发布）: ${e.message}`)
   }
+}
+
+/**
+ * 重新生成某区域的推荐配队 lumi-teams.json
+ * 依赖当前区域已存在的 ladder / tournament 数据
+ */
+export function updateRegionLumiTeams(region) {
+  runCommand(process.execPath, ['scripts/process-lumi-teams.mjs', '--region', region])
 }
 
 async function main() {
   const args = process.argv.slice(2)
-  const mode = args.includes('--tournament') ? 'tournament' : 'ladder'
+  const onlyMode = args.find(a => a === '--tournament' || a === '--ladder')?.slice(2) || null
   const config = loadConfig()
-
-  await ensureValidToken()
-
   const weekInfo = computeWeekInfo(config.baseFriday)
-  console.log(`\n===== LumiWiki 自动更新 =====`)
-  console.log(`模式: ${mode}`)
-  console.log(`游戏周: Week ${weekInfo.week} (${weekInfo.startTime} ~ ${weekInfo.endTime})`)
+  const tournamentOpen = isTournamentActive()
 
-  if (mode === 'tournament' && weekInfo.week === 1) {
-    console.log('首周无周赛，跳过')
-    await notify('首周（Week 1）无周赛，跳过本次拉取', 'info')
-    return
+  console.log(`\n===== LumiWiki 线上数据自动更新 =====`)
+  console.log(`游戏周: Week ${weekInfo.week} (${weekInfo.startDate} ~ ${weekInfo.endDate})`)
+  console.log(`区域: ${REGIONS.join(', ')}`)
+  console.log(`周赛窗口: ${tournamentOpen ? '开放中' : '未开放'}`)
+
+  const modeFilter = onlyMode // 'ladder' / 'tournament' / null
+  const modeSummary = []
+
+  for (const region of REGIONS) {
+    console.log(`\n──── [${region}] ────`)
+
+    // 1. 天梯（每次都拉）
+    if (!modeFilter || modeFilter === 'ladder') {
+      await updateRegionMode(region, 'ladder', weekInfo)
+      modeSummary.push(`${region}: 天梯`)
+    }
+
+    // 2. 周赛（仅在窗口期，且非首周）
+    if ((!modeFilter || modeFilter === 'tournament') && weekInfo.week > 1 && tournamentOpen) {
+      await updateRegionMode(region, 'tournament', weekInfo)
+      modeSummary.push(`${region}: 周赛`)
+    }
+
+    // 3. 参与走势（跟着 ladder 一起，失败不阻塞）
+    if (!modeFilter || modeFilter === 'ladder') {
+      await updateRegionParticipation(region, weekInfo.week)
+    }
+
+    // 4. 推荐配队（跟着最新的 ladder/tournament 数据重算）
+    updateRegionLumiTeams(region)
   }
 
-  await updateMode(mode, weekInfo)
+  // 5. 镜像 lumi-teams 到 internal 分支（对内版复用对外的推荐配队数据）
+  for (const region of REGIONS) {
+    const src = path.join(PROJECT_ROOT, `public/data/${region}/lumi-teams.json`)
+    const dst = path.join(PROJECT_ROOT, `public/data/internal/${region}/lumi-teams.json`)
+    if (fs.existsSync(src)) {
+      fs.mkdirSync(path.dirname(dst), { recursive: true })
+      fs.copyFileSync(src, dst)
+      console.log(`  ✓ [${region}] 镜像 lumi-teams.json 到 internal`)
+    }
+  }
 
-  const modeLabel = mode === 'tournament' ? '周赛' : '天梯'
-  await notify(`${modeLabel} Week ${weekInfo.week} 已自动更新并发布`, 'success')
+  // 6. 一次发布（build + 静态服务重启）
+  console.log('\n──── 统一发布 ────')
+  runCommand('bash', ['publish.sh'])
+
+  // 7. git commit + push
+  console.log('\n──── 提交 git ────')
+  const status = runCommand('git', ['status', '--porcelain'])
+  if (status.trim()) {
+    const now = new Date()
+    const dateStr = now.toLocaleDateString('zh-CN', { timeZone: 'Asia/Shanghai' })
+    const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`
+    const summary = modeSummary.join(' · ') || '(无变化)'
+    const message = `自动更新线上数据（Week ${weekInfo.week} · ${summary} · ${dateStr} ${timeStr}）`
+    runCommand('git', ['add', '-A'])
+    runCommand('git', ['commit', '-m', message])
+    runCommand('git', ['push'])
+    console.log('  ✓ 数据已提交并推送')
+  } else {
+    console.log('  无数据改动，跳过 commit')
+  }
+
+  await notify(
+    `线上数据更新完成（Week ${weekInfo.week}）\n` +
+    `区域: ${REGIONS.join(' + ')}\n` +
+    `周赛: ${tournamentOpen ? '含' : '未开放'}\n` +
+    `内容: ${modeSummary.join(' | ') || '无'}`,
+    'success'
+  )
 }
 
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))
 if (isMain) {
   main().catch(async e => {
     console.error(`\n❌ ${e.message}`)
-    await notify(`自动更新失败: ${e.message}`, 'error')
+    await notify(`线上数据更新失败: ${e.message}`, 'error')
     process.exit(1)
   })
 }

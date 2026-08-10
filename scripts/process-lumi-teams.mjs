@@ -10,8 +10,18 @@ const PROJECT_ROOT = path.join(__dirname, '..')
 const args = process.argv.slice(2)
 const weekIdx = args.indexOf('--week')
 const explicitWeek = weekIdx !== -1 ? parseInt(args[weekIdx + 1]) : null
+const regionIdx = args.indexOf('--region')
+const region = regionIdx !== -1 ? args[regionIdx + 1] : 'domestic'
+if (!['domestic', 'overseas'].includes(region)) {
+  console.error(`未知 --region: ${region}（仅支持 domestic / overseas）`)
+  process.exit(1)
+}
 
-const weeksJsonPath = path.join(PROJECT_ROOT, 'public/data/online/weekly/weeks.json')
+const weeksJsonPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/weeks.json`)
+if (!fs.existsSync(weeksJsonPath)) {
+  console.log(`[${region}] weeks.json 不存在，跳过推荐配队生成: ${weeksJsonPath}`)
+  process.exit(0)
+}
 const weeksJson = JSON.parse(fs.readFileSync(weeksJsonPath, 'utf-8'))
 const availableWeeks = weeksJson.map(w => w.week).filter(w => w >= 1).sort((a, b) => a - b)
 
@@ -24,9 +34,9 @@ if (!isNaN(explicitWeek) && explicitWeek >= 1) {
   console.log(`未指定 --week，使用全部 ${weeks.length} 周: ${weeks.map(w => 'Week ' + w).join(' + ')}`)
 }
 
-const outputPath = path.join(PROJECT_ROOT, 'public/data/lumi-teams.json')
+const outputPath = path.join(PROJECT_ROOT, `public/data/${region}/lumi-teams.json`)
 
-console.log(`\n===== LumiWiki 噜咪推荐配队处理 =====`)
+console.log(`\n===== LumiWiki 噜咪推荐配队处理 (${region}) =====`)
 console.log(`数据周次: ${weeks.map(w => 'Week ' + w).join(' + ')}`)
 
 // 合并多周 ladder no-bot + tournament 的所有队伍
@@ -68,8 +78,8 @@ function ingestTeam(team) {
 
 // 遍历每周，读 ladder + tournament 合并
 for (const w of weeks) {
-  const ladderPath = path.join(PROJECT_ROOT, `public/data/online/weekly/ladder-week${w}.json`)
-  const tournamentPath = path.join(PROJECT_ROOT, `public/data/online/weekly/tournament-week${w}.json`)
+  const ladderPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/ladder-week${w}.json`)
+  const tournamentPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/tournament-week${w}.json`)
 
   if (fs.existsSync(ladderPath)) {
     const ladder = JSON.parse(fs.readFileSync(ladderPath, 'utf-8'))
@@ -319,6 +329,7 @@ const output = {
   lumiTeams: result
 }
 
+fs.mkdirSync(path.dirname(outputPath), { recursive: true })
 fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf-8')
 console.log(`\n✓ 输出: ${outputPath}`)
 console.log(`  覆盖噜咪数: ${Object.keys(result).length}`)

@@ -1,0 +1,194 @@
+{
+  "updateTime": "2026-08-10T07:44:58.152Z",
+  "totalBattles": 0,
+  "rankGroups": [
+    {
+      "key": "bronze",
+      "start": 1,
+      "end": 30,
+      "label": "青铜"
+    },
+    {
+      "key": "silver",
+      "start": 31,
+      "end": 60,
+      "label": "白银"
+    },
+    {
+      "key": "gold",
+      "start": 61,
+      "end": 90,
+      "label": "黄金"
+    },
+    {
+      "key": "diamond",
+      "start": 91,
+      "end": 120,
+      "label": "钻石"
+    },
+    {
+      "key": "star",
+      "start": 121,
+      "end": 150,
+      "label": "星耀"
+    },
+    {
+      "key": "legend",
+      "start": 151,
+      "end": 151,
+      "label": "传说"
+    }
+  ],
+  "allRanks": [],
+  "stats": {
+    "all-with-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "all-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "bronze-with-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "bronze-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "silver-with-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "silver-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "gold-with-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "gold-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "diamond-with-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "diamond-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "star-with-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "star-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "legend-with-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "legend-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    }
+  },
+  "playerRankDistribution": {
+    "bronze": 0,
+    "silver": 0,
+    "gold": 0,
+    "diamond": 0,
+    "star": 0,
+    "legend": 0,
+    "total": 0
+  }
+}

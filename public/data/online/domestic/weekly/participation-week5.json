@@ -1,0 +1,85 @@
+{
+  "updateTime": "2026-08-10T07:44:51.603Z",
+  "week": 5,
+  "region": "domestic",
+  "startTime": "2026-08-07",
+  "endTime": "2026-08-14",
+  "dates": [
+    {
+      "date": "2026-08-07",
+      "ladder": 5518,
+      "tournament": 0,
+      "login": 36700,
+      "ladderRate": 15.04,
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 8.34,
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 13488,
+        "ladder": 2742,
+        "tournament": 0,
+        "ladderRate": 20.33,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 8.38,
+        "tournamentBattlesPerUser": 0
+      }
+    },
+    {
+      "date": "2026-08-08",
+      "ladder": 6412,
+      "tournament": 0,
+      "login": 35318,
+      "ladderRate": 18.16,
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 8.77,
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 13517,
+        "ladder": 2886,
+        "tournament": 0,
+        "ladderRate": 21.35,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 8.71,
+        "tournamentBattlesPerUser": 0
+      }
+    },
+    {
+      "date": "2026-08-09",
+      "ladder": 6681,
+      "tournament": 0,
+      "login": 33864,
+      "ladderRate": 19.73,
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 9.11,
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 13582,
+        "ladder": 3072,
+        "tournament": 0,
+        "ladderRate": 22.62,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 9.09,
+        "tournamentBattlesPerUser": 0
+      }
+    },
+    {
+      "date": "2026-08-10",
+      "ladder": 3380,
+      "tournament": 0,
+      "login": 21395,
+      "ladderRate": 15.8,
+      "tournamentRate": 0,
+      "ladderBattlesPerUser": 8.15,
+      "tournamentBattlesPerUser": 0,
+      "retention": {
+        "login": 10855,
+        "ladder": 1521,
+        "tournament": 0,
+        "ladderRate": 14.01,
+        "tournamentRate": 0,
+        "ladderBattlesPerUser": 8.72,
+        "tournamentBattlesPerUser": 0
+      }
+    }
+  ]
+}

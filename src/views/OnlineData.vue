@@ -12,6 +12,18 @@
       ⚠️ 当前应用切换为「对内版」，但线上数据（天梯 / 周赛 / 参与走势）只来源于对外正式服，与版本切换无关。
     </div>
 
+    <!-- 区域切换：国内 / 海外 -->
+    <div class="region-selector">
+      <button
+        v-for="(cfg, key) in regions"
+        :key="key"
+        :class="['region-btn', { active: currentRegion === key }]"
+        @click="switchRegion(key)"
+      >
+        {{ cfg.icon }} {{ cfg.label }}
+      </button>
+    </div>
+
     <!-- 玩法切换 -->
     <div class="game-mode-selector">
       <button
@@ -506,8 +518,10 @@ import MultiSelect from '../components/MultiSelect.vue'
 import { loadData as loadGameData, tSync } from '../data'
 import { avatarUrl, skillIconUrl, handleAvatarError } from '../data/imageUrl'
 import { useVersion } from '../composables/useVersion'
+import { useRegion } from '../composables/useRegion'
 
 const { isInternal } = useVersion()
+const { currentRegion, regions, setRegion } = useRegion()
 
 const router = useRouter()
 
@@ -883,6 +897,21 @@ function switchGameMode(mode) {
   }
 }
 
+// 切换区域（国内 / 海外）
+async function switchRegion(region) {
+  if (currentRegion.value === region) return
+  setRegion(region)
+  // 重置对比 + 重新加载
+  compareMode.value = false
+  compareData.value = null
+  await loadAvailableWeeks()
+  if (gameMode.value === 'participation') {
+    await loadAllParticipationData()
+  } else {
+    await loadData()
+  }
+}
+
 // 页面副标题
 const subtitleText = computed(() => {
   if (gameMode.value === 'participation') return '玩家每日参与走势（登录 / 天梯 / 周赛 UV）'
@@ -1128,9 +1157,9 @@ async function loadCompareData() {
   try {
     let url
     if (gameMode.value === 'tournament') {
-      url = `/data/online/weekly/tournament-week${compareWeek.value}.json`
+      url = `/data/online/${currentRegion.value}/weekly/tournament-week${compareWeek.value}.json`
     } else {
-      url = `/data/online/weekly/ladder-week${compareWeek.value}.json`
+      url = `/data/online/${currentRegion.value}/weekly/ladder-week${compareWeek.value}.json`
     }
     const response = await fetch(url, { cache: 'no-cache' })
     if (response.ok) {
@@ -1245,7 +1274,7 @@ function updateChart() {
 // 加载可用周列表
 async function loadAvailableWeeks() {
   try {
-    const response = await fetch('/data/online/weekly/weeks.json', { cache: 'no-cache' })
+    const response = await fetch(`/data/online/${currentRegion.value}/weekly/weeks.json`, { cache: 'no-cache' })
     if (response.ok) {
       const weeks = await response.json()
       availableWeeks.value = weeks.map(w => ({
@@ -1256,21 +1285,7 @@ async function loadAvailableWeeks() {
         selectedWeek.value = weeks[weeks.length - 1].week
       }
     } else {
-      // 如果没有 weeks.json，手动检测
       availableWeeks.value = []
-      for (let i = 1; i <= 10; i++) {
-        try {
-          const resp = await fetch(`/data/online/weekly/battle-stats-week${i}.json`, { method: 'HEAD', cache: 'no-cache' })
-          if (resp.ok) {
-            availableWeeks.value.push({
-              value: i,
-              label: `第${i}周`
-            })
-          }
-        } catch (e) {
-          break
-        }
-      }
     }
   } catch (error) {
     console.log('无法加载周列表，使用默认值')
@@ -1283,12 +1298,12 @@ async function loadData() {
     let url
     if (gameMode.value === 'tournament') {
       // 周赛数据
-      url = `/data/online/weekly/tournament-week${selectedWeek.value}.json`
+      url = `/data/online/${currentRegion.value}/weekly/tournament-week${selectedWeek.value}.json`
     } else {
       // 天梯数据
       url = selectedWeek.value > 0
-        ? `/data/online/weekly/ladder-week${selectedWeek.value}.json`
-        : '/data/online/battle-stats.json'
+        ? `/data/online/${currentRegion.value}/weekly/ladder-week${selectedWeek.value}.json`
+        : `/data/online/${currentRegion.value}/battle-stats.json`
     }
     const response = await fetch(url, { cache: 'no-cache' })
     if (!response.ok) {
@@ -1309,7 +1324,7 @@ async function loadAllParticipationData() {
   if (!weeks.length) return
   const results = await Promise.all(
     weeks.map(w =>
-      fetch(`/data/online/weekly/participation-week${w.value}.json`, { cache: 'no-cache' })
+      fetch(`/data/online/${currentRegion.value}/weekly/participation-week${w.value}.json`, { cache: 'no-cache' })
         .then(r => (r.ok ? r.json() : null))
         .catch(() => null)
     )
@@ -1628,6 +1643,40 @@ watch(currentStats, () => {
   justify-content: center;
   gap: 15px;
   margin-bottom: 20px;
+}
+
+.region-selector {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.region-btn {
+  padding: 8px 22px;
+  border: 2px solid #e0d7ff;
+  background: white;
+  color: #7c6fb3;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.region-btn:hover {
+  border-color: #a493e0;
+  background: #f8f5ff;
+}
+
+.region-btn.active {
+  border-color: #764ba2;
+  background: linear-gradient(135deg, #a493e0 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 3px 10px rgba(118, 75, 162, 0.3);
 }
 
 .mode-btn {
