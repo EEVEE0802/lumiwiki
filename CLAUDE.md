@@ -230,63 +230,96 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 
 ## 自动化数据更新
 
-每天凌晨 03:00 自动更新所有 wiki 数据：游戏核心数据（噜咪/技能/物品等，来自本地 SVN 导表）+ 天梯战斗数据（来自数数平台 API）+ 衍生数据（机器人阵容/冒险掉落/蛋掉落）+ 立绘资源。失败时通过飞书机器人通知。
+**两个定时任务**：
+- **每小时**（LumiWiki_Online，:07 分）跑线上数据：数数开放 API 拉双区（国内+海外）天梯/周赛/参与走势，处理后 build + push
+- **每天 03:00**（LumiWiki_Daily）跑游戏数据：svn update → 复制 JSON → 多语言 → 衍生脚本（robot-teams / adventure-drop / egg-drop）→ 立绘同步 → build + push
+
+失败时通过飞书机器人通知。
 
 ### 前置要求
 
 - **svn 命令行**：TortoiseSVN 安装时必须勾选「Command line client tools」（默认不勾）。验证：`svn --version` 能输出版本号
-- **数数平台账号**：token/refreshToken 配在 `ta-config.json`（token 自动续期，refresh_token 失效时手动更新）
+- **数数开放 API**：每个 region 一个长期 token（不需要续期！），配在 `ta-config.json` 的 `regions.{domestic,overseas}` 下
 - **飞书群机器人**：webhook URL 配在 `ta-config.json`（自定义关键词 `LumiWiki`）
+
+### 数数开放 API（关键改造）
+
+老方案（浏览器 Bearer Token + 事件模型 qp JSON + 每 7 小时刷新）已废弃。现在用**数数官方开放 API**：
+
+```
+POST  {baseUrl}/open/submit-sql       (form-urlencoded: token, projectId, sql, format)
+GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
+```
+
+**几个关键坑**（改造中踩过）：
+
+| 坑 | 现象 | 解决 |
+|---|---|---|
+| **表名要跟 projectId 对齐** | `ta.v_event_29` 国内 / `ta.v_event_83` 海外 | `ta.v_event_${projectId}` |
+| **元数据列用 `#` 前缀** | 老 API 用 `$event_name` 报"cannot be resolved" | 改成 `"#event_name"`；`$part_date` 保持 `$` |
+| **SQL 标识符用双引号** | 反引号不支持 | `"$part_date"` `"#event_name"` |
+| **format 只支持 `json / csv / tsv / json_object`** | `csv_header` 会报错 | 用 `csv`，脚本自己补表头 |
+| **pageId 从 0 开始** | 文档写 pageId=1 是错的，`pageId=1` 会返回 -1008 | 用 `pageId=0`；后续页 -1008 才表示"到末尾" |
+| **pageId=0 立即返回 -1008** | 任务还没跑完时的正常表现 | pageId=0 的 -1008 视作 running，继续等；后续页才判定为完成 |
+| **b_zone_id 类型双区不同** | 国内 varchar（'1888'），海外 double（2888.0） | 用 `TRY_CAST(b_zone_id AS bigint) IN (...)` 统一转 bigint 兼容 |
+| **返回 CSV 不含表头** | 无论 format 怎么设都不带 | 脚本按 SELECT 列顺序手动写 header 行到 CSV |
 
 ### 脚本结构
 
 | 脚本 | 职责 |
 |---|---|
-| `scripts/ta-fetch.mjs` | 3 步异步 API 拉取：发起任务 → 轮询状态 → 下载 CSV（支持 `ladder` / `tournament` / `login` 三种模式） |
-| `scripts/fetch-participation-trend.mjs` | 参与走势：拉 `player_login` CSV，跨 ladder/tournament/login 按日 distinct 聚合 UV |
-| `scripts/ta-auth.mjs` | 用 refresh_token 自动续期 access_token |
+| `scripts/ta-fetch.mjs` | 数数开放 API 拉取：submit-sql → 分页 sql-result-page → CSV 落盘。参数：`--region domestic\|overseas --mode ladder\|tournament\|login --start --end --out` |
+| `scripts/fetch-participation-trend.mjs` | 参与走势：拉 login CSV + 按 part_date group + 按日 distinct b_role_id。参数：`--week N --region` |
 | `scripts/notify.mjs` | 飞书/企业微信通知（根据 webhook URL 自动判断平台） |
 | `scripts/update-game-data.mjs` | 游戏数据更新：svn update → 复制 JSON → 多语言 → 衍生脚本 → 立绘同步 |
-| `scripts/auto-update.mjs` | 天梯/周赛更新（可被 all 调用，`skipPublish` 参数控制是否发布） |
-| `scripts/auto-update-all.mjs` | **每日总控**：游戏数据 + 天梯 → 统一 publish（一次 build/重启） |
-| `scripts/auto-update-all.bat` | 每日全量任务 wrapper（03:00 跑） |
-| `scripts/auto-update.bat` | 周赛任务 wrapper（周一 08:00 跑） |
-| `scripts/ta-config.json` | 配置（token/refreshToken/webhook，**不进 git**） |
+| `scripts/auto-update.mjs` | **每小时线上数据总控**：双区拉天梯 + (窗口内)周赛 + 参与走势 → 推荐配队 → build + push |
+| `scripts/auto-update-all.mjs` | **每日游戏数据总控**：对外+对内游戏数据 + 立绘 + 衍生 → build + push |
+| `scripts/auto-update.bat` | 每小时任务 wrapper |
+| `scripts/auto-update-all.bat` | 每日任务 wrapper |
+| `scripts/ta-config.json` | 配置（regions.{domestic,overseas}.{token,projectId,bZoneIds,baseUrl} + webhook，**不进 git**） |
 | `scripts/ta-config.example.json` | 配置模板（进 git） |
 
 ### 定时任务（Windows 任务计划程序）
 
 | 任务名 | 频率 | 时间 | 模式 |
 |---|---|---|---|
-| `LumiWiki_Ladder` | 每天 | 03:00 | **全量更新**（游戏数据 + 天梯 + 衍生 + 立绘） |
-| `LumiWiki_Tournament` | 每周一 | 08:00 | 周赛（Week1v1，首周 Week 1 跳过） |
+| `LumiWiki_Online` | 每小时 | :07 分 | 双区线上数据（天梯 + 参与走势 + 窗口内周赛） |
+| `LumiWiki_Daily` | 每天 | 03:00 | 游戏配置 + 立绘 + 衍生（对外+对内 svn） |
 
 注册命令（Git Bash 里执行，需 `MSYS_NO_PATHCONV=1` 防止 `/create` 等参数被误转成路径）：
 
 ```bash
-MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Ladder" /tr "D:\lumiwiki\scripts\auto-update-all.bat" /sc DAILY /st 03:00 /f
-MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Tournament" /tr "D:\lumiwiki\scripts\auto-update.bat --tournament" /sc WEEKLY /d MON /st 08:00 /f
+MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Online" /tr "D:\lumiwiki\scripts\auto-update.bat" /sc HOURLY /st 00:07 /f
+MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Daily"  /tr "D:\lumiwiki\scripts\auto-update-all.bat" /sc DAILY /st 03:00 /f
 ```
 
 ### 游戏周期
 
-- **游戏周**：周五 03:00 ~ 下周五 03:00（凌晨 3 点定时任务触发时间为周分界）
+- **游戏周**：周五 03:00 ~ 下周五 03:00（凌晨 3 点为周分界）
 - **首周（Week 1）**：2026-07-10 03:00 开始，**无周赛**
-- **数据范围**：每次拉取"本周周五 03:00 ~ 当前"，覆盖更新 `data/archive/weekN/ladder_weekN.csv`
-- **周编号算法**：`week = floor((现在 - 2026-07-10 03:00) / 7天) + 1`；周五 03:00 ~ 03:59 跑的算上一周（让定时任务周五凌晨产生上一周完整数据）
+- **国内 + 海外全球通服**，共用同一套 baseFriday
+- **数据范围**：每次拉取"本周周五 03:00 ~ 当前"，覆盖更新 `data/{region}/archive/weekN/*.csv`
+- **周编号算法**：`week = floor((现在 - 2026-07-10 03:00) / 7天) + 1`；周五 03:00 ~ 03:59 跑的算上一周
 - **每周独立**：Week N 只含第 N 周的战斗，不累积之前周
 
-### Token 续期机制
+### 周赛策略
 
-- access_token 有效期 7 小时（对应 localStorage 的 `EXPIRE_TIME: 7`），会自动过期
-- refresh_token 平时续期**不轮换**（调续期接口后值不变），可反复用来换新 access_token
-- **重新登录会生成新 refresh_token**，旧的失效——所以重新登录数数平台后必须更新 `ta-config.json` 的 `refreshToken` 字段
-- 每次跑脚本前先调 `/v1/oauth/refreshForToken` 续期，新 token 落盘到 `ta-config.json`
-- refresh_token 失效时（飞书收到"未登录"告警）需要手动重新登录 + 更新 token/refreshToken
+**周赛开放时间**：国内时间**周五 19:00 ~ 周一 07:00**（全球通服共用国内时间）
+
+- 窗口内每小时拉，实时更新
+- **周一 07:00 ~ 07:59** 再拉一次收尾，抓上 06:59 前最后一场对战
+- 首周（Week 1）跳过
+- **手动补跑**：`node scripts/auto-update.mjs --force-tournament`（强制拉当周周赛，不看时间窗）
+
+### 前端区域切换
+
+- `useRegion` composable（`domestic` / `overseas`），localStorage 持久化
+- `OnlineData.vue` 顶部按钮切换
+- `loadData('lumi-teams')` 和 `loadData('online/...')` 自动注入 region 前缀
+- 版本切换（对外/对内）× 区域切换（国内/海外）正交存在
 
 ### 通知（飞书机器人）
 
-- 企业微信群机器人权限被公司关掉，改用飞书自定义机器人
 - webhook URL 配在 `ta-config.json` 的 `notifyWebhook`
 - `notify.mjs` 根据 URL 自动判断平台（`qyapi.weixin.qq.com` → 企业微信格式，`open.feishu.cn` → 飞书格式）
 - 飞书机器人安全策略：自定义关键词 `LumiWiki`（脚本每条消息都带这个前缀）
@@ -294,63 +327,89 @@ MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Tournament" /tr "D:\lumiwiki\s
 ### 常用命令
 
 ```bash
-# 手动触发一次天梯更新（绕开定时任务）
+# 手动触发一次每小时任务（双区，含周赛-如果在窗口内）
 node scripts/auto-update.mjs
 
-# 手动触发一次周赛更新
+# 手动补跑周赛（不受时间窗限制，用于修复漏拉）
+node scripts/auto-update.mjs --force-tournament
+
+# 只拉某个模式
+node scripts/auto-update.mjs --ladder
 node scripts/auto-update.mjs --tournament
+
+# 单独跑数数拉取（调试用）
+node scripts/ta-fetch.mjs --region overseas --mode ladder --start 2026-08-07 --end 2026-08-10 --out data/overseas/archive/week5/ladder_week5.csv
+
+# 手动触发每日任务
+node scripts/auto-update-all.mjs
 
 # 查看运行日志
 cat auto-update.log
 
-# 手动触发定时任务（测试 .bat wrapper）
-MSYS_NO_PATHCONV=1 schtasks /run /tn LumiWiki_Ladder
+# 手动触发定时任务
+MSYS_NO_PATHCONV=1 schtasks /run /tn LumiWiki_Online
+MSYS_NO_PATHCONV=1 schtasks /run /tn LumiWiki_Daily
 
 # 查看任务状态/下次运行时间
-MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Ladder
+MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Online
+MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
 ```
 
 ### 维护指引
 
-**token/refresh_token 都失效时**（飞书收到 token 失效告警）：
-1. 浏览器打开数数平台重新登录（企业微信一键登录）
-2. F12 → Console 跑 `Object.entries(localStorage)`，找 `ACCESS_TOKEN` 和 `REFRESH_TOKEN`
-3. 更新 `scripts/ta-config.json` 的 `token` 和 `refreshToken` 字段
+**token 失效**（飞书收到 token 失效告警）：
+- 数数开放 API token 是**长期**的，一般不会失效
+- 万一失效：找 PM 或数据同事重新申请 token，更新 `scripts/ta-config.json` 的 `regions.{domestic|overseas}.token`
 
 **接口失败排查**：
 - 看 `auto-update.log` 的错误信息
-- token 失效：脚本会自动续期；refresh_token 也失效才需要手动更新
 - 网络问题：脚本推送失败通知到飞书，下次定时任务自动重试
+- SQL 错误：报错信息里有 SQL 定位（`line X:Y: Column 'xxx' cannot be resolved`）
 
 ### 数据流（完整链路）
 
 ```
-[03:00 定时任务触发：auto-update-all.bat → auto-update-all.mjs]
+[每小时 :07 触发：auto-update.bat → auto-update.mjs]
 
-  ensureValidToken() 用 refresh_token 换新 access_token
   computeWeekInfo() 算游戏周编号
+  isTournamentActive() / shouldFetchTournament() 算周赛窗口
 
-  [1/3] updateGameData() —— 游戏数据
-    → svn update F:\G36\LumiGoDesigner\Config\Luban\Datas
-    → 复制核心 JSON（Lumi/ActiveSkill/BattlePassive/Item 等）到 public/data
-    → prepare-i18n-data.cjs 转换多语言
-    → 删除 public/data/*.encoded 缓存
-    → 跑衍生脚本：process-robot-teams / convert-adventure-drop / process-egg-drop
-    → updateMode 末尾自动跑 process-lumi-teams（依赖 ladder + tournament）
-    → 同步立绘（F:\G36\LumiGoProgram\...\Lumi 的 CA_*.png，仅复制缺失）
+  for region in [domestic, overseas]:
+    1. 天梯 (updateRegionMode('ladder')):
+       → ta-fetch.mjs: POST submit-sql → 轮询 sql-result-page 分页拉 CSV
+       → 存到 data/{region}/archive/weekN/ladder_weekN.csv
+       → process-battle-data.js --week N --region {region}
+       → 输出 public/data/online/{region}/weekly/ladder-weekN.json
+       → cp 到 battle-stats.json，更新 weeks.json
 
-  [2/3] updateMode('ladder', skipPublish) —— 天梯
-    → ta-fetch.mjs：POST eventSearchDownloadAsync → 轮询 asyncTaskProgress → 下载 CSV
-    → 存到 data/archive/weekN/ladder_weekN.csv
-    → process-battle-data.js --week N
-    → cp ladder-weekN.json → battle-stats.json
-    → 更新 weeks.json（追加新周）
-    → process-lumi-teams.mjs（推荐配队）
-    → fetch-participation-trend.mjs --week N（参与走势：拉 login CSV + 聚合）
+    2. 周赛 (如果在窗口内 or 收尾):
+       → 类似流程，SQL 换成 game_type='Week1v1'
 
-  [3/3] 统一 publish（一次 build + 一次重启，避免并行冲突）
-    → bash publish.sh
-    → notify 推送"全量更新完成"到飞书
+    3. 参与走势 (fetch-participation-trend.mjs):
+       → 拉 login CSV
+       → 从 ladder/tournament/login CSV 按 part_date 分组，distinct b_role_id
+       → 输出 public/data/online/{region}/weekly/participation-weekN.json
+
+    4. 推荐配队 (process-lumi-teams.mjs --region):
+       → 读所有周 ladder no-bot + tournament，按 lumi 聚合 top 3 队伍
+       → 输出 public/data/{region}/lumi-teams.json
+
+  5. 镜像 lumi-teams 到 internal 分支（对内版复用对外的推荐配队）
+
+  6. 统一 publish (bash publish.sh)
+
+  7. git add -A && commit && push
+
+  8. 飞书通知
+
+
+[每日 03:00 触发：auto-update-all.bat → auto-update-all.mjs]
+
+  1. updateGameData(external)   ── 对外游戏配置 + 立绘 + 衍生
+  2. updateGameData(internal)   ── 对内游戏配置 + 立绘 + 衍生
+  3. bash publish.sh
+  4. git add -A && commit && push
+  5. 飞书通知
 ```
 
 ---
