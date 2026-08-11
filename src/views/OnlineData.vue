@@ -570,7 +570,7 @@
           </div>
         </div>
 
-        <!-- 关卡列表 -->
+        <!-- 关卡列表（按 10 层分组，外层只显示卡点关的数据，展开查看组内各层） -->
         <div class="gym-floors-block">
           <div class="gym-floors-header">
             <h3>关卡数据（共 {{ gymData.floors.length }} 层有玩家挑战）</h3>
@@ -584,56 +584,83 @@
           </div>
           <div class="gym-floor-list">
             <div
-              v-for="floor in gymData.floors"
-              :key="floor.floor"
-              :ref="el => registerFloorRef(floor.floor, el)"
-              :class="['gym-floor-card', { expanded: expandedFloors.has(floor.floor) }]"
+              v-for="group in gymFloorGroups"
+              :key="group.key"
+              :ref="el => registerGroupRef(group.key, el)"
+              :class="['gym-group-card', { expanded: expandedGroups.has(group.key) }]"
             >
-              <div class="gym-floor-summary" @click="toggleFloor(floor.floor)">
-                <div class="gym-floor-num">第 {{ floor.floor }} 层</div>
-                <div class="gym-floor-metrics">
-                  <span>挑战 <b>{{ formatNumber(floor.totalBattles) }}</b></span>
-                  <span>通过率 <b>{{ floor.winRate }}%</b></span>
-                  <span>通过玩家 <b>{{ formatNumber(floor.uniqueClearers) }}</b></span>
-                  <span>通过玩家平均挑战次数 <b>{{ floor.avgAttempts }}</b></span>
+              <!-- 组主行：卡点关数据 -->
+              <div class="gym-group-summary" @click="toggleGroup(group.key)">
+                <div class="gym-floor-num">
+                  第 {{ group.key }} 层
+                  <span class="gym-group-badge">🎯 卡点关</span>
                 </div>
-                <div class="gym-floor-toggle">{{ expandedFloors.has(floor.floor) ? '▲' : '▼' }}</div>
+                <div class="gym-floor-metrics" v-if="group.boss">
+                  <span>挑战 <b>{{ formatNumber(group.boss.totalBattles) }}</b></span>
+                  <span>通过率 <b>{{ group.boss.winRate }}%</b></span>
+                  <span>通过玩家 <b>{{ formatNumber(group.boss.uniqueClearers) }}</b></span>
+                  <span>通过玩家平均挑战次数 <b>{{ group.boss.avgAttempts }}</b></span>
+                </div>
+                <div class="gym-floor-metrics gym-floor-empty" v-else>
+                  <span>暂无玩家挑战到本层</span>
+                </div>
+                <div class="gym-floor-toggle">{{ expandedGroups.has(group.key) ? '▲' : '▼' }}</div>
               </div>
-              <div v-if="expandedFloors.has(floor.floor)" class="gym-floor-detail">
-                <!-- NPC 阵容 -->
-                <div class="gym-team-section">
-                  <h4>🤖 道馆 NPC 阵容</h4>
-                  <div class="gym-team-row">
-                    <div v-for="lumi in floor.npcTeam" :key="'npc-' + lumi.lumiId" class="gym-team-lumi" @click="goToLumi(lumi.lumiId)">
-                      <img :src="avatarUrl(lumi.lumiId)" :alt="lumi.lumiName" @error="handleAvatarError" class="gym-team-avatar" />
-                      <div class="gym-team-name">{{ lumi.lumiName }}</div>
-                      <div class="gym-team-info">Lv.{{ lumi.level }}<span v-if="lumi.breakthrough"> · 突破{{ lumi.breakthrough }}</span></div>
-                      <div class="gym-team-info" v-if="lumi.score">评分 {{ lumi.score }}</div>
+              <!-- 组展开：显示组内所有已被挑战的层（含卡点关本身） -->
+              <div v-if="expandedGroups.has(group.key)" class="gym-group-children">
+                <div
+                  v-for="floor in group.floors"
+                  :key="floor.floor"
+                  :ref="el => registerFloorRef(floor.floor, el)"
+                  :class="['gym-floor-card', 'gym-floor-card-inner', { expanded: expandedFloors.has(floor.floor), 'is-boss': floor.floor === group.key }]"
+                >
+                  <div class="gym-floor-summary" @click="toggleFloor(floor.floor)">
+                    <div class="gym-floor-num">第 {{ floor.floor }} 层</div>
+                    <div class="gym-floor-metrics">
+                      <span>挑战 <b>{{ formatNumber(floor.totalBattles) }}</b></span>
+                      <span>通过率 <b>{{ floor.winRate }}%</b></span>
+                      <span>通过玩家 <b>{{ formatNumber(floor.uniqueClearers) }}</b></span>
+                      <span>通过玩家平均挑战次数 <b>{{ floor.avgAttempts }}</b></span>
                     </div>
+                    <div class="gym-floor-toggle">{{ expandedFloors.has(floor.floor) ? '▲' : '▼' }}</div>
                   </div>
-                </div>
-                <!-- 玩家通关阵容 top 3 -->
-                <div class="gym-team-section">
-                  <h4>🏆 通关玩家阵容 Top 3</h4>
-                  <div v-if="!floor.topTeams.length" class="gym-empty-hint">暂无通关玩家阵容数据</div>
-                  <div v-else class="gym-teams-list">
-                    <div v-for="(team, idx) in floor.topTeams.slice(0, 3)" :key="idx" class="gym-player-team">
-                      <div class="gym-team-rank">#{{ idx + 1 }}</div>
+                  <div v-if="expandedFloors.has(floor.floor)" class="gym-floor-detail">
+                    <!-- NPC 阵容 -->
+                    <div class="gym-team-section">
+                      <h4>🤖 道馆 NPC 阵容</h4>
                       <div class="gym-team-row">
-                        <div v-for="lumi in team.lumis" :key="'p-' + lumi.lumiId" class="gym-team-lumi" @click="goToLumi(lumi.lumiId)">
+                        <div v-for="lumi in floor.npcTeam" :key="'npc-' + lumi.lumiId" class="gym-team-lumi" @click="goToLumi(lumi.lumiId)">
                           <img :src="avatarUrl(lumi.lumiId)" :alt="lumi.lumiName" @error="handleAvatarError" class="gym-team-avatar" />
                           <div class="gym-team-name">{{ lumi.lumiName }}</div>
-                          <div v-if="gymTopSkill(lumi)" class="gym-team-info gym-team-skill">
-                            <img v-if="gymTopSkill(lumi).icon" :src="skillIconUrl(gymTopSkill(lumi).icon)" class="gym-skill-icon" @error="e => e.target.style.display='none'" />
-                            <span>{{ gymTopSkill(lumi).name }}</span>
-                          </div>
+                          <div class="gym-team-info">Lv.{{ lumi.level }}<span v-if="lumi.breakthrough"> · 突破{{ lumi.breakthrough }}</span></div>
+                          <div class="gym-team-info" v-if="lumi.score">评分 {{ lumi.score }}</div>
                         </div>
                       </div>
-                      <div class="gym-team-stats">
-                        <span>{{ team.battles }} 次通关</span>
-                        <span v-if="gymTopTrainer(team)">
-                          训练家：<img v-if="gymTopTrainer(team).icon" :src="skillIconUrl(gymTopTrainer(team).icon)" class="gym-skill-icon" @error="e => e.target.style.display='none'" />{{ gymTopTrainer(team).name }}
-                        </span>
+                    </div>
+                    <!-- 玩家通关阵容 top 3 -->
+                    <div class="gym-team-section">
+                      <h4>🏆 通关玩家阵容 Top 3</h4>
+                      <div v-if="!floor.topTeams.length" class="gym-empty-hint">暂无通关玩家阵容数据</div>
+                      <div v-else class="gym-teams-list">
+                        <div v-for="(team, idx) in floor.topTeams.slice(0, 3)" :key="idx" class="gym-player-team">
+                          <div class="gym-team-rank">#{{ idx + 1 }}</div>
+                          <div class="gym-team-row">
+                            <div v-for="lumi in team.lumis" :key="'p-' + lumi.lumiId" class="gym-team-lumi" @click="goToLumi(lumi.lumiId)">
+                              <img :src="avatarUrl(lumi.lumiId)" :alt="lumi.lumiName" @error="handleAvatarError" class="gym-team-avatar" />
+                              <div class="gym-team-name">{{ lumi.lumiName }}</div>
+                              <div v-if="gymTopSkill(lumi)" class="gym-team-info gym-team-skill">
+                                <img v-if="gymTopSkill(lumi).icon" :src="skillIconUrl(gymTopSkill(lumi).icon)" class="gym-skill-icon" @error="e => e.target.style.display='none'" />
+                                <span>{{ gymTopSkill(lumi).name }}</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="gym-team-stats">
+                            <span>{{ team.battles }} 次通关</span>
+                            <span v-if="gymTopTrainer(team)">
+                              训练家：<img v-if="gymTopTrainer(team).icon" :src="skillIconUrl(gymTopTrainer(team).icon)" class="gym-skill-icon" @error="e => e.target.style.display='none'" />{{ gymTopTrainer(team).name }}
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -789,10 +816,30 @@ const noData = ref(false) // 该周数据加载失败时置 true（如首周无�
 // 无限道馆状态
 const gymData = ref(null)
 const expandedFloors = ref(new Set())
+const expandedGroups = ref(new Set())
 const gymJumpFloor = ref(1)
 const gymFloorRefs = new Map()
+const gymGroupRefs = new Map()
 const gymFloorDistCanvas = ref(null)
 let gymFloorDistChart = null
+
+// 关卡按 10 层为一组分组（1~10 → "第 10 层" 组，11~20 → "第 20 层" 组，依此类推）
+// 组主行显示"卡点关"（10 倍数层）本身的数据；展开后显示组内所有已被挑战的层
+const gymFloorGroups = computed(() => {
+  if (!gymData.value) return []
+  const groups = new Map()
+  for (const floor of gymData.value.floors) {
+    const key = Math.ceil(floor.floor / 10) * 10
+    if (!groups.has(key)) groups.set(key, { key, floors: [], boss: null })
+    const g = groups.get(key)
+    g.floors.push(floor)
+    if (floor.floor === key) g.boss = floor
+  }
+  const result = [...groups.values()]
+  result.sort((a, b) => a.key - b.key)
+  for (const g of result) g.floors.sort((a, b) => a.floor - b.floor)
+  return result
+})
 
 // 图表相关
 const chartCanvas = ref(null)
@@ -1479,6 +1526,7 @@ async function loadGymData() {
     }
     gymData.value = await resp.json()
     expandedFloors.value = new Set()
+    expandedGroups.value = new Set()
     // 下一轮 tick 画图
     nextTick(() => drawFloorDistChart())
   } catch (e) {
@@ -1545,21 +1593,39 @@ function registerFloorRef(floor, el) {
   if (el) gymFloorRefs.set(floor, el)
 }
 
+function registerGroupRef(key, el) {
+  if (el) gymGroupRefs.set(key, el)
+}
+
+// 展开/收起某组
+function toggleGroup(key) {
+  const s = new Set(expandedGroups.value)
+  if (s.has(key)) s.delete(key)
+  else s.add(key)
+  expandedGroups.value = s
+}
+
 // 跳转到指定层
 function jumpToFloor() {
   const floor = Number(gymJumpFloor.value)
   if (!floor || floor < 1) return
-  const el = gymFloorRefs.get(floor)
-  if (el) {
-    // 展开并滚动
-    if (!expandedFloors.value.has(floor)) {
-      expandedFloors.value = new Set([...expandedFloors.value, floor])
-    }
-    nextTick(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }))
-  } else {
-    // 该层暂无数据
+  const groupKey = Math.ceil(floor / 10) * 10
+  const hasFloor = gymData.value?.floors?.some(f => f.floor === floor)
+  if (!hasFloor) {
     alert(`第 ${floor} 层暂无玩家挑战数据`)
+    return
   }
+  // 先展开组，再展开该层的阵容详情
+  if (!expandedGroups.value.has(groupKey)) {
+    expandedGroups.value = new Set([...expandedGroups.value, groupKey])
+  }
+  if (!expandedFloors.value.has(floor)) {
+    expandedFloors.value = new Set([...expandedFloors.value, floor])
+  }
+  nextTick(() => {
+    const el = gymFloorRefs.get(floor) || gymGroupRefs.get(groupKey)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  })
 }
 
 // 获取某只 lumi 的 top 技能（无限道馆通关阵容里）
@@ -2086,7 +2152,7 @@ watch(currentStats, () => {
 .gym-floor-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .gym-floor-card {
@@ -2099,6 +2165,85 @@ watch(currentStats, () => {
 .gym-floor-card.expanded {
   border-color: #a493e0;
   box-shadow: 0 2px 12px rgba(118, 75, 162, 0.15);
+}
+
+/* 组卡片：外层容器（10 层为一组） */
+.gym-group-card {
+  border: 1.5px solid #d9c8ff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s;
+  background: white;
+}
+
+.gym-group-card.expanded {
+  border-color: #764ba2;
+  box-shadow: 0 2px 14px rgba(118, 75, 162, 0.18);
+}
+
+.gym-group-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f5f0ff 0%, #ede4ff 100%);
+  transition: filter 0.15s;
+}
+
+.gym-group-summary:hover {
+  filter: brightness(0.97);
+}
+
+.gym-group-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #a493e0 0%, #764ba2 100%);
+  border-radius: 10px;
+  padding: 2px 8px;
+  margin-left: 6px;
+  vertical-align: 2px;
+}
+
+.gym-floor-empty {
+  color: #a99cc0;
+  font-style: italic;
+}
+
+/* 组展开区：内层层列表 */
+.gym-group-children {
+  padding: 10px 12px 12px;
+  background: #fbfaff;
+  border-top: 1px solid #ecebff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 内层层 card（组内的单个层，视觉稍弱） */
+.gym-floor-card-inner {
+  background: white;
+}
+
+.gym-floor-card-inner .gym-floor-summary {
+  background: #fefeff;
+  padding: 10px 14px;
+}
+
+.gym-floor-card-inner .gym-floor-summary:hover {
+  background: #f6f2ff;
+}
+
+/* 卡点关自身（10 倍数层）在组内展开列表里高亮一下 */
+.gym-floor-card-inner.is-boss .gym-floor-summary {
+  background: #f5f0ff;
+}
+
+.gym-floor-card-inner.is-boss .gym-floor-num::after {
+  content: ' 🎯';
+  font-size: 0.85em;
 }
 
 .gym-floor-summary {
