@@ -81,14 +81,14 @@ LumiWiki/
 
 ## 数据源
 
-游戏原始数据（Luban 导表）分两套：
-- **客户端导表**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\Table\data` —— 展示/配置类（Lumi、技能、物品、属性克制、道馆 Gym、MonsterGroup、Monster、RobotData 等）
-- **服务端导表**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\server\data` —— 逻辑/匹配类（RobotLvMatching 天梯等级匹配、MatchLadder、MatchGroup 等）
+游戏原始数据（Luban 导表）**从 2026-08-11 起客户端/服务端表统一放在一个目录**：
+- **对外**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\check\data\` —— 展示/配置类 + 匹配/逻辑类 全部在这里（Lumi、技能、物品、属性克制、Gym、MonsterGroup、Monster、RobotData、RobotLvMatching、LumiDrop、LumiDropData 等）
+- **对内**：`F:\G36Branch\Designer\Config\Luban\Datas\check\data\`
 
-> ⚠️ 找表时先确认属于客户端还是服务端，匹配/逻辑相关的表（如 RobotLvMatching）在 server 目录，别只在 Table 下找。
+> ⚠️ 之前分 `Table/data`（客户端）和 `server/data`（服务端）两套，现已合并到 `check/data` 一套。旧目录 svn 里可能还在，但新数据只导到 `check/data`。
 
 **枚举定义**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\__enums__.xlsx`
-**项目数据**：`D:\LumiWiki\public\data\`
+**项目数据**：`D:\LumiWiki\public\data\`（对外）/ `D:\LumiWiki\public\data\internal\`（对内）
 
 ### 核心数据文件
 
@@ -111,8 +111,8 @@ LumiWiki/
 从游戏原始数据目录更新核心数据文件：
 
 ```bash
-# 1. 复制核心数据文件
-SRC="F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data"
+# 1. 复制核心数据文件（2026-08-11 起统一放在 check/data）
+SRC="F:/G36/LumiGoDesigner/Config/Luban/Datas/check/data"
 DST="D:/LumiWiki/public/data"
 cp "$SRC/ActiveSkill.json" "$SRC/BattlePassive.json" "$SRC/HomePassive.json" "$DST/"
 cp "$SRC/Lumi.json" "$SRC/LumiEvolution.json" "$SRC/LumiTypeCounter.json" "$DST/"
@@ -445,7 +445,7 @@ npm run process-robot-teams   # 重新生成 robot-teams.json（道馆+天梯+�
 
 ### 注意事项
 
-- **服务端表**：天梯等级匹配表 `RobotLvMatching.json` 在 `Datas\server\data`（不在客户端 `Table\data`），见上方「数据源」。
+- **表位置**：天梯等级匹配表 `RobotLvMatching.json` 跟其他表一样在 `Datas\check\data`（2026-08-11 起客户端/服务端表统一目录），见上方「数据源」。
 - **天梯等级档位**是稀疏的（5~51 连续，56/71/100），目标等级不在档位里时由前端「匹配 ≤ 它的最大档位」处理。
 - **输出结构**：`{ dojo: [{teamId, name, lumis}], ladder: [{level, teamId, lumis}], home: [{teamId, lumis}] }`。ladder 每个阵容多一个 `level` 字段供等级选择器过滤；道馆按关卡平铺、天梯用等级选择器、家园按 MonsterGroupID 平铺。
 - 噜咪「最大评分」不存进 JSON，前端运行时查 `Lumi.json` 的 `MaxScore`。
@@ -474,7 +474,7 @@ npm run process-adventure   # 重新生成 drop-rates.json
 
 ### 注意事项
 
-- **混用两个数据目录**：`AdventureMap` 在客户端 `Table\data`，`LumiDropData` 在服务端 `server\data`（见「数据源」）。
+- **表位置**：`AdventureMap` 和 `LumiDropData` 现都在 `check\data`（2026-08-11 起客户端/服务端表统一目录，见「数据源」）。
 - **前端直接 fetch**：`AdventureDrop.vue` 用 `fetch('/data/adventure/drop-rates.json')` 读取（不走 `loadData` 的 `.encoded` 机制），更新后**无需清缓存**，刷新即可。
 - 输出含主线地图（多阶段：霸主解锁前/后）和赛季地图两类。
 - ⚠️ 该脚本原先硬编码了旧机器路径 `D:/G36/LumiGoProgram/...`，已修正为 `F:/G36/LumiGoDesigner/...`。换机器时记得改脚本顶部的 `SOURCE_DIR` / `SERVER_DATA_DIR`。

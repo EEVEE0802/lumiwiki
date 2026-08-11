@@ -39,7 +39,7 @@ function runCommand(cmd, args = []) {
   return result.stdout || ''
 }
 
-// 客户端 Table/data 里的核心 JSON（对内和对外都要复制）
+// 需要复制的核心 JSON（2026-08-11 起客户端/服务端表统一放在 check/data，一并列出）
 // 注：Avg / LumiCatch / LumiLevel / LumiRareLevel / MarketPrice 之前遗漏，一并补齐
 const CORE_FILES = [
   'ActiveSkill.json',
@@ -57,12 +57,8 @@ const CORE_FILES = [
   'LumiCatch.json',
   'LumiLevel.json',
   'LumiRareLevel.json',
-  'MarketPrice.json'
-]
-
-// 服务端导表（不在 Table/data，需独立复制）
-const SERVER_FILES = [
-  ['LumiCondition.json', 'LumiCondition.json']
+  'MarketPrice.json',
+  'LumiCondition.json'
 ]
 
 function svnUpdate(cfg) {
@@ -82,16 +78,6 @@ function copyCoreFiles(cfg) {
     }
     fs.copyFileSync(src, path.join(cfg.DATA_DST_DIR, file))
     console.log(`  ✓ ${file}`)
-  }
-  console.log('\n📋 复制服务端 JSON...')
-  for (const [src, dst] of SERVER_FILES) {
-    const srcPath = path.join(cfg.SERVER_DATA_DIR, src)
-    if (!fs.existsSync(srcPath)) {
-      console.log(`  ⚠ 源文件不存在，跳过: ${src}`)
-      continue
-    }
-    fs.copyFileSync(srcPath, path.join(cfg.DATA_DST_DIR, dst))
-    console.log(`  ✓ ${dst}`)
   }
 }
 

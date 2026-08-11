@@ -30,13 +30,15 @@
 
 ## 2. 数据表清单
 
+> 2026-08-11 起 Luban 导表统一到 `check/data`（原客户端 `Table/data` + 服务端 `server/data` 合并），下表所有表现在都在这一个目录里。
+
 | 表 | 位置 | 关键字段 |
 |---|---|---|
-| `AdventureMap` | 客户端 `Table/data` | `Order[mapId,stage]`, `IsUp`, `NormalLumi[]`, `SpecialLumi`, `LumiWeight[]`, `LumiWeight2[]`, `SeasonPool[]`, `SeasonLumiWeight[]`, `SeasonPoolGuranteeTimes` |
-| `AdventureOdds` | 客户端 `Table/data` | `Id`(=倍率), `QualityRate[[品质,权重]]`, `LumiNumber`(一次出几只) |
-| `LumiDrop` | **服务端** `server/data` | `Id`, `QualityToWeight`, `LumiDropPool`, `WeightPool`, `MapOwner`, `LumiType[]`, `Score` |
-| `LumiDropData` | **服务端** `server/data` | `Id`(=噜咪Id), `LumiDropPool[]`, `weight[[key,value]]` |
-| `GachaParameter` | **服务端** `server/data` | `miniProbId/middleProbId/grandProbId/seasonmiddleProbId/seasongrandProbId`（都指向 LumiDrop.Id，实测=99） |
+| `AdventureMap` | `check/data` | `Order[mapId,stage]`, `IsUp`, `NormalLumi[]`, `SpecialLumi`, `LumiWeight[]`, `LumiWeight2[]`, `SeasonPool[]`, `SeasonLumiWeight[]`, `SeasonPoolGuranteeTimes` |
+| `AdventureOdds` | `check/data` | `Id`(=倍率), `QualityRate[[品质,权重]]`, `LumiNumber`(一次出几只) |
+| `LumiDrop` | `check/data` | `Id`, `QualityToWeight`, `LumiDropPool`, `WeightPool`, `MapOwner`, `LumiType[]`, `Score` |
+| `LumiDropData` | `check/data` | `Id`(=噜咪Id), `LumiDropPool[]`, `weight[[key,value]]` |
+| `GachaParameter` | `check/data` | `miniProbId/middleProbId/grandProbId/seasonmiddleProbId/seasongrandProbId`（都指向 LumiDrop.Id，实测=99） |
 
 ---
 

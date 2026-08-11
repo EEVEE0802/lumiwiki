@@ -36,9 +36,11 @@ export function parseBranch(argv = process.argv.slice(2)) {
     branch,
     isInternal,
     // 源：Luban 导表 + 客户端资源
+    // 2026-08-11 起 Luban 导出路径调整：客户端表和服务端表统一放在 check/data 下（原 Table/data + server/data）
+    // TABLE_DATA_DIR / SERVER_DATA_DIR 保留字段名不变，两个都指向 check/data
     LUBAN_DATA_DIR: cfg.LUBAN_DATA_DIR,
-    TABLE_DATA_DIR: path.join(cfg.LUBAN_DATA_DIR, 'Table/data'),
-    SERVER_DATA_DIR: path.join(cfg.LUBAN_DATA_DIR, 'server/data'),
+    TABLE_DATA_DIR: path.join(cfg.LUBAN_DATA_DIR, 'check/data'),
+    SERVER_DATA_DIR: path.join(cfg.LUBAN_DATA_DIR, 'check/data'),
     CLIENT_ROOT: cfg.CLIENT_ROOT,
     AVATAR_SRC_DIR: path.join(cfg.CLIENT_ROOT, 'Textures/Lumi'),
     BUFF_ICON_SRC_DIR: path.join(cfg.CLIENT_ROOT, 'Atlas/IconSkill'),

@@ -13,8 +13,8 @@ const path = require('path');
 // 检查间隔（毫秒）- 1小时
 const CHECK_INTERVAL = 60 * 60 * 1000;
 
-// 数据源目录
-const SOURCE_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data';
+// 数据源目录（2026-08-11 起 Luban 导表统一到 check/data）
+const SOURCE_DIR = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/check/data';
 
 // 目标目录
 const TARGET_DIR = 'D:/LumiWiki/public/data';

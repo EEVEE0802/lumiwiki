@@ -449,12 +449,12 @@
   },
   {
     "Id": 2106601,
-    "icon": "WorkType_Exploration",
+    "icon": "WorkType_Coins",
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2106601",
     "Des": "H_SkillText_2106601",
     "DesParam": [
-      50
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -465,7 +465,7 @@
     "TravelRewardBuff": [
       {
         "X": 10001,
-        "Y": 5000
+        "Y": 3500
       }
     ],
     "TravelLocalRewardBuff": 0
@@ -886,12 +886,12 @@
   },
   {
     "Id": 2122301,
-    "icon": "WorkType_Exploration",
+    "icon": "WorkType_Coins",
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2122301",
     "Des": "H_SkillText_2122301",
     "DesParam": [
-      50
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -902,7 +902,7 @@
     "TravelRewardBuff": [
       {
         "X": 10001,
-        "Y": 5000
+        "Y": 3500
       }
     ],
     "TravelLocalRewardBuff": 0
@@ -1258,12 +1258,12 @@
   },
   {
     "Id": 2139801,
-    "icon": "WorkType_Exploration",
+    "icon": "WorkType_Stellum",
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2139801",
-    "Des": "H_SkillText_2139801",
+    "Des": "H_SkillText_21001301",
     "DesParam": [
-      50
+      20
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1273,20 +1273,84 @@
     "ExtraItem": [],
     "TravelRewardBuff": [
       {
-        "X": 10001,
-        "Y": 5000
+        "X": 150001,
+        "Y": 2000
+      },
+      {
+        "X": 150002,
+        "Y": 2000
+      },
+      {
+        "X": 150003,
+        "Y": 2000
+      },
+      {
+        "X": 150004,
+        "Y": 2000
+      },
+      {
+        "X": 150005,
+        "Y": 2000
+      },
+      {
+        "X": 150006,
+        "Y": 2000
+      },
+      {
+        "X": 150007,
+        "Y": 2000
+      },
+      {
+        "X": 150008,
+        "Y": 2000
+      },
+      {
+        "X": 150009,
+        "Y": 2000
+      },
+      {
+        "X": 150010,
+        "Y": 2000
+      },
+      {
+        "X": 150011,
+        "Y": 2000
+      },
+      {
+        "X": 150012,
+        "Y": 2000
+      },
+      {
+        "X": 150013,
+        "Y": 2000
+      },
+      {
+        "X": 150014,
+        "Y": 2000
+      },
+      {
+        "X": 150015,
+        "Y": 2000
+      },
+      {
+        "X": 150016,
+        "Y": 2000
+      },
+      {
+        "X": 150017,
+        "Y": 2000
       }
     ],
     "TravelLocalRewardBuff": 0
   },
   {
     "Id": 2141301,
-    "icon": "WorkType_Exploration",
+    "icon": "WorkType_Coins",
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2141301",
     "Des": "H_SkillText_2141301",
     "DesParam": [
-      50
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1297,7 +1361,7 @@
     "TravelRewardBuff": [
       {
         "X": 10001,
-        "Y": 5000
+        "Y": 3500
       }
     ],
     "TravelLocalRewardBuff": 0
@@ -1440,12 +1504,12 @@
   },
   {
     "Id": 21001301,
-    "icon": "WorkType_Exploration",
+    "icon": "WorkType_Stellum",
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_21001301",
     "Des": "H_SkillText_21001301",
     "DesParam": [
-      25
+      40
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1456,71 +1520,71 @@
     "TravelRewardBuff": [
       {
         "X": 150001,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150002,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150003,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150004,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150005,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150006,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150007,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150008,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150009,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150010,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150011,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150012,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150013,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150014,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150015,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150016,
-        "Y": 2500
+        "Y": 4000
       },
       {
         "X": 150017,
-        "Y": 2500
+        "Y": 4000
       }
     ],
     "TravelLocalRewardBuff": 0

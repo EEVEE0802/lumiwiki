@@ -1413,7 +1413,7 @@
     "Switch": true,
     "AutoCommit": true,
     "Unlockconditon": 0,
-    "GroupRepeatTime": 99,
+    "GroupRepeatTime": 999,
     "RefreshType": 5,
     "GroupRewardShow": [],
     "GroupReward": [],
@@ -3441,6 +3441,55 @@
           {
             "X": 10020,
             "Y": 3,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 99999,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 3,
+    "ChallengePage": 201,
+    "Switch": true,
+    "AutoCommit": true,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 900,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/10 5:00:00",
+    "EndTime": "2026/8/17 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_024",
+        "RequestNum": 5,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 100000,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 100000,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 10018,
+            "Y": 5,
             "Z": 1
           }
         ]

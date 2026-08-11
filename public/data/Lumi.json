@@ -102,6 +102,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2100101,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 61,
     "MinAtkState": 16,
     "MinDefState": 61,
@@ -194,7 +196,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1001010
+    "StarSoulid": 1001010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 100501,
@@ -299,6 +302,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2100501,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 41,
     "MinDefState": 46,
@@ -391,7 +396,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1005010
+    "StarSoulid": 1005010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 100601,
@@ -496,6 +502,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2100601,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 46,
     "MinAtkState": 41,
     "MinDefState": 51,
@@ -588,7 +596,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1006010
+    "StarSoulid": 1006010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 100701,
@@ -693,6 +702,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2100701,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 46,
     "MinAtkState": 51,
     "MinDefState": 41,
@@ -785,7 +796,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1007010
+    "StarSoulid": 1007010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 100801,
@@ -890,6 +902,8 @@
     ],
     "BattlePassive": 1100801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 43,
     "MinAtkState": 73,
     "MinDefState": 62,
@@ -977,7 +991,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1008010
+    "StarSoulid": 1008010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 101001,
@@ -1082,6 +1097,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2101001,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 46,
     "MinAtkState": 46,
     "MinDefState": 46,
@@ -1174,7 +1191,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1010010
+    "StarSoulid": 1010010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 101101,
@@ -1279,6 +1297,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2101101,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 26,
     "MinDefState": 61,
@@ -1371,7 +1391,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1011010
+    "StarSoulid": 1011010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 101201,
@@ -1476,6 +1497,8 @@
     ],
     "BattlePassive": 1101201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 74,
     "MinDefState": 54,
@@ -1568,7 +1591,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1084010
+    "StarSoulid": 1084010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 101301,
@@ -1673,6 +1697,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2101301,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 41,
     "MinDefState": 51,
@@ -1765,7 +1791,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1013010
+    "StarSoulid": 1013010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 101601,
@@ -1870,6 +1897,8 @@
     ],
     "BattlePassive": 1101601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 68,
     "MinDefState": 63,
@@ -1962,7 +1991,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1079010
+    "StarSoulid": 1079010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 101701,
@@ -2067,6 +2097,8 @@
     ],
     "BattlePassive": 1101701,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 78,
     "MinDefState": 63,
@@ -2161,7 +2193,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1079010
+    "StarSoulid": 1079010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 101801,
@@ -2266,6 +2299,8 @@
     ],
     "BattlePassive": 1101801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 60,
     "MinDefState": 64,
@@ -2358,7 +2393,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1085010
+    "StarSoulid": 1085010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 101901,
@@ -2463,6 +2499,8 @@
     ],
     "BattlePassive": 1102001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 60,
     "MinAtkState": 52,
     "MinDefState": 63,
@@ -2555,7 +2593,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1019010
+    "StarSoulid": 1019010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102001,
@@ -2660,6 +2699,8 @@
     ],
     "BattlePassive": 1102001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 58,
     "MinDefState": 63,
@@ -2752,7 +2793,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1019010
+    "StarSoulid": 1019010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102004,
@@ -2857,6 +2899,8 @@
     ],
     "BattlePassive": 1102001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 58,
     "MinDefState": 63,
@@ -2949,7 +2993,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1019010
+    "StarSoulid": 1019010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102101,
@@ -3054,6 +3099,8 @@
     ],
     "BattlePassive": 1102101,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 56,
     "MinDefState": 68,
@@ -3148,7 +3195,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1239010
+    "StarSoulid": 1239010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102102,
@@ -3260,6 +3308,8 @@
     ],
     "BattlePassive": 1102101,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 64,
     "MinDefState": 68,
@@ -3352,7 +3402,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 4,
-    "StarSoulid": 1021020
+    "StarSoulid": 1021020,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102103,
@@ -3465,6 +3516,8 @@
     ],
     "BattlePassive": 1102103,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 72,
     "MinAtkState": 64,
     "MinDefState": 72,
@@ -3562,7 +3615,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 5,
-    "StarSoulid": 1021030
+    "StarSoulid": 1021030,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102201,
@@ -3667,6 +3721,8 @@
     ],
     "BattlePassive": 1102201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 56,
     "MinDefState": 68,
@@ -3759,7 +3815,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1022010
+    "StarSoulid": 1022010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102301,
@@ -3864,6 +3921,8 @@
     ],
     "BattlePassive": 1102201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 66,
     "MinDefState": 68,
@@ -3956,7 +4015,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1022010
+    "StarSoulid": 1022010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102401,
@@ -4061,6 +4121,8 @@
     ],
     "BattlePassive": 1102401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 74,
     "MinDefState": 62,
@@ -4153,7 +4215,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1041010
+    "StarSoulid": 1041010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102404,
@@ -4258,6 +4321,8 @@
     ],
     "BattlePassive": 1102401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 74,
     "MinDefState": 62,
@@ -4352,7 +4417,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1041010
+    "StarSoulid": 1041010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102501,
@@ -4457,6 +4523,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2102501,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 46,
     "MinAtkState": 46,
     "MinDefState": 46,
@@ -4549,7 +4617,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1025010
+    "StarSoulid": 1025010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102601,
@@ -4654,6 +4723,8 @@
     ],
     "BattlePassive": 1102601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 53,
     "MinDefState": 74,
@@ -4746,7 +4817,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1026010
+    "StarSoulid": 1026010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102602,
@@ -4858,6 +4930,8 @@
     ],
     "BattlePassive": 1102601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 53,
     "MinDefState": 82,
@@ -4950,7 +5024,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 4,
-    "StarSoulid": 1026020
+    "StarSoulid": 1026020,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102701,
@@ -5055,6 +5130,8 @@
     ],
     "BattlePassive": 1102701,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 68,
     "MinDefState": 64,
@@ -5147,7 +5224,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1027010
+    "StarSoulid": 1027010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102801,
@@ -5252,6 +5330,8 @@
     ],
     "BattlePassive": 1102801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 66,
     "MinAtkState": 53,
     "MinDefState": 66,
@@ -5344,7 +5424,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1133010
+    "StarSoulid": 1133010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 102901,
@@ -5449,6 +5530,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2102901,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 46,
     "MinAtkState": 67,
     "MinDefState": 25,
@@ -5541,7 +5624,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1029010
+    "StarSoulid": 1029010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103201,
@@ -5646,6 +5730,8 @@
     ],
     "BattlePassive": 1103201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 70,
     "MinAtkState": 50,
     "MinDefState": 62,
@@ -5738,7 +5824,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1086010
+    "StarSoulid": 1086010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103301,
@@ -5843,6 +5930,8 @@
     ],
     "BattlePassive": 1103301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 66,
     "MinDefState": 56,
@@ -5935,7 +6024,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1033010
+    "StarSoulid": 1033010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103401,
@@ -6040,6 +6130,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2103401,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 40,
     "MinAtkState": 60,
     "MinDefState": 40,
@@ -6132,7 +6224,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1034010
+    "StarSoulid": 1034010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103501,
@@ -6237,6 +6330,8 @@
     ],
     "BattlePassive": 1103501,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 46,
     "MinAtkState": 64,
     "MinDefState": 62,
@@ -6329,7 +6424,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1035010
+    "StarSoulid": 1035010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103601,
@@ -6434,6 +6530,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2103601,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 62,
     "MinDefState": 21,
@@ -6526,7 +6624,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1036010
+    "StarSoulid": 1036010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103701,
@@ -6631,6 +6730,8 @@
     ],
     "BattlePassive": 1103701,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 63,
     "MinDefState": 63,
@@ -6723,7 +6824,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1037010
+    "StarSoulid": 1037010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103704,
@@ -6828,6 +6930,8 @@
     ],
     "BattlePassive": 1103701,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 63,
     "MinDefState": 63,
@@ -6922,7 +7026,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1037010
+    "StarSoulid": 1037010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103801,
@@ -7027,6 +7132,8 @@
     ],
     "BattlePassive": 1103801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
     "MinDefState": 72,
@@ -7119,7 +7226,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1038010
+    "StarSoulid": 1038010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103804,
@@ -7224,6 +7332,8 @@
     ],
     "BattlePassive": 1103801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
     "MinDefState": 72,
@@ -7318,7 +7428,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1038010
+    "StarSoulid": 1038010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 103901,
@@ -7423,6 +7534,8 @@
     ],
     "BattlePassive": 1103901,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 72,
     "MinAtkState": 48,
     "MinDefState": 68,
@@ -7515,7 +7628,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1039010
+    "StarSoulid": 1039010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 104101,
@@ -7620,6 +7734,8 @@
     ],
     "BattlePassive": 1102401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 68,
     "MinDefState": 56,
@@ -7712,7 +7828,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1041010
+    "StarSoulid": 1041010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 104201,
@@ -7817,6 +7934,8 @@
     ],
     "BattlePassive": 1104201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 48,
     "MinAtkState": 68,
     "MinDefState": 62,
@@ -7909,7 +8028,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1042010
+    "StarSoulid": 1042010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 104301,
@@ -8014,6 +8134,8 @@
     ],
     "BattlePassive": 1104301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 48,
     "MinDefState": 64,
@@ -8106,7 +8228,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1043010
+    "StarSoulid": 1043010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 104401,
@@ -8211,6 +8334,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2104401,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 41,
     "MinAtkState": 41,
     "MinDefState": 56,
@@ -8303,7 +8428,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1044010
+    "StarSoulid": 1044010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 104501,
@@ -8408,6 +8534,8 @@
     ],
     "BattlePassive": 1104501,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530102,
+    "InbornHomePassive": 0,
     "MinHpState": 49,
     "MinAtkState": 49,
     "MinDefState": 49,
@@ -8496,7 +8624,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1045010
+    "StarSoulid": 1045010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 104601,
@@ -8601,6 +8730,8 @@
     ],
     "BattlePassive": 1104601,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530103,
+    "InbornHomePassive": 0,
     "MinHpState": 49,
     "MinAtkState": 49,
     "MinDefState": 49,
@@ -8689,7 +8820,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1046010
+    "StarSoulid": 1046010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 104701,
@@ -8794,6 +8926,8 @@
     ],
     "BattlePassive": 1104701,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530104,
+    "InbornHomePassive": 0,
     "MinHpState": 49,
     "MinAtkState": 49,
     "MinDefState": 49,
@@ -8882,7 +9016,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1047010
+    "StarSoulid": 1047010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 104801,
@@ -8987,6 +9122,8 @@
     ],
     "BattlePassive": 1104801,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530105,
+    "InbornHomePassive": 0,
     "MinHpState": 49,
     "MinAtkState": 49,
     "MinDefState": 49,
@@ -9075,7 +9212,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1048010
+    "StarSoulid": 1048010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 104901,
@@ -9180,6 +9318,8 @@
     ],
     "BattlePassive": 1104901,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530106,
+    "InbornHomePassive": 0,
     "MinHpState": 49,
     "MinAtkState": 49,
     "MinDefState": 49,
@@ -9268,7 +9408,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1049010
+    "StarSoulid": 1049010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105001,
@@ -9373,6 +9514,8 @@
     ],
     "BattlePassive": 1105001,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530107,
+    "InbornHomePassive": 0,
     "MinHpState": 49,
     "MinAtkState": 49,
     "MinDefState": 49,
@@ -9461,7 +9604,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1050010
+    "StarSoulid": 1050010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105101,
@@ -9566,6 +9710,8 @@
     ],
     "BattlePassive": 1105101,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530108,
+    "InbornHomePassive": 0,
     "MinHpState": 48,
     "MinAtkState": 50,
     "MinDefState": 50,
@@ -9654,7 +9800,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1051010
+    "StarSoulid": 1051010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105201,
@@ -9759,6 +9906,8 @@
     ],
     "BattlePassive": 1105201,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530109,
+    "InbornHomePassive": 0,
     "MinHpState": 50,
     "MinAtkState": 50,
     "MinDefState": 50,
@@ -9847,7 +9996,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1052010
+    "StarSoulid": 1052010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105301,
@@ -9954,6 +10104,8 @@
     ],
     "BattlePassive": 1105301,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530101,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 64,
     "MinDefState": 64,
@@ -10037,7 +10189,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 2,
-    "StarSoulid": 1053010
+    "StarSoulid": 1053010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105401,
@@ -10142,6 +10295,8 @@
     ],
     "BattlePassive": 1105401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 73,
     "MinDefState": 48,
@@ -10234,7 +10389,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1054010
+    "StarSoulid": 1054010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105501,
@@ -10339,6 +10495,8 @@
     ],
     "BattlePassive": 1105501,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 78,
     "MinDefState": 56,
@@ -10431,7 +10589,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1129010
+    "StarSoulid": 1129010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105504,
@@ -10536,6 +10695,8 @@
     ],
     "BattlePassive": 1105501,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 78,
     "MinDefState": 56,
@@ -10628,7 +10789,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1129010
+    "StarSoulid": 1129010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105601,
@@ -10733,6 +10895,8 @@
     ],
     "BattlePassive": 1105601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 68,
     "MinDefState": 53,
@@ -10816,7 +10980,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1056010
+    "StarSoulid": 1056010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105701,
@@ -10921,6 +11086,8 @@
     ],
     "BattlePassive": 1105701,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 54,
     "MinDefState": 56,
@@ -11013,7 +11180,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1057010
+    "StarSoulid": 1057010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105801,
@@ -11118,6 +11286,8 @@
     ],
     "BattlePassive": 1105801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 54,
     "MinDefState": 78,
@@ -11212,7 +11382,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1120010
+    "StarSoulid": 1120010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 105804,
@@ -11317,6 +11488,8 @@
     ],
     "BattlePassive": 1105801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 56,
     "MinDefState": 81,
@@ -11411,7 +11584,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1120010
+    "StarSoulid": 1120010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 106101,
@@ -11516,6 +11690,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2106101,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 31,
     "MinDefState": 56,
@@ -11608,7 +11784,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1061010
+    "StarSoulid": 1061010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 106104,
@@ -11713,6 +11890,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2106104,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 31,
     "MinDefState": 56,
@@ -11805,7 +11984,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1061010
+    "StarSoulid": 1061010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 106201,
@@ -11910,6 +12090,8 @@
     ],
     "BattlePassive": 1106201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 66,
     "MinDefState": 60,
@@ -12002,7 +12184,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1121010
+    "StarSoulid": 1121010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 106202,
@@ -12114,6 +12297,8 @@
     ],
     "BattlePassive": 1106202,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 68,
     "MinDefState": 70,
@@ -12206,7 +12391,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 4,
-    "StarSoulid": 1062020
+    "StarSoulid": 1062020,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 106301,
@@ -12311,6 +12497,8 @@
     ],
     "BattlePassive": 1106401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 62,
     "MinDefState": 58,
@@ -12403,7 +12591,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1063010
+    "StarSoulid": 1063010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 106401,
@@ -12508,6 +12697,8 @@
     ],
     "BattlePassive": 1106401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 68,
     "MinDefState": 60,
@@ -12600,7 +12791,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1063010
+    "StarSoulid": 1063010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 106404,
@@ -12705,6 +12897,8 @@
     ],
     "BattlePassive": 1110201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 68,
     "MinDefState": 60,
@@ -12799,7 +12993,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1063010
+    "StarSoulid": 1063010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 106601,
@@ -12904,6 +13099,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2106601,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 41,
     "MinDefState": 46,
@@ -12996,7 +13193,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1066010
+    "StarSoulid": 1066010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 106901,
@@ -13101,6 +13299,8 @@
     ],
     "BattlePassive": 1106901,
     "HomePassive": 0,
+    "InbornBattlePassive": 100102,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 56,
     "MinDefState": 66,
@@ -13195,7 +13395,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1108010
+    "StarSoulid": 1108010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 107001,
@@ -13300,6 +13501,8 @@
     ],
     "BattlePassive": 1107001,
     "HomePassive": 0,
+    "InbornBattlePassive": 100113,
+    "InbornHomePassive": 0,
     "MinHpState": 62,
     "MinAtkState": 62,
     "MinDefState": 62,
@@ -13394,7 +13597,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1108010
+    "StarSoulid": 1108010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 107801,
@@ -13499,6 +13703,8 @@
     ],
     "BattlePassive": 1107801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 73,
     "MinDefState": 54,
@@ -13591,7 +13797,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1078010
+    "StarSoulid": 1078010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 107901,
@@ -13696,6 +13903,8 @@
     ],
     "BattlePassive": 1101601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 63,
     "MinDefState": 58,
@@ -13788,7 +13997,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1079010
+    "StarSoulid": 1079010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 108201,
@@ -13901,6 +14111,8 @@
     ],
     "BattlePassive": 1108201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 83,
     "MinAtkState": 68,
     "MinDefState": 54,
@@ -13993,7 +14205,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 5,
-    "StarSoulid": 1082010
+    "StarSoulid": 1082010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 108301,
@@ -14106,6 +14319,8 @@
     ],
     "BattlePassive": 1108301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 73,
     "MinAtkState": 48,
     "MinDefState": 84,
@@ -14198,7 +14413,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 5,
-    "StarSoulid": 1083010
+    "StarSoulid": 1083010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 108401,
@@ -14303,6 +14519,8 @@
     ],
     "BattlePassive": 1101201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 50,
     "MinAtkState": 70,
     "MinDefState": 52,
@@ -14395,7 +14613,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1084010
+    "StarSoulid": 1084010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 108501,
@@ -14500,6 +14719,8 @@
     ],
     "BattlePassive": 1101801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 56,
     "MinDefState": 60,
@@ -14592,7 +14813,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1085010
+    "StarSoulid": 1085010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 108601,
@@ -14697,6 +14919,8 @@
     ],
     "BattlePassive": 1103201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 66,
     "MinAtkState": 46,
     "MinDefState": 60,
@@ -14789,7 +15013,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1086010
+    "StarSoulid": 1086010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 108701,
@@ -14894,6 +15119,8 @@
     ],
     "BattlePassive": 1108701,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 64,
     "MinDefState": 60,
@@ -14986,7 +15213,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1087010
+    "StarSoulid": 1087010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 108704,
@@ -15091,6 +15319,8 @@
     ],
     "BattlePassive": 1108704,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 64,
     "MinDefState": 60,
@@ -15185,7 +15415,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1087010
+    "StarSoulid": 1087010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 108801,
@@ -15290,6 +15521,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2108801,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 61,
     "MinAtkState": 11,
     "MinDefState": 71,
@@ -15382,7 +15615,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1088010
+    "StarSoulid": 1088010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 108901,
@@ -15487,6 +15721,8 @@
     ],
     "BattlePassive": 1108901,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 58,
     "MinDefState": 64,
@@ -15579,7 +15815,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1089010
+    "StarSoulid": 1089010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 109001,
@@ -15684,6 +15921,8 @@
     ],
     "BattlePassive": 1101201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 78,
     "MinDefState": 56,
@@ -15778,7 +16017,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1084010
+    "StarSoulid": 1084010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 109101,
@@ -15883,6 +16123,8 @@
     ],
     "BattlePassive": 1101801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 60,
     "MinAtkState": 64,
     "MinDefState": 68,
@@ -15977,7 +16219,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1085010
+    "StarSoulid": 1085010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 109201,
@@ -16082,6 +16325,8 @@
     ],
     "BattlePassive": 1103201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 74,
     "MinAtkState": 54,
     "MinDefState": 64,
@@ -16176,7 +16421,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1086010
+    "StarSoulid": 1086010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 109401,
@@ -16281,6 +16527,8 @@
     ],
     "BattlePassive": 1104501,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530102,
+    "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 52,
     "MinDefState": 53,
@@ -16369,7 +16617,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1045010
+    "StarSoulid": 1045010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 109501,
@@ -16474,6 +16723,8 @@
     ],
     "BattlePassive": 1104601,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530103,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
     "MinDefState": 53,
@@ -16562,7 +16813,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1046010
+    "StarSoulid": 1046010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 109601,
@@ -16667,6 +16919,8 @@
     ],
     "BattlePassive": 1104701,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530104,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
     "MinDefState": 53,
@@ -16755,7 +17009,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1047010
+    "StarSoulid": 1047010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 109701,
@@ -16860,6 +17115,8 @@
     ],
     "BattlePassive": 1104801,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530105,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
     "MinDefState": 53,
@@ -16948,7 +17205,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1048010
+    "StarSoulid": 1048010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 109801,
@@ -17053,6 +17311,8 @@
     ],
     "BattlePassive": 1104901,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530106,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
     "MinDefState": 53,
@@ -17141,7 +17401,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1049010
+    "StarSoulid": 1049010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 109901,
@@ -17246,6 +17507,8 @@
     ],
     "BattlePassive": 1105001,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530107,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
     "MinDefState": 53,
@@ -17334,7 +17597,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1050010
+    "StarSoulid": 1050010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 110001,
@@ -17439,6 +17703,8 @@
     ],
     "BattlePassive": 1105101,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530108,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
     "MinDefState": 53,
@@ -17529,7 +17795,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1051010
+    "StarSoulid": 1051010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 110101,
@@ -17634,6 +17901,8 @@
     ],
     "BattlePassive": 1105201,
     "HomePassive": 0,
+    "InbornBattlePassive": 110530109,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 53,
     "MinDefState": 53,
@@ -17724,7 +17993,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1052010
+    "StarSoulid": 1052010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 110201,
@@ -17829,6 +18099,8 @@
     ],
     "BattlePassive": 1106401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 74,
     "MinDefState": 62,
@@ -17923,7 +18195,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1063010
+    "StarSoulid": 1063010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 110501,
@@ -18029,6 +18302,8 @@
     ],
     "BattlePassive": 1110501,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 62,
     "MinAtkState": 62,
     "MinDefState": 62,
@@ -18118,7 +18393,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1108010
+    "StarSoulid": 1108010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 110601,
@@ -18223,6 +18499,8 @@
     ],
     "BattlePassive": 1110601,
     "HomePassive": 0,
+    "InbornBattlePassive": 100104,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 74,
     "MinDefState": 56,
@@ -18317,7 +18595,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1108010
+    "StarSoulid": 1108010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 110801,
@@ -18423,6 +18702,8 @@
     ],
     "BattlePassive": 1110501,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 56,
     "MinDefState": 56,
@@ -18512,7 +18793,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1108010
+    "StarSoulid": 1108010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 111001,
@@ -18617,6 +18899,8 @@
     ],
     "BattlePassive": 1108901,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 66,
     "MinDefState": 64,
@@ -18711,7 +18995,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1089010
+    "StarSoulid": 1089010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 111004,
@@ -18816,6 +19101,8 @@
     ],
     "BattlePassive": 1108901,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 66,
     "MinDefState": 64,
@@ -18910,7 +19197,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1089010
+    "StarSoulid": 1089010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 111201,
@@ -19015,6 +19303,8 @@
     ],
     "BattlePassive": 1111201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 78,
     "MinAtkState": 53,
     "MinDefState": 64,
@@ -19109,7 +19399,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1128010
+    "StarSoulid": 1128010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 111501,
@@ -19214,6 +19505,8 @@
     ],
     "BattlePassive": 1111501,
     "HomePassive": 0,
+    "InbornBattlePassive": 100103,
+    "InbornHomePassive": 0,
     "MinHpState": 74,
     "MinAtkState": 56,
     "MinDefState": 56,
@@ -19308,7 +19601,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1108010
+    "StarSoulid": 1108010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 111601,
@@ -19413,6 +19707,8 @@
     ],
     "BattlePassive": 1111601,
     "HomePassive": 0,
+    "InbornBattlePassive": 100105,
+    "InbornHomePassive": 0,
     "MinHpState": 66,
     "MinAtkState": 64,
     "MinDefState": 56,
@@ -19507,7 +19803,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1108010
+    "StarSoulid": 1108010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 111701,
@@ -19612,6 +19909,8 @@
     ],
     "BattlePassive": 1111701,
     "HomePassive": 0,
+    "InbornBattlePassive": 100107,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 66,
     "MinDefState": 64,
@@ -19706,7 +20005,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1108010
+    "StarSoulid": 1108010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 111801,
@@ -19811,6 +20111,8 @@
     ],
     "BattlePassive": 1111801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 68,
     "MinDefState": 52,
@@ -19903,7 +20205,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1118010
+    "StarSoulid": 1118010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 112001,
@@ -20008,6 +20311,8 @@
     ],
     "BattlePassive": 1112001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 54,
     "MinDefState": 63,
@@ -20100,7 +20405,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1120010
+    "StarSoulid": 1120010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 112101,
@@ -20205,6 +20511,8 @@
     ],
     "BattlePassive": 1106201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 62,
     "MinDefState": 58,
@@ -20297,7 +20605,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1121010
+    "StarSoulid": 1121010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 112201,
@@ -20402,6 +20711,8 @@
     ],
     "BattlePassive": 1106201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 60,
     "MinAtkState": 70,
     "MinDefState": 62,
@@ -20496,7 +20807,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1121010
+    "StarSoulid": 1121010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 112301,
@@ -20601,6 +20913,8 @@
     ],
     "BattlePassive": 1112301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 43,
     "MinAtkState": 63,
     "MinDefState": 66,
@@ -20693,7 +21007,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1123010
+    "StarSoulid": 1123010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 112401,
@@ -20798,6 +21113,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2112401,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 41,
     "MinAtkState": 36,
     "MinDefState": 61,
@@ -20890,7 +21207,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1124010
+    "StarSoulid": 1124010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 112501,
@@ -20995,6 +21313,8 @@
     ],
     "BattlePassive": 1112501,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 48,
     "MinAtkState": 54,
     "MinDefState": 73,
@@ -21087,7 +21407,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1125010
+    "StarSoulid": 1125010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 112801,
@@ -21192,6 +21513,8 @@
     ],
     "BattlePassive": 1112801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 48,
     "MinDefState": 64,
@@ -21284,7 +21607,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1128010
+    "StarSoulid": 1128010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 112901,
@@ -21389,6 +21713,8 @@
     ],
     "BattlePassive": 1105501,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 73,
     "MinDefState": 50,
@@ -21481,7 +21807,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1129010
+    "StarSoulid": 1129010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 113101,
@@ -21586,6 +21913,8 @@
     ],
     "BattlePassive": 1104301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 53,
     "MinDefState": 64,
@@ -21678,7 +22007,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1043010
+    "StarSoulid": 1043010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 113301,
@@ -21783,6 +22113,8 @@
     ],
     "BattlePassive": 1102801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 49,
     "MinDefState": 63,
@@ -21875,7 +22207,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1133010
+    "StarSoulid": 1133010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 113601,
@@ -21980,6 +22313,8 @@
     ],
     "BattlePassive": 1113601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 56,
     "MinDefState": 58,
@@ -22072,7 +22407,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1136010
+    "StarSoulid": 1136010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 113701,
@@ -22177,6 +22513,8 @@
     ],
     "BattlePassive": 1113601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 56,
     "MinDefState": 64,
@@ -22271,7 +22609,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1136010
+    "StarSoulid": 1136010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 113801,
@@ -22376,6 +22715,8 @@
     ],
     "BattlePassive": 1113601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 66,
     "MinDefState": 64,
@@ -22470,7 +22811,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1136010
+    "StarSoulid": 1136010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 113901,
@@ -22575,6 +22917,8 @@
     ],
     "BattlePassive": 1113901,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 76,
     "MinDefState": 64,
@@ -22669,7 +23013,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1136010
+    "StarSoulid": 1136010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114001,
@@ -22774,6 +23119,8 @@
     ],
     "BattlePassive": 1114001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 50,
     "MinAtkState": 62,
     "MinDefState": 60,
@@ -22866,7 +23213,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1140010
+    "StarSoulid": 1140010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114101,
@@ -22971,6 +23319,8 @@
     ],
     "BattlePassive": 1114001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 68,
     "MinDefState": 62,
@@ -23063,7 +23413,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1140010
+    "StarSoulid": 1140010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114201,
@@ -23168,6 +23519,8 @@
     ],
     "BattlePassive": 1114001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 74,
     "MinDefState": 64,
@@ -23262,7 +23615,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1140010
+    "StarSoulid": 1140010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114202,
@@ -23374,6 +23728,8 @@
     ],
     "BattlePassive": 1114202,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 76,
     "MinDefState": 68,
@@ -23466,7 +23822,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 4,
-    "StarSoulid": 1142020
+    "StarSoulid": 1142020,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114301,
@@ -23571,6 +23928,8 @@
     ],
     "BattlePassive": 1114301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 51,
     "MinDefState": 63,
@@ -23663,7 +24022,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1143010
+    "StarSoulid": 1143010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114401,
@@ -23768,6 +24128,8 @@
     ],
     "BattlePassive": 1114401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 48,
     "MinDefState": 66,
@@ -23860,7 +24222,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1144010
+    "StarSoulid": 1144010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114501,
@@ -23965,6 +24328,8 @@
     ],
     "BattlePassive": 1114401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 53,
     "MinDefState": 66,
@@ -24057,7 +24422,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1144010
+    "StarSoulid": 1144010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114502,
@@ -24169,6 +24535,8 @@
     ],
     "BattlePassive": 1114502,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 63,
     "MinDefState": 68,
@@ -24261,7 +24629,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 4,
-    "StarSoulid": 1145020
+    "StarSoulid": 1145020,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114601,
@@ -24366,6 +24735,8 @@
     ],
     "BattlePassive": 1114401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 56,
     "MinDefState": 73,
@@ -24460,7 +24831,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1144010
+    "StarSoulid": 1144010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114701,
@@ -24565,6 +24937,8 @@
     ],
     "BattlePassive": 1114801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 44,
     "MinDefState": 64,
@@ -24657,7 +25031,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1147010
+    "StarSoulid": 1147010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114801,
@@ -24762,6 +25137,8 @@
     ],
     "BattlePassive": 1114801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 66,
     "MinAtkState": 52,
     "MinDefState": 64,
@@ -24854,7 +25231,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1147010
+    "StarSoulid": 1147010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114901,
@@ -24959,6 +25337,8 @@
     ],
     "BattlePassive": 1114701,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 66,
     "MinAtkState": 52,
     "MinDefState": 74,
@@ -25053,7 +25433,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1147010
+    "StarSoulid": 1147010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 114904,
@@ -25158,6 +25539,8 @@
     ],
     "BattlePassive": 1114904,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 66,
     "MinAtkState": 52,
     "MinDefState": 74,
@@ -25252,7 +25635,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1147010
+    "StarSoulid": 1147010,
+    "AvartarAtlas": "LumiAvatar1"
   },
   {
     "Id": 115001,
@@ -25357,6 +25741,8 @@
     ],
     "BattlePassive": 1115101,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 54,
     "MinDefState": 54,
@@ -25449,7 +25835,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1150010
+    "StarSoulid": 1150010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 115101,
@@ -25554,6 +25941,8 @@
     ],
     "BattlePassive": 1115101,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 66,
     "MinAtkState": 62,
     "MinDefState": 54,
@@ -25646,7 +26035,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1150010
+    "StarSoulid": 1150010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 115201,
@@ -25751,6 +26141,8 @@
     ],
     "BattlePassive": 1115001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 66,
     "MinAtkState": 72,
     "MinDefState": 54,
@@ -25845,7 +26237,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1150010
+    "StarSoulid": 1150010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 115204,
@@ -25950,6 +26343,8 @@
     ],
     "BattlePassive": 1115204,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 66,
     "MinAtkState": 72,
     "MinDefState": 54,
@@ -26042,7 +26437,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1150010
+    "StarSoulid": 1150010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 115301,
@@ -26147,6 +26543,8 @@
     ],
     "BattlePassive": 1115301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 48,
     "MinAtkState": 64,
     "MinDefState": 60,
@@ -26239,7 +26637,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1153010
+    "StarSoulid": 1153010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 115501,
@@ -26344,6 +26743,8 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
+    "InbornBattlePassive": 1115505,
+    "InbornHomePassive": 0,
     "MinHpState": 55,
     "MinAtkState": 65,
     "MinDefState": 55,
@@ -26436,7 +26837,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1155010
+    "StarSoulid": 1155010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 115601,
@@ -26541,6 +26943,8 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
+    "InbornBattlePassive": 1115605,
+    "InbornHomePassive": 0,
     "MinHpState": 65,
     "MinAtkState": 55,
     "MinDefState": 55,
@@ -26633,7 +27037,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1156010
+    "StarSoulid": 1156010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 115701,
@@ -26738,6 +27143,8 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
+    "InbornBattlePassive": 1115705,
+    "InbornHomePassive": 0,
     "MinHpState": 55,
     "MinAtkState": 65,
     "MinDefState": 55,
@@ -26830,7 +27237,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1157010
+    "StarSoulid": 1157010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 115801,
@@ -26935,6 +27343,8 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
+    "InbornBattlePassive": 1115805,
+    "InbornHomePassive": 0,
     "MinHpState": 55,
     "MinAtkState": 55,
     "MinDefState": 65,
@@ -27027,7 +27437,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1158010
+    "StarSoulid": 1158010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 115901,
@@ -27132,6 +27543,8 @@
     ],
     "BattlePassive": 1115501,
     "HomePassive": 0,
+    "InbornBattlePassive": 1115905,
+    "InbornHomePassive": 0,
     "MinHpState": 55,
     "MinAtkState": 55,
     "MinDefState": 65,
@@ -27224,7 +27637,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1159010
+    "StarSoulid": 1159010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 116001,
@@ -27331,6 +27745,8 @@
     ],
     "BattlePassive": 1116001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 65,
     "MinAtkState": 65,
     "MinDefState": 65,
@@ -27414,7 +27830,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 2,
-    "StarSoulid": 1160010
+    "StarSoulid": 1160010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 116501,
@@ -27519,6 +27936,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2116501,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 46,
     "MinAtkState": 36,
     "MinDefState": 56,
@@ -27611,7 +28030,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1165010
+    "StarSoulid": 1165010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 116601,
@@ -27716,6 +28136,8 @@
     ],
     "BattlePassive": 1116601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 53,
     "MinDefState": 68,
@@ -27808,7 +28230,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1166010
+    "StarSoulid": 1166010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 116701,
@@ -27913,6 +28336,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2116701,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 46,
     "MinAtkState": 36,
     "MinDefState": 52,
@@ -28005,7 +28430,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1167010
+    "StarSoulid": 1167010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 116801,
@@ -28110,6 +28536,8 @@
     ],
     "BattlePassive": 1116801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 52,
     "MinDefState": 63,
@@ -28202,7 +28630,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1168010
+    "StarSoulid": 1168010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 116901,
@@ -28307,6 +28736,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2116901,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 31,
     "MinDefState": 56,
@@ -28399,7 +28830,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1169010
+    "StarSoulid": 1169010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 117501,
@@ -28504,6 +28936,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2117501,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 36,
     "MinDefState": 51,
@@ -28596,7 +29030,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1175010
+    "StarSoulid": 1175010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 118101,
@@ -28701,6 +29136,8 @@
     ],
     "BattlePassive": 1118101,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 62,
     "MinDefState": 60,
@@ -28793,7 +29230,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1181010
+    "StarSoulid": 1181010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 118201,
@@ -28898,6 +29336,8 @@
     ],
     "BattlePassive": 1118101,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 72,
     "MinDefState": 60,
@@ -28990,7 +29430,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1181010
+    "StarSoulid": 1181010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 118204,
@@ -29095,6 +29536,8 @@
     ],
     "BattlePassive": 1118204,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 72,
     "MinDefState": 60,
@@ -29189,7 +29632,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1181010
+    "StarSoulid": 1181010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 118301,
@@ -29294,6 +29738,8 @@
     ],
     "BattlePassive": 1112001,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 54,
     "MinDefState": 68,
@@ -29386,7 +29832,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1120010
+    "StarSoulid": 1120010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 118901,
@@ -29491,6 +29938,8 @@
     ],
     "BattlePassive": 1112801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 53,
     "MinDefState": 64,
@@ -29583,7 +30032,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1128010
+    "StarSoulid": 1128010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 119101,
@@ -29688,6 +30138,8 @@
     ],
     "BattlePassive": 1105601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 73,
     "MinDefState": 58,
@@ -29775,7 +30227,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1056010
+    "StarSoulid": 1056010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 119201,
@@ -29880,6 +30333,8 @@
     ],
     "BattlePassive": 1114301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 51,
     "MinDefState": 68,
@@ -29972,7 +30427,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1143010
+    "StarSoulid": 1143010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 119204,
@@ -30077,6 +30533,8 @@
     ],
     "BattlePassive": 1114301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 51,
     "MinDefState": 68,
@@ -30169,7 +30627,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1143010
+    "StarSoulid": 1143010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 119301,
@@ -30274,6 +30733,8 @@
     ],
     "BattlePassive": 1114301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 56,
     "MinDefState": 68,
@@ -30368,7 +30829,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1143010
+    "StarSoulid": 1143010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 119601,
@@ -30473,6 +30935,8 @@
     ],
     "BattlePassive": 1119601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 43,
     "MinDefState": 68,
@@ -30565,7 +31029,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1196010
+    "StarSoulid": 1196010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 119701,
@@ -30670,6 +31135,8 @@
     ],
     "BattlePassive": 1119601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 48,
     "MinDefState": 73,
@@ -30762,7 +31229,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1196010
+    "StarSoulid": 1196010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 119801,
@@ -30867,6 +31335,8 @@
     ],
     "BattlePassive": 1119801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 62,
     "MinAtkState": 68,
     "MinDefState": 48,
@@ -30959,7 +31429,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1198010
+    "StarSoulid": 1198010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 119901,
@@ -31064,6 +31535,8 @@
     ],
     "BattlePassive": 1119901,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 52,
     "MinDefState": 68,
@@ -31156,7 +31629,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1199010
+    "StarSoulid": 1199010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 120501,
@@ -31261,6 +31735,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2120501,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 41,
     "MinDefState": 56,
@@ -31353,7 +31829,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1205010
+    "StarSoulid": 1205010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 120601,
@@ -31458,6 +31935,8 @@
     ],
     "BattlePassive": 1120601,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 48,
     "MinAtkState": 76,
     "MinDefState": 54,
@@ -31550,7 +32029,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1206010
+    "StarSoulid": 1206010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 120701,
@@ -31655,6 +32135,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2120701,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 16,
     "MinDefState": 76,
@@ -31747,7 +32229,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1207010
+    "StarSoulid": 1207010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 120704,
@@ -31852,6 +32335,8 @@
     ],
     "BattlePassive": 1120704,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 48,
     "MinDefState": 72,
@@ -31944,7 +32429,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1207010
+    "StarSoulid": 1207010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 120801,
@@ -32049,6 +32535,8 @@
     ],
     "BattlePassive": 1120801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 74,
     "MinDefState": 50,
@@ -32141,7 +32629,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1208010
+    "StarSoulid": 1208010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 120901,
@@ -32246,6 +32735,8 @@
     ],
     "BattlePassive": 1120901,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 78,
     "MinDefState": 54,
@@ -32338,7 +32829,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1208010
+    "StarSoulid": 1208010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 120904,
@@ -32443,6 +32935,8 @@
     ],
     "BattlePassive": 1120904,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 78,
     "MinDefState": 54,
@@ -32535,7 +33029,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1208010
+    "StarSoulid": 1208010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 121001,
@@ -32640,6 +33135,8 @@
     ],
     "BattlePassive": 1121001,
     "HomePassive": 0,
+    "InbornBattlePassive": 100114,
+    "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 84,
     "MinDefState": 52,
@@ -32732,7 +33229,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1211010
+    "StarSoulid": 1211010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 121004,
@@ -32837,6 +33335,8 @@
     ],
     "BattlePassive": 1121004,
     "HomePassive": 0,
+    "InbornBattlePassive": 100114,
+    "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 84,
     "MinDefState": 52,
@@ -32929,7 +33429,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1211010
+    "StarSoulid": 1211010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 121101,
@@ -33034,6 +33535,8 @@
     ],
     "BattlePassive": 1121001,
     "HomePassive": 0,
+    "InbornBattlePassive": 100114,
+    "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 74,
     "MinDefState": 52,
@@ -33126,7 +33629,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1211010
+    "StarSoulid": 1211010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 121201,
@@ -33231,6 +33735,8 @@
     ],
     "BattlePassive": 1121201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 50,
     "MinDefState": 64,
@@ -33318,7 +33824,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1212010
+    "StarSoulid": 1212010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 121301,
@@ -33423,6 +33930,8 @@
     ],
     "BattlePassive": 1121301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 50,
     "MinDefState": 74,
@@ -33512,7 +34021,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1212010
+    "StarSoulid": 1212010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 121304,
@@ -33617,6 +34127,8 @@
     ],
     "BattlePassive": 1121304,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 50,
     "MinDefState": 74,
@@ -33704,7 +34216,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1212010
+    "StarSoulid": 1212010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 121401,
@@ -33809,6 +34322,8 @@
     ],
     "BattlePassive": 1121401,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 50,
     "MinDefState": 74,
@@ -33898,7 +34413,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1212010
+    "StarSoulid": 1212010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 122301,
@@ -34003,6 +34519,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2122301,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 21,
     "MinDefState": 71,
@@ -34095,7 +34613,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1223010
+    "StarSoulid": 1223010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 123101,
@@ -34200,6 +34719,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2123101,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 50,
     "MinAtkState": 14,
     "MinDefState": 82,
@@ -34292,7 +34813,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1231010
+    "StarSoulid": 1231010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 123201,
@@ -34397,6 +34919,8 @@
     ],
     "BattlePassive": 1123201,
     "HomePassive": 0,
+    "InbornBattlePassive": 100106,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 56,
     "MinDefState": 74,
@@ -34491,7 +35015,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1108010
+    "StarSoulid": 1108010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 123401,
@@ -34596,6 +35121,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2123401,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 61,
     "MinAtkState": 11,
     "MinDefState": 76,
@@ -34688,7 +35215,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1234010
+    "StarSoulid": 1234010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 123404,
@@ -34793,6 +35321,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2123404,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 61,
     "MinAtkState": 11,
     "MinDefState": 76,
@@ -34887,7 +35417,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1234010
+    "StarSoulid": 1234010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 123801,
@@ -34992,6 +35523,8 @@
     ],
     "BattlePassive": 1123801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 48,
     "MinAtkState": 73,
     "MinDefState": 64,
@@ -35084,7 +35617,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1238010
+    "StarSoulid": 1238010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 123901,
@@ -35189,6 +35723,8 @@
     ],
     "BattlePassive": 1102101,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 60,
     "MinAtkState": 48,
     "MinDefState": 64,
@@ -35281,7 +35817,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1239010
+    "StarSoulid": 1239010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 124001,
@@ -35386,6 +35923,8 @@
     ],
     "BattlePassive": 1102101,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 62,
     "MinAtkState": 54,
     "MinDefState": 66,
@@ -35478,7 +36017,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1239010
+    "StarSoulid": 1239010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 124301,
@@ -35583,6 +36123,8 @@
     ],
     "BattlePassive": 1124301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 66,
     "MinDefState": 53,
@@ -35675,7 +36217,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1243010
+    "StarSoulid": 1243010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 124401,
@@ -35780,6 +36323,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2124401,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 26,
     "MinDefState": 61,
@@ -35872,7 +36417,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1244010
+    "StarSoulid": 1244010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 125801,
@@ -35977,6 +36523,8 @@
     ],
     "BattlePassive": 1125801,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 67,
     "MinDefState": 48,
@@ -36069,7 +36617,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1258010
+    "StarSoulid": 1258010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 125804,
@@ -36174,6 +36723,8 @@
     ],
     "BattlePassive": 1125804,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 67,
     "MinDefState": 48,
@@ -36266,7 +36817,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1258010
+    "StarSoulid": 1258010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 125901,
@@ -36371,6 +36923,8 @@
     ],
     "BattlePassive": 1112501,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 50,
     "MinAtkState": 62,
     "MinDefState": 73,
@@ -36463,7 +37017,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1125010
+    "StarSoulid": 1125010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 126301,
@@ -36568,6 +37123,8 @@
     ],
     "BattlePassive": 1126301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 58,
     "MinDefState": 66,
@@ -36662,7 +37219,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1089010
+    "StarSoulid": 1089010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 126304,
@@ -36767,6 +37325,8 @@
     ],
     "BattlePassive": 1126304,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 64,
     "MinAtkState": 58,
     "MinDefState": 66,
@@ -36861,7 +37421,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1089010
+    "StarSoulid": 1089010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 127001,
@@ -36966,6 +37527,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2127001,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 61,
     "MinAtkState": 21,
     "MinDefState": 56,
@@ -37058,7 +37621,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1270010
+    "StarSoulid": 1270010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 127101,
@@ -37163,6 +37727,8 @@
     ],
     "BattlePassive": 1127101,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 66,
     "MinDefState": 64,
@@ -37259,7 +37825,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1035010
+    "StarSoulid": 1035010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 127301,
@@ -37364,6 +37931,8 @@
     ],
     "BattlePassive": 1104201,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 73,
     "MinDefState": 66,
@@ -37456,7 +38025,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1042010
+    "StarSoulid": 1042010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 127401,
@@ -37561,6 +38131,8 @@
     ],
     "BattlePassive": 1127401,
     "HomePassive": 0,
+    "InbornBattlePassive": 1127402,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 48,
     "MinDefState": 68,
@@ -37648,7 +38220,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1274010
+    "StarSoulid": 1274010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 129101,
@@ -37753,6 +38326,8 @@
     ],
     "BattlePassive": 1127401,
     "HomePassive": 0,
+    "InbornBattlePassive": 1129102,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 53,
     "MinDefState": 73,
@@ -37840,7 +38415,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1274010
+    "StarSoulid": 1274010,
+    "AvartarAtlas": "LumiAvatar2"
   },
   {
     "Id": 130001,
@@ -37945,6 +38521,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2130001,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 6,
     "MinDefState": 76,
@@ -38037,7 +38615,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1300010
+    "StarSoulid": 1300010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 135901,
@@ -38142,6 +38721,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2135901,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 76,
     "MinAtkState": 26,
     "MinDefState": 41,
@@ -38234,7 +38815,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1414010
+    "StarSoulid": 1414010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 136101,
@@ -38339,6 +38921,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2136101,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 106,
     "MinAtkState": 11,
     "MinDefState": 16,
@@ -38431,7 +39015,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1361010
+    "StarSoulid": 1361010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 136201,
@@ -38536,6 +39121,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2136201,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 76,
     "MinAtkState": 16,
     "MinDefState": 41,
@@ -38628,7 +39215,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1362010
+    "StarSoulid": 1362010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 138301,
@@ -38733,6 +39321,8 @@
     ],
     "BattlePassive": 1127401,
     "HomePassive": 0,
+    "InbornBattlePassive": 1138302,
+    "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 63,
     "MinDefState": 73,
@@ -38822,7 +39412,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1274010
+    "StarSoulid": 1274010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 139801,
@@ -38927,6 +39518,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2139801,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 51,
     "MinAtkState": 31,
     "MinDefState": 51,
@@ -39019,7 +39612,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1398010
+    "StarSoulid": 1398010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 141301,
@@ -39124,6 +39718,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2141301,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 41,
     "MinAtkState": 16,
     "MinDefState": 76,
@@ -39216,7 +39812,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1413010
+    "StarSoulid": 1413010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 141401,
@@ -39321,6 +39918,8 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 2141401,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 71,
     "MinAtkState": 26,
     "MinDefState": 41,
@@ -39413,7 +40012,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1414010
+    "StarSoulid": 1414010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 142301,
@@ -39518,6 +40118,8 @@
     ],
     "BattlePassive": 1142301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 48,
     "MinAtkState": 68,
     "MinDefState": 56,
@@ -39605,7 +40207,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1423010
+    "StarSoulid": 1423010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 142401,
@@ -39710,6 +40313,8 @@
     ],
     "BattlePassive": 1142301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 53,
     "MinAtkState": 73,
     "MinDefState": 56,
@@ -39797,7 +40402,8 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1423010
+    "StarSoulid": 1423010,
+    "AvartarAtlas": "LumiAvatar3"
   },
   {
     "Id": 142501,
@@ -39902,6 +40508,8 @@
     ],
     "BattlePassive": 1142301,
     "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 78,
     "MinDefState": 56,
@@ -39991,6 +40599,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 1423010
+    "StarSoulid": 1423010,
+    "AvartarAtlas": "LumiAvatar3"
   }
 ]

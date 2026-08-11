@@ -21,9 +21,10 @@ if (branch !== 'external' && branch !== 'internal') {
 }
 
 // 源数据目录（对外多一层 LumiGoDesigner，对内直接 Designer）
+// 2026-08-11 起 Luban 导表统一到 check/data 下（原 Table/data + server/data 合并）
 const SRC_DIR = isInternal
-  ? 'F:/G36Branch/Designer/Config/Luban/Datas/Table/data'
-  : 'F:/G36/LumiGoDesigner/Config/Luban/Datas/Table/data'
+  ? 'F:/G36Branch/Designer/Config/Luban/Datas/check/data'
+  : 'F:/G36/LumiGoDesigner/Config/Luban/Datas/check/data'
 // 目标目录
 const DST_DIR = path.join(__dirname, 'public/data', isInternal ? 'internal' : '')
 
