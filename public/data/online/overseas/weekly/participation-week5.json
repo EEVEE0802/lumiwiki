@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-11T02:23:26.186Z",
+  "updateTime": "2026-08-11T05:15:47.759Z",
   "week": 5,
   "region": "overseas",
   "startTime": "2026-08-07",
@@ -107,27 +107,27 @@
     },
     {
       "date": "2026-08-11",
-      "ladder": 141,
+      "ladder": 189,
       "tournament": 0,
-      "infinityGym": 173,
-      "login": 1189,
-      "ladderRate": 11.86,
+      "infinityGym": 233,
+      "login": 1381,
+      "ladderRate": 13.69,
       "tournamentRate": 0,
-      "infinityGymRate": 14.55,
-      "ladderBattlesPerUser": 10.86,
+      "infinityGymRate": 16.87,
+      "ladderBattlesPerUser": 11.03,
       "tournamentBattlesPerUser": 0,
-      "infinityGymBattlesPerUser": 22.37,
+      "infinityGymBattlesPerUser": 22.33,
       "retention": {
-        "login": 984,
-        "ladder": 88,
+        "login": 1135,
+        "ladder": 120,
         "tournament": 0,
-        "infinityGym": 153,
-        "ladderRate": 8.94,
+        "infinityGym": 206,
+        "ladderRate": 10.57,
         "tournamentRate": 0,
-        "infinityGymRate": 15.55,
-        "ladderBattlesPerUser": 8.2,
+        "infinityGymRate": 18.15,
+        "ladderBattlesPerUser": 8.18,
         "tournamentBattlesPerUser": 0,
-        "infinityGymBattlesPerUser": 21.9
+        "infinityGymBattlesPerUser": 21.98
       }
     }
   ]
