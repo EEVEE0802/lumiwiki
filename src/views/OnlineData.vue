@@ -148,7 +148,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="row in overlapRows" :key="row.key" :class="{ 'is-all': row.key === 'all_three' }">
+                    <tr v-for="row in overlapRows" :key="row.key" :class="{ 'is-all': row.key === 'ltgw' }">
                       <td>
                         <span class="overlap-color-dot" :style="{ background: row.color }"></span>
                         {{ row.label }}
@@ -165,6 +165,49 @@
           <div v-else class="participation-chart-block overlap-empty-block">
             <h3>玩法重合率</h3>
             <p class="chart-subtitle">该数据周尚未生成重合率信息（需下一次每小时任务更新）</p>
+          </div>
+
+          <!-- 周重合率（按周合并去重，看整周内玩法组合分布） -->
+          <div v-if="hasWeekOverlapData" class="participation-chart-block">
+            <h3>周重合率（整周合并去重）</h3>
+            <p class="chart-subtitle">
+              选中周内至少登录一次的玩家中，参与「天梯 / 周赛 / 无限道馆 / 公会战」这四种玩法的重合情况；跨天玩过多次的玩家算一次
+              <span v-if="participationRetention" style="color: #764ba2;">（当前口径：留存玩家）</span>
+            </p>
+            <div class="overlap-day-picker">
+              <label>选择周次：</label>
+              <select v-model="selectedOverlapWeek" class="overlap-date-select">
+                <option v-for="w in availableOverlapWeeks" :key="w" :value="w">第 {{ w }} 周</option>
+              </select>
+              <span class="overlap-day-summary" v-if="currentWeekOverlap">
+                整周登录 <b>{{ formatNumber(currentWeekLoginBase) }}</b> 人（去重）
+              </span>
+            </div>
+            <div v-if="currentWeekOverlap" class="overlap-body">
+              <div class="venn-container" v-html="weekVennSvg"></div>
+              <div class="overlap-table-wrap">
+                <table class="overlap-table">
+                  <thead>
+                    <tr>
+                      <th>参与组合</th>
+                      <th>整周人数</th>
+                      <th>占登录 %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="row in weekOverlapRows" :key="row.key" :class="{ 'is-all': row.key === 'ltgw' }">
+                      <td>
+                        <span class="overlap-color-dot" :style="{ background: row.color }"></span>
+                        {{ row.label }}
+                      </td>
+                      <td class="num">{{ formatNumber(row.count) }}</td>
+                      <td class="num">{{ row.pct }}%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div v-else class="overlap-empty">该周暂无重合率数据</div>
           </div>
         </div>
       </template>
@@ -897,6 +940,7 @@ let chartInstance = null
 
 // 参与走势相关（跨周合并）
 const participationAllData = ref(new Map()) // date -> { ladder, tournament, login, ladderRate, tournamentRate }
+const participationWeekOverlaps = ref(new Map()) // week 号 -> { weekOverlap, weekLoginBase, retentionWeekOverlap, retentionWeekLoginBase }
 const participationUpdateTime = ref('')
 const participationStartDate = ref('')
 const participationEndDate = ref('')
@@ -907,6 +951,7 @@ let participationCountChart = null
 let participationRateChart = null
 let participationBpuChart = null
 const participationRetention = ref(false) // false=全量, true=留存玩家（创号≥7天）
+const selectedOverlapWeek = ref(null) // 周重合率的当前选中周次（默认最近一周）
 
 // 当前统计数据（支持多段位合并）
 const currentStats = computed(() => {
@@ -1707,9 +1752,20 @@ async function loadAllParticipationData() {
     )
   )
   const map = new Map()
+  const weekMap = new Map()  // week 号 → weekOverlap / weekLoginBase / retention 版本
   let latestUpdate = ''
   for (const json of results.filter(Boolean)) {
     if (json.updateTime && json.updateTime > latestUpdate) latestUpdate = json.updateTime
+    // 收集周级 overlap（脚本新版才有；老 JSON 没这些字段就跳过）
+    if (json.week != null && json.weekOverlap) {
+      weekMap.set(json.week, {
+        week: json.week,
+        weekOverlap: json.weekOverlap,
+        weekLoginBase: json.weekLoginBase || 0,
+        retentionWeekOverlap: json.retentionWeekOverlap || null,
+        retentionWeekLoginBase: json.retentionWeekLoginBase || 0,
+      })
+    }
     for (const row of json.dates || []) {
       map.set(row.date, {
         ladder: row.ladder,
@@ -1731,6 +1787,7 @@ async function loadAllParticipationData() {
     }
   }
   participationAllData.value = map
+  participationWeekOverlaps.value = weekMap
   participationUpdateTime.value = latestUpdate
 
   // 默认日期范围：最近 7 天（结束=有数据的最新日期，跳过未来 0 值日期）
@@ -1851,8 +1908,8 @@ const overlapRows = computed(() => {
 // 生成 SVG 文氏图：登录大圆包住 4 个玩法小圆（矩形四角布局）
 // 4 圆文氏图数学上无法呈现所有 15 种交集的精确面积，采用近似示意：4 圆矩形排列
 // 数字标注在每个区域重心附近；不追求面积精确
-const vennSvg = computed(() => {
-  const o = currentOverlap.value
+// 抽成独立函数：日重合率和周重合率都调用它
+function renderVennSvg(o) {
   if (!o) return ''
   const fmt = n => (n || 0).toLocaleString('zh-CN')
   const W = 520, H = 460
@@ -1867,52 +1924,85 @@ const vennSvg = computed(() => {
   const bigR = 208
   return `
 <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
-  <!-- 登录大圆 -->
   <circle cx="${CX}" cy="${CY}" r="${bigR}" fill="rgba(180,180,180,0.10)" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="${CX}" y="${CY - bigR + 20}" text-anchor="middle" fill="#666" font-size="14" font-weight="600">登录</text>
   <text x="${CX - bigR + 22}" y="${CY + bigR - 12}" text-anchor="start" fill="#888" font-size="12">
     仅登录 ${fmt(o.login_only)}
   </text>
-
-  <!-- 4 玩法小圆（半透明相交） -->
   <circle cx="${pL.x}" cy="${pL.y}" r="${R}" fill="rgba(102,126,234,0.30)" stroke="#667eea" stroke-width="2"/>
   <circle cx="${pT.x}" cy="${pT.y}" r="${R}" fill="rgba(249,115,22,0.28)" stroke="#f97316" stroke-width="2"/>
   <circle cx="${pG.x}" cy="${pG.y}" r="${R}" fill="rgba(149,117,205,0.30)" stroke="#9575cd" stroke-width="2"/>
   <circle cx="${pW.x}" cy="${pW.y}" r="${R}" fill="rgba(220,38,38,0.26)" stroke="#dc2626" stroke-width="2"/>
-
-  <!-- 玩法标签 -->
   <text x="${pL.x - R + 10}" y="${pL.y - R + 4}"  text-anchor="start" fill="#4759c4" font-size="13" font-weight="700">天梯</text>
   <text x="${pT.x + R - 10}" y="${pT.y - R + 4}"  text-anchor="end"   fill="#d15c0f" font-size="13" font-weight="700">周赛</text>
   <text x="${pG.x - R + 10}" y="${pG.y + R - 2}"  text-anchor="start" fill="#6d4dab" font-size="13" font-weight="700">无限道馆</text>
   <text x="${pW.x + R - 10}" y="${pW.y + R - 2}"  text-anchor="end"   fill="#b32020" font-size="13" font-weight="700">公会战</text>
-
-  <!-- 单玩法（4 圆各自外侧） -->
   <text x="${pL.x - 30}" y="${pL.y - 22}" text-anchor="middle" fill="#4759c4" font-size="14" font-weight="700">${fmt(o.l)}</text>
   <text x="${pT.x + 30}" y="${pT.y - 22}" text-anchor="middle" fill="#d15c0f" font-size="14" font-weight="700">${fmt(o.t)}</text>
   <text x="${pG.x - 30}" y="${pG.y + 28}" text-anchor="middle" fill="#6d4dab" font-size="14" font-weight="700">${fmt(o.g)}</text>
   <text x="${pW.x + 30}" y="${pW.y + 28}" text-anchor="middle" fill="#b32020" font-size="14" font-weight="700">${fmt(o.w)}</text>
-
-  <!-- 相邻双玩法交集：上/下/左/右 4 处 -->
   <text x="${CX}"        y="${pL.y - 4}"  text-anchor="middle" fill="#883a1d" font-size="12" font-weight="700">${fmt(o.lt)}</text>
   <text x="${CX}"        y="${pG.y + 12}" text-anchor="middle" fill="#8a3a7f" font-size="12" font-weight="700">${fmt(o.gw)}</text>
   <text x="${pL.x + 4}"  y="${CY - 2}"    text-anchor="start"  fill="#3f4a97" font-size="12" font-weight="700">${fmt(o.lg)}</text>
   <text x="${pT.x - 4}"  y="${CY - 2}"    text-anchor="end"    fill="#c05840" font-size="12" font-weight="700">${fmt(o.tw)}</text>
-
-  <!-- 对角双玩法交集（矩形布局中重合区较小，标在中间偏侧位置） -->
   <text x="${CX - 22}" y="${CY + 14}" text-anchor="middle" fill="#7a3f6f" font-size="11" font-weight="700">${fmt(o.lw)}</text>
   <text x="${CX + 22}" y="${CY + 14}" text-anchor="middle" fill="#a86ea0" font-size="11" font-weight="700">${fmt(o.tg)}</text>
-
-  <!-- 三玩法交集（4 处，各自靠近对应的三圆重心） -->
   <text x="${pL.x + 32}" y="${CY - 16}" text-anchor="middle" fill="#5a3d7a" font-size="11" font-weight="700">${fmt(o.ltg)}</text>
   <text x="${pT.x - 32}" y="${CY - 16}" text-anchor="middle" fill="#8a3a2d" font-size="11" font-weight="700">${fmt(o.ltw)}</text>
   <text x="${pG.x + 32}" y="${CY + 30}" text-anchor="middle" fill="#5a2d6d" font-size="11" font-weight="700">${fmt(o.lgw)}</text>
   <text x="${pW.x - 32}" y="${CY + 30}" text-anchor="middle" fill="#7a4a5a" font-size="11" font-weight="700">${fmt(o.tgw)}</text>
-
-  <!-- 四玩法交集：正中心 -->
   <text x="${CX}" y="${CY + 6}" text-anchor="middle" fill="#3a1d5a" font-size="15" font-weight="800">${fmt(o.ltgw)}</text>
 </svg>
 `.trim()
+}
+
+const vennSvg = computed(() => renderVennSvg(currentOverlap.value))
+
+// === 周重合率 ===
+// 可选的周次列表（有 weekOverlap 数据的），按倒序（最近的在前）
+const availableOverlapWeeks = computed(() => {
+  return [...participationWeekOverlaps.value.keys()].sort((a, b) => b - a)
 })
+
+// 是否有周重合率数据
+const hasWeekOverlapData = computed(() => participationWeekOverlaps.value.size > 0)
+
+// 当前选中周的 weekOverlap（跟随全量/留存开关）
+const currentWeekOverlap = computed(() => {
+  const w = participationWeekOverlaps.value.get(selectedOverlapWeek.value)
+  if (!w) return null
+  return participationRetention.value ? w.retentionWeekOverlap : w.weekOverlap
+})
+
+// 当前选中周的登录基数
+const currentWeekLoginBase = computed(() => {
+  const w = participationWeekOverlaps.value.get(selectedOverlapWeek.value)
+  if (!w) return 0
+  return participationRetention.value ? w.retentionWeekLoginBase : w.weekLoginBase
+})
+
+// 周重合率的 SVG 文氏图
+const weekVennSvg = computed(() => renderVennSvg(currentWeekOverlap.value))
+
+// 周重合率的表格数据
+const weekOverlapRows = computed(() => {
+  const o = currentWeekOverlap.value
+  const base = currentWeekLoginBase.value
+  if (!o) return []
+  return OVERLAP_ROWS_CONFIG.map(cfg => {
+    const count = o[cfg.key] || 0
+    const pct = base > 0 ? (count / base * 100).toFixed(1) : '0.0'
+    return { ...cfg, count, pct }
+  })
+})
+
+// 加载完数据后自动选中最近一周
+watch(availableOverlapWeeks, (weeks) => {
+  if (!weeks.length) return
+  if (selectedOverlapWeek.value == null || !weeks.includes(selectedOverlapWeek.value)) {
+    selectedOverlapWeek.value = weeks[0]
+  }
+}, { immediate: true })
 
 // 当选中日期不在可选列表里（切换全量/留存后有可能），自动落到最近的可用日期
 watch([hasOverlapData, availableOverlapDates], () => {

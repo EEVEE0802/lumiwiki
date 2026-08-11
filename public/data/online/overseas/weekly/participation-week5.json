@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-11T08:59:40.029Z",
+  "updateTime": "2026-08-11T09:23:04.101Z",
   "week": 5,
   "region": "overseas",
   "startTime": "2026-08-07",
@@ -340,5 +340,43 @@
         }
       }
     }
-  ]
+  ],
+  "weekLoginBase": 3294,
+  "weekOverlap": {
+    "login_only": 1739,
+    "l": 255,
+    "t": 13,
+    "g": 160,
+    "w": 96,
+    "lt": 12,
+    "lg": 253,
+    "lw": 63,
+    "tg": 13,
+    "tw": 6,
+    "gw": 116,
+    "ltg": 61,
+    "ltw": 10,
+    "lgw": 289,
+    "tgw": 32,
+    "ltgw": 176
+  },
+  "retentionWeekLoginBase": 2243,
+  "retentionWeekOverlap": {
+    "login_only": 937,
+    "l": 147,
+    "t": 13,
+    "g": 154,
+    "w": 98,
+    "lt": 11,
+    "lg": 171,
+    "lw": 59,
+    "tg": 13,
+    "tw": 6,
+    "gw": 117,
+    "ltg": 56,
+    "ltw": 9,
+    "lgw": 254,
+    "tgw": 32,
+    "ltgw": 166
+  }
 }

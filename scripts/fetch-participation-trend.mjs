@@ -337,13 +337,45 @@ const result = allDates.map(date => {
   }
 })
 
+// 整周合并去重的 overlap：把 5 天的 Set 分别 union 成周级 Set，然后跑一次 computeOverlap
+// 语义：只要本周内登录过 ≥1 次就算登录玩家；玩过某玩法 ≥1 次就算参与该玩法
+function unionAllDays(setsByDate) {
+  const out = new Set()
+  for (const date of allDates) {
+    const s = setsByDate[date]
+    if (s) for (const uid of s) out.add(uid)
+  }
+  return out
+}
+const weekLoginSet     = unionAllDays(loginResult.sets)
+const weekLadderSet    = unionAllDays(ladderResult.sets)
+const weekTournamentSet= unionAllDays(tournamentResult.sets)
+const weekGymSet       = unionAllDays(gymResult.sets)
+const weekGuildWarSet  = unionAllDays(guildWarResult.sets)
+const weekOverlap = computeOverlap(weekLoginSet, weekLadderSet, weekTournamentSet, weekGymSet, weekGuildWarSet)
+
+const weekRetLoginSet     = unionAllDays(loginResult.retentionSets)
+const weekRetLadderSet    = unionAllDays(ladderResult.retentionSets)
+const weekRetTournamentSet= unionAllDays(tournamentResult.retentionSets)
+const weekRetGymSet       = unionAllDays(gymResult.retentionSets)
+const weekRetGuildWarSet  = unionAllDays(guildWarResult.retentionSets)
+const retentionWeekOverlap = computeOverlap(weekRetLoginSet, weekRetLadderSet, weekRetTournamentSet, weekRetGymSet, weekRetGuildWarSet)
+
+console.log(`\n整周合并 overlap（全量）: 登录基数 ${weekLoginSet.size}, 分区:`, weekOverlap)
+console.log(`整周合并 overlap（留存）: 登录基数 ${weekRetLoginSet.size}, 分区:`, retentionWeekOverlap)
+
 const output = {
   updateTime: new Date().toISOString(),
   week,
   region,
   startTime: startDate,
   endTime: endDate,
-  dates: result
+  dates: result,
+  // 整周合并去重（用于「周重合率」展示）
+  weekLoginBase: weekLoginSet.size,
+  weekOverlap,
+  retentionWeekLoginBase: weekRetLoginSet.size,
+  retentionWeekOverlap,
 }
 
 const outputPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/participation-week${week}.json`)
