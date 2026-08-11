@@ -27,6 +27,7 @@ if (!['domestic', 'overseas'].includes(region)) {
 }
 
 const INPUT_CSV = path.join(PROJECT_ROOT, `data/${region}/archive/gym_infinity.csv`)
+const ASSIST_CSV = path.join(PROJECT_ROOT, `data/${region}/archive/assist_infinity.csv`)
 const OUTPUT_JSON = path.join(PROJECT_ROOT, `public/data/online/${region}/infinity-gym.json`)
 
 // 无限道馆 gym_uid 范围
@@ -160,13 +161,28 @@ async function main() {
   console.log(`\n===== 无限道馆数据处理 (${region}) =====`)
   console.log(`输入: ${INPUT_CSV}`)
 
+  // 预读助战 CSV 建 Set<battle_uid>（=对应 battle_end 事件的 game_id_str）
+  // 累计全量 CSV，同 gym_infinity 一样
+  const assistBattleUids = new Set()
+  if (fs.existsSync(ASSIST_CSV)) {
+    console.log(`助战: ${ASSIST_CSV}`)
+    await processCsvStream(ASSIST_CSV, (row) => {
+      const uid = row.battle_uid
+      if (uid) assistBattleUids.add(uid)
+    })
+    console.log(`  助战场次总数（battle_uid 独立值）: ${assistBattleUids.size.toLocaleString('en-US')}`)
+  } else {
+    console.log(`  助战 CSV 不存在，跳过助战统计`)
+  }
+
   // 每层聚合器
-  // floor -> { totalBattles, wins, loses, uniqueChallengers:Set, uniqueClearers:Set, teamsWon:Map<teamKey, teamStats> }
+  // floor -> { totalBattles, wins, loses, uniqueChallengers:Set, uniqueClearers:Set, teamsWon:Map<teamKey, teamStats>, assistBattles }
   const floors = new Map()
   const uniqueChallengersGlobal = new Set()
   const playerMaxFloor = new Map()          // b_role_id -> max floor
   const globalLumiCount = new Map()         // lumiId -> 出场场次
   let totalBattlesAllFloors = 0
+  let assistBattlesAllFloors = 0            // 全局助战场次（gym CSV 中 game_id_str 命中 assistBattleUids 的场次）
 
   const { total: rowCount } = await processCsvStream(INPUT_CSV, (row) => {
     const gymUid = parseInt(row.gym_uid)
@@ -175,12 +191,14 @@ async function main() {
     const floor = uidToFloor(gymUid)
     const roleId = row.b_role_id
     const isWin = parseInt(row.battle_result) === 1
+    const isAssist = assistBattleUids.has(row.game_id_str)
 
     if (!floors.has(floor)) {
       floors.set(floor, {
         totalBattles: 0,
         wins: 0,
         loses: 0,
+        assistBattles: 0,
         uniqueClearers: new Set(),
         uniqueChallengers: new Set(),
         teamsWon: new Map(),   // 只统计胜利场次（口径 1）
@@ -189,6 +207,10 @@ async function main() {
     const f = floors.get(floor)
     f.totalBattles++
     f.uniqueChallengers.add(roleId)
+    if (isAssist) {
+      f.assistBattles++
+      assistBattlesAllFloors++
+    }
     if (isWin) {
       f.wins++
       f.uniqueClearers.add(roleId)
@@ -254,6 +276,7 @@ async function main() {
   console.log(`  总场次: ${totalBattlesAllFloors}`)
   console.log(`  独立玩家数: ${uniqueChallengersGlobal.size}`)
   console.log(`  覆盖层数: ${floors.size}`)
+  console.log(`  助战场次（gym 命中）: ${assistBattlesAllFloors}${totalBattlesAllFloors > 0 ? ` (${(assistBattlesAllFloors/totalBattlesAllFloors*100).toFixed(1)}%)` : ''}`)
   console.log(`  CSV 行数: ${rowCount}`)
 
   // 构建 floors 输出（按 floor 降序 —— 高层在前，方便玩家看到"卡关点"和进度峰值）
@@ -289,7 +312,9 @@ async function main() {
         totalBattles: f.totalBattles,
         wins: f.wins,
         loses: f.loses,
+        assistBattles: f.assistBattles,
         winRate: f.totalBattles > 0 ? +(f.wins / f.totalBattles * 100).toFixed(2) : 0,
+        assistRate: f.totalBattles > 0 ? +(f.assistBattles / f.totalBattles * 100).toFixed(2) : 0,
         uniqueChallengers: f.uniqueChallengers.size,
         uniqueClearers,
         avgAttempts,
@@ -321,6 +346,8 @@ async function main() {
     region,
     totalChallengers: uniqueChallengersGlobal.size,
     totalBattles: totalBattlesAllFloors,
+    assistBattles: assistBattlesAllFloors,
+    assistRate: totalBattlesAllFloors > 0 ? +(assistBattlesAllFloors / totalBattlesAllFloors * 100).toFixed(2) : 0,
     maxFloorDistribution: maxFloorDist,
     globalLumiUsage,
     floors: floorsOutput,

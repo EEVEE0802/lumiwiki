@@ -624,6 +624,13 @@
             <div class="gym-stat-value">{{ formatNumber(gymData.totalBattles) }}</div>
             <div class="gym-stat-label">总战斗场次</div>
           </div>
+          <div class="gym-stat-card gym-stat-assist" v-if="gymData.assistBattles != null">
+            <div class="gym-stat-value">
+              {{ formatNumber(gymData.assistBattles) }}
+              <span class="gym-stat-sub">({{ gymData.assistRate }}%)</span>
+            </div>
+            <div class="gym-stat-label">🤝 使用助战场次</div>
+          </div>
           <div class="gym-stat-card">
             <div class="gym-stat-value">{{ gymData.floors.length }}</div>
             <div class="gym-stat-label">已被挑战层数</div>
@@ -690,6 +697,9 @@
                 <div class="gym-floor-metrics" v-if="group.boss">
                   <span>挑战 <b>{{ formatNumber(group.boss.totalBattles) }}</b></span>
                   <span>通过率 <b>{{ group.boss.winRate }}%</b></span>
+                  <span v-if="group.boss.assistBattles != null" class="gym-assist-metric">
+                    🤝 助战 <b>{{ formatNumber(group.boss.assistBattles) }}</b> <span class="gym-assist-pct">({{ group.boss.assistRate }}%)</span>
+                  </span>
                   <span>通过玩家 <b>{{ formatNumber(group.boss.uniqueClearers) }}</b></span>
                   <span>通过玩家平均挑战次数 <b>{{ group.boss.avgAttempts }}</b></span>
                 </div>
@@ -711,6 +721,9 @@
                     <div class="gym-floor-metrics">
                       <span>挑战 <b>{{ formatNumber(floor.totalBattles) }}</b></span>
                       <span>通过率 <b>{{ floor.winRate }}%</b></span>
+                      <span v-if="floor.assistBattles != null" class="gym-assist-metric">
+                        🤝 助战 <b>{{ formatNumber(floor.assistBattles) }}</b> <span class="gym-assist-pct">({{ floor.assistRate }}%)</span>
+                      </span>
                       <span>通过玩家 <b>{{ formatNumber(floor.uniqueClearers) }}</b></span>
                       <span>通过玩家平均挑战次数 <b>{{ floor.avgAttempts }}</b></span>
                     </div>
@@ -2570,6 +2583,37 @@ watch(currentStats, () => {
 .gym-floor-metrics b {
   color: #333;
   font-weight: 600;
+}
+
+/* 助战指标：加个浅色底突出，跟其他指标区分开 */
+.gym-assist-metric {
+  color: #d97706;
+}
+
+.gym-assist-metric b {
+  color: #92400e;
+}
+
+.gym-assist-pct {
+  color: #b45309;
+  font-size: 0.85em;
+}
+
+/* 助战总览卡片：橙色渐变突出 */
+.gym-stat-card.gym-stat-assist {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  border-color: #fdba74;
+}
+
+.gym-stat-card.gym-stat-assist .gym-stat-value {
+  color: #b45309;
+}
+
+.gym-stat-sub {
+  font-size: 0.6em;
+  font-weight: 600;
+  color: #d97706;
+  margin-left: 4px;
 }
 
 .gym-floor-toggle {

@@ -45,6 +45,7 @@ export const CSV_HEADERS = {
   login:          ['part_date', 'b_role_id', 'b_create_time_str'],
   'infinity-gym': ['part_date', 'game_id_str', 'b_role_id', 'gym_uid', 'player_lumis', 'battle_result', 'trainer_id'],
   'guild-war':    ['part_date', 'game_id_str', 'b_role_id', 'player_type', 'player_lumis', 'battle_result', 'trainer_id'],
+  assist:         ['part_date', 'battle_uid', 'b_role_id'],
 }
 
 function buildSql(mode, startDate, endDate, cfg) {
@@ -154,6 +155,23 @@ function buildSql(mode, startDate, endDate, cfg) {
         AND "#event_name" = 'battle_end'
         AND ${zoneFilter}
         AND game_type = 'GVG1v1'
+    `.trim().replace(/\s+/g, ' ')
+  }
+
+  if (mode === 'assist') {
+    // 助战借用：use_assist_lumi 事件在玩家借用其他玩家噜咪进入战斗时上报
+    // battle_uid 等同 battle_end.game_id_str，用来把助战场次跟战斗关联
+    // 累计口径（跟无限道馆一样按 baseFriday 到今天拉全量）
+    return `
+      SELECT
+        "$part_date" AS part_date,
+        battle_uid,
+        b_role_id
+      FROM ${tableName}
+      WHERE "$part_date" >= '${startDate}'
+        AND "$part_date" <= '${endDate}'
+        AND "#event_name" = 'use_assist_lumi'
+        AND ${zoneFilter}
     `.trim().replace(/\s+/g, ' ')
   }
 
