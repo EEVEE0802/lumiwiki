@@ -96,7 +96,7 @@
         <div v-else class="participation-section">
           <div class="participation-chart-block">
             <h3>每日参与玩家数走势</h3>
-            <p class="chart-subtitle">登录 / 天梯 / 周赛 / 无限道馆的独立玩家数（去重）</p>
+            <p class="chart-subtitle">登录 / 天梯 / 周赛 / 无限道馆 / 公会战的独立玩家数（去重）</p>
             <div class="chart-wrapper" style="min-height: 320px">
               <canvas ref="participationCountCanvas"></canvas>
             </div>
@@ -104,7 +104,7 @@
 
           <div class="participation-chart-block">
             <h3>每日参与占比走势</h3>
-            <p class="chart-subtitle">天梯 / 周赛 / 无限道馆参与玩家数 ÷ 当日登录玩家数</p>
+            <p class="chart-subtitle">天梯 / 周赛 / 无限道馆 / 公会战参与玩家数 ÷ 当日登录玩家数</p>
             <div class="chart-wrapper" style="min-height: 320px">
               <canvas ref="participationRateCanvas"></canvas>
             </div>
@@ -112,17 +112,17 @@
 
           <div class="participation-chart-block">
             <h3>平均每人参与场次走势</h3>
-            <p class="chart-subtitle">天梯/周赛每个参与玩家当天的平均对战场次（含人机场）</p>
+            <p class="chart-subtitle">各玩法每个参与玩家当天的平均对战场次（含人机场）</p>
             <div class="chart-wrapper" style="min-height: 320px">
               <canvas ref="participationBpuCanvas"></canvas>
             </div>
           </div>
 
-          <!-- 玩法重合率（文氏图 + 单日数字表） -->
+          <!-- 玩法重合率（4 圆文氏图 + 单日数字表） -->
           <div v-if="hasOverlapData" class="participation-chart-block">
             <h3>玩法重合率</h3>
             <p class="chart-subtitle">
-              选中日期登录玩家中，参与「天梯 / 周赛 / 无限道馆」这三种玩法的重合情况
+              选中日期登录玩家中，参与「天梯 / 周赛 / 无限道馆 / 公会战」这四种玩法的重合情况
               <span v-if="participationRetention" style="color: #764ba2;">（当前口径：留存玩家）</span>
             </p>
             <div class="overlap-day-picker">
@@ -1715,13 +1715,16 @@ async function loadAllParticipationData() {
         ladder: row.ladder,
         tournament: row.tournament,
         infinityGym: row.infinityGym,
+        guildWar: row.guildWar || 0,
         login: row.login,
         ladderRate: row.ladderRate,
         tournamentRate: row.tournamentRate,
         infinityGymRate: row.infinityGymRate,
+        guildWarRate: row.guildWarRate || 0,
         ladderBattlesPerUser: row.ladderBattlesPerUser || 0,
         tournamentBattlesPerUser: row.tournamentBattlesPerUser || 0,
         infinityGymBattlesPerUser: row.infinityGymBattlesPerUser || 0,
+        guildWarBattlesPerUser: row.guildWarBattlesPerUser || 0,
         overlap: row.overlap || null,
         retention: row.retention || null
       })
@@ -1789,13 +1792,13 @@ const hasOverlapData = computed(() => {
   return false
 })
 
-// 可选的重合率日期列表：仅包含 overlap 非空的日期，按时间倒序（最近的在前）
+// 可选的重合率日期列表：跟参与走势大日期范围保持一致，按时间倒序（最近的在前）
+// 注意：不再过滤 overlap 非空的日期 —— 让用户能自由选大范围里任意一天
+// 没数据的日子文氏图会显示全 0（视觉上表明"当日没有该玩法的参与"）
 const availableOverlapDates = computed(() => {
-  const rows = filteredParticipationDates.value.filter(r => {
-    const src = participationRetention.value ? r.retention?.overlap : r.overlap
-    return src && Object.values(src).some(v => v > 0)
-  })
-  return rows.map(r => r.date).sort((a, b) => (a < b ? 1 : -1))
+  return filteredParticipationDates.value
+    .map(r => r.date)
+    .sort((a, b) => (a < b ? 1 : -1))
 })
 
 // 当日 overlap（跟随全量/留存开关）
@@ -1803,7 +1806,7 @@ const currentOverlap = computed(() => {
   const row = participationAllData.value.get(overlapDate.value)
   if (!row) return null
   const o = participationRetention.value ? row.retention?.overlap : row.overlap
-  return o && Object.values(o).some(v => v > 0) ? o : null
+  return o || null
 })
 
 // 当日基准：登录玩家数（用于算占比）
@@ -1813,16 +1816,25 @@ const currentOverlapLoginBase = computed(() => {
   return participationRetention.value ? (row.retention?.login || 0) : (row.login || 0)
 })
 
-// 重合率的 8 种分区显示配置（顺序：三玩法都玩 → 两玩法 → 单玩法 → 仅登录）
+// 重合率的 16 种分区显示配置（4 玩法：L=天梯 T=周赛 G=无限 W=公会战）
+// 顺序：四玩法都玩 → 三玩法组合 → 两玩法组合 → 单玩法 → 仅登录
 const OVERLAP_ROWS_CONFIG = [
-  { key: 'all_three',         label: '三玩法都参与（天梯 + 周赛 + 无限）', color: '#764ba2' },
-  { key: 'ladder_tournament', label: '天梯 + 周赛',                     color: '#e0834a' },
-  { key: 'ladder_gym',        label: '天梯 + 无限道馆',                 color: '#5a86bd' },
-  { key: 'tournament_gym',    label: '周赛 + 无限道馆',                 color: '#a86ea0' },
-  { key: 'ladder_only',       label: '仅天梯',                          color: '#667eea' },
-  { key: 'tournament_only',   label: '仅周赛',                          color: '#f97316' },
-  { key: 'gym_only',          label: '仅无限道馆',                      color: '#9575cd' },
-  { key: 'login_only',        label: '仅登录（未参与任何战斗）',        color: '#bbbbbb' },
+  { key: 'ltgw', label: '四玩法都参与（天梯 + 周赛 + 无限 + 公会）', color: '#3a1d5a' },
+  { key: 'ltg',  label: '天梯 + 周赛 + 无限道馆',                    color: '#5a3d7a' },
+  { key: 'ltw',  label: '天梯 + 周赛 + 公会战',                      color: '#a04030' },
+  { key: 'lgw',  label: '天梯 + 无限道馆 + 公会战',                  color: '#6a3f7f' },
+  { key: 'tgw',  label: '周赛 + 无限道馆 + 公会战',                  color: '#9a5544' },
+  { key: 'lt',   label: '天梯 + 周赛',                               color: '#e0834a' },
+  { key: 'lg',   label: '天梯 + 无限道馆',                           color: '#5a86bd' },
+  { key: 'lw',   label: '天梯 + 公会战',                             color: '#a04a5a' },
+  { key: 'tg',   label: '周赛 + 无限道馆',                           color: '#a86ea0' },
+  { key: 'tw',   label: '周赛 + 公会战',                             color: '#c05840' },
+  { key: 'gw',   label: '无限道馆 + 公会战',                         color: '#8f4a8a' },
+  { key: 'l',    label: '仅天梯',                                    color: '#667eea' },
+  { key: 't',    label: '仅周赛',                                    color: '#f97316' },
+  { key: 'g',    label: '仅无限道馆',                                color: '#9575cd' },
+  { key: 'w',    label: '仅公会战',                                  color: '#dc2626' },
+  { key: 'login_only', label: '仅登录（未参与任何战斗）',            color: '#bbbbbb' },
 ]
 
 const overlapRows = computed(() => {
@@ -1836,54 +1848,68 @@ const overlapRows = computed(() => {
   })
 })
 
-// 生成 SVG 文氏图：登录大圆包住 3 个玩法小圆（天梯/周赛/无限道馆两两相交，中心三交）
-// 数字标注在每个区域重心处；不追求面积精确
+// 生成 SVG 文氏图：登录大圆包住 4 个玩法小圆（矩形四角布局）
+// 4 圆文氏图数学上无法呈现所有 15 种交集的精确面积，采用近似示意：4 圆矩形排列
+// 数字标注在每个区域重心附近；不追求面积精确
 const vennSvg = computed(() => {
   const o = currentOverlap.value
   if (!o) return ''
   const fmt = n => (n || 0).toLocaleString('zh-CN')
-  // 布局：宽 460 × 高 400；大圆（登录）占外框，3 小圆按等边三角形排列
-  const W = 460, H = 400
-  const CX = W / 2, CY = 205  // 3 小圆的中心
-  const R = 82                 // 小圆半径
-  const D = 55                 // 圆心距 → 交集面积约 30%
-  // 3 圆的圆心
-  const p1 = { x: CX,           y: CY - D * 0.7 }   // 上：天梯
-  const p2 = { x: CX - D * 0.85, y: CY + D * 0.5 }  // 左下：周赛
-  const p3 = { x: CX + D * 0.85, y: CY + D * 0.5 }  // 右下：无限道馆
-  // 大圆（登录）
-  const bigR = 175
+  const W = 520, H = 460
+  const CX = W / 2, CY = 230
+  const R = 92                        // 4 个小圆半径
+  const dx = 62, dy = 58              // 圆心相对中心的偏移
+  // 4 圆矩形四角：左上=天梯 L / 右上=周赛 T / 左下=无限 G / 右下=公会 W
+  const pL = { x: CX - dx, y: CY - dy }
+  const pT = { x: CX + dx, y: CY - dy }
+  const pG = { x: CX - dx, y: CY + dy }
+  const pW = { x: CX + dx, y: CY + dy }
+  const bigR = 208
   return `
 <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
   <!-- 登录大圆 -->
-  <circle cx="${CX}" cy="${CY}" r="${bigR}" fill="rgba(180,180,180,0.12)" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <circle cx="${CX}" cy="${CY}" r="${bigR}" fill="rgba(180,180,180,0.10)" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="${CX}" y="${CY - bigR + 20}" text-anchor="middle" fill="#666" font-size="14" font-weight="600">登录</text>
-  <text x="${CX - bigR + 22}" y="${CY + bigR - 15}" text-anchor="start" fill="#888" font-size="12">
+  <text x="${CX - bigR + 22}" y="${CY + bigR - 12}" text-anchor="start" fill="#888" font-size="12">
     仅登录 ${fmt(o.login_only)}
   </text>
 
-  <!-- 3 玩法小圆（半透明相交） -->
-  <circle cx="${p1.x}" cy="${p1.y}" r="${R}" fill="rgba(102,126,234,0.35)" stroke="#667eea" stroke-width="2"/>
-  <circle cx="${p2.x}" cy="${p2.y}" r="${R}" fill="rgba(249,115,22,0.32)" stroke="#f97316" stroke-width="2"/>
-  <circle cx="${p3.x}" cy="${p3.y}" r="${R}" fill="rgba(149,117,205,0.35)" stroke="#9575cd" stroke-width="2"/>
+  <!-- 4 玩法小圆（半透明相交） -->
+  <circle cx="${pL.x}" cy="${pL.y}" r="${R}" fill="rgba(102,126,234,0.30)" stroke="#667eea" stroke-width="2"/>
+  <circle cx="${pT.x}" cy="${pT.y}" r="${R}" fill="rgba(249,115,22,0.28)" stroke="#f97316" stroke-width="2"/>
+  <circle cx="${pG.x}" cy="${pG.y}" r="${R}" fill="rgba(149,117,205,0.30)" stroke="#9575cd" stroke-width="2"/>
+  <circle cx="${pW.x}" cy="${pW.y}" r="${R}" fill="rgba(220,38,38,0.26)" stroke="#dc2626" stroke-width="2"/>
 
   <!-- 玩法标签 -->
-  <text x="${p1.x}" y="${p1.y - R - 6}" text-anchor="middle" fill="#4759c4" font-size="13" font-weight="600">天梯</text>
-  <text x="${p2.x - R - 6}" y="${p2.y + R + 18}" text-anchor="middle" fill="#d15c0f" font-size="13" font-weight="600">周赛</text>
-  <text x="${p3.x + R + 8}" y="${p3.y + R + 18}" text-anchor="middle" fill="#6d4dab" font-size="13" font-weight="600">无限道馆</text>
+  <text x="${pL.x - R + 10}" y="${pL.y - R + 4}"  text-anchor="start" fill="#4759c4" font-size="13" font-weight="700">天梯</text>
+  <text x="${pT.x + R - 10}" y="${pT.y - R + 4}"  text-anchor="end"   fill="#d15c0f" font-size="13" font-weight="700">周赛</text>
+  <text x="${pG.x - R + 10}" y="${pG.y + R - 2}"  text-anchor="start" fill="#6d4dab" font-size="13" font-weight="700">无限道馆</text>
+  <text x="${pW.x + R - 10}" y="${pW.y + R - 2}"  text-anchor="end"   fill="#b32020" font-size="13" font-weight="700">公会战</text>
 
-  <!-- 单玩法：圆心偏离交集方向 -->
-  <text x="${p1.x}"           y="${p1.y - 14}" text-anchor="middle" fill="#4759c4" font-size="14" font-weight="700">${fmt(o.ladder_only)}</text>
-  <text x="${p2.x - 18}"      y="${p2.y + 20}" text-anchor="middle" fill="#d15c0f" font-size="14" font-weight="700">${fmt(o.tournament_only)}</text>
-  <text x="${p3.x + 18}"      y="${p3.y + 20}" text-anchor="middle" fill="#6d4dab" font-size="14" font-weight="700">${fmt(o.gym_only)}</text>
+  <!-- 单玩法（4 圆各自外侧） -->
+  <text x="${pL.x - 30}" y="${pL.y - 22}" text-anchor="middle" fill="#4759c4" font-size="14" font-weight="700">${fmt(o.l)}</text>
+  <text x="${pT.x + 30}" y="${pT.y - 22}" text-anchor="middle" fill="#d15c0f" font-size="14" font-weight="700">${fmt(o.t)}</text>
+  <text x="${pG.x - 30}" y="${pG.y + 28}" text-anchor="middle" fill="#6d4dab" font-size="14" font-weight="700">${fmt(o.g)}</text>
+  <text x="${pW.x + 30}" y="${pW.y + 28}" text-anchor="middle" fill="#b32020" font-size="14" font-weight="700">${fmt(o.w)}</text>
 
-  <!-- 双玩法交集：两圆中点向中心方向偏移 -->
-  <text x="${(p1.x + p2.x) / 2 - 8}" y="${(p1.y + p2.y) / 2 + 6}" text-anchor="middle" fill="#8b3a1d" font-size="12" font-weight="700">${fmt(o.ladder_tournament)}</text>
-  <text x="${(p1.x + p3.x) / 2 + 8}" y="${(p1.y + p3.y) / 2 + 6}" text-anchor="middle" fill="#3f4a97" font-size="12" font-weight="700">${fmt(o.ladder_gym)}</text>
-  <text x="${(p2.x + p3.x) / 2}"     y="${(p2.y + p3.y) / 2 + 24}" text-anchor="middle" fill="#7a3f6f" font-size="12" font-weight="700">${fmt(o.tournament_gym)}</text>
+  <!-- 相邻双玩法交集：上/下/左/右 4 处 -->
+  <text x="${CX}"        y="${pL.y - 4}"  text-anchor="middle" fill="#883a1d" font-size="12" font-weight="700">${fmt(o.lt)}</text>
+  <text x="${CX}"        y="${pG.y + 12}" text-anchor="middle" fill="#8a3a7f" font-size="12" font-weight="700">${fmt(o.gw)}</text>
+  <text x="${pL.x + 4}"  y="${CY - 2}"    text-anchor="start"  fill="#3f4a97" font-size="12" font-weight="700">${fmt(o.lg)}</text>
+  <text x="${pT.x - 4}"  y="${CY - 2}"    text-anchor="end"    fill="#c05840" font-size="12" font-weight="700">${fmt(o.tw)}</text>
 
-  <!-- 三玩法交集：3 圆重心 -->
-  <text x="${CX}" y="${CY + 8}" text-anchor="middle" fill="#4a2b6d" font-size="15" font-weight="800">${fmt(o.all_three)}</text>
+  <!-- 对角双玩法交集（矩形布局中重合区较小，标在中间偏侧位置） -->
+  <text x="${CX - 22}" y="${CY + 14}" text-anchor="middle" fill="#7a3f6f" font-size="11" font-weight="700">${fmt(o.lw)}</text>
+  <text x="${CX + 22}" y="${CY + 14}" text-anchor="middle" fill="#a86ea0" font-size="11" font-weight="700">${fmt(o.tg)}</text>
+
+  <!-- 三玩法交集（4 处，各自靠近对应的三圆重心） -->
+  <text x="${pL.x + 32}" y="${CY - 16}" text-anchor="middle" fill="#5a3d7a" font-size="11" font-weight="700">${fmt(o.ltg)}</text>
+  <text x="${pT.x - 32}" y="${CY - 16}" text-anchor="middle" fill="#8a3a2d" font-size="11" font-weight="700">${fmt(o.ltw)}</text>
+  <text x="${pG.x + 32}" y="${CY + 30}" text-anchor="middle" fill="#5a2d6d" font-size="11" font-weight="700">${fmt(o.lgw)}</text>
+  <text x="${pW.x - 32}" y="${CY + 30}" text-anchor="middle" fill="#7a4a5a" font-size="11" font-weight="700">${fmt(o.tgw)}</text>
+
+  <!-- 四玩法交集：正中心 -->
+  <text x="${CX}" y="${CY + 6}" text-anchor="middle" fill="#3a1d5a" font-size="15" font-weight="800">${fmt(o.ltgw)}</text>
 </svg>
 `.trim()
 })
@@ -1909,12 +1935,15 @@ function initParticipationCharts() {
   const ladder = rows.map(r => pick(r).ladder ?? 0)
   const tournament = rows.map(r => pick(r).tournament ?? 0)
   const infinityGym = rows.map(r => pick(r).infinityGym ?? 0)
+  const guildWar = rows.map(r => pick(r).guildWar ?? 0)
   const ladderRate = rows.map(r => pick(r).ladderRate ?? 0)
   const tournamentRate = rows.map(r => pick(r).tournamentRate ?? 0)
   const infinityGymRate = rows.map(r => pick(r).infinityGymRate ?? 0)
+  const guildWarRate = rows.map(r => pick(r).guildWarRate ?? 0)
   const ladderBpu = rows.map(r => pick(r).ladderBattlesPerUser ?? 0)
   const tournamentBpu = rows.map(r => pick(r).tournamentBattlesPerUser ?? 0)
   const infinityGymBpu = rows.map(r => pick(r).infinityGymBattlesPerUser ?? 0)
+  const guildWarBpu = rows.map(r => pick(r).guildWarBattlesPerUser ?? 0)
 
   // 玩家数走势
   if (participationCountCanvas.value) {
@@ -1929,6 +1958,7 @@ function initParticipationCharts() {
           { label: '天梯参与', data: ladder, borderColor: '#667eea', backgroundColor: 'rgba(102,126,234,0.15)', tension: 0.3, fill: true },
           { label: '周赛参与', data: tournament, borderColor: '#f97316', backgroundColor: 'rgba(249,115,22,0.15)', tension: 0.3, fill: true },
           { label: '无限道馆参与', data: infinityGym, borderColor: '#764ba2', backgroundColor: 'rgba(118,75,162,0.15)', tension: 0.3, fill: true },
+          { label: '公会战参与', data: guildWar, borderColor: '#dc2626', backgroundColor: 'rgba(220,38,38,0.15)', tension: 0.3, fill: true },
         ]
       },
       options: {
@@ -1951,6 +1981,7 @@ function initParticipationCharts() {
           { label: '天梯占比 %', data: ladderRate, borderColor: '#667eea', tension: 0.3 },
           { label: '周赛占比 %', data: tournamentRate, borderColor: '#f97316', tension: 0.3 },
           { label: '无限道馆占比 %', data: infinityGymRate, borderColor: '#764ba2', tension: 0.3 },
+          { label: '公会战占比 %', data: guildWarRate, borderColor: '#dc2626', tension: 0.3 },
         ]
       },
       options: {
@@ -1973,6 +2004,7 @@ function initParticipationCharts() {
           { label: '天梯场均', data: ladderBpu, borderColor: '#667eea', tension: 0.3 },
           { label: '周赛场均', data: tournamentBpu, borderColor: '#f97316', tension: 0.3 },
           { label: '无限道馆场均', data: infinityGymBpu, borderColor: '#764ba2', tension: 0.3 },
+          { label: '公会战场均', data: guildWarBpu, borderColor: '#dc2626', tension: 0.3 },
         ]
       },
       options: {

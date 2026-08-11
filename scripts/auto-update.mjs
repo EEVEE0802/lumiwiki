@@ -172,6 +172,16 @@ export async function updateRegionInfinityGym(region, baseFriday) {
   runCommand(process.execPath, ['--max-old-space-size=4096', 'scripts/process-infinity-gym.mjs', '--region', region])
 }
 
+/**
+ * 公会战数据（GvG1v1，异步 PVP）：仅拉 CSV，不做 process；参与走势脚本会读它做 UV/重合率
+ * 按周分档存到 data/{region}/archive/weekN/guild_war_weekN.csv
+ */
+export async function updateRegionGuildWar(region, weekInfo) {
+  const { week, startDate, endDate } = weekInfo
+  const csvPath = path.join(PROJECT_ROOT, 'data', region, 'archive', `week${week}`, `guild_war_week${week}.csv`)
+  await fetchCsv(region, 'guild-war', startDate, endDate, csvPath)
+}
+
 async function main() {
   const args = process.argv.slice(2)
   const onlyMode = args.find(a => a === '--tournament' || a === '--ladder')?.slice(2) || null
@@ -216,7 +226,17 @@ async function main() {
       }
     }
 
-    // 4. 参与走势（跟着 ladder 一起，失败不阻塞；读取 ladder/tournament/login/gym CSV 聚合）
+    // 3.5 公会战（异步 PVP，只拉 CSV 供参与走势用，失败不阻塞）
+    if (!modeFilter || modeFilter === 'ladder') {
+      try {
+        await updateRegionGuildWar(region, weekInfo)
+        modeSummary.push(`${region}: 公会战`)
+      } catch (e) {
+        console.error(`⚠️  [${region}] 公会战拉取失败（不阻塞其他）: ${e.message}`)
+      }
+    }
+
+    // 4. 参与走势（跟着 ladder 一起，失败不阻塞；读取 ladder/tournament/login/gym/guild_war CSV 聚合）
     if (!modeFilter || modeFilter === 'ladder') {
       await updateRegionParticipation(region, weekInfo.week)
     }

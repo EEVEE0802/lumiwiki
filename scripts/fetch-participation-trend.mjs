@@ -56,6 +56,8 @@ const ladderCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week
 const tournamentCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/tournament_week${week}.csv`)
 // 无限道馆 CSV 是累计的（不按周分），所有周共用一份；参与走势按 part_date 过滤到本周
 const gymCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/gym_infinity.csv`)
+// 公会战 CSV 按周分档，跟 ladder 结构类似
+const guildWarCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/guild_war_week${week}.csv`)
 
 // CSV 解析（处理引号 + 双引号转义）
 function parseCSVLine(line) {
@@ -228,12 +230,18 @@ const gymResult = {
 console.log(`  无限道馆每日 UV:`, gymResult.uv)
 console.log(`  无限道馆每日留存 UV:`, gymResult.retentionUv)
 
+console.log(`处理 guild_war CSV...`)
+const guildWarResult = await dailyDistinct(guildWarCsvPath, createTimeMap)
+console.log(`  公会战每日 UV:`, guildWarResult.uv)
+console.log(`  公会战每日留存 UV:`, guildWarResult.retentionUv)
+
 // 合并所有日期，计算比例 + 场均（全量 + 留存）
 const allDates = [...new Set([
   ...Object.keys(ladderResult.uv),
   ...Object.keys(tournamentResult.uv),
   ...Object.keys(loginResult.uv),
   ...Object.keys(gymResult.uv),
+  ...Object.keys(guildWarResult.uv),
 ])].sort()
 
 const dayMetrics = (res, date) => ({
@@ -243,33 +251,36 @@ const dayMetrics = (res, date) => ({
   retBattles: res.retentionBattles[date] || 0,
 })
 
-// 算 3 玩法（天梯 / 周赛 / 无限道馆）在登录用户中的重合分布
-// 返回 { ladder_only, tournament_only, gym_only, ladder_tournament, ladder_gym, tournament_gym, all_three, login_only }
-// login_only = 登录但未参与任何战斗玩法的玩家数
-// 用法：把 3 个玩法的 Set 与 login Set 一起遍历，按 3-bit 掩码计数
-function computeOverlap(loginSet, ladderSet, tournamentSet, gymSet) {
+// 算 4 玩法（天梯 L / 周赛 T / 无限道馆 G / 公会战 W）在登录用户中的重合分布
+// 4-bit 掩码 LTGW（bit3=L bit2=T bit1=G bit0=W）→ 16 种组合
+// key 命名规则：只玩一个 → 'l' / 't' / 'g' / 'w'；多个 → 按 LTGW 顺序拼接如 'lt' / 'ltg' / 'ltgw'
+// 特殊：全 0（登录但未参与任何战斗）→ 'login_only'；none→ 'none'（一般不会出现，兜底用）
+function computeOverlap(loginSet, ladderSet, tournamentSet, gymSet, guildWarSet) {
+  // 全 16 分区先置 0
   const empty = {
-    ladder_only: 0, tournament_only: 0, gym_only: 0,
-    ladder_tournament: 0, ladder_gym: 0, tournament_gym: 0,
-    all_three: 0, login_only: 0
+    login_only: 0,
+    l: 0, t: 0, g: 0, w: 0,
+    lt: 0, lg: 0, lw: 0, tg: 0, tw: 0, gw: 0,
+    ltg: 0, ltw: 0, lgw: 0, tgw: 0,
+    ltgw: 0,
   }
   if (!loginSet || !loginSet.size) return empty
+  // 掩码 → key 的映射（bit3=L bit2=T bit1=G bit0=W）
+  const KEY_BY_MASK = {
+    0b0000: 'login_only',
+    0b1000: 'l',    0b0100: 't',    0b0010: 'g',    0b0001: 'w',
+    0b1100: 'lt',   0b1010: 'lg',   0b1001: 'lw',   0b0110: 'tg',   0b0101: 'tw',   0b0011: 'gw',
+    0b1110: 'ltg',  0b1101: 'ltw',  0b1011: 'lgw',  0b0111: 'tgw',
+    0b1111: 'ltgw',
+  }
   const out = { ...empty }
   for (const uid of loginSet) {
     const l = ladderSet && ladderSet.has(uid) ? 1 : 0
     const t = tournamentSet && tournamentSet.has(uid) ? 1 : 0
     const g = gymSet && gymSet.has(uid) ? 1 : 0
-    const mask = (l << 2) | (t << 1) | g
-    switch (mask) {
-      case 0b000: out.login_only++; break
-      case 0b100: out.ladder_only++; break
-      case 0b010: out.tournament_only++; break
-      case 0b001: out.gym_only++; break
-      case 0b110: out.ladder_tournament++; break
-      case 0b101: out.ladder_gym++; break
-      case 0b011: out.tournament_gym++; break
-      case 0b111: out.all_three++; break
-    }
+    const w = guildWarSet && guildWarSet.has(uid) ? 1 : 0
+    const mask = (l << 3) | (t << 2) | (g << 1) | w
+    out[KEY_BY_MASK[mask]]++
   }
   return out
 }
@@ -279,16 +290,16 @@ const result = allDates.map(date => {
   const T = dayMetrics(tournamentResult, date)
   const G = dayMetrics(loginResult, date)
   const M = dayMetrics(gymResult, date)     // M = infinity gyM
+  const W = dayMetrics(guildWarResult, date) // W = guild War
 
-  // 天梯/周赛/无限道馆 CSV 里的玩家不一定在 login CSV 里（有极少数事件缺 login，或跨日边界）
-  // 用 loginSet 作为基准算 overlap；如果 login 缺，退化用「3 玩法并集」作基准
+  // 4 玩法 overlap（全量 + 留存两套）
   const overlapAll = computeOverlap(
     loginResult.sets[date] || new Set(),
-    ladderResult.sets[date], tournamentResult.sets[date], gymResult.sets[date]
+    ladderResult.sets[date], tournamentResult.sets[date], gymResult.sets[date], guildWarResult.sets[date]
   )
   const overlapRet = computeOverlap(
     loginResult.retentionSets[date] || new Set(),
-    ladderResult.retentionSets[date], tournamentResult.retentionSets[date], gymResult.retentionSets[date]
+    ladderResult.retentionSets[date], tournamentResult.retentionSets[date], gymResult.retentionSets[date], guildWarResult.retentionSets[date]
   )
 
   return {
@@ -296,25 +307,31 @@ const result = allDates.map(date => {
     ladder: L.uv,
     tournament: T.uv,
     infinityGym: M.uv,
+    guildWar: W.uv,
     login: G.uv,
     ladderRate: G.uv > 0 ? +(L.uv / G.uv * 100).toFixed(2) : 0,
     tournamentRate: G.uv > 0 ? +(T.uv / G.uv * 100).toFixed(2) : 0,
     infinityGymRate: G.uv > 0 ? +(M.uv / G.uv * 100).toFixed(2) : 0,
+    guildWarRate: G.uv > 0 ? +(W.uv / G.uv * 100).toFixed(2) : 0,
     ladderBattlesPerUser: L.uv > 0 ? +(L.battles / L.uv).toFixed(2) : 0,
     tournamentBattlesPerUser: T.uv > 0 ? +(T.battles / T.uv).toFixed(2) : 0,
     infinityGymBattlesPerUser: M.uv > 0 ? +(M.battles / M.uv).toFixed(2) : 0,
+    guildWarBattlesPerUser: W.uv > 0 ? +(W.battles / W.uv).toFixed(2) : 0,
     overlap: overlapAll,
     retention: {
       login: G.retUv,
       ladder: L.retUv,
       tournament: T.retUv,
       infinityGym: M.retUv,
+      guildWar: W.retUv,
       ladderRate: G.retUv > 0 ? +(L.retUv / G.retUv * 100).toFixed(2) : 0,
       tournamentRate: G.retUv > 0 ? +(T.retUv / G.retUv * 100).toFixed(2) : 0,
       infinityGymRate: G.retUv > 0 ? +(M.retUv / G.retUv * 100).toFixed(2) : 0,
+      guildWarRate: G.retUv > 0 ? +(W.retUv / G.retUv * 100).toFixed(2) : 0,
       ladderBattlesPerUser: L.retUv > 0 ? +(L.retBattles / L.retUv).toFixed(2) : 0,
       tournamentBattlesPerUser: T.retUv > 0 ? +(T.retBattles / T.retUv).toFixed(2) : 0,
       infinityGymBattlesPerUser: M.retUv > 0 ? +(M.retBattles / M.retUv).toFixed(2) : 0,
+      guildWarBattlesPerUser: W.retUv > 0 ? +(W.retBattles / W.retUv).toFixed(2) : 0,
       overlap: overlapRet,
     },
   }
@@ -336,5 +353,5 @@ console.log(`\n✓ 输出: ${outputPath}`)
 console.log(`  共 ${result.length} 天`)
 result.forEach(r => {
   const ret = r.retention
-  console.log(`  ${r.date}: 天梯=${r.ladder}(留存${ret.ladder}) 周赛=${r.tournament}(留存${ret.tournament}) 无限道馆=${r.infinityGym}(留存${ret.infinityGym}) 登录=${r.login}(留存${ret.login})`)
+  console.log(`  ${r.date}: 天梯=${r.ladder}(留存${ret.ladder}) 周赛=${r.tournament}(留存${ret.tournament}) 无限道馆=${r.infinityGym}(留存${ret.infinityGym}) 公会战=${r.guildWar}(留存${ret.guildWar}) 登录=${r.login}(留存${ret.login})`)
 })
