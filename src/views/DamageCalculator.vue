@@ -676,8 +676,8 @@ watch([
 
         <div class="input-row">
           <div class="input-group half">
-            <label class="input-label">等级 (1-50)</label>
-            <input v-model.number="leftLevel" type="number" min="1" max="50" class="form-input" />
+            <label class="input-label">等级</label>
+            <input v-model.number="leftLevel" type="number" min="1" class="form-input" />
           </div>
           <div class="input-group half">
             <label class="input-label">突破 (0-10)</label>
@@ -850,8 +850,8 @@ watch([
 
         <div class="input-row">
           <div class="input-group half">
-            <label class="input-label">等级 (1-50)</label>
-            <input v-model.number="rightLevel" type="number" min="1" max="50" class="form-input" />
+            <label class="input-label">等级</label>
+            <input v-model.number="rightLevel" type="number" min="1" class="form-input" />
           </div>
           <div class="input-group half">
             <label class="input-label">突破 (0-10)</label>
