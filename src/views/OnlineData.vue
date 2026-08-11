@@ -3634,16 +3634,23 @@ td {
 .overlap-table td {
   padding: 8px 10px;
   border-bottom: 1px solid #ecebff;
+  color: #2a2a4a;
 }
 
 .overlap-table td.num {
   text-align: right;
   font-variant-numeric: tabular-nums;
+  color: #1a1a3a;
+  font-weight: 600;
 }
 
 .overlap-table tr.is-all {
   background: #f9f5ff;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.overlap-table tr.is-all td {
+  color: #4a2b6d;
 }
 
 .overlap-color-dot {
