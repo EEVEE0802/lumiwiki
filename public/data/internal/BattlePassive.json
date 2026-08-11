@@ -3460,6 +3460,15 @@
     "Priority": 1
   },
   {
+    "Id": 1125002,
+    "name": "P_Skill_1125002",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1125002",
+    "DesParam": [],
+    "BuffList": [],
+    "Priority": 0
+  },
+  {
     "Id": 1125401,
     "name": "P_Skill_1125401",
     "icon": "Odd_HurtPlus",
@@ -3783,10 +3792,28 @@
     "Priority": 0
   },
   {
+    "Id": 1132501,
+    "name": "P_Skill_1132501",
+    "icon": "Start_Palsy",
+    "Des": "P_SkillText_1132501",
+    "DesParam": [],
+    "BuffList": [],
+    "Priority": 0
+  },
+  {
     "Id": 1133501,
     "name": "P_Skill_1133501",
     "icon": "Start_Palsy",
     "Des": "P_SkillText_1133501",
+    "DesParam": [],
+    "BuffList": [],
+    "Priority": 0
+  },
+  {
+    "Id": 1133901,
+    "name": "P_Skill_1133901",
+    "icon": "Start_Palsy",
+    "Des": "P_SkillText_1133901",
     "DesParam": [],
     "BuffList": [],
     "Priority": 0
