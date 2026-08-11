@@ -836,8 +836,8 @@ const gymFloorGroups = computed(() => {
     if (floor.floor === key) g.boss = floor
   }
   const result = [...groups.values()]
-  result.sort((a, b) => a.key - b.key)
-  for (const g of result) g.floors.sort((a, b) => a.floor - b.floor)
+  result.sort((a, b) => b.key - a.key)
+  for (const g of result) g.floors.sort((a, b) => b.floor - a.floor)
   return result
 })
 
