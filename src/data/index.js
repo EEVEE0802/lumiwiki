@@ -43,9 +43,11 @@ async function loadData(name) {
   }
 
   // 先尝试加载加密版本 (.encoded)
+  // cache: 'no-cache' 强制发条件请求（If-None-Match），服务器数据没变返回 304 秒回，
+  // 变了才下载 —— 避免 python http.server 不发 Cache-Control 导致浏览器长期强缓存老数据
   let data
   try {
-    const encodedResp = await fetch(`${prefix}/${effectiveName}.json.encoded`)
+    const encodedResp = await fetch(`${prefix}/${effectiveName}.json.encoded`, { cache: 'no-cache' })
     if (encodedResp.ok) {
       const encoded = await encodedResp.text()
       // 解密：Base64 解码 → Gzip 解压 → JSON 解析
@@ -57,7 +59,7 @@ async function loadData(name) {
     }
   } catch {
     // 加密版本不存在或失败，加载原始 JSON
-    const resp = await fetch(`${prefix}/${effectiveName}.json`)
+    const resp = await fetch(`${prefix}/${effectiveName}.json`, { cache: 'no-cache' })
     data = await resp.json()
   }
 

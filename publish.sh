@@ -38,14 +38,23 @@ PORT=3005
 # 检查端口是否被占用
 if netstat -ano | grep -q ":$PORT "; then
   echo "⚠️  端口 $PORT 已被占用"
-  echo "正在尝试停止旧服务器..."
+  echo "正在停止占用该端口的所有 python 进程（保留 vite/node 等其他服务）..."
 
-  # 查找并终止占用端口的进程（Windows）
-  PID=$(netstat -ano | grep ":$PORT " | awk 'NR==1 {print $5}' | head -1)
-  if [ -n "$PID" ]; then
-    taskkill /F /PID $PID > /dev/null 2>&1
+  # 找出所有绑在 $PORT 上的 PID（去重）
+  # 之前用 awk 'NR==1' 只杀第一个，反复跑会堆僵尸 python 进程；且不区分进程类型可能误伤 vite dev。
+  # 现在：收集全部 PID → 只杀其中的 python.exe → 保留其他（node/vite dev 等）
+  # ⚠ MSYS_NO_PATHCONV=1：Git Bash 会把 /FI /FO /NH 当路径转换成 C:/... 导致 tasklist 报错，需禁用
+  killed=0
+  for pid in $(netstat -ano | grep ":$PORT " | awk '{print $5}' | sort -u); do
+    if MSYS_NO_PATHCONV=1 tasklist /FI "PID eq $pid" /FO CSV /NH 2>/dev/null | grep -qi "python"; then
+      MSYS_NO_PATHCONV=1 taskkill /F /PID $pid > /dev/null 2>&1 && killed=$((killed+1))
+    fi
+  done
+  if [ $killed -gt 0 ]; then
     sleep 1
-    echo "✓ 旧服务器已停止"
+    echo "✓ 已停止 $killed 个 python 服务进程"
+  else
+    echo "  端口被占用但未发现 python 进程（可能是 vite dev/其他服务，未动）"
   fi
   echo ""
 fi
