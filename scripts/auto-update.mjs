@@ -141,8 +141,19 @@ export async function updateRegionMode(region, mode, weekInfo) {
 /**
  * 拉取参与走势（内部会拉 login CSV + 聚合），失败不阻塞
  */
-export async function updateRegionParticipation(region, week) {
+export async function updateRegionParticipation(region, week, baseFriday) {
   try {
+    // 先拉 recharge CSV（累计全量，用于给玩家打付费档位）
+    // 单独 try：recharge 失败不影响参与走势主流程
+    try {
+      const rechargeCsvPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'recharge.csv')
+      const now = new Date()
+      const pad = n => String(n).padStart(2, '0')
+      const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`
+      await fetchCsv(region, 'recharge', baseFriday, today, rechargeCsvPath)
+    } catch (e) {
+      console.error(`⚠️  [${region}] recharge 拉取失败（不阻塞参与走势）: ${e.message}`)
+    }
     runCommand(process.execPath, ['scripts/fetch-participation-trend.mjs', '--week', String(week), '--region', region])
   } catch (e) {
     console.error(`⚠️  [${region}] 参与走势生成失败（不阻塞发布）: ${e.message}`)
@@ -242,7 +253,7 @@ async function main() {
 
     // 4. 参与走势（跟着 ladder 一起，失败不阻塞；读取 ladder/tournament/login/gym/guild_war CSV 聚合）
     if (!modeFilter || modeFilter === 'ladder') {
-      await updateRegionParticipation(region, weekInfo.week)
+      await updateRegionParticipation(region, weekInfo.week, config.baseFriday)
     }
 
     // 5. 推荐配队（跟着最新的 ladder/tournament 数据重算）

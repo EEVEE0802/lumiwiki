@@ -46,6 +46,7 @@ export const CSV_HEADERS = {
   'infinity-gym': ['part_date', 'game_id_str', 'b_role_id', 'gym_uid', 'player_lumis', 'battle_result', 'trainer_id'],
   'guild-war':    ['part_date', 'game_id_str', 'b_role_id', 'player_type', 'player_lumis', 'battle_result', 'trainer_id'],
   assist:         ['part_date', 'battle_uid', 'b_role_id'],
+  recharge:       ['b_role_id', 'max_recharge_total'],
 }
 
 function buildSql(mode, startDate, endDate, cfg) {
@@ -172,6 +173,25 @@ function buildSql(mode, startDate, endDate, cfg) {
         AND "$part_date" <= '${endDate}'
         AND "#event_name" = 'use_assist_lumi'
         AND ${zoneFilter}
+    `.trim().replace(/\s+/g, ' ')
+  }
+
+  if (mode === 'recharge') {
+    // 玩家累计充值：每个 role_id 取其历史所有 recharge 事件里最大的 b_recharge_total（=当前累计充值总额，单位：分）
+    // 用 MAX 而不是 LAST，避免撤单/退款事件导致 recharge_total 下降后取到低值
+    // ⚠️ b_recharge_total 数数里是 string 类型，直接 MAX 是字典序（'987400' > '3712000'）
+    //    必须 TRY_CAST 成 bigint 再 MAX
+    // 累计口径（跟无限道馆一样按 baseFriday 到今天拉全量）
+    return `
+      SELECT
+        b_role_id,
+        MAX(TRY_CAST(b_recharge_total AS bigint)) AS max_recharge_total
+      FROM ${tableName}
+      WHERE "$part_date" >= '${startDate}'
+        AND "$part_date" <= '${endDate}'
+        AND "#event_name" = 'recharge'
+        AND ${zoneFilter}
+      GROUP BY b_role_id
     `.trim().replace(/\s+/g, ' ')
   }
 

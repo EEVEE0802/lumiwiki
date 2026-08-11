@@ -85,7 +85,30 @@
         <div class="participation-view-mode" v-if="hasRetentionData">
           <span class="view-mode-label">统计口径</span>
           <button :class="['view-mode-btn', { active: !participationRetention }]" @click="participationRetention = false">全量</button>
-          <button :class="['view-mode-btn', { active: participationRetention }]" @click="participationRetention = true">留存（创号≥7天）</button>
+          <button :class="['view-mode-btn', { active: participationRetention }]" @click="participationRetention = true">留存(创号≥7天)</button>
+        </div>
+
+        <!-- 付费档多选筛选器（点击 chip 切换选中；始终保留至少一档；默认全选） -->
+        <div class="participation-tier-picker" v-if="hasTierData">
+          <span class="view-mode-label">付费档</span>
+          <button
+            v-for="tier in ALL_PAYMENT_TIERS"
+            :key="tier"
+            :class="['tier-chip', { active: selectedTiers.has(tier) }]"
+            :style="selectedTiers.has(tier) ? { background: PAYMENT_TIER_META[tier].color, borderColor: PAYMENT_TIER_META[tier].color } : { color: PAYMENT_TIER_META[tier].color, borderColor: PAYMENT_TIER_META[tier].color }"
+            @click="toggleTier(tier)"
+            :title="PAYMENT_TIER_META[tier].desc"
+          >
+            {{ PAYMENT_TIER_META[tier].label }}
+          </button>
+          <button
+            class="tier-chip tier-chip-all"
+            :class="{ active: isAllTiersSelected() }"
+            @click="selectAllTiers"
+            title="选中全部 5 档 = 不筛选（等同于顶层汇总）"
+          >
+            全部
+          </button>
         </div>
 
         <div v-if="!filteredParticipationDates.length" class="no-data-box">
@@ -966,6 +989,140 @@ let participationBpuChart = null
 const participationRetention = ref(false) // false=全量, true=留存玩家（创号≥7天）
 const selectedOverlapWeek = ref(null) // 周重合率的当前选中周次（默认最近一周）
 
+// 付费档筛选（多选 + 默认全选）—— 5 档：0氪 / 小R / 中R / 大R / 超R
+const ALL_PAYMENT_TIERS = ['nonPayer', 'small', 'mid', 'large', 'mega']
+const PAYMENT_TIER_META = {
+  nonPayer: { label: '0 氪',   desc: '未充值',            color: '#9ca3af' },
+  small:    { label: '小 R',   desc: '0 ~ 500 元',        color: '#60a5fa' },
+  mid:      { label: '中 R',   desc: '500 ~ 5000 元',     color: '#8b5cf6' },
+  large:    { label: '大 R',   desc: '5000 ~ 20000 元',   color: '#ec4899' },
+  mega:     { label: '超 R',   desc: '> 20000 元',        color: '#dc2626' },
+}
+const selectedTiers = ref(new Set(ALL_PAYMENT_TIERS))  // 默认全选
+
+// 切换某档选中状态
+function toggleTier(tier) {
+  const s = new Set(selectedTiers.value)
+  if (s.has(tier)) s.delete(tier)
+  else s.add(tier)
+  if (s.size === 0) return   // 至少保留一个（不允许全部取消）
+  selectedTiers.value = s
+}
+// 全选 / 反选
+function selectAllTiers() {
+  selectedTiers.value = new Set(ALL_PAYMENT_TIERS)
+}
+function isAllTiersSelected() {
+  return selectedTiers.value.size === ALL_PAYMENT_TIERS.length
+}
+
+// 合并多个 tier 的数值字段（付费分档不重叠，可以直接相加）
+// 输入：一个"每日行"或"周汇总对象"，返回按 selectedTiers 求和后的对象
+// 老 JSON 没 byTier / weekByTier 时，直接返回原对象（fallback = 全量视图）
+function mergeTiersDaily(row) {
+  if (!row) return row
+  if (!row.byTier || isAllTiersSelected()) return row  // 全选 = 直接用顶层（更准确）
+  const selected = [...selectedTiers.value]
+  const acc = {
+    date: row.date,
+    ladder: 0, tournament: 0, infinityGym: 0, guildWar: 0, login: 0,
+    ladderRate: 0, tournamentRate: 0, infinityGymRate: 0, guildWarRate: 0,
+    ladderBattlesPerUser: 0, tournamentBattlesPerUser: 0, infinityGymBattlesPerUser: 0, guildWarBattlesPerUser: 0,
+    overlap: null,
+    retention: null,
+  }
+  // battles 一并累加（用于反算场均）
+  let ladderBattles = 0, tournamentBattles = 0, gymBattles = 0, gwBattles = 0
+  const overlap = {
+    login_only: 0, l: 0, t: 0, g: 0, w: 0,
+    lt: 0, lg: 0, lw: 0, tg: 0, tw: 0, gw: 0,
+    ltg: 0, ltw: 0, lgw: 0, tgw: 0, ltgw: 0,
+  }
+  const retention = { login: 0, ladder: 0, tournament: 0, infinityGym: 0, guildWar: 0 }
+  let retLadderBattles = 0, retTournamentBattles = 0, retGymBattles = 0, retGwBattles = 0
+  const retOverlap = { ...overlap }
+
+  for (const tier of selected) {
+    const t = row.byTier[tier]
+    if (!t) continue
+    acc.ladder += t.ladder || 0
+    acc.tournament += t.tournament || 0
+    acc.infinityGym += t.infinityGym || 0
+    acc.guildWar += t.guildWar || 0
+    acc.login += t.login || 0
+    ladderBattles     += (t.ladderBattlesPerUser || 0) * (t.ladder || 0)
+    tournamentBattles += (t.tournamentBattlesPerUser || 0) * (t.tournament || 0)
+    gymBattles        += (t.infinityGymBattlesPerUser || 0) * (t.infinityGym || 0)
+    gwBattles         += (t.guildWarBattlesPerUser || 0) * (t.guildWar || 0)
+    if (t.overlap) for (const k of Object.keys(overlap)) overlap[k] += t.overlap[k] || 0
+    if (t.retention) {
+      retention.login += t.retention.login || 0
+      retention.ladder += t.retention.ladder || 0
+      retention.tournament += t.retention.tournament || 0
+      retention.infinityGym += t.retention.infinityGym || 0
+      retention.guildWar += t.retention.guildWar || 0
+      retLadderBattles     += (t.retention.ladderBattlesPerUser || 0) * (t.retention.ladder || 0)
+      retTournamentBattles += (t.retention.tournamentBattlesPerUser || 0) * (t.retention.tournament || 0)
+      retGymBattles        += (t.retention.infinityGymBattlesPerUser || 0) * (t.retention.infinityGym || 0)
+      retGwBattles         += (t.retention.guildWarBattlesPerUser || 0) * (t.retention.guildWar || 0)
+      if (t.retention.overlap) for (const k of Object.keys(retOverlap)) retOverlap[k] += t.retention.overlap[k] || 0
+    }
+  }
+
+  const rate = (part, total) => total > 0 ? +(part / total * 100).toFixed(2) : 0
+  const bpu = (b, uv) => uv > 0 ? +(b / uv).toFixed(2) : 0
+  acc.ladderRate = rate(acc.ladder, acc.login)
+  acc.tournamentRate = rate(acc.tournament, acc.login)
+  acc.infinityGymRate = rate(acc.infinityGym, acc.login)
+  acc.guildWarRate = rate(acc.guildWar, acc.login)
+  acc.ladderBattlesPerUser = bpu(ladderBattles, acc.ladder)
+  acc.tournamentBattlesPerUser = bpu(tournamentBattles, acc.tournament)
+  acc.infinityGymBattlesPerUser = bpu(gymBattles, acc.infinityGym)
+  acc.guildWarBattlesPerUser = bpu(gwBattles, acc.guildWar)
+  acc.overlap = overlap
+  acc.retention = {
+    ...retention,
+    ladderRate: rate(retention.ladder, retention.login),
+    tournamentRate: rate(retention.tournament, retention.login),
+    infinityGymRate: rate(retention.infinityGym, retention.login),
+    guildWarRate: rate(retention.guildWar, retention.login),
+    ladderBattlesPerUser: bpu(retLadderBattles, retention.ladder),
+    tournamentBattlesPerUser: bpu(retTournamentBattles, retention.tournament),
+    infinityGymBattlesPerUser: bpu(retGymBattles, retention.infinityGym),
+    guildWarBattlesPerUser: bpu(retGwBattles, retention.guildWar),
+    overlap: retOverlap,
+  }
+  return acc
+}
+
+// 周汇总合并（weekByTier 里每档只有 { weekLoginBase, weekOverlap, retentionWeekLoginBase, retentionWeekOverlap }）
+function mergeTiersWeek(weekEntry) {
+  if (!weekEntry) return null
+  if (!weekEntry.weekByTier || isAllTiersSelected()) return weekEntry  // 全选 = 直接用顶层
+  const overlap = {
+    login_only: 0, l: 0, t: 0, g: 0, w: 0,
+    lt: 0, lg: 0, lw: 0, tg: 0, tw: 0, gw: 0,
+    ltg: 0, ltw: 0, lgw: 0, tgw: 0, ltgw: 0,
+  }
+  const retOverlap = { ...overlap }
+  let weekLoginBase = 0, retWeekLoginBase = 0
+  for (const tier of selectedTiers.value) {
+    const t = weekEntry.weekByTier[tier]
+    if (!t) continue
+    weekLoginBase += t.weekLoginBase || 0
+    retWeekLoginBase += t.retentionWeekLoginBase || 0
+    if (t.weekOverlap) for (const k of Object.keys(overlap)) overlap[k] += t.weekOverlap[k] || 0
+    if (t.retentionWeekOverlap) for (const k of Object.keys(retOverlap)) retOverlap[k] += t.retentionWeekOverlap[k] || 0
+  }
+  return {
+    ...weekEntry,
+    weekLoginBase,
+    weekOverlap: overlap,
+    retentionWeekLoginBase: retWeekLoginBase,
+    retentionWeekOverlap: retOverlap,
+  }
+}
+
 // 当前统计数据（支持多段位合并）
 const currentStats = computed(() => {
   const keys = getDataKeys()
@@ -1777,6 +1934,7 @@ async function loadAllParticipationData() {
         weekLoginBase: json.weekLoginBase || 0,
         retentionWeekOverlap: json.retentionWeekOverlap || null,
         retentionWeekLoginBase: json.retentionWeekLoginBase || 0,
+        weekByTier: json.weekByTier || null,   // 付费档拆分（老 JSON 没有）
       })
     }
     for (const row of json.dates || []) {
@@ -1795,7 +1953,8 @@ async function loadAllParticipationData() {
         infinityGymBattlesPerUser: row.infinityGymBattlesPerUser || 0,
         guildWarBattlesPerUser: row.guildWarBattlesPerUser || 0,
         overlap: row.overlap || null,
-        retention: row.retention || null
+        retention: row.retention || null,
+        byTier: row.byTier || null,   // 付费档拆分（老 JSON 没有）
       })
     }
   }
@@ -1820,7 +1979,7 @@ async function loadAllParticipationData() {
   }
 }
 
-// 按当前日期范围筛选后的数据（升序）
+// 按当前日期范围筛选后的数据（升序），并根据选中付费档合并
 const filteredParticipationDates = computed(() => {
   const map = participationAllData.value
   const s = participationStartDate.value
@@ -1828,7 +1987,11 @@ const filteredParticipationDates = computed(() => {
   if (!s || !e || !map.size) return []
   const rows = []
   for (const [date, row] of map.entries()) {
-    if (date >= s && date <= e) rows.push({ date, ...row })
+    if (date >= s && date <= e) {
+      // 依据当前选中付费档合并；老 JSON 无 byTier 时 mergeTiersDaily 会 fallback 返回原对象
+      const merged = mergeTiersDaily({ date, ...row })
+      rows.push(merged)
+    }
   }
   rows.sort((a, b) => (a.date < b.date ? -1 : 1))
   return rows
@@ -1847,6 +2010,14 @@ const allDatesMax = computed(() => {
 const hasRetentionData = computed(() => {
   for (const row of participationAllData.value.values()) {
     if (row.retention) return true
+  }
+  return false
+})
+
+// 数据集中是否含付费档拆分（老数据无 byTier，隐藏付费档筛选器）
+const hasTierData = computed(() => {
+  for (const row of participationAllData.value.values()) {
+    if (row.byTier) return true
   }
   return false
 })
@@ -1871,9 +2042,10 @@ const availableOverlapDates = computed(() => {
     .sort((a, b) => (a < b ? 1 : -1))
 })
 
-// 当日 overlap（跟随全量/留存开关）
+// 当日 overlap（跟随全量/留存 + 付费档筛选）
+// 走 filteredParticipationDates 里的已 merge 数据，保证跟走势图口径一致
 const currentOverlap = computed(() => {
-  const row = participationAllData.value.get(overlapDate.value)
+  const row = filteredParticipationDates.value.find(r => r.date === overlapDate.value)
   if (!row) return null
   const o = participationRetention.value ? row.retention?.overlap : row.overlap
   return o || null
@@ -1881,7 +2053,7 @@ const currentOverlap = computed(() => {
 
 // 当日基准：登录玩家数（用于算占比）
 const currentOverlapLoginBase = computed(() => {
-  const row = participationAllData.value.get(overlapDate.value)
+  const row = filteredParticipationDates.value.find(r => r.date === overlapDate.value)
   if (!row) return 0
   return participationRetention.value ? (row.retention?.login || 0) : (row.login || 0)
 })
@@ -1980,16 +2152,23 @@ const availableOverlapWeeks = computed(() => {
 // 是否有周重合率数据
 const hasWeekOverlapData = computed(() => participationWeekOverlaps.value.size > 0)
 
+// 当前选中周的 weekEntry（跟随全量/留存 + 付费档筛选）
+const currentWeekEntry = computed(() => {
+  const w = participationWeekOverlaps.value.get(selectedOverlapWeek.value)
+  if (!w) return null
+  return mergeTiersWeek(w)
+})
+
 // 当前选中周的 weekOverlap（跟随全量/留存开关）
 const currentWeekOverlap = computed(() => {
-  const w = participationWeekOverlaps.value.get(selectedOverlapWeek.value)
+  const w = currentWeekEntry.value
   if (!w) return null
   return participationRetention.value ? w.retentionWeekOverlap : w.weekOverlap
 })
 
 // 当前选中周的登录基数
 const currentWeekLoginBase = computed(() => {
-  const w = participationWeekOverlaps.value.get(selectedOverlapWeek.value)
+  const w = currentWeekEntry.value
   if (!w) return 0
   return participationRetention.value ? w.retentionWeekLoginBase : w.weekLoginBase
 })
@@ -3554,6 +3733,50 @@ td {
   justify-content: center;
   gap: 8px;
   margin-bottom: 20px;
+}
+
+/* 付费档 chip 多选 */
+.participation-tier-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.participation-tier-picker .view-mode-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: bold;
+}
+.tier-chip {
+  padding: 6px 14px;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: #666;
+}
+.tier-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.tier-chip.active {
+  color: white;
+}
+.tier-chip-all {
+  border-style: dashed;
+  color: #667eea;
+  border-color: #667eea;
+}
+.tier-chip-all.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+  border-style: solid;
 }
 .participation-view-mode .view-mode-label {
   font-size: 0.9rem;
