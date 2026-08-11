@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-11T05:15:47.759Z",
+  "updateTime": "2026-08-11T07:41:30.061Z",
   "week": 5,
   "region": "overseas",
   "startTime": "2026-08-07",
@@ -17,6 +17,16 @@
       "ladderBattlesPerUser": 9.43,
       "tournamentBattlesPerUser": 7,
       "infinityGymBattlesPerUser": 55.07,
+      "overlap": {
+        "ladder_only": 197,
+        "tournament_only": 7,
+        "gym_only": 194,
+        "ladder_tournament": 2,
+        "ladder_gym": 148,
+        "tournament_gym": 23,
+        "all_three": 36,
+        "login_only": 1269
+      },
       "retention": {
         "login": 1604,
         "ladder": 346,
@@ -27,7 +37,17 @@
         "infinityGymRate": 23.57,
         "ladderBattlesPerUser": 9.23,
         "tournamentBattlesPerUser": 7.17,
-        "infinityGymBattlesPerUser": 55.81
+        "infinityGymBattlesPerUser": 55.81,
+        "overlap": {
+          "ladder_only": 176,
+          "tournament_only": 7,
+          "gym_only": 187,
+          "ladder_tournament": 2,
+          "ladder_gym": 135,
+          "tournament_gym": 23,
+          "all_three": 33,
+          "login_only": 1041
+        }
       }
     },
     {
@@ -42,6 +62,16 @@
       "ladderBattlesPerUser": 9.22,
       "tournamentBattlesPerUser": 7.27,
       "infinityGymBattlesPerUser": 50.23,
+      "overlap": {
+        "ladder_only": 144,
+        "tournament_only": 35,
+        "gym_only": 262,
+        "ladder_tournament": 17,
+        "ladder_gym": 181,
+        "tournament_gym": 57,
+        "all_three": 53,
+        "login_only": 1225
+      },
       "retention": {
         "login": 1572,
         "ladder": 325,
@@ -52,7 +82,17 @@
         "infinityGymRate": 32.19,
         "ladderBattlesPerUser": 8.51,
         "tournamentBattlesPerUser": 7.59,
-        "infinityGymBattlesPerUser": 52.88
+        "infinityGymBattlesPerUser": 52.88,
+        "overlap": {
+          "ladder_only": 115,
+          "tournament_only": 34,
+          "gym_only": 256,
+          "ladder_tournament": 16,
+          "ladder_gym": 148,
+          "tournament_gym": 56,
+          "all_three": 46,
+          "login_only": 901
+        }
       }
     },
     {
@@ -67,6 +107,16 @@
       "ladderBattlesPerUser": 10.9,
       "tournamentBattlesPerUser": 5.78,
       "infinityGymBattlesPerUser": 39.71,
+      "overlap": {
+        "ladder_only": 193,
+        "tournament_only": 40,
+        "gym_only": 253,
+        "ladder_tournament": 25,
+        "ladder_gym": 195,
+        "tournament_gym": 53,
+        "all_three": 59,
+        "login_only": 1220
+      },
       "retention": {
         "login": 1591,
         "ladder": 355,
@@ -77,7 +127,17 @@
         "infinityGymRate": 31.24,
         "ladderBattlesPerUser": 9.97,
         "tournamentBattlesPerUser": 5.93,
-        "infinityGymBattlesPerUser": 41.8
+        "infinityGymBattlesPerUser": 41.8,
+        "overlap": {
+          "ladder_only": 133,
+          "tournament_only": 40,
+          "gym_only": 246,
+          "ladder_tournament": 24,
+          "ladder_gym": 146,
+          "tournament_gym": 53,
+          "all_three": 52,
+          "login_only": 897
+        }
       }
     },
     {
@@ -92,6 +152,16 @@
       "ladderBattlesPerUser": 11.85,
       "tournamentBattlesPerUser": 3.18,
       "infinityGymBattlesPerUser": 34.14,
+      "overlap": {
+        "ladder_only": 204,
+        "tournament_only": 6,
+        "gym_only": 264,
+        "ladder_tournament": 1,
+        "ladder_gym": 175,
+        "tournament_gym": 4,
+        "all_three": 6,
+        "login_only": 1359
+      },
       "retention": {
         "login": 1565,
         "ladder": 282,
@@ -102,7 +172,17 @@
         "infinityGymRate": 25.69,
         "ladderBattlesPerUser": 11.42,
         "tournamentBattlesPerUser": 3.31,
-        "infinityGymBattlesPerUser": 35.92
+        "infinityGymBattlesPerUser": 35.92,
+        "overlap": {
+          "ladder_only": 135,
+          "tournament_only": 6,
+          "gym_only": 251,
+          "ladder_tournament": 0,
+          "ladder_gym": 141,
+          "tournament_gym": 4,
+          "all_three": 6,
+          "login_only": 1022
+        }
       }
     },
     {
@@ -117,6 +197,16 @@
       "ladderBattlesPerUser": 11.03,
       "tournamentBattlesPerUser": 0,
       "infinityGymBattlesPerUser": 22.33,
+      "overlap": {
+        "ladder_only": 110,
+        "tournament_only": 0,
+        "gym_only": 154,
+        "ladder_tournament": 0,
+        "ladder_gym": 79,
+        "tournament_gym": 0,
+        "all_three": 0,
+        "login_only": 1038
+      },
       "retention": {
         "login": 1135,
         "ladder": 120,
@@ -127,7 +217,17 @@
         "infinityGymRate": 18.15,
         "ladderBattlesPerUser": 8.18,
         "tournamentBattlesPerUser": 0,
-        "infinityGymBattlesPerUser": 21.98
+        "infinityGymBattlesPerUser": 21.98,
+        "overlap": {
+          "ladder_only": 67,
+          "tournament_only": 0,
+          "gym_only": 153,
+          "ladder_tournament": 0,
+          "ladder_gym": 53,
+          "tournament_gym": 0,
+          "all_three": 0,
+          "login_only": 862
+        }
       }
     }
   ]

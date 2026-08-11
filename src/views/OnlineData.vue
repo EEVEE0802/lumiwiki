@@ -117,6 +117,55 @@
               <canvas ref="participationBpuCanvas"></canvas>
             </div>
           </div>
+
+          <!-- 玩法重合率（文氏图 + 单日数字表） -->
+          <div v-if="hasOverlapData" class="participation-chart-block">
+            <h3>玩法重合率</h3>
+            <p class="chart-subtitle">
+              选中日期登录玩家中，参与「天梯 / 周赛 / 无限道馆」这三种玩法的重合情况
+              <span v-if="participationRetention" style="color: #764ba2;">（当前口径：留存玩家）</span>
+            </p>
+            <div class="overlap-day-picker">
+              <label>选择日期：</label>
+              <select v-model="overlapDate" class="overlap-date-select">
+                <option v-for="d in availableOverlapDates" :key="d" :value="d">{{ d }}</option>
+              </select>
+              <span class="overlap-day-summary" v-if="currentOverlap">
+                当日登录 <b>{{ formatNumber(currentOverlapLoginBase) }}</b> 人
+              </span>
+            </div>
+            <div v-if="currentOverlap" class="overlap-body">
+              <!-- 左：文氏图 -->
+              <div class="venn-container" v-html="vennSvg"></div>
+              <!-- 右：数字表 -->
+              <div class="overlap-table-wrap">
+                <table class="overlap-table">
+                  <thead>
+                    <tr>
+                      <th>参与组合</th>
+                      <th>人数</th>
+                      <th>占登录 %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="row in overlapRows" :key="row.key" :class="{ 'is-all': row.key === 'all_three' }">
+                      <td>
+                        <span class="overlap-color-dot" :style="{ background: row.color }"></span>
+                        {{ row.label }}
+                      </td>
+                      <td class="num">{{ formatNumber(row.count) }}</td>
+                      <td class="num">{{ row.pct }}%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div v-else class="overlap-empty">该日期暂无重合率数据</div>
+          </div>
+          <div v-else class="participation-chart-block overlap-empty-block">
+            <h3>玩法重合率</h3>
+            <p class="chart-subtitle">该数据周尚未生成重合率信息（需下一次每小时任务更新）</p>
+          </div>
         </div>
       </template>
     </div>
@@ -1673,6 +1722,7 @@ async function loadAllParticipationData() {
         ladderBattlesPerUser: row.ladderBattlesPerUser || 0,
         tournamentBattlesPerUser: row.tournamentBattlesPerUser || 0,
         infinityGymBattlesPerUser: row.infinityGymBattlesPerUser || 0,
+        overlap: row.overlap || null,
         retention: row.retention || null
       })
     }
@@ -1727,6 +1777,125 @@ const hasRetentionData = computed(() => {
   }
   return false
 })
+
+// === 玩法重合率相关 ===
+const overlapDate = ref('')  // 用户选中的日期（默认最近一天）
+
+// 数据集中是否含 overlap 信息（老周次没有）
+const hasOverlapData = computed(() => {
+  for (const row of participationAllData.value.values()) {
+    if (row.overlap) return true
+  }
+  return false
+})
+
+// 可选的重合率日期列表：仅包含 overlap 非空的日期，按时间倒序（最近的在前）
+const availableOverlapDates = computed(() => {
+  const rows = filteredParticipationDates.value.filter(r => {
+    const src = participationRetention.value ? r.retention?.overlap : r.overlap
+    return src && Object.values(src).some(v => v > 0)
+  })
+  return rows.map(r => r.date).sort((a, b) => (a < b ? 1 : -1))
+})
+
+// 当日 overlap（跟随全量/留存开关）
+const currentOverlap = computed(() => {
+  const row = participationAllData.value.get(overlapDate.value)
+  if (!row) return null
+  const o = participationRetention.value ? row.retention?.overlap : row.overlap
+  return o && Object.values(o).some(v => v > 0) ? o : null
+})
+
+// 当日基准：登录玩家数（用于算占比）
+const currentOverlapLoginBase = computed(() => {
+  const row = participationAllData.value.get(overlapDate.value)
+  if (!row) return 0
+  return participationRetention.value ? (row.retention?.login || 0) : (row.login || 0)
+})
+
+// 重合率的 8 种分区显示配置（顺序：三玩法都玩 → 两玩法 → 单玩法 → 仅登录）
+const OVERLAP_ROWS_CONFIG = [
+  { key: 'all_three',         label: '三玩法都参与（天梯 + 周赛 + 无限）', color: '#764ba2' },
+  { key: 'ladder_tournament', label: '天梯 + 周赛',                     color: '#e0834a' },
+  { key: 'ladder_gym',        label: '天梯 + 无限道馆',                 color: '#5a86bd' },
+  { key: 'tournament_gym',    label: '周赛 + 无限道馆',                 color: '#a86ea0' },
+  { key: 'ladder_only',       label: '仅天梯',                          color: '#667eea' },
+  { key: 'tournament_only',   label: '仅周赛',                          color: '#f97316' },
+  { key: 'gym_only',          label: '仅无限道馆',                      color: '#9575cd' },
+  { key: 'login_only',        label: '仅登录（未参与任何战斗）',        color: '#bbbbbb' },
+]
+
+const overlapRows = computed(() => {
+  const o = currentOverlap.value
+  const base = currentOverlapLoginBase.value
+  if (!o) return []
+  return OVERLAP_ROWS_CONFIG.map(cfg => {
+    const count = o[cfg.key] || 0
+    const pct = base > 0 ? (count / base * 100).toFixed(1) : '0.0'
+    return { ...cfg, count, pct }
+  })
+})
+
+// 生成 SVG 文氏图：登录大圆包住 3 个玩法小圆（天梯/周赛/无限道馆两两相交，中心三交）
+// 数字标注在每个区域重心处；不追求面积精确
+const vennSvg = computed(() => {
+  const o = currentOverlap.value
+  if (!o) return ''
+  const fmt = n => (n || 0).toLocaleString('zh-CN')
+  // 布局：宽 460 × 高 400；大圆（登录）占外框，3 小圆按等边三角形排列
+  const W = 460, H = 400
+  const CX = W / 2, CY = 205  // 3 小圆的中心
+  const R = 82                 // 小圆半径
+  const D = 55                 // 圆心距 → 交集面积约 30%
+  // 3 圆的圆心
+  const p1 = { x: CX,           y: CY - D * 0.7 }   // 上：天梯
+  const p2 = { x: CX - D * 0.85, y: CY + D * 0.5 }  // 左下：周赛
+  const p3 = { x: CX + D * 0.85, y: CY + D * 0.5 }  // 右下：无限道馆
+  // 大圆（登录）
+  const bigR = 175
+  return `
+<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+  <!-- 登录大圆 -->
+  <circle cx="${CX}" cy="${CY}" r="${bigR}" fill="rgba(180,180,180,0.12)" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="${CX}" y="${CY - bigR + 20}" text-anchor="middle" fill="#666" font-size="14" font-weight="600">登录</text>
+  <text x="${CX - bigR + 22}" y="${CY + bigR - 15}" text-anchor="start" fill="#888" font-size="12">
+    仅登录 ${fmt(o.login_only)}
+  </text>
+
+  <!-- 3 玩法小圆（半透明相交） -->
+  <circle cx="${p1.x}" cy="${p1.y}" r="${R}" fill="rgba(102,126,234,0.35)" stroke="#667eea" stroke-width="2"/>
+  <circle cx="${p2.x}" cy="${p2.y}" r="${R}" fill="rgba(249,115,22,0.32)" stroke="#f97316" stroke-width="2"/>
+  <circle cx="${p3.x}" cy="${p3.y}" r="${R}" fill="rgba(149,117,205,0.35)" stroke="#9575cd" stroke-width="2"/>
+
+  <!-- 玩法标签 -->
+  <text x="${p1.x}" y="${p1.y - R - 6}" text-anchor="middle" fill="#4759c4" font-size="13" font-weight="600">天梯</text>
+  <text x="${p2.x - R - 6}" y="${p2.y + R + 18}" text-anchor="middle" fill="#d15c0f" font-size="13" font-weight="600">周赛</text>
+  <text x="${p3.x + R + 8}" y="${p3.y + R + 18}" text-anchor="middle" fill="#6d4dab" font-size="13" font-weight="600">无限道馆</text>
+
+  <!-- 单玩法：圆心偏离交集方向 -->
+  <text x="${p1.x}"           y="${p1.y - 14}" text-anchor="middle" fill="#4759c4" font-size="14" font-weight="700">${fmt(o.ladder_only)}</text>
+  <text x="${p2.x - 18}"      y="${p2.y + 20}" text-anchor="middle" fill="#d15c0f" font-size="14" font-weight="700">${fmt(o.tournament_only)}</text>
+  <text x="${p3.x + 18}"      y="${p3.y + 20}" text-anchor="middle" fill="#6d4dab" font-size="14" font-weight="700">${fmt(o.gym_only)}</text>
+
+  <!-- 双玩法交集：两圆中点向中心方向偏移 -->
+  <text x="${(p1.x + p2.x) / 2 - 8}" y="${(p1.y + p2.y) / 2 + 6}" text-anchor="middle" fill="#8b3a1d" font-size="12" font-weight="700">${fmt(o.ladder_tournament)}</text>
+  <text x="${(p1.x + p3.x) / 2 + 8}" y="${(p1.y + p3.y) / 2 + 6}" text-anchor="middle" fill="#3f4a97" font-size="12" font-weight="700">${fmt(o.ladder_gym)}</text>
+  <text x="${(p2.x + p3.x) / 2}"     y="${(p2.y + p3.y) / 2 + 24}" text-anchor="middle" fill="#7a3f6f" font-size="12" font-weight="700">${fmt(o.tournament_gym)}</text>
+
+  <!-- 三玩法交集：3 圆重心 -->
+  <text x="${CX}" y="${CY + 8}" text-anchor="middle" fill="#4a2b6d" font-size="15" font-weight="800">${fmt(o.all_three)}</text>
+</svg>
+`.trim()
+})
+
+// 当选中日期不在可选列表里（切换全量/留存后有可能），自动落到最近的可用日期
+watch([hasOverlapData, availableOverlapDates], () => {
+  const dates = availableOverlapDates.value
+  if (!dates.length) return
+  if (!overlapDate.value || !dates.includes(overlapDate.value)) {
+    overlapDate.value = dates[0]  // 已按倒序排，第 0 个就是最近的
+  }
+}, { immediate: true })
 
 function initParticipationCharts() {
   const rows = filteredParticipationDates.value
@@ -3263,6 +3432,118 @@ td {
   font-size: 1.1rem;
   color: #333;
   margin-bottom: 5px;
+}
+
+/* 玩法重合率 */
+.overlap-day-picker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #faf9ff;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.overlap-date-select {
+  padding: 4px 10px;
+  border: 1px solid #d0c8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: white;
+  cursor: pointer;
+}
+
+.overlap-day-summary {
+  color: #666;
+  margin-left: auto;
+}
+
+.overlap-day-summary b {
+  color: #764ba2;
+}
+
+.overlap-body {
+  display: grid;
+  grid-template-columns: minmax(360px, 480px) 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .overlap-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.venn-container {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  background: #fafaff;
+  border-radius: 10px;
+}
+
+.venn-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.overlap-table-wrap {
+  overflow-x: auto;
+}
+
+.overlap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.overlap-table th {
+  text-align: left;
+  padding: 8px 10px;
+  background: #f5f0ff;
+  color: #5a3d7a;
+  border-bottom: 2px solid #d9c8ff;
+  font-weight: 600;
+}
+
+.overlap-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ecebff;
+}
+
+.overlap-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.overlap-table tr.is-all {
+  background: #f9f5ff;
+  font-weight: 600;
+}
+
+.overlap-color-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.overlap-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: #999;
+  background: #fafaff;
+  border-radius: 10px;
+}
+
+.overlap-empty-block .chart-subtitle {
+  color: #a99cc0;
+  font-style: italic;
 }
 
 .no-data-box {

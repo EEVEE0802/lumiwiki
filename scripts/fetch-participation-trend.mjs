@@ -130,9 +130,10 @@ async function buildCreateTimeMap(csvPath) {
 }
 
 // 长表 CSV：每行一场事件。按 part_date 分组，distinct b_role_id + 累加行数（=事件数）
-// 返回: { uv, retentionUv, battles, retentionBattles }（各为 date -> 数值）
+// 返回: { uv, retentionUv, battles, retentionBattles, sets, retentionSets }
+//   前 4 个用于 UV/事件数聚合；后 2 个是 date -> Set<b_role_id>，供 overlap 交并集用
 async function dailyDistinct(csvPath, createTimeMap) {
-  const empty = { uv: {}, retentionUv: {}, battles: {}, retentionBattles: {} }
+  const empty = { uv: {}, retentionUv: {}, battles: {}, retentionBattles: {}, sets: {}, retentionSets: {} }
   if (!fs.existsSync(csvPath)) return empty
   const fileStream = fs.createReadStream(csvPath)
   const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity })
@@ -184,7 +185,7 @@ async function dailyDistinct(csvPath, createTimeMap) {
     uv[date] = set.size
     retentionUv[date] = retentionSets[date].size
   }
-  return { uv, retentionUv, battles: dailyBattles, retentionBattles }
+  return { uv, retentionUv, battles: dailyBattles, retentionBattles, sets: dailySets, retentionSets }
 }
 
 console.log(`\n建立创号时间映射（login CSV）...`)
@@ -221,6 +222,8 @@ const gymResult = {
   retentionUv: filterToWeek(gymResultAll.retentionUv),
   battles: filterToWeek(gymResultAll.battles),
   retentionBattles: filterToWeek(gymResultAll.retentionBattles),
+  sets: filterToWeek(gymResultAll.sets),
+  retentionSets: filterToWeek(gymResultAll.retentionSets),
 }
 console.log(`  无限道馆每日 UV:`, gymResult.uv)
 console.log(`  无限道馆每日留存 UV:`, gymResult.retentionUv)
@@ -240,11 +243,54 @@ const dayMetrics = (res, date) => ({
   retBattles: res.retentionBattles[date] || 0,
 })
 
+// 算 3 玩法（天梯 / 周赛 / 无限道馆）在登录用户中的重合分布
+// 返回 { ladder_only, tournament_only, gym_only, ladder_tournament, ladder_gym, tournament_gym, all_three, login_only }
+// login_only = 登录但未参与任何战斗玩法的玩家数
+// 用法：把 3 个玩法的 Set 与 login Set 一起遍历，按 3-bit 掩码计数
+function computeOverlap(loginSet, ladderSet, tournamentSet, gymSet) {
+  const empty = {
+    ladder_only: 0, tournament_only: 0, gym_only: 0,
+    ladder_tournament: 0, ladder_gym: 0, tournament_gym: 0,
+    all_three: 0, login_only: 0
+  }
+  if (!loginSet || !loginSet.size) return empty
+  const out = { ...empty }
+  for (const uid of loginSet) {
+    const l = ladderSet && ladderSet.has(uid) ? 1 : 0
+    const t = tournamentSet && tournamentSet.has(uid) ? 1 : 0
+    const g = gymSet && gymSet.has(uid) ? 1 : 0
+    const mask = (l << 2) | (t << 1) | g
+    switch (mask) {
+      case 0b000: out.login_only++; break
+      case 0b100: out.ladder_only++; break
+      case 0b010: out.tournament_only++; break
+      case 0b001: out.gym_only++; break
+      case 0b110: out.ladder_tournament++; break
+      case 0b101: out.ladder_gym++; break
+      case 0b011: out.tournament_gym++; break
+      case 0b111: out.all_three++; break
+    }
+  }
+  return out
+}
+
 const result = allDates.map(date => {
   const L = dayMetrics(ladderResult, date)
   const T = dayMetrics(tournamentResult, date)
   const G = dayMetrics(loginResult, date)
   const M = dayMetrics(gymResult, date)     // M = infinity gyM
+
+  // 天梯/周赛/无限道馆 CSV 里的玩家不一定在 login CSV 里（有极少数事件缺 login，或跨日边界）
+  // 用 loginSet 作为基准算 overlap；如果 login 缺，退化用「3 玩法并集」作基准
+  const overlapAll = computeOverlap(
+    loginResult.sets[date] || new Set(),
+    ladderResult.sets[date], tournamentResult.sets[date], gymResult.sets[date]
+  )
+  const overlapRet = computeOverlap(
+    loginResult.retentionSets[date] || new Set(),
+    ladderResult.retentionSets[date], tournamentResult.retentionSets[date], gymResult.retentionSets[date]
+  )
+
   return {
     date,
     ladder: L.uv,
@@ -257,6 +303,7 @@ const result = allDates.map(date => {
     ladderBattlesPerUser: L.uv > 0 ? +(L.battles / L.uv).toFixed(2) : 0,
     tournamentBattlesPerUser: T.uv > 0 ? +(T.battles / T.uv).toFixed(2) : 0,
     infinityGymBattlesPerUser: M.uv > 0 ? +(M.battles / M.uv).toFixed(2) : 0,
+    overlap: overlapAll,
     retention: {
       login: G.retUv,
       ladder: L.retUv,
@@ -268,6 +315,7 @@ const result = allDates.map(date => {
       ladderBattlesPerUser: L.retUv > 0 ? +(L.retBattles / L.retUv).toFixed(2) : 0,
       tournamentBattlesPerUser: T.retUv > 0 ? +(T.retBattles / T.retUv).toFixed(2) : 0,
       infinityGymBattlesPerUser: M.retUv > 0 ? +(M.retBattles / M.retUv).toFixed(2) : 0,
+      overlap: overlapRet,
     },
   }
 })
