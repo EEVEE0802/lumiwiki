@@ -1599,11 +1599,14 @@ async function loadAllParticipationData() {
       map.set(row.date, {
         ladder: row.ladder,
         tournament: row.tournament,
+        infinityGym: row.infinityGym,
         login: row.login,
         ladderRate: row.ladderRate,
         tournamentRate: row.tournamentRate,
+        infinityGymRate: row.infinityGymRate,
         ladderBattlesPerUser: row.ladderBattlesPerUser || 0,
         tournamentBattlesPerUser: row.tournamentBattlesPerUser || 0,
+        infinityGymBattlesPerUser: row.infinityGymBattlesPerUser || 0,
         retention: row.retention || null
       })
     }
