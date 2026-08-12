@@ -51397,24 +51397,24 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1300,
-    "CatchRateCheckHeight": 600,
+    "LoveHeartHeight": 1450,
+    "CatchRateCheckHeight": 700,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
     "Distance": 6000,
     "Height": 0,
     "LookatHeight": 200,
-    "VFXScale": 1,
+    "VFXScale": 1.2,
     "ZeroOffset": {
-      "X": 0,
-      "Y": 0,
-      "Z": 0
+      "X": 0.36,
+      "Y": 0.02,
+      "Z": -0.03
     },
-    "AdventureVFXScale": 1,
+    "AdventureVFXScale": 1.5,
     "AdventureZeroOffset": {
-      "X": 0,
-      "Y": 0,
-      "Z": 0
+      "X": 0.037,
+      "Y": 0.127,
+      "Z": 0.022
     },
     "BubbleOffset": {
       "X": 0,
@@ -51640,6 +51640,591 @@
     "AvartarAtlas": "LumiAvatar3"
   },
   {
+    "Id": 133601,
+    "PokedexId": 99999999,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_133601",
+    "MaxScore": 88,
+    "MinScore": 56,
+    "Genius": 1,
+    "ShardId": 133501,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Sagittarius_Youth",
+    "Avatar": "Avatar_133601",
+    "CA": "CA_133601",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 12,
+    "Type2": 0,
+    "NormalAttack": 13360101,
+    "ActiveSkill": 13360102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 58,
+    "MinAtkState": 68,
+    "MinDefState": 53,
+    "MinWorkState": 45,
+    "MaxHpState": 90,
+    "MaxAtkState": 100,
+    "MaxDefState": 85,
+    "MaxWorkState": 77,
+    "Satiety": 260000,
+    "SatietyDownSpeed": 36,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "56-88",
+    "Story": "story_133601",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1.8,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.3,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": -0.01,
+      "Y": -0.4,
+      "Z": -0.03
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Sagittarius_Youth_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 133601,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1335010,
+    "AvartarAtlas": "LumiAvatar3"
+  },
+  {
+    "Id": 133604,
+    "PokedexId": 99999999,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_133604",
+    "MaxScore": 88,
+    "MinScore": 88,
+    "Genius": 1,
+    "ShardId": 133501,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Sagittarius_Youth_01",
+    "Avatar": "Avatar_133604",
+    "CA": "CA_133604",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 12,
+    "Type2": 0,
+    "NormalAttack": 13360101,
+    "ActiveSkill": 13360402,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 58,
+    "MinAtkState": 68,
+    "MinDefState": 53,
+    "MinWorkState": 45,
+    "MaxHpState": 90,
+    "MaxAtkState": 100,
+    "MaxDefState": 85,
+    "MaxWorkState": 77,
+    "Satiety": 260000,
+    "SatietyDownSpeed": 36,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "88-88",
+    "Story": "story_133604",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1.8,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.3,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": -0.01,
+      "Y": -0.4,
+      "Z": -0.03
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Sagittarius_Youth_01_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 133601,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1335010,
+    "AvartarAtlas": "LumiAvatar3"
+  },
+  {
+    "Id": 133701,
+    "PokedexId": 99999999,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_133701",
+    "MaxScore": 88,
+    "MinScore": 56,
+    "Genius": 1,
+    "ShardId": 133501,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Sagittarius_Adult",
+    "Avatar": "Avatar_133701",
+    "CA": "CA_133701",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 12,
+    "Type2": 0,
+    "NormalAttack": 13370101,
+    "ActiveSkill": 13370102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 58,
+    "MinAtkState": 68,
+    "MinDefState": 53,
+    "MinWorkState": 45,
+    "MaxHpState": 90,
+    "MaxAtkState": 100,
+    "MaxDefState": 85,
+    "MaxWorkState": 77,
+    "Satiety": 260000,
+    "SatietyDownSpeed": 36,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "56-88",
+    "Story": "story_133701",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1400,
+    "CatchRateCheckHeight": 650,
+    "HomeMoveSpeed": 1.5,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.3,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": -0.01,
+      "Y": -0.4,
+      "Z": -0.03
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Sagittarius_Adult_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 133701,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1335010,
+    "AvartarAtlas": "LumiAvatar3"
+  },
+  {
     "Id": 133901,
     "PokedexId": 10370,
     "IfLock": false,
@@ -51801,15 +52386,15 @@
     "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
-      "X": 0,
-      "Y": 0,
-      "Z": 0
+      "X": 0.364,
+      "Y": -0.393,
+      "Z": 0.008
     },
     "AdventureVFXScale": 1,
     "AdventureZeroOffset": {
-      "X": 0,
-      "Y": 0,
-      "Z": 0
+      "X": 0.002,
+      "Y": -0.152,
+      "Z": 0.017
     },
     "BubbleOffset": {
       "X": 0,
@@ -53610,6 +54195,201 @@
     "Growid": 1,
     "StarUpid": 3,
     "StarSoulid": 1274010,
+    "AvartarAtlas": "LumiAvatar3"
+  },
+  {
+    "Id": 139101,
+    "PokedexId": 99999999,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_139101",
+    "MaxScore": 82,
+    "MinScore": 50,
+    "Genius": 1,
+    "ShardId": 139101,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Dog_Fly",
+    "Avatar": "Avatar_139101",
+    "CA": "CA_139101",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 11,
+    "Type2": 3,
+    "NormalAttack": 13910101,
+    "ActiveSkill": 13910102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 68,
+    "MinAtkState": 18,
+    "MinDefState": 25,
+    "MinWorkState": 89,
+    "MaxHpState": 100,
+    "MaxAtkState": 50,
+    "MaxDefState": 57,
+    "MaxWorkState": 121,
+    "Satiety": 140000,
+    "SatietyDownSpeed": 24,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          75,
+          87
+        ]
+      ],
+      [
+        2,
+        [
+          6,
+          8
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "50-82",
+    "Story": "story_139101",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1000,
+    "CatchRateCheckHeight": 300,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.3,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": -0.01,
+      "Y": -0.4,
+      "Z": -0.03
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Dog_Fly_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 136001,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1391010,
     "AvartarAtlas": "LumiAvatar3"
   },
   {

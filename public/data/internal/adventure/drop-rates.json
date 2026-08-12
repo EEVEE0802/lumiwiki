@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-11T19:00:06.316Z",
+  "updateTime": "2026-08-12T19:00:06.159Z",
   "note": "普通概率=解锁池权重占比；彩色=保底触发时池内分布近似（按 LumiDrop.WeightPool 取权）",
   "mainLineMaps": [
     {
@@ -3979,6 +3979,388 @@
           "name": "海精灵",
           "weight": 300,
           "probability": "2.78"
+        }
+      ]
+    },
+    {
+      "mapId": 91001,
+      "mapName": "甜蜜海滩",
+      "mapNameKey": "MapName_Collab_01",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 0,
+          "probability": "0.00"
+        }
+      ],
+      "totalWeight": 8000,
+      "colorLumis": [
+        {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "3.09"
+        }
+      ]
+    },
+    {
+      "mapId": 91002,
+      "mapName": "童话之森",
+      "mapNameKey": "MapName_Collab_02",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "12.50"
+        },
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 0,
+          "probability": "0.00"
+        },
+        {
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 0,
+          "probability": "0.00"
+        }
+      ],
+      "totalWeight": 8000,
+      "colorLumis": [
+        {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "3.09"
         }
       ]
     }
