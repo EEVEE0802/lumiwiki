@@ -37,3 +37,8 @@ data/overseas/archive/**/*.csv
 # 探测用临时文件
 tmp-*.json
 tmp-*.js
+tools/nssm.exe
+tools/nssm.zip
+tools/nssm-2.24/
+tools/lumiwiki-service.*.log
+tools/install-log.txt
