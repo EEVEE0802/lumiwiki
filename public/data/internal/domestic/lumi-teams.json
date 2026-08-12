@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-11T23:17:35.466Z",
+  "updateTime": "2026-08-12T05:19:20.727Z",
   "weeks": [
     1,
     2,
@@ -152,7 +152,7 @@
             "lumiName": "火猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 4345
+              "count": 4351
             }
           },
           {
@@ -160,7 +160,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3575
+              "count": 3581
             }
           },
           {
@@ -168,17 +168,17 @@
             "lumiName": "炽焰马",
             "topSkill": {
               "skillId": 3003,
-              "count": 4902
+              "count": 4917
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5721
+          "count": 5733
         },
-        "battles": 7005,
-        "wins": 2705,
-        "winRate": "38.62",
+        "battles": 7021,
+        "wins": 2714,
+        "winRate": "38.66",
         "tags": [
           "most-used"
         ]
@@ -195,7 +195,7 @@
             "lumiName": "火猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 601
+              "count": 605
             }
           },
           {
@@ -217,10 +217,10 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1545
+          "count": 1547
         },
-        "battles": 2043,
-        "wins": 1063,
+        "battles": 2047,
+        "wins": 1065,
         "winRate": "52.03",
         "tags": [
           "highest-winrate"
@@ -238,7 +238,7 @@
             "lumiName": "火猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 1772
+              "count": 1776
             }
           },
           {
@@ -246,7 +246,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 1538
+              "count": 1543
             }
           },
           {
@@ -254,17 +254,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13001,
-              "count": 1664
+              "count": 1666
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 4656
+          "count": 4668
         },
-        "battles": 6381,
-        "wins": 2474,
-        "winRate": "38.77",
+        "battles": 6393,
+        "wins": 2479,
+        "winRate": "38.78",
         "tags": [
           "other"
         ]
@@ -283,7 +283,7 @@
             "lumiName": "火龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20162
+              "count": 20238
             }
           },
           {
@@ -291,7 +291,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18457
+              "count": 18531
             }
           },
           {
@@ -299,17 +299,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22288
+              "count": 22378
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11054
+          "count": 11105
         },
-        "battles": 22559,
-        "wins": 15389,
-        "winRate": "68.22",
+        "battles": 22649,
+        "wins": 15435,
+        "winRate": "68.15",
         "tags": [
           "most-used"
         ]
@@ -326,7 +326,7 @@
             "lumiName": "火龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20162
+              "count": 20238
             }
           },
           {
@@ -334,7 +334,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18457
+              "count": 18531
             }
           },
           {
@@ -342,17 +342,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22288
+              "count": 22378
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11054
+          "count": 11105
         },
-        "battles": 22559,
-        "wins": 15389,
-        "winRate": "68.22",
+        "battles": 22649,
+        "wins": 15435,
+        "winRate": "68.15",
         "tags": [
           "highest-winrate"
         ]
@@ -369,7 +369,7 @@
             "lumiName": "火龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 9223
+              "count": 9230
             }
           },
           {
@@ -377,7 +377,7 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 8280
+              "count": 8300
             }
           },
           {
@@ -385,17 +385,17 @@
             "lumiName": "发牌雀圣·异",
             "topSkill": {
               "skillId": 7004,
-              "count": 16470
+              "count": 16496
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10213
+          "count": 10226
         },
-        "battles": 16778,
-        "wins": 9025,
-        "winRate": "53.79",
+        "battles": 16804,
+        "wins": 9038,
+        "winRate": "53.78",
         "tags": [
           "other"
         ]
@@ -414,7 +414,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20162
+              "count": 20238
             }
           },
           {
@@ -422,7 +422,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18457
+              "count": 18531
             }
           },
           {
@@ -430,17 +430,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22288
+              "count": 22378
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11054
+          "count": 11105
         },
-        "battles": 22559,
-        "wins": 15389,
-        "winRate": "68.22",
+        "battles": 22649,
+        "wins": 15435,
+        "winRate": "68.15",
         "tags": [
           "most-used"
         ]
@@ -457,7 +457,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20162
+              "count": 20238
             }
           },
           {
@@ -465,7 +465,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18457
+              "count": 18531
             }
           },
           {
@@ -473,17 +473,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22288
+              "count": 22378
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11054
+          "count": 11105
         },
-        "battles": 22559,
-        "wins": 15389,
-        "winRate": "68.22",
+        "battles": 22649,
+        "wins": 15435,
+        "winRate": "68.15",
         "tags": [
           "highest-winrate"
         ]
@@ -500,7 +500,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 9223
+              "count": 9230
             }
           },
           {
@@ -508,7 +508,7 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 8280
+              "count": 8300
             }
           },
           {
@@ -516,17 +516,17 @@
             "lumiName": "发牌雀圣·异",
             "topSkill": {
               "skillId": 7004,
-              "count": 16470
+              "count": 16496
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10213
+          "count": 10226
         },
-        "battles": 16778,
-        "wins": 9025,
-        "winRate": "53.79",
+        "battles": 16804,
+        "wins": 9038,
+        "winRate": "53.78",
         "tags": [
           "other"
         ]
@@ -545,7 +545,7 @@
             "lumiName": "飞叶鼠",
             "topSkill": {
               "skillId": 12002,
-              "count": 1760
+              "count": 1761
             }
           },
           {
@@ -553,7 +553,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 2263
+              "count": 2265
             }
           },
           {
@@ -561,17 +561,17 @@
             "lumiName": "晴天舞姬",
             "topSkill": {
               "skillId": 3004,
-              "count": 3149
+              "count": 3158
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 3357
+          "count": 3367
         },
-        "battles": 4160,
-        "wins": 1430,
-        "winRate": "34.38",
+        "battles": 4171,
+        "wins": 1432,
+        "winRate": "34.33",
         "tags": [
           "most-used"
         ]
@@ -631,7 +631,7 @@
             "lumiName": "飞叶鼠",
             "topSkill": {
               "skillId": 4003,
-              "count": 348
+              "count": 353
             }
           },
           {
@@ -653,11 +653,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 596
+          "count": 601
         },
-        "battles": 828,
-        "wins": 300,
-        "winRate": "36.23",
+        "battles": 833,
+        "wins": 302,
+        "winRate": "36.25",
         "tags": [
           "other"
         ]
@@ -1069,7 +1069,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3595
+              "count": 3601
             }
           },
           {
@@ -1077,7 +1077,7 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 4375
+              "count": 4381
             }
           },
           {
@@ -1085,17 +1085,17 @@
             "lumiName": "炽焰马",
             "topSkill": {
               "skillId": 3003,
-              "count": 4932
+              "count": 4947
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5756
+          "count": 5768
         },
-        "battles": 7046,
-        "wins": 2721,
-        "winRate": "38.62",
+        "battles": 7062,
+        "wins": 2730,
+        "winRate": "38.66",
         "tags": [
           "most-used"
         ]
@@ -1155,7 +1155,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 1578
+              "count": 1583
             }
           },
           {
@@ -1163,7 +1163,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13001,
-              "count": 1675
+              "count": 1677
             }
           },
           {
@@ -1171,16 +1171,16 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 1781
+              "count": 1785
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 4708
+          "count": 4720
         },
-        "battles": 6444,
-        "wins": 2486,
+        "battles": 6456,
+        "wins": 2491,
         "winRate": "38.58",
         "tags": [
           "other"
@@ -1419,7 +1419,7 @@
             "lumiName": "小马嘟嘟",
             "topSkill": {
               "skillId": 13003,
-              "count": 11400
+              "count": 11437
             }
           },
           {
@@ -1427,7 +1427,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 10730
+              "count": 10773
             }
           },
           {
@@ -1435,17 +1435,17 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 12307
+              "count": 12358
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10471
+          "count": 10497
         },
-        "battles": 12478,
-        "wins": 6851,
-        "winRate": "54.90",
+        "battles": 12529,
+        "wins": 6888,
+        "winRate": "54.98",
         "tags": [
           "most-used"
         ]
@@ -1462,7 +1462,7 @@
             "lumiName": "小马嘟嘟",
             "topSkill": {
               "skillId": 13003,
-              "count": 2138
+              "count": 2158
             }
           },
           {
@@ -1470,7 +1470,7 @@
             "lumiName": "许愿灯象",
             "topSkill": {
               "skillId": 13002,
-              "count": 980
+              "count": 981
             }
           },
           {
@@ -1478,17 +1478,17 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 2466
+              "count": 2486
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1619
+          "count": 1625
         },
-        "battles": 2490,
-        "wins": 1466,
-        "winRate": "58.88",
+        "battles": 2511,
+        "wins": 1476,
+        "winRate": "58.78",
         "tags": [
           "highest-winrate"
         ]
@@ -1505,7 +1505,7 @@
             "lumiName": "小马嘟嘟",
             "topSkill": {
               "skillId": 13003,
-              "count": 786
+              "count": 787
             }
           },
           {
@@ -1513,7 +1513,7 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 1002
+              "count": 1003
             }
           },
           {
@@ -1529,9 +1529,9 @@
           "trainerId": 1,
           "count": 321
         },
-        "battles": 1138,
+        "battles": 1139,
         "wins": 581,
-        "winRate": "51.05",
+        "winRate": "51.01",
         "tags": [
           "other"
         ]
@@ -1550,7 +1550,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 11400
+              "count": 11437
             }
           },
           {
@@ -1558,7 +1558,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 10730
+              "count": 10773
             }
           },
           {
@@ -1566,17 +1566,17 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 12307
+              "count": 12358
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10471
+          "count": 10497
         },
-        "battles": 12478,
-        "wins": 6851,
-        "winRate": "54.90",
+        "battles": 12529,
+        "wins": 6888,
+        "winRate": "54.98",
         "tags": [
           "most-used"
         ]
@@ -1593,7 +1593,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 2138
+              "count": 2158
             }
           },
           {
@@ -1601,7 +1601,7 @@
             "lumiName": "许愿灯象",
             "topSkill": {
               "skillId": 13002,
-              "count": 980
+              "count": 981
             }
           },
           {
@@ -1609,17 +1609,17 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 2466
+              "count": 2486
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1619
+          "count": 1625
         },
-        "battles": 2490,
-        "wins": 1466,
-        "winRate": "58.88",
+        "battles": 2511,
+        "wins": 1476,
+        "winRate": "58.78",
         "tags": [
           "highest-winrate"
         ]
@@ -1636,7 +1636,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 786
+              "count": 787
             }
           },
           {
@@ -1644,7 +1644,7 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 1002
+              "count": 1003
             }
           },
           {
@@ -1660,9 +1660,9 @@
           "trainerId": 1,
           "count": 321
         },
-        "battles": 1138,
+        "battles": 1139,
         "wins": 581,
-        "winRate": "51.05",
+        "winRate": "51.01",
         "tags": [
           "other"
         ]
@@ -1681,7 +1681,7 @@
             "lumiName": "金刚狼",
             "topSkill": {
               "skillId": 1001,
-              "count": 1033
+              "count": 1040
             }
           },
           {
@@ -1689,7 +1689,7 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15004,
-              "count": 1294
+              "count": 1301
             }
           },
           {
@@ -1697,17 +1697,17 @@
             "lumiName": "卡布奇诺刺客",
             "topSkill": {
               "skillId": 15003,
-              "count": 1311
+              "count": 1318
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1293
+          "count": 1300
         },
-        "battles": 1484,
-        "wins": 611,
-        "winRate": "41.17",
+        "battles": 1491,
+        "wins": 616,
+        "winRate": "41.31",
         "tags": [
           "most-used"
         ]
@@ -1724,7 +1724,7 @@
             "lumiName": "金刚狼",
             "topSkill": {
               "skillId": 15001,
-              "count": 85
+              "count": 89
             }
           },
           {
@@ -1746,11 +1746,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 153
+          "count": 157
         },
-        "battles": 182,
-        "wins": 101,
-        "winRate": "55.49",
+        "battles": 186,
+        "wins": 105,
+        "winRate": "56.45",
         "tags": [
           "highest-winrate"
         ]
@@ -2205,7 +2205,7 @@
             "lumiName": "传话蛙",
             "topSkill": {
               "skillId": 8001,
-              "count": 1333
+              "count": 1337
             }
           },
           {
@@ -2213,7 +2213,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 1199
+              "count": 1204
             }
           },
           {
@@ -2221,17 +2221,17 @@
             "lumiName": "水母奈奈",
             "topSkill": {
               "skillId": 2005,
-              "count": 1574
+              "count": 1583
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2002
+          "count": 2012
         },
-        "battles": 2397,
-        "wins": 741,
-        "winRate": "30.91",
+        "battles": 2408,
+        "wins": 744,
+        "winRate": "30.90",
         "tags": [
           "most-used"
         ]
@@ -2248,7 +2248,7 @@
             "lumiName": "传话蛙",
             "topSkill": {
               "skillId": 2003,
-              "count": 346
+              "count": 347
             }
           },
           {
@@ -2256,7 +2256,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 162
+              "count": 163
             }
           },
           {
@@ -2264,17 +2264,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 3003,
-              "count": 227
+              "count": 228
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 593
+          "count": 594
         },
-        "battles": 883,
+        "battles": 884,
         "wins": 363,
-        "winRate": "41.11",
+        "winRate": "41.06",
         "tags": [
           "highest-winrate"
         ]
@@ -2336,7 +2336,7 @@
             "lumiName": "水母花花",
             "topSkill": {
               "skillId": 2005,
-              "count": 1581
+              "count": 1590
             }
           },
           {
@@ -2344,7 +2344,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 1208
+              "count": 1213
             }
           },
           {
@@ -2352,17 +2352,17 @@
             "lumiName": "传话蛙",
             "topSkill": {
               "skillId": 8001,
-              "count": 1344
+              "count": 1348
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2014
+          "count": 2024
         },
-        "battles": 2413,
-        "wins": 746,
-        "winRate": "30.92",
+        "battles": 2424,
+        "wins": 749,
+        "winRate": "30.90",
         "tags": [
           "most-used"
         ]
@@ -2422,7 +2422,7 @@
             "lumiName": "水母花花",
             "topSkill": {
               "skillId": 2003,
-              "count": 312
+              "count": 313
             }
           },
           {
@@ -2444,11 +2444,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 920
+          "count": 921
         },
-        "battles": 1468,
+        "battles": 1469,
         "wins": 500,
-        "winRate": "34.06",
+        "winRate": "34.04",
         "tags": [
           "other"
         ]
@@ -2598,7 +2598,7 @@
             "lumiName": "软脚虾",
             "topSkill": {
               "skillId": 2003,
-              "count": 405
+              "count": 407
             }
           },
           {
@@ -2620,11 +2620,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 946
+          "count": 947
         },
-        "battles": 1330,
+        "battles": 1332,
         "wins": 484,
-        "winRate": "36.39",
+        "winRate": "36.34",
         "tags": [
           "most-used"
         ]
@@ -3077,7 +3077,7 @@
             "lumiName": "黄风大圣",
             "topSkill": {
               "skillId": 14006,
-              "count": 345
+              "count": 347
             }
           },
           {
@@ -3085,7 +3085,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 571
+              "count": 580
             }
           },
           {
@@ -3093,17 +3093,17 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 6004,
-              "count": 363
+              "count": 366
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 325
+          "count": 334
         },
-        "battles": 669,
-        "wins": 463,
-        "winRate": "69.21",
+        "battles": 678,
+        "wins": 466,
+        "winRate": "68.73",
         "tags": [
           "other"
         ]
@@ -3122,7 +3122,7 @@
             "lumiName": "黄风大圣·异",
             "topSkill": {
               "skillId": 6003,
-              "count": 1302
+              "count": 1304
             }
           },
           {
@@ -3130,7 +3130,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 1874
+              "count": 1875
             }
           },
           {
@@ -3138,17 +3138,17 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 6004,
-              "count": 788
+              "count": 790
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1850
+          "count": 1852
         },
-        "battles": 2643,
-        "wins": 1814,
-        "winRate": "68.63",
+        "battles": 2645,
+        "wins": 1815,
+        "winRate": "68.62",
         "tags": [
           "most-used"
         ]
@@ -3165,7 +3165,7 @@
             "lumiName": "黄风大圣·异",
             "topSkill": {
               "skillId": 6003,
-              "count": 1302
+              "count": 1304
             }
           },
           {
@@ -3173,7 +3173,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 1874
+              "count": 1875
             }
           },
           {
@@ -3181,17 +3181,17 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 6004,
-              "count": 788
+              "count": 790
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1850
+          "count": 1852
         },
-        "battles": 2643,
-        "wins": 1814,
-        "winRate": "68.63",
+        "battles": 2645,
+        "wins": 1815,
+        "winRate": "68.62",
         "tags": [
           "highest-winrate"
         ]
@@ -3208,7 +3208,7 @@
             "lumiName": "黄风大圣·异",
             "topSkill": {
               "skillId": 14006,
-              "count": 1393
+              "count": 1400
             }
           },
           {
@@ -3216,7 +3216,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 2334
+              "count": 2341
             }
           },
           {
@@ -3224,17 +3224,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 1893
+              "count": 1900
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1438
+          "count": 1442
         },
-        "battles": 2542,
-        "wins": 1696,
-        "winRate": "66.72",
+        "battles": 2549,
+        "wins": 1702,
+        "winRate": "66.77",
         "tags": [
           "other"
         ]
@@ -3384,7 +3384,7 @@
             "lumiName": "小钢狼",
             "topSkill": {
               "skillId": 1001,
-              "count": 1033
+              "count": 1040
             }
           },
           {
@@ -3392,7 +3392,7 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15004,
-              "count": 1294
+              "count": 1301
             }
           },
           {
@@ -3400,17 +3400,17 @@
             "lumiName": "卡布奇诺刺客",
             "topSkill": {
               "skillId": 15003,
-              "count": 1311
+              "count": 1318
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1293
+          "count": 1300
         },
-        "battles": 1484,
-        "wins": 611,
-        "winRate": "41.17",
+        "battles": 1491,
+        "wins": 616,
+        "winRate": "41.31",
         "tags": [
           "most-used"
         ]
@@ -3427,7 +3427,7 @@
             "lumiName": "小钢狼",
             "topSkill": {
               "skillId": 15001,
-              "count": 85
+              "count": 89
             }
           },
           {
@@ -3449,11 +3449,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 153
+          "count": 157
         },
-        "battles": 182,
-        "wins": 101,
-        "winRate": "55.49",
+        "battles": 186,
+        "wins": 105,
+        "winRate": "56.45",
         "tags": [
           "highest-winrate"
         ]
@@ -3558,7 +3558,7 @@
             "lumiName": "土犀犀",
             "topSkill": {
               "skillId": 12007,
-              "count": 73
+              "count": 74
             }
           },
           {
@@ -3580,11 +3580,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 81
+          "count": 82
         },
-        "battles": 82,
-        "wins": 67,
-        "winRate": "81.71",
+        "battles": 83,
+        "wins": 68,
+        "winRate": "81.93",
         "tags": [
           "highest-winrate"
         ]
@@ -3646,7 +3646,7 @@
             "lumiName": "火马墩墩",
             "topSkill": {
               "skillId": 3003,
-              "count": 4962
+              "count": 4977
             }
           },
           {
@@ -3654,7 +3654,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3623
+              "count": 3629
             }
           },
           {
@@ -3662,17 +3662,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 4385
+              "count": 4391
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5810
+          "count": 5822
         },
-        "battles": 7111,
-        "wins": 2730,
-        "winRate": "38.39",
+        "battles": 7127,
+        "wins": 2739,
+        "winRate": "38.43",
         "tags": [
           "most-used"
         ]
@@ -3689,7 +3689,7 @@
             "lumiName": "火马墩墩",
             "topSkill": {
               "skillId": 3003,
-              "count": 4962
+              "count": 4977
             }
           },
           {
@@ -3697,7 +3697,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3623
+              "count": 3629
             }
           },
           {
@@ -3705,17 +3705,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 4385
+              "count": 4391
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5810
+          "count": 5822
         },
-        "battles": 7111,
-        "wins": 2730,
-        "winRate": "38.39",
+        "battles": 7127,
+        "wins": 2739,
+        "winRate": "38.43",
         "tags": [
           "highest-winrate"
         ]
@@ -3924,17 +3924,17 @@
             "lumiName": "暗蚀莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2618
+              "count": 2620
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2120
+          "count": 2122
         },
-        "battles": 2759,
-        "wins": 1869,
-        "winRate": "67.74",
+        "battles": 2761,
+        "wins": 1871,
+        "winRate": "67.77",
         "tags": [
           "most-used"
         ]
@@ -3967,17 +3967,17 @@
             "lumiName": "暗蚀莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2618
+              "count": 2620
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2120
+          "count": 2122
         },
-        "battles": 2759,
-        "wins": 1869,
-        "winRate": "67.74",
+        "battles": 2761,
+        "wins": 1871,
+        "winRate": "67.77",
         "tags": [
           "highest-winrate"
         ]
@@ -4039,7 +4039,7 @@
             "lumiName": "冰莱姆",
             "topSkill": {
               "skillId": 0,
-              "count": 1047
+              "count": 1091
             }
           },
           {
@@ -4047,7 +4047,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 1161
+              "count": 1209
             }
           },
           {
@@ -4055,17 +4055,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 518
+              "count": 529
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 3,
-          "count": 920
+          "count": 964
         },
-        "battles": 1176,
-        "wins": 660,
-        "winRate": "56.12",
+        "battles": 1224,
+        "wins": 688,
+        "winRate": "56.21",
         "tags": [
           "most-used"
         ]
@@ -4082,7 +4082,7 @@
             "lumiName": "冰莱姆",
             "topSkill": {
               "skillId": 0,
-              "count": 1047
+              "count": 1091
             }
           },
           {
@@ -4090,7 +4090,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 1161
+              "count": 1209
             }
           },
           {
@@ -4098,17 +4098,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 518
+              "count": 529
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 3,
-          "count": 920
+          "count": 964
         },
-        "battles": 1176,
-        "wins": 660,
-        "winRate": "56.12",
+        "battles": 1224,
+        "wins": 688,
+        "winRate": "56.21",
         "tags": [
           "highest-winrate"
         ]
@@ -4432,7 +4432,7 @@
             "lumiName": "土莱姆",
             "topSkill": {
               "skillId": 0,
-              "count": 13630
+              "count": 13636
             }
           },
           {
@@ -4440,7 +4440,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 15705
+              "count": 15716
             }
           },
           {
@@ -4448,16 +4448,16 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 5685
+              "count": 5687
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 3,
-          "count": 11450
+          "count": 11459
         },
-        "battles": 16706,
-        "wins": 9179,
+        "battles": 16717,
+        "wins": 9185,
         "winRate": "54.94",
         "tags": [
           "most-used"
@@ -4475,7 +4475,7 @@
             "lumiName": "土莱姆",
             "topSkill": {
               "skillId": 0,
-              "count": 13630
+              "count": 13636
             }
           },
           {
@@ -4483,7 +4483,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 15705
+              "count": 15716
             }
           },
           {
@@ -4491,16 +4491,16 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 5685
+              "count": 5687
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 3,
-          "count": 11450
+          "count": 11459
         },
-        "battles": 16706,
-        "wins": 9179,
+        "battles": 16717,
+        "wins": 9185,
         "winRate": "54.94",
         "tags": [
           "highest-winrate"
@@ -4563,7 +4563,7 @@
             "lumiName": "暗莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2642
+              "count": 2644
             }
           },
           {
@@ -4585,11 +4585,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2112
+          "count": 2114
         },
-        "battles": 2738,
-        "wins": 1858,
-        "winRate": "67.86",
+        "battles": 2740,
+        "wins": 1860,
+        "winRate": "67.88",
         "tags": [
           "most-used"
         ]
@@ -4606,7 +4606,7 @@
             "lumiName": "暗莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2642
+              "count": 2644
             }
           },
           {
@@ -4628,11 +4628,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2112
+          "count": 2114
         },
-        "battles": 2738,
-        "wins": 1858,
-        "winRate": "67.86",
+        "battles": 2740,
+        "wins": 1860,
+        "winRate": "67.88",
         "tags": [
           "highest-winrate"
         ]
@@ -4841,17 +4841,17 @@
             "lumiName": "暗蚀莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2565
+              "count": 2567
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2052
+          "count": 2054
         },
-        "battles": 2656,
-        "wins": 1803,
-        "winRate": "67.88",
+        "battles": 2658,
+        "wins": 1805,
+        "winRate": "67.91",
         "tags": [
           "most-used"
         ]
@@ -4884,17 +4884,17 @@
             "lumiName": "暗蚀莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2565
+              "count": 2567
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2052
+          "count": 2054
         },
-        "battles": 2656,
-        "wins": 1803,
-        "winRate": "67.88",
+        "battles": 2658,
+        "wins": 1805,
+        "winRate": "67.91",
         "tags": [
           "highest-winrate"
         ]
@@ -5218,7 +5218,7 @@
             "lumiName": "闪电狗·异",
             "topSkill": {
               "skillId": 5004,
-              "count": 1637
+              "count": 1639
             }
           },
           {
@@ -5234,17 +5234,17 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 1307
+              "count": 1309
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1748
+          "count": 1750
         },
-        "battles": 2375,
+        "battles": 2377,
         "wins": 1524,
-        "winRate": "64.17",
+        "winRate": "64.11",
         "tags": [
           "most-used"
         ]
@@ -5371,11 +5371,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 373
+          "count": 375
         },
-        "battles": 565,
-        "wins": 180,
-        "winRate": "31.86",
+        "battles": 567,
+        "wins": 181,
+        "winRate": "31.92",
         "tags": [
           "most-used"
         ]
@@ -5480,7 +5480,7 @@
             "lumiName": "盼盼",
             "topSkill": {
               "skillId": 4002,
-              "count": 93
+              "count": 94
             }
           },
           {
@@ -5488,7 +5488,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 112
+              "count": 113
             }
           },
           {
@@ -5496,17 +5496,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 3003,
-              "count": 119
+              "count": 120
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 211
+          "count": 212
         },
-        "battles": 352,
+        "battles": 353,
         "wins": 106,
-        "winRate": "30.11",
+        "winRate": "30.03",
         "tags": [
           "most-used"
         ]
@@ -5611,7 +5611,7 @@
             "lumiName": "海浪龙",
             "topSkill": {
               "skillId": 2004,
-              "count": 346
+              "count": 349
             }
           },
           {
@@ -5619,7 +5619,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 530
+              "count": 533
             }
           },
           {
@@ -5627,17 +5627,17 @@
             "lumiName": "森灵龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 430
+              "count": 431
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 744
+          "count": 759
         },
-        "battles": 1012,
-        "wins": 463,
-        "winRate": "45.75",
+        "battles": 1027,
+        "wins": 468,
+        "winRate": "45.57",
         "tags": [
           "most-used"
         ]
@@ -5654,7 +5654,7 @@
             "lumiName": "海浪龙",
             "topSkill": {
               "skillId": 2003,
-              "count": 98
+              "count": 99
             }
           },
           {
@@ -5670,17 +5670,17 @@
             "lumiName": "海天使",
             "topSkill": {
               "skillId": 2004,
-              "count": 141
+              "count": 143
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 81
+          "count": 84
         },
-        "battles": 147,
-        "wins": 103,
-        "winRate": "70.07",
+        "battles": 150,
+        "wins": 105,
+        "winRate": "70.00",
         "tags": [
           "highest-winrate"
         ]
@@ -5836,7 +5836,7 @@
             "lumiName": "玄武",
             "topSkill": {
               "skillId": 6003,
-              "count": 161
+              "count": 163
             }
           },
           {
@@ -5850,11 +5850,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 219
+          "count": 221
         },
-        "battles": 303,
-        "wins": 230,
-        "winRate": "75.91",
+        "battles": 305,
+        "wins": 231,
+        "winRate": "75.74",
         "tags": [
           "other"
         ]
@@ -5873,7 +5873,7 @@
             "lumiName": "只鼬",
             "topSkill": {
               "skillId": 11004,
-              "count": 1573
+              "count": 1575
             }
           },
           {
@@ -5889,17 +5889,17 @@
             "lumiName": "龙裹火",
             "topSkill": {
               "skillId": 3003,
-              "count": 881
+              "count": 882
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2084
+          "count": 2086
         },
-        "battles": 2525,
+        "battles": 2527,
         "wins": 799,
-        "winRate": "31.64",
+        "winRate": "31.62",
         "tags": [
           "most-used"
         ]
@@ -5959,7 +5959,7 @@
             "lumiName": "只鼬",
             "topSkill": {
               "skillId": 11002,
-              "count": 771
+              "count": 773
             }
           },
           {
@@ -5967,7 +5967,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10002,
-              "count": 484
+              "count": 486
             }
           },
           {
@@ -5975,17 +5975,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 563
+              "count": 565
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1489
+          "count": 1491
         },
-        "battles": 2014,
+        "battles": 2017,
         "wins": 729,
-        "winRate": "36.20",
+        "winRate": "36.14",
         "tags": [
           "other"
         ]
@@ -6092,7 +6092,7 @@
             "lumiName": "狮鹫宝宝",
             "topSkill": {
               "skillId": 9005,
-              "count": 8345
+              "count": 8365
             }
           },
           {
@@ -6100,7 +6100,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 9305
+              "count": 9312
             }
           },
           {
@@ -6108,17 +6108,17 @@
             "lumiName": "发牌雀圣·异",
             "topSkill": {
               "skillId": 7004,
-              "count": 16572
+              "count": 16598
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10250
+          "count": 10263
         },
-        "battles": 16876,
-        "wins": 9054,
-        "winRate": "53.65",
+        "battles": 16902,
+        "wins": 9067,
+        "winRate": "53.64",
         "tags": [
           "most-used"
         ]
@@ -6135,7 +6135,7 @@
             "lumiName": "狮鹫宝宝",
             "topSkill": {
               "skillId": 7004,
-              "count": 2738
+              "count": 2739
             }
           },
           {
@@ -6143,7 +6143,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9005,
-              "count": 1919
+              "count": 1920
             }
           },
           {
@@ -6151,17 +6151,17 @@
             "lumiName": "搏击袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 2626
+              "count": 2627
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2210
+          "count": 2211
         },
-        "battles": 2852,
+        "battles": 2853,
         "wins": 1932,
-        "winRate": "67.74",
+        "winRate": "67.72",
         "tags": [
           "highest-winrate"
         ]
@@ -6178,7 +6178,7 @@
             "lumiName": "狮鹫宝宝",
             "topSkill": {
               "skillId": 9005,
-              "count": 5524
+              "count": 5538
             }
           },
           {
@@ -6186,7 +6186,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 3842
+              "count": 3851
             }
           },
           {
@@ -6194,17 +6194,17 @@
             "lumiName": "发牌雀圣",
             "topSkill": {
               "skillId": 7004,
-              "count": 9445
+              "count": 9463
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5510
+          "count": 5519
         },
-        "battles": 9834,
-        "wins": 5327,
-        "winRate": "54.17",
+        "battles": 9852,
+        "wins": 5335,
+        "winRate": "54.15",
         "tags": [
           "other"
         ]
@@ -6223,7 +6223,7 @@
             "lumiName": "英俊狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 8345
+              "count": 8365
             }
           },
           {
@@ -6231,7 +6231,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 9305
+              "count": 9312
             }
           },
           {
@@ -6239,17 +6239,17 @@
             "lumiName": "发牌雀圣·异",
             "topSkill": {
               "skillId": 7004,
-              "count": 16572
+              "count": 16598
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10250
+          "count": 10263
         },
-        "battles": 16876,
-        "wins": 9054,
-        "winRate": "53.65",
+        "battles": 16902,
+        "wins": 9067,
+        "winRate": "53.64",
         "tags": [
           "most-used"
         ]
@@ -6266,7 +6266,7 @@
             "lumiName": "英俊狮鹫",
             "topSkill": {
               "skillId": 7004,
-              "count": 2738
+              "count": 2739
             }
           },
           {
@@ -6274,7 +6274,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9005,
-              "count": 1919
+              "count": 1920
             }
           },
           {
@@ -6282,17 +6282,17 @@
             "lumiName": "搏击袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 2626
+              "count": 2627
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2210
+          "count": 2211
         },
-        "battles": 2852,
+        "battles": 2853,
         "wins": 1932,
-        "winRate": "67.74",
+        "winRate": "67.72",
         "tags": [
           "highest-winrate"
         ]
@@ -6309,7 +6309,7 @@
             "lumiName": "英俊狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 5524
+              "count": 5538
             }
           },
           {
@@ -6317,7 +6317,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 3842
+              "count": 3851
             }
           },
           {
@@ -6325,17 +6325,17 @@
             "lumiName": "发牌雀圣",
             "topSkill": {
               "skillId": 7004,
-              "count": 9445
+              "count": 9463
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5510
+          "count": 5519
         },
-        "battles": 9834,
-        "wins": 5327,
-        "winRate": "54.17",
+        "battles": 9852,
+        "wins": 5335,
+        "winRate": "54.15",
         "tags": [
           "other"
         ]
@@ -6485,7 +6485,7 @@
             "lumiName": "雨鳍猫鲨",
             "topSkill": {
               "skillId": 2003,
-              "count": 50
+              "count": 52
             }
           },
           {
@@ -6493,7 +6493,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 72
+              "count": 74
             }
           },
           {
@@ -6501,7 +6501,7 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 3003,
-              "count": 89
+              "count": 91
             }
           }
         ],
@@ -6509,9 +6509,9 @@
           "trainerId": 1,
           "count": 172
         },
-        "battles": 247,
+        "battles": 249,
         "wins": 83,
-        "winRate": "33.60",
+        "winRate": "33.33",
         "tags": [
           "most-used"
         ]
@@ -6616,7 +6616,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18423
+              "count": 18497
             }
           },
           {
@@ -6624,7 +6624,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20125
+              "count": 20201
             }
           },
           {
@@ -6632,17 +6632,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22236
+              "count": 22326
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11009
+          "count": 11060
         },
-        "battles": 22504,
-        "wins": 15362,
-        "winRate": "68.26",
+        "battles": 22594,
+        "wins": 15408,
+        "winRate": "68.20",
         "tags": [
           "most-used"
         ]
@@ -6659,7 +6659,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 14726
+              "count": 14869
             }
           },
           {
@@ -6667,7 +6667,7 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 6004,
-              "count": 8410
+              "count": 8498
             }
           },
           {
@@ -6675,17 +6675,17 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6002,
-              "count": 9350
+              "count": 9465
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11196
+          "count": 11298
         },
-        "battles": 17050,
-        "wins": 11764,
-        "winRate": "69.00",
+        "battles": 17213,
+        "wins": 11876,
+        "winRate": "68.99",
         "tags": [
           "highest-winrate"
         ]
@@ -6702,7 +6702,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 10730
+              "count": 10773
             }
           },
           {
@@ -6710,7 +6710,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 11400
+              "count": 11437
             }
           },
           {
@@ -6718,17 +6718,17 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 12307
+              "count": 12358
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10471
+          "count": 10497
         },
-        "battles": 12478,
-        "wins": 6851,
-        "winRate": "54.90",
+        "battles": 12529,
+        "wins": 6888,
+        "winRate": "54.98",
         "tags": [
           "other"
         ]
@@ -6878,7 +6878,7 @@
             "lumiName": "火龙宝宝",
             "topSkill": {
               "skillId": 9002,
-              "count": 20162
+              "count": 20238
             }
           },
           {
@@ -6886,7 +6886,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18457
+              "count": 18531
             }
           },
           {
@@ -6894,17 +6894,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22288
+              "count": 22378
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11054
+          "count": 11105
         },
-        "battles": 22559,
-        "wins": 15389,
-        "winRate": "68.22",
+        "battles": 22649,
+        "wins": 15435,
+        "winRate": "68.15",
         "tags": [
           "most-used"
         ]
@@ -6921,7 +6921,7 @@
             "lumiName": "火龙宝宝",
             "topSkill": {
               "skillId": 9002,
-              "count": 20162
+              "count": 20238
             }
           },
           {
@@ -6929,7 +6929,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18457
+              "count": 18531
             }
           },
           {
@@ -6937,17 +6937,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22288
+              "count": 22378
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11054
+          "count": 11105
         },
-        "battles": 22559,
-        "wins": 15389,
-        "winRate": "68.22",
+        "battles": 22649,
+        "wins": 15435,
+        "winRate": "68.15",
         "tags": [
           "highest-winrate"
         ]
@@ -6964,7 +6964,7 @@
             "lumiName": "火龙宝宝",
             "topSkill": {
               "skillId": 9002,
-              "count": 9223
+              "count": 9230
             }
           },
           {
@@ -6972,7 +6972,7 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 8280
+              "count": 8300
             }
           },
           {
@@ -6980,17 +6980,17 @@
             "lumiName": "发牌雀圣·异",
             "topSkill": {
               "skillId": 7004,
-              "count": 16470
+              "count": 16496
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10213
+          "count": 10226
         },
-        "battles": 16778,
-        "wins": 9025,
-        "winRate": "53.79",
+        "battles": 16804,
+        "wins": 9038,
+        "winRate": "53.78",
         "tags": [
           "other"
         ]
@@ -7226,7 +7226,7 @@
             "lumiName": "玄武",
             "topSkill": {
               "skillId": 6003,
-              "count": 161
+              "count": 163
             }
           },
           {
@@ -7248,11 +7248,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 219
+          "count": 221
         },
-        "battles": 303,
-        "wins": 230,
-        "winRate": "75.91",
+        "battles": 305,
+        "wins": 231,
+        "winRate": "75.74",
         "tags": [
           "other"
         ]
@@ -7271,7 +7271,7 @@
             "lumiName": "小火喵",
             "topSkill": {
               "skillId": 15002,
-              "count": 4345
+              "count": 4351
             }
           },
           {
@@ -7279,7 +7279,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3575
+              "count": 3581
             }
           },
           {
@@ -7287,17 +7287,17 @@
             "lumiName": "炽焰马",
             "topSkill": {
               "skillId": 3003,
-              "count": 4902
+              "count": 4917
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5721
+          "count": 5733
         },
-        "battles": 7005,
-        "wins": 2705,
-        "winRate": "38.62",
+        "battles": 7021,
+        "wins": 2714,
+        "winRate": "38.66",
         "tags": [
           "most-used"
         ]
@@ -7314,7 +7314,7 @@
             "lumiName": "小火喵",
             "topSkill": {
               "skillId": 15002,
-              "count": 601
+              "count": 605
             }
           },
           {
@@ -7336,10 +7336,10 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1545
+          "count": 1547
         },
-        "battles": 2043,
-        "wins": 1063,
+        "battles": 2047,
+        "wins": 1065,
         "winRate": "52.03",
         "tags": [
           "highest-winrate"
@@ -7357,7 +7357,7 @@
             "lumiName": "小火喵",
             "topSkill": {
               "skillId": 15002,
-              "count": 1772
+              "count": 1776
             }
           },
           {
@@ -7365,7 +7365,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 1538
+              "count": 1543
             }
           },
           {
@@ -7373,17 +7373,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13001,
-              "count": 1664
+              "count": 1666
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 4656
+          "count": 4668
         },
-        "battles": 6381,
-        "wins": 2474,
-        "winRate": "38.77",
+        "battles": 6393,
+        "wins": 2479,
+        "winRate": "38.78",
         "tags": [
           "other"
         ]
@@ -7402,7 +7402,7 @@
             "lumiName": "小叶鼠",
             "topSkill": {
               "skillId": 12002,
-              "count": 1760
+              "count": 1761
             }
           },
           {
@@ -7410,7 +7410,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 2263
+              "count": 2265
             }
           },
           {
@@ -7418,17 +7418,17 @@
             "lumiName": "晴天舞姬",
             "topSkill": {
               "skillId": 3004,
-              "count": 3149
+              "count": 3158
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 3357
+          "count": 3367
         },
-        "battles": 4160,
-        "wins": 1430,
-        "winRate": "34.38",
+        "battles": 4171,
+        "wins": 1432,
+        "winRate": "34.33",
         "tags": [
           "most-used"
         ]
@@ -7488,7 +7488,7 @@
             "lumiName": "小叶鼠",
             "topSkill": {
               "skillId": 4003,
-              "count": 348
+              "count": 353
             }
           },
           {
@@ -7510,11 +7510,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 596
+          "count": 601
         },
-        "battles": 828,
-        "wins": 300,
-        "winRate": "36.23",
+        "battles": 833,
+        "wins": 302,
+        "winRate": "36.25",
         "tags": [
           "other"
         ]
@@ -7533,7 +7533,7 @@
             "lumiName": "水母贝贝",
             "topSkill": {
               "skillId": 2005,
-              "count": 1581
+              "count": 1590
             }
           },
           {
@@ -7541,7 +7541,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 1208
+              "count": 1213
             }
           },
           {
@@ -7549,17 +7549,17 @@
             "lumiName": "传话蛙",
             "topSkill": {
               "skillId": 8001,
-              "count": 1344
+              "count": 1348
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2014
+          "count": 2024
         },
-        "battles": 2413,
-        "wins": 746,
-        "winRate": "30.92",
+        "battles": 2424,
+        "wins": 749,
+        "winRate": "30.90",
         "tags": [
           "most-used"
         ]
@@ -7619,7 +7619,7 @@
             "lumiName": "水母贝贝",
             "topSkill": {
               "skillId": 2003,
-              "count": 312
+              "count": 313
             }
           },
           {
@@ -7641,11 +7641,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 920
+          "count": 921
         },
-        "battles": 1468,
+        "battles": 1469,
         "wins": 500,
-        "winRate": "34.06",
+        "winRate": "34.04",
         "tags": [
           "other"
         ]
@@ -7672,7 +7672,7 @@
             "lumiName": "魔影只鼬",
             "topSkill": {
               "skillId": 11004,
-              "count": 1537
+              "count": 1539
             }
           },
           {
@@ -7680,17 +7680,17 @@
             "lumiName": "龙裹火",
             "topSkill": {
               "skillId": 3003,
-              "count": 862
+              "count": 863
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2012
+          "count": 2014
         },
-        "battles": 2442,
+        "battles": 2444,
         "wins": 781,
-        "winRate": "31.98",
+        "winRate": "31.96",
         "tags": [
           "most-used"
         ]
@@ -7750,7 +7750,7 @@
             "lumiName": "响尾眼镜蛇",
             "topSkill": {
               "skillId": 13006,
-              "count": 336
+              "count": 338
             }
           },
           {
@@ -7758,7 +7758,7 @@
             "lumiName": "魔影只鼬",
             "topSkill": {
               "skillId": 11004,
-              "count": 466
+              "count": 468
             }
           },
           {
@@ -7766,17 +7766,17 @@
             "lumiName": "果火龙·异",
             "topSkill": {
               "skillId": 9002,
-              "count": 266
+              "count": 268
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 537
+          "count": 541
         },
-        "battles": 660,
-        "wins": 248,
-        "winRate": "37.58",
+        "battles": 665,
+        "wins": 251,
+        "winRate": "37.74",
         "tags": [
           "other"
         ]
@@ -8057,7 +8057,7 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 4345
+              "count": 4351
             }
           },
           {
@@ -8065,7 +8065,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3575
+              "count": 3581
             }
           },
           {
@@ -8073,17 +8073,17 @@
             "lumiName": "炽焰马",
             "topSkill": {
               "skillId": 3003,
-              "count": 4902
+              "count": 4917
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5721
+          "count": 5733
         },
-        "battles": 7005,
-        "wins": 2705,
-        "winRate": "38.62",
+        "battles": 7021,
+        "wins": 2714,
+        "winRate": "38.66",
         "tags": [
           "most-used"
         ]
@@ -8100,7 +8100,7 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 601
+              "count": 605
             }
           },
           {
@@ -8122,10 +8122,10 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1545
+          "count": 1547
         },
-        "battles": 2043,
-        "wins": 1063,
+        "battles": 2047,
+        "wins": 1065,
         "winRate": "52.03",
         "tags": [
           "highest-winrate"
@@ -8143,7 +8143,7 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 1772
+              "count": 1776
             }
           },
           {
@@ -8151,7 +8151,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 1538
+              "count": 1543
             }
           },
           {
@@ -8159,17 +8159,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13001,
-              "count": 1664
+              "count": 1666
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 4656
+          "count": 4668
         },
-        "battles": 6381,
-        "wins": 2474,
-        "winRate": "38.77",
+        "battles": 6393,
+        "wins": 2479,
+        "winRate": "38.78",
         "tags": [
           "other"
         ]
@@ -8188,7 +8188,7 @@
             "lumiName": "隐叶鼠侠",
             "topSkill": {
               "skillId": 12002,
-              "count": 1760
+              "count": 1761
             }
           },
           {
@@ -8196,7 +8196,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 2263
+              "count": 2265
             }
           },
           {
@@ -8204,17 +8204,17 @@
             "lumiName": "晴天舞姬",
             "topSkill": {
               "skillId": 3004,
-              "count": 3149
+              "count": 3158
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 3357
+          "count": 3367
         },
-        "battles": 4160,
-        "wins": 1430,
-        "winRate": "34.38",
+        "battles": 4171,
+        "wins": 1432,
+        "winRate": "34.33",
         "tags": [
           "most-used"
         ]
@@ -8274,7 +8274,7 @@
             "lumiName": "隐叶鼠侠",
             "topSkill": {
               "skillId": 4003,
-              "count": 348
+              "count": 353
             }
           },
           {
@@ -8296,11 +8296,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 596
+          "count": 601
         },
-        "battles": 828,
-        "wins": 300,
-        "winRate": "36.23",
+        "battles": 833,
+        "wins": 302,
+        "winRate": "36.25",
         "tags": [
           "other"
         ]
@@ -8319,7 +8319,7 @@
             "lumiName": "水母奈奈",
             "topSkill": {
               "skillId": 2005,
-              "count": 1581
+              "count": 1590
             }
           },
           {
@@ -8327,7 +8327,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 1208
+              "count": 1213
             }
           },
           {
@@ -8335,17 +8335,17 @@
             "lumiName": "传话蛙",
             "topSkill": {
               "skillId": 8001,
-              "count": 1344
+              "count": 1348
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2014
+          "count": 2024
         },
-        "battles": 2413,
-        "wins": 746,
-        "winRate": "30.92",
+        "battles": 2424,
+        "wins": 749,
+        "winRate": "30.90",
         "tags": [
           "most-used"
         ]
@@ -8405,7 +8405,7 @@
             "lumiName": "水母奈奈",
             "topSkill": {
               "skillId": 2003,
-              "count": 312
+              "count": 313
             }
           },
           {
@@ -8427,11 +8427,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 920
+          "count": 921
         },
-        "battles": 1468,
+        "battles": 1469,
         "wins": 500,
-        "winRate": "34.06",
+        "winRate": "34.04",
         "tags": [
           "other"
         ]
@@ -8597,17 +8597,17 @@
             "lumiName": "暗蚀莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2618
+              "count": 2620
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2120
+          "count": 2122
         },
-        "battles": 2759,
-        "wins": 1869,
-        "winRate": "67.74",
+        "battles": 2761,
+        "wins": 1871,
+        "winRate": "67.77",
         "tags": [
           "most-used"
         ]
@@ -8640,17 +8640,17 @@
             "lumiName": "暗蚀莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2618
+              "count": 2620
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2120
+          "count": 2122
         },
-        "battles": 2759,
-        "wins": 1869,
-        "winRate": "67.74",
+        "battles": 2761,
+        "wins": 1871,
+        "winRate": "67.77",
         "tags": [
           "highest-winrate"
         ]
@@ -8712,7 +8712,7 @@
             "lumiName": "冰晶莱姆",
             "topSkill": {
               "skillId": 0,
-              "count": 1047
+              "count": 1091
             }
           },
           {
@@ -8720,7 +8720,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 1161
+              "count": 1209
             }
           },
           {
@@ -8728,17 +8728,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 518
+              "count": 529
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 3,
-          "count": 920
+          "count": 964
         },
-        "battles": 1176,
-        "wins": 660,
-        "winRate": "56.12",
+        "battles": 1224,
+        "wins": 688,
+        "winRate": "56.21",
         "tags": [
           "most-used"
         ]
@@ -8755,7 +8755,7 @@
             "lumiName": "冰晶莱姆",
             "topSkill": {
               "skillId": 0,
-              "count": 1047
+              "count": 1091
             }
           },
           {
@@ -8763,7 +8763,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 1161
+              "count": 1209
             }
           },
           {
@@ -8771,17 +8771,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 518
+              "count": 529
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 3,
-          "count": 920
+          "count": 964
         },
-        "battles": 1176,
-        "wins": 660,
-        "winRate": "56.12",
+        "battles": 1224,
+        "wins": 688,
+        "winRate": "56.21",
         "tags": [
           "highest-winrate"
         ]
@@ -9105,7 +9105,7 @@
             "lumiName": "土脉莱姆",
             "topSkill": {
               "skillId": 0,
-              "count": 13630
+              "count": 13636
             }
           },
           {
@@ -9113,7 +9113,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 15705
+              "count": 15716
             }
           },
           {
@@ -9121,16 +9121,16 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 5685
+              "count": 5687
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 3,
-          "count": 11450
+          "count": 11459
         },
-        "battles": 16706,
-        "wins": 9179,
+        "battles": 16717,
+        "wins": 9185,
         "winRate": "54.94",
         "tags": [
           "most-used"
@@ -9148,7 +9148,7 @@
             "lumiName": "土脉莱姆",
             "topSkill": {
               "skillId": 0,
-              "count": 13630
+              "count": 13636
             }
           },
           {
@@ -9156,7 +9156,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 15705
+              "count": 15716
             }
           },
           {
@@ -9164,16 +9164,16 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 5685
+              "count": 5687
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 3,
-          "count": 11450
+          "count": 11459
         },
-        "battles": 16706,
-        "wins": 9179,
+        "battles": 16717,
+        "wins": 9185,
         "winRate": "54.94",
         "tags": [
           "highest-winrate"
@@ -9236,7 +9236,7 @@
             "lumiName": "暗蚀莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2642
+              "count": 2644
             }
           },
           {
@@ -9258,11 +9258,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2112
+          "count": 2114
         },
-        "battles": 2738,
-        "wins": 1858,
-        "winRate": "67.86",
+        "battles": 2740,
+        "wins": 1860,
+        "winRate": "67.88",
         "tags": [
           "most-used"
         ]
@@ -9279,7 +9279,7 @@
             "lumiName": "暗蚀莱姆",
             "topSkill": {
               "skillId": 11002,
-              "count": 2642
+              "count": 2644
             }
           },
           {
@@ -9301,11 +9301,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2112
+          "count": 2114
         },
-        "battles": 2738,
-        "wins": 1858,
-        "winRate": "67.86",
+        "battles": 2740,
+        "wins": 1860,
+        "winRate": "67.88",
         "tags": [
           "highest-winrate"
         ]
@@ -9498,7 +9498,7 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 8345
+              "count": 8365
             }
           },
           {
@@ -9506,7 +9506,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 9305
+              "count": 9312
             }
           },
           {
@@ -9514,17 +9514,17 @@
             "lumiName": "发牌雀圣·异",
             "topSkill": {
               "skillId": 7004,
-              "count": 16572
+              "count": 16598
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10250
+          "count": 10263
         },
-        "battles": 16876,
-        "wins": 9054,
-        "winRate": "53.65",
+        "battles": 16902,
+        "wins": 9067,
+        "winRate": "53.64",
         "tags": [
           "most-used"
         ]
@@ -9541,7 +9541,7 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 7004,
-              "count": 2738
+              "count": 2739
             }
           },
           {
@@ -9549,7 +9549,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9005,
-              "count": 1919
+              "count": 1920
             }
           },
           {
@@ -9557,17 +9557,17 @@
             "lumiName": "搏击袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 2626
+              "count": 2627
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2210
+          "count": 2211
         },
-        "battles": 2852,
+        "battles": 2853,
         "wins": 1932,
-        "winRate": "67.74",
+        "winRate": "67.72",
         "tags": [
           "highest-winrate"
         ]
@@ -9584,7 +9584,7 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 5524
+              "count": 5538
             }
           },
           {
@@ -9592,7 +9592,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 3842
+              "count": 3851
             }
           },
           {
@@ -9600,17 +9600,17 @@
             "lumiName": "发牌雀圣",
             "topSkill": {
               "skillId": 7004,
-              "count": 9445
+              "count": 9463
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5510
+          "count": 5519
         },
-        "battles": 9834,
-        "wins": 5327,
-        "winRate": "54.17",
+        "battles": 9852,
+        "wins": 5335,
+        "winRate": "54.15",
         "tags": [
           "other"
         ]
@@ -10022,7 +10022,7 @@
             "lumiName": "发牌雀圣",
             "topSkill": {
               "skillId": 7004,
-              "count": 9316
+              "count": 9334
             }
           },
           {
@@ -10030,7 +10030,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 3823
+              "count": 3832
             }
           },
           {
@@ -10038,17 +10038,17 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 5440
+              "count": 5454
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5429
+          "count": 5438
         },
-        "battles": 9698,
-        "wins": 5269,
-        "winRate": "54.33",
+        "battles": 9716,
+        "wins": 5277,
+        "winRate": "54.31",
         "tags": [
           "most-used"
         ]
@@ -10065,7 +10065,7 @@
             "lumiName": "发牌雀圣",
             "topSkill": {
               "skillId": 7004,
-              "count": 9316
+              "count": 9334
             }
           },
           {
@@ -10073,7 +10073,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 3823
+              "count": 3832
             }
           },
           {
@@ -10081,17 +10081,17 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 5440
+              "count": 5454
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5429
+          "count": 5438
         },
-        "battles": 9698,
-        "wins": 5269,
-        "winRate": "54.33",
+        "battles": 9716,
+        "wins": 5277,
+        "winRate": "54.31",
         "tags": [
           "highest-winrate"
         ]
@@ -10153,7 +10153,7 @@
             "lumiName": "发牌雀圣·异",
             "topSkill": {
               "skillId": 7004,
-              "count": 16404
+              "count": 16430
             }
           },
           {
@@ -10161,7 +10161,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 9206
+              "count": 9213
             }
           },
           {
@@ -10169,17 +10169,17 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 8230
+              "count": 8250
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10166
+          "count": 10179
         },
-        "battles": 16704,
-        "wins": 8993,
-        "winRate": "53.84",
+        "battles": 16730,
+        "wins": 9006,
+        "winRate": "53.83",
         "tags": [
           "most-used"
         ]
@@ -10196,7 +10196,7 @@
             "lumiName": "发牌雀圣·异",
             "topSkill": {
               "skillId": 7004,
-              "count": 16404
+              "count": 16430
             }
           },
           {
@@ -10204,7 +10204,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 9206
+              "count": 9213
             }
           },
           {
@@ -10212,17 +10212,17 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 8230
+              "count": 8250
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10166
+          "count": 10179
         },
-        "battles": 16704,
-        "wins": 8993,
-        "winRate": "53.84",
+        "battles": 16730,
+        "wins": 9006,
+        "winRate": "53.83",
         "tags": [
           "highest-winrate"
         ]
@@ -10284,7 +10284,7 @@
             "lumiName": "森灵龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 8066
+              "count": 8071
             }
           },
           {
@@ -10292,7 +10292,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 7012
+              "count": 7017
             }
           },
           {
@@ -10300,17 +10300,17 @@
             "lumiName": "搏击袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 8329
+              "count": 8334
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 7279
+          "count": 7283
         },
-        "battles": 8839,
-        "wins": 5326,
-        "winRate": "60.26",
+        "battles": 8844,
+        "wins": 5328,
+        "winRate": "60.24",
         "tags": [
           "most-used"
         ]
@@ -10343,16 +10343,16 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 7004,
-              "count": 3365
+              "count": 3368
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2031
+          "count": 2034
         },
-        "battles": 3685,
-        "wins": 2364,
+        "battles": 3688,
+        "wins": 2366,
         "winRate": "64.15",
         "tags": [
           "highest-winrate"
@@ -10370,7 +10370,7 @@
             "lumiName": "森灵龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 3566
+              "count": 3574
             }
           },
           {
@@ -10378,7 +10378,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 3369
+              "count": 3375
             }
           },
           {
@@ -10386,17 +10386,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 4175
+              "count": 4185
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 3529
+          "count": 3539
         },
-        "battles": 4593,
-        "wins": 2723,
-        "winRate": "59.29",
+        "battles": 4603,
+        "wins": 2727,
+        "winRate": "59.24",
         "tags": [
           "other"
         ]
@@ -10677,7 +10677,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19115
+              "count": 19214
             }
           },
           {
@@ -10685,7 +10685,7 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7707
+              "count": 7736
             }
           },
           {
@@ -10693,17 +10693,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20585
+              "count": 20686
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10252
+          "count": 10289
         },
-        "battles": 21027,
-        "wins": 11964,
-        "winRate": "56.90",
+        "battles": 21128,
+        "wins": 12027,
+        "winRate": "56.92",
         "tags": [
           "most-used"
         ]
@@ -10720,7 +10720,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19115
+              "count": 19214
             }
           },
           {
@@ -10728,7 +10728,7 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7707
+              "count": 7736
             }
           },
           {
@@ -10736,17 +10736,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20585
+              "count": 20686
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10252
+          "count": 10289
         },
-        "battles": 21027,
-        "wins": 11964,
-        "winRate": "56.90",
+        "battles": 21128,
+        "wins": 12027,
+        "winRate": "56.92",
         "tags": [
           "highest-winrate"
         ]
@@ -10763,7 +10763,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 641
+              "count": 642
             }
           },
           {
@@ -10779,17 +10779,17 @@
             "lumiName": "暗影兔·异",
             "topSkill": {
               "skillId": 12004,
-              "count": 679
+              "count": 682
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 337
+          "count": 341
         },
-        "battles": 698,
+        "battles": 702,
         "wins": 322,
-        "winRate": "46.13",
+        "winRate": "45.87",
         "tags": [
           "other"
         ]
@@ -10808,7 +10808,7 @@
             "lumiName": "许愿灯象",
             "topSkill": {
               "skillId": 13002,
-              "count": 980
+              "count": 981
             }
           },
           {
@@ -10816,7 +10816,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 2137
+              "count": 2157
             }
           },
           {
@@ -10824,17 +10824,17 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 2465
+              "count": 2485
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1618
+          "count": 1624
         },
-        "battles": 2489,
-        "wins": 1466,
-        "winRate": "58.90",
+        "battles": 2510,
+        "wins": 1476,
+        "winRate": "58.80",
         "tags": [
           "most-used"
         ]
@@ -10851,7 +10851,7 @@
             "lumiName": "许愿灯象",
             "topSkill": {
               "skillId": 13002,
-              "count": 980
+              "count": 981
             }
           },
           {
@@ -10859,7 +10859,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 2137
+              "count": 2157
             }
           },
           {
@@ -10867,17 +10867,17 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 2465
+              "count": 2485
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1618
+          "count": 1624
         },
-        "battles": 2489,
-        "wins": 1466,
-        "winRate": "58.90",
+        "battles": 2510,
+        "wins": 1476,
+        "winRate": "58.80",
         "tags": [
           "highest-winrate"
         ]
@@ -10939,7 +10939,7 @@
             "lumiName": "水龙宝宝",
             "topSkill": {
               "skillId": 2004,
-              "count": 346
+              "count": 349
             }
           },
           {
@@ -10947,7 +10947,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 530
+              "count": 533
             }
           },
           {
@@ -10955,17 +10955,17 @@
             "lumiName": "森灵龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 430
+              "count": 431
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 744
+          "count": 759
         },
-        "battles": 1012,
-        "wins": 463,
-        "winRate": "45.75",
+        "battles": 1027,
+        "wins": 468,
+        "winRate": "45.57",
         "tags": [
           "most-used"
         ]
@@ -10982,7 +10982,7 @@
             "lumiName": "水龙宝宝",
             "topSkill": {
               "skillId": 2003,
-              "count": 98
+              "count": 99
             }
           },
           {
@@ -10998,17 +10998,17 @@
             "lumiName": "海天使",
             "topSkill": {
               "skillId": 2004,
-              "count": 141
+              "count": 143
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 81
+          "count": 84
         },
-        "battles": 147,
-        "wins": 103,
-        "winRate": "70.07",
+        "battles": 150,
+        "wins": 105,
+        "winRate": "70.00",
         "tags": [
           "highest-winrate"
         ]
@@ -11070,7 +11070,7 @@
             "lumiName": "只鼬宝宝",
             "topSkill": {
               "skillId": 11004,
-              "count": 1573
+              "count": 1575
             }
           },
           {
@@ -11086,17 +11086,17 @@
             "lumiName": "龙裹火",
             "topSkill": {
               "skillId": 3003,
-              "count": 881
+              "count": 882
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2084
+          "count": 2086
         },
-        "battles": 2525,
+        "battles": 2527,
         "wins": 799,
-        "winRate": "31.64",
+        "winRate": "31.62",
         "tags": [
           "most-used"
         ]
@@ -11156,7 +11156,7 @@
             "lumiName": "只鼬宝宝",
             "topSkill": {
               "skillId": 11002,
-              "count": 771
+              "count": 773
             }
           },
           {
@@ -11164,7 +11164,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10002,
-              "count": 484
+              "count": 486
             }
           },
           {
@@ -11172,17 +11172,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 563
+              "count": 565
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1489
+          "count": 1491
         },
-        "battles": 2014,
+        "battles": 2017,
         "wins": 729,
-        "winRate": "36.20",
+        "winRate": "36.14",
         "tags": [
           "other"
         ]
@@ -11201,7 +11201,7 @@
             "lumiName": "魔影只鼬",
             "topSkill": {
               "skillId": 11004,
-              "count": 1573
+              "count": 1575
             }
           },
           {
@@ -11217,17 +11217,17 @@
             "lumiName": "龙裹火",
             "topSkill": {
               "skillId": 3003,
-              "count": 881
+              "count": 882
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2084
+          "count": 2086
         },
-        "battles": 2525,
+        "battles": 2527,
         "wins": 799,
-        "winRate": "31.64",
+        "winRate": "31.62",
         "tags": [
           "most-used"
         ]
@@ -11287,7 +11287,7 @@
             "lumiName": "魔影只鼬",
             "topSkill": {
               "skillId": 11002,
-              "count": 771
+              "count": 773
             }
           },
           {
@@ -11295,7 +11295,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10002,
-              "count": 484
+              "count": 486
             }
           },
           {
@@ -11303,17 +11303,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 563
+              "count": 565
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1489
+          "count": 1491
         },
-        "battles": 2014,
+        "battles": 2017,
         "wins": 729,
-        "winRate": "36.20",
+        "winRate": "36.14",
         "tags": [
           "other"
         ]
@@ -11463,7 +11463,7 @@
             "lumiName": "石角龟",
             "topSkill": {
               "skillId": 6001,
-              "count": 337
+              "count": 338
             }
           },
           {
@@ -11471,7 +11471,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10002,
-              "count": 409
+              "count": 411
             }
           },
           {
@@ -11479,17 +11479,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 481
+              "count": 487
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1105
+          "count": 1111
         },
-        "battles": 1501,
-        "wins": 672,
-        "winRate": "44.77",
+        "battles": 1508,
+        "wins": 678,
+        "winRate": "44.96",
         "tags": [
           "most-used"
         ]
@@ -11594,7 +11594,7 @@
             "lumiName": "草龙宝宝",
             "topSkill": {
               "skillId": 4003,
-              "count": 8066
+              "count": 8071
             }
           },
           {
@@ -11602,7 +11602,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 7012
+              "count": 7017
             }
           },
           {
@@ -11610,17 +11610,17 @@
             "lumiName": "搏击袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 8329
+              "count": 8334
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 7279
+          "count": 7283
         },
-        "battles": 8839,
-        "wins": 5326,
-        "winRate": "60.26",
+        "battles": 8844,
+        "wins": 5328,
+        "winRate": "60.24",
         "tags": [
           "most-used"
         ]
@@ -11653,16 +11653,16 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 7004,
-              "count": 3365
+              "count": 3368
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2031
+          "count": 2034
         },
-        "battles": 3685,
-        "wins": 2364,
+        "battles": 3688,
+        "wins": 2366,
         "winRate": "64.15",
         "tags": [
           "highest-winrate"
@@ -11680,7 +11680,7 @@
             "lumiName": "草龙宝宝",
             "topSkill": {
               "skillId": 4003,
-              "count": 3566
+              "count": 3574
             }
           },
           {
@@ -11688,7 +11688,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 3369
+              "count": 3375
             }
           },
           {
@@ -11696,17 +11696,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 4175
+              "count": 4185
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 3529
+          "count": 3539
         },
-        "battles": 4593,
-        "wins": 2723,
-        "winRate": "59.29",
+        "battles": 4603,
+        "wins": 2727,
+        "winRate": "59.24",
         "tags": [
           "other"
         ]
@@ -11856,7 +11856,7 @@
             "lumiName": "炽焰马",
             "topSkill": {
               "skillId": 3003,
-              "count": 4962
+              "count": 4977
             }
           },
           {
@@ -11864,7 +11864,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3623
+              "count": 3629
             }
           },
           {
@@ -11872,17 +11872,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 4385
+              "count": 4391
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5810
+          "count": 5822
         },
-        "battles": 7111,
-        "wins": 2730,
-        "winRate": "38.39",
+        "battles": 7127,
+        "wins": 2739,
+        "winRate": "38.43",
         "tags": [
           "most-used"
         ]
@@ -11899,7 +11899,7 @@
             "lumiName": "炽焰马",
             "topSkill": {
               "skillId": 3003,
-              "count": 4962
+              "count": 4977
             }
           },
           {
@@ -11907,7 +11907,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3623
+              "count": 3629
             }
           },
           {
@@ -11915,17 +11915,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 4385
+              "count": 4391
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5810
+          "count": 5822
         },
-        "battles": 7111,
-        "wins": 2730,
-        "winRate": "38.39",
+        "battles": 7127,
+        "wins": 2739,
+        "winRate": "38.43",
         "tags": [
           "highest-winrate"
         ]
@@ -11987,7 +11987,7 @@
             "lumiName": "球蝌蚪",
             "topSkill": {
               "skillId": 8001,
-              "count": 1333
+              "count": 1337
             }
           },
           {
@@ -11995,7 +11995,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 1199
+              "count": 1204
             }
           },
           {
@@ -12003,17 +12003,17 @@
             "lumiName": "水母奈奈",
             "topSkill": {
               "skillId": 2005,
-              "count": 1574
+              "count": 1583
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2002
+          "count": 2012
         },
-        "battles": 2397,
-        "wins": 741,
-        "winRate": "30.91",
+        "battles": 2408,
+        "wins": 744,
+        "winRate": "30.90",
         "tags": [
           "most-used"
         ]
@@ -12030,7 +12030,7 @@
             "lumiName": "球蝌蚪",
             "topSkill": {
               "skillId": 2003,
-              "count": 346
+              "count": 347
             }
           },
           {
@@ -12038,7 +12038,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 162
+              "count": 163
             }
           },
           {
@@ -12046,17 +12046,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 3003,
-              "count": 227
+              "count": 228
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 593
+          "count": 594
         },
-        "battles": 883,
+        "battles": 884,
         "wins": 363,
-        "winRate": "41.11",
+        "winRate": "41.06",
         "tags": [
           "highest-winrate"
         ]
@@ -12728,7 +12728,7 @@
             "lumiName": "冰狼崽",
             "topSkill": {
               "skillId": 8001,
-              "count": 688
+              "count": 689
             }
           },
           {
@@ -12736,7 +12736,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10002,
-              "count": 441
+              "count": 442
             }
           },
           {
@@ -12750,11 +12750,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1263
+          "count": 1265
         },
-        "battles": 1600,
+        "battles": 1602,
         "wins": 626,
-        "winRate": "39.13",
+        "winRate": "39.08",
         "tags": [
           "other"
         ]
@@ -12859,7 +12859,7 @@
             "lumiName": "冰晶狼",
             "topSkill": {
               "skillId": 8001,
-              "count": 688
+              "count": 689
             }
           },
           {
@@ -12867,7 +12867,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10002,
-              "count": 441
+              "count": 442
             }
           },
           {
@@ -12881,11 +12881,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1263
+          "count": 1265
         },
-        "battles": 1600,
+        "battles": 1602,
         "wins": 626,
-        "winRate": "39.13",
+        "winRate": "39.08",
         "tags": [
           "other"
         ]
@@ -12990,7 +12990,7 @@
             "lumiName": "冰原战狼",
             "topSkill": {
               "skillId": 8001,
-              "count": 688
+              "count": 689
             }
           },
           {
@@ -12998,7 +12998,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10002,
-              "count": 441
+              "count": 442
             }
           },
           {
@@ -13012,11 +13012,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1263
+          "count": 1265
         },
-        "battles": 1600,
+        "battles": 1602,
         "wins": 626,
-        "winRate": "39.13",
+        "winRate": "39.08",
         "tags": [
           "other"
         ]
@@ -13166,7 +13166,7 @@
             "lumiName": "晴天娃娃",
             "topSkill": {
               "skillId": 3004,
-              "count": 13531
+              "count": 13534
             }
           },
           {
@@ -13174,7 +13174,7 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6003,
-              "count": 7652
+              "count": 7653
             }
           },
           {
@@ -13182,7 +13182,7 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 13670
+              "count": 13673
             }
           }
         ],
@@ -13190,9 +13190,9 @@
           "trainerId": 1,
           "count": 8199
         },
-        "battles": 13965,
-        "wins": 8019,
-        "winRate": "57.42",
+        "battles": 13968,
+        "wins": 8022,
+        "winRate": "57.43",
         "tags": [
           "most-used"
         ]
@@ -13252,7 +13252,7 @@
             "lumiName": "晴天娃娃",
             "topSkill": {
               "skillId": 3004,
-              "count": 3420
+              "count": 3429
             }
           },
           {
@@ -13260,7 +13260,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 2430
+              "count": 2432
             }
           },
           {
@@ -13268,17 +13268,17 @@
             "lumiName": "隐叶鼠侠",
             "topSkill": {
               "skillId": 12002,
-              "count": 1909
+              "count": 1910
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 3717
+          "count": 3727
         },
-        "battles": 4653,
-        "wins": 1572,
-        "winRate": "33.78",
+        "battles": 4664,
+        "wins": 1574,
+        "winRate": "33.75",
         "tags": [
           "other"
         ]
@@ -13297,7 +13297,7 @@
             "lumiName": "晴天精灵",
             "topSkill": {
               "skillId": 3004,
-              "count": 13531
+              "count": 13534
             }
           },
           {
@@ -13305,7 +13305,7 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6003,
-              "count": 7652
+              "count": 7653
             }
           },
           {
@@ -13313,7 +13313,7 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 13670
+              "count": 13673
             }
           }
         ],
@@ -13321,9 +13321,9 @@
           "trainerId": 1,
           "count": 8199
         },
-        "battles": 13965,
-        "wins": 8019,
-        "winRate": "57.42",
+        "battles": 13968,
+        "wins": 8022,
+        "winRate": "57.43",
         "tags": [
           "most-used"
         ]
@@ -13383,7 +13383,7 @@
             "lumiName": "晴天精灵",
             "topSkill": {
               "skillId": 3004,
-              "count": 3420
+              "count": 3429
             }
           },
           {
@@ -13391,7 +13391,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 2430
+              "count": 2432
             }
           },
           {
@@ -13399,17 +13399,17 @@
             "lumiName": "隐叶鼠侠",
             "topSkill": {
               "skillId": 12002,
-              "count": 1909
+              "count": 1910
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 3717
+          "count": 3727
         },
-        "battles": 4653,
-        "wins": 1572,
-        "winRate": "33.78",
+        "battles": 4664,
+        "wins": 1574,
+        "winRate": "33.75",
         "tags": [
           "other"
         ]
@@ -13559,7 +13559,7 @@
             "lumiName": "晴天舞姬",
             "topSkill": {
               "skillId": 3004,
-              "count": 13531
+              "count": 13534
             }
           },
           {
@@ -13567,7 +13567,7 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6003,
-              "count": 7652
+              "count": 7653
             }
           },
           {
@@ -13575,7 +13575,7 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 13670
+              "count": 13673
             }
           }
         ],
@@ -13583,9 +13583,9 @@
           "trainerId": 1,
           "count": 8199
         },
-        "battles": 13965,
-        "wins": 8019,
-        "winRate": "57.42",
+        "battles": 13968,
+        "wins": 8022,
+        "winRate": "57.43",
         "tags": [
           "most-used"
         ]
@@ -13645,7 +13645,7 @@
             "lumiName": "晴天舞姬",
             "topSkill": {
               "skillId": 3004,
-              "count": 3420
+              "count": 3429
             }
           },
           {
@@ -13653,7 +13653,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 2430
+              "count": 2432
             }
           },
           {
@@ -13661,17 +13661,17 @@
             "lumiName": "隐叶鼠侠",
             "topSkill": {
               "skillId": 12002,
-              "count": 1909
+              "count": 1910
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 3717
+          "count": 3727
         },
-        "battles": 4653,
-        "wins": 1572,
-        "winRate": "33.78",
+        "battles": 4664,
+        "wins": 1574,
+        "winRate": "33.75",
         "tags": [
           "other"
         ]
@@ -13690,7 +13690,7 @@
             "lumiName": "光兔宝",
             "topSkill": {
               "skillId": 15003,
-              "count": 7736
+              "count": 7765
             }
           },
           {
@@ -13698,7 +13698,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19174
+              "count": 19273
             }
           },
           {
@@ -13706,17 +13706,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20648
+              "count": 20749
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10290
+          "count": 10327
         },
-        "battles": 21098,
-        "wins": 11992,
-        "winRate": "56.84",
+        "battles": 21199,
+        "wins": 12055,
+        "winRate": "56.87",
         "tags": [
           "most-used"
         ]
@@ -13733,7 +13733,7 @@
             "lumiName": "光兔宝",
             "topSkill": {
               "skillId": 15003,
-              "count": 7736
+              "count": 7765
             }
           },
           {
@@ -13741,7 +13741,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19174
+              "count": 19273
             }
           },
           {
@@ -13749,17 +13749,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20648
+              "count": 20749
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10290
+          "count": 10327
         },
-        "battles": 21098,
-        "wins": 11992,
-        "winRate": "56.84",
+        "battles": 21199,
+        "wins": 12055,
+        "winRate": "56.87",
         "tags": [
           "highest-winrate"
         ]
@@ -13776,7 +13776,7 @@
             "lumiName": "光兔宝",
             "topSkill": {
               "skillId": 1003,
-              "count": 740
+              "count": 743
             }
           },
           {
@@ -13784,7 +13784,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 783
+              "count": 786
             }
           },
           {
@@ -13792,17 +13792,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 1172
+              "count": 1193
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1099
+          "count": 1120
         },
-        "battles": 1649,
-        "wins": 906,
-        "winRate": "54.94",
+        "battles": 1679,
+        "wins": 920,
+        "winRate": "54.79",
         "tags": [
           "other"
         ]
@@ -13821,7 +13821,7 @@
             "lumiName": "光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7736
+              "count": 7765
             }
           },
           {
@@ -13829,7 +13829,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19174
+              "count": 19273
             }
           },
           {
@@ -13837,17 +13837,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20648
+              "count": 20749
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10290
+          "count": 10327
         },
-        "battles": 21098,
-        "wins": 11992,
-        "winRate": "56.84",
+        "battles": 21199,
+        "wins": 12055,
+        "winRate": "56.87",
         "tags": [
           "most-used"
         ]
@@ -13864,7 +13864,7 @@
             "lumiName": "光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7736
+              "count": 7765
             }
           },
           {
@@ -13872,7 +13872,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19174
+              "count": 19273
             }
           },
           {
@@ -13880,17 +13880,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20648
+              "count": 20749
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10290
+          "count": 10327
         },
-        "battles": 21098,
-        "wins": 11992,
-        "winRate": "56.84",
+        "battles": 21199,
+        "wins": 12055,
+        "winRate": "56.87",
         "tags": [
           "highest-winrate"
         ]
@@ -13907,7 +13907,7 @@
             "lumiName": "光兔",
             "topSkill": {
               "skillId": 1003,
-              "count": 740
+              "count": 743
             }
           },
           {
@@ -13915,7 +13915,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 783
+              "count": 786
             }
           },
           {
@@ -13923,17 +13923,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 1172
+              "count": 1193
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1099
+          "count": 1120
         },
-        "battles": 1649,
-        "wins": 906,
-        "winRate": "54.94",
+        "battles": 1679,
+        "wins": 920,
+        "winRate": "54.79",
         "tags": [
           "other"
         ]
@@ -13952,7 +13952,7 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7736
+              "count": 7765
             }
           },
           {
@@ -13960,7 +13960,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19174
+              "count": 19273
             }
           },
           {
@@ -13968,17 +13968,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20648
+              "count": 20749
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10290
+          "count": 10327
         },
-        "battles": 21098,
-        "wins": 11992,
-        "winRate": "56.84",
+        "battles": 21199,
+        "wins": 12055,
+        "winRate": "56.87",
         "tags": [
           "most-used"
         ]
@@ -13995,7 +13995,7 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7736
+              "count": 7765
             }
           },
           {
@@ -14003,7 +14003,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19174
+              "count": 19273
             }
           },
           {
@@ -14011,17 +14011,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20648
+              "count": 20749
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10290
+          "count": 10327
         },
-        "battles": 21098,
-        "wins": 11992,
-        "winRate": "56.84",
+        "battles": 21199,
+        "wins": 12055,
+        "winRate": "56.87",
         "tags": [
           "highest-winrate"
         ]
@@ -14038,7 +14038,7 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 1003,
-              "count": 740
+              "count": 743
             }
           },
           {
@@ -14046,7 +14046,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 783
+              "count": 786
             }
           },
           {
@@ -14054,17 +14054,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 1172
+              "count": 1193
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1099
+          "count": 1120
         },
-        "battles": 1649,
-        "wins": 906,
-        "winRate": "54.94",
+        "battles": 1679,
+        "wins": 920,
+        "winRate": "54.79",
         "tags": [
           "other"
         ]
@@ -14083,7 +14083,7 @@
             "lumiName": "耀光兔·异",
             "topSkill": {
               "skillId": 10005,
-              "count": 123
+              "count": 132
             }
           },
           {
@@ -14091,7 +14091,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 315
+              "count": 320
             }
           },
           {
@@ -14099,17 +14099,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 372
+              "count": 382
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 189
+          "count": 195
         },
-        "battles": 374,
-        "wins": 216,
-        "winRate": "57.75",
+        "battles": 384,
+        "wins": 220,
+        "winRate": "57.29",
         "tags": [
           "most-used"
         ]
@@ -14126,7 +14126,7 @@
             "lumiName": "耀光兔·异",
             "topSkill": {
               "skillId": 10005,
-              "count": 123
+              "count": 132
             }
           },
           {
@@ -14134,7 +14134,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 315
+              "count": 320
             }
           },
           {
@@ -14142,17 +14142,17 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 372
+              "count": 382
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 189
+          "count": 195
         },
-        "battles": 374,
-        "wins": 216,
-        "winRate": "57.75",
+        "battles": 384,
+        "wins": 220,
+        "winRate": "57.29",
         "tags": [
           "highest-winrate"
         ]
@@ -14177,7 +14177,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 86
+              "count": 88
             }
           },
           {
@@ -14185,17 +14185,17 @@
             "lumiName": "暗影兔·异",
             "topSkill": {
               "skillId": 12004,
-              "count": 116
+              "count": 118
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 68
+          "count": 70
         },
-        "battles": 118,
+        "battles": 120,
         "wins": 66,
-        "winRate": "55.93",
+        "winRate": "55.00",
         "tags": [
           "other"
         ]
@@ -14214,7 +14214,7 @@
             "lumiName": "暗兔宝",
             "topSkill": {
               "skillId": 12004,
-              "count": 20660
+              "count": 20761
             }
           },
           {
@@ -14222,7 +14222,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19166
+              "count": 19265
             }
           },
           {
@@ -14230,17 +14230,17 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7739
+              "count": 7768
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10281
+          "count": 10318
         },
-        "battles": 21116,
-        "wins": 11991,
-        "winRate": "56.79",
+        "battles": 21217,
+        "wins": 12054,
+        "winRate": "56.81",
         "tags": [
           "most-used"
         ]
@@ -14257,7 +14257,7 @@
             "lumiName": "暗兔宝",
             "topSkill": {
               "skillId": 12004,
-              "count": 20660
+              "count": 20761
             }
           },
           {
@@ -14265,7 +14265,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19166
+              "count": 19265
             }
           },
           {
@@ -14273,17 +14273,17 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7739
+              "count": 7768
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10281
+          "count": 10318
         },
-        "battles": 21116,
-        "wins": 11991,
-        "winRate": "56.79",
+        "battles": 21217,
+        "wins": 12054,
+        "winRate": "56.81",
         "tags": [
           "highest-winrate"
         ]
@@ -14300,7 +14300,7 @@
             "lumiName": "暗兔宝",
             "topSkill": {
               "skillId": 12004,
-              "count": 1131
+              "count": 1152
             }
           },
           {
@@ -14308,7 +14308,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 731
+              "count": 734
             }
           },
           {
@@ -14316,17 +14316,17 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 1003,
-              "count": 742
+              "count": 745
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1102
+          "count": 1123
         },
-        "battles": 1601,
-        "wins": 878,
-        "winRate": "54.84",
+        "battles": 1631,
+        "wins": 892,
+        "winRate": "54.69",
         "tags": [
           "other"
         ]
@@ -14345,7 +14345,7 @@
             "lumiName": "暗兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20660
+              "count": 20761
             }
           },
           {
@@ -14353,7 +14353,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19166
+              "count": 19265
             }
           },
           {
@@ -14361,17 +14361,17 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7739
+              "count": 7768
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10281
+          "count": 10318
         },
-        "battles": 21116,
-        "wins": 11991,
-        "winRate": "56.79",
+        "battles": 21217,
+        "wins": 12054,
+        "winRate": "56.81",
         "tags": [
           "most-used"
         ]
@@ -14388,7 +14388,7 @@
             "lumiName": "暗兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20660
+              "count": 20761
             }
           },
           {
@@ -14396,7 +14396,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19166
+              "count": 19265
             }
           },
           {
@@ -14404,17 +14404,17 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7739
+              "count": 7768
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10281
+          "count": 10318
         },
-        "battles": 21116,
-        "wins": 11991,
-        "winRate": "56.79",
+        "battles": 21217,
+        "wins": 12054,
+        "winRate": "56.81",
         "tags": [
           "highest-winrate"
         ]
@@ -14431,7 +14431,7 @@
             "lumiName": "暗兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 1131
+              "count": 1152
             }
           },
           {
@@ -14439,7 +14439,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 731
+              "count": 734
             }
           },
           {
@@ -14447,17 +14447,17 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 1003,
-              "count": 742
+              "count": 745
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1102
+          "count": 1123
         },
-        "battles": 1601,
-        "wins": 878,
-        "winRate": "54.84",
+        "battles": 1631,
+        "wins": 892,
+        "winRate": "54.69",
         "tags": [
           "other"
         ]
@@ -14476,7 +14476,7 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20660
+              "count": 20761
             }
           },
           {
@@ -14484,7 +14484,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19166
+              "count": 19265
             }
           },
           {
@@ -14492,17 +14492,17 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7739
+              "count": 7768
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10281
+          "count": 10318
         },
-        "battles": 21116,
-        "wins": 11991,
-        "winRate": "56.79",
+        "battles": 21217,
+        "wins": 12054,
+        "winRate": "56.81",
         "tags": [
           "most-used"
         ]
@@ -14519,7 +14519,7 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 20660
+              "count": 20761
             }
           },
           {
@@ -14527,7 +14527,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 19166
+              "count": 19265
             }
           },
           {
@@ -14535,17 +14535,17 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 15003,
-              "count": 7739
+              "count": 7768
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 10281
+          "count": 10318
         },
-        "battles": 21116,
-        "wins": 11991,
-        "winRate": "56.79",
+        "battles": 21217,
+        "wins": 12054,
+        "winRate": "56.81",
         "tags": [
           "highest-winrate"
         ]
@@ -14562,7 +14562,7 @@
             "lumiName": "暗影兔",
             "topSkill": {
               "skillId": 12004,
-              "count": 1131
+              "count": 1152
             }
           },
           {
@@ -14570,7 +14570,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 731
+              "count": 734
             }
           },
           {
@@ -14578,17 +14578,17 @@
             "lumiName": "耀光兔",
             "topSkill": {
               "skillId": 1003,
-              "count": 742
+              "count": 745
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1102
+          "count": 1123
         },
-        "battles": 1601,
-        "wins": 878,
-        "winRate": "54.84",
+        "battles": 1631,
+        "wins": 892,
+        "winRate": "54.69",
         "tags": [
           "other"
         ]
@@ -14607,7 +14607,7 @@
             "lumiName": "暗影兔·异",
             "topSkill": {
               "skillId": 12004,
-              "count": 679
+              "count": 682
             }
           },
           {
@@ -14615,7 +14615,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 641
+              "count": 642
             }
           },
           {
@@ -14629,11 +14629,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 337
+          "count": 341
         },
-        "battles": 698,
+        "battles": 702,
         "wins": 322,
-        "winRate": "46.13",
+        "winRate": "45.87",
         "tags": [
           "most-used"
         ]
@@ -14693,7 +14693,7 @@
             "lumiName": "暗影兔·异",
             "topSkill": {
               "skillId": 12004,
-              "count": 116
+              "count": 118
             }
           },
           {
@@ -14701,7 +14701,7 @@
             "lumiName": "飞行猫鲨",
             "topSkill": {
               "skillId": 7003,
-              "count": 86
+              "count": 88
             }
           },
           {
@@ -14715,11 +14715,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 68
+          "count": 70
         },
-        "battles": 118,
+        "battles": 120,
         "wins": 66,
-        "winRate": "55.93",
+        "winRate": "55.00",
         "tags": [
           "other"
         ]
@@ -15524,7 +15524,7 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 6004,
-              "count": 8410
+              "count": 8498
             }
           },
           {
@@ -15532,7 +15532,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 14726
+              "count": 14869
             }
           },
           {
@@ -15540,17 +15540,17 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6002,
-              "count": 9350
+              "count": 9465
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11196
+          "count": 11298
         },
-        "battles": 17050,
-        "wins": 11764,
-        "winRate": "69.00",
+        "battles": 17213,
+        "wins": 11876,
+        "winRate": "68.99",
         "tags": [
           "most-used"
         ]
@@ -15567,7 +15567,7 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 6004,
-              "count": 8410
+              "count": 8498
             }
           },
           {
@@ -15575,7 +15575,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 14726
+              "count": 14869
             }
           },
           {
@@ -15583,17 +15583,17 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6002,
-              "count": 9350
+              "count": 9465
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11196
+          "count": 11298
         },
-        "battles": 17050,
-        "wins": 11764,
-        "winRate": "69.00",
+        "battles": 17213,
+        "wins": 11876,
+        "winRate": "68.99",
         "tags": [
           "highest-winrate"
         ]
@@ -15610,7 +15610,7 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 6004,
-              "count": 788
+              "count": 790
             }
           },
           {
@@ -15618,7 +15618,7 @@
             "lumiName": "黄风大圣·异",
             "topSkill": {
               "skillId": 6003,
-              "count": 1302
+              "count": 1304
             }
           },
           {
@@ -15626,17 +15626,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 1874
+              "count": 1875
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1850
+          "count": 1852
         },
-        "battles": 2643,
-        "wins": 1814,
-        "winRate": "68.63",
+        "battles": 2645,
+        "wins": 1815,
+        "winRate": "68.62",
         "tags": [
           "other"
         ]
@@ -15655,7 +15655,7 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 12307
+              "count": 12358
             }
           },
           {
@@ -15663,7 +15663,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 11400
+              "count": 11437
             }
           },
           {
@@ -15671,17 +15671,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 10730
+              "count": 10773
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 10471
+          "count": 10497
         },
-        "battles": 12478,
-        "wins": 6851,
-        "winRate": "54.90",
+        "battles": 12529,
+        "wins": 6888,
+        "winRate": "54.98",
         "tags": [
           "most-used"
         ]
@@ -15698,7 +15698,7 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 2465
+              "count": 2485
             }
           },
           {
@@ -15706,7 +15706,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 2137
+              "count": 2157
             }
           },
           {
@@ -15714,17 +15714,17 @@
             "lumiName": "许愿灯象",
             "topSkill": {
               "skillId": 13002,
-              "count": 980
+              "count": 981
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1618
+          "count": 1624
         },
-        "battles": 2489,
-        "wins": 1466,
-        "winRate": "58.90",
+        "battles": 2510,
+        "wins": 1476,
+        "winRate": "58.80",
         "tags": [
           "highest-winrate"
         ]
@@ -15741,7 +15741,7 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 1002
+              "count": 1003
             }
           },
           {
@@ -15749,7 +15749,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 786
+              "count": 787
             }
           },
           {
@@ -15765,9 +15765,9 @@
           "trainerId": 1,
           "count": 321
         },
-        "battles": 1138,
+        "battles": 1139,
         "wins": 581,
-        "winRate": "51.05",
+        "winRate": "51.01",
         "tags": [
           "other"
         ]
@@ -15917,7 +15917,7 @@
             "lumiName": "拳拳袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 8188
+              "count": 8193
             }
           },
           {
@@ -15925,7 +15925,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 6868
+              "count": 6873
             }
           },
           {
@@ -15933,17 +15933,17 @@
             "lumiName": "森灵龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 7934
+              "count": 7939
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 7131
+          "count": 7135
         },
-        "battles": 8687,
-        "wins": 5253,
-        "winRate": "60.47",
+        "battles": 8692,
+        "wins": 5255,
+        "winRate": "60.46",
         "tags": [
           "most-used"
         ]
@@ -15960,7 +15960,7 @@
             "lumiName": "拳拳袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 2618
+              "count": 2619
             }
           },
           {
@@ -15968,7 +15968,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9005,
-              "count": 1913
+              "count": 1914
             }
           },
           {
@@ -15976,17 +15976,17 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 7004,
-              "count": 2730
+              "count": 2731
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2202
+          "count": 2203
         },
-        "battles": 2844,
+        "battles": 2845,
         "wins": 1930,
-        "winRate": "67.86",
+        "winRate": "67.84",
         "tags": [
           "highest-winrate"
         ]
@@ -16003,7 +16003,7 @@
             "lumiName": "拳拳袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 5975
+              "count": 5992
             }
           },
           {
@@ -16011,7 +16011,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 5543
+              "count": 5562
             }
           },
           {
@@ -16019,16 +16019,16 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 5032
+              "count": 5035
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 4401
+          "count": 4418
         },
-        "battles": 6574,
-        "wins": 4379,
+        "battles": 6594,
+        "wins": 4392,
         "winRate": "66.61",
         "tags": [
           "other"
@@ -16048,7 +16048,7 @@
             "lumiName": "搏击袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 8188
+              "count": 8193
             }
           },
           {
@@ -16056,7 +16056,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 6868
+              "count": 6873
             }
           },
           {
@@ -16064,17 +16064,17 @@
             "lumiName": "森灵龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 7934
+              "count": 7939
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 7131
+          "count": 7135
         },
-        "battles": 8687,
-        "wins": 5253,
-        "winRate": "60.47",
+        "battles": 8692,
+        "wins": 5255,
+        "winRate": "60.46",
         "tags": [
           "most-used"
         ]
@@ -16091,7 +16091,7 @@
             "lumiName": "搏击袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 2618
+              "count": 2619
             }
           },
           {
@@ -16099,7 +16099,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9005,
-              "count": 1913
+              "count": 1914
             }
           },
           {
@@ -16107,17 +16107,17 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 7004,
-              "count": 2730
+              "count": 2731
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2202
+          "count": 2203
         },
-        "battles": 2844,
+        "battles": 2845,
         "wins": 1930,
-        "winRate": "67.86",
+        "winRate": "67.84",
         "tags": [
           "highest-winrate"
         ]
@@ -16134,7 +16134,7 @@
             "lumiName": "搏击袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 5975
+              "count": 5992
             }
           },
           {
@@ -16142,7 +16142,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 5543
+              "count": 5562
             }
           },
           {
@@ -16150,16 +16150,16 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 5032
+              "count": 5035
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 4401
+          "count": 4418
         },
-        "battles": 6574,
-        "wins": 4379,
+        "battles": 6594,
+        "wins": 4392,
         "winRate": "66.61",
         "tags": [
           "other"
@@ -16179,7 +16179,7 @@
             "lumiName": "搏击袋鼠·异",
             "topSkill": {
               "skillId": 12003,
-              "count": 1980
+              "count": 2032
             }
           },
           {
@@ -16187,7 +16187,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 1771
+              "count": 1823
             }
           },
           {
@@ -16195,17 +16195,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 1589
+              "count": 1634
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1531
+          "count": 1559
         },
-        "battles": 2086,
-        "wins": 1369,
-        "winRate": "65.63",
+        "battles": 2138,
+        "wins": 1408,
+        "winRate": "65.86",
         "tags": [
           "most-used"
         ]
@@ -16222,7 +16222,7 @@
             "lumiName": "搏击袋鼠·异",
             "topSkill": {
               "skillId": 12003,
-              "count": 490
+              "count": 533
             }
           },
           {
@@ -16230,7 +16230,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 470
+              "count": 505
             }
           },
           {
@@ -16238,17 +16238,17 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 12002,
-              "count": 149
+              "count": 151
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 453
+          "count": 491
         },
-        "battles": 550,
-        "wins": 372,
-        "winRate": "67.64",
+        "battles": 595,
+        "wins": 400,
+        "winRate": "67.23",
         "tags": [
           "highest-winrate"
         ]
@@ -16265,7 +16265,7 @@
             "lumiName": "搏击袋鼠·异",
             "topSkill": {
               "skillId": 12003,
-              "count": 508
+              "count": 536
             }
           },
           {
@@ -16273,7 +16273,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 412
+              "count": 432
             }
           },
           {
@@ -16281,17 +16281,17 @@
             "lumiName": "森灵龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 500
+              "count": 520
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 451
+          "count": 469
         },
-        "battles": 524,
-        "wins": 283,
-        "winRate": "54.01",
+        "battles": 552,
+        "wins": 300,
+        "winRate": "54.35",
         "tags": [
           "other"
         ]
@@ -16310,7 +16310,7 @@
             "lumiName": "水龙",
             "topSkill": {
               "skillId": 2004,
-              "count": 346
+              "count": 349
             }
           },
           {
@@ -16318,7 +16318,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 530
+              "count": 533
             }
           },
           {
@@ -16326,17 +16326,17 @@
             "lumiName": "森灵龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 430
+              "count": 431
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 744
+          "count": 759
         },
-        "battles": 1012,
-        "wins": 463,
-        "winRate": "45.75",
+        "battles": 1027,
+        "wins": 468,
+        "winRate": "45.57",
         "tags": [
           "most-used"
         ]
@@ -16353,7 +16353,7 @@
             "lumiName": "水龙",
             "topSkill": {
               "skillId": 2003,
-              "count": 98
+              "count": 99
             }
           },
           {
@@ -16369,17 +16369,17 @@
             "lumiName": "海天使",
             "topSkill": {
               "skillId": 2004,
-              "count": 141
+              "count": 143
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 81
+          "count": 84
         },
-        "battles": 147,
-        "wins": 103,
-        "winRate": "70.07",
+        "battles": 150,
+        "wins": 105,
+        "winRate": "70.00",
         "tags": [
           "highest-winrate"
         ]
@@ -16441,7 +16441,7 @@
             "lumiName": "草龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 8066
+              "count": 8071
             }
           },
           {
@@ -16449,7 +16449,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 7012
+              "count": 7017
             }
           },
           {
@@ -16457,17 +16457,17 @@
             "lumiName": "搏击袋鼠",
             "topSkill": {
               "skillId": 12003,
-              "count": 8329
+              "count": 8334
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 7279
+          "count": 7283
         },
-        "battles": 8839,
-        "wins": 5326,
-        "winRate": "60.26",
+        "battles": 8844,
+        "wins": 5328,
+        "winRate": "60.24",
         "tags": [
           "most-used"
         ]
@@ -16500,16 +16500,16 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 7004,
-              "count": 3365
+              "count": 3368
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2031
+          "count": 2034
         },
-        "battles": 3685,
-        "wins": 2364,
+        "battles": 3688,
+        "wins": 2366,
         "winRate": "64.15",
         "tags": [
           "highest-winrate"
@@ -16527,7 +16527,7 @@
             "lumiName": "草龙",
             "topSkill": {
               "skillId": 4003,
-              "count": 3566
+              "count": 3574
             }
           },
           {
@@ -16535,7 +16535,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 3369
+              "count": 3375
             }
           },
           {
@@ -16543,17 +16543,17 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 4175
+              "count": 4185
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 3529
+          "count": 3539
         },
-        "battles": 4593,
-        "wins": 2723,
-        "winRate": "59.29",
+        "battles": 4603,
+        "wins": 2727,
+        "winRate": "59.24",
         "tags": [
           "other"
         ]
@@ -16594,11 +16594,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 373
+          "count": 375
         },
-        "battles": 565,
-        "wins": 180,
-        "winRate": "31.86",
+        "battles": 567,
+        "wins": 181,
+        "winRate": "31.92",
         "tags": [
           "most-used"
         ]
@@ -17489,7 +17489,7 @@
             "lumiName": "卡布奇诺刺客",
             "topSkill": {
               "skillId": 15003,
-              "count": 1306
+              "count": 1313
             }
           },
           {
@@ -17497,7 +17497,7 @@
             "lumiName": "金刚狼",
             "topSkill": {
               "skillId": 1001,
-              "count": 1030
+              "count": 1037
             }
           },
           {
@@ -17505,17 +17505,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15004,
-              "count": 1289
+              "count": 1296
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1288
+          "count": 1295
         },
-        "battles": 1479,
-        "wins": 609,
-        "winRate": "41.18",
+        "battles": 1486,
+        "wins": 614,
+        "winRate": "41.32",
         "tags": [
           "most-used"
         ]
@@ -17532,7 +17532,7 @@
             "lumiName": "卡布奇诺刺客",
             "topSkill": {
               "skillId": 12001,
-              "count": 610
+              "count": 655
             }
           },
           {
@@ -17540,7 +17540,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 1240
+              "count": 1289
             }
           },
           {
@@ -17548,17 +17548,17 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 1003,
-              "count": 725
+              "count": 744
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1155
+          "count": 1202
         },
-        "battles": 1387,
-        "wins": 1016,
-        "winRate": "73.25",
+        "battles": 1437,
+        "wins": 1047,
+        "winRate": "72.86",
         "tags": [
           "highest-winrate"
         ]
@@ -17882,7 +17882,7 @@
             "lumiName": "绽放·异",
             "topSkill": {
               "skillId": 4003,
-              "count": 206
+              "count": 219
             }
           },
           {
@@ -17890,7 +17890,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 200
+              "count": 213
             }
           },
           {
@@ -17898,17 +17898,17 @@
             "lumiName": "搏击袋鼠·异",
             "topSkill": {
               "skillId": 12003,
-              "count": 249
+              "count": 261
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 229
+          "count": 241
         },
-        "battles": 257,
-        "wins": 161,
-        "winRate": "62.65",
+        "battles": 271,
+        "wins": 170,
+        "winRate": "62.73",
         "tags": [
           "most-used"
         ]
@@ -18099,7 +18099,7 @@
             "lumiName": "战螂",
             "topSkill": {
               "skillId": 4003,
-              "count": 289
+              "count": 291
             }
           },
           {
@@ -18115,17 +18115,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 198
+              "count": 200
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 431
+          "count": 432
         },
-        "battles": 585,
+        "battles": 587,
         "wins": 193,
-        "winRate": "32.99",
+        "winRate": "32.88",
         "tags": [
           "other"
         ]
@@ -18230,7 +18230,7 @@
             "lumiName": "战螂宝宝",
             "topSkill": {
               "skillId": 4003,
-              "count": 289
+              "count": 291
             }
           },
           {
@@ -18246,17 +18246,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 198
+              "count": 200
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 431
+          "count": 432
         },
-        "battles": 585,
+        "battles": 587,
         "wins": 193,
-        "winRate": "32.99",
+        "winRate": "32.88",
         "tags": [
           "other"
         ]
@@ -18275,7 +18275,7 @@
             "lumiName": "火龙果",
             "topSkill": {
               "skillId": 3003,
-              "count": 941
+              "count": 942
             }
           },
           {
@@ -18291,17 +18291,17 @@
             "lumiName": "魔影只鼬",
             "topSkill": {
               "skillId": 11004,
-              "count": 1697
+              "count": 1699
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2197
+          "count": 2199
         },
-        "battles": 2638,
+        "battles": 2640,
         "wins": 831,
-        "winRate": "31.50",
+        "winRate": "31.48",
         "tags": [
           "most-used"
         ]
@@ -18406,7 +18406,7 @@
             "lumiName": "果火龙",
             "topSkill": {
               "skillId": 3003,
-              "count": 941
+              "count": 942
             }
           },
           {
@@ -18422,17 +18422,17 @@
             "lumiName": "魔影只鼬",
             "topSkill": {
               "skillId": 11004,
-              "count": 1697
+              "count": 1699
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2197
+          "count": 2199
         },
-        "battles": 2638,
+        "battles": 2640,
         "wins": 831,
-        "winRate": "31.50",
+        "winRate": "31.48",
         "tags": [
           "most-used"
         ]
@@ -18537,7 +18537,7 @@
             "lumiName": "果火龙·异",
             "topSkill": {
               "skillId": 9006,
-              "count": 366
+              "count": 374
             }
           },
           {
@@ -18545,7 +18545,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 760
+              "count": 768
             }
           },
           {
@@ -18553,17 +18553,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 366
+              "count": 370
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 531
+          "count": 539
         },
-        "battles": 807,
-        "wins": 482,
-        "winRate": "59.73",
+        "battles": 819,
+        "wins": 485,
+        "winRate": "59.22",
         "tags": [
           "most-used"
         ]
@@ -18623,7 +18623,7 @@
             "lumiName": "果火龙·异",
             "topSkill": {
               "skillId": 9002,
-              "count": 266
+              "count": 268
             }
           },
           {
@@ -18631,7 +18631,7 @@
             "lumiName": "响尾眼镜蛇",
             "topSkill": {
               "skillId": 13006,
-              "count": 336
+              "count": 338
             }
           },
           {
@@ -18639,17 +18639,17 @@
             "lumiName": "魔影只鼬",
             "topSkill": {
               "skillId": 11004,
-              "count": 466
+              "count": 468
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 537
+          "count": 541
         },
-        "battles": 660,
-        "wins": 248,
-        "winRate": "37.58",
+        "battles": 665,
+        "wins": 251,
+        "winRate": "37.74",
         "tags": [
           "other"
         ]
@@ -18668,7 +18668,7 @@
             "lumiName": "龙裹火",
             "topSkill": {
               "skillId": 3003,
-              "count": 941
+              "count": 942
             }
           },
           {
@@ -18684,17 +18684,17 @@
             "lumiName": "魔影只鼬",
             "topSkill": {
               "skillId": 11004,
-              "count": 1697
+              "count": 1699
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 2197
+          "count": 2199
         },
-        "battles": 2638,
+        "battles": 2640,
         "wins": 831,
-        "winRate": "31.50",
+        "winRate": "31.48",
         "tags": [
           "most-used"
         ]
@@ -18799,7 +18799,7 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6002,
-              "count": 9350
+              "count": 9465
             }
           },
           {
@@ -18807,7 +18807,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 14726
+              "count": 14869
             }
           },
           {
@@ -18815,17 +18815,17 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 6004,
-              "count": 8410
+              "count": 8498
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11196
+          "count": 11298
         },
-        "battles": 17050,
-        "wins": 11764,
-        "winRate": "69.00",
+        "battles": 17213,
+        "wins": 11876,
+        "winRate": "68.99",
         "tags": [
           "most-used"
         ]
@@ -18842,7 +18842,7 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6002,
-              "count": 9350
+              "count": 9465
             }
           },
           {
@@ -18850,7 +18850,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 14726
+              "count": 14869
             }
           },
           {
@@ -18858,17 +18858,17 @@
             "lumiName": "骑士铠",
             "topSkill": {
               "skillId": 6004,
-              "count": 8410
+              "count": 8498
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11196
+          "count": 11298
         },
-        "battles": 17050,
-        "wins": 11764,
-        "winRate": "69.00",
+        "battles": 17213,
+        "wins": 11876,
+        "winRate": "68.99",
         "tags": [
           "highest-winrate"
         ]
@@ -18885,7 +18885,7 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6003,
-              "count": 7047
+              "count": 7048
             }
           },
           {
@@ -18893,7 +18893,7 @@
             "lumiName": "晴天娃娃",
             "topSkill": {
               "skillId": 3004,
-              "count": 12557
+              "count": 12560
             }
           },
           {
@@ -18901,7 +18901,7 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 12705
+              "count": 12708
             }
           }
         ],
@@ -18909,9 +18909,9 @@
           "trainerId": 1,
           "count": 7533
         },
-        "battles": 12869,
-        "wins": 7479,
-        "winRate": "58.12",
+        "battles": 12872,
+        "wins": 7482,
+        "winRate": "58.13",
         "tags": [
           "other"
         ]
@@ -18930,7 +18930,7 @@
             "lumiName": "螳螂虾",
             "topSkill": {
               "skillId": 12001,
-              "count": 59
+              "count": 60
             }
           },
           {
@@ -18952,11 +18952,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 68
+          "count": 69
         },
-        "battles": 80,
+        "battles": 82,
         "wins": 40,
-        "winRate": "50.00",
+        "winRate": "48.78",
         "tags": [
           "most-used"
         ]
@@ -19061,7 +19061,7 @@
             "lumiName": "三彩鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3595
+              "count": 3601
             }
           },
           {
@@ -19069,7 +19069,7 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 4375
+              "count": 4381
             }
           },
           {
@@ -19077,17 +19077,17 @@
             "lumiName": "炽焰马",
             "topSkill": {
               "skillId": 3003,
-              "count": 4932
+              "count": 4947
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5756
+          "count": 5768
         },
-        "battles": 7046,
-        "wins": 2721,
-        "winRate": "38.62",
+        "battles": 7062,
+        "wins": 2730,
+        "winRate": "38.66",
         "tags": [
           "most-used"
         ]
@@ -19147,7 +19147,7 @@
             "lumiName": "三彩鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 1578
+              "count": 1583
             }
           },
           {
@@ -19155,7 +19155,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13001,
-              "count": 1675
+              "count": 1677
             }
           },
           {
@@ -19163,16 +19163,16 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 1781
+              "count": 1785
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 4708
+          "count": 4720
         },
-        "battles": 6444,
-        "wins": 2486,
+        "battles": 6456,
+        "wins": 2491,
         "winRate": "38.58",
         "tags": [
           "other"
@@ -19192,7 +19192,7 @@
             "lumiName": "六曜鹿",
             "topSkill": {
               "skillId": 12006,
-              "count": 3595
+              "count": 3601
             }
           },
           {
@@ -19200,7 +19200,7 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 4375
+              "count": 4381
             }
           },
           {
@@ -19208,17 +19208,17 @@
             "lumiName": "炽焰马",
             "topSkill": {
               "skillId": 3003,
-              "count": 4932
+              "count": 4947
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 5756
+          "count": 5768
         },
-        "battles": 7046,
-        "wins": 2721,
-        "winRate": "38.62",
+        "battles": 7062,
+        "wins": 2730,
+        "winRate": "38.66",
         "tags": [
           "most-used"
         ]
@@ -19278,7 +19278,7 @@
             "lumiName": "六曜鹿",
             "topSkill": {
               "skillId": 10004,
-              "count": 1578
+              "count": 1583
             }
           },
           {
@@ -19286,7 +19286,7 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13001,
-              "count": 1675
+              "count": 1677
             }
           },
           {
@@ -19294,16 +19294,16 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 1781
+              "count": 1785
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 4708
+          "count": 4720
         },
-        "battles": 6444,
-        "wins": 2486,
+        "battles": 6456,
+        "wins": 2491,
         "winRate": "38.58",
         "tags": [
           "other"
@@ -19716,7 +19716,7 @@
             "lumiName": "巨岩角龟",
             "topSkill": {
               "skillId": 6001,
-              "count": 337
+              "count": 338
             }
           },
           {
@@ -19724,7 +19724,7 @@
             "lumiName": "九色鹿",
             "topSkill": {
               "skillId": 10002,
-              "count": 409
+              "count": 411
             }
           },
           {
@@ -19732,17 +19732,17 @@
             "lumiName": "双刃炎猫",
             "topSkill": {
               "skillId": 15002,
-              "count": 481
+              "count": 487
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 1105
+          "count": 1111
         },
-        "battles": 1501,
-        "wins": 672,
-        "winRate": "44.77",
+        "battles": 1508,
+        "wins": 678,
+        "winRate": "44.96",
         "tags": [
           "most-used"
         ]
@@ -19847,7 +19847,7 @@
             "lumiName": "粉扇雀圣",
             "topSkill": {
               "skillId": 7004,
-              "count": 4898
+              "count": 4900
             }
           },
           {
@@ -19855,7 +19855,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 1647
+              "count": 1648
             }
           },
           {
@@ -19863,7 +19863,7 @@
             "lumiName": "风暴狮鹫",
             "topSkill": {
               "skillId": 9005,
-              "count": 3563
+              "count": 3564
             }
           }
         ],
@@ -19871,9 +19871,9 @@
           "trainerId": 1,
           "count": 1333
         },
-        "battles": 5128,
+        "battles": 5130,
         "wins": 2679,
-        "winRate": "52.24",
+        "winRate": "52.22",
         "tags": [
           "most-used"
         ]
@@ -19941,7 +19941,7 @@
             "lumiName": "独角兽",
             "topSkill": {
               "skillId": 13003,
-              "count": 786
+              "count": 787
             }
           },
           {
@@ -19949,7 +19949,7 @@
             "lumiName": "招财猫",
             "topSkill": {
               "skillId": 14005,
-              "count": 1002
+              "count": 1003
             }
           }
         ],
@@ -19957,9 +19957,9 @@
           "trainerId": 1,
           "count": 321
         },
-        "battles": 1138,
+        "battles": 1139,
         "wins": 581,
-        "winRate": "51.05",
+        "winRate": "51.01",
         "tags": [
           "other"
         ]
@@ -19978,7 +19978,7 @@
             "lumiName": "龙虾",
             "topSkill": {
               "skillId": 2003,
-              "count": 405
+              "count": 407
             }
           },
           {
@@ -20000,11 +20000,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 946
+          "count": 947
         },
-        "battles": 1330,
+        "battles": 1332,
         "wins": 484,
-        "winRate": "36.39",
+        "winRate": "36.34",
         "tags": [
           "most-used"
         ]
@@ -20152,7 +20152,7 @@
             "lumiName": "铁甲土犀",
             "topSkill": {
               "skillId": 12007,
-              "count": 73
+              "count": 74
             }
           },
           {
@@ -20174,11 +20174,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 81
+          "count": 82
         },
-        "battles": 82,
-        "wins": 67,
-        "winRate": "81.71",
+        "battles": 83,
+        "wins": 68,
+        "winRate": "81.93",
         "tags": [
           "highest-winrate"
         ]
@@ -20240,7 +20240,7 @@
             "lumiName": "小塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22346
+              "count": 22436
             }
           },
           {
@@ -20248,7 +20248,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20226
+              "count": 20302
             }
           },
           {
@@ -20256,17 +20256,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18498
+              "count": 18572
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11095
+          "count": 11146
         },
-        "battles": 22614,
-        "wins": 15425,
-        "winRate": "68.21",
+        "battles": 22704,
+        "wins": 15471,
+        "winRate": "68.14",
         "tags": [
           "most-used"
         ]
@@ -20283,7 +20283,7 @@
             "lumiName": "小塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22346
+              "count": 22436
             }
           },
           {
@@ -20291,7 +20291,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20226
+              "count": 20302
             }
           },
           {
@@ -20299,17 +20299,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18498
+              "count": 18572
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11095
+          "count": 11146
         },
-        "battles": 22614,
-        "wins": 15425,
-        "winRate": "68.21",
+        "battles": 22704,
+        "wins": 15471,
+        "winRate": "68.14",
         "tags": [
           "highest-winrate"
         ]
@@ -20326,7 +20326,7 @@
             "lumiName": "小塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 12749
+              "count": 12752
             }
           },
           {
@@ -20334,7 +20334,7 @@
             "lumiName": "晴天娃娃",
             "topSkill": {
               "skillId": 3004,
-              "count": 12599
+              "count": 12602
             }
           },
           {
@@ -20342,7 +20342,7 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6003,
-              "count": 7054
+              "count": 7055
             }
           }
         ],
@@ -20350,9 +20350,9 @@
           "trainerId": 1,
           "count": 7575
         },
-        "battles": 12915,
-        "wins": 7492,
-        "winRate": "58.01",
+        "battles": 12918,
+        "wins": 7495,
+        "winRate": "58.02",
         "tags": [
           "other"
         ]
@@ -20371,7 +20371,7 @@
             "lumiName": "哨塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22346
+              "count": 22436
             }
           },
           {
@@ -20379,7 +20379,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20226
+              "count": 20302
             }
           },
           {
@@ -20387,17 +20387,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18498
+              "count": 18572
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11095
+          "count": 11146
         },
-        "battles": 22614,
-        "wins": 15425,
-        "winRate": "68.21",
+        "battles": 22704,
+        "wins": 15471,
+        "winRate": "68.14",
         "tags": [
           "most-used"
         ]
@@ -20414,7 +20414,7 @@
             "lumiName": "哨塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22346
+              "count": 22436
             }
           },
           {
@@ -20422,7 +20422,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20226
+              "count": 20302
             }
           },
           {
@@ -20430,17 +20430,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18498
+              "count": 18572
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11095
+          "count": 11146
         },
-        "battles": 22614,
-        "wins": 15425,
-        "winRate": "68.21",
+        "battles": 22704,
+        "wins": 15471,
+        "winRate": "68.14",
         "tags": [
           "highest-winrate"
         ]
@@ -20457,7 +20457,7 @@
             "lumiName": "哨塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 12749
+              "count": 12752
             }
           },
           {
@@ -20465,7 +20465,7 @@
             "lumiName": "晴天娃娃",
             "topSkill": {
               "skillId": 3004,
-              "count": 12599
+              "count": 12602
             }
           },
           {
@@ -20473,7 +20473,7 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6003,
-              "count": 7054
+              "count": 7055
             }
           }
         ],
@@ -20481,9 +20481,9 @@
           "trainerId": 1,
           "count": 7575
         },
-        "battles": 12915,
-        "wins": 7492,
-        "winRate": "58.01",
+        "battles": 12918,
+        "wins": 7495,
+        "winRate": "58.02",
         "tags": [
           "other"
         ]
@@ -20502,7 +20502,7 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22346
+              "count": 22436
             }
           },
           {
@@ -20510,7 +20510,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20226
+              "count": 20302
             }
           },
           {
@@ -20518,17 +20518,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18498
+              "count": 18572
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11095
+          "count": 11146
         },
-        "battles": 22614,
-        "wins": 15425,
-        "winRate": "68.21",
+        "battles": 22704,
+        "wins": 15471,
+        "winRate": "68.14",
         "tags": [
           "most-used"
         ]
@@ -20545,7 +20545,7 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 22346
+              "count": 22436
             }
           },
           {
@@ -20553,7 +20553,7 @@
             "lumiName": "烈焰龙",
             "topSkill": {
               "skillId": 9002,
-              "count": 20226
+              "count": 20302
             }
           },
           {
@@ -20561,17 +20561,17 @@
             "lumiName": "迷梦猫鲨",
             "topSkill": {
               "skillId": 13003,
-              "count": 18498
+              "count": 18572
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 11095
+          "count": 11146
         },
-        "battles": 22614,
-        "wins": 15425,
-        "winRate": "68.21",
+        "battles": 22704,
+        "wins": 15471,
+        "winRate": "68.14",
         "tags": [
           "highest-winrate"
         ]
@@ -20588,7 +20588,7 @@
             "lumiName": "炮塔蟹",
             "topSkill": {
               "skillId": 6002,
-              "count": 12749
+              "count": 12752
             }
           },
           {
@@ -20596,7 +20596,7 @@
             "lumiName": "晴天娃娃",
             "topSkill": {
               "skillId": 3004,
-              "count": 12599
+              "count": 12602
             }
           },
           {
@@ -20604,7 +20604,7 @@
             "lumiName": "岩刺猫鲨",
             "topSkill": {
               "skillId": 6003,
-              "count": 7054
+              "count": 7055
             }
           }
         ],
@@ -20612,9 +20612,9 @@
           "trainerId": 1,
           "count": 7575
         },
-        "battles": 12915,
-        "wins": 7492,
-        "winRate": "58.01",
+        "battles": 12918,
+        "wins": 7495,
+        "winRate": "58.02",
         "tags": [
           "other"
         ]
