@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-12T05:23:44.216Z",
+  "updateTime": "2026-08-12T06:29:16.242Z",
   "weeks": [
     1,
     2,
@@ -9678,7 +9678,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9002,
-              "count": 152
+              "count": 155
             }
           },
           {
@@ -9686,17 +9686,17 @@
             "lumiName": "Rainbowdeer",
             "topSkill": {
               "skillId": 12006,
-              "count": 277
+              "count": 280
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 281
+          "count": 284
         },
-        "battles": 287,
-        "wins": 171,
-        "winRate": "59.58",
+        "battles": 290,
+        "wins": 174,
+        "winRate": "60.00",
         "tags": [
           "other"
         ]
