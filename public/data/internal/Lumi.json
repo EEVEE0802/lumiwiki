@@ -50979,15 +50979,13 @@
       [
         1,
         [
-          50,
-          82
+          1
         ]
       ],
       [
         2,
         [
-          60,
-          102
+          1
         ]
       ]
     ],
@@ -51174,15 +51172,13 @@
       [
         1,
         [
-          50,
-          82
+          1
         ]
       ],
       [
         2,
         [
-          60,
-          102
+          1
         ]
       ]
     ],
@@ -51369,15 +51365,13 @@
       [
         1,
         [
-          85,
-          91
+          1
         ]
       ],
       [
         2,
         [
-          21,
-          30
+          1
         ]
       ]
     ],
@@ -51797,14 +51791,14 @@
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
-      "Y": -0.3,
+      "Y": 0,
       "Z": 0
     },
     "AdventureVFXScale": 1,
     "AdventureZeroOffset": {
-      "X": -0.01,
-      "Y": -0.4,
-      "Z": -0.03
+      "X": 0,
+      "Y": 0,
+      "Z": 0
     },
     "BubbleOffset": {
       "X": 0,
@@ -51992,14 +51986,14 @@
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
-      "Y": -0.3,
+      "Y": 0,
       "Z": 0
     },
     "AdventureVFXScale": 1,
     "AdventureZeroOffset": {
-      "X": -0.01,
-      "Y": -0.4,
-      "Z": -0.03
+      "X": 0,
+      "Y": 0,
+      "Z": 0
     },
     "BubbleOffset": {
       "X": 0,
@@ -52187,14 +52181,14 @@
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
-      "Y": -0.3,
+      "Y": 0,
       "Z": 0
     },
     "AdventureVFXScale": 1,
     "AdventureZeroOffset": {
-      "X": -0.01,
-      "Y": -0.4,
-      "Z": -0.03
+      "X": 0,
+      "Y": 0,
+      "Z": 0
     },
     "BubbleOffset": {
       "X": 0,
@@ -54355,14 +54349,14 @@
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
-      "Y": -0.3,
+      "Y": 0,
       "Z": 0
     },
     "AdventureVFXScale": 1,
     "AdventureZeroOffset": {
-      "X": -0.01,
-      "Y": -0.4,
-      "Z": -0.03
+      "X": 0,
+      "Y": 0,
+      "Z": 0
     },
     "BubbleOffset": {
       "X": 0,
@@ -57538,6 +57532,201 @@
     "StarUpid": 3,
     "StarSoulid": 1426010,
     "AvartarAtlas": "LumiAvatar3"
+  },
+  {
+    "Id": 146901,
+    "PokedexId": 99999999,
+    "IfLock": false,
+    "LumiTag": 1,
+    "Name": "LumiName_146901",
+    "MaxScore": 89,
+    "MinScore": 57,
+    "Genius": 1,
+    "ShardId": 146901,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Skeleton_Soul",
+    "Avatar": "Avatar_146901",
+    "CA": "CA_146901",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 11,
+    "Type2": 0,
+    "NormalAttack": 14690101,
+    "ActiveSkill": 14690102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 1146901,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 48,
+    "MinAtkState": 63,
+    "MinDefState": 78,
+    "MinWorkState": 39,
+    "MaxHpState": 80,
+    "MaxAtkState": 95,
+    "MaxDefState": 110,
+    "MaxWorkState": 71,
+    "Satiety": 280000,
+    "SatietyDownSpeed": 38,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          82
+        ]
+      ],
+      [
+        2,
+        [
+          60,
+          102
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "57-89",
+    "Story": "story_146901",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Skeleton_Soul_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 146901,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1469010,
+    "AvartarAtlas": "LumiAvatar4"
   },
   {
     "Id": 147301,
