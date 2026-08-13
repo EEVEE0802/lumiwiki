@@ -64,6 +64,10 @@ const CORE_FILES = [
 function svnUpdate(cfg) {
   console.log(`\n📦 svn update 游戏导表（${cfg.branch}）...`)
   runCommand('svn', ['update', cfg.LUBAN_DATA_DIR])
+  console.log(`\n📦 git pull 客户端资源（${cfg.branch}）...`)
+  // 策划机器无 git 提交权限，本地改动都是引擎运行产生的临时变更，直接 reset 丢弃后再 pull
+  runCommand('git', ['-C', cfg.CLIENT_ROOT, 'reset', '--hard', 'HEAD'])
+  runCommand('git', ['-C', cfg.CLIENT_ROOT, 'pull', '--ff-only'])
 }
 
 function copyCoreFiles(cfg) {
