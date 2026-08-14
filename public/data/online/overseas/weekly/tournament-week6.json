@@ -1,0 +1,346 @@
+{
+  "updateTime": "2026-08-14T11:16:41.190Z",
+  "totalBattles": 6,
+  "gameMode": "tournament",
+  "stats": {
+    "all": {
+      "appearance": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "uniqueBattles": 4,
+          "appearanceRate": "66.67"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "uniqueBattles": 3,
+          "appearanceRate": "50.00"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "Crysion",
+          "uniqueBattles": 2,
+          "appearanceRate": "33.33"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "uniqueBattles": 2,
+          "appearanceRate": "33.33"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "uniqueBattles": 2,
+          "appearanceRate": "33.33"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "Rainbowdeer",
+          "uniqueBattles": 1,
+          "appearanceRate": "16.67"
+        },
+        {
+          "lumiId": "106201",
+          "lumiName": "Mustinja",
+          "uniqueBattles": 1,
+          "appearanceRate": "16.67"
+        },
+        {
+          "lumiId": "102601",
+          "lumiName": "Muscledog",
+          "uniqueBattles": 1,
+          "appearanceRate": "16.67"
+        },
+        {
+          "lumiId": "126301",
+          "lumiName": "Pincock",
+          "uniqueBattles": 1,
+          "appearanceRate": "16.67"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "114201",
+          "lumiName": "Crysion",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "battles": 4,
+          "wins": 3,
+          "winRate": "75.00"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "battles": 2,
+          "wins": 1,
+          "winRate": "50.00"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "battles": 3,
+          "wins": 1,
+          "winRate": "33.33"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "Rainbowdeer",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "106201",
+          "lumiName": "Mustinja",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "102601",
+          "lumiName": "Muscledog",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "126301",
+          "lumiName": "Pincock",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "totalBattles": 6,
+      "rankRange": {
+        "min": 1,
+        "max": 0
+      }
+    }
+  },
+  "popularTeams": [
+    {
+      "teamLumiIds": [
+        "101701",
+        "114201",
+        "142501"
+      ],
+      "lumis": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "secondSkills": [
+            {
+              "skillId": 9003,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "Crysion",
+          "secondSkills": [
+            {
+              "skillId": 8003,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "secondSkills": [
+            {
+              "skillId": 11004,
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 2
+        }
+      ],
+      "battles": 2,
+      "wins": 2,
+      "winRate": "100.00"
+    },
+    {
+      "teamLumiIds": [
+        "101701",
+        "110201",
+        "119301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "secondSkills": [
+            {
+              "skillId": 9001,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "secondSkills": [
+            {
+              "skillId": 7006,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "secondSkills": [
+            {
+              "skillId": 4003,
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 2
+        }
+      ],
+      "battles": 2,
+      "wins": 1,
+      "winRate": "50.00"
+    },
+    {
+      "teamLumiIds": [
+        "102101",
+        "106201"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102101",
+          "lumiName": "Rainbowdeer",
+          "secondSkills": [
+            {
+              "skillId": 10002,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "106201",
+          "lumiName": "Mustinja",
+          "secondSkills": [
+            {
+              "skillId": 11002,
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 1
+        }
+      ],
+      "battles": 1,
+      "wins": 0,
+      "winRate": "0.00"
+    },
+    {
+      "teamLumiIds": [
+        "102601",
+        "110201",
+        "126301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102601",
+          "lumiName": "Muscledog",
+          "secondSkills": [
+            {
+              "skillId": 6002,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "secondSkills": [
+            {
+              "skillId": 7006,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "126301",
+          "lumiName": "Pincock",
+          "secondSkills": [
+            {
+              "skillId": 7004,
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 1
+        }
+      ],
+      "battles": 1,
+      "wins": 0,
+      "winRate": "0.00"
+    }
+  ],
+  "winDistribution": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0
+  },
+  "totalPlayers": 2,
+  "tournamentPlayerRankDistribution": {
+    "bronze": 0,
+    "silver": 0,
+    "gold": 0,
+    "diamond": 1,
+    "star": 0,
+    "legend": 0,
+    "total": 1
+  }
+}
