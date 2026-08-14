@@ -21634,7 +21634,7 @@
     "OnHitCounterRateChange": 0,
     "AttackCritRateChange": 20000,
     "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 20000,
+    "DebuffDamageResistance": 0,
     "RecoveryEfficiency": 0
   },
   {
@@ -57698,7 +57698,7 @@
     "ConditonIndex5": 0,
     "EffectId5": [],
     "RemoveCondition": 6,
-    "RemoveConditonIndex": 1322,
+    "RemoveConditonIndex": 1324,
     "AttackEnhance": 0,
     "DefenceEnhance": 0,
     "CritRateEnhance": 0,
@@ -57790,7 +57790,7 @@
     "OnHitCounterRateChange": 0,
     "AttackCritRateChange": 30000,
     "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 30000,
+    "DebuffDamageResistance": 0,
     "RecoveryEfficiency": 0
   }
 ]

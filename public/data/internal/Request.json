@@ -884,7 +884,7 @@
         ],
         "RequestConditions1": [
           {
-            "X": 25,
+            "X": 18,
             "Y": 1,
             "Z": 1
           },
@@ -3313,14 +3313,14 @@
         "Rewards": [
           {
             "Type": 8,
-            "Id": 1037010,
+            "Id": 1041010,
             "Count": 1
           }
         ],
         "RewardsShow": [
           {
             "Type": 8,
-            "Id": 1037010,
+            "Id": 1041010,
             "Count": 1
           }
         ],
@@ -3337,7 +3337,7 @@
           },
           {
             "X": 10015,
-            "Y": 3,
+            "Y": 1,
             "Z": 1
           }
         ]
@@ -3490,6 +3490,60 @@
           {
             "X": 10018,
             "Y": 5,
+            "Z": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "RequestGroupID": 200001,
+    "RequestGroupName": "",
+    "GroupBanner": "",
+    "Page": 4,
+    "ChallengePage": 0,
+    "Switch": true,
+    "AutoCommit": false,
+    "Unlockconditon": 0,
+    "GroupRepeatTime": 999,
+    "RefreshType": 2,
+    "GroupRewardShow": [],
+    "GroupReward": [],
+    "CountDown": 0,
+    "StartTime": "2026/8/10 5:00:00",
+    "EndTime": "2026/8/30 5:00:00",
+    "SeasonShow": false,
+    "DefaultBuyList": 1,
+    "RequestData": [
+      {
+        "RequestID": 1,
+        "RequestDes": "sbc_200001",
+        "RequestNum": 3,
+        "Tag": "",
+        "RequestConditions": [],
+        "Rewards": [
+          {
+            "Type": 2,
+            "Id": 80003,
+            "Count": 1
+          }
+        ],
+        "RewardsShow": [
+          {
+            "Type": 2,
+            "Id": 80003,
+            "Count": 1
+          }
+        ],
+        "RequestConditions1": [
+          {
+            "X": 20050,
+            "Y": 3,
+            "Z": 1
+          },
+          {
+            "X": 10020,
+            "Y": 1,
             "Z": 1
           }
         ]
