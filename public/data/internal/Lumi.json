@@ -4423,6 +4423,204 @@
     "AvartarAtlas": "LumiAvatar1"
   },
   {
+    "Id": 102302,
+    "PokedexId": 1002,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_102302",
+    "MaxScore": 88,
+    "MinScore": 88,
+    "Genius": 1,
+    "ShardId": 102302,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1800000
+      ],
+      [
+        5,
+        180000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Horse_Unicorn_3D",
+    "Avatar": "Avatar_102302",
+    "CA": "CA_102302",
+    "CardBack": 98,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 14,
+    "Type2": 0,
+    "NormalAttack": 10230201,
+    "ActiveSkill": 10230202,
+    "SkillPool1": [
+      14001,
+      10005
+    ],
+    "SkillPool2": [
+      14006,
+      13003
+    ],
+    "SkillPool3": [
+      14004,
+      14005
+    ],
+    "BattlePassive": 1102301,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 58,
+    "MinAtkState": 66,
+    "MinDefState": 68,
+    "MinWorkState": 32,
+    "MaxHpState": 90,
+    "MaxAtkState": 98,
+    "MaxDefState": 100,
+    "MaxWorkState": 64,
+    "Satiety": 260000,
+    "SatietyDownSpeed": 36,
+    "WorkAbility": [
+      {
+        "Type": 4,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          1
+        ]
+      ],
+      [
+        2,
+        [
+          1
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "88-88",
+    "Story": "story_102302",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Horse_Unicorn_3D_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 102301,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1023020,
+    "AvartarAtlas": "LumiAvatar1"
+  },
+  {
     "Id": 102401,
     "PokedexId": 980,
     "IfLock": false,
@@ -11398,7 +11596,7 @@
   },
   {
     "Id": 105402,
-    "PokedexId": 930,
+    "PokedexId": 932,
     "IfLock": false,
     "LumiTag": 3,
     "Name": "LumiName_105402",
@@ -26011,6 +26209,202 @@
     "AvartarAtlas": "LumiAvatar1"
   },
   {
+    "Id": 113201,
+    "PokedexId": 99999999,
+    "IfLock": true,
+    "LumiTag": 3,
+    "Name": "LumiName_113201",
+    "MaxScore": 93,
+    "MinScore": 93,
+    "Genius": 1,
+    "ShardId": 113201,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1800000
+      ],
+      [
+        5,
+        180000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Horse_Cinderking",
+    "Avatar": "Avatar_113201",
+    "CA": "CA_113201",
+    "CardBack": 99,
+    "CardBackRes": [
+      "com_card_10_108301"
+    ],
+    "CardType": 99,
+    "CardResName": [
+      "CardVedio_Tortoise_Black_Full",
+      "Tortoise_Black_Full",
+      "CardVedio_Tortoise_Black_Full_Tex_D",
+      "CardVedio_Tortoise_Black_Full_bg_D"
+    ],
+    "Type1": 17,
+    "Type2": 11,
+    "NormalAttack": 11320101,
+    "ActiveSkill": 11320102,
+    "SkillPool1": [
+      3003,
+      3005
+    ],
+    "SkillPool2": [
+      3002,
+      11004
+    ],
+    "SkillPool3": [
+      3004,
+      3006
+    ],
+    "BattlePassive": 1113201,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 63,
+    "MinAtkState": 83,
+    "MinDefState": 63,
+    "MinWorkState": 35,
+    "MaxHpState": 95,
+    "MaxAtkState": 115,
+    "MaxDefState": 95,
+    "MaxWorkState": 67,
+    "Satiety": 360000,
+    "SatietyDownSpeed": 40,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          156
+        ]
+      ],
+      [
+        2,
+        [
+          93
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        3,
+        10000
+      ]
+    ],
+    "scoreShow": "93-93",
+    "Story": "story_113201",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1480,
+    "CatchRateCheckHeight": 645,
+    "HomeMoveSpeed": 1.9,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Horse_Cinderking_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 113201,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 100,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 5,
+    "StarSoulid": 1132010,
+    "AvartarAtlas": "LumiAvatar1"
+  },
+  {
     "Id": 113301,
     "PokedexId": 370,
     "IfLock": false,
@@ -26998,6 +27392,204 @@
     "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Butterfly_Meteor_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 113901,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1136010,
+    "AvartarAtlas": "LumiAvatar1"
+  },
+  {
+    "Id": 113904,
+    "PokedexId": 1044,
+    "IfLock": false,
+    "LumiTag": 1,
+    "Name": "LumiName_113904",
+    "MaxScore": 90,
+    "MinScore": 90,
+    "Genius": 1,
+    "ShardId": 113601,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        2000000
+      ],
+      [
+        5,
+        200000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Butterfly_Meteor_01",
+    "Avatar": "Avatar_113904",
+    "CA": "CA_113904",
+    "CardBack": 50,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 13,
+    "Type2": 7,
+    "NormalAttack": 11390101,
+    "ActiveSkill": 11390102,
+    "SkillPool1": [
+      13006,
+      7002
+    ],
+    "SkillPool2": [
+      13002,
+      7005
+    ],
+    "SkillPool3": [
+      1003,
+      7004
+    ],
+    "BattlePassive": 1113901,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 58,
+    "MinAtkState": 76,
+    "MinDefState": 64,
+    "MinWorkState": 34,
+    "MaxHpState": 90,
+    "MaxAtkState": 108,
+    "MaxDefState": 96,
+    "MaxWorkState": 66,
+    "Satiety": 140000,
+    "SatietyDownSpeed": 40,
+    "WorkAbility": [
+      {
+        "Type": 4,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          1
+        ]
+      ],
+      [
+        2,
+        [
+          1
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "90-90",
+    "Story": "story_113904",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1200,
+    "CatchRateCheckHeight": 400,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1.5,
+    "ZeroOffset": {
+      "X": -0.1,
+      "Y": 0.2,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Butterfly_Meteor_01_XC",
     "SpineAssetFolder": "",
     "ConflictID": 113901,
     "BodySizeType": 1,
@@ -38117,7 +38709,7 @@
       12001
     ],
     "SkillPool3": [
-      12006,
+      15004,
       15003
     ],
     "BattlePassive": 1120601,
@@ -40604,6 +41196,202 @@
     "AvartarAtlas": "LumiAvatar2"
   },
   {
+    "Id": 121801,
+    "PokedexId": 99999999,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_121801",
+    "MaxScore": 84,
+    "MinScore": 52,
+    "Genius": 1,
+    "ShardId": 121801,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        600000
+      ],
+      [
+        5,
+        60000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Dragon_lceBaby",
+    "Avatar": "Avatar_121801",
+    "CA": "CA_121801",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 8,
+    "Type2": 0,
+    "NormalAttack": 12180101,
+    "ActiveSkill": 12180102,
+    "SkillPool1": [
+      2001,
+      3001,
+      4001
+    ],
+    "SkillPool2": [
+      5001,
+      6001
+    ],
+    "SkillPool3": [
+      7001,
+      13001
+    ],
+    "BattlePassive": 1121801,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 58,
+    "MinAtkState": 58,
+    "MinDefState": 58,
+    "MinWorkState": 34,
+    "MaxHpState": 90,
+    "MaxAtkState": 90,
+    "MaxDefState": 90,
+    "MaxWorkState": 66,
+    "Satiety": 180000,
+    "SatietyDownSpeed": 28,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          82,
+          97
+        ]
+      ],
+      [
+        2,
+        [
+          13,
+          19
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "52-84",
+    "Story": "story_121801",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 0,
+    "CatchRateCheckHeight": 0,
+    "HomeMoveSpeed": 1.5,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Dragon_lceBaby_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 121801,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1218010,
+    "AvartarAtlas": "LumiAvatar2"
+  },
+  {
     "Id": 121901,
     "PokedexId": 99999999,
     "IfLock": false,
@@ -40800,7 +41588,7 @@
   },
   {
     "Id": 122301,
-    "PokedexId": 710,
+    "PokedexId": 99999999,
     "IfLock": false,
     "LumiTag": 0,
     "Name": "LumiName_122301",
@@ -41191,6 +41979,206 @@
     "Growid": 1,
     "StarUpid": 1,
     "StarSoulid": 1224010,
+    "AvartarAtlas": "LumiAvatar2"
+  },
+  {
+    "Id": 123001,
+    "PokedexId": 99999999,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_123001",
+    "MaxScore": 87,
+    "MinScore": 55,
+    "Genius": 2,
+    "ShardId": 123001,
+    "LumiMap": 100,
+    "MarketOrder": 15,
+    "DefaultPrice": [
+      [
+        6,
+        660000
+      ],
+      [
+        5,
+        66000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        3300000
+      ],
+      [
+        5,
+        132000
+      ],
+      [
+        4,
+        5000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Rabbit_Snowman",
+    "Avatar": "Avatar_123001",
+    "CA": "CA_123001",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 8,
+    "Type2": 0,
+    "NormalAttack": 12300101,
+    "ActiveSkill": 12300102,
+    "SkillPool1": [
+      8001,
+      12001
+    ],
+    "SkillPool2": [
+      8005,
+      12003
+    ],
+    "SkillPool3": [
+      8004,
+      12006
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 2123001,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 61,
+    "MinAtkState": 41,
+    "MinDefState": 46,
+    "MinWorkState": 72,
+    "MaxHpState": 85,
+    "MaxAtkState": 65,
+    "MaxDefState": 70,
+    "MaxWorkState": 128,
+    "Satiety": 140000,
+    "SatietyDownSpeed": 34,
+    "WorkAbility": [
+      {
+        "Type": 10,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          103,
+          115
+        ]
+      ],
+      [
+        2,
+        [
+          17,
+          22
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "55-87",
+    "Story": "story_123001",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1200,
+    "CatchRateCheckHeight": 400,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 90,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Rabbit_Snowman_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 123001,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1230010,
     "AvartarAtlas": "LumiAvatar2"
   },
   {
@@ -43371,6 +44359,204 @@
     "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Fish_Lantern_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 124401,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1244010,
+    "AvartarAtlas": "LumiAvatar2"
+  },
+  {
+    "Id": 124404,
+    "PokedexId": 920,
+    "IfLock": false,
+    "LumiTag": 4,
+    "Name": "LumiName_124404",
+    "MaxScore": 83,
+    "MinScore": 83,
+    "Genius": 2,
+    "ShardId": 124401,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        450000
+      ],
+      [
+        5,
+        50000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Fish_Lantern_01",
+    "Avatar": "Avatar_124404",
+    "CA": "CA_124404",
+    "CardBack": 50,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 10,
+    "Type2": 0,
+    "NormalAttack": 12440101,
+    "ActiveSkill": 12440102,
+    "SkillPool1": [
+      2005,
+      2003
+    ],
+    "SkillPool2": [
+      10001,
+      10004
+    ],
+    "SkillPool3": [
+      2006,
+      10003
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 2124401,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 51,
+    "MinAtkState": 26,
+    "MinDefState": 57,
+    "MinWorkState": 70,
+    "MaxHpState": 75,
+    "MaxAtkState": 50,
+    "MaxDefState": 81,
+    "MaxWorkState": 126,
+    "Satiety": 160000,
+    "SatietyDownSpeed": 26,
+    "WorkAbility": [
+      {
+        "Type": 4,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          1
+        ]
+      ],
+      [
+        2,
+        [
+          1
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "83-83",
+    "Story": "story_124404",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1200,
+    "CatchRateCheckHeight": 400,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": -0.1
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": -0.1
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Fish_Lantern_01_XC",
     "SpineAssetFolder": "",
     "ConflictID": 124401,
     "BodySizeType": 1,
@@ -48320,6 +49506,201 @@
     "AvartarAtlas": "LumiAvatar2"
   },
   {
+    "Id": 128801,
+    "PokedexId": 99999999,
+    "IfLock": false,
+    "LumiTag": 3,
+    "Name": "LumiName_128801",
+    "MaxScore": 87,
+    "MinScore": 70,
+    "Genius": 1,
+    "ShardId": 121801,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Dragon_Ice",
+    "Avatar": "Avatar_128801",
+    "CA": "CA_128801",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 8,
+    "Type2": 0,
+    "NormalAttack": 12880101,
+    "ActiveSkill": 12880102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 0,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 61,
+    "MinAtkState": 61,
+    "MinDefState": 61,
+    "MinWorkState": 37,
+    "MaxHpState": 93,
+    "MaxAtkState": 93,
+    "MaxDefState": 93,
+    "MaxWorkState": 69,
+    "Satiety": 240000,
+    "SatietyDownSpeed": 34,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          112,
+          124
+        ]
+      ],
+      [
+        2,
+        [
+          27,
+          36
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "70-87",
+    "Story": "story_128801",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 0,
+    "CatchRateCheckHeight": 0,
+    "HomeMoveSpeed": 1.9,
+    "HomeRotateSpeed": 180,
+    "Distance": 0,
+    "Height": 0,
+    "LookatHeight": 0,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.3,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": -0.01,
+      "Y": -0.4,
+      "Z": -0.03
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Dragon_Ice_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 128801,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1218010,
+    "AvartarAtlas": "LumiAvatar2"
+  },
+  {
     "Id": 128901,
     "PokedexId": 99999999,
     "IfLock": false,
@@ -52219,6 +53600,206 @@
     "AvartarAtlas": "LumiAvatar3"
   },
   {
+    "Id": 133801,
+    "PokedexId": 10360,
+    "IfLock": false,
+    "LumiTag": 2,
+    "Name": "LumiName_133801",
+    "MaxScore": 82,
+    "MinScore": 50,
+    "Genius": 1,
+    "ShardId": 133801,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Scorpio_Baby",
+    "Avatar": "Avatar_133801",
+    "CA": "CA_133801",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 11,
+    "Type2": 2,
+    "NormalAttack": 13380101,
+    "ActiveSkill": 13380102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 1133801,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 53,
+    "MinAtkState": 63,
+    "MinDefState": 56,
+    "MinWorkState": 28,
+    "MaxHpState": 85,
+    "MaxAtkState": 95,
+    "MaxDefState": 88,
+    "MaxWorkState": 60,
+    "Satiety": 140000,
+    "SatietyDownSpeed": 24,
+    "WorkAbility": [
+      {
+        "Type": 3,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          50,
+          58
+        ]
+      ],
+      [
+        2,
+        [
+          15,
+          19
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "50-82",
+    "Story": "story_133801",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Scorpio_Baby_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 133801,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1338010,
+    "AvartarAtlas": "LumiAvatar3"
+  },
+  {
     "Id": 133901,
     "PokedexId": 10370,
     "IfLock": false,
@@ -52319,7 +53900,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 1133901,
+    "BattlePassive": 1133801,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -52402,6 +53983,206 @@
     "ModleColorVariant": "Scorpio_Youth_XC",
     "SpineAssetFolder": "",
     "ConflictID": 133901,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1338010,
+    "AvartarAtlas": "LumiAvatar3"
+  },
+  {
+    "Id": 134001,
+    "PokedexId": 10380,
+    "IfLock": false,
+    "LumiTag": 2,
+    "Name": "LumiName_134001",
+    "MaxScore": 88,
+    "MinScore": 56,
+    "Genius": 1,
+    "ShardId": 133801,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Scorpio_Adult",
+    "Avatar": "Avatar_134001",
+    "CA": "CA_134001",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 11,
+    "Type2": 2,
+    "NormalAttack": 13400101,
+    "ActiveSkill": 13400102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 1133801,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 63,
+    "MinAtkState": 73,
+    "MinDefState": 56,
+    "MinWorkState": 32,
+    "MaxHpState": 95,
+    "MaxAtkState": 105,
+    "MaxDefState": 88,
+    "MaxWorkState": 64,
+    "Satiety": 260000,
+    "SatietyDownSpeed": 36,
+    "WorkAbility": [
+      {
+        "Type": 3,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          104,
+          118
+        ]
+      ],
+      [
+        2,
+        [
+          29,
+          34
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "56-88",
+    "Story": "story_134001",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Scorpio_Adult_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 134001,
     "BodySizeType": 1,
     "ModelBaseScale": 1,
     "SizeScaleRange": [
@@ -57535,7 +59316,7 @@
   },
   {
     "Id": 146901,
-    "PokedexId": 99999999,
+    "PokedexId": 710,
     "IfLock": false,
     "LumiTag": 1,
     "Name": "LumiName_146901",

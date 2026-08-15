@@ -579,6 +579,24 @@
     "Priority": 1
   },
   {
+    "Id": 1102004,
+    "name": "P_Skill_1102004",
+    "icon": "Die_Inherit",
+    "Des": "P_SkillText_1102004",
+    "DesParam": [
+      1
+    ],
+    "BuffList": [
+      {
+        "BuffId": 10200401,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      }
+    ],
+    "Priority": 1
+  },
+  {
     "Id": 1102101,
     "name": "P_Skill_1102101",
     "icon": "Start_HurtLower",
@@ -664,6 +682,24 @@
     "Priority": 1
   },
   {
+    "Id": 1102301,
+    "name": "P_Skill_1102301",
+    "icon": "Leave_Heal",
+    "Des": "P_SkillText_1102301",
+    "DesParam": [
+      6
+    ],
+    "BuffList": [
+      {
+        "BuffId": 10220101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      }
+    ],
+    "Priority": 0
+  },
+  {
     "Id": 1102401,
     "name": "P_Skill_1102401",
     "icon": "Leave_Heal",
@@ -696,7 +732,7 @@
     "Des": "P_SkillText_1102601",
     "DesParam": [
       1,
-      3
+      2
     ],
     "BuffList": [
       {
@@ -3171,10 +3207,10 @@
     "Priority": 1
   },
   {
-    "Id": 1120904,
-    "name": "P_Skill_1120904",
+    "Id": 1120902,
+    "name": "P_Skill_1120902",
     "icon": "Die_Poison",
-    "Des": "P_SkillText_1120904",
+    "Des": "P_SkillText_1120902",
     "DesParam": [],
     "BuffList": [
       {
@@ -3197,6 +3233,40 @@
       },
       {
         "BuffId": 120904011,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      }
+    ],
+    "Priority": 1
+  },
+  {
+    "Id": 1120904,
+    "name": "P_Skill_1120904",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1120904",
+    "DesParam": [],
+    "BuffList": [
+      {
+        "BuffId": 12090101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 120901011,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 12090403,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 120904031,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
@@ -3779,8 +3849,15 @@
     "icon": "Start_Palsy",
     "Des": "P_SkillText_1132301",
     "DesParam": [],
-    "BuffList": [],
-    "Priority": 0
+    "BuffList": [
+      {
+        "BuffId": 13230101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      }
+    ],
+    "Priority": 1
   },
   {
     "Id": 1132401,
@@ -3805,6 +3882,15 @@
     "name": "P_Skill_1133501",
     "icon": "Start_Palsy",
     "Des": "P_SkillText_1133501",
+    "DesParam": [],
+    "BuffList": [],
+    "Priority": 0
+  },
+  {
+    "Id": 1133801,
+    "name": "P_Skill_1133801",
+    "icon": "Start_Palsy",
+    "Des": "P_SkillText_1133801",
     "DesParam": [],
     "BuffList": [],
     "Priority": 0
