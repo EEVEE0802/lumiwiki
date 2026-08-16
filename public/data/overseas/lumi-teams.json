@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-16T17:21:56.466Z",
+  "updateTime": "2026-08-16T23:22:01.733Z",
   "weeks": [
     1,
     2,
@@ -16046,7 +16046,7 @@
             "lumiName": "Psykat",
             "topSkill": {
               "skillId": 13003,
-              "count": 41
+              "count": 42
             }
           },
           {
@@ -16062,9 +16062,9 @@
           "trainerId": 1,
           "count": 34
         },
-        "battles": 58,
-        "wins": 44,
-        "winRate": "75.86",
+        "battles": 59,
+        "wins": 45,
+        "winRate": "76.27",
         "tags": [
           "other"
         ]
@@ -19444,7 +19444,7 @@
             "lumiName": "Wizpiggy - Variant",
             "topSkill": {
               "skillId": 10004,
-              "count": 3
+              "count": 6
             }
           },
           {
@@ -19452,7 +19452,7 @@
             "lumiName": "Unicorn",
             "topSkill": {
               "skillId": 14005,
-              "count": 3
+              "count": 6
             }
           },
           {
@@ -19460,17 +19460,17 @@
             "lumiName": "Pincock - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 3
+              "count": 6
             }
           }
         ],
         "topTrainerSkill": {
-          "trainerId": 2,
-          "count": 2
+          "trainerId": 1,
+          "count": 4
         },
-        "battles": 5,
-        "wins": 3,
-        "winRate": "60.00",
+        "battles": 8,
+        "wins": 6,
+        "winRate": "75.00",
         "tags": [
           "other"
         ]
