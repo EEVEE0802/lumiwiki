@@ -24976,12 +24976,12 @@
     "DefCalculate": false,
     "SkillEffect": [
       {
-        "TriggerType": 6,
+        "TriggerType": 3,
         "TriggerCondition": 100004,
         "TriggerEffect": 12630401
       },
       {
-        "TriggerType": 6,
+        "TriggerType": 3,
         "TriggerCondition": 100,
         "TriggerEffect": 10000401
       }

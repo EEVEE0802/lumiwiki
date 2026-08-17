@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-16T19:00:13.540Z",
+  "updateTime": "2026-08-17T19:00:31.905Z",
   "note": "普通概率=解锁池权重占比；彩色=保底触发时池内分布近似（按 LumiDrop.WeightPool 取权）",
   "mainLineMaps": [
     {
@@ -3298,7 +3298,7 @@
         },
         {
           "id": 119801,
-          "name": "木棍人",
+          "name": "彩糖人",
           "weight": 1000,
           "probability": "6.67"
         },
@@ -3310,7 +3310,7 @@
         },
         {
           "id": 120501,
-          "name": "蕉蕉猩",
+          "name": "甜椒猩",
           "weight": 1000,
           "probability": "6.67"
         }
@@ -3343,13 +3343,13 @@
         },
         {
           "id": 119801,
-          "name": "木棍人",
+          "name": "彩糖人",
           "weight": 1000,
           "probability": "9.17"
         },
         {
           "id": 120501,
-          "name": "蕉蕉猩",
+          "name": "甜椒猩",
           "weight": 1000,
           "probability": "9.17"
         },
@@ -3871,19 +3871,19 @@
         },
         {
           "id": 119901,
-          "name": "耐氪鲨",
+          "name": "鱼雷鲨",
           "weight": 1000,
           "probability": "6.67"
         },
         {
           "id": 120701,
-          "name": "卡布奇诺小姐",
+          "name": "起舞鸭",
           "weight": 1000,
           "probability": "6.67"
         },
         {
           "id": 120601,
-          "name": "卡布奇诺刺客",
+          "name": "拿铁刺客",
           "weight": 1000,
           "probability": "6.67"
         }
@@ -3904,19 +3904,19 @@
         },
         {
           "id": 119901,
-          "name": "耐氪鲨",
+          "name": "鱼雷鲨",
           "weight": 1000,
           "probability": "9.26"
         },
         {
           "id": 120601,
-          "name": "卡布奇诺刺客",
+          "name": "拿铁刺客",
           "weight": 1000,
           "probability": "9.26"
         },
         {
           "id": 120701,
-          "name": "卡布奇诺小姐",
+          "name": "起舞鸭",
           "weight": 1000,
           "probability": "9.26"
         },
@@ -3984,8 +3984,8 @@
     },
     {
       "mapId": 91001,
-      "mapName": "甜蜜海滩",
-      "mapNameKey": "MapName_Collab_01",
+      "mapName": "Collab_01",
+      "mapNameKey": "Collab_01",
       "type": "season",
       "lumis": [
         {
@@ -4175,8 +4175,8 @@
     },
     {
       "mapId": 91002,
-      "mapName": "童话之森",
-      "mapNameKey": "MapName_Collab_02",
+      "mapName": "Collab_02",
+      "mapNameKey": "Collab_02",
       "type": "season",
       "lumis": [
         {

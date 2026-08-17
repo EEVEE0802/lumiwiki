@@ -4560,6 +4560,291 @@
     ]
   },
   {
+    "Id": 102004,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": 0,
+    "CatchRate": 4000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 800
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 1200
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 2000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 800
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 1200
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 2000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 102004,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": 1,
+    "CatchRate": 4000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 800
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 1200
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 2000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 800
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 1200
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 2000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 102004,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 102004,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 102004,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
     "Id": 102101,
     "LumiQuality": 2,
     "FootValue": 0,
@@ -11970,6 +12255,291 @@
     ]
   },
   {
+    "Id": 103904,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": 0,
+    "CatchRate": 3000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 900
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 900
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 103904,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 3000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 900
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 900
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 103904,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1500,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 450
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 750
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 450
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 750
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 103904,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 103904,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
     "Id": 104101,
     "LumiQuality": 2,
     "FootValue": 0,
@@ -17670,6 +18240,291 @@
     ]
   },
   {
+    "Id": 105804,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 105804,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": 0,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 105804,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 105804,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 105804,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
     "Id": 106101,
     "LumiQuality": 2,
     "FootValue": 0,
@@ -17899,6 +18754,291 @@
   },
   {
     "Id": 106101,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 106104,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 4000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 800
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 1200
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 2000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 800
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 1200
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 2000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 106104,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 4000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 800
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 1200
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 2000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 800
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 1200
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 2000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 106104,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 106104,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 106104,
     "LumiQuality": 6,
     "FootValue": 1,
     "NeedBattle": true,
@@ -25080,6 +26220,291 @@
     ]
   },
   {
+    "Id": 108704,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 108704,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 108704,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 108704,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 108704,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
     "Id": 108801,
     "LumiQuality": 2,
     "FootValue": 0,
@@ -30154,6 +31579,291 @@
   },
   {
     "Id": 110901,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 110904,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 110904,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 110904,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 110904,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 110904,
     "LumiQuality": 6,
     "FootValue": 1,
     "NeedBattle": true,
@@ -41040,6 +42750,291 @@
     ]
   },
   {
+    "Id": 114904,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 114904,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 114904,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 114904,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 114904,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
     "Id": 115001,
     "LumiQuality": 2,
     "FootValue": 0,
@@ -41839,6 +43834,291 @@
   },
   {
     "Id": 115201,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 115204,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 115204,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 115204,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 115204,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 115204,
     "LumiQuality": 6,
     "FootValue": 1,
     "NeedBattle": true,
@@ -51015,6 +53295,291 @@
     ]
   },
   {
+    "Id": 119504,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 119504,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": 0,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 119504,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 119504,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 119504,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
     "Id": 119601,
     "LumiQuality": 2,
     "FootValue": 0,
@@ -54435,6 +57000,291 @@
     ]
   },
   {
+    "Id": 121004,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 121004,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 121004,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 121004,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 121004,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
     "Id": 121101,
     "LumiQuality": 2,
     "FootValue": 0,
@@ -58084,6 +60934,291 @@
   },
   {
     "Id": 123401,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 123404,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 123404,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 123404,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 123404,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 123404,
     "LumiQuality": 6,
     "FootValue": 1,
     "NeedBattle": true,
@@ -59224,6 +62359,291 @@
   },
   {
     "Id": 124101,
+    "LumiQuality": 6,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 1,
+    "CatchRate": 50,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 10
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 15
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 25
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 124104,
+    "LumiQuality": 2,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 124104,
+    "LumiQuality": 3,
+    "FootValue": 0,
+    "NeedBattle": false,
+    "BattleLevel": -2,
+    "CatchRate": 2000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 4,
+      "Y": 15
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 400
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 600
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 1000
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 124104,
+    "LumiQuality": 4,
+    "FootValue": 0,
+    "NeedBattle": true,
+    "BattleLevel": -1,
+    "CatchRate": 1000,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 6,
+      "Y": 17
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 200
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 300
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 500
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 124104,
+    "LumiQuality": 5,
+    "FootValue": 1,
+    "NeedBattle": true,
+    "BattleLevel": 0,
+    "CatchRate": 300,
+    "CatchLoseNotRun": 2,
+    "EscapeParameter": 20000,
+    "BattleEscapeParameter": 1000,
+    "EscapeNums": {
+      "X": 8,
+      "Y": 19
+    },
+    "BattleEscapeNums": {
+      "X": 1,
+      "Y": 1
+    },
+    "GestureId": 100,
+    "CatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ],
+    "BattleGestureId": 100,
+    "BattleCatchTapNoteRate": [
+      {
+        "CatchTapNoteLevel": 0,
+        "GetCatchRate": 60
+      },
+      {
+        "CatchTapNoteLevel": 1,
+        "GetCatchRate": 90
+      },
+      {
+        "CatchTapNoteLevel": 2,
+        "GetCatchRate": 150
+      },
+      {
+        "CatchTapNoteLevel": 3,
+        "GetCatchRate": 0
+      }
+    ]
+  },
+  {
+    "Id": 124104,
     "LumiQuality": 6,
     "FootValue": 1,
     "NeedBattle": true,

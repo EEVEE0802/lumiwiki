@@ -3284,7 +3284,7 @@
     "Type1": 8,
     "Type2": 0,
     "NormalAttack": 10200101,
-    "ActiveSkill": 10200402,
+    "ActiveSkill": 10200102,
     "SkillPool1": [
       8001,
       6002
@@ -3297,7 +3297,7 @@
       8002,
       8003
     ],
-    "BattlePassive": 1102001,
+    "BattlePassive": 1102004,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -4425,7 +4425,7 @@
   {
     "Id": 102302,
     "PokedexId": 1002,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_102302",
     "MaxScore": 88,
@@ -4908,7 +4908,7 @@
     "Type1": 15,
     "Type2": 0,
     "NormalAttack": 10240101,
-    "ActiveSkill": 10240402,
+    "ActiveSkill": 10240102,
     "SkillPool1": [
       15001,
       1001
@@ -7917,7 +7917,7 @@
     "Type1": 6,
     "Type2": 0,
     "NormalAttack": 10370101,
-    "ActiveSkill": 10370402,
+    "ActiveSkill": 10370102,
     "SkillPool1": [
       6002,
       9004
@@ -8319,7 +8319,7 @@
     "Type1": 6,
     "Type2": 0,
     "NormalAttack": 10380101,
-    "ActiveSkill": 10380402,
+    "ActiveSkill": 10380102,
     "SkillPool1": [
       6003,
       14003
@@ -8786,13 +8786,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1250,
+    "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 1.2,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1.1,
     "ZeroOffset": {
       "X": 0,
@@ -11597,7 +11597,7 @@
   {
     "Id": 105402,
     "PokedexId": 932,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_105402",
     "MaxScore": 83,
@@ -12082,7 +12082,7 @@
     "Type1": 5,
     "Type2": 0,
     "NormalAttack": 10550101,
-    "ActiveSkill": 10550402,
+    "ActiveSkill": 10550102,
     "SkillPool1": [
       5003,
       5005
@@ -12875,7 +12875,7 @@
     "Type1": 2,
     "Type2": 9,
     "NormalAttack": 10580101,
-    "ActiveSkill": 10580402,
+    "ActiveSkill": 10580102,
     "SkillPool1": [
       2003,
       9006
@@ -12940,13 +12940,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1200,
+    "CatchRateCheckHeight": 400,
     "HomeMoveSpeed": 1.9,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1.2,
     "ZeroOffset": {
       "X": 0,
@@ -13291,7 +13291,7 @@
       10006
     ],
     "BattlePassive": 0,
-    "HomePassive": 2106104,
+    "HomePassive": 2106101,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
     "MinHpState": 51,
@@ -13342,13 +13342,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1200,
+    "CatchRateCheckHeight": 400,
     "HomeMoveSpeed": 1.6,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": -0.2,
@@ -14284,7 +14284,7 @@
     "Type1": 7,
     "Type2": 0,
     "NormalAttack": 10640101,
-    "ActiveSkill": 10640402,
+    "ActiveSkill": 10640102,
     "SkillPool1": [
       7001,
       7005
@@ -14297,7 +14297,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 1110201,
+    "BattlePassive": 1106401,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -14349,13 +14349,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1350,
+    "CatchRateCheckHeight": 670,
     "HomeMoveSpeed": 1.9,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 5500,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 300,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -18572,13 +18572,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1050,
+    "CatchRateCheckHeight": 350,
     "HomeMoveSpeed": 1.6,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -22208,7 +22208,7 @@
     "MaxScore": 85,
     "MinScore": 85,
     "Genius": 1,
-    "ShardId": 110904,
+    "ShardId": 110901,
     "LumiMap": 100,
     "MarketOrder": 28,
     "DefaultPrice": [
@@ -22280,7 +22280,7 @@
     "Model": "Mouse_Spring_01",
     "Avatar": "Avatar_110904",
     "CA": "CA_110904",
-    "CardBack": 0,
+    "CardBack": 50,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -22352,13 +22352,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1380,
+    "CatchRateCheckHeight": 650,
     "HomeMoveSpeed": 1.6,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -22396,7 +22396,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 3,
-    "StarSoulid": 1109040,
+    "StarSoulid": 1109010,
     "AvartarAtlas": "LumiAvatar1"
   },
   {
@@ -22754,13 +22754,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1350,
+    "CatchRateCheckHeight": 500,
     "HomeMoveSpeed": 1.6,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1.5,
     "ZeroOffset": {
       "X": 0,
@@ -27413,7 +27413,7 @@
   {
     "Id": 113904,
     "PokedexId": 1044,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 1,
     "Name": "LumiName_113904",
     "MaxScore": 90,
@@ -30985,13 +30985,13 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1650,
+    "CatchRateCheckHeight": 900,
     "HomeMoveSpeed": 1.9,
     "HomeRotateSpeed": 90,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1.3,
     "ZeroOffset": {
       "X": 0,
@@ -33911,17 +33911,16 @@
     "NormalAttack": 11730101,
     "ActiveSkill": 11730102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      2002,
+      2004
     ],
     "SkillPool2": [
-      5001,
+      2003,
       6001
     ],
     "SkillPool3": [
-      7001,
-      13001
+      6002,
+      6003
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -33975,13 +33974,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 1.4,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -35505,8 +35504,10 @@
     "Model": "Super_Knight",
     "Avatar": "Avatar_118501",
     "CA": "CA_118501",
-    "CardBack": 0,
-    "CardBackRes": [],
+    "CardBack": 80,
+    "CardBackRes": [
+      "com_card_12"
+    ],
     "CardType": 0,
     "CardResName": [],
     "Type1": 16,
@@ -35571,13 +35572,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1.5,
     "ZeroOffset": {
       "X": 0,
@@ -36697,7 +36698,7 @@
     "Type1": 2,
     "Type2": 4,
     "NormalAttack": 11920101,
-    "ActiveSkill": 11920402,
+    "ActiveSkill": 11920102,
     "SkillPool1": [
       4003,
       2003
@@ -36710,7 +36711,7 @@
       2004,
       2006
     ],
-    "BattlePassive": 1114301,
+    "BattlePassive": 1119204,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -37492,7 +37493,7 @@
     "Model": "Bird_Garlic_01",
     "Avatar": "Avatar_119504",
     "CA": "CA_119504",
-    "CardBack": 0,
+    "CardBack": 50,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -37564,8 +37565,8 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 500,
     "HomeMoveSpeed": 1.1,
     "HomeRotateSpeed": 90,
     "Distance": 6000,
@@ -40164,8 +40165,8 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1400,
+    "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 1.4,
     "HomeRotateSpeed": 90,
     "Distance": 6000,
@@ -40891,7 +40892,7 @@
     "Type1": 9,
     "Type2": 0,
     "NormalAttack": 12130101,
-    "ActiveSkill": 12130402,
+    "ActiveSkill": 12130102,
     "SkillPool1": [
       4002,
       3003
@@ -41273,7 +41274,7 @@
         -1
       ]
     ],
-    "Model": "Dragon_lceBaby",
+    "Model": "Dragon_IceBaby",
     "Avatar": "Avatar_121801",
     "CA": "CA_121801",
     "CardBack": 0,
@@ -41372,7 +41373,7 @@
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Dragon_lceBaby_XC",
+    "ModleColorVariant": "Dragon_IceBaby_XC",
     "SpineAssetFolder": "",
     "ConflictID": 121801,
     "BodySizeType": 1,
@@ -42885,7 +42886,7 @@
       15003
     ],
     "BattlePassive": 0,
-    "HomePassive": 2123404,
+    "HomePassive": 2123401,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
     "MinHpState": 46,
@@ -42936,13 +42937,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1100,
+    "CatchRateCheckHeight": 500,
     "HomeMoveSpeed": 1.7,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -43862,7 +43863,7 @@
     "Model": "Digital_Bird_01",
     "Avatar": "Avatar_124104",
     "CA": "CA_124104",
-    "CardBack": 0,
+    "CardBack": 50,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -44380,7 +44381,7 @@
   {
     "Id": 124404,
     "PokedexId": 920,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 4,
     "Name": "LumiName_124404",
     "MaxScore": 83,
@@ -44970,7 +44971,7 @@
   {
     "Id": 125002,
     "PokedexId": 2010140,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 2,
     "Name": "LumiName_125002",
     "MaxScore": 84,
@@ -46340,11 +46341,11 @@
   {
     "Id": 125604,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_125604",
     "MaxScore": 85,
-    "MinScore": 53,
+    "MinScore": 85,
     "Genius": 1,
     "ShardId": 125601,
     "LumiMap": 100,
@@ -46479,7 +46480,7 @@
         5000
       ]
     ],
-    "scoreShow": "53-85",
+    "scoreShow": "85-85",
     "Story": "story_125604",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -46528,7 +46529,7 @@
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
     "Growid": 1,
-    "StarUpid": 1,
+    "StarUpid": 3,
     "StarSoulid": 1256010,
     "AvartarAtlas": "LumiAvatar2"
   },
@@ -47487,13 +47488,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1350,
+    "CatchRateCheckHeight": 500,
     "HomeMoveSpeed": 1.1,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1.5,
     "ZeroOffset": {
       "X": 0,
@@ -47832,7 +47833,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1126901,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -48803,7 +48804,7 @@
         -1
       ]
     ],
-    "Model": "Newt_Pinksmall",
+    "Model": "Newt_Baby",
     "Avatar": "Avatar_127501",
     "CA": "CA_127501",
     "CardBack": 0,
@@ -48901,7 +48902,7 @@
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
-    "ModleColorVariant": "Newt_Pinksmall_XC",
+    "ModleColorVariant": "Newt_Baby_XC",
     "SpineAssetFolder": "",
     "ConflictID": 127501,
     "BodySizeType": 1,
@@ -49313,7 +49314,7 @@
   {
     "Id": 127701,
     "PokedexId": 99999999,
-    "IfLock": true,
+    "IfLock": false,
     "LumiTag": 3,
     "Name": "LumiName_127701",
     "MaxScore": 87,
@@ -49391,7 +49392,7 @@
     "Model": "Newt_Dragon",
     "Avatar": "Avatar_127701",
     "CA": "CA_127701",
-    "CardBack": 50,
+    "CardBack": 0,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -49848,13 +49849,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 1.5,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -49898,7 +49899,7 @@
   {
     "Id": 128904,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_128904",
     "MaxScore": 90,
@@ -50586,7 +50587,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1130301,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -50781,7 +50782,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1130401,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -50878,7 +50879,7 @@
   {
     "Id": 130404,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_130404",
     "MaxScore": 88,
@@ -50956,7 +50957,7 @@
     "Model": "Lynx_Blade_01",
     "Avatar": "Avatar_130404",
     "CA": "CA_130404",
-    "CardBack": 0,
+    "CardBack": 50,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -50976,7 +50977,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1130401,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -51023,13 +51024,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1350,
+    "CatchRateCheckHeight": 500,
     "HomeMoveSpeed": 1.5,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -51268,7 +51269,7 @@
   {
     "Id": 130804,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_130804",
     "MaxScore": 88,
@@ -51366,7 +51367,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 1118601,
+    "BattlePassive": 0,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -51608,13 +51609,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 1.6,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -51803,13 +51804,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 1.9,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -52048,7 +52049,7 @@
   {
     "Id": 131502,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_131502",
     "MaxScore": 90,
@@ -52126,7 +52127,7 @@
     "Model": "Foxspirit_Nine_3D",
     "Avatar": "Avatar_131502",
     "CA": "CA_131502",
-    "CardBack": 0,
+    "CardBack": 98,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -52146,7 +52147,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1131502,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -52223,7 +52224,7 @@
     "AchievementType": 1,
     "ModleColorVariant": "Foxspirit_Nine_3D_XC",
     "SpineAssetFolder": "",
-    "ConflictID": 131502,
+    "ConflictID": 131501,
     "BodySizeType": 1,
     "ModelBaseScale": 1,
     "SizeScaleRange": [
@@ -53115,7 +53116,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1133601,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -53212,7 +53213,7 @@
   {
     "Id": 133604,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_133604",
     "MaxScore": 88,
@@ -53290,14 +53291,14 @@
     "Model": "Sagittarius_Youth_01",
     "Avatar": "Avatar_133604",
     "CA": "CA_133604",
-    "CardBack": 0,
+    "CardBack": 50,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
     "Type1": 12,
     "Type2": 0,
     "NormalAttack": 13360101,
-    "ActiveSkill": 13360402,
+    "ActiveSkill": 13360102,
     "SkillPool1": [
       7001,
       7005
@@ -53310,7 +53311,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1133601,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -53505,7 +53506,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1133701,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -53752,8 +53753,8 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1300,
-    "CatchRateCheckHeight": 600,
+    "LoveHeartHeight": 1200,
+    "CatchRateCheckHeight": 400,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
     "Distance": 6000,
@@ -53765,11 +53766,11 @@
       "Y": 0,
       "Z": 0
     },
-    "AdventureVFXScale": 1,
+    "AdventureVFXScale": 0.8,
     "AdventureZeroOffset": {
-      "X": 0,
-      "Y": 0,
-      "Z": 0
+      "X": 0.31,
+      "Y": 0.009,
+      "Z": 0.006
     },
     "BubbleOffset": {
       "X": 0,
@@ -54006,7 +54007,7 @@
     "LumiTag": 2,
     "Name": "LumiName_134001",
     "MaxScore": 88,
-    "MinScore": 56,
+    "MinScore": 70,
     "Genius": 1,
     "ShardId": 133801,
     "LumiMap": 100,
@@ -54146,7 +54147,7 @@
         5000
       ]
     ],
-    "scoreShow": "56-88",
+    "scoreShow": "70-88",
     "Story": "story_134001",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -54592,7 +54593,7 @@
   {
     "Id": 135404,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_135404",
     "MaxScore": 88,
@@ -55780,7 +55781,7 @@
   {
     "Id": 138304,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_138304",
     "MaxScore": 88,
@@ -56073,7 +56074,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1139101,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -56520,13 +56521,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 0.9,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": -0.067,
@@ -58427,7 +58428,7 @@
     "Type1": 11,
     "Type2": 15,
     "NormalAttack": 14250101,
-    "ActiveSkill": 14250402,
+    "ActiveSkill": 14250102,
     "SkillPool1": [
       7001,
       15002
@@ -58440,7 +58441,7 @@
       7002,
       11004
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1142301,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -58625,7 +58626,7 @@
     "ActiveSkill": 14260102,
     "SkillPool1": [
       7001,
-      7005
+      10007
     ],
     "SkillPool2": [
       7002,
@@ -58820,7 +58821,7 @@
     "ActiveSkill": 14270102,
     "SkillPool1": [
       7001,
-      7005
+      10007
     ],
     "SkillPool2": [
       7002,
@@ -58929,7 +58930,7 @@
     "PokedexId": 99999999,
     "IfLock": false,
     "LumiTag": 3,
-    "Name": "LumiName_141401",
+    "Name": "LumiName_142801",
     "MaxScore": 89,
     "MinScore": 70,
     "Genius": 1,
@@ -59015,7 +59016,7 @@
     "ActiveSkill": 14280102,
     "SkillPool1": [
       7001,
-      7005
+      10007
     ],
     "SkillPool2": [
       7002,
@@ -59025,7 +59026,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1142801,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -59122,9 +59123,9 @@
   {
     "Id": 142804,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
-    "Name": "LumiName_141404",
+    "Name": "LumiName_142804",
     "MaxScore": 89,
     "MinScore": 89,
     "Genius": 1,
@@ -59200,7 +59201,7 @@
     "Model": "Firefly_Queen_01",
     "Avatar": "Avatar_142804",
     "CA": "CA_142804",
-    "CardBack": 0,
+    "CardBack": 50,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -59210,7 +59211,7 @@
     "ActiveSkill": 14280102,
     "SkillPool1": [
       7001,
-      7005
+      10007
     ],
     "SkillPool2": [
       7002,
@@ -59220,7 +59221,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1142801,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -59267,13 +59268,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1800,
+    "CatchRateCheckHeight": 800,
     "HomeMoveSpeed": 1.5,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -59989,17 +59990,16 @@
     "NormalAttack": 100010101,
     "ActiveSkill": 100010102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      1001,
+      6005
     ],
     "SkillPool2": [
-      5001,
-      6001
+      1002,
+      1004
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1003,
+      13002
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -60193,12 +60193,12 @@
       4001
     ],
     "SkillPool2": [
-      5001,
-      6001
+      1001,
+      6005
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1002,
+      1004
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -61575,17 +61575,16 @@
     "NormalAttack": 100080101,
     "ActiveSkill": 100080102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      1001,
+      6005
     ],
     "SkillPool2": [
-      5001,
-      6001
+      1002,
+      1004
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1003,
+      13002
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -61840,13 +61839,13 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 0,
-    "CatchRateCheckHeight": 0,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 1.3,
     "HomeRotateSpeed": 180,
-    "Distance": 0,
+    "Distance": 6000,
     "Height": 0,
-    "LookatHeight": 0,
+    "LookatHeight": 200,
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
@@ -63034,7 +63033,7 @@
   {
     "Id": 1002202,
     "PokedexId": 99999999,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 3,
     "Name": "LumiName_1002202",
     "MaxScore": 82,
@@ -63112,7 +63111,7 @@
     "Model": "Diandian_Magic_3D",
     "Avatar": "Avatar_1002202",
     "CA": "CA_1002202",
-    "CardBack": 0,
+    "CardBack": 98,
     "CardBackRes": [],
     "CardType": 0,
     "CardResName": [],
@@ -63214,7 +63213,7 @@
     "AchievementType": 1,
     "ModleColorVariant": "Diandian_Magic_3D_XC",
     "SpineAssetFolder": "",
-    "ConflictID": 1002202,
+    "ConflictID": 1002201,
     "BodySizeType": 1,
     "ModelBaseScale": 1,
     "SizeScaleRange": [
@@ -64725,17 +64724,16 @@
     "NormalAttack": 100320101,
     "ActiveSkill": 100320102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      1001,
+      6005
     ],
     "SkillPool2": [
-      5001,
-      6001
+      1002,
+      1004
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1003,
+      13002
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -64924,17 +64922,16 @@
     "NormalAttack": 100330101,
     "ActiveSkill": 100330102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      4002,
+      4003
     ],
     "SkillPool2": [
-      5001,
-      6001
+      4004,
+      1001
     ],
     "SkillPool3": [
-      7001,
-      13001
+      3004,
+      4006
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -65123,17 +65120,16 @@
     "NormalAttack": 100340101,
     "ActiveSkill": 100340102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      5001,
+      5002
     ],
     "SkillPool2": [
-      5001,
-      6001
+      5006,
+      1001
     ],
     "SkillPool3": [
-      7001,
-      13001
+      5005,
+      15001
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -66659,8 +66655,8 @@
       ]
     ],
     "Model": "Lipu_Demon",
-    "Avatar": "Avatar_1004101",
-    "CA": "CA_1004101",
+    "Avatar": "Avatar_1004401",
+    "CA": "CA_1004401",
     "CardBack": 0,
     "CardBackRes": [],
     "CardType": 0,
