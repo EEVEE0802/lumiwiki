@@ -3475,7 +3475,7 @@
     "Des": "P_SkillText_1123701",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1123801,
@@ -3529,7 +3529,7 @@
     "Des": "P_SkillText_1125002",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1125401,
@@ -3681,7 +3681,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1127101,
@@ -3847,7 +3847,7 @@
     "Des": "P_SkillText_1130301",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1130401,
@@ -3856,7 +3856,7 @@
     "Des": "P_SkillText_1130401",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1131301,
@@ -3865,7 +3865,7 @@
     "Des": "P_SkillText_1131301",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1131502,
@@ -3874,7 +3874,7 @@
     "Des": "P_SkillText_1131502",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1132301,
@@ -3899,7 +3899,7 @@
     "Des": "P_SkillText_1132401",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1132501,
@@ -3908,7 +3908,7 @@
     "Des": "P_SkillText_1132501",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1133501,
@@ -3917,7 +3917,7 @@
     "Des": "P_SkillText_1133501",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1133601,
@@ -3926,7 +3926,7 @@
     "Des": "P_SkillText_1133601",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1133701,
@@ -3935,7 +3935,7 @@
     "Des": "P_SkillText_1133701",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1133801,
@@ -3943,8 +3943,15 @@
     "icon": "Start_Palsy",
     "Des": "P_SkillText_1133801",
     "DesParam": [],
-    "BuffList": [],
-    "Priority": 0
+    "BuffList": [
+      {
+        "BuffId": 13380105,
+        "BuffLv": 1,
+        "Duration": 100,
+        "Target": 1
+      }
+    ],
+    "Priority": 1
   },
   {
     "Id": 1133901,
@@ -3953,7 +3960,7 @@
     "Des": "P_SkillText_1133901",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1135401,
@@ -3962,7 +3969,41 @@
     "Des": "P_SkillText_1135401",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
+  },
+  {
+    "Id": 1136301,
+    "name": "P_Skill_1136301",
+    "icon": "Start_Palsy",
+    "Des": "P_SkillText_1136301",
+    "DesParam": [],
+    "BuffList": [
+      {
+        "BuffId": 13630101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 13630102,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 13630103,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 8
+      },
+      {
+        "BuffId": 13630104,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 8
+      }
+    ],
+    "Priority": 1
   },
   {
     "Id": 1139101,
@@ -3971,7 +4012,7 @@
     "Des": "P_SkillText_1139101",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1140001,
@@ -3989,7 +4030,7 @@
     "Des": "P_SkillText_1140101",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1142101,
@@ -4052,7 +4093,7 @@
     "Des": "P_SkillText_1142801",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1145801,
@@ -4061,7 +4102,7 @@
     "Des": "P_SkillText_1145801",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1146901,
@@ -4070,7 +4111,7 @@
     "Des": "P_SkillText_1146901",
     "DesParam": [],
     "BuffList": [],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1147301,
@@ -4086,7 +4127,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1147801,
@@ -4102,7 +4143,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 11000301,
@@ -4284,7 +4325,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 11002501,
@@ -4392,6 +4433,6 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   }
 ]

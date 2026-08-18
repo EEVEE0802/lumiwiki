@@ -3,7 +3,19 @@
     "Id": 1,
     "Exp": 5,
     "ShardNum": 0,
-    "workState": 10000,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 5
+      }
+    ],
+    "battleState": [
+      0,
+      0,
+      0
+    ],
+    "workState": 0,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -12,7 +24,19 @@
     "Id": 2,
     "Exp": 5,
     "ShardNum": 0,
-    "workState": 10200,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 5
+      }
+    ],
+    "battleState": [
+      200,
+      200,
+      200
+    ],
+    "workState": 200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -21,7 +45,19 @@
     "Id": 3,
     "Exp": 5,
     "ShardNum": 0,
-    "workState": 10400,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 5
+      }
+    ],
+    "battleState": [
+      400,
+      400,
+      400
+    ],
+    "workState": 400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -30,7 +66,19 @@
     "Id": 4,
     "Exp": 5,
     "ShardNum": 0,
-    "workState": 10600,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 5
+      }
+    ],
+    "battleState": [
+      600,
+      600,
+      600
+    ],
+    "workState": 600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -39,7 +87,19 @@
     "Id": 5,
     "Exp": 5,
     "ShardNum": 0,
-    "workState": 10800,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 5
+      }
+    ],
+    "battleState": [
+      800,
+      800,
+      800
+    ],
+    "workState": 800,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -48,7 +108,19 @@
     "Id": 6,
     "Exp": 10,
     "ShardNum": 0,
-    "workState": 11000,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      1000,
+      1000,
+      1000
+    ],
+    "workState": 1000,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -57,7 +129,19 @@
     "Id": 7,
     "Exp": 10,
     "ShardNum": 0,
-    "workState": 11200,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      1200,
+      1200,
+      1200
+    ],
+    "workState": 1200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -66,7 +150,19 @@
     "Id": 8,
     "Exp": 10,
     "ShardNum": 0,
-    "workState": 11400,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      1400,
+      1400,
+      1400
+    ],
+    "workState": 1400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -75,7 +171,19 @@
     "Id": 9,
     "Exp": 10,
     "ShardNum": 0,
-    "workState": 11600,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      1600,
+      1600,
+      1600
+    ],
+    "workState": 1600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -84,8 +192,20 @@
     "Id": 10,
     "Exp": 20,
     "ShardNum": 0,
-    "workState": 11800,
-    "IsBreak": false,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 20
+      }
+    ],
+    "battleState": [
+      1800,
+      1800,
+      1800
+    ],
+    "workState": 1800,
+    "IsBreak": true,
     "Unlock": 1,
     "UnlockDes": "i_400195"
   },
@@ -93,7 +213,19 @@
     "Id": 11,
     "Exp": 20,
     "ShardNum": 0,
-    "workState": 12000,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 20
+      }
+    ],
+    "battleState": [
+      2000,
+      2000,
+      2000
+    ],
+    "workState": 2000,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -102,7 +234,19 @@
     "Id": 12,
     "Exp": 20,
     "ShardNum": 0,
-    "workState": 12200,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 20
+      }
+    ],
+    "battleState": [
+      2200,
+      2200,
+      2200
+    ],
+    "workState": 2200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -111,7 +255,19 @@
     "Id": 13,
     "Exp": 20,
     "ShardNum": 0,
-    "workState": 12400,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 20
+      }
+    ],
+    "battleState": [
+      2400,
+      2400,
+      2400
+    ],
+    "workState": 2400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -120,7 +276,19 @@
     "Id": 14,
     "Exp": 20,
     "ShardNum": 0,
-    "workState": 12600,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 20
+      }
+    ],
+    "battleState": [
+      2600,
+      2600,
+      2600
+    ],
+    "workState": 2600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -129,7 +297,19 @@
     "Id": 15,
     "Exp": 40,
     "ShardNum": 0,
-    "workState": 12800,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 40
+      }
+    ],
+    "battleState": [
+      2800,
+      2800,
+      2800
+    ],
+    "workState": 2800,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -138,7 +318,19 @@
     "Id": 16,
     "Exp": 40,
     "ShardNum": 0,
-    "workState": 13000,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 40
+      }
+    ],
+    "battleState": [
+      3000,
+      3000,
+      3000
+    ],
+    "workState": 3000,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -147,7 +339,19 @@
     "Id": 17,
     "Exp": 40,
     "ShardNum": 0,
-    "workState": 13200,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 40
+      }
+    ],
+    "battleState": [
+      3200,
+      3200,
+      3200
+    ],
+    "workState": 3200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -156,7 +360,19 @@
     "Id": 18,
     "Exp": 40,
     "ShardNum": 0,
-    "workState": 13400,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 40
+      }
+    ],
+    "battleState": [
+      3400,
+      3400,
+      3400
+    ],
+    "workState": 3400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -165,7 +381,19 @@
     "Id": 19,
     "Exp": 40,
     "ShardNum": 0,
-    "workState": 13600,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 40
+      }
+    ],
+    "battleState": [
+      3600,
+      3600,
+      3600
+    ],
+    "workState": 3600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -173,17 +401,41 @@
   {
     "Id": 20,
     "Exp": 60,
-    "ShardNum": 1,
-    "workState": 13800,
-    "IsBreak": false,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 60
+      }
+    ],
+    "battleState": [
+      3800,
+      3800,
+      3800
+    ],
+    "workState": 3800,
+    "IsBreak": true,
     "Unlock": 2,
     "UnlockDes": "i_400196"
   },
   {
     "Id": 21,
     "Exp": 60,
-    "ShardNum": 1,
-    "workState": 14000,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 60
+      }
+    ],
+    "battleState": [
+      4000,
+      4000,
+      4000
+    ],
+    "workState": 4000,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -191,8 +443,20 @@
   {
     "Id": 22,
     "Exp": 60,
-    "ShardNum": 1,
-    "workState": 14200,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 60
+      }
+    ],
+    "battleState": [
+      4200,
+      4200,
+      4200
+    ],
+    "workState": 4200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -200,8 +464,20 @@
   {
     "Id": 23,
     "Exp": 60,
-    "ShardNum": 1,
-    "workState": 14400,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 60
+      }
+    ],
+    "battleState": [
+      4400,
+      4400,
+      4400
+    ],
+    "workState": 4400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -209,8 +485,20 @@
   {
     "Id": 24,
     "Exp": 60,
-    "ShardNum": 1,
-    "workState": 14600,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 60
+      }
+    ],
+    "battleState": [
+      4600,
+      4600,
+      4600
+    ],
+    "workState": 4600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -218,8 +506,20 @@
   {
     "Id": 25,
     "Exp": 60,
-    "ShardNum": 1,
-    "workState": 14800,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 60
+      }
+    ],
+    "battleState": [
+      4800,
+      4800,
+      4800
+    ],
+    "workState": 4800,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -227,8 +527,20 @@
   {
     "Id": 26,
     "Exp": 100,
-    "ShardNum": 1,
-    "workState": 15000,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 100
+      }
+    ],
+    "battleState": [
+      5000,
+      5000,
+      5000
+    ],
+    "workState": 5000,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -236,8 +548,20 @@
   {
     "Id": 27,
     "Exp": 100,
-    "ShardNum": 1,
-    "workState": 15200,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 100
+      }
+    ],
+    "battleState": [
+      5200,
+      5200,
+      5200
+    ],
+    "workState": 5200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -245,8 +569,20 @@
   {
     "Id": 28,
     "Exp": 100,
-    "ShardNum": 1,
-    "workState": 15400,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 100
+      }
+    ],
+    "battleState": [
+      5400,
+      5400,
+      5400
+    ],
+    "workState": 5400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -254,8 +590,20 @@
   {
     "Id": 29,
     "Exp": 100,
-    "ShardNum": 1,
-    "workState": 15600,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 100
+      }
+    ],
+    "battleState": [
+      5600,
+      5600,
+      5600
+    ],
+    "workState": 5600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -263,17 +611,41 @@
   {
     "Id": 30,
     "Exp": 100,
-    "ShardNum": 2,
-    "workState": 15800,
-    "IsBreak": false,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 100
+      }
+    ],
+    "battleState": [
+      5800,
+      5800,
+      5800
+    ],
+    "workState": 5800,
+    "IsBreak": true,
     "Unlock": 3,
     "UnlockDes": "i_400197"
   },
   {
     "Id": 31,
     "Exp": 150,
-    "ShardNum": 2,
-    "workState": 16000,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 150
+      }
+    ],
+    "battleState": [
+      6000,
+      6000,
+      6000
+    ],
+    "workState": 6000,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -281,8 +653,20 @@
   {
     "Id": 32,
     "Exp": 150,
-    "ShardNum": 2,
-    "workState": 16200,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 150
+      }
+    ],
+    "battleState": [
+      6200,
+      6200,
+      6200
+    ],
+    "workState": 6200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -290,8 +674,20 @@
   {
     "Id": 33,
     "Exp": 150,
-    "ShardNum": 2,
-    "workState": 16400,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 150
+      }
+    ],
+    "battleState": [
+      6400,
+      6400,
+      6400
+    ],
+    "workState": 6400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -299,8 +695,20 @@
   {
     "Id": 34,
     "Exp": 150,
-    "ShardNum": 2,
-    "workState": 16600,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 150
+      }
+    ],
+    "battleState": [
+      6600,
+      6600,
+      6600
+    ],
+    "workState": 6600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -308,8 +716,20 @@
   {
     "Id": 35,
     "Exp": 150,
-    "ShardNum": 2,
-    "workState": 16800,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 150
+      }
+    ],
+    "battleState": [
+      6800,
+      6800,
+      6800
+    ],
+    "workState": 6800,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -317,8 +737,20 @@
   {
     "Id": 36,
     "Exp": 200,
-    "ShardNum": 2,
-    "workState": 17000,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 200
+      }
+    ],
+    "battleState": [
+      7000,
+      7000,
+      7000
+    ],
+    "workState": 7000,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -326,8 +758,20 @@
   {
     "Id": 37,
     "Exp": 200,
-    "ShardNum": 2,
-    "workState": 17200,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 200
+      }
+    ],
+    "battleState": [
+      7200,
+      7200,
+      7200
+    ],
+    "workState": 7200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -335,8 +779,20 @@
   {
     "Id": 38,
     "Exp": 200,
-    "ShardNum": 2,
-    "workState": 17400,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 200
+      }
+    ],
+    "battleState": [
+      7400,
+      7400,
+      7400
+    ],
+    "workState": 7400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -344,8 +800,20 @@
   {
     "Id": 39,
     "Exp": 200,
-    "ShardNum": 2,
-    "workState": 17600,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 200
+      }
+    ],
+    "battleState": [
+      7600,
+      7600,
+      7600
+    ],
+    "workState": 7600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -353,17 +821,41 @@
   {
     "Id": 40,
     "Exp": 200,
-    "ShardNum": 3,
-    "workState": 17800,
-    "IsBreak": false,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 200
+      }
+    ],
+    "battleState": [
+      7800,
+      7800,
+      7800
+    ],
+    "workState": 7800,
+    "IsBreak": true,
     "Unlock": 4,
     "UnlockDes": "i_400197"
   },
   {
     "Id": 41,
     "Exp": 300,
-    "ShardNum": 3,
-    "workState": 18000,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 300
+      }
+    ],
+    "battleState": [
+      8000,
+      8000,
+      8000
+    ],
+    "workState": 8000,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -371,8 +863,20 @@
   {
     "Id": 42,
     "Exp": 300,
-    "ShardNum": 3,
-    "workState": 18200,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 300
+      }
+    ],
+    "battleState": [
+      8200,
+      8200,
+      8200
+    ],
+    "workState": 8200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -380,8 +884,20 @@
   {
     "Id": 43,
     "Exp": 300,
-    "ShardNum": 3,
-    "workState": 18400,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 300
+      }
+    ],
+    "battleState": [
+      8400,
+      8400,
+      8400
+    ],
+    "workState": 8400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -389,8 +905,20 @@
   {
     "Id": 44,
     "Exp": 300,
-    "ShardNum": 3,
-    "workState": 18600,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 300
+      }
+    ],
+    "battleState": [
+      8600,
+      8600,
+      8600
+    ],
+    "workState": 8600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -398,8 +926,20 @@
   {
     "Id": 45,
     "Exp": 300,
-    "ShardNum": 3,
-    "workState": 18800,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 300
+      }
+    ],
+    "battleState": [
+      8800,
+      8800,
+      8800
+    ],
+    "workState": 8800,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -407,8 +947,20 @@
   {
     "Id": 46,
     "Exp": 500,
-    "ShardNum": 3,
-    "workState": 19000,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      9000,
+      9000,
+      9000
+    ],
+    "workState": 9000,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -416,8 +968,20 @@
   {
     "Id": 47,
     "Exp": 500,
-    "ShardNum": 3,
-    "workState": 19200,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      9200,
+      9200,
+      9200
+    ],
+    "workState": 9200,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -425,8 +989,20 @@
   {
     "Id": 48,
     "Exp": 500,
-    "ShardNum": 3,
-    "workState": 19400,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      9400,
+      9400,
+      9400
+    ],
+    "workState": 9400,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -434,8 +1010,20 @@
   {
     "Id": 49,
     "Exp": 500,
-    "ShardNum": 3,
-    "workState": 19600,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      9600,
+      9600,
+      9600
+    ],
+    "workState": 9600,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
@@ -444,7 +1032,2613 @@
     "Id": 50,
     "Exp": 1000,
     "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      9800,
+      9800,
+      9800
+    ],
+    "workState": 9800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 51,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      10000,
+      10000,
+      10000
+    ],
+    "workState": 10000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 52,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      10200,
+      10200,
+      10200
+    ],
+    "workState": 10200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 53,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      10400,
+      10400,
+      10400
+    ],
+    "workState": 10400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 54,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      10600,
+      10600,
+      10600
+    ],
+    "workState": 10600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 55,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      10800,
+      10800,
+      10800
+    ],
+    "workState": 10800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 56,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      11000,
+      11000,
+      11000
+    ],
+    "workState": 11000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 57,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      11200,
+      11200,
+      11200
+    ],
+    "workState": 11200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 58,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      11400,
+      11400,
+      11400
+    ],
+    "workState": 11400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 59,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 500
+      }
+    ],
+    "battleState": [
+      11600,
+      11600,
+      11600
+    ],
+    "workState": 11600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 60,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      11800,
+      11800,
+      11800
+    ],
+    "workState": 11800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 61,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      12000,
+      12000,
+      12000
+    ],
+    "workState": 12000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 62,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      12200,
+      12200,
+      12200
+    ],
+    "workState": 12200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 63,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      12400,
+      12400,
+      12400
+    ],
+    "workState": 12400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 64,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      12600,
+      12600,
+      12600
+    ],
+    "workState": 12600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 65,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      12800,
+      12800,
+      12800
+    ],
+    "workState": 12800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 66,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      13000,
+      13000,
+      13000
+    ],
+    "workState": 13000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 67,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      13200,
+      13200,
+      13200
+    ],
+    "workState": 13200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 68,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      13400,
+      13400,
+      13400
+    ],
+    "workState": 13400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 69,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 2000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 700
+      }
+    ],
+    "battleState": [
+      13600,
+      13600,
+      13600
+    ],
+    "workState": 13600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 70,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      13800,
+      13800,
+      13800
+    ],
+    "workState": 13800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 71,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      14000,
+      14000,
+      14000
+    ],
+    "workState": 14000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 72,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      14200,
+      14200,
+      14200
+    ],
+    "workState": 14200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 73,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      14400,
+      14400,
+      14400
+    ],
+    "workState": 14400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 74,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      14600,
+      14600,
+      14600
+    ],
+    "workState": 14600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 75,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      14800,
+      14800,
+      14800
+    ],
+    "workState": 14800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 76,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      15000,
+      15000,
+      15000
+    ],
+    "workState": 15000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 77,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      15200,
+      15200,
+      15200
+    ],
+    "workState": 15200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 78,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      15400,
+      15400,
+      15400
+    ],
+    "workState": 15400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 79,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 3000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1000
+      }
+    ],
+    "battleState": [
+      15600,
+      15600,
+      15600
+    ],
+    "workState": 15600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 80,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      15800,
+      15800,
+      15800
+    ],
+    "workState": 15800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 81,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      16000,
+      16000,
+      16000
+    ],
+    "workState": 16000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 82,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      16200,
+      16200,
+      16200
+    ],
+    "workState": 16200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 83,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      16400,
+      16400,
+      16400
+    ],
+    "workState": 16400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 84,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      16600,
+      16600,
+      16600
+    ],
+    "workState": 16600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 85,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      16800,
+      16800,
+      16800
+    ],
+    "workState": 16800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 86,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      17000,
+      17000,
+      17000
+    ],
+    "workState": 17000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 87,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      17200,
+      17200,
+      17200
+    ],
+    "workState": 17200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 88,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      17400,
+      17400,
+      17400
+    ],
+    "workState": 17400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 89,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 5000
+      },
+      {
+        "Type": 2,
+        "Id": 10020,
+        "Count": 1500
+      }
+    ],
+    "battleState": [
+      17600,
+      17600,
+      17600
+    ],
+    "workState": 17600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 90,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      17800,
+      17800,
+      17800
+    ],
+    "workState": 17800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 91,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      18000,
+      18000,
+      18000
+    ],
+    "workState": 18000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 92,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      18200,
+      18200,
+      18200
+    ],
+    "workState": 18200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 93,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      18400,
+      18400,
+      18400
+    ],
+    "workState": 18400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 94,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      18600,
+      18600,
+      18600
+    ],
+    "workState": 18600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 95,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      18800,
+      18800,
+      18800
+    ],
+    "workState": 18800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 96,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      19000,
+      19000,
+      19000
+    ],
+    "workState": 19000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 97,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      19200,
+      19200,
+      19200
+    ],
+    "workState": 19200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 98,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      19400,
+      19400,
+      19400
+    ],
+    "workState": 19400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 99,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 7000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 6
+      }
+    ],
+    "battleState": [
+      19600,
+      19600,
+      19600
+    ],
+    "workState": 19600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 100,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      19800,
+      19800,
+      19800
+    ],
+    "workState": 19800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 101,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      20000,
+      20000,
+      20000
+    ],
     "workState": 20000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 102,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      20200,
+      20200,
+      20200
+    ],
+    "workState": 20200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 103,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      20400,
+      20400,
+      20400
+    ],
+    "workState": 20400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 104,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      20600,
+      20600,
+      20600
+    ],
+    "workState": 20600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 105,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      20800,
+      20800,
+      20800
+    ],
+    "workState": 20800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 106,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      21000,
+      21000,
+      21000
+    ],
+    "workState": 21000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 107,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      21200,
+      21200,
+      21200
+    ],
+    "workState": 21200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 108,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      21400,
+      21400,
+      21400
+    ],
+    "workState": 21400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 109,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 10000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 8
+      }
+    ],
+    "battleState": [
+      21600,
+      21600,
+      21600
+    ],
+    "workState": 21600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 110,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      21800,
+      21800,
+      21800
+    ],
+    "workState": 21800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 111,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      22000,
+      22000,
+      22000
+    ],
+    "workState": 22000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 112,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      22200,
+      22200,
+      22200
+    ],
+    "workState": 22200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 113,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      22400,
+      22400,
+      22400
+    ],
+    "workState": 22400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 114,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      22600,
+      22600,
+      22600
+    ],
+    "workState": 22600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 115,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      22800,
+      22800,
+      22800
+    ],
+    "workState": 22800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 116,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      23000,
+      23000,
+      23000
+    ],
+    "workState": 23000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 117,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      23200,
+      23200,
+      23200
+    ],
+    "workState": 23200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 118,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      23400,
+      23400,
+      23400
+    ],
+    "workState": 23400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 119,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 15000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      23600,
+      23600,
+      23600
+    ],
+    "workState": 23600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 120,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      23800,
+      23800,
+      23800
+    ],
+    "workState": 23800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 121,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      24000,
+      24000,
+      24000
+    ],
+    "workState": 24000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 122,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      24200,
+      24200,
+      24200
+    ],
+    "workState": 24200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 123,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      24400,
+      24400,
+      24400
+    ],
+    "workState": 24400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 124,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      24600,
+      24600,
+      24600
+    ],
+    "workState": 24600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 125,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      24800,
+      24800,
+      24800
+    ],
+    "workState": 24800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 126,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      25000,
+      25000,
+      25000
+    ],
+    "workState": 25000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 127,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      25200,
+      25200,
+      25200
+    ],
+    "workState": 25200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 128,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      25400,
+      25400,
+      25400
+    ],
+    "workState": 25400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 129,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 20000
+      },
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      25600,
+      25600,
+      25600
+    ],
+    "workState": 25600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 130,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      25800,
+      25800,
+      25800
+    ],
+    "workState": 25800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 131,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      26000,
+      26000,
+      26000
+    ],
+    "workState": 26000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 132,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      26200,
+      26200,
+      26200
+    ],
+    "workState": 26200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 133,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      26400,
+      26400,
+      26400
+    ],
+    "workState": 26400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 134,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      26600,
+      26600,
+      26600
+    ],
+    "workState": 26600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 135,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      26800,
+      26800,
+      26800
+    ],
+    "workState": 26800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 136,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      27000,
+      27000,
+      27000
+    ],
+    "workState": 27000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 137,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      27200,
+      27200,
+      27200
+    ],
+    "workState": 27200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 138,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      27400,
+      27400,
+      27400
+    ],
+    "workState": 27400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 139,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 30000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      27600,
+      27600,
+      27600
+    ],
+    "workState": 27600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 140,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      27800,
+      27800,
+      27800
+    ],
+    "workState": 27800,
+    "IsBreak": true,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 141,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      28000,
+      28000,
+      28000
+    ],
+    "workState": 28000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 142,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      28200,
+      28200,
+      28200
+    ],
+    "workState": 28200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 143,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      28400,
+      28400,
+      28400
+    ],
+    "workState": 28400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 144,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      28600,
+      28600,
+      28600
+    ],
+    "workState": 28600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 145,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      28800,
+      28800,
+      28800
+    ],
+    "workState": 28800,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 146,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      29000,
+      29000,
+      29000
+    ],
+    "workState": 29000,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 147,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      29200,
+      29200,
+      29200
+    ],
+    "workState": 29200,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 148,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      29400,
+      29400,
+      29400
+    ],
+    "workState": 29400,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 149,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 50000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      29600,
+      29600,
+      29600
+    ],
+    "workState": 29600,
+    "IsBreak": false,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 150,
+    "Exp": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      29800,
+      29800,
+      29800
+    ],
+    "workState": 29800,
     "IsBreak": false,
     "Unlock": 0,
     "UnlockDes": ""
