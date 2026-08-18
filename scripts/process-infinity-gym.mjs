@@ -295,8 +295,8 @@ async function main() {
       // top teams：三个槽位有明确语义
       //   recent  = 最近使用（该层所有胜利队伍中 latestGameId 最大的那队）
       //   popular = 使用最多（battles 最大）
-      //   other   = 其他阵容（排除 recent/popular 后 battles 最大）
-      // 数据不足时同一支队可能填多个槽位：按 kinds 合并（前端只渲染一张卡，标签写多个语义）
+      //   other   = 其他阵容（排除 recent/popular 后 battles 最大；不足时 fallback 到 popular）
+      // 三个槽位每个都单独渲染一张卡，即使指向同一支队也不合并
       const allTeams = [...f.teamsWon.values()]
       const byBattles = [...allTeams].sort((a, b) => b.battles - a.battles)
       const byRecent = [...allTeams].sort((a, b) => {
@@ -309,20 +309,8 @@ async function main() {
       const popular = byBattles[0] || null
       const other = byBattles.find(t => t !== recent && t !== popular) || popular || null
 
-      // 按语义顺序（recent → popular → other），合并同一支队的多个 kind
-      const slotOrder = [
-        { key: 'recent', team: recent },
-        { key: 'popular', team: popular },
-        { key: 'other', team: other },
-      ].filter(s => s.team)
-      const uniqTeams = []
-      for (const { key, team } of slotOrder) {
-        const found = uniqTeams.find(u => u.team === team)
-        if (found) found.kinds.push(key)
-        else uniqTeams.push({ team, kinds: [key] })
-      }
-      const teams = uniqTeams.map(({ team: t, kinds }) => ({
-        kinds,
+      const serializeTeam = (t, kind) => ({
+        kind,
         teamLumiIds: t.teamLumiIds,
         lumis: t.lumis.map(l => ({
           lumiId: l.lumiId,
@@ -336,7 +324,15 @@ async function main() {
           .sort((a, b) => b.count - a.count),
         battles: t.battles,
         winRate: '100.00',   // 口径 1：只有胜场入选
-      }))
+      })
+
+      const teams = [
+        { key: 'recent', team: recent },
+        { key: 'popular', team: popular },
+        { key: 'other', team: other },
+      ]
+        .filter(s => s.team)
+        .map(s => serializeTeam(s.team, s.key))
 
       return {
         floor,

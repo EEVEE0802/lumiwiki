@@ -702,6 +702,9 @@
                 层
               </label>
               <button class="gym-jump-btn" @click="jumpToFloor">跳转</button>
+              <button class="download-teams-btn gym-download-btn" @click="downloadGymTeamsCSV" :disabled="!gymData.floors.length">
+                📥 下载通关阵容（CSV）
+              </button>
             </div>
           </div>
           <div class="gym-floor-list">
@@ -773,12 +776,11 @@
                         <div v-for="(team, idx) in floor.topTeams" :key="idx" class="gym-player-team">
                           <div class="gym-team-kinds">
                             <span
-                              v-for="k in (team.kinds || [])"
-                              :key="k"
+                              v-if="team.kind"
                               class="gym-team-kind"
-                              :class="`gym-team-kind--${k}`"
+                              :class="`gym-team-kind--${team.kind}`"
                             >
-                              {{ GYM_KIND_LABEL[k] || k }}
+                              {{ GYM_KIND_LABEL[team.kind] || team.kind }}
                             </span>
                           </div>
                           <div class="gym-team-row">
@@ -1926,6 +1928,57 @@ function gymTopTrainer(team) {
   return { name: meta?.name || `训练家 ${ts.trainerId}`, icon: meta?.icon }
 }
 
+// 下载无限道馆通关阵容 CSV（对齐 Luban GymRecommendTeam 表结构）
+// 每层 3 支阵容：#1 最近使用 / #2 使用最多 / #3 其他阵容（不足时以 popular 兜底）
+// GymID = 128100000 + floor（与 gym_uid 编号一致）
+function downloadGymTeamsCSV() {
+  const floors = gymData.value?.floors
+  if (!floors?.length) return
+
+  const GYM_UID_BASE = 128100000
+  const escape = v => {
+    const s = String(v ?? '')
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+  }
+
+  // Luban 头 4 行（对齐 GymRecommendTeam：GymID + list<Table.LumiTeam>）
+  const metaRows = [
+    ['##var', 'GymID', '*TeamInfo', '', '', '', '', '', '', ''],
+    ['##type', 'int', 'list,Table.LumiTeam', '', '', '', '', '', '', ''],
+    ['##', '道馆关卡编号', '阵容编号', '一号噜咪', '一号噜咪技能', '二号噜咪', '二号噜咪技能', '三号噜咪', '三号噜咪技能', '光灵技能'],
+    ['##group', 'c', 'c', '', '', '', '', '', '', '']
+  ]
+  const rows = [...metaRows]
+
+  // 层升序（Luban 表习惯）
+  const sortedFloors = [...floors].sort((a, b) => a.floor - b.floor)
+  for (const f of sortedFloors) {
+    const gymId = GYM_UID_BASE + f.floor
+    const teams = f.topTeams || []
+    if (!teams.length) continue
+    teams.forEach((team, idx) => {
+      // 同一 gymId 只在阵容序号 1 那行填 GymID，后续留空（Luban 稀疏格式，跟 Home.vue 一致）
+      const row = [idx === 0 ? gymId : '', idx + 1]
+      for (let i = 0; i < 3; i++) {
+        const l = team.lumis?.[i]
+        row.push(l ? l.lumiId : '', l ? (l.secondSkills?.[0]?.skillId ?? '') : '')
+      }
+      row.push(team.trainerSkills?.[0]?.trainerId ?? '')
+      rows.push(row)
+    })
+  }
+
+  const csv = rows.map(r => r.map(escape).join(',')).join('\n')
+  const filename = `GymRecommendTeam-${currentRegion.value}.csv`
+  const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = filename
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
 // 加载所有周的参与走势数据并合并（同日期后写覆盖，因为跨周分界日 UV 相同）
 async function loadAllParticipationData() {
   const weeks = availableWeeks.value
@@ -2646,6 +2699,22 @@ watch(currentStats, () => {
   color: white;
   font-weight: 600;
   cursor: pointer;
+}
+
+.gym-download-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #4facfe 0%, #00b8a9 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.gym-download-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .gym-floor-list {
