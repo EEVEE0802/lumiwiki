@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
-import { loadData, TYPE_NAMES, TYPE_COLORS } from '../data'
+import { loadData, TYPE_NAMES, TYPE_COLORS, parseSkillCost } from '../data'
 import { avatarUrl } from '../data/imageUrl'
 import LumiSelector from '../components/LumiSelector.vue'
 
@@ -230,7 +230,7 @@ const leftSkillInfo = computed(() => {
   if (!leftSkill.value) return null
   const skill = leftSkill.value
   return {
-    cost: Math.floor(skill.SkillCost / 10),
+    cost: parseSkillCost(skill.SkillCost),
     des: formatSkillDes(skill),
     power: getSkillPower(skill)
   }
@@ -241,7 +241,7 @@ const rightSkillInfo = computed(() => {
   if (!rightSkill.value) return null
   const skill = rightSkill.value
   return {
-    cost: Math.floor(skill.SkillCost / 10),
+    cost: parseSkillCost(skill.SkillCost),
     des: formatSkillDes(skill),
     power: getSkillPower(skill)
   }
@@ -404,8 +404,9 @@ function calcSingleDamage(params) {
     baseDamage = baseDamage * 1.5
   }
 
-  // 只有技能（SkillCost > 0）才应用增减伤系数，普攻不应用
-  const isSkill = skill.SkillCost > 0
+  // 只有技能（mode 1 常规 / mode 2 蚀命）才应用增减伤系数，普攻（mode 0 或无消耗）不应用
+  const cost = parseSkillCost(skill.SkillCost)
+  const isSkill = !!cost && cost.mode !== 0
 
   if (isSkill) {
     // 应用增伤系数（多个乘算）
@@ -747,7 +748,13 @@ watch([
         <div v-if="leftSkillInfo" class="skill-info-card">
           <div class="skill-info-row">
             <span class="skill-info-label">消耗</span>
-            <span class="skill-info-value">{{ leftSkillInfo.cost }}</span>
+            <span v-if="leftSkillInfo.cost && leftSkillInfo.cost.mode === 1" class="skill-info-value">
+              {{ leftSkillInfo.cost.energy }}
+            </span>
+            <span v-else-if="leftSkillInfo.cost && leftSkillInfo.cost.mode === 2" class="skill-info-value cost-erosion">
+              蚀命 {{ leftSkillInfo.cost.hpPct }}% · CD {{ leftSkillInfo.cost.cd }} 普攻
+            </span>
+            <span v-else class="skill-info-value">—</span>
           </div>
           <div class="skill-info-row">
             <span class="skill-info-label">威力</span>
@@ -921,7 +928,13 @@ watch([
         <div v-if="rightSkillInfo" class="skill-info-card">
           <div class="skill-info-row">
             <span class="skill-info-label">消耗</span>
-            <span class="skill-info-value">{{ rightSkillInfo.cost }}</span>
+            <span v-if="rightSkillInfo.cost && rightSkillInfo.cost.mode === 1" class="skill-info-value">
+              {{ rightSkillInfo.cost.energy }}
+            </span>
+            <span v-else-if="rightSkillInfo.cost && rightSkillInfo.cost.mode === 2" class="skill-info-value cost-erosion">
+              蚀命 {{ rightSkillInfo.cost.hpPct }}% · CD {{ rightSkillInfo.cost.cd }} 普攻
+            </span>
+            <span v-else class="skill-info-value">—</span>
           </div>
           <div class="skill-info-row">
             <span class="skill-info-label">威力</span>
@@ -1278,6 +1291,10 @@ watch([
   color: var(--accent);
   font-weight: 600;
   font-size: 0.9em;
+}
+
+.skill-info-value.cost-erosion {
+  color: #ff8b95;
 }
 
 .skill-info-desc {

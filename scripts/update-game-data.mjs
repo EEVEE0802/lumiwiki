@@ -199,6 +199,54 @@ function syncBuffIcons(cfg) {
   console.log(`  ✓ 新增 ${added} 个图标，缺失 ${missing} 个`)
 }
 
+// 同步技能图标（数据驱动：遍历 ActiveSkill.json 里所有 icon 字段引用）
+// 覆盖 SkillList / LumiDetail / RobotTeam / DamageCalculator 等技能展示位
+function syncSkillIcons(cfg) {
+  console.log('\n⚔️  同步技能图标（数据驱动按需复制）...')
+  fs.mkdirSync(cfg.SKILL_ICON_DST_DIR, { recursive: true })
+
+  const skillPath = path.join(cfg.DATA_DST_DIR, 'ActiveSkill.json')
+  if (!fs.existsSync(skillPath)) {
+    console.log('  ⚠ ActiveSkill.json 不存在，跳过')
+    return
+  }
+  if (!fs.existsSync(cfg.SKILL_ICON_SRC_DIR)) {
+    console.log(`  ⚠ 技能图标源目录不存在，跳过: ${cfg.SKILL_ICON_SRC_DIR}`)
+    return
+  }
+  const skillArr = (() => {
+    const d = JSON.parse(fs.readFileSync(skillPath, 'utf-8'))
+    return Array.isArray(d) ? d : (d.data || Object.values(d))
+  })()
+
+  const icons = new Set()
+  for (const sk of skillArr) {
+    if (sk.icon) icons.add(sk.icon)
+  }
+
+  const dstFiles = new Set(fs.readdirSync(cfg.SKILL_ICON_DST_DIR).filter(f => f.endsWith('.png')))
+  let added = 0, missing = 0, invalid = 0
+  for (const icon of icons) {
+    const safeName = path.basename(icon)
+    if (safeName !== icon) {
+      console.log(`  ⚠ 跳过非法 icon 名: ${icon}`)
+      invalid++
+      continue
+    }
+    const fileName = safeName + '.png'
+    if (dstFiles.has(fileName)) continue
+    const src = path.join(cfg.SKILL_ICON_SRC_DIR, fileName)
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, path.join(cfg.SKILL_ICON_DST_DIR, fileName))
+      added++
+    } else {
+      missing++
+    }
+  }
+  if (invalid) console.log(`  ⚠ 共 ${invalid} 个非法 icon 名已跳过`)
+  console.log(`  ✓ 新增 ${added} 个图标，缺失源文件 ${missing} 个`)
+}
+
 // 同步物品图标（数据驱动：全量遍历 Item.json 里所有 icon 字段引用）
 // 覆盖 ItemList / EggDrop / StarExchange 等页面，避免切换到 internal 后大量 404
 function syncRequestItemIcons(cfg) {
@@ -263,6 +311,7 @@ export async function updateGameData(opts = {}) {
   runDerivativeScripts(cfg)
   syncAvatars(cfg)
   syncBuffIcons(cfg)
+  syncSkillIcons(cfg)
   syncRequestItemIcons(cfg)
   mirrorExtra(cfg)
 }

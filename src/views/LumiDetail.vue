@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { loadData, t, TYPE_NAMES, TYPE_COLORS, WORK_TYPE_NAMES, LUMI_TAG_NAMES, LUMI_CARD_TYPE, LUMI_CARD_TYPE_COLORS, getKeywordMap, keywordSync } from '../data'
+import { loadData, t, TYPE_NAMES, TYPE_COLORS, WORK_TYPE_NAMES, LUMI_TAG_NAMES, LUMI_CARD_TYPE, LUMI_CARD_TYPE_COLORS, getKeywordMap, keywordSync, parseSkillCost } from '../data'
 import { avatarUrl, skillIconUrl, handleAvatarError as handleAvatarErrorHelper } from '../data/imageUrl'
 
 const route = useRoute()
@@ -183,10 +183,10 @@ const recommendTeams = computed(() => {
 // 推荐配队数据来源周次（数组）
 const recommendWeeks = computed(() => lumiTeamsData.value?.weeks || [])
 
-// 获取技能消耗
+// 获取技能消耗（结构化对象：{ mode: 0|1|2, energy?, hpPct?, cd? } 或 null）
 function getSkillCost(skillId) {
   const s = activeSkills.value.find(x => x.Id === skillId)
-  return s ? Math.floor(s.SkillCost / 10) : null
+  return s ? parseSkillCost(s.SkillCost) : null
 }
 
 // 计算技能威力总和
@@ -892,8 +892,11 @@ const weaknesses = computed(() => {
           <span v-if="inherentSkill.type" class="type-tag" :style="{ background: TYPE_COLORS[inherentSkill.type] || '#666' }">
             {{ TYPE_NAMES[inherentSkill.type] || '未知' }}
           </span>
-          <span v-if="inherentSkill.cost !== null" class="skill-stat-tag">
-            消耗: {{ inherentSkill.cost }}
+          <span v-if="inherentSkill.cost && inherentSkill.cost.mode === 1" class="skill-stat-tag">
+            消耗: {{ inherentSkill.cost.energy }}
+          </span>
+          <span v-else-if="inherentSkill.cost && inherentSkill.cost.mode === 2" class="skill-stat-tag tag-erosion">
+            蚀命: {{ inherentSkill.cost.hpPct }}% · CD {{ inherentSkill.cost.cd }} 普攻
           </span>
           <span v-if="inherentSkill.power !== '-'" class="skill-stat-tag">
             威力: {{ inherentSkill.power }}
@@ -922,8 +925,11 @@ const weaknesses = computed(() => {
             <span v-if="sk.type" class="type-tag" :style="{ background: TYPE_COLORS[sk.type] || '#666' }">
               {{ TYPE_NAMES[sk.type] || '未知' }}
             </span>
-            <span v-if="sk.cost !== null" class="skill-stat-tag">
-              消耗: {{ sk.cost }}
+            <span v-if="sk.cost && sk.cost.mode === 1" class="skill-stat-tag">
+              消耗: {{ sk.cost.energy }}
+            </span>
+            <span v-else-if="sk.cost && sk.cost.mode === 2" class="skill-stat-tag tag-erosion">
+              蚀命: {{ sk.cost.hpPct }}% · CD {{ sk.cost.cd }} 普攻
             </span>
             <span v-if="sk.power !== '-'" class="skill-stat-tag">
               威力: {{ sk.power }}
@@ -1409,6 +1415,11 @@ const weaknesses = computed(() => {
   padding: 3px 10px;
   border-radius: 10px;
   font-size: 0.8em;
+}
+.skill-stat-tag.tag-erosion {
+  background: rgba(220, 53, 69, 0.18);
+  color: #ff8b95;
+  font-weight: 600;
 }
 /* 普攻详情 */
 .na-item {

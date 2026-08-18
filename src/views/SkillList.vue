@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { loadData, TYPE_NAMES, TYPE_COLORS } from '../data'
+import { loadData, TYPE_NAMES, TYPE_COLORS, parseSkillCost } from '../data'
 import { skillIconUrl } from '../data/imageUrl'
 import MultiSelect from '../components/MultiSelect.vue'
 import { useBattleText } from '../composables/useBattleText'
@@ -125,6 +125,11 @@ function isExpanded(skillId) {
 
 // 拥有者显示数量阈值
 const OWNER_SHOW_THRESHOLD = 5
+
+// 技能消耗结构化（parseSkillCost 的简短别名，便于模板调用）
+function skillCost(sk) {
+  return parseSkillCost(sk?.SkillCost)
+}
 
 // 计算技能威力总和
 function getSkillPowerSum(skill) {
@@ -290,7 +295,19 @@ const skillCounts = computed(() => {
                 {{ TYPE_NAMES[sk.LumiTpye] || '未知' }}
               </span>
             </td>
-            <td>{{ Math.floor(sk.SkillCost / 10) }}</td>
+            <td>
+              <template v-for="c in [skillCost(sk)]" :key="sk.Id + '-cost'">
+                <span v-if="c && c.mode === 1">{{ c.energy }}</span>
+                <span
+                  v-else-if="c && c.mode === 2"
+                  class="cost-erosion"
+                  :title="`蚀命 ${c.hpPct}% · CD ${c.cd} 普攻`"
+                >
+                  蚀 {{ c.hpPct }}% / {{ c.cd }}
+                </span>
+                <span v-else class="text-dim">—</span>
+              </template>
+            </td>
             <td>{{ getSkillPowerSum(sk) }}</td>
             <td class="text-dim" v-html="getSkillDes(sk)"></td>
             <td class="owners-cell">
@@ -468,6 +485,16 @@ const skillCounts = computed(() => {
 }
 .font-bold { font-weight: 600; }
 .text-dim { color: var(--text-dim); font-size: 0.9em; }
+.cost-erosion {
+  display: inline-block;
+  padding: 2px 8px;
+  background: rgba(220, 53, 69, 0.18);
+  color: #ff8b95;
+  border-radius: 8px;
+  font-size: 0.85em;
+  font-weight: 600;
+  white-space: nowrap;
+}
 .owner-link {
   display: inline-block;
   padding: 2px 8px;

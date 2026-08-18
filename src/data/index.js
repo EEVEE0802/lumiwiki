@@ -126,6 +126,26 @@ const WORK_TYPE_NAMES = {
 const LUMI_CARD_TYPE = { 0: '普通', 50: '异色', 80: '王', 98: '3D', 99: '全景' }
 const LUMI_CARD_TYPE_COLORS = { 0: '#9e9e9e', 50: '#e91e63', 80: '#FFD700', 98: '#2196f3', 99: '#9c27b0' }
 
+// 技能消耗字段（ActiveSkill.SkillCost）
+// 兼容对外版旧格式（纯数字，等价 [1, N]）与对内版新格式（数组）：
+//   [0]         → 无消耗
+//   [1, N]      → 常规能量消耗，N 为原始能量值（÷10 得棱镜数）
+//   [2, N, M]   → 蚀命：消耗 N% 血量 + 使用后需 M 次普攻才能再次释放
+// 返回：{ mode: 0 | 1 | 2, energy?, hpPct?, cd? } 或 null（找不到）
+export function parseSkillCost(raw) {
+  if (raw == null) return null
+  if (typeof raw === 'number') {
+    return raw > 0 ? { mode: 1, energy: Math.floor(raw / 10) } : { mode: 0 }
+  }
+  if (Array.isArray(raw) && raw.length) {
+    const [mode, a, b] = raw
+    if (mode === 0) return { mode: 0 }
+    if (mode === 1) return { mode: 1, energy: Math.floor((a || 0) / 10) }
+    if (mode === 2) return { mode: 2, hpPct: a || 0, cd: b || 0 }
+  }
+  return null
+}
+
 // 多语言映射
 let locMap = null
 let currentLanguage = null
