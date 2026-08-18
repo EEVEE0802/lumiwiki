@@ -36,8 +36,7 @@ const GYM_UID_MIN = 128100001
 const GYM_UID_MAX = 128101000
 const uidToFloor = uid => uid - GYM_UID_BASE
 
-// 每层玩家阵容 top N 输出（前端展示 top 3，多存一些留余量）
-const TEAM_TOP_N = 20
+// 每层通关阵容槽位：按语义分三档（最近使用 / 使用最多 / 其他），最多输出 3 支
 // 全局噜咪出场率 top N（前端可能全展示）
 const GLOBAL_LUMI_TOP_N = 300
 
@@ -255,10 +254,16 @@ async function main() {
         })),
         trainerSkills: new Map(),
         battles: 0,
+        latestGameId: 0n,   // 该队所有胜利场次中 game_id_str 的最大值（BigInt，用于"最近使用"排序）
       })
     }
     const team = f.teamsWon.get(teamKey)
     team.battles++
+    // 更新该队"最近一次胜利"的 game_id_str（BigInt 比较）
+    try {
+      const gid = BigInt(row.game_id_str)
+      if (gid > team.latestGameId) team.latestGameId = gid
+    } catch { /* game_id_str 非数字直接跳过 */ }
     // 累加各噜咪携带的第二技能
     lumis.forEach((l, idx) => {
       const skillId = parseInt(l.lumi_secondskill)
@@ -287,25 +292,51 @@ async function main() {
       const uniqueClearers = f.uniqueClearers.size
       const avgAttempts = uniqueClearers > 0 ? +(f.totalBattles / uniqueClearers).toFixed(2) : 0
 
-      // top teams（按 battles 降序）
-      const teams = [...f.teamsWon.values()]
-        .sort((a, b) => b.battles - a.battles)
-        .slice(0, TEAM_TOP_N)
-        .map(t => ({
-          teamLumiIds: t.teamLumiIds,
-          lumis: t.lumis.map(l => ({
-            lumiId: l.lumiId,
-            lumiName: l.lumiName,
-            secondSkills: [...l.secondSkills.entries()]
-              .map(([skillId, count]) => ({ skillId, count }))
-              .sort((a, b) => b.count - a.count)
-          })),
-          trainerSkills: [...t.trainerSkills.entries()]
-            .map(([trainerId, count]) => ({ trainerId, count }))
-            .sort((a, b) => b.count - a.count),
-          battles: t.battles,
-          winRate: '100.00',   // 口径 1：只有胜场入选
-        }))
+      // top teams：三个槽位有明确语义
+      //   recent  = 最近使用（该层所有胜利队伍中 latestGameId 最大的那队）
+      //   popular = 使用最多（battles 最大）
+      //   other   = 其他阵容（排除 recent/popular 后 battles 最大）
+      // 数据不足时同一支队可能填多个槽位：按 kinds 合并（前端只渲染一张卡，标签写多个语义）
+      const allTeams = [...f.teamsWon.values()]
+      const byBattles = [...allTeams].sort((a, b) => b.battles - a.battles)
+      const byRecent = [...allTeams].sort((a, b) => {
+        // BigInt 比较：不能用 a - b
+        if (a.latestGameId < b.latestGameId) return 1
+        if (a.latestGameId > b.latestGameId) return -1
+        return 0
+      })
+      const recent = byRecent[0] || null
+      const popular = byBattles[0] || null
+      const other = byBattles.find(t => t !== recent && t !== popular) || popular || null
+
+      // 按语义顺序（recent → popular → other），合并同一支队的多个 kind
+      const slotOrder = [
+        { key: 'recent', team: recent },
+        { key: 'popular', team: popular },
+        { key: 'other', team: other },
+      ].filter(s => s.team)
+      const uniqTeams = []
+      for (const { key, team } of slotOrder) {
+        const found = uniqTeams.find(u => u.team === team)
+        if (found) found.kinds.push(key)
+        else uniqTeams.push({ team, kinds: [key] })
+      }
+      const teams = uniqTeams.map(({ team: t, kinds }) => ({
+        kinds,
+        teamLumiIds: t.teamLumiIds,
+        lumis: t.lumis.map(l => ({
+          lumiId: l.lumiId,
+          lumiName: l.lumiName,
+          secondSkills: [...l.secondSkills.entries()]
+            .map(([skillId, count]) => ({ skillId, count }))
+            .sort((a, b) => b.count - a.count)
+        })),
+        trainerSkills: [...t.trainerSkills.entries()]
+          .map(([trainerId, count]) => ({ trainerId, count }))
+          .sort((a, b) => b.count - a.count),
+        battles: t.battles,
+        winRate: '100.00',   // 口径 1：只有胜场入选
+      }))
 
       return {
         floor,

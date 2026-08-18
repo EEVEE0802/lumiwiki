@@ -765,13 +765,22 @@
                         </div>
                       </div>
                     </div>
-                    <!-- 玩家通关阵容 top 3 -->
+                    <!-- 玩家通关阵容：最近使用 / 使用最多 / 其他阵容 -->
                     <div class="gym-team-section">
-                      <h4>🏆 通关玩家阵容 Top 3</h4>
+                      <h4>🏆 通关玩家阵容</h4>
                       <div v-if="!floor.topTeams.length" class="gym-empty-hint">暂无通关玩家阵容数据</div>
                       <div v-else class="gym-teams-list">
-                        <div v-for="(team, idx) in floor.topTeams.slice(0, 3)" :key="idx" class="gym-player-team">
-                          <div class="gym-team-rank">#{{ idx + 1 }}</div>
+                        <div v-for="(team, idx) in floor.topTeams" :key="idx" class="gym-player-team">
+                          <div class="gym-team-kinds">
+                            <span
+                              v-for="k in (team.kinds || [])"
+                              :key="k"
+                              class="gym-team-kind"
+                              :class="`gym-team-kind--${k}`"
+                            >
+                              {{ GYM_KIND_LABEL[k] || k }}
+                            </span>
+                          </div>
                           <div class="gym-team-row">
                             <div v-for="lumi in team.lumis" :key="'p-' + lumi.lumiId" class="gym-team-lumi" @click="goToLumi(lumi.lumiId)">
                               <img :src="avatarUrl(lumi.lumiId)" :alt="lumi.lumiName" @error="handleAvatarError" class="gym-team-avatar" />
@@ -819,6 +828,13 @@ const router = useRouter()
 // 第二技能元数据：skillId → { name, icon }
 const skillMeta = ref(new Map())
 const trainerSkillMeta = ref(new Map())
+
+// 无限道馆通关阵容槽位语义标签
+const GYM_KIND_LABEL = {
+  recent: '🕐 最近使用',
+  popular: '🔥 使用最多',
+  other: '📋 其他阵容',
+}
 
 // 段位配置
 const rankGroups = [
@@ -2886,11 +2902,36 @@ watch(currentStats, () => {
   flex-wrap: wrap;
 }
 
-.gym-team-rank {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #764ba2;
-  min-width: 40px;
+.gym-team-kinds {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 96px;
+}
+
+.gym-team-kind {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.gym-team-kind--recent {
+  background: rgba(52, 152, 219, 0.15);
+  color: #2980b9;
+}
+
+.gym-team-kind--popular {
+  background: rgba(230, 126, 34, 0.15);
+  color: #d35400;
+}
+
+.gym-team-kind--other {
+  background: rgba(149, 165, 166, 0.15);
+  color: #7f8c8d;
 }
 
 .gym-team-stats {
