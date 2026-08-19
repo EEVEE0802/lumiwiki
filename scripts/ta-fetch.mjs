@@ -44,7 +44,7 @@ export const CSV_HEADERS = {
   tournament:     ['part_date', 'game_id_str', 'b_role_id', 'player_rank', 'player_type', 'player_lumis', 'battle_result', 'trainer_id', 'player_week_win'],
   login:          ['part_date', 'b_role_id', 'b_create_time_str'],
   'infinity-gym': ['part_date', 'game_id_str', 'b_role_id', 'gym_uid', 'player_lumis', 'battle_result', 'trainer_id'],
-  'guild-war':    ['part_date', 'game_id_str', 'b_role_id', 'player_type', 'player_lumis', 'battle_result', 'trainer_id'],
+  'guild-war':    ['part_date', 'b_role_id'],
   assist:         ['part_date', 'battle_uid', 'b_role_id'],
   recharge:       ['b_role_id', 'max_recharge_total'],
 }
@@ -139,23 +139,22 @@ function buildSql(mode, startDate, endDate, cfg) {
   }
 
   if (mode === 'guild-war') {
-    // 公会战：异步 PVP，game_type = 'GvG1v1'
-    // 数据结构类似 ladder（每场一行 battle_end），只是没有段位 player_rank
+    // 公会战：异步 PVP，game_type = 'GVG1v1'
+    // 每场 battle_end 会上报 2 条：player_type=1（玩家自己）+ player_type=4（NPC 镜像），共用同一个 game_id_str
+    // 参与走势只需 UV / 场均，其他字段（player_lumis 每行几百字节，是 CSV 体积大头）用不到 —— 全部裁掉
+    // 只 SELECT part_date + b_role_id，并 WHERE player_type=1 去掉 NPC 镜像行，让每场只算一次
+    // 结果：响应体从 ~100MB 缩到 <5MB，避免 submit-sql fetch failed
     return `
       SELECT
         "$part_date" AS part_date,
-        game_id_str,
-        b_role_id,
-        player_type,
-        player_lumis,
-        battle_result,
-        trainer_id
+        b_role_id
       FROM ${tableName}
       WHERE "$part_date" >= '${startDate}'
         AND "$part_date" <= '${endDate}'
         AND "#event_name" = 'battle_end'
         AND ${zoneFilter}
         AND game_type = 'GVG1v1'
+        AND player_type = 1
     `.trim().replace(/\s+/g, ' ')
   }
 
