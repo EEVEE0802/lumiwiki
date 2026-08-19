@@ -533,6 +533,10 @@ node scripts/fetch-participation-trend.mjs --week 2
 
 # --skip-fetch：CSV 已存在时跳过 API 拉取，仅重新聚合（本地调试用）
 node scripts/fetch-participation-trend.mjs --week 2 --skip-fetch
+
+# --publish：跑完自动 bash publish.sh，把结果推到 dist + 重启 3005 服务
+# 手动补跑时强烈建议加，否则浏览器看到的还是老数据（见「数据分离机制」小节）
+node scripts/fetch-participation-trend.mjs --week 6 --region domestic --skip-fetch --publish
 ```
 
 ### 集成位置
@@ -672,6 +676,42 @@ CSV 表头：`噜咪ID,体型,活动地图,关键特质,行为习惯`
 ## 多语言支持
 
 支持 5 种语言（zh-CN、zh-TW、en、ja、ko），切换后 localStorage 持久化，未翻译内容 fallback 到简中。
+
+## 数据分离机制（重要！）
+
+项目里同一份数据 JSON 存在**两个位置**，前端访问只看后者：
+
+| 位置 | 谁写 | 谁读 |
+|---|---|---|
+| `public/data/**` | 所有 processor 脚本、`prepare-i18n-data.cjs`、`sync-extra-data.cjs`、手动同步 | Vite dev server（`npm run dev`）+ 构建时被打包进 dist |
+| `dist/data/**` | `npm run build` 从 `public/` 复制过来 | **`python http.server 3005` 实际服务的目录** |
+
+**含义**：任何时候你**直接改了 `public/data/**` 下的 JSON**（哪怕只是手动补跑了一个 processor 脚本），端口 3005 上的用户**看不到新数据**，除非你跑一次 `bash publish.sh` 把它构建到 dist 并重启服务。
+
+### 常见踩坑场景
+
+- ✅ **自动流程没事**：`auto-update.mjs` / `auto-update-all.mjs` / `update-game-data.mjs` 末尾都自带 `bash publish.sh`，跑完就上线
+- ❌ **手动补跑必踩**：例如 `node scripts/fetch-participation-trend.mjs --week 6 --region domestic --skip-fetch` 只写 `public/`，不 publish → 浏览器硬刷也是老数据
+- ❌ **手动跑 processor 也踩**：`npm run process-adventure` / `npm run process-egg-drop` / `npm run process-lumi-teams` 都只写 `public/`
+
+### 手动补跑的正确姿势
+
+**优先**：给 processor 脚本传 `--publish`（如果它支持）
+```bash
+# 参与走势已支持
+node scripts/fetch-participation-trend.mjs --week 6 --region domestic --skip-fetch --publish
+```
+
+**兜底**：跑完 processor 后手动 `bash publish.sh`
+```bash
+node scripts/process-infinity-gym.mjs --region domestic
+node scripts/process-lumi-teams.mjs --region domestic
+bash publish.sh   # ← 关键！
+```
+
+**排查**：怀疑浏览器看到的不对时，先 `curl -s http://localhost:3005/data/xxx.json` 看服务器返回，跟 `public/data/xxx.json` 对比，mtime 不一致就是需要 publish。
+
+---
 
 ## 内网发布
 

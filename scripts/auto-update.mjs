@@ -154,6 +154,8 @@ export async function updateRegionParticipation(region, week, baseFriday) {
     } catch (e) {
       console.error(`⚠️  [${region}] recharge 拉取失败（不阻塞参与走势）: ${e.message}`)
     }
+    // 注意：这里故意不传 --publish，因为 auto-update 末尾统一 publish 一次即可；
+    // --publish 是给「手动补跑」用的，让操作者不用另外记着 bash publish.sh（详见 CLAUDE.md「数据分离机制」）
     runCommand(process.execPath, ['scripts/fetch-participation-trend.mjs', '--week', String(week), '--region', region])
   } catch (e) {
     console.error(`⚠️  [${region}] 参与走势生成失败（不阻塞发布）: ${e.message}`)

@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import readline from 'readline'
+import { spawnSync } from 'node:child_process'
 import { fetchCsv } from './ta-fetch.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -15,9 +16,10 @@ const week = weekIdx !== -1 ? parseInt(args[weekIdx + 1]) : null
 const regionIdx = args.indexOf('--region')
 const region = regionIdx !== -1 ? args[regionIdx + 1] : 'domestic'
 const skipFetch = args.includes('--skip-fetch')
+const shouldPublish = args.includes('--publish')
 
 if (isNaN(week) || week < 1) {
-  console.error('用法: node fetch-participation-trend.mjs --week N [--region domestic|overseas]')
+  console.error('用法: node fetch-participation-trend.mjs --week N [--region domestic|overseas] [--skip-fetch] [--publish]')
   process.exit(1)
 }
 if (!['domestic', 'overseas'].includes(region)) {
@@ -556,3 +558,23 @@ result.forEach(r => {
   const ret = r.retention
   console.log(`  ${r.date}: 天梯=${r.ladder}(留存${ret.ladder}) 周赛=${r.tournament}(留存${ret.tournament}) 无限道馆=${r.infinityGym}(留存${ret.infinityGym}) 公会战=${r.guildWar}(留存${ret.guildWar}) 登录=${r.login}(留存${ret.login})`)
 })
+
+// 手动补跑用：传 --publish 时自动跑 publish.sh，把 public/data 同步到 dist 并重启服务
+// 自动流程（auto-update.mjs）里不要传 --publish，那边最后统一 publish 一次即可
+if (shouldPublish) {
+  console.log('\n🚀 --publish 触发发布...')
+  const findBash = () => {
+    if (process.platform !== 'win32') return 'bash'
+    const candidates = [
+      'C:\\Program Files\\Git\\bin\\bash.exe',
+      'C:\\Program Files\\Git\\usr\\bin\\bash.exe',
+      'C:\\Program Files (x86)\\Git\\bin\\bash.exe'
+    ]
+    return candidates.find(p => fs.existsSync(p)) || 'bash'
+  }
+  const r = spawnSync(findBash(), ['publish.sh'], { cwd: PROJECT_ROOT, stdio: 'inherit' })
+  if (r.status !== 0) {
+    console.error(`❌ publish 失败 (exit ${r.status})`)
+    process.exit(r.status || 1)
+  }
+}
