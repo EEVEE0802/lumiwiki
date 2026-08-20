@@ -39,7 +39,8 @@ python scripts/generate-item-sheet.py   # sheet 2（可反复跑，不影响 she
 **行结构**：
 - 列 A：类型（普通 / 异色卡 / 次元卡 / 王 / 幻境卡）
 - 列 B：获取途径（主线 / S1 / S2 / S3 / S4，对应 `LumiTag` 1~5）
-- 列 C+：每段进化 4 列（中文名 / 英文名 / 立绘 / 三视图）
+- 列 C+：每段进化 **5 列**（中文名 / 英文名 / **属性** / 立绘 / 三视图）
+- 属性文本：单属性 `水`、双属性 `水/火`（`Lumi.json` 的 `Type1`/`Type2`，映射见 CLAUDE.md「枚举映射」）
 
 **类型顺序 & 排序**：
 - 5 个类型块顺序：`普通 → 异色卡 → 次元卡 → 王 → 幻境卡`（对应 `CardBack` = 0 / 50 / 98 / 80 / 99）
@@ -75,10 +76,11 @@ python scripts/generate-item-sheet.py   # sheet 2（可反复跑，不影响 she
 
 ## 🖼️ 图片规格
 
-**立绘**（sheet 1 + sheet 2 图标）：
-- 100×100 px（PIL 等比缩放 + 透明背景居中，PNG 缩略图）
-- 缩放临时文件放 `tempfile.gettempdir()/lumi_xlsx_*`，脚本末尾自动清理
-- 列宽 15，行内嵌 100×100
+**立绘**（sheet 1）—— **原图无损嵌入**：
+- 用 `openpyxl.drawing.image.Image(源文件路径)` 直接读入原文件字节，openpyxl 不 re-encode
+- 源文件本身就是 256×256（游戏客户端资源规格），显示尺寸设为 100×100 保持格子紧凑
+- 列宽 15（≈100px），在 Excel 里"重置图片大小"可看到 256×256 原分辨率
+- ⚠️ 之前用 PIL thumbnail 缩到 100×100 是有损缩略，2026-08-20 已改为原图（用户明确要求）
 
 **三视图**（sheet 1 独有）—— **原图无损嵌入**：
 - 用 `openpyxl.drawing.image.Image(原文件路径)` 直接读入原文件字节，openpyxl 打包时按原样嵌入 xlsx（不 re-encode）
@@ -86,6 +88,8 @@ python scripts/generate-item-sheet.py   # sheet 2（可反复跑，不影响 she
 - **列宽 72**（≈500px），**行高按本行三视图最大高度动态设**（`max(80pt, max_h_px * 0.75)`）
 - 单张 2~10 MB，244 只噜咪嵌进去 xlsx 会到 **500 MB ~ 1 GB**（用户可接受，见 2026-08-20 决策）
 - Excel 打开会慢，但支持原图分辨率查看细节（右键 → 大小和属性 → 重置图片大小可看原分辨率）
+
+**sheet 2 物品图标**：仍是 100×100 缩略图（PIL 等比缩放 + 透明背景居中，PNG）。因为源图标本身就是 UI 图标级别小图，缩略够用。缩放临时文件放 `tempfile.gettempdir()/lumi_item_*`，脚本末尾自动清理。
 
 **行高**：
 - 表头行 24 pt

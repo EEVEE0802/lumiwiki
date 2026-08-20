@@ -32,20 +32,40 @@ AVATAR_DIR = 'D:/lumiwiki/public/images/avatars'
 MODEL_DIR = 'D:/噜咪模型'
 OUTPUT = 'D:/Lumi信息汇总.xlsx'
 
-IMG_SIZE = 100                  # 立绘正方形尺寸（像素）
+IMG_SIZE = 100                  # 立绘显示尺寸（像素），原图 256×256 无损嵌入
 ROW_HEIGHT_PT_BASE = 80         # 基础行高（磅），三视图更高时按需拉伸
 COL_WIDTH_IMG = 15              # 立绘列宽（Excel 单位，约对应 100px）
 COL_WIDTH_TEXT = 16             # 文字列宽
-COL_WIDTH_TYPE = 10             # 类型/赛季列宽
+COL_WIDTH_TYPE = 10             # 类型/赛季/属性列宽
 
 # 三视图使用原图（无损嵌入），仅在 Excel 里控制显示宽度、按原比例算高度
 MODEL_DISPLAY_WIDTH = 500       # 三视图显示宽度（像素）
 COL_WIDTH_MODEL = 72            # 三视图列宽 (~500px)
 PX_TO_PT = 0.75                 # 像素 → 磅 换算（Excel 行高单位是磅）
 
+# 每段进化占用列数：中文名 / 英文名 / 属性 / 立绘 / 三视图
+COLS_PER_STAGE = 5
+
 TYPE_ORDER = {0: 0, 50: 1, 98: 2, 80: 3, 99: 4}
 TYPE_LABEL = {0: '普通', 50: '异色卡', 98: '次元卡', 80: '王', 99: '幻境卡'}
 SEASON_LABEL = {0: '未投放', 1: '主线', 2: 'S1', 3: 'S2', 4: 'S3', 5: 'S4'}
+
+# LumiType（属性）映射，见 CLAUDE.md「枚举映射」章节
+LUMI_TYPE = {
+    0: '',
+    1: '无', 2: '水', 3: '火', 4: '草', 5: '电', 6: '地',
+    7: '飞', 8: '冰', 9: '龙', 10: '光', 11: '暗', 12: '格斗',
+    13: '超能', 14: '妖精', 15: '钢', 16: '王', 17: '神',
+}
+
+
+def lumi_type_text(l):
+    """返回噜咪属性文本：单属性 '水'，双属性 '水/火'。"""
+    t1 = LUMI_TYPE.get(l.get('Type1', 0), '')
+    t2 = LUMI_TYPE.get(l.get('Type2', 0), '')
+    if t1 and t2:
+        return f'{t1}/{t2}'
+    return t1 or t2 or ''
 
 
 def load_json(path):
@@ -244,7 +264,7 @@ def main():
     header = ['类型', '获取途径']
     for i in range(1, max_chain_len + 1):
         stage = '第一形态' if i == 1 else f'第{["一","二","三","四","五","六","七","八","九"][i-1]}进化'
-        header += [f'{stage}中文名', f'{stage}英文名', f'{stage}立绘', f'{stage}三视图']
+        header += [f'{stage}中文名', f'{stage}英文名', f'{stage}属性', f'{stage}立绘', f'{stage}三视图']
     for i, h in enumerate(header, 1):
         c = ws.cell(row=1, column=i, value=h)
         c.font = Font(bold=True)
@@ -255,11 +275,12 @@ def main():
     ws.column_dimensions['A'].width = COL_WIDTH_TYPE
     ws.column_dimensions['B'].width = COL_WIDTH_TYPE
     for i in range(max_chain_len):
-        base_col = 3 + i * 4
+        base_col = 3 + i * COLS_PER_STAGE
         ws.column_dimensions[get_column_letter(base_col)].width = COL_WIDTH_TEXT       # 中文
         ws.column_dimensions[get_column_letter(base_col + 1)].width = COL_WIDTH_TEXT   # 英文
-        ws.column_dimensions[get_column_letter(base_col + 2)].width = COL_WIDTH_IMG    # 立绘 (~100px)
-        ws.column_dimensions[get_column_letter(base_col + 3)].width = COL_WIDTH_MODEL  # 三视图 (~500px 显示，原图存储)
+        ws.column_dimensions[get_column_letter(base_col + 2)].width = COL_WIDTH_TYPE   # 属性
+        ws.column_dimensions[get_column_letter(base_col + 3)].width = COL_WIDTH_IMG    # 立绘 (~100px 显示，原图存储)
+        ws.column_dimensions[get_column_letter(base_col + 4)].width = COL_WIDTH_MODEL  # 三视图 (~500px 显示，原图存储)
 
     ws.row_dimensions[1].height = 24
 
@@ -279,26 +300,30 @@ def main():
         row_max_model_h_px = 0
 
         for stage_i, lid in enumerate(r['chain']):
-            base_col = 3 + stage_i * 4
+            base_col = 3 + stage_i * COLS_PER_STAGE
             l = lumi_by_id.get(lid)
             if not l:
                 continue
             name_key = l.get('Name', '')
             zh_name = zh.get(name_key, name_key)
             en_name = en.get(name_key, name_key)
+            attr_text = lumi_type_text(l)
             ws.cell(row=row_idx, column=base_col, value=zh_name).alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
             ws.cell(row=row_idx, column=base_col + 1, value=en_name).alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+            ws.cell(row=row_idx, column=base_col + 2, value=attr_text).alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
 
-            # 立绘（继续用 100x100 缩略图，透明背景居中）
+            # 立绘：原图无损嵌入（256×256），仅显示 100×100
             avatar_path = find_avatar(lid)
             if avatar_path:
-                resized = resize_image(avatar_path, IMG_SIZE, tmp_dir)
-                if resized:
-                    img = XLImage(resized)
+                try:
+                    img = XLImage(avatar_path)  # openpyxl 直接嵌原文件字节
                     img.width = IMG_SIZE
                     img.height = IMG_SIZE
-                    anchor_cell = f'{get_column_letter(base_col + 2)}{row_idx}'
+                    anchor_cell = f'{get_column_letter(base_col + 3)}{row_idx}'
                     ws.add_image(img, anchor_cell)
+                except Exception as e:
+                    print(f'  ⚠️ 立绘嵌入失败: {avatar_path} - {e}')
+                    missing_avatars.append(lid)
             else:
                 missing_avatars.append(lid)
 
@@ -309,11 +334,11 @@ def main():
                 try:
                     with PILImage.open(model_path) as pim:
                         orig_w, orig_h = pim.size
-                    img = XLImage(model_path)  # openpyxl 会把原文件直接嵌入到 xlsx
+                    img = XLImage(model_path)
                     display_h = int(MODEL_DISPLAY_WIDTH * orig_h / orig_w)
                     img.width = MODEL_DISPLAY_WIDTH
                     img.height = display_h
-                    anchor_cell = f'{get_column_letter(base_col + 3)}{row_idx}'
+                    anchor_cell = f'{get_column_letter(base_col + 4)}{row_idx}'
                     ws.add_image(img, anchor_cell)
                     row_max_model_h_px = max(row_max_model_h_px, display_h)
                 except Exception as e:
