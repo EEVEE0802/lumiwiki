@@ -58,7 +58,8 @@ const CORE_FILES = [
   'LumiLevel.json',
   'LumiRareLevel.json',
   'MarketPrice.json',
-  'LumiCondition.json'
+  'LumiCondition.json',
+  'OrderNPC.json'
 ]
 
 function svnUpdate(cfg) {

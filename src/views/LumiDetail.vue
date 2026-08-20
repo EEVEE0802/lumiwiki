@@ -19,6 +19,7 @@ const keywordMap = ref([])
 const avgData = ref([])
 const extraData = ref({})
 const lumiTeamsData = ref(null)
+const orderNpcData = ref([])
 const loading = ref(true)
 const selectedKeyword = ref(null)
 const showKeywordTooltip = ref(false)
@@ -27,7 +28,7 @@ const showKeywordTooltip = ref(false)
 async function loadLumiData() {
   loading.value = true
   const id = Number(route.params.id)
-  const [data, loc, skills, trainers, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra, teams] = await Promise.all([
+  const [data, loc, skills, trainers, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra, teams, orderNpc] = await Promise.all([
     loadData('Lumi'),
     loadData('localization'),
     loadData('ActiveSkill'),
@@ -41,6 +42,7 @@ async function loadLumiData() {
     loadData('Avg'),
     loadData('extra').catch(() => ({})),
     loadData('lumi-teams').catch(() => null),
+    loadData('OrderNPC').catch(() => []),
   ])
 
   lumi.value = data.find(l => l.Id === id)
@@ -56,6 +58,7 @@ async function loadLumiData() {
   avgData.value = avg
   extraData.value = extra
   lumiTeamsData.value = teams
+  orderNpcData.value = orderNpc || []
   loading.value = false
 
   // 注册 showKeyword 到 window 对象供 HTML onclick 调用
@@ -512,6 +515,13 @@ const firstMeet = computed(() => {
   return null
 })
 
+// 订单对话（OrderNPC.NPCdialogue 是多语言 key，映射到当前噜咪 Id）
+const orderDialogue = computed(() => {
+  if (!lumi.value || !orderNpcData.value.length) return null
+  const entry = orderNpcData.value.find(n => n.NPCid === lumi.value.Id)
+  return entry?.NPCdialogue || null
+})
+
 // 当前噜咪的扩展数据
 const currentExtra = computed(() => {
   if (!lumi.value || !extraData.value) {
@@ -781,6 +791,12 @@ const weaknesses = computed(() => {
     <div class="section" v-if="firstMeet">
       <h2>初见</h2>
       <div class="story-content">{{ getFirstMeetText(firstMeet) }}</div>
+    </div>
+
+    <!-- 订单 -->
+    <div class="section" v-if="orderDialogue && hasValidContent(orderDialogue)">
+      <h2>订单</h2>
+      <div class="story-content">{{ getName(orderDialogue) }}</div>
     </div>
 
     <!-- 故事 -->
