@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-20T02:26:33.267Z",
+  "updateTime": "2026-08-20T14:15:58.188Z",
   "note": "普通概率=解锁池权重占比；彩色=保底触发时池内分布近似（按 LumiDrop.WeightPool 取权）",
   "mainLineMaps": [
     {
@@ -1802,91 +1802,85 @@
           "id": 100801,
           "name": "练习鸡",
           "weight": 1000,
-          "probability": "9.09"
+          "probability": "10.00"
         },
         {
           "id": 102901,
           "name": "淘淘",
           "weight": 1000,
-          "probability": "9.09"
+          "probability": "10.00"
         },
         {
           "id": 104401,
           "name": "地鼠方方",
           "weight": 1000,
-          "probability": "9.09"
+          "probability": "10.00"
         },
         {
           "id": 108801,
           "name": "石猩猩",
           "weight": 1000,
-          "probability": "9.09"
+          "probability": "10.00"
         },
         {
           "id": 122301,
           "name": "陆行鸟",
           "weight": 1000,
-          "probability": "9.09"
+          "probability": "10.00"
         },
         {
           "id": 127001,
           "name": "食木沙鼠",
           "weight": 1000,
-          "probability": "9.09"
-        },
-        {
-          "id": 136201,
-          "name": "冒险菇",
-          "weight": 1000,
-          "probability": "9.09"
+          "probability": "10.00"
         },
         {
           "id": 104101,
           "name": "小钢狼",
           "weight": 666,
-          "probability": "6.05"
+          "probability": "6.66"
         },
         {
           "id": 105001,
           "name": "土莱姆",
           "weight": 666,
-          "probability": "6.05"
+          "probability": "6.66"
         },
         {
           "id": 112501,
           "name": "石角龟",
           "weight": 666,
-          "probability": "6.05"
+          "probability": "6.66"
         },
         {
           "id": 112901,
           "name": "刺啦汪",
           "weight": 666,
-          "probability": "6.05"
+          "probability": "6.66"
         },
         {
           "id": 102401,
           "name": "金刚狼",
           "weight": 334,
-          "probability": "3.04"
+          "probability": "3.34"
         },
         {
           "id": 105501,
           "name": "闪电狗",
           "weight": 334,
-          "probability": "3.04"
+          "probability": "3.34"
         },
         {
           "id": 109901,
           "name": "土脉莱姆",
           "weight": 334,
-          "probability": "3.04"
+          "probability": "3.34"
         },
         {
           "id": 125901,
           "name": "巨岩角龟",
           "weight": 334,
-          "probability": "3.04"
+          "probability": "3.34"
         }
       ]
     },
@@ -2939,91 +2933,79 @@
           "id": 101001,
           "name": "小菜鸡",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 101301,
           "name": "好运鸟",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 103701,
           "name": "呐喊君",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 108701,
           "name": "响尾眼镜蛇",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 115501,
           "name": "宝剑海獭",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 112501,
           "name": "石角龟",
           "weight": 666,
-          "probability": "6.87"
+          "probability": "7.57"
         },
         {
           "id": 120801,
           "name": "含苞",
           "weight": 666,
-          "probability": "6.87"
+          "probability": "7.57"
         },
         {
           "id": 112801,
           "name": "草龙宝宝",
           "weight": 600,
-          "probability": "6.19"
+          "probability": "6.82"
         },
         {
           "id": 114401,
           "name": "晴天娃娃",
           "weight": 600,
-          "probability": "6.19"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "6.19"
+          "probability": "6.82"
         },
         {
           "id": 120901,
           "name": "绽放",
           "weight": 334,
-          "probability": "3.44"
+          "probability": "3.80"
         },
         {
           "id": 125901,
           "name": "巨岩角龟",
           "weight": 334,
-          "probability": "3.44"
+          "probability": "3.80"
         },
         {
           "id": 114501,
           "name": "晴天精灵",
           "weight": 300,
-          "probability": "3.09"
+          "probability": "3.41"
         },
         {
           "id": 118901,
           "name": "草龙",
           "weight": 300,
-          "probability": "3.09"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "3.09"
+          "probability": "3.41"
         }
       ]
     },
@@ -3703,91 +3685,79 @@
           "id": 100501,
           "name": "多肉猫",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 101101,
           "name": "柴火熊",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 105401,
           "name": "怪盗蝠",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 108801,
           "name": "石猩猩",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 115801,
           "name": "战甲海獭",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 105601,
           "name": "小蜜蜜",
           "weight": 666,
-          "probability": "6.87"
+          "probability": "7.57"
         },
         {
           "id": 118101,
           "name": "拳拳袋鼠",
           "weight": 666,
-          "probability": "6.87"
+          "probability": "7.57"
         },
         {
           "id": 112101,
           "name": "只鼬宝宝",
           "weight": 600,
-          "probability": "6.19"
+          "probability": "6.82"
         },
         {
           "id": 115001,
           "name": "暗兔宝",
           "weight": 600,
-          "probability": "6.19"
-        },
-        {
-          "id": 142301,
-          "name": "牙牙蝠",
-          "weight": 600,
-          "probability": "6.19"
+          "probability": "6.82"
         },
         {
           "id": 118201,
           "name": "搏击袋鼠",
           "weight": 334,
-          "probability": "3.44"
+          "probability": "3.80"
         },
         {
           "id": 119101,
           "name": "公主蜂",
           "weight": 334,
-          "probability": "3.44"
+          "probability": "3.80"
         },
         {
           "id": 106201,
           "name": "只鼬",
           "weight": 300,
-          "probability": "3.09"
+          "probability": "3.41"
         },
         {
           "id": 115101,
           "name": "暗兔",
           "weight": 300,
-          "probability": "3.09"
-        },
-        {
-          "id": 142401,
-          "name": "捣蛋蝠",
-          "weight": 300,
-          "probability": "3.09"
+          "probability": "3.41"
         }
       ]
     },
@@ -4085,91 +4055,79 @@
           "id": 101001,
           "name": "小菜鸡",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 101301,
           "name": "好运鸟",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 103701,
           "name": "呐喊君",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 108701,
           "name": "响尾眼镜蛇",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 115501,
           "name": "宝剑海獭",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 112501,
           "name": "石角龟",
           "weight": 666,
-          "probability": "6.87"
+          "probability": "7.57"
         },
         {
           "id": 120801,
           "name": "含苞",
           "weight": 666,
-          "probability": "6.87"
+          "probability": "7.57"
         },
         {
           "id": 112801,
           "name": "草龙宝宝",
           "weight": 600,
-          "probability": "6.19"
+          "probability": "6.82"
         },
         {
           "id": 114401,
           "name": "晴天娃娃",
           "weight": 600,
-          "probability": "6.19"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "6.19"
+          "probability": "6.82"
         },
         {
           "id": 120901,
           "name": "绽放",
           "weight": 334,
-          "probability": "3.44"
+          "probability": "3.80"
         },
         {
           "id": 125901,
           "name": "巨岩角龟",
           "weight": 334,
-          "probability": "3.44"
+          "probability": "3.80"
         },
         {
           "id": 114501,
           "name": "晴天精灵",
           "weight": 300,
-          "probability": "3.09"
+          "probability": "3.41"
         },
         {
           "id": 118901,
           "name": "草龙",
           "weight": 300,
-          "probability": "3.09"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "3.09"
+          "probability": "3.41"
         }
       ]
     },
@@ -4276,91 +4234,79 @@
           "id": 101001,
           "name": "小菜鸡",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 101301,
           "name": "好运鸟",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 103701,
           "name": "呐喊君",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 108701,
           "name": "响尾眼镜蛇",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 115501,
           "name": "宝剑海獭",
           "weight": 1000,
-          "probability": "10.31"
+          "probability": "11.36"
         },
         {
           "id": 112501,
           "name": "石角龟",
           "weight": 666,
-          "probability": "6.87"
+          "probability": "7.57"
         },
         {
           "id": 120801,
           "name": "含苞",
           "weight": 666,
-          "probability": "6.87"
+          "probability": "7.57"
         },
         {
           "id": 112801,
           "name": "草龙宝宝",
           "weight": 600,
-          "probability": "6.19"
+          "probability": "6.82"
         },
         {
           "id": 114401,
           "name": "晴天娃娃",
           "weight": 600,
-          "probability": "6.19"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "6.19"
+          "probability": "6.82"
         },
         {
           "id": 120901,
           "name": "绽放",
           "weight": 334,
-          "probability": "3.44"
+          "probability": "3.80"
         },
         {
           "id": 125901,
           "name": "巨岩角龟",
           "weight": 334,
-          "probability": "3.44"
+          "probability": "3.80"
         },
         {
           "id": 114501,
           "name": "晴天精灵",
           "weight": 300,
-          "probability": "3.09"
+          "probability": "3.41"
         },
         {
           "id": 118901,
           "name": "草龙",
           "weight": 300,
-          "probability": "3.09"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "3.09"
+          "probability": "3.41"
         }
       ]
     }
