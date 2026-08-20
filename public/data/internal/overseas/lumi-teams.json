@@ -1,12 +1,13 @@
 {
-  "updateTime": "2026-08-20T17:33:24.496Z",
+  "updateTime": "2026-08-20T23:25:30.940Z",
   "weeks": [
     1,
     2,
     3,
     4,
     5,
-    6
+    6,
+    7
   ],
   "lumiTeams": {
     "100801": [
@@ -10197,7 +10198,7 @@
             "lumiName": "Jolkat",
             "topSkill": {
               "skillId": 5004,
-              "count": 31
+              "count": 34
             }
           },
           {
@@ -10205,7 +10206,7 @@
             "lumiName": "Unicorn",
             "topSkill": {
               "skillId": 13003,
-              "count": 40
+              "count": 43
             }
           },
           {
@@ -10213,17 +10214,17 @@
             "lumiName": "Pincock - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 31
+              "count": 34
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 15
+          "count": 16
         },
-        "battles": 40,
-        "wins": 24,
-        "winRate": "60.00",
+        "battles": 43,
+        "wins": 26,
+        "winRate": "60.47",
         "tags": [
           "most-used"
         ]
@@ -10240,7 +10241,7 @@
             "lumiName": "Jolkat",
             "topSkill": {
               "skillId": 5004,
-              "count": 31
+              "count": 34
             }
           },
           {
@@ -10248,7 +10249,7 @@
             "lumiName": "Unicorn",
             "topSkill": {
               "skillId": 13003,
-              "count": 40
+              "count": 43
             }
           },
           {
@@ -10256,17 +10257,17 @@
             "lumiName": "Pincock - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 31
+              "count": 34
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 15
+          "count": 16
         },
-        "battles": 40,
-        "wins": 24,
-        "winRate": "60.00",
+        "battles": 43,
+        "wins": 26,
+        "winRate": "60.47",
         "tags": [
           "highest-winrate"
         ]
@@ -11200,7 +11201,7 @@
             "lumiName": "Rocktle",
             "topSkill": {
               "skillId": 6002,
-              "count": 51
+              "count": 56
             }
           },
           {
@@ -11216,7 +11217,7 @@
             "lumiName": "Floragon",
             "topSkill": {
               "skillId": 4003,
-              "count": 106
+              "count": 111
             }
           }
         ],
@@ -11224,9 +11225,9 @@
           "trainerId": 4,
           "count": 65
         },
-        "battles": 148,
-        "wins": 111,
-        "winRate": "75.00",
+        "battles": 153,
+        "wins": 114,
+        "winRate": "74.51",
         "tags": [
           "other"
         ]
@@ -19575,7 +19576,7 @@
             "lumiName": "Rochelon",
             "topSkill": {
               "skillId": 6002,
-              "count": 51
+              "count": 56
             }
           },
           {
@@ -19591,7 +19592,7 @@
             "lumiName": "Floragon",
             "topSkill": {
               "skillId": 4003,
-              "count": 106
+              "count": 111
             }
           }
         ],
@@ -19599,9 +19600,9 @@
           "trainerId": 4,
           "count": 65
         },
-        "battles": 148,
-        "wins": 111,
-        "winRate": "75.00",
+        "battles": 153,
+        "wins": 114,
+        "winRate": "74.51",
         "tags": [
           "other"
         ]
@@ -19827,8 +19828,8 @@
       },
       {
         "teamLumiIds": [
-          "101701",
-          "125901",
+          "102301",
+          "111601",
           "126304"
         ],
         "lumis": [
@@ -19837,33 +19838,33 @@
             "lumiName": "Pincock - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 41
+              "count": 34
             }
           },
           {
-            "lumiId": "101701",
-            "lumiName": "Charigon",
+            "lumiId": "102301",
+            "lumiName": "Unicorn",
             "topSkill": {
-              "skillId": 9005,
-              "count": 29
+              "skillId": 13003,
+              "count": 43
             }
           },
           {
-            "lumiId": "125901",
-            "lumiName": "Rochelon",
+            "lumiId": "111601",
+            "lumiName": "Jolkat",
             "topSkill": {
-              "skillId": 9004,
-              "count": 40
+              "skillId": 5004,
+              "count": 34
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 17
+          "count": 16
         },
-        "battles": 41,
-        "wins": 30,
-        "winRate": "73.17",
+        "battles": 43,
+        "wins": 26,
+        "winRate": "60.47",
         "tags": [
           "other"
         ]
