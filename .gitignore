@@ -34,6 +34,13 @@ data/archive/**/*.csv
 data/domestic/archive/**/*.csv
 data/overseas/archive/**/*.csv
 
+# 归档压缩包（本地打包用，绝不进 git —— auto-update 用 git add -A 会误卷）
+*.7z
+*.zip
+*.rar
+*.tar.gz
+*.tar
+
 # 探测用临时文件
 tmp-*.json
 tmp-*.js

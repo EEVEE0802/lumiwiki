@@ -9569,7 +9569,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_100901"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -18986,7 +18988,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_125001"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -19052,7 +19056,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_125101"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -19085,7 +19091,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_125201"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -19118,7 +19126,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_125301"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -19151,7 +19161,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_125401"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -19184,7 +19196,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_125501"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -19922,7 +19936,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_127401"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -20549,7 +20565,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_129101"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -21706,7 +21724,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_132301"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -21739,7 +21759,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_132401"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -22269,7 +22291,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_133901"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -23760,7 +23784,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_138301"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -24057,7 +24083,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_139101"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -24090,7 +24118,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_139201"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -24921,7 +24951,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_142301"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -24954,7 +24986,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_142401"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -25251,7 +25285,79 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_147301"
+    ],
+    "speed": 33,
+    "jumpTime": 0,
+    "nextTime": 2000,
+    "cooldownTime": 0,
+    "VoiceActing": "",
+    "IsShowBox": false
+  },
+  {
+    "GroupId": 2147401,
+    "avgId": 1,
+    "Type": 6,
+    "LeftCharacter": 0,
+    "RightCharacter": 3,
+    "CurCharacter": 0,
+    "IsBackgroundBlack": 0,
+    "ShakeLvl": 0,
+    "BubbleLvl": 0,
+    "LucentArt": "",
+    "ShowGroupId": 0,
+    "NpcAnim": "",
+    "CharacterArt": "",
+    "CharacterID": 147401,
+    "ArtTowards": 0,
+    "Name": "",
+    "Img": "",
+    "gestureType": 0,
+    "guideParam": 0,
+    "reward": [],
+    "jumpto": 0,
+    "AvgSystem": 0,
+    "GuideMaxTime": 0,
+    "IsAuto": true,
+    "Content": [
+      "AVG_Text_147401"
+    ],
+    "speed": 33,
+    "jumpTime": 0,
+    "nextTime": 2000,
+    "cooldownTime": 0,
+    "VoiceActing": "",
+    "IsShowBox": false
+  },
+  {
+    "GroupId": 2147701,
+    "avgId": 1,
+    "Type": 6,
+    "LeftCharacter": 0,
+    "RightCharacter": 3,
+    "CurCharacter": 0,
+    "IsBackgroundBlack": 0,
+    "ShakeLvl": 0,
+    "BubbleLvl": 0,
+    "LucentArt": "",
+    "ShowGroupId": 0,
+    "NpcAnim": "",
+    "CharacterArt": "",
+    "CharacterID": 147701,
+    "ArtTowards": 0,
+    "Name": "",
+    "Img": "",
+    "gestureType": 0,
+    "guideParam": 0,
+    "reward": [],
+    "jumpto": 0,
+    "AvgSystem": 0,
+    "GuideMaxTime": 0,
+    "IsAuto": true,
+    "Content": [
+      "AVG_Text_147701"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -25284,7 +25390,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_147801"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -25317,7 +25425,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_1000101"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -25350,7 +25460,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_1000201"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -26340,7 +26452,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_1003201"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -26373,7 +26487,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_1003301"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,
@@ -26406,7 +26522,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_1003401"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,

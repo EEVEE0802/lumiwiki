@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-18T19:00:22.197Z",
+  "updateTime": "2026-08-20T02:26:33.385Z",
   "note": "随机蛋综合概率=候选池权重占比近似（服务端先品质后噜咪，跨品质合并）；自选多选一=固定列表每只等概率；巢穴蛋无固定掉落已跳过",
   "eggs": [
     {
@@ -3338,6 +3338,105 @@
     {
       "eggId": 60023,
       "name": "主线普通彩色噜咪蛋",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60025,
+      "name": "Item_60025",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60026,
+      "name": "Item_60026",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60027,
+      "name": "Item_60027",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60028,
+      "name": "Item_60028",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60029,
+      "name": "Item_60029",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60030,
+      "name": "Item_60030",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60031,
+      "name": "Item_60031",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60032,
+      "name": "Item_60032",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60033,
+      "name": "Item_60033",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60034,
+      "name": "Item_60034",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 60035,
+      "name": "Item_60035",
       "icon": "Item_60100",
       "quality": 6,
       "mode": 10,
@@ -11010,6 +11109,2782 @@
     {
       "eggId": 61033,
       "name": "星彩流星蝶蛋",
+      "icon": "Item_60106",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61100,
+      "name": "S1彩色噜咪蛋",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": [
+        {
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119801,
+          "name": "彩糖人",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119901,
+          "name": "鱼雷鲨",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120501,
+          "name": "甜椒猩",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120601,
+          "name": "拿铁刺客",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120701,
+          "name": "起舞鸭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 125801,
+          "name": "魔魔猪",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 139801,
+          "name": "松果猫头鹰",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 121101,
+          "name": "战螂宝宝",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112001,
+          "name": "水龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114001,
+          "name": "冰狼崽",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 115001,
+          "name": "暗兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 118201,
+          "name": "搏击袋鼠",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 121001,
+          "name": "战螂",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114101,
+          "name": "冰晶狼",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114801,
+          "name": "光兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 115101,
+          "name": "暗兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118301,
+          "name": "水龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 121301,
+          "name": "果火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 111001,
+          "name": "发牌雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 126301,
+          "name": "粉扇雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 101701,
+          "name": "烈焰龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 105801,
+          "name": "海浪龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 111201,
+          "name": "森灵龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114201,
+          "name": "冰原战狼",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114901,
+          "name": "耀光兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 115201,
+          "name": "暗影兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 119301,
+          "name": "海天使",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 121401,
+          "name": "龙裹火",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 138301,
+          "name": "炮塔蟹",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 142501,
+          "name": "暗翼镰蝠",
+          "weight": 100,
+          "probability": "0.28"
+        }
+      ]
+    },
+    {
+      "eggId": 61101,
+      "name": "S1金彩噜咪蛋",
+      "icon": "Item_60101",
+      "quality": 5,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": [
+        {
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119801,
+          "name": "彩糖人",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119901,
+          "name": "鱼雷鲨",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120501,
+          "name": "甜椒猩",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120601,
+          "name": "拿铁刺客",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120701,
+          "name": "起舞鸭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 125801,
+          "name": "魔魔猪",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 139801,
+          "name": "松果猫头鹰",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 121101,
+          "name": "战螂宝宝",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112001,
+          "name": "水龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114001,
+          "name": "冰狼崽",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 115001,
+          "name": "暗兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 118201,
+          "name": "搏击袋鼠",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 121001,
+          "name": "战螂",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114101,
+          "name": "冰晶狼",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114801,
+          "name": "光兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 115101,
+          "name": "暗兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118301,
+          "name": "水龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 121301,
+          "name": "果火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 111001,
+          "name": "发牌雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 126301,
+          "name": "粉扇雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 101701,
+          "name": "烈焰龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 105801,
+          "name": "海浪龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 111201,
+          "name": "森灵龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114201,
+          "name": "冰原战狼",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114901,
+          "name": "耀光兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 115201,
+          "name": "暗影兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 119301,
+          "name": "海天使",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 121401,
+          "name": "龙裹火",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 138301,
+          "name": "炮塔蟹",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 142501,
+          "name": "暗翼镰蝠",
+          "weight": 100,
+          "probability": "0.28"
+        }
+      ]
+    },
+    {
+      "eggId": 61102,
+      "name": "S1金色噜咪蛋",
+      "icon": "Item_60102",
+      "quality": 5,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": [
+        {
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119801,
+          "name": "彩糖人",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119901,
+          "name": "鱼雷鲨",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120501,
+          "name": "甜椒猩",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120601,
+          "name": "拿铁刺客",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120701,
+          "name": "起舞鸭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 125801,
+          "name": "魔魔猪",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 139801,
+          "name": "松果猫头鹰",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 121101,
+          "name": "战螂宝宝",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112001,
+          "name": "水龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114001,
+          "name": "冰狼崽",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 115001,
+          "name": "暗兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 118201,
+          "name": "搏击袋鼠",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 121001,
+          "name": "战螂",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114101,
+          "name": "冰晶狼",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114801,
+          "name": "光兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 115101,
+          "name": "暗兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118301,
+          "name": "水龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 121301,
+          "name": "果火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 111001,
+          "name": "发牌雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 126301,
+          "name": "粉扇雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 101701,
+          "name": "烈焰龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 105801,
+          "name": "海浪龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 111201,
+          "name": "森灵龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114201,
+          "name": "冰原战狼",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114901,
+          "name": "耀光兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 115201,
+          "name": "暗影兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 119301,
+          "name": "海天使",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 121401,
+          "name": "龙裹火",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 138301,
+          "name": "炮塔蟹",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 142501,
+          "name": "暗翼镰蝠",
+          "weight": 100,
+          "probability": "0.28"
+        }
+      ]
+    },
+    {
+      "eggId": 61103,
+      "name": "S1紫金噜咪蛋",
+      "icon": "Item_60103",
+      "quality": 4,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": [
+        {
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119801,
+          "name": "彩糖人",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119901,
+          "name": "鱼雷鲨",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120501,
+          "name": "甜椒猩",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120601,
+          "name": "拿铁刺客",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120701,
+          "name": "起舞鸭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 125801,
+          "name": "魔魔猪",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 139801,
+          "name": "松果猫头鹰",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 121101,
+          "name": "战螂宝宝",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112001,
+          "name": "水龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114001,
+          "name": "冰狼崽",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 115001,
+          "name": "暗兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 118201,
+          "name": "搏击袋鼠",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 121001,
+          "name": "战螂",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114101,
+          "name": "冰晶狼",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114801,
+          "name": "光兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 115101,
+          "name": "暗兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118301,
+          "name": "水龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 121301,
+          "name": "果火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 111001,
+          "name": "发牌雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 126301,
+          "name": "粉扇雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 101701,
+          "name": "烈焰龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 105801,
+          "name": "海浪龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 111201,
+          "name": "森灵龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114201,
+          "name": "冰原战狼",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114901,
+          "name": "耀光兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 115201,
+          "name": "暗影兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 119301,
+          "name": "海天使",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 121401,
+          "name": "龙裹火",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 138301,
+          "name": "炮塔蟹",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 142501,
+          "name": "暗翼镰蝠",
+          "weight": 100,
+          "probability": "0.28"
+        }
+      ]
+    },
+    {
+      "eggId": 61104,
+      "name": "S1紫色噜咪蛋",
+      "icon": "Item_60104",
+      "quality": 4,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": [
+        {
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119801,
+          "name": "彩糖人",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119901,
+          "name": "鱼雷鲨",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120501,
+          "name": "甜椒猩",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120601,
+          "name": "拿铁刺客",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120701,
+          "name": "起舞鸭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 125801,
+          "name": "魔魔猪",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 139801,
+          "name": "松果猫头鹰",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 121101,
+          "name": "战螂宝宝",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112001,
+          "name": "水龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114001,
+          "name": "冰狼崽",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 115001,
+          "name": "暗兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 118201,
+          "name": "搏击袋鼠",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 121001,
+          "name": "战螂",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114101,
+          "name": "冰晶狼",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114801,
+          "name": "光兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 115101,
+          "name": "暗兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118301,
+          "name": "水龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 121301,
+          "name": "果火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 111001,
+          "name": "发牌雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 126301,
+          "name": "粉扇雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 101701,
+          "name": "烈焰龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 105801,
+          "name": "海浪龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 111201,
+          "name": "森灵龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114201,
+          "name": "冰原战狼",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114901,
+          "name": "耀光兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 115201,
+          "name": "暗影兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 119301,
+          "name": "海天使",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 121401,
+          "name": "龙裹火",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 138301,
+          "name": "炮塔蟹",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 142501,
+          "name": "暗翼镰蝠",
+          "weight": 100,
+          "probability": "0.28"
+        }
+      ]
+    },
+    {
+      "eggId": 61105,
+      "name": "S1蓝色噜咪蛋",
+      "icon": "Item_60105",
+      "quality": 3,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": [
+        {
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119801,
+          "name": "彩糖人",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119901,
+          "name": "鱼雷鲨",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120501,
+          "name": "甜椒猩",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120601,
+          "name": "拿铁刺客",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120701,
+          "name": "起舞鸭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 125801,
+          "name": "魔魔猪",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 139801,
+          "name": "松果猫头鹰",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 121101,
+          "name": "战螂宝宝",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112001,
+          "name": "水龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114001,
+          "name": "冰狼崽",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 115001,
+          "name": "暗兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 118201,
+          "name": "搏击袋鼠",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 121001,
+          "name": "战螂",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114101,
+          "name": "冰晶狼",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114801,
+          "name": "光兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 115101,
+          "name": "暗兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118301,
+          "name": "水龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 121301,
+          "name": "果火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 111001,
+          "name": "发牌雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 126301,
+          "name": "粉扇雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 101701,
+          "name": "烈焰龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 105801,
+          "name": "海浪龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 111201,
+          "name": "森灵龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114201,
+          "name": "冰原战狼",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114901,
+          "name": "耀光兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 115201,
+          "name": "暗影兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 119301,
+          "name": "海天使",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 121401,
+          "name": "龙裹火",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 138301,
+          "name": "炮塔蟹",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 142501,
+          "name": "暗翼镰蝠",
+          "weight": 100,
+          "probability": "0.28"
+        }
+      ]
+    },
+    {
+      "eggId": 61106,
+      "name": "S1星彩蛋",
+      "icon": "Item_60106",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": [
+        {
+          "id": 100501,
+          "name": "多肉猫",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 111801,
+          "name": "许愿灯象",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 116801,
+          "name": "梦游羊",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 117501,
+          "name": "摸鱼雪貂",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119801,
+          "name": "彩糖人",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 119901,
+          "name": "鱼雷鲨",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120501,
+          "name": "甜椒猩",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120601,
+          "name": "拿铁刺客",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 120701,
+          "name": "起舞鸭",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123401,
+          "name": "头铁牛",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 123801,
+          "name": "螳螂虾",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 124301,
+          "name": "灵光鸟",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 125801,
+          "name": "魔魔猪",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 130001,
+          "name": "石雕树懒",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 136101,
+          "name": "睡梦蟹",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 139801,
+          "name": "松果猫头鹰",
+          "weight": 1000,
+          "probability": "2.78"
+        },
+        {
+          "id": 118101,
+          "name": "拳拳袋鼠",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 121101,
+          "name": "战螂宝宝",
+          "weight": 666,
+          "probability": "1.85"
+        },
+        {
+          "id": 107901,
+          "name": "火龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112001,
+          "name": "水龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114001,
+          "name": "冰狼崽",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114301,
+          "name": "海宝宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 114701,
+          "name": "光兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 115001,
+          "name": "暗兔宝",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 121201,
+          "name": "火龙果",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 127401,
+          "name": "小塔蟹",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 142301,
+          "name": "牙牙蝠",
+          "weight": 600,
+          "probability": "1.67"
+        },
+        {
+          "id": 118201,
+          "name": "搏击袋鼠",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 121001,
+          "name": "战螂",
+          "weight": 334,
+          "probability": "0.93"
+        },
+        {
+          "id": 101601,
+          "name": "火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114101,
+          "name": "冰晶狼",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 114801,
+          "name": "光兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 115101,
+          "name": "暗兔",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118301,
+          "name": "水龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 119201,
+          "name": "海精灵",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 121301,
+          "name": "果火龙",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 129101,
+          "name": "哨塔蟹",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 142401,
+          "name": "捣蛋蝠",
+          "weight": 300,
+          "probability": "0.83"
+        },
+        {
+          "id": 111001,
+          "name": "发牌雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 126301,
+          "name": "粉扇雀圣",
+          "weight": 200,
+          "probability": "0.56"
+        },
+        {
+          "id": 101701,
+          "name": "烈焰龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 105801,
+          "name": "海浪龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 111201,
+          "name": "森灵龙",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114201,
+          "name": "冰原战狼",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 114901,
+          "name": "耀光兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 115201,
+          "name": "暗影兔",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 119301,
+          "name": "海天使",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 121401,
+          "name": "龙裹火",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 138301,
+          "name": "炮塔蟹",
+          "weight": 100,
+          "probability": "0.28"
+        },
+        {
+          "id": 142501,
+          "name": "暗翼镰蝠",
+          "weight": 100,
+          "probability": "0.28"
+        }
+      ]
+    },
+    {
+      "eggId": 61107,
+      "name": "Item_61107",
+      "icon": "Item_60001",
+      "quality": 6,
+      "mode": 14,
+      "modeName": "自选蛋(多选一)",
+      "lumis": [
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "count": 1,
+          "probability": "20.00"
+        },
+        {
+          "id": 115601,
+          "name": "蓝拳海獭",
+          "count": 1,
+          "probability": "20.00"
+        },
+        {
+          "id": 115901,
+          "name": "钢盔海獭",
+          "count": 1,
+          "probability": "20.00"
+        },
+        {
+          "id": 115701,
+          "name": "粉拳海獭",
+          "count": 1,
+          "probability": "20.00"
+        },
+        {
+          "id": 115801,
+          "name": "战甲海獭",
+          "count": 1,
+          "probability": "20.00"
+        }
+      ]
+    },
+    {
+      "eggId": 61108,
+      "name": "Item_61108",
+      "icon": "Item_60001",
+      "quality": 6,
+      "mode": 14,
+      "modeName": "自选蛋(多选一)",
+      "lumis": [
+        {
+          "id": 108901,
+          "name": "花牌孔雀",
+          "count": 1,
+          "probability": "33.33"
+        },
+        {
+          "id": 111001,
+          "name": "发牌雀圣",
+          "count": 1,
+          "probability": "33.33"
+        },
+        {
+          "id": 126301,
+          "name": "粉扇雀圣",
+          "count": 1,
+          "probability": "33.33"
+        }
+      ]
+    },
+    {
+      "eggId": 61109,
+      "name": "Item_61109",
+      "icon": "Item_60001",
+      "quality": 6,
+      "mode": 14,
+      "modeName": "自选蛋(多选一)",
+      "lumis": [
+        {
+          "id": 104801,
+          "name": "草莱姆",
+          "count": 1,
+          "probability": "12.50"
+        },
+        {
+          "id": 104601,
+          "name": "水莱姆",
+          "count": 1,
+          "probability": "12.50"
+        },
+        {
+          "id": 104501,
+          "name": "火莱姆",
+          "count": 1,
+          "probability": "12.50"
+        },
+        {
+          "id": 105001,
+          "name": "土莱姆",
+          "count": 1,
+          "probability": "12.50"
+        },
+        {
+          "id": 104901,
+          "name": "电莱姆",
+          "count": 1,
+          "probability": "12.50"
+        },
+        {
+          "id": 104701,
+          "name": "冰莱姆",
+          "count": 1,
+          "probability": "12.50"
+        },
+        {
+          "id": 105201,
+          "name": "光莱姆",
+          "count": 1,
+          "probability": "12.50"
+        },
+        {
+          "id": 105101,
+          "name": "暗莱姆",
+          "count": 1,
+          "probability": "12.50"
+        }
+      ]
+    },
+    {
+      "eggId": 61110,
+      "name": "Item_61110",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61111,
+      "name": "Item_61111",
       "icon": "Item_60106",
       "quality": 6,
       "mode": 10,
@@ -26744,2640 +29619,116 @@
       ]
     },
     {
-      "eggId": 61100,
-      "name": "S1彩色噜咪蛋",
-      "icon": "Item_60100",
-      "quality": 6,
-      "mode": 10,
-      "modeName": "随机蛋",
-      "lumis": [
-        {
-          "id": 100501,
-          "name": "多肉猫",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 108701,
-          "name": "响尾眼镜蛇",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 111801,
-          "name": "许愿灯象",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115501,
-          "name": "宝剑海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115601,
-          "name": "蓝拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115701,
-          "name": "粉拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115801,
-          "name": "战甲海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 116801,
-          "name": "梦游羊",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 117501,
-          "name": "摸鱼雪貂",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119801,
-          "name": "彩糖人",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119901,
-          "name": "鱼雷鲨",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120501,
-          "name": "甜椒猩",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120601,
-          "name": "拿铁刺客",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120701,
-          "name": "起舞鸭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123401,
-          "name": "头铁牛",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123801,
-          "name": "螳螂虾",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 124301,
-          "name": "灵光鸟",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 125801,
-          "name": "魔魔猪",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 130001,
-          "name": "石雕树懒",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 139801,
-          "name": "松果猫头鹰",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 118101,
-          "name": "拳拳袋鼠",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 120801,
-          "name": "含苞",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 121101,
-          "name": "战螂宝宝",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 108901,
-          "name": "花牌孔雀",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112001,
-          "name": "水龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112801,
-          "name": "草龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114001,
-          "name": "冰狼崽",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114301,
-          "name": "海宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114701,
-          "name": "光兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 115001,
-          "name": "暗兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 121201,
-          "name": "火龙果",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 142301,
-          "name": "牙牙蝠",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 118201,
-          "name": "搏击袋鼠",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 120901,
-          "name": "绽放",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 121001,
-          "name": "战螂",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114101,
-          "name": "冰晶狼",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114801,
-          "name": "光兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 115101,
-          "name": "暗兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118301,
-          "name": "水龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118901,
-          "name": "草龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 119201,
-          "name": "海精灵",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 121301,
-          "name": "果火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 142401,
-          "name": "捣蛋蝠",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 111001,
-          "name": "发牌雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 126301,
-          "name": "粉扇雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 101701,
-          "name": "烈焰龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 105801,
-          "name": "海浪龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 111201,
-          "name": "森灵龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114201,
-          "name": "冰原战狼",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114901,
-          "name": "耀光兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 115201,
-          "name": "暗影兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 119301,
-          "name": "海天使",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 121401,
-          "name": "龙裹火",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 138301,
-          "name": "炮塔蟹",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 142501,
-          "name": "暗翼镰蝠",
-          "weight": 100,
-          "probability": "0.28"
-        }
-      ]
-    },
-    {
-      "eggId": 61101,
-      "name": "S1金彩噜咪蛋",
-      "icon": "Item_60101",
-      "quality": 5,
-      "mode": 10,
-      "modeName": "随机蛋",
-      "lumis": [
-        {
-          "id": 100501,
-          "name": "多肉猫",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 108701,
-          "name": "响尾眼镜蛇",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 111801,
-          "name": "许愿灯象",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115501,
-          "name": "宝剑海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115601,
-          "name": "蓝拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115701,
-          "name": "粉拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115801,
-          "name": "战甲海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 116801,
-          "name": "梦游羊",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 117501,
-          "name": "摸鱼雪貂",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119801,
-          "name": "彩糖人",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119901,
-          "name": "鱼雷鲨",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120501,
-          "name": "甜椒猩",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120601,
-          "name": "拿铁刺客",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120701,
-          "name": "起舞鸭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123401,
-          "name": "头铁牛",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123801,
-          "name": "螳螂虾",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 124301,
-          "name": "灵光鸟",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 125801,
-          "name": "魔魔猪",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 130001,
-          "name": "石雕树懒",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 139801,
-          "name": "松果猫头鹰",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 118101,
-          "name": "拳拳袋鼠",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 120801,
-          "name": "含苞",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 121101,
-          "name": "战螂宝宝",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 108901,
-          "name": "花牌孔雀",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112001,
-          "name": "水龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112801,
-          "name": "草龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114001,
-          "name": "冰狼崽",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114301,
-          "name": "海宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114701,
-          "name": "光兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 115001,
-          "name": "暗兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 121201,
-          "name": "火龙果",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 142301,
-          "name": "牙牙蝠",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 118201,
-          "name": "搏击袋鼠",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 120901,
-          "name": "绽放",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 121001,
-          "name": "战螂",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114101,
-          "name": "冰晶狼",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114801,
-          "name": "光兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 115101,
-          "name": "暗兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118301,
-          "name": "水龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118901,
-          "name": "草龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 119201,
-          "name": "海精灵",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 121301,
-          "name": "果火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 142401,
-          "name": "捣蛋蝠",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 111001,
-          "name": "发牌雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 126301,
-          "name": "粉扇雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 101701,
-          "name": "烈焰龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 105801,
-          "name": "海浪龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 111201,
-          "name": "森灵龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114201,
-          "name": "冰原战狼",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114901,
-          "name": "耀光兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 115201,
-          "name": "暗影兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 119301,
-          "name": "海天使",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 121401,
-          "name": "龙裹火",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 138301,
-          "name": "炮塔蟹",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 142501,
-          "name": "暗翼镰蝠",
-          "weight": 100,
-          "probability": "0.28"
-        }
-      ]
-    },
-    {
-      "eggId": 61102,
-      "name": "S1金色噜咪蛋",
-      "icon": "Item_60102",
-      "quality": 5,
-      "mode": 10,
-      "modeName": "随机蛋",
-      "lumis": [
-        {
-          "id": 100501,
-          "name": "多肉猫",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 108701,
-          "name": "响尾眼镜蛇",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 111801,
-          "name": "许愿灯象",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115501,
-          "name": "宝剑海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115601,
-          "name": "蓝拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115701,
-          "name": "粉拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115801,
-          "name": "战甲海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 116801,
-          "name": "梦游羊",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 117501,
-          "name": "摸鱼雪貂",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119801,
-          "name": "彩糖人",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119901,
-          "name": "鱼雷鲨",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120501,
-          "name": "甜椒猩",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120601,
-          "name": "拿铁刺客",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120701,
-          "name": "起舞鸭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123401,
-          "name": "头铁牛",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123801,
-          "name": "螳螂虾",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 124301,
-          "name": "灵光鸟",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 125801,
-          "name": "魔魔猪",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 130001,
-          "name": "石雕树懒",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 139801,
-          "name": "松果猫头鹰",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 118101,
-          "name": "拳拳袋鼠",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 120801,
-          "name": "含苞",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 121101,
-          "name": "战螂宝宝",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 108901,
-          "name": "花牌孔雀",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112001,
-          "name": "水龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112801,
-          "name": "草龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114001,
-          "name": "冰狼崽",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114301,
-          "name": "海宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114701,
-          "name": "光兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 115001,
-          "name": "暗兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 121201,
-          "name": "火龙果",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 142301,
-          "name": "牙牙蝠",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 118201,
-          "name": "搏击袋鼠",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 120901,
-          "name": "绽放",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 121001,
-          "name": "战螂",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114101,
-          "name": "冰晶狼",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114801,
-          "name": "光兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 115101,
-          "name": "暗兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118301,
-          "name": "水龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118901,
-          "name": "草龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 119201,
-          "name": "海精灵",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 121301,
-          "name": "果火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 142401,
-          "name": "捣蛋蝠",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 111001,
-          "name": "发牌雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 126301,
-          "name": "粉扇雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 101701,
-          "name": "烈焰龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 105801,
-          "name": "海浪龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 111201,
-          "name": "森灵龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114201,
-          "name": "冰原战狼",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114901,
-          "name": "耀光兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 115201,
-          "name": "暗影兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 119301,
-          "name": "海天使",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 121401,
-          "name": "龙裹火",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 138301,
-          "name": "炮塔蟹",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 142501,
-          "name": "暗翼镰蝠",
-          "weight": 100,
-          "probability": "0.28"
-        }
-      ]
-    },
-    {
-      "eggId": 61103,
-      "name": "S1紫金噜咪蛋",
-      "icon": "Item_60103",
-      "quality": 4,
-      "mode": 10,
-      "modeName": "随机蛋",
-      "lumis": [
-        {
-          "id": 100501,
-          "name": "多肉猫",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 108701,
-          "name": "响尾眼镜蛇",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 111801,
-          "name": "许愿灯象",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115501,
-          "name": "宝剑海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115601,
-          "name": "蓝拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115701,
-          "name": "粉拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115801,
-          "name": "战甲海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 116801,
-          "name": "梦游羊",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 117501,
-          "name": "摸鱼雪貂",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119801,
-          "name": "彩糖人",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119901,
-          "name": "鱼雷鲨",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120501,
-          "name": "甜椒猩",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120601,
-          "name": "拿铁刺客",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120701,
-          "name": "起舞鸭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123401,
-          "name": "头铁牛",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123801,
-          "name": "螳螂虾",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 124301,
-          "name": "灵光鸟",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 125801,
-          "name": "魔魔猪",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 130001,
-          "name": "石雕树懒",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 139801,
-          "name": "松果猫头鹰",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 118101,
-          "name": "拳拳袋鼠",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 120801,
-          "name": "含苞",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 121101,
-          "name": "战螂宝宝",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 108901,
-          "name": "花牌孔雀",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112001,
-          "name": "水龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112801,
-          "name": "草龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114001,
-          "name": "冰狼崽",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114301,
-          "name": "海宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114701,
-          "name": "光兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 115001,
-          "name": "暗兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 121201,
-          "name": "火龙果",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 142301,
-          "name": "牙牙蝠",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 118201,
-          "name": "搏击袋鼠",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 120901,
-          "name": "绽放",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 121001,
-          "name": "战螂",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114101,
-          "name": "冰晶狼",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114801,
-          "name": "光兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 115101,
-          "name": "暗兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118301,
-          "name": "水龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118901,
-          "name": "草龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 119201,
-          "name": "海精灵",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 121301,
-          "name": "果火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 142401,
-          "name": "捣蛋蝠",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 111001,
-          "name": "发牌雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 126301,
-          "name": "粉扇雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 101701,
-          "name": "烈焰龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 105801,
-          "name": "海浪龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 111201,
-          "name": "森灵龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114201,
-          "name": "冰原战狼",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114901,
-          "name": "耀光兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 115201,
-          "name": "暗影兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 119301,
-          "name": "海天使",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 121401,
-          "name": "龙裹火",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 138301,
-          "name": "炮塔蟹",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 142501,
-          "name": "暗翼镰蝠",
-          "weight": 100,
-          "probability": "0.28"
-        }
-      ]
-    },
-    {
-      "eggId": 61104,
-      "name": "S1紫色噜咪蛋",
-      "icon": "Item_60104",
-      "quality": 4,
-      "mode": 10,
-      "modeName": "随机蛋",
-      "lumis": [
-        {
-          "id": 100501,
-          "name": "多肉猫",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 108701,
-          "name": "响尾眼镜蛇",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 111801,
-          "name": "许愿灯象",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115501,
-          "name": "宝剑海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115601,
-          "name": "蓝拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115701,
-          "name": "粉拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115801,
-          "name": "战甲海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 116801,
-          "name": "梦游羊",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 117501,
-          "name": "摸鱼雪貂",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119801,
-          "name": "彩糖人",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119901,
-          "name": "鱼雷鲨",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120501,
-          "name": "甜椒猩",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120601,
-          "name": "拿铁刺客",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120701,
-          "name": "起舞鸭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123401,
-          "name": "头铁牛",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123801,
-          "name": "螳螂虾",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 124301,
-          "name": "灵光鸟",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 125801,
-          "name": "魔魔猪",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 130001,
-          "name": "石雕树懒",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 139801,
-          "name": "松果猫头鹰",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 118101,
-          "name": "拳拳袋鼠",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 120801,
-          "name": "含苞",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 121101,
-          "name": "战螂宝宝",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 108901,
-          "name": "花牌孔雀",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112001,
-          "name": "水龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112801,
-          "name": "草龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114001,
-          "name": "冰狼崽",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114301,
-          "name": "海宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114701,
-          "name": "光兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 115001,
-          "name": "暗兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 121201,
-          "name": "火龙果",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 142301,
-          "name": "牙牙蝠",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 118201,
-          "name": "搏击袋鼠",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 120901,
-          "name": "绽放",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 121001,
-          "name": "战螂",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114101,
-          "name": "冰晶狼",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114801,
-          "name": "光兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 115101,
-          "name": "暗兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118301,
-          "name": "水龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118901,
-          "name": "草龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 119201,
-          "name": "海精灵",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 121301,
-          "name": "果火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 142401,
-          "name": "捣蛋蝠",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 111001,
-          "name": "发牌雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 126301,
-          "name": "粉扇雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 101701,
-          "name": "烈焰龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 105801,
-          "name": "海浪龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 111201,
-          "name": "森灵龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114201,
-          "name": "冰原战狼",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114901,
-          "name": "耀光兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 115201,
-          "name": "暗影兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 119301,
-          "name": "海天使",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 121401,
-          "name": "龙裹火",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 138301,
-          "name": "炮塔蟹",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 142501,
-          "name": "暗翼镰蝠",
-          "weight": 100,
-          "probability": "0.28"
-        }
-      ]
-    },
-    {
-      "eggId": 61105,
-      "name": "S1蓝色噜咪蛋",
-      "icon": "Item_60105",
-      "quality": 3,
-      "mode": 10,
-      "modeName": "随机蛋",
-      "lumis": [
-        {
-          "id": 100501,
-          "name": "多肉猫",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 108701,
-          "name": "响尾眼镜蛇",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 111801,
-          "name": "许愿灯象",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115501,
-          "name": "宝剑海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115601,
-          "name": "蓝拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115701,
-          "name": "粉拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115801,
-          "name": "战甲海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 116801,
-          "name": "梦游羊",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 117501,
-          "name": "摸鱼雪貂",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119801,
-          "name": "彩糖人",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119901,
-          "name": "鱼雷鲨",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120501,
-          "name": "甜椒猩",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120601,
-          "name": "拿铁刺客",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120701,
-          "name": "起舞鸭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123401,
-          "name": "头铁牛",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123801,
-          "name": "螳螂虾",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 124301,
-          "name": "灵光鸟",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 125801,
-          "name": "魔魔猪",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 130001,
-          "name": "石雕树懒",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 139801,
-          "name": "松果猫头鹰",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 118101,
-          "name": "拳拳袋鼠",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 120801,
-          "name": "含苞",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 121101,
-          "name": "战螂宝宝",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 108901,
-          "name": "花牌孔雀",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112001,
-          "name": "水龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112801,
-          "name": "草龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114001,
-          "name": "冰狼崽",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114301,
-          "name": "海宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114701,
-          "name": "光兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 115001,
-          "name": "暗兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 121201,
-          "name": "火龙果",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 142301,
-          "name": "牙牙蝠",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 118201,
-          "name": "搏击袋鼠",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 120901,
-          "name": "绽放",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 121001,
-          "name": "战螂",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114101,
-          "name": "冰晶狼",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114801,
-          "name": "光兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 115101,
-          "name": "暗兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118301,
-          "name": "水龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118901,
-          "name": "草龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 119201,
-          "name": "海精灵",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 121301,
-          "name": "果火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 142401,
-          "name": "捣蛋蝠",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 111001,
-          "name": "发牌雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 126301,
-          "name": "粉扇雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 101701,
-          "name": "烈焰龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 105801,
-          "name": "海浪龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 111201,
-          "name": "森灵龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114201,
-          "name": "冰原战狼",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114901,
-          "name": "耀光兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 115201,
-          "name": "暗影兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 119301,
-          "name": "海天使",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 121401,
-          "name": "龙裹火",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 138301,
-          "name": "炮塔蟹",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 142501,
-          "name": "暗翼镰蝠",
-          "weight": 100,
-          "probability": "0.28"
-        }
-      ]
-    },
-    {
-      "eggId": 61106,
-      "name": "S1星彩蛋",
+      "eggId": 61218,
+      "name": "Item_61218",
       "icon": "Item_60106",
       "quality": 6,
       "mode": 10,
       "modeName": "随机蛋",
-      "lumis": [
-        {
-          "id": 100501,
-          "name": "多肉猫",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 108701,
-          "name": "响尾眼镜蛇",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 111801,
-          "name": "许愿灯象",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115501,
-          "name": "宝剑海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115601,
-          "name": "蓝拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115701,
-          "name": "粉拳海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115801,
-          "name": "战甲海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 115901,
-          "name": "钢盔海獭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 116801,
-          "name": "梦游羊",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 117501,
-          "name": "摸鱼雪貂",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119801,
-          "name": "彩糖人",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 119901,
-          "name": "鱼雷鲨",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120501,
-          "name": "甜椒猩",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120601,
-          "name": "拿铁刺客",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 120701,
-          "name": "起舞鸭",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123401,
-          "name": "头铁牛",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 123801,
-          "name": "螳螂虾",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 124301,
-          "name": "灵光鸟",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 125801,
-          "name": "魔魔猪",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 130001,
-          "name": "石雕树懒",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 136101,
-          "name": "睡梦蟹",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 139801,
-          "name": "松果猫头鹰",
-          "weight": 1000,
-          "probability": "2.78"
-        },
-        {
-          "id": 118101,
-          "name": "拳拳袋鼠",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 120801,
-          "name": "含苞",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 121101,
-          "name": "战螂宝宝",
-          "weight": 666,
-          "probability": "1.85"
-        },
-        {
-          "id": 107901,
-          "name": "火龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 108901,
-          "name": "花牌孔雀",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112001,
-          "name": "水龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 112801,
-          "name": "草龙宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114001,
-          "name": "冰狼崽",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114301,
-          "name": "海宝宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 114701,
-          "name": "光兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 115001,
-          "name": "暗兔宝",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 121201,
-          "name": "火龙果",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 127401,
-          "name": "小塔蟹",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 142301,
-          "name": "牙牙蝠",
-          "weight": 600,
-          "probability": "1.67"
-        },
-        {
-          "id": 118201,
-          "name": "搏击袋鼠",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 120901,
-          "name": "绽放",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 121001,
-          "name": "战螂",
-          "weight": 334,
-          "probability": "0.93"
-        },
-        {
-          "id": 101601,
-          "name": "火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114101,
-          "name": "冰晶狼",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 114801,
-          "name": "光兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 115101,
-          "name": "暗兔",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118301,
-          "name": "水龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 118901,
-          "name": "草龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 119201,
-          "name": "海精灵",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 121301,
-          "name": "果火龙",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 129101,
-          "name": "哨塔蟹",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 142401,
-          "name": "捣蛋蝠",
-          "weight": 300,
-          "probability": "0.83"
-        },
-        {
-          "id": 111001,
-          "name": "发牌雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 126301,
-          "name": "粉扇雀圣",
-          "weight": 200,
-          "probability": "0.56"
-        },
-        {
-          "id": 101701,
-          "name": "烈焰龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 105801,
-          "name": "海浪龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 111201,
-          "name": "森灵龙",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114201,
-          "name": "冰原战狼",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 114901,
-          "name": "耀光兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 115201,
-          "name": "暗影兔",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 119301,
-          "name": "海天使",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 121401,
-          "name": "龙裹火",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 138301,
-          "name": "炮塔蟹",
-          "weight": 100,
-          "probability": "0.28"
-        },
-        {
-          "id": 142501,
-          "name": "暗翼镰蝠",
-          "weight": 100,
-          "probability": "0.28"
-        }
-      ]
+      "lumis": []
     },
     {
-      "eggId": 61107,
-      "name": "Item_61107",
+      "eggId": 61219,
+      "name": "Item_61219",
+      "icon": "Item_60106",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61220,
+      "name": "Item_61220",
+      "icon": "Item_60106",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61221,
+      "name": "Item_61221",
+      "icon": "Item_60106",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61222,
+      "name": "Item_61222",
+      "icon": "Item_60106",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61223,
+      "name": "Item_61223",
+      "icon": "Item_60106",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61224,
+      "name": "Item_61224",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61225,
+      "name": "Item_61225",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61226,
+      "name": "Item_61226",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61227,
+      "name": "Item_61227",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61228,
+      "name": "Item_61228",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61229,
+      "name": "Item_61229",
+      "icon": "Item_60100",
+      "quality": 6,
+      "mode": 10,
+      "modeName": "随机蛋",
+      "lumis": []
+    },
+    {
+      "eggId": 61301,
+      "name": "Item_61301",
       "icon": "Item_60107",
       "quality": 6,
       "mode": 10,
@@ -29752,8 +30103,8 @@
       ]
     },
     {
-      "eggId": 61108,
-      "name": "Item_61108",
+      "eggId": 61302,
+      "name": "Item_61302",
       "icon": "Item_60108",
       "quality": 6,
       "mode": 10,
