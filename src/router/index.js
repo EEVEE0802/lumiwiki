@@ -17,6 +17,7 @@ const routes = [
   { path: '/star-exchange', name: 'StarExchange', component: () => import('../views/StarExchange.vue') },
   { path: '/work-report', name: 'WorkReport', component: () => import('../views/WorkReport.vue') },
   { path: '/claude-code-guide', name: 'ClaudeCodeGuide', component: () => import('../views/ClaudeCodeGuide.vue') },
+  { path: '/admin', name: 'AdminPanel', component: () => import('../views/AdminPanel.vue') },
 ]
 
 const router = createRouter({

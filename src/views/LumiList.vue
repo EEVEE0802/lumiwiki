@@ -3,9 +3,12 @@ import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { loadData, t, TYPE_NAMES, TYPE_COLORS, LUMI_TAG_NAMES, WORK_TYPE_NAMES } from '../data'
 import { avatarUrl } from '../data/imageUrl'
+import { apiFetch } from '../data/api'
+import { useAuth } from '../composables/useAuth'
 import MultiSelect from '../components/MultiSelect.vue'
 
 const route = useRoute()
+const { hasPermission } = useAuth()
 const lumis = ref([])
 const locMap = ref({})
 const marketPrices = ref({})
@@ -14,12 +17,56 @@ const orderNpcData = ref([])
 const loading = ref(true)
 
 // 审查模式：外显每只噜咪的详细信息（立绘/名字/赛季/性别比例/身高体重/初见/订单/故事）
-// 用 localStorage 记忆，切页也不掉；默认关闭
-const REVIEW_KEY = 'lumiwiki-review-mode'
-const reviewMode = ref(localStorage.getItem(REVIEW_KEY) === '1')
+// 不做持久化：每次进图鉴都重置为正常模式，需手动点击切换（避免"上次审查一下没退出"的困扰）
+const reviewMode = ref(false)
 function toggleReview() {
   reviewMode.value = !reviewMode.value
-  localStorage.setItem(REVIEW_KEY, reviewMode.value ? '1' : '0')
+}
+
+// 审查标记：从 API 拉全量，本地 Map 索引 `${lumiId}:${field}` -> mark
+// 用户标注"某只噜咪设计上无此项"，筛"无 X"时会排除掉已标记的
+const marksMap = ref(new Map())
+const canMark = computed(() => hasPermission('review.mark'))
+
+async function loadMarks() {
+  try {
+    const { marks } = await apiFetch('/api/marks')
+    const m = new Map()
+    for (const mk of marks) m.set(`${mk.lumiId}:${mk.field}`, mk)
+    marksMap.value = m
+  } catch (e) {
+    console.warn('拉取标记失败, 审查模式将无标记数据:', e.message)
+  }
+}
+
+function isMarked(lumiId, field) {
+  return marksMap.value.has(`${lumiId}:${field}`)
+}
+function getMark(lumiId, field) {
+  return marksMap.value.get(`${lumiId}:${field}`) || null
+}
+
+async function toggleMark(lumiId, field) {
+  if (!canMark.value) return
+  const key = `${lumiId}:${field}`
+  try {
+    if (marksMap.value.has(key)) {
+      await apiFetch(`/api/marks/${lumiId}/${field}`, { method: 'DELETE' })
+      const next = new Map(marksMap.value)
+      next.delete(key)
+      marksMap.value = next
+    } else {
+      const { mark } = await apiFetch('/api/marks', {
+        method: 'POST',
+        body: { lumiId, field }
+      })
+      const next = new Map(marksMap.value)
+      next.set(key, mark)
+      marksMap.value = next
+    }
+  } catch (e) {
+    alert('标记失败: ' + e.message)
+  }
 }
 
 // 筛选条件
@@ -31,6 +78,10 @@ const filterMaxScore = ref('')
 const filterWorkType = ref([])
 const filterCardBack = ref('all') // 卡背类型筛选：all 全部 / 0普通 50异色 80王 98 3D 99全景
 const sortBy = ref('id')
+// 审查模式下的"缺失内容"筛选（多选 OR：命中任一即算缺失）
+// 值取自 ['firstMeet', 'order', 'story']，选中即筛出"缺该项内容"的噜咪
+// 已被标记"设计上无此项"的噜咪不算缺失，会被排除
+const filterMissing = ref([])
 
 onMounted(async () => {
   const [data, loc, market, avg, orderNpc] = await Promise.all([
@@ -45,6 +96,8 @@ onMounted(async () => {
   marketPrices.value = Array.isArray(market) ? market : []
   avgData.value = Array.isArray(avg) ? avg : []
   orderNpcData.value = Array.isArray(orderNpc) ? orderNpc : []
+  // 静默拉标记（失败不阻塞主渲染）
+  loadMarks()
   loading.value = false
 
   // 从 URL 参数读取搜索词
@@ -219,6 +272,17 @@ const filtered = computed(() => {
     list = list.filter(l => (l.CardBack || 0) === v)
   }
 
+  // 审查模式独有：按缺失内容筛（多选 OR：只要命中一项就保留）
+  // 已被标记"设计上无此项"的噜咪不算缺失，会被排除掉（这只是标注不缺，不该出现在缺失列表里）
+  if (reviewMode.value && filterMissing.value.length) {
+    list = list.filter(l => {
+      if (filterMissing.value.includes('firstMeet') && !getFirstMeetText(l.Id) && !isMarked(l.Id, 'firstMeet')) return true
+      if (filterMissing.value.includes('order') && !hasValidContent(getOrderKey(l.Id)) && !isMarked(l.Id, 'order')) return true
+      if (filterMissing.value.includes('story') && !hasValidContent(l.Story) && !isMarked(l.Id, 'story')) return true
+      return false
+    })
+  }
+
   // 排序（默认按 PokedexId 升序）
   list = [...list].sort((a, b) => {
     if (sortBy.value === 'id') return a.PokedexId - b.PokedexId
@@ -300,6 +364,16 @@ const filtered = computed(() => {
         <option value="priceAsc">按价格升序</option>
         <option value="priceDesc">按价格降序</option>
       </select>
+      <MultiSelect
+        v-if="reviewMode"
+        v-model="filterMissing"
+        :options="[
+          { value: 'firstMeet', label: '无初见' },
+          { value: 'order', label: '无订单' },
+          { value: 'story', label: '无故事' },
+        ]"
+        placeholder="缺失内容"
+      />
       <span class="result-count">共 {{ filtered.length }} 只</span>
     </div>
 
@@ -377,17 +451,73 @@ const filtered = computed(() => {
             </div>
           </div>
 
-          <div v-if="getFirstMeetText(lumi.Id)" class="review-section">
-            <div class="review-section-title">初见</div>
-            <div class="review-section-body">{{ getFirstMeetText(lumi.Id) }}</div>
+          <!-- 初见 -->
+          <div v-if="getFirstMeetText(lumi.Id) || isMarked(lumi.Id, 'firstMeet')" class="review-section">
+            <div class="review-section-title">
+              <span>初见</span>
+              <button
+                v-if="canMark"
+                class="review-mark-btn"
+                :class="{ marked: isMarked(lumi.Id, 'firstMeet') }"
+                :title="isMarked(lumi.Id, 'firstMeet') ? '取消「设计上无此项」标记' : '标记为「设计上无此项」'"
+                @click="toggleMark(lumi.Id, 'firstMeet')"
+              >
+                {{ isMarked(lumi.Id, 'firstMeet') ? '✓ 已标记无此项' : '标记无此项' }}
+              </button>
+              <span v-else-if="isMarked(lumi.Id, 'firstMeet')" class="review-mark-tag" :title="`由 ${getMark(lumi.Id, 'firstMeet').markedBy} 标记`">
+                ✓ 设计确认无
+              </span>
+            </div>
+            <div v-if="getFirstMeetText(lumi.Id)" class="review-section-body">
+              {{ getFirstMeetText(lumi.Id) }}
+            </div>
+            <div v-else class="review-section-empty">📝 设计上无初见（由 {{ getMark(lumi.Id, 'firstMeet').markedBy }} 标记）</div>
           </div>
-          <div v-if="hasValidContent(getOrderKey(lumi.Id))" class="review-section">
-            <div class="review-section-title">订单</div>
-            <div class="review-section-body">{{ getLoc(getOrderKey(lumi.Id)) }}</div>
+
+          <!-- 订单 -->
+          <div v-if="hasValidContent(getOrderKey(lumi.Id)) || isMarked(lumi.Id, 'order')" class="review-section">
+            <div class="review-section-title">
+              <span>订单</span>
+              <button
+                v-if="canMark"
+                class="review-mark-btn"
+                :class="{ marked: isMarked(lumi.Id, 'order') }"
+                :title="isMarked(lumi.Id, 'order') ? '取消「设计上无此项」标记' : '标记为「设计上无此项」'"
+                @click="toggleMark(lumi.Id, 'order')"
+              >
+                {{ isMarked(lumi.Id, 'order') ? '✓ 已标记无此项' : '标记无此项' }}
+              </button>
+              <span v-else-if="isMarked(lumi.Id, 'order')" class="review-mark-tag" :title="`由 ${getMark(lumi.Id, 'order').markedBy} 标记`">
+                ✓ 设计确认无
+              </span>
+            </div>
+            <div v-if="hasValidContent(getOrderKey(lumi.Id))" class="review-section-body">
+              {{ getLoc(getOrderKey(lumi.Id)) }}
+            </div>
+            <div v-else class="review-section-empty">📝 设计上无订单（由 {{ getMark(lumi.Id, 'order').markedBy }} 标记）</div>
           </div>
-          <div v-if="hasValidContent(lumi.Story)" class="review-section">
-            <div class="review-section-title">故事</div>
-            <div class="review-section-body">{{ getLoc(lumi.Story) }}</div>
+
+          <!-- 故事 -->
+          <div v-if="hasValidContent(lumi.Story) || isMarked(lumi.Id, 'story')" class="review-section">
+            <div class="review-section-title">
+              <span>故事</span>
+              <button
+                v-if="canMark"
+                class="review-mark-btn"
+                :class="{ marked: isMarked(lumi.Id, 'story') }"
+                :title="isMarked(lumi.Id, 'story') ? '取消「设计上无此项」标记' : '标记为「设计上无此项」'"
+                @click="toggleMark(lumi.Id, 'story')"
+              >
+                {{ isMarked(lumi.Id, 'story') ? '✓ 已标记无此项' : '标记无此项' }}
+              </button>
+              <span v-else-if="isMarked(lumi.Id, 'story')" class="review-mark-tag" :title="`由 ${getMark(lumi.Id, 'story').markedBy} 标记`">
+                ✓ 设计确认无
+              </span>
+            </div>
+            <div v-if="hasValidContent(lumi.Story)" class="review-section-body">
+              {{ getLoc(lumi.Story) }}
+            </div>
+            <div v-else class="review-section-empty">📝 设计上无故事（由 {{ getMark(lumi.Id, 'story').markedBy }} 标记）</div>
           </div>
         </div>
       </div>
@@ -571,6 +701,9 @@ const filtered = computed(() => {
   font-size: 0.85em;
   font-weight: 600;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .review-section-body {
   color: var(--text);
@@ -578,5 +711,45 @@ const filtered = computed(() => {
   line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-word;
+}
+.review-section-empty {
+  color: var(--text-dim);
+  font-size: 0.85em;
+  font-style: italic;
+  padding: 4px 0;
+}
+.review-mark-btn {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-dim);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 2px 10px;
+  font-size: 0.75em;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.review-mark-btn:hover {
+  background: rgba(164,147,224,0.15);
+  color: #a493e0;
+  border-color: rgba(164,147,224,0.3);
+}
+.review-mark-btn.marked {
+  background: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+  border-color: rgba(46, 204, 113, 0.3);
+}
+.review-mark-btn.marked:hover {
+  background: rgba(220, 53, 69, 0.15);
+  color: #ff8b95;
+  border-color: rgba(220, 53, 69, 0.3);
+}
+.review-mark-tag {
+  background: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.75em;
+  font-weight: 600;
 }
 </style>

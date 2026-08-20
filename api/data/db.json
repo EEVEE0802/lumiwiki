@@ -1,0 +1,41 @@
+{
+  "users": {
+    "EEVEE": {
+      "username": "EEVEE",
+      "role": "策划",
+      "isAdmin": true,
+      "createdAt": "2026-08-20T11:33:36.861Z",
+      "lastActiveAt": "2026-08-20T12:47:52.447Z"
+    }
+  },
+  "permissions": {
+    "EEVEE": [
+      "review.mark"
+    ]
+  },
+  "marks": {},
+  "audit": [
+    {
+      "id": 1,
+      "username": "system",
+      "action": "bootstrap",
+      "target": "EEVEE",
+      "at": "2026-08-20T11:33:36.864Z"
+    },
+    {
+      "id": 2,
+      "username": "EEVEE",
+      "action": "mark",
+      "target": "100201:firstMeet",
+      "at": "2026-08-20T12:34:39.835Z"
+    },
+    {
+      "id": 3,
+      "username": "EEVEE",
+      "action": "unmark",
+      "target": "100201:firstMeet",
+      "at": "2026-08-20T12:34:40.451Z"
+    }
+  ],
+  "auditSeq": 3
+}

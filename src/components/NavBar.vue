@@ -3,13 +3,18 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLanguage } from '../composables/useLanguage'
 import { useVersion } from '../composables/useVersion'
+import { useAuth } from '../composables/useAuth'
+import LoginModal from './LoginModal.vue'
 
 const router = useRouter()
 const searchQuery = ref('')
 const mobileMenuOpen = ref(false)
 const langMenuOpen = ref(false)
+const userMenuOpen = ref(false)
+const loginModalOpen = ref(false)
 
 const { isInternal } = useVersion()
+const { currentUser, isAdmin, logout } = useAuth()
 
 // 导航链接
 const navLinks = [
@@ -96,8 +101,36 @@ function doSearch() {
         />
         <button @click="doSearch">🔍</button>
       </div>
+
+      <!-- 登录 / 用户菜单 -->
+      <div v-if="!currentUser" class="user-area">
+        <button class="login-btn" @click="loginModalOpen = true">🔑 登录</button>
+      </div>
+      <div v-else class="user-area">
+        <button class="user-button" @click="userMenuOpen = !userMenuOpen">
+          <span class="user-avatar">{{ isAdmin ? '👑' : '👤' }}</span>
+          <span class="user-name">{{ currentUser.username }}</span>
+          <span class="user-role">({{ currentUser.role }})</span>
+          <span class="lang-arrow">▼</span>
+        </button>
+        <div class="user-menu" :class="{ open: userMenuOpen }">
+          <div class="user-menu-info">
+            <div>{{ currentUser.username }} · {{ currentUser.role }}</div>
+            <div v-if="isAdmin" class="user-menu-tag">管理员</div>
+          </div>
+          <router-link
+            v-if="isAdmin"
+            to="/admin"
+            class="user-menu-item"
+            @click="userMenuOpen = false"
+          >⚙️ 用户管理</router-link>
+          <button class="user-menu-item" @click="logout(); userMenuOpen = false">🚪 退出登录</button>
+        </div>
+      </div>
     </div>
   </nav>
+
+  <LoginModal v-model="loginModalOpen" />
 </template>
 
 <style scoped>
@@ -260,6 +293,91 @@ function doSearch() {
   color: #eee;
   font-size: 1.5em;
   cursor: pointer;
+}
+
+/* ==== 登录 / 用户菜单 ==== */
+.user-area {
+  position: relative;
+}
+.login-btn {
+  background: linear-gradient(135deg, #a493e0 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #16213e;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: #eee;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.user-button:hover {
+  border-color: #a493e0;
+  background: rgba(164,147,224,0.1);
+}
+.user-avatar { font-size: 1.1em; }
+.user-name { font-size: 0.9em; font-weight: 600; }
+.user-role { font-size: 0.8em; color: #999; }
+
+.user-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #16213e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px;
+  min-width: 200px;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  z-index: 100;
+}
+.user-menu.open { display: flex; }
+.user-menu-info {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 4px;
+  color: #ccc;
+  font-size: 0.85em;
+}
+.user-menu-tag {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 1px 8px;
+  background: linear-gradient(135deg, #a493e0 0%, #764ba2 100%);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+.user-menu-item {
+  display: block;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #ccc;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: all 0.2s;
+}
+.user-menu-item:hover {
+  background: rgba(164,147,224,0.15);
+  color: #a493e0;
 }
 @media (max-width: 768px) {
   .navbar { padding: 0 12px; height: auto; min-height: 56px; }

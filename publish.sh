@@ -35,7 +35,29 @@ echo ""
 # 固定端口
 PORT=3005
 SERVICE_NAME=LumiWiki
+API_SERVICE=LumiWikiAPI
+API_PORT=3006
 NSSM=D:/lumiwiki/tools/nssm.exe
+
+# API 服务保活检查（可选：LumiWikiAPI 未注册时跳过；已注册但未跑则拉起）
+# API 是后端服务（用户/标记/权限管理），跟前端 3005 并列运行
+if MSYS_NO_PATHCONV=1 sc.exe query $API_SERVICE >/dev/null 2>&1; then
+  if ! netstat -ano | grep -q ":$API_PORT "; then
+    echo "🔧 检测到 $API_SERVICE 未运行, 尝试启动..."
+    MSYS_NO_PATHCONV=1 "$NSSM" start $API_SERVICE > /dev/null 2>&1
+    sleep 2
+    if netstat -ano | grep -q ":$API_PORT "; then
+      echo "✓ API 服务已启动 ($API_PORT)"
+    else
+      echo "⚠️  API 服务启动失败, 前端仍可访问但标记/管理功能不可用"
+    fi
+  else
+    echo "✓ API 服务运行中 ($API_PORT)"
+  fi
+else
+  echo "ℹ️  未检测到 $API_SERVICE 服务, 跳过 (以管理员身份跑 tools/install-api-service.bat 可注册)"
+fi
+echo ""
 
 # 服务化改造后（2026-08-12）：
 # python http.server 已由 nssm 注册为 Windows 服务 LumiWiki（开机自启 + 崩溃自动重启）
