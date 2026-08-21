@@ -5,7 +5,7 @@
       "role": "策划",
       "isAdmin": true,
       "createdAt": "2026-08-20T11:33:36.861Z",
-      "lastActiveAt": "2026-08-20T12:47:52.447Z"
+      "lastActiveAt": "2026-08-21T10:10:41.109Z"
     }
   },
   "permissions": {
@@ -35,7 +35,21 @@
       "action": "unmark",
       "target": "100201:firstMeet",
       "at": "2026-08-20T12:34:40.451Z"
+    },
+    {
+      "id": 4,
+      "username": "EEVEE",
+      "action": "mark",
+      "target": "108501:firstMeet",
+      "at": "2026-08-21T06:18:02.602Z"
+    },
+    {
+      "id": 5,
+      "username": "EEVEE",
+      "action": "unmark",
+      "target": "108501:firstMeet",
+      "at": "2026-08-21T06:18:03.588Z"
     }
   ],
-  "auditSeq": 3
+  "auditSeq": 5
 }

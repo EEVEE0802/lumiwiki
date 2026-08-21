@@ -5,7 +5,7 @@
 - 类型顺序：普通 → 异色卡 → 次元卡 → 王 → 幻境卡
 - 内部排序：PokedexId 升序
 - 进化链合并到一行（含分支进化）
-- 立绘：public/images/avatars/CA_<Id>.png
+- 立绘：优先 D:/噜咪立绘/（新高清图，命名多样），fallback public/images/avatars/CA_<Id>.png
 - 三视图：D:/噜咪模型/Char_<Model>.(png|jpg)
 """
 import json
@@ -13,6 +13,7 @@ import os
 import sys
 import io
 import shutil
+import re
 
 # 强制 stdout 用 utf-8，避免 Windows GBK 撞车
 if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
@@ -29,6 +30,7 @@ import tempfile
 # ---- 路径 ----
 DATA_DIR = 'D:/lumiwiki/public/data/internal'
 AVATAR_DIR = 'D:/lumiwiki/public/images/avatars'
+NEW_AVATAR_DIR = 'D:/噜咪立绘'   # 新高清立绘目录（优先），命名多样：既可能是 6-7 位 Lumi ID 前缀，也可能是纯中文名
 MODEL_DIR = 'D:/噜咪模型'
 OUTPUT = 'D:/Lumi信息汇总.xlsx'
 
@@ -125,9 +127,130 @@ def find_model_file(model_name, model_idx):
     return None
 
 
-def find_avatar(lumi_id):
-    p = os.path.join(AVATAR_DIR, f'CA_{lumi_id}.png')
-    return p if os.path.exists(p) else None
+# ---- 新高清立绘匹配 ----
+CJK_RE = re.compile(r'[一-鿿]+')
+LEADING_DIGITS_RE = re.compile(r'^(\d{6,7})')
+NOISE_WORDS = ['拷贝', '修改稿', '修改', '特效', '立绘']  # 都当作变体/副本标记
+
+
+def clean_filename(base):
+    """从文件名 base（无扩展名）提取纯中文噜咪名。"""
+    s = base
+    # 去掉括号内容 (1) （1） 等
+    s = re.sub(r'[\(（].*?[\)）]', '', s)
+    # 去掉噪声词
+    for w in NOISE_WORDS:
+        s = s.replace(w, '')
+    # 去掉所有数字（前缀/中间/尾部）
+    s = re.sub(r'\d+', '', s)
+    # 拼接所有 CJK 段（丢掉英文字母/空格/下划线/连字符/·等）
+    return ''.join(CJK_RE.findall(s))
+
+
+def try_match_name(cjk, name_to_ids):
+    """按中文名找 Lumi ID list，处理 `异色X`/`X异色` → `X·异` 变体。"""
+    if not cjk:
+        return []
+    if cjk in name_to_ids:
+        return name_to_ids[cjk]
+    # 异色变体：文件名写 `异色金刚狼` 或 `金刚狼异色`，游戏数据里是 `金刚狼·异`
+    for pfx in ('异色',):
+        if cjk.startswith(pfx):
+            core = cjk[len(pfx):]
+            key = f'{core}·异'
+            if key in name_to_ids:
+                return name_to_ids[key]
+        if cjk.endswith(pfx):
+            core = cjk[:-len(pfx)]
+            key = f'{core}·异'
+            if key in name_to_ids:
+                return name_to_ids[key]
+    return []
+
+
+def build_new_avatar_index(new_dir, zh, lumi_by_id):
+    """
+    扫描新高清立绘目录，返回 ({lumi_id: filepath}, unmatched_files)。
+    命中优先级：
+      1. 文件名以 6-7 位数字开头且该数字是有效 Lumi ID → 直接用
+      2. 提取中文名 → zh-CN 反查（含 异色 变体处理）
+    同一个 Lumi 有多个候选文件时，选 priority 最小、无噪声后缀（拷贝/修改/带尾部数字）的。
+    """
+    if not os.path.isdir(new_dir):
+        print(f'⚠️  新立绘目录不存在: {new_dir}，跳过。')
+        return {}, []
+
+    # 建 zh-CN 中文名 → [lumi_id] 反向索引
+    name_to_ids = {}
+    for l in lumi_by_id.values():
+        zh_name = zh.get(l.get('Name', ''))
+        if zh_name:
+            name_to_ids.setdefault(zh_name, []).append(l['Id'])
+
+    # candidates[lid] = [(priority, has_noise, filepath), ...]
+    candidates = {}
+    unmatched = []
+
+    for fname in sorted(os.listdir(new_dir)):
+        if not fname.lower().endswith(('.png', '.jpg', '.jpeg')):
+            continue
+        base = os.path.splitext(fname)[0]
+        full = os.path.join(new_dir, fname)
+
+        has_noise_word = any(w in base for w in NOISE_WORDS) or '(' in base or '（' in base
+        # 去括号后判断末尾是否还带数字（`蜜桃1`、`猫鲨11`）
+        base_no_paren = re.sub(r'[\(（].*?[\)）]', '', base).strip()
+        has_trailing_num = bool(re.search(r'\d+$', base_no_paren))
+
+        matched_ids = None
+        priority = None
+
+        # 尝试 1：6-7 位数字前缀（7 位不命中时降级到 6 位再试）
+        m = LEADING_DIGITS_RE.match(base)
+        if m:
+            digits = m.group(1)
+            lid = int(digits)
+            if lid in lumi_by_id:
+                matched_ids = [lid]
+                priority = 0
+            elif len(digits) == 7:
+                lid6 = int(digits[:6])
+                if lid6 in lumi_by_id:
+                    matched_ids = [lid6]
+                    priority = 0
+
+        # 尝试 2：中文名匹配
+        if matched_ids is None:
+            cjk = clean_filename(base)
+            ids = try_match_name(cjk, name_to_ids)
+            if ids:
+                matched_ids = ids
+                priority = 1
+
+        if matched_ids is None:
+            unmatched.append(fname)
+            continue
+
+        # priority=0（前缀命中）时不考虑 has_trailing_num（前缀本身就是数字）
+        noise_flag = has_noise_word if priority == 0 else (has_noise_word or has_trailing_num)
+        for lid in matched_ids:
+            candidates.setdefault(lid, []).append((priority, noise_flag, full))
+
+    # 每个 Lumi 挑最佳文件：priority 升序 → has_noise 升序 → 文件名字典序
+    result = {}
+    for lid, lst in candidates.items():
+        lst.sort(key=lambda x: (x[0], x[1], x[2]))
+        result[lid] = lst[0][2]
+
+    return result, unmatched
+
+
+def find_avatar(lumi_id, new_idx):
+    """只用新高清立绘目录；没有就置空（不 fallback 旧 CA_）。返回 (path, source)。"""
+    p = new_idx.get(lumi_id)
+    if p and os.path.exists(p):
+        return p, 'new'
+    return None, 'none'
 
 
 def resize_image(src_path, size, tmp_dir):
@@ -210,6 +333,11 @@ def main():
     model_idx = build_model_index(MODEL_DIR)
     print(f'   索引文件 {len(model_idx)} 个')
 
+    # 建立新高清立绘索引（优先来源）
+    print('✨ 扫描新高清立绘目录...')
+    new_avatar_idx, unmatched_new = build_new_avatar_index(NEW_AVATAR_DIR, zh, lumi_by_id)
+    print(f'   新目录匹配到 {len(new_avatar_idx)} 只 Lumi，未匹配 {len(unmatched_new)} 个文件')
+
     # 找出所有被进化到的 Id（不作为首形态出现）
     evolved_into = set()
     for e in evo_data:
@@ -288,6 +416,9 @@ def main():
     tmp_dir = tempfile.mkdtemp(prefix='lumi_xlsx_')
     missing_avatars = []
     missing_models = []
+    stats_new = 0    # 用了新高清立绘的 Lumi 数
+    stats_old = 0    # fallback 到旧 CA_ 的 Lumi 数
+    fallback_lids = []  # 具体是哪些 Lumi fallback 了
 
     total_rows = len(rows)
     for row_idx, r in enumerate(rows, start=2):
@@ -312,8 +443,8 @@ def main():
             ws.cell(row=row_idx, column=base_col + 1, value=en_name).alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
             ws.cell(row=row_idx, column=base_col + 2, value=attr_text).alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
 
-            # 立绘：原图无损嵌入（256×256），仅显示 100×100
-            avatar_path = find_avatar(lid)
+            # 立绘：优先新高清（原图无损嵌入），fallback 旧 CA_，仅显示 100×100
+            avatar_path, avatar_src = find_avatar(lid, new_avatar_idx)
             if avatar_path:
                 try:
                     img = XLImage(avatar_path)  # openpyxl 直接嵌原文件字节
@@ -321,6 +452,11 @@ def main():
                     img.height = IMG_SIZE
                     anchor_cell = f'{get_column_letter(base_col + 3)}{row_idx}'
                     ws.add_image(img, anchor_cell)
+                    if avatar_src == 'new':
+                        stats_new += 1
+                    else:
+                        stats_old += 1
+                        fallback_lids.append((lid, zh_name))
                 except Exception as e:
                     print(f'  ⚠️ 立绘嵌入失败: {avatar_path} - {e}')
                     missing_avatars.append(lid)
@@ -363,12 +499,24 @@ def main():
     # 报告
     print('')
     print(f'✅ 完成！共 {len(rows)} 行')
+    print(f'🖼️  立绘来源：新高清 {stats_new} · 旧 CA_ fallback {stats_old} · 缺失 {len(missing_avatars)}')
+    if fallback_lids:
+        print(f'   fallback 到旧图的 Lumi:')
+        for lid, name in fallback_lids:
+            print(f'    - {lid} {name}')
     if missing_avatars:
         print(f'⚠️  缺少立绘 {len(missing_avatars)} 个: {missing_avatars[:10]}{"..." if len(missing_avatars)>10 else ""}')
     if missing_models:
         print(f'⚠️  缺少三视图 {len(missing_models)} 个:')
         for lid, m in missing_models:
             print(f'    Id={lid} Model={m}')
+    if unmatched_new:
+        print(f'')
+        print(f'ℹ️  新目录里 {len(unmatched_new)} 个文件没匹配到任何 Lumi（噪声/变体/未启用，均忽略）:')
+        for f in unmatched_new[:20]:
+            print(f'    - {f}')
+        if len(unmatched_new) > 20:
+            print(f'    ... 还有 {len(unmatched_new) - 20} 个')
 
 
 if __name__ == '__main__':

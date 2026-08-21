@@ -1,0 +1,531 @@
+{
+  "updateTime": "2026-08-21T11:23:29.464Z",
+  "totalBattles": 10,
+  "gameMode": "tournament",
+  "stats": {
+    "all": {
+      "appearance": [
+        {
+          "lumiId": "118204",
+          "lumiName": "Puncheroo - Variant",
+          "uniqueBattles": 4,
+          "appearanceRate": "40.00"
+        },
+        {
+          "lumiId": "102301",
+          "lumiName": "Unicorn",
+          "uniqueBattles": 3,
+          "appearanceRate": "30.00"
+        },
+        {
+          "lumiId": "116601",
+          "lumiName": "Fistune",
+          "uniqueBattles": 3,
+          "appearanceRate": "30.00"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "uniqueBattles": 3,
+          "appearanceRate": "30.00"
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "Otterknight",
+          "uniqueBattles": 3,
+          "appearanceRate": "30.00"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "uniqueBattles": 2,
+          "appearanceRate": "20.00"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "uniqueBattles": 2,
+          "appearanceRate": "20.00"
+        },
+        {
+          "lumiId": "119101",
+          "lumiName": "Princess Bee",
+          "uniqueBattles": 2,
+          "appearanceRate": "20.00"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "Psykat",
+          "uniqueBattles": 2,
+          "appearanceRate": "20.00"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "111001",
+          "lumiName": "Gambir",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "105804",
+          "lumiName": "Shriegon - Variant",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "121001",
+          "lumiName": "Battlantis",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "102301",
+          "lumiName": "Unicorn",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "116601",
+          "lumiName": "Fistune",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "111001",
+          "lumiName": "Gambir",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "105804",
+          "lumiName": "Shriegon - Variant",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "Otterknight",
+          "battles": 3,
+          "wins": 1,
+          "winRate": "33.33"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "118204",
+          "lumiName": "Puncheroo - Variant",
+          "battles": 4,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "119101",
+          "lumiName": "Princess Bee",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "Psykat",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "121001",
+          "lumiName": "Battlantis",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "totalBattles": 10,
+      "rankRange": {
+        "min": 1,
+        "max": 0
+      }
+    }
+  },
+  "popularTeams": [
+    {
+      "teamLumiIds": [
+        "102301",
+        "116601",
+        "119301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102301",
+          "lumiName": "Unicorn",
+          "secondSkills": [
+            {
+              "skillId": 13003,
+              "count": 3
+            }
+          ]
+        },
+        {
+          "lumiId": "116601",
+          "lumiName": "Fistune",
+          "secondSkills": [
+            {
+              "skillId": 14005,
+              "count": 3
+            }
+          ]
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "secondSkills": [
+            {
+              "skillId": 4003,
+              "count": 3
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 2,
+          "count": 3
+        }
+      ],
+      "battles": 3,
+      "wins": 3,
+      "winRate": "100.00"
+    },
+    {
+      "teamLumiIds": [
+        "111201",
+        "118204",
+        "119101"
+      ],
+      "lumis": [
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "secondSkills": [
+            {
+              "skillId": 4003,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "118204",
+          "lumiName": "Puncheroo - Variant",
+          "secondSkills": [
+            {
+              "skillId": 12001,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "119101",
+          "lumiName": "Princess Bee",
+          "secondSkills": [
+            {
+              "skillId": 5001,
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 2
+        }
+      ],
+      "battles": 2,
+      "wins": 0,
+      "winRate": "0.00"
+    },
+    {
+      "teamLumiIds": [
+        "107001",
+        "116001",
+        "118204"
+      ],
+      "lumis": [
+        {
+          "lumiId": "107001",
+          "lumiName": "Psykat",
+          "secondSkills": [
+            {
+              "skillId": 13002,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "Otterknight",
+          "secondSkills": [
+            {
+              "skillId": 1003,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "118204",
+          "lumiName": "Puncheroo - Variant",
+          "secondSkills": [
+            {
+              "skillId": 12003,
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 2,
+          "count": 2
+        }
+      ],
+      "battles": 2,
+      "wins": 0,
+      "winRate": "0.00"
+    },
+    {
+      "teamLumiIds": [
+        "101701",
+        "110201",
+        "111001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "secondSkills": [
+            {
+              "skillId": 9005,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "secondSkills": [
+            {
+              "skillId": 9005,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "111001",
+          "lumiName": "Gambir",
+          "secondSkills": [
+            {
+              "skillId": 7004,
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 1
+        }
+      ],
+      "battles": 1,
+      "wins": 1,
+      "winRate": "100.00"
+    },
+    {
+      "teamLumiIds": [
+        "101701",
+        "105804",
+        "116001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "secondSkills": [
+            {
+              "skillId": 9006,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "105804",
+          "lumiName": "Shriegon - Variant",
+          "secondSkills": [
+            {
+              "skillId": 2004,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "Otterknight",
+          "secondSkills": [
+            {
+              "skillId": 15005,
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 1
+        }
+      ],
+      "battles": 1,
+      "wins": 1,
+      "winRate": "100.00"
+    },
+    {
+      "teamLumiIds": [
+        "105801",
+        "114901",
+        "121001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "secondSkills": [
+            {
+              "skillId": 2003,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "secondSkills": [
+            {
+              "skillId": 10004,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "121001",
+          "lumiName": "Battlantis",
+          "secondSkills": [
+            {
+              "skillId": 4003,
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 1
+        }
+      ],
+      "battles": 1,
+      "wins": 0,
+      "winRate": "0.00"
+    }
+  ],
+  "winDistribution": {
+    "0": 1,
+    "1": 1,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0
+  },
+  "totalPlayers": 3,
+  "tournamentPlayerRankDistribution": {
+    "bronze": 0,
+    "silver": 0,
+    "gold": 0,
+    "diamond": 0,
+    "star": 1,
+    "legend": 1,
+    "total": 2
+  }
+}
