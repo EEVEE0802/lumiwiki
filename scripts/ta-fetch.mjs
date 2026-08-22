@@ -29,6 +29,27 @@ function getRegionConfig(region) {
 
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 
+// undici 有个坑：紧接在大响应（>20MB）之后再发请求时，keep-alive 连接池会
+// 复用一条服务端已经悄悄关掉的 socket，导致下一个 fetch 立刻 throw "fetch failed"。
+// 国内公会战紧跟在 infinity-gym+assist 大响应之后，从 2026-08-21 起每次必挂。
+// 对策：网络层 throw 时重试。submit-sql 是幂等 select、分页 GET 也幂等，重复安全。
+async function fetchWithRetry(url, init, { retries = 2, baseDelayMs = 1000, label = 'fetch' } = {}) {
+  let lastErr
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      return await fetch(url, init)
+    } catch (e) {
+      lastErr = e
+      if (attempt < retries) {
+        const delay = baseDelayMs * Math.pow(2, attempt)
+        console.log(`  ⚠️  ${label} 第 ${attempt + 1} 次尝试失败 (${e.message})，${delay}ms 后重试...`)
+        await sleep(delay)
+      }
+    }
+  }
+  throw lastErr
+}
+
 function escapeSqlString(s) {
   return String(s).replace(/'/g, "''")
 }
@@ -205,11 +226,11 @@ async function submitSql(cfg, sql, format = 'csv') {
     format
   }).toString()
 
-  const resp = await fetch(`${cfg.baseUrl}/open/submit-sql`, {
+  const resp = await fetchWithRetry(`${cfg.baseUrl}/open/submit-sql`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body
-  })
+  }, { label: 'submit-sql' })
   const data = await resp.json()
   if (data.return_code !== 0) {
     const msg = data.return_message || ''
@@ -225,7 +246,7 @@ async function submitSql(cfg, sql, format = 'csv') {
 // pageId=0 时收到 -1008 说明任务还没跑完（返回 running）；pageId>0 收到 -1008 才是到末尾
 async function fetchResultPage(cfg, taskId, pageId) {
   const url = `${cfg.baseUrl}/open/sql-result-page?token=${cfg.token}&projectId=${cfg.projectId}&taskId=${taskId}&pageId=${pageId}`
-  const resp = await fetch(url)
+  const resp = await fetchWithRetry(url, undefined, { label: `sql-result-page pageId=${pageId}` })
   const ct = resp.headers.get('content-type') || ''
 
   // JSON 响应意味着错误或状态提示（成功的 CSV 是 application/octet-stream）
