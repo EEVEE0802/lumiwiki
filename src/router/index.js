@@ -18,6 +18,7 @@ const routes = [
   { path: '/work-report', name: 'WorkReport', component: () => import('../views/WorkReport.vue') },
   { path: '/claude-code-guide', name: 'ClaudeCodeGuide', component: () => import('../views/ClaudeCodeGuide.vue') },
   { path: '/admin', name: 'AdminPanel', component: () => import('../views/AdminPanel.vue') },
+  { path: '/production', name: 'ProductionPipeline', component: () => import('../views/ProductionPipeline.vue') },
 ]
 
 const router = createRouter({
