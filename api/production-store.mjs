@@ -11,7 +11,7 @@
 
 import { sqliteDb as db } from './store.mjs'
 
-export const STAGE_TYPES = ['combat', 'concept', 'model', 'rigging', 'anim', 'vfx', 'gui', 'audio', 'config']
+export const STAGE_TYPES = ['combat', 'concept', 'model', 'anim', 'vfx', 'gui', 'config']
 
 // ==================== orders ====================
 
@@ -300,3 +300,48 @@ export function getOrderWithStages(lumiId) {
   }
   return { ...order, stages }
 }
+
+// ==================== TAPD iterations ====================
+
+const stmtListIterations = db.prepare('SELECT * FROM tapd_iterations ORDER BY startdate DESC, id DESC')
+const stmtGetIteration = db.prepare('SELECT * FROM tapd_iterations WHERE id = ?')
+
+export function listIterations() {
+  return stmtListIterations.all()
+}
+
+export function getIteration(id) {
+  return stmtGetIteration.get(id) || null
+}
+
+// ==================== 看板视图 ====================
+//
+// 按 (iterationId, stageType) 筛选出卡片
+// 每张卡片 = 一个 stage + 关联的 order 元数据（噜咪名/图鉴号/TAPD 链接）
+// 若 stageType='all' 则返回所有环节
+// 若 iterationId='all' 则跨所有周版本（此时通常配合 status 过滤 done/未完成）
+
+const stmtBoardCards = db.prepare(`
+  SELECT
+    s.lumiId, s.stageType, s.assignee, s.status, s.plannedStart, s.plannedEnd,
+    s.actualStart, s.actualEnd, s.iterationCount, s.tapdSubStoryId, s.tapdIterationId,
+    s.tapdRawStatus, s.tapdSyncedAt, s.deliverables, s.updatedAt, s.updatedBy,
+    o.pokedexId, o.name AS orderName, o.type1, o.type2, o.milestone, o.designer,
+    o.tapdStoryUrl, o.tapdStoryId,
+    i.name AS iterationName, i.startdate AS iterationStart, i.enddate AS iterationEnd, i.milestone AS iterationMilestone
+  FROM production_stages s
+  LEFT JOIN production_orders o ON o.lumiId = s.lumiId
+  LEFT JOIN tapd_iterations i ON i.id = s.tapdIterationId
+`)
+
+export function listBoardCards({ iterationId, stageType, statusIn, assignee } = {}) {
+  const rows = stmtBoardCards.all()
+  return rows.filter(r => {
+    if (iterationId && iterationId !== 'all' && r.tapdIterationId !== iterationId) return false
+    if (stageType && stageType !== 'all' && r.stageType !== stageType) return false
+    if (statusIn && !statusIn.includes(r.status)) return false
+    if (assignee && r.assignee !== assignee) return false
+    return true
+  })
+}
+

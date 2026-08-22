@@ -47,6 +47,8 @@ import {
   listProductionActivity,
   listOrdersWithStages,
   getOrderWithStages,
+  listIterations,
+  listBoardCards,
 } from './production-store.mjs'
 
 const PORT = Number(process.env.PORT || 3006)
@@ -339,6 +341,30 @@ app.get('/api/production/users', { preHandler: requirePermission('production.rea
     isAdmin: !!u.isAdmin,
   }))
   return { users }
+})
+
+// -------- 生产看板专用 --------
+
+// 拿所有 TAPD iterations（周版本），前端下拉切周用
+app.get('/api/production/iterations', { preHandler: requirePermission('production.readAll') }, async () => ({
+  iterations: listIterations(),
+}))
+
+// 拿看板卡片：按 iteration + stageType + status 过滤
+// query 参数：
+//   iterationId=<id> | 'all'      默认 'all'
+//   stageType=<key>  | 'all'      默认 'all'
+//   status=todo,in-progress,...   逗号分隔多状态
+//   assignee=<username>           只看某人的任务
+app.get('/api/production/board', { preHandler: requirePermission('production.readAll') }, async (request) => {
+  const { iterationId, stageType, status, assignee } = request.query || {}
+  const cards = listBoardCards({
+    iterationId,
+    stageType,
+    statusIn: status ? status.split(',').map(s => s.trim()).filter(Boolean) : null,
+    assignee,
+  })
+  return { cards, stages: STAGE_TYPES }
 })
 
 // -------- 启动 --------

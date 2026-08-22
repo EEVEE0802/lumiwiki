@@ -71,6 +71,12 @@ async function main() {
 
   // 试探 10: 全部迭代列表
   await tapd(`/iterations?workspace_id=${workspaceId}&limit=5`, { saveAs: 'D:/tapd-10-iterations-list.json' })
+
+  // 试探 11: 拿所有状态定义（找 status_19 是啥）
+  await tapd(`/workflows/status_map?workspace_id=${workspaceId}&system=story`, { saveAs: 'D:/tapd-11-status-map.json' })
+
+  // 试探 12: 拿"未完成" workspace 总单数量
+  await tapd(`/stories/count?workspace_id=${workspaceId}&name=Lumi`, { saveAs: 'D:/tapd-12-story-count.json' })
 }
 
 main().catch(e => {

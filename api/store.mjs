@@ -22,18 +22,16 @@ const LEGACY_JSON = path.join(DATA_DIR, 'db.json')
 // 未来加权限直接往这个数组加即可，不用改表结构
 export const ALL_PERMISSIONS = [
   { key: 'review.mark', label: '审查标记', description: '在噜咪图鉴审查模式中标记「设计上无初见/订单/故事」' },
-  // ── Phase B 生产管线权限 ──
+  // ── Phase B 生产看板权限（跟 TAPD 子单对齐的 7 个环节）──
   { key: 'production.readAll', label: '生产·查看全部', description: '查看所有噜咪的生产管线状态' },
   { key: 'production.pm', label: '生产·PM', description: 'PM 权限：排期调整、跨环节修改、创建生产总单' },
-  { key: 'production.stage.combat.write', label: '生产·战设', description: '战设环节提交/编辑' },
+  { key: 'production.stage.combat.write', label: '生产·策划设计', description: '策划设计（战设）环节提交/编辑' },
   { key: 'production.stage.concept.write', label: '生产·原画', description: '原画环节提交/编辑' },
   { key: 'production.stage.model.write', label: '生产·模型', description: '模型环节提交/编辑' },
-  { key: 'production.stage.rigging.write', label: '生产·绑定', description: '绑定环节提交/编辑' },
-  { key: 'production.stage.anim.write', label: '生产·动作', description: '动作环节提交/编辑' },
+  { key: 'production.stage.anim.write', label: '生产·动作', description: '动作环节（含绑定）提交/编辑' },
   { key: 'production.stage.vfx.write', label: '生产·特效', description: '特效环节提交/编辑' },
-  { key: 'production.stage.gui.write', label: '生产·GUI/立绘', description: 'GUI/立绘环节提交/编辑' },
-  { key: 'production.stage.audio.write', label: '生产·音效', description: '音效环节提交/编辑' },
-  { key: 'production.stage.config.write', label: '生产·配置', description: '配置环节提交/编辑' },
+  { key: 'production.stage.gui.write', label: '生产·GUI/立绘', description: 'GUI/立绘环节（含音效）提交/编辑' },
+  { key: 'production.stage.config.write', label: '生产·配置', description: '策划配置环节提交/编辑' },
 ]
 
 function ensureDir() {
@@ -114,11 +112,24 @@ CREATE TABLE IF NOT EXISTS production_stages (
   actualEnd TEXT,
   iterationCount INTEGER NOT NULL DEFAULT 0,
   tapdSubStoryId TEXT,
+  tapdIterationId TEXT,
+  tapdRawStatus TEXT,
+  tapdSyncedAt TEXT,
   deliverables TEXT,
   updatedAt TEXT NOT NULL,
   updatedBy TEXT,
   PRIMARY KEY (lumiId, stageType),
   FOREIGN KEY (lumiId) REFERENCES production_orders(lumiId) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS tapd_iterations (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  startdate TEXT,
+  enddate TEXT,
+  milestone TEXT,
+  status TEXT,
+  syncedAt TEXT
 );
 
 CREATE TABLE IF NOT EXISTS production_activity (
@@ -131,6 +142,26 @@ CREATE TABLE IF NOT EXISTS production_activity (
   at TEXT NOT NULL
 );
 `)
+
+// 增量 migration：给已存在的表补新增列（SQLite CREATE TABLE IF NOT EXISTS 不会改现有 schema）
+function ensureColumn(table, column, ddl) {
+  const cols = db.prepare(`PRAGMA table_info(${table})`).all()
+  if (!cols.some(c => c.name === column)) {
+    db.exec(`ALTER TABLE ${table} ADD COLUMN ${ddl}`)
+    console.log(`[migrate] ${table} 加列 ${column}`)
+  }
+}
+ensureColumn('production_stages', 'tapdIterationId', 'tapdIterationId TEXT')
+ensureColumn('production_stages', 'tapdRawStatus', 'tapdRawStatus TEXT')
+ensureColumn('production_stages', 'tapdSyncedAt', 'tapdSyncedAt TEXT')
+
+// 环节从 9 → 7：删掉旧数据里的 rigging / audio
+// （P1 决定：rigging 合入 anim，audio 合入 gui，跟 TAPD 子单对齐）
+{
+  const del = db.prepare(`DELETE FROM production_stages WHERE stageType IN ('rigging', 'audio')`)
+  const r = del.run()
+  if (r.changes > 0) console.log(`[migrate] 删除废弃环节 rigging / audio 记录 ${r.changes} 条`)
+}
 
 // ==================== 一次性迁移：db.json → SQLite ====================
 
