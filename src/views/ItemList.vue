@@ -32,11 +32,33 @@ const QUALITY_COLORS = {
   6: 'linear-gradient(135deg, #FF4081, #E040FB, #7C4DFF)',  // 彩色渐变
 }
 
-const typeOptions = computed(() => [
-  { value: 2, label: '消耗品' },
-  { value: 3, label: '材料' },
-  { value: 4, label: '装备' },
-])
+// Table.ItemType 枚举（__enums__.xlsx）
+const ITEM_TYPE_NAMES = {
+  1: '宠物',
+  2: '材料',
+  3: '货币',
+  4: '家园',
+  5: '碎片',
+  6: '噜咪蛋',
+  7: '建筑',
+  8: 'Token 奖励',
+  9: '徽章',
+  10: '典藏门票',
+  11: '痕迹',
+  12: '角色动作',
+  13: '典藏宝石',
+  14: '星魂',
+  15: '家园主题',
+  21: '头像',
+}
+
+// 只把实际数据里出现过的 type 放进筛选下拉，避免出现"永远筛不到"的死项
+const typeOptions = computed(() => {
+  const present = new Set(items.value.map(i => i.type).filter(t => t != null))
+  return Object.entries(ITEM_TYPE_NAMES)
+    .map(([k, label]) => ({ value: Number(k), label }))
+    .filter(o => present.has(o.value))
+})
 
 const filtered = computed(() => {
   let list = items.value
@@ -105,7 +127,7 @@ const filtered = computed(() => {
                 {{ QUALITY_MAP[item.quality] || item.quality }}
               </span>
             </td>
-            <td>{{ item.type }}</td>
+            <td>{{ ITEM_TYPE_NAMES[item.type] || item.type }}</td>
             <td>{{ item.maxStack }}</td>
             <td class="text-dim">{{ getName(item.des) }}</td>
           </tr>

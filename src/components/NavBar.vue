@@ -7,7 +7,6 @@ import { useAuth } from '../composables/useAuth'
 import LoginModal from './LoginModal.vue'
 
 const router = useRouter()
-const searchQuery = ref('')
 const mobileMenuOpen = ref(false)
 const langMenuOpen = ref(false)
 const userMenuOpen = ref(false)
@@ -35,14 +34,6 @@ const navLinks = [
 
 // 语言切换
 const { currentLang, languages, setLanguage } = useLanguage()
-
-function doSearch() {
-  const q = searchQuery.value.trim()
-  if (q) {
-    router.push({ path: '/lumi', query: { search: q } })
-    searchQuery.value = ''
-  }
-}
 </script>
 
 <template>
@@ -90,16 +81,6 @@ function doSearch() {
             <span v-if="code === currentLang" class="lang-check">✓</span>
           </button>
         </div>
-      </div>
-
-      <!-- 搜索框 -->
-      <div class="nav-search">
-        <input
-          v-model="searchQuery"
-          placeholder="搜索噜咪..."
-          @keyup.enter="doSearch"
-        />
-        <button @click="doSearch">🔍</button>
       </div>
 
       <!-- 登录 / 用户菜单 -->
@@ -222,7 +203,7 @@ function doSearch() {
 .lang-menu {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
+  left: 0;
   background: #16213e;
   border: 1px solid #333;
   border-radius: 8px;
@@ -263,29 +244,6 @@ function doSearch() {
   color: #e94560;
 }
 
-.nav-search {
-  display: flex;
-  gap: 4px;
-}
-.nav-search input {
-  background: #16213e;
-  border: 1px solid #333;
-  border-radius: 6px;
-  padding: 6px 12px;
-  color: #eee;
-  width: 180px;
-  outline: none;
-}
-.nav-search input:focus {
-  border-color: #e94560;
-}
-.nav-search button {
-  background: #e94560;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 10px;
-  cursor: pointer;
-}
 .mobile-toggle {
   display: none;
   background: none;
@@ -392,12 +350,6 @@ function doSearch() {
   .nav-right {
     width: 100%;
     flex-wrap: wrap;
-  }
-  .nav-search { flex: 1; min-width: 200px; }
-  .nav-search input { flex: 1; width: auto; }
-  .lang-menu {
-    right: auto;
-    left: 0;
   }
 }
 </style>
