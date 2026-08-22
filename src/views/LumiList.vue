@@ -452,11 +452,11 @@ const filtered = computed(() => {
           </div>
 
           <!-- 初见 -->
-          <div v-if="getFirstMeetText(lumi.Id) || isMarked(lumi.Id, 'firstMeet')" class="review-section">
+          <div v-if="getFirstMeetText(lumi.Id) || isMarked(lumi.Id, 'firstMeet') || canMark" class="review-section">
             <div class="review-section-title">
               <span>初见</span>
               <button
-                v-if="canMark"
+                v-if="canMark && !getFirstMeetText(lumi.Id)"
                 class="review-mark-btn"
                 :class="{ marked: isMarked(lumi.Id, 'firstMeet') }"
                 :title="isMarked(lumi.Id, 'firstMeet') ? '取消「设计上无此项」标记' : '标记为「设计上无此项」'"
@@ -471,15 +471,16 @@ const filtered = computed(() => {
             <div v-if="getFirstMeetText(lumi.Id)" class="review-section-body">
               {{ getFirstMeetText(lumi.Id) }}
             </div>
-            <div v-else class="review-section-empty">📝 设计上无初见（由 {{ getMark(lumi.Id, 'firstMeet').markedBy }} 标记）</div>
+            <div v-else-if="isMarked(lumi.Id, 'firstMeet')" class="review-section-empty">📝 设计上无初见（由 {{ getMark(lumi.Id, 'firstMeet').markedBy }} 标记）</div>
+            <div v-else class="review-section-empty">📝 暂无初见内容</div>
           </div>
 
           <!-- 订单 -->
-          <div v-if="hasValidContent(getOrderKey(lumi.Id)) || isMarked(lumi.Id, 'order')" class="review-section">
+          <div v-if="hasValidContent(getOrderKey(lumi.Id)) || isMarked(lumi.Id, 'order') || canMark" class="review-section">
             <div class="review-section-title">
               <span>订单</span>
               <button
-                v-if="canMark"
+                v-if="canMark && !hasValidContent(getOrderKey(lumi.Id))"
                 class="review-mark-btn"
                 :class="{ marked: isMarked(lumi.Id, 'order') }"
                 :title="isMarked(lumi.Id, 'order') ? '取消「设计上无此项」标记' : '标记为「设计上无此项」'"
@@ -494,15 +495,16 @@ const filtered = computed(() => {
             <div v-if="hasValidContent(getOrderKey(lumi.Id))" class="review-section-body">
               {{ getLoc(getOrderKey(lumi.Id)) }}
             </div>
-            <div v-else class="review-section-empty">📝 设计上无订单（由 {{ getMark(lumi.Id, 'order').markedBy }} 标记）</div>
+            <div v-else-if="isMarked(lumi.Id, 'order')" class="review-section-empty">📝 设计上无订单（由 {{ getMark(lumi.Id, 'order').markedBy }} 标记）</div>
+            <div v-else class="review-section-empty">📝 暂无订单内容</div>
           </div>
 
           <!-- 故事 -->
-          <div v-if="hasValidContent(lumi.Story) || isMarked(lumi.Id, 'story')" class="review-section">
+          <div v-if="hasValidContent(lumi.Story) || isMarked(lumi.Id, 'story') || canMark" class="review-section">
             <div class="review-section-title">
               <span>故事</span>
               <button
-                v-if="canMark"
+                v-if="canMark && !hasValidContent(lumi.Story)"
                 class="review-mark-btn"
                 :class="{ marked: isMarked(lumi.Id, 'story') }"
                 :title="isMarked(lumi.Id, 'story') ? '取消「设计上无此项」标记' : '标记为「设计上无此项」'"
@@ -517,7 +519,8 @@ const filtered = computed(() => {
             <div v-if="hasValidContent(lumi.Story)" class="review-section-body">
               {{ getLoc(lumi.Story) }}
             </div>
-            <div v-else class="review-section-empty">📝 设计上无故事（由 {{ getMark(lumi.Id, 'story').markedBy }} 标记）</div>
+            <div v-else-if="isMarked(lumi.Id, 'story')" class="review-section-empty">📝 设计上无故事（由 {{ getMark(lumi.Id, 'story').markedBy }} 标记）</div>
+            <div v-else class="review-section-empty">📝 暂无故事内容</div>
           </div>
         </div>
       </div>
