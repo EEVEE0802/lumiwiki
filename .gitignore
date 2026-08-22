@@ -32,6 +32,13 @@ auto-watch.log
 # Sensitive config (contains Bearer Token for game-data-ta)
 scripts/ta-config.json
 
+# API SQLite 数据（内部数据，跟 db.json 一起不进 git）
+api/data/lumiwiki.db
+api/data/lumiwiki.db-shm
+api/data/lumiwiki.db-wal
+api/data/db.json
+api/data/db.json.migrated
+
 # 大文件：天梯/周赛/登录原始 CSV（中间产物，前端用 JSON 即可）
 data/archive/**/*.csv
 data/domestic/archive/**/*.csv

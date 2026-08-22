@@ -1,191 +1,301 @@
-// LumiWiki API 数据存储 —— JSON 文件后端
-// 未来若数据量大或需复杂查询可平替为 SQLite（更换本文件即可，上层 API 不变）
+// LumiWiki API 数据存储 —— SQLite 后端（better-sqlite3，同步 API）
+// 首次启动若发现遗留的 data/db.json，会自动迁移到 SQLite 并把 db.json 重命名为 db.json.migrated
 //
 // 数据模型：
-//   users:            { username, role, isAdmin, createdAt, lastActiveAt }
-//   permissions:      { username -> [permission, ...] }
-//   marks:            { `${lumiId}:${field}` -> { lumiId, field, markedBy, markedAt, comment } }
-//   audit:            [{ id, username, action, target, at }, ...]
+//   users            (username PK, role, isAdmin, createdAt, lastActiveAt)
+//   user_permissions (username, permission)  ── 复合主键
+//   marks            (lumiId, field, markedBy, markedAt, comment) ── 复合主键
+//   audit            (id AUTOINC, username, action, target, at)
+//   production_orders / production_stages / production_activity ── Phase B 加
 
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import Database from 'better-sqlite3'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DATA_DIR = path.join(__dirname, 'data')
-const DB_PATH = path.join(DATA_DIR, 'db.json')
+const DB_PATH = path.join(DATA_DIR, 'lumiwiki.db')
+const LEGACY_JSON = path.join(DATA_DIR, 'db.json')
 
 // 声明当前系统里所有可授权的权限（管理面板据此渲染 checkbox 组）
 // 未来加权限直接往这个数组加即可，不用改表结构
 export const ALL_PERMISSIONS = [
   { key: 'review.mark', label: '审查标记', description: '在噜咪图鉴审查模式中标记「设计上无初见/订单/故事」' },
+  // ── Phase B 生产管线权限 ──
+  { key: 'production.readAll', label: '生产·查看全部', description: '查看所有噜咪的生产管线状态' },
+  { key: 'production.pm', label: '生产·PM', description: 'PM 权限：排期调整、跨环节修改、创建生产总单' },
+  { key: 'production.stage.combat.write', label: '生产·战设', description: '战设环节提交/编辑' },
+  { key: 'production.stage.concept.write', label: '生产·原画', description: '原画环节提交/编辑' },
+  { key: 'production.stage.model.write', label: '生产·模型', description: '模型环节提交/编辑' },
+  { key: 'production.stage.rigging.write', label: '生产·绑定', description: '绑定环节提交/编辑' },
+  { key: 'production.stage.anim.write', label: '生产·动作', description: '动作环节提交/编辑' },
+  { key: 'production.stage.vfx.write', label: '生产·特效', description: '特效环节提交/编辑' },
+  { key: 'production.stage.gui.write', label: '生产·GUI/立绘', description: 'GUI/立绘环节提交/编辑' },
+  { key: 'production.stage.audio.write', label: '生产·音效', description: '音效环节提交/编辑' },
+  { key: 'production.stage.config.write', label: '生产·配置', description: '配置环节提交/编辑' },
 ]
-
-const DEFAULT_DB = {
-  users: {},
-  permissions: {},   // username -> [permission]
-  marks: {},         // `${lumiId}:${field}` -> mark
-  audit: [],
-  auditSeq: 0,
-}
 
 function ensureDir() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true })
 }
 
-let cache = null
+ensureDir()
 
-function load() {
-  if (cache) return cache
-  ensureDir()
-  if (!fs.existsSync(DB_PATH)) {
-    cache = structuredClone(DEFAULT_DB)
-    persist()
-  } else {
-    try {
-      cache = JSON.parse(fs.readFileSync(DB_PATH, 'utf-8'))
-      // 兼容老数据：补齐字段
-      for (const k of Object.keys(DEFAULT_DB)) {
-        if (!(k in cache)) cache[k] = structuredClone(DEFAULT_DB[k])
-      }
-    } catch (e) {
-      console.error('数据库文件损坏，重置为空:', e.message)
-      cache = structuredClone(DEFAULT_DB)
-      persist()
-    }
+const db = new Database(DB_PATH)
+db.pragma('journal_mode = WAL')
+db.pragma('foreign_keys = ON')
+
+// ==================== 表结构 ====================
+
+db.exec(`
+CREATE TABLE IF NOT EXISTS users (
+  username TEXT PRIMARY KEY,
+  role TEXT NOT NULL,
+  isAdmin INTEGER NOT NULL DEFAULT 0,
+  createdAt TEXT NOT NULL,
+  lastActiveAt TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS user_permissions (
+  username TEXT NOT NULL,
+  permission TEXT NOT NULL,
+  PRIMARY KEY (username, permission),
+  FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS marks (
+  lumiId INTEGER NOT NULL,
+  field TEXT NOT NULL,
+  markedBy TEXT NOT NULL,
+  markedAt TEXT NOT NULL,
+  comment TEXT NOT NULL DEFAULT '',
+  PRIMARY KEY (lumiId, field)
+);
+
+CREATE TABLE IF NOT EXISTS audit (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT NOT NULL,
+  action TEXT NOT NULL,
+  target TEXT NOT NULL DEFAULT '',
+  at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS production_orders (
+  lumiId INTEGER PRIMARY KEY,
+  pokedexId INTEGER,
+  name TEXT,
+  type1 INTEGER,
+  type2 INTEGER,
+  maxScore INTEGER,
+  workType TEXT,
+  combatStrength TEXT,
+  workBuilding TEXT,
+  tapdStoryId TEXT,
+  tapdStoryUrl TEXT,
+  milestone TEXT,
+  releaseStatus TEXT,
+  progressStage TEXT,
+  designer TEXT,
+  status TEXT NOT NULL DEFAULT 'planning',
+  createdAt TEXT NOT NULL,
+  updatedAt TEXT NOT NULL,
+  ganttRaw TEXT
+);
+
+CREATE TABLE IF NOT EXISTS production_stages (
+  lumiId INTEGER NOT NULL,
+  stageType TEXT NOT NULL,
+  assignee TEXT,
+  status TEXT NOT NULL DEFAULT 'todo',
+  plannedStart TEXT,
+  plannedEnd TEXT,
+  actualStart TEXT,
+  actualEnd TEXT,
+  iterationCount INTEGER NOT NULL DEFAULT 0,
+  tapdSubStoryId TEXT,
+  deliverables TEXT,
+  updatedAt TEXT NOT NULL,
+  updatedBy TEXT,
+  PRIMARY KEY (lumiId, stageType),
+  FOREIGN KEY (lumiId) REFERENCES production_orders(lumiId) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS production_activity (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  lumiId INTEGER NOT NULL,
+  stageType TEXT,
+  username TEXT NOT NULL,
+  action TEXT NOT NULL,
+  detail TEXT,
+  at TEXT NOT NULL
+);
+`)
+
+// ==================== 一次性迁移：db.json → SQLite ====================
+
+function migrateFromJson() {
+  if (!fs.existsSync(LEGACY_JSON)) return
+  const alreadyHas = db.prepare('SELECT COUNT(*) AS c FROM users').get().c > 0
+  if (alreadyHas) {
+    // 已有数据了但 legacy json 还在，直接改名归档
+    fs.renameSync(LEGACY_JSON, LEGACY_JSON + '.migrated')
+    return
   }
-  return cache
+  console.log('[migrate] 检测到遗留 db.json，一次性迁移到 SQLite...')
+  const raw = JSON.parse(fs.readFileSync(LEGACY_JSON, 'utf-8'))
+  const tx = db.transaction(() => {
+    // users
+    const insU = db.prepare('INSERT INTO users(username, role, isAdmin, createdAt, lastActiveAt) VALUES (?, ?, ?, ?, ?)')
+    for (const u of Object.values(raw.users || {})) {
+      insU.run(u.username, u.role, u.isAdmin ? 1 : 0, u.createdAt, u.lastActiveAt)
+    }
+    // permissions
+    const insP = db.prepare('INSERT INTO user_permissions(username, permission) VALUES (?, ?)')
+    for (const [username, perms] of Object.entries(raw.permissions || {})) {
+      for (const p of perms || []) insP.run(username, p)
+    }
+    // marks
+    const insM = db.prepare('INSERT INTO marks(lumiId, field, markedBy, markedAt, comment) VALUES (?, ?, ?, ?, ?)')
+    for (const m of Object.values(raw.marks || {})) {
+      insM.run(Number(m.lumiId), m.field, m.markedBy, m.markedAt, m.comment || '')
+    }
+    // audit
+    const insA = db.prepare('INSERT INTO audit(id, username, action, target, at) VALUES (?, ?, ?, ?, ?)')
+    for (const a of raw.audit || []) {
+      insA.run(a.id, a.username, a.action, a.target || '', a.at)
+    }
+  })
+  tx()
+  fs.renameSync(LEGACY_JSON, LEGACY_JSON + '.migrated')
+  console.log(`[migrate] 完成：users=${Object.keys(raw.users || {}).length} marks=${Object.keys(raw.marks || {}).length} audit=${(raw.audit || []).length}`)
 }
 
-function persist() {
-  ensureDir()
-  fs.writeFileSync(DB_PATH, JSON.stringify(cache, null, 2), 'utf-8')
-}
+migrateFromJson()
 
 // ==================== users ====================
 
+const stmtGetUser = db.prepare('SELECT username, role, isAdmin, createdAt, lastActiveAt FROM users WHERE username = ?')
+const stmtListUsers = db.prepare('SELECT username, role, isAdmin, createdAt, lastActiveAt FROM users ORDER BY createdAt')
+const stmtInsUser = db.prepare('INSERT INTO users(username, role, isAdmin, createdAt, lastActiveAt) VALUES (?, ?, ?, ?, ?)')
+const stmtTouchUser = db.prepare('UPDATE users SET lastActiveAt = ? WHERE username = ?')
+const stmtUpdRole = db.prepare('UPDATE users SET role = ? WHERE username = ?')
+
+function rowToUser(r) {
+  if (!r) return null
+  return { ...r, isAdmin: !!r.isAdmin }
+}
+
 export function getUser(username) {
-  const db = load()
-  return db.users[username] || null
+  return rowToUser(stmtGetUser.get(username))
 }
 
 export function listUsers() {
-  const db = load()
-  return Object.values(db.users).sort((a, b) => a.createdAt.localeCompare(b.createdAt))
+  return stmtListUsers.all().map(rowToUser)
 }
 
 export function createUser({ username, role, isAdmin = false }) {
-  const db = load()
-  if (db.users[username]) throw new Error('用户名已存在')
   const now = new Date().toISOString()
-  db.users[username] = { username, role, isAdmin: !!isAdmin, createdAt: now, lastActiveAt: now }
-  db.permissions[username] = db.permissions[username] || []
-  persist()
-  return db.users[username]
+  try {
+    stmtInsUser.run(username, role, isAdmin ? 1 : 0, now, now)
+  } catch (e) {
+    if (String(e.message).includes('UNIQUE')) throw new Error('用户名已存在')
+    throw e
+  }
+  return getUser(username)
 }
 
 export function touchUser(username) {
-  const db = load()
-  if (db.users[username]) {
-    db.users[username].lastActiveAt = new Date().toISOString()
-    persist()
-  }
+  stmtTouchUser.run(new Date().toISOString(), username)
 }
 
 export function updateUserRole(username, role) {
-  const db = load()
-  if (!db.users[username]) throw new Error('用户不存在')
-  db.users[username].role = role
-  persist()
-  return db.users[username]
+  const r = stmtUpdRole.run(role, username)
+  if (r.changes === 0) throw new Error('用户不存在')
+  return getUser(username)
 }
 
 // ==================== permissions ====================
 
+const stmtGetPerms = db.prepare('SELECT permission FROM user_permissions WHERE username = ?')
+const stmtDelAllPerms = db.prepare('DELETE FROM user_permissions WHERE username = ?')
+const stmtInsPerm = db.prepare('INSERT OR IGNORE INTO user_permissions(username, permission) VALUES (?, ?)')
+
 export function getUserPermissions(username) {
-  const db = load()
-  return db.permissions[username] || []
+  return stmtGetPerms.all(username).map(r => r.permission)
 }
 
-// 管理员自动拥有所有权限；否则查白名单
 export function hasPermission(username, permission) {
   const user = getUser(username)
   if (!user) return false
   if (user.isAdmin) return true
-  return (load().permissions[username] || []).includes(permission)
+  return getUserPermissions(username).includes(permission)
 }
 
+const setPermsTx = db.transaction((username, permissions) => {
+  stmtDelAllPerms.run(username)
+  for (const p of permissions) stmtInsPerm.run(username, p)
+})
+
 export function setUserPermissions(username, permissions) {
-  const db = load()
-  if (!db.users[username]) throw new Error('用户不存在')
-  // 只允许授予声明过的权限
+  if (!getUser(username)) throw new Error('用户不存在')
   const valid = new Set(ALL_PERMISSIONS.map(p => p.key))
-  db.permissions[username] = [...new Set(permissions.filter(p => valid.has(p)))]
-  persist()
-  return db.permissions[username]
+  const filtered = [...new Set((permissions || []).filter(p => valid.has(p)))]
+  setPermsTx(username, filtered)
+  return filtered
 }
 
 // ==================== marks ====================
 
+const stmtListMarks = db.prepare('SELECT lumiId, field, markedBy, markedAt, comment FROM marks')
+const stmtUpsertMark = db.prepare(`
+  INSERT INTO marks(lumiId, field, markedBy, markedAt, comment)
+  VALUES (?, ?, ?, ?, ?)
+  ON CONFLICT(lumiId, field) DO UPDATE SET markedBy=excluded.markedBy, markedAt=excluded.markedAt, comment=excluded.comment
+`)
+const stmtDelMark = db.prepare('DELETE FROM marks WHERE lumiId = ? AND field = ?')
+
 export function listMarks() {
-  return Object.values(load().marks)
+  return stmtListMarks.all()
 }
 
 export function upsertMark({ lumiId, field, markedBy, comment }) {
-  const db = load()
-  const key = `${lumiId}:${field}`
-  db.marks[key] = {
-    lumiId: Number(lumiId),
-    field,
-    markedBy,
-    markedAt: new Date().toISOString(),
-    comment: comment || '',
-  }
-  persist()
-  return db.marks[key]
+  const now = new Date().toISOString()
+  stmtUpsertMark.run(Number(lumiId), field, markedBy, now, comment || '')
+  return { lumiId: Number(lumiId), field, markedBy, markedAt: now, comment: comment || '' }
 }
 
 export function deleteMark({ lumiId, field }) {
-  const db = load()
-  const key = `${lumiId}:${field}`
-  const existed = !!db.marks[key]
-  delete db.marks[key]
-  if (existed) persist()
-  return existed
+  const r = stmtDelMark.run(Number(lumiId), field)
+  return r.changes > 0
 }
 
 // ==================== audit ====================
 
+const stmtInsAudit = db.prepare('INSERT INTO audit(username, action, target, at) VALUES (?, ?, ?, ?)')
+const stmtCountAudit = db.prepare('SELECT COUNT(*) AS c FROM audit')
+const stmtListAudit = db.prepare('SELECT id, username, action, target, at FROM audit ORDER BY id DESC LIMIT ? OFFSET ?')
+
 export function appendAudit({ username, action, target }) {
-  const db = load()
-  db.auditSeq = (db.auditSeq || 0) + 1
-  db.audit.push({
-    id: db.auditSeq,
-    username,
-    action,
-    target: target || '',
-    at: new Date().toISOString(),
-  })
-  persist()
+  stmtInsAudit.run(username, action, target || '', new Date().toISOString())
 }
 
 export function listAudit({ limit = 100, offset = 0 } = {}) {
-  const db = load()
-  // 逆序（最新在前）
-  const total = db.audit.length
-  const items = db.audit.slice().reverse().slice(offset, offset + limit)
+  const total = stmtCountAudit.get().c
+  const items = stmtListAudit.all(limit, offset)
   return { items, total }
 }
 
 // ==================== 初始化：确保管理员 EEVEE 存在 ====================
 
 export function ensureBootstrap() {
-  const db = load()
-  if (!db.users['EEVEE']) {
+  if (!getUser('EEVEE')) {
     console.log('[bootstrap] 创建管理员账号 EEVEE / 策划')
     createUser({ username: 'EEVEE', role: '策划', isAdmin: true })
-    // 管理员天然有所有权限，但也显式授一份便于 UI 展示
     setUserPermissions('EEVEE', ALL_PERMISSIONS.map(p => p.key))
     appendAudit({ username: 'system', action: 'bootstrap', target: 'EEVEE' })
   }
 }
+
+// ==================== 导出底层 db 给 Phase B 生产模块用 ====================
+export { db as sqliteDb }
