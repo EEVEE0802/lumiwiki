@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-22T05:24:28.658Z",
+  "updateTime": "2026-08-22T11:26:02.728Z",
   "weeks": [
     1,
     2,
@@ -285,7 +285,7 @@
             "lumiName": "Charwyn",
             "topSkill": {
               "skillId": 9005,
-              "count": 518
+              "count": 530
             }
           },
           {
@@ -293,7 +293,7 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 723
+              "count": 734
             }
           },
           {
@@ -301,16 +301,16 @@
             "lumiName": "Gambir - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 1048
+              "count": 1060
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 715
+          "count": 727
         },
-        "battles": 1055,
-        "wins": 702,
+        "battles": 1067,
+        "wins": 710,
         "winRate": "66.54",
         "tags": [
           "most-used"
@@ -371,7 +371,7 @@
             "lumiName": "Charwyn",
             "topSkill": {
               "skillId": 9005,
-              "count": 499
+              "count": 515
             }
           },
           {
@@ -379,7 +379,7 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 606
+              "count": 622
             }
           },
           {
@@ -387,17 +387,17 @@
             "lumiName": "Gambir",
             "topSkill": {
               "skillId": 7004,
-              "count": 928
+              "count": 944
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 760
+          "count": 776
         },
-        "battles": 1020,
-        "wins": 629,
-        "winRate": "61.67",
+        "battles": 1036,
+        "wins": 641,
+        "winRate": "61.87",
         "tags": [
           "other"
         ]
@@ -416,7 +416,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 518
+              "count": 530
             }
           },
           {
@@ -424,7 +424,7 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 723
+              "count": 734
             }
           },
           {
@@ -432,16 +432,16 @@
             "lumiName": "Gambir - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 1048
+              "count": 1060
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 715
+          "count": 727
         },
-        "battles": 1055,
-        "wins": 702,
+        "battles": 1067,
+        "wins": 710,
         "winRate": "66.54",
         "tags": [
           "most-used"
@@ -502,7 +502,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 499
+              "count": 515
             }
           },
           {
@@ -510,7 +510,7 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 606
+              "count": 622
             }
           },
           {
@@ -518,17 +518,17 @@
             "lumiName": "Gambir",
             "topSkill": {
               "skillId": 7004,
-              "count": 928
+              "count": 944
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 760
+          "count": 776
         },
-        "battles": 1020,
-        "wins": 629,
-        "winRate": "61.67",
+        "battles": 1036,
+        "wins": 641,
+        "winRate": "61.87",
         "tags": [
           "other"
         ]
@@ -633,7 +633,7 @@
             "lumiName": "Zoricate",
             "topSkill": {
               "skillId": 12002,
-              "count": 82
+              "count": 83
             }
           },
           {
@@ -641,7 +641,7 @@
             "lumiName": "Flamblades",
             "topSkill": {
               "skillId": 15002,
-              "count": 105
+              "count": 106
             }
           },
           {
@@ -649,17 +649,17 @@
             "lumiName": "Jellistel",
             "topSkill": {
               "skillId": 14003,
-              "count": 152
+              "count": 153
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 166
+          "count": 167
         },
-        "battles": 195,
+        "battles": 196,
         "wins": 82,
-        "winRate": "42.05",
+        "winRate": "41.84",
         "tags": [
           "other"
         ]
@@ -1472,7 +1472,7 @@
             "lumiName": "Flamblades",
             "topSkill": {
               "skillId": 15004,
-              "count": 155
+              "count": 157
             }
           },
           {
@@ -1480,17 +1480,17 @@
             "lumiName": "Assaccino",
             "topSkill": {
               "skillId": 15003,
-              "count": 157
+              "count": 159
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 144
+          "count": 145
         },
-        "battles": 162,
+        "battles": 164,
         "wins": 68,
-        "winRate": "41.98",
+        "winRate": "41.46",
         "tags": [
           "most-used"
         ]
@@ -1671,9 +1671,9 @@
       },
       {
         "teamLumiIds": [
+          "101701",
           "102404",
-          "114901",
-          "118201"
+          "111201"
         ],
         "lumis": [
           {
@@ -1681,33 +1681,33 @@
             "lumiName": "Lycanite - Variant",
             "topSkill": {
               "skillId": 15001,
-              "count": 4
+              "count": 6
             }
           },
           {
-            "lumiId": "114901",
-            "lumiName": "Radibun",
+            "lumiId": "101701",
+            "lumiName": "Charigon",
             "topSkill": {
-              "skillId": 10004,
-              "count": 4
+              "skillId": 9006,
+              "count": 6
             }
           },
           {
-            "lumiId": "118201",
-            "lumiName": "Puncheroo",
+            "lumiId": "111201",
+            "lumiName": "Floragon",
             "topSkill": {
-              "skillId": 12001,
-              "count": 4
+              "skillId": 9006,
+              "count": 6
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 4
+          "count": 6
         },
-        "battles": 4,
+        "battles": 6,
         "wins": 2,
-        "winRate": "50.00",
+        "winRate": "33.33",
         "tags": [
           "other"
         ]
@@ -1890,9 +1890,9 @@
       },
       {
         "teamLumiIds": [
-          "101701",
           "102602",
-          "138301"
+          "103704",
+          "116001"
         ],
         "lumis": [
           {
@@ -1900,32 +1900,32 @@
             "lumiName": "Cyclodoge",
             "topSkill": {
               "skillId": 6002,
-              "count": 8
+              "count": 7
             }
           },
           {
-            "lumiId": "101701",
-            "lumiName": "Charigon",
+            "lumiId": "103704",
+            "lumiName": "Screamhog - Variant",
             "topSkill": {
-              "skillId": 9002,
-              "count": 8
+              "skillId": 6003,
+              "count": 7
             }
           },
           {
-            "lumiId": "138301",
-            "lumiName": "Clawrret",
+            "lumiId": "116001",
+            "lumiName": "Otterknight",
             "topSkill": {
-              "skillId": 6002,
-              "count": 8
+              "skillId": 6004,
+              "count": 7
             }
           }
         ],
         "topTrainerSkill": {
-          "trainerId": 2,
+          "trainerId": 1,
           "count": 7
         },
-        "battles": 8,
-        "wins": 8,
+        "battles": 7,
+        "wins": 7,
         "winRate": "100.00",
         "tags": [
           "highest-winrate"
@@ -2336,7 +2336,7 @@
             "lumiName": "Jellibow",
             "topSkill": {
               "skillId": 14003,
-              "count": 174
+              "count": 175
             }
           },
           {
@@ -2344,7 +2344,7 @@
             "lumiName": "Flamblades",
             "topSkill": {
               "skillId": 15002,
-              "count": 128
+              "count": 129
             }
           },
           {
@@ -2352,17 +2352,17 @@
             "lumiName": "Zoryx",
             "topSkill": {
               "skillId": 12002,
-              "count": 105
+              "count": 106
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 189
+          "count": 190
         },
-        "battles": 218,
+        "battles": 219,
         "wins": 91,
-        "winRate": "41.74",
+        "winRate": "41.55",
         "tags": [
           "other"
         ]
@@ -3306,7 +3306,7 @@
             "lumiName": "Flamblades",
             "topSkill": {
               "skillId": 15004,
-              "count": 155
+              "count": 157
             }
           },
           {
@@ -3314,17 +3314,17 @@
             "lumiName": "Assaccino",
             "topSkill": {
               "skillId": 15003,
-              "count": 157
+              "count": 159
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 144
+          "count": 145
         },
-        "battles": 162,
+        "battles": 164,
         "wins": 68,
-        "winRate": "41.98",
+        "winRate": "41.46",
         "tags": [
           "most-used"
         ]
@@ -5547,11 +5547,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 303
+          "count": 306
         },
-        "battles": 319,
-        "wins": 168,
-        "winRate": "52.66",
+        "battles": 322,
+        "wins": 170,
+        "winRate": "52.80",
         "tags": [
           "most-used"
         ]
@@ -5918,7 +5918,7 @@
             "lumiName": "Gryling",
             "topSkill": {
               "skillId": 9005,
-              "count": 723
+              "count": 734
             }
           },
           {
@@ -5926,7 +5926,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 508
+              "count": 520
             }
           },
           {
@@ -5934,16 +5934,16 @@
             "lumiName": "Gambir - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 1040
+              "count": 1052
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 709
+          "count": 721
         },
-        "battles": 1047,
-        "wins": 703,
+        "battles": 1059,
+        "wins": 711,
         "winRate": "67.14",
         "tags": [
           "most-used"
@@ -6004,7 +6004,7 @@
             "lumiName": "Gryling",
             "topSkill": {
               "skillId": 9005,
-              "count": 610
+              "count": 626
             }
           },
           {
@@ -6012,7 +6012,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 499
+              "count": 515
             }
           },
           {
@@ -6020,17 +6020,17 @@
             "lumiName": "Gambir",
             "topSkill": {
               "skillId": 7004,
-              "count": 937
+              "count": 953
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 766
+          "count": 782
         },
-        "battles": 1029,
-        "wins": 635,
-        "winRate": "61.71",
+        "battles": 1045,
+        "wins": 647,
+        "winRate": "61.91",
         "tags": [
           "other"
         ]
@@ -6049,7 +6049,7 @@
             "lumiName": "Gryrion",
             "topSkill": {
               "skillId": 9005,
-              "count": 723
+              "count": 734
             }
           },
           {
@@ -6057,7 +6057,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 508
+              "count": 520
             }
           },
           {
@@ -6065,16 +6065,16 @@
             "lumiName": "Gambir - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 1040
+              "count": 1052
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 709
+          "count": 721
         },
-        "battles": 1047,
-        "wins": 703,
+        "battles": 1059,
+        "wins": 711,
         "winRate": "67.14",
         "tags": [
           "most-used"
@@ -6135,7 +6135,7 @@
             "lumiName": "Gryrion",
             "topSkill": {
               "skillId": 9005,
-              "count": 610
+              "count": 626
             }
           },
           {
@@ -6143,7 +6143,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 499
+              "count": 515
             }
           },
           {
@@ -6151,17 +6151,17 @@
             "lumiName": "Gambir",
             "topSkill": {
               "skillId": 7004,
-              "count": 937
+              "count": 953
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 766
+          "count": 782
         },
-        "battles": 1029,
-        "wins": 635,
-        "winRate": "61.71",
+        "battles": 1045,
+        "wins": 647,
+        "winRate": "61.91",
         "tags": [
           "other"
         ]
@@ -6704,7 +6704,7 @@
             "lumiName": "Charlet",
             "topSkill": {
               "skillId": 9005,
-              "count": 518
+              "count": 530
             }
           },
           {
@@ -6712,7 +6712,7 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 723
+              "count": 734
             }
           },
           {
@@ -6720,16 +6720,16 @@
             "lumiName": "Gambir - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 1048
+              "count": 1060
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 715
+          "count": 727
         },
-        "battles": 1055,
-        "wins": 702,
+        "battles": 1067,
+        "wins": 710,
         "winRate": "66.54",
         "tags": [
           "most-used"
@@ -6790,7 +6790,7 @@
             "lumiName": "Charlet",
             "topSkill": {
               "skillId": 9005,
-              "count": 499
+              "count": 515
             }
           },
           {
@@ -6798,7 +6798,7 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 606
+              "count": 622
             }
           },
           {
@@ -6806,17 +6806,17 @@
             "lumiName": "Gambir",
             "topSkill": {
               "skillId": 7004,
-              "count": 928
+              "count": 944
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 760
+          "count": 776
         },
-        "battles": 1020,
-        "wins": 629,
-        "winRate": "61.67",
+        "battles": 1036,
+        "wins": 641,
+        "winRate": "61.87",
         "tags": [
           "other"
         ]
@@ -7271,7 +7271,7 @@
             "lumiName": "Zorrat",
             "topSkill": {
               "skillId": 12002,
-              "count": 82
+              "count": 83
             }
           },
           {
@@ -7279,7 +7279,7 @@
             "lumiName": "Flamblades",
             "topSkill": {
               "skillId": 15002,
-              "count": 105
+              "count": 106
             }
           },
           {
@@ -7287,17 +7287,17 @@
             "lumiName": "Jellistel",
             "topSkill": {
               "skillId": 14003,
-              "count": 152
+              "count": 153
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 166
+          "count": 167
         },
-        "battles": 195,
+        "battles": 196,
         "wins": 82,
-        "winRate": "42.05",
+        "winRate": "41.84",
         "tags": [
           "other"
         ]
@@ -7402,7 +7402,7 @@
             "lumiName": "Jellibae",
             "topSkill": {
               "skillId": 14003,
-              "count": 174
+              "count": 175
             }
           },
           {
@@ -7410,7 +7410,7 @@
             "lumiName": "Flamblades",
             "topSkill": {
               "skillId": 15002,
-              "count": 128
+              "count": 129
             }
           },
           {
@@ -7418,17 +7418,17 @@
             "lumiName": "Zoryx",
             "topSkill": {
               "skillId": 12002,
-              "count": 105
+              "count": 106
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 189
+          "count": 190
         },
-        "battles": 218,
+        "battles": 219,
         "wins": 91,
-        "winRate": "41.74",
+        "winRate": "41.55",
         "tags": [
           "other"
         ]
@@ -8057,7 +8057,7 @@
             "lumiName": "Zoryx",
             "topSkill": {
               "skillId": 12002,
-              "count": 82
+              "count": 83
             }
           },
           {
@@ -8065,7 +8065,7 @@
             "lumiName": "Flamblades",
             "topSkill": {
               "skillId": 15002,
-              "count": 105
+              "count": 106
             }
           },
           {
@@ -8073,17 +8073,17 @@
             "lumiName": "Jellistel",
             "topSkill": {
               "skillId": 14003,
-              "count": 152
+              "count": 153
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 166
+          "count": 167
         },
-        "battles": 195,
+        "battles": 196,
         "wins": 82,
-        "winRate": "42.05",
+        "winRate": "41.84",
         "tags": [
           "other"
         ]
@@ -8188,7 +8188,7 @@
             "lumiName": "Jellistel",
             "topSkill": {
               "skillId": 14003,
-              "count": 174
+              "count": 175
             }
           },
           {
@@ -8196,7 +8196,7 @@
             "lumiName": "Flamblades",
             "topSkill": {
               "skillId": 15002,
-              "count": 128
+              "count": 129
             }
           },
           {
@@ -8204,17 +8204,17 @@
             "lumiName": "Zoryx",
             "topSkill": {
               "skillId": 12002,
-              "count": 105
+              "count": 106
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 189
+          "count": 190
         },
-        "battles": 218,
+        "battles": 219,
         "wins": 91,
-        "winRate": "41.74",
+        "winRate": "41.55",
         "tags": [
           "other"
         ]
@@ -9281,7 +9281,7 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 723
+              "count": 734
             }
           },
           {
@@ -9289,7 +9289,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 508
+              "count": 520
             }
           },
           {
@@ -9297,16 +9297,16 @@
             "lumiName": "Gambir - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 1040
+              "count": 1052
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 709
+          "count": 721
         },
-        "battles": 1047,
-        "wins": 703,
+        "battles": 1059,
+        "wins": 711,
         "winRate": "67.14",
         "tags": [
           "most-used"
@@ -9367,7 +9367,7 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 610
+              "count": 626
             }
           },
           {
@@ -9375,7 +9375,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 499
+              "count": 515
             }
           },
           {
@@ -9383,17 +9383,17 @@
             "lumiName": "Gambir",
             "topSkill": {
               "skillId": 7004,
-              "count": 937
+              "count": 953
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 766
+          "count": 782
         },
-        "battles": 1029,
-        "wins": 635,
-        "winRate": "61.71",
+        "battles": 1045,
+        "wins": 647,
+        "winRate": "61.91",
         "tags": [
           "other"
         ]
@@ -9805,7 +9805,7 @@
             "lumiName": "Gambir",
             "topSkill": {
               "skillId": 7004,
-              "count": 928
+              "count": 944
             }
           },
           {
@@ -9813,7 +9813,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 499
+              "count": 515
             }
           },
           {
@@ -9821,17 +9821,17 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 606
+              "count": 622
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 760
+          "count": 776
         },
-        "battles": 1020,
-        "wins": 629,
-        "winRate": "61.67",
+        "battles": 1036,
+        "wins": 641,
+        "winRate": "61.87",
         "tags": [
           "most-used"
         ]
@@ -9848,7 +9848,7 @@
             "lumiName": "Gambir",
             "topSkill": {
               "skillId": 7004,
-              "count": 928
+              "count": 944
             }
           },
           {
@@ -9856,7 +9856,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 499
+              "count": 515
             }
           },
           {
@@ -9864,17 +9864,17 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 606
+              "count": 622
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 760
+          "count": 776
         },
-        "battles": 1020,
-        "wins": 629,
-        "winRate": "61.67",
+        "battles": 1036,
+        "wins": 641,
+        "winRate": "61.87",
         "tags": [
           "highest-winrate"
         ]
@@ -9936,7 +9936,7 @@
             "lumiName": "Gambir - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 1032
+              "count": 1044
             }
           },
           {
@@ -9944,7 +9944,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 507
+              "count": 519
             }
           },
           {
@@ -9952,16 +9952,16 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 721
+              "count": 732
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 705
+          "count": 717
         },
-        "battles": 1039,
-        "wins": 697,
+        "battles": 1051,
+        "wins": 705,
         "winRate": "67.08",
         "tags": [
           "most-used"
@@ -9979,7 +9979,7 @@
             "lumiName": "Gambir - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 1032
+              "count": 1044
             }
           },
           {
@@ -9987,7 +9987,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9005,
-              "count": 507
+              "count": 519
             }
           },
           {
@@ -9995,16 +9995,16 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 721
+              "count": 732
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 705
+          "count": 717
         },
-        "battles": 1039,
-        "wins": 697,
+        "battles": 1051,
+        "wins": 705,
         "winRate": "67.08",
         "tags": [
           "highest-winrate"
@@ -10038,17 +10038,17 @@
             "lumiName": "Rochelon",
             "topSkill": {
               "skillId": 9004,
-              "count": 47
+              "count": 48
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 31
+          "count": 32
         },
-        "battles": 55,
+        "battles": 56,
         "wins": 33,
-        "winRate": "60.00",
+        "winRate": "58.93",
         "tags": [
           "other"
         ]
@@ -10132,11 +10132,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 66
+          "count": 67
         },
-        "battles": 68,
-        "wins": 55,
-        "winRate": "80.88",
+        "battles": 69,
+        "wins": 56,
+        "winRate": "81.16",
         "tags": [
           "highest-winrate"
         ]
@@ -10161,7 +10161,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9001,
-              "count": 90
+              "count": 92
             }
           },
           {
@@ -10175,11 +10175,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 301
+          "count": 304
         },
-        "battles": 315,
-        "wins": 166,
-        "winRate": "52.70",
+        "battles": 318,
+        "wins": 168,
+        "winRate": "52.83",
         "tags": [
           "other"
         ]
@@ -10329,7 +10329,7 @@
             "lumiName": "Jolkat",
             "topSkill": {
               "skillId": 5004,
-              "count": 52
+              "count": 54
             }
           },
           {
@@ -10337,7 +10337,7 @@
             "lumiName": "Unicorn",
             "topSkill": {
               "skillId": 13003,
-              "count": 61
+              "count": 63
             }
           },
           {
@@ -10345,7 +10345,7 @@
             "lumiName": "Pincock - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 48
+              "count": 50
             }
           }
         ],
@@ -10353,9 +10353,9 @@
           "trainerId": 1,
           "count": 19
         },
-        "battles": 61,
-        "wins": 40,
-        "winRate": "65.57",
+        "battles": 63,
+        "wins": 41,
+        "winRate": "65.08",
         "tags": [
           "most-used"
         ]
@@ -10372,7 +10372,7 @@
             "lumiName": "Jolkat",
             "topSkill": {
               "skillId": 5004,
-              "count": 52
+              "count": 54
             }
           },
           {
@@ -10380,7 +10380,7 @@
             "lumiName": "Unicorn",
             "topSkill": {
               "skillId": 13003,
-              "count": 61
+              "count": 63
             }
           },
           {
@@ -10388,7 +10388,7 @@
             "lumiName": "Pincock - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 48
+              "count": 50
             }
           }
         ],
@@ -10396,9 +10396,9 @@
           "trainerId": 1,
           "count": 19
         },
-        "battles": 61,
-        "wins": 40,
-        "winRate": "65.57",
+        "battles": 63,
+        "wins": 41,
+        "winRate": "65.08",
         "tags": [
           "highest-winrate"
         ]
@@ -10591,7 +10591,7 @@
             "lumiName": "Geniphant",
             "topSkill": {
               "skillId": 13002,
-              "count": 50
+              "count": 52
             }
           },
           {
@@ -10599,7 +10599,7 @@
             "lumiName": "Unicorn",
             "topSkill": {
               "skillId": 13003,
-              "count": 47
+              "count": 49
             }
           },
           {
@@ -10607,17 +10607,17 @@
             "lumiName": "Fistune",
             "topSkill": {
               "skillId": 14005,
-              "count": 103
+              "count": 105
             }
           }
         ],
         "topTrainerSkill": {
-          "trainerId": 1,
-          "count": 51
+          "trainerId": 2,
+          "count": 53
         },
-        "battles": 107,
+        "battles": 109,
         "wins": 64,
-        "winRate": "59.81",
+        "winRate": "58.72",
         "tags": [
           "most-used"
         ]
@@ -10744,11 +10744,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 303
+          "count": 306
         },
-        "battles": 319,
-        "wins": 168,
-        "winRate": "52.66",
+        "battles": 322,
+        "wins": 170,
+        "winRate": "52.80",
         "tags": [
           "most-used"
         ]
@@ -11442,11 +11442,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 66
+          "count": 67
         },
-        "battles": 68,
-        "wins": 55,
-        "winRate": "80.88",
+        "battles": 69,
+        "wins": 56,
+        "winRate": "81.16",
         "tags": [
           "highest-winrate"
         ]
@@ -11471,7 +11471,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9001,
-              "count": 90
+              "count": 92
             }
           },
           {
@@ -11485,11 +11485,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 301
+          "count": 304
         },
-        "battles": 315,
-        "wins": 166,
-        "winRate": "52.70",
+        "battles": 318,
+        "wins": 168,
+        "winRate": "52.83",
         "tags": [
           "other"
         ]
@@ -13026,7 +13026,7 @@
             "lumiName": "Seabud",
             "topSkill": {
               "skillId": 2004,
-              "count": 109
+              "count": 110
             }
           },
           {
@@ -13048,11 +13048,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 120
+          "count": 121
         },
-        "battles": 121,
+        "battles": 122,
         "wins": 72,
-        "winRate": "59.50",
+        "winRate": "59.02",
         "tags": [
           "other"
         ]
@@ -14074,7 +14074,7 @@
             "lumiName": "Radibun - Variant",
             "topSkill": {
               "skillId": 1003,
-              "count": 16
+              "count": 17
             }
           },
           {
@@ -14082,7 +14082,7 @@
             "lumiName": "Stealbat",
             "topSkill": {
               "skillId": 7003,
-              "count": 19
+              "count": 20
             }
           },
           {
@@ -14090,17 +14090,17 @@
             "lumiName": "Shadowbun",
             "topSkill": {
               "skillId": 12004,
-              "count": 20
+              "count": 21
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 2,
-          "count": 8
+          "count": 9
         },
-        "battles": 21,
-        "wins": 13,
-        "winRate": "61.90",
+        "battles": 22,
+        "wins": 14,
+        "winRate": "63.64",
         "tags": [
           "other"
         ]
@@ -15429,7 +15429,7 @@
             "lumiName": "Otterknight",
             "topSkill": {
               "skillId": 1003,
-              "count": 75
+              "count": 88
             }
           },
           {
@@ -15445,60 +15445,60 @@
             "lumiName": "Puncheroo - Variant",
             "topSkill": {
               "skillId": 12003,
-              "count": 102
+              "count": 114
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 57
+          "count": 63
         },
-        "battles": 111,
-        "wins": 89,
-        "winRate": "80.18",
+        "battles": 124,
+        "wins": 99,
+        "winRate": "79.84",
         "tags": [
           "most-used"
         ]
       },
       {
         "teamLumiIds": [
-          "107001",
-          "116001",
-          "120904"
+          "102101",
+          "113901",
+          "116001"
         ],
         "lumis": [
           {
             "lumiId": "116001",
             "lumiName": "Otterknight",
             "topSkill": {
-              "skillId": 1003,
-              "count": 12
+              "skillId": 15004,
+              "count": 47
             }
           },
           {
-            "lumiId": "107001",
-            "lumiName": "Psykat",
+            "lumiId": "102101",
+            "lumiName": "Rainbowdeer",
             "topSkill": {
-              "skillId": 13003,
-              "count": 12
+              "skillId": 10005,
+              "count": 74
             }
           },
           {
-            "lumiId": "120904",
-            "lumiName": "Bloom - Variant",
+            "lumiId": "113901",
+            "lumiName": "Meteofly",
             "topSkill": {
-              "skillId": 4003,
-              "count": 12
+              "skillId": 13002,
+              "count": 74
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 12
+          "count": 74
         },
-        "battles": 12,
-        "wins": 12,
-        "winRate": "100.00",
+        "battles": 74,
+        "wins": 69,
+        "winRate": "93.24",
         "tags": [
           "highest-winrate"
         ]
@@ -16084,7 +16084,7 @@
             "lumiName": "Puncheroo - Variant",
             "topSkill": {
               "skillId": 12003,
-              "count": 102
+              "count": 114
             }
           },
           {
@@ -16100,17 +16100,17 @@
             "lumiName": "Otterknight",
             "topSkill": {
               "skillId": 1003,
-              "count": 75
+              "count": 88
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 57
+          "count": 63
         },
-        "battles": 111,
-        "wins": 89,
-        "winRate": "80.18",
+        "battles": 124,
+        "wins": 99,
+        "winRate": "79.84",
         "tags": [
           "most-used"
         ]
@@ -16237,11 +16237,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 303
+          "count": 306
         },
-        "battles": 319,
-        "wins": 168,
-        "winRate": "52.66",
+        "battles": 322,
+        "wins": 170,
+        "winRate": "52.80",
         "tags": [
           "most-used"
         ]
@@ -16411,11 +16411,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 66
+          "count": 67
         },
-        "battles": 68,
-        "wins": 55,
-        "winRate": "80.88",
+        "battles": 69,
+        "wins": 56,
+        "winRate": "81.16",
         "tags": [
           "highest-winrate"
         ]
@@ -16440,7 +16440,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9001,
-              "count": 90
+              "count": 92
             }
           },
           {
@@ -16454,11 +16454,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 301
+          "count": 304
         },
-        "battles": 315,
-        "wins": 166,
-        "winRate": "52.70",
+        "battles": 318,
+        "wins": 168,
+        "winRate": "52.83",
         "tags": [
           "other"
         ]
@@ -16694,7 +16694,7 @@
             "lumiName": "Aequor",
             "topSkill": {
               "skillId": 2004,
-              "count": 109
+              "count": 110
             }
           },
           {
@@ -16716,11 +16716,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 120
+          "count": 121
         },
-        "battles": 121,
+        "battles": 122,
         "wins": 72,
-        "winRate": "59.50",
+        "winRate": "59.02",
         "tags": [
           "other"
         ]
@@ -16825,7 +16825,7 @@
             "lumiName": "Clionia",
             "topSkill": {
               "skillId": 2004,
-              "count": 109
+              "count": 110
             }
           },
           {
@@ -16847,11 +16847,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 120
+          "count": 121
         },
-        "battles": 121,
+        "battles": 122,
         "wins": 72,
-        "winRate": "59.50",
+        "winRate": "59.02",
         "tags": [
           "other"
         ]
@@ -17394,7 +17394,7 @@
             "lumiName": "Assaccino",
             "topSkill": {
               "skillId": 15003,
-              "count": 157
+              "count": 159
             }
           },
           {
@@ -17410,17 +17410,17 @@
             "lumiName": "Flamblades",
             "topSkill": {
               "skillId": 15004,
-              "count": 155
+              "count": 157
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 144
+          "count": 145
         },
-        "battles": 162,
+        "battles": 164,
         "wins": 68,
-        "winRate": "41.98",
+        "winRate": "41.46",
         "tags": [
           "most-used"
         ]
@@ -18790,7 +18790,7 @@
             "lumiName": "Petrokat",
             "topSkill": {
               "skillId": 6002,
-              "count": 46
+              "count": 48
             }
           },
           {
@@ -18798,7 +18798,7 @@
             "lumiName": "Psykat",
             "topSkill": {
               "skillId": 13003,
-              "count": 53
+              "count": 55
             }
           },
           {
@@ -18806,17 +18806,17 @@
             "lumiName": "Otterknight",
             "topSkill": {
               "skillId": 6004,
-              "count": 34
+              "count": 36
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 59
+          "count": 62
         },
-        "battles": 71,
-        "wins": 49,
-        "winRate": "69.01",
+        "battles": 74,
+        "wins": 52,
+        "winRate": "70.27",
         "tags": [
           "other"
         ]
@@ -19314,7 +19314,7 @@
             "lumiName": "Inkspire",
             "topSkill": {
               "skillId": 13003,
-              "count": 22
+              "count": 23
             }
           },
           {
@@ -19322,7 +19322,7 @@
             "lumiName": "Radibun",
             "topSkill": {
               "skillId": 10005,
-              "count": 18
+              "count": 19
             }
           },
           {
@@ -19330,17 +19330,17 @@
             "lumiName": "Shadowbun",
             "topSkill": {
               "skillId": 12004,
-              "count": 25
+              "count": 26
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 22
+          "count": 23
         },
-        "battles": 25,
-        "wins": 14,
-        "winRate": "56.00",
+        "battles": 26,
+        "wins": 15,
+        "winRate": "57.69",
         "tags": [
           "other"
         ]
@@ -19899,7 +19899,7 @@
             "lumiName": "Regaffin",
             "topSkill": {
               "skillId": 9005,
-              "count": 46
+              "count": 47
             }
           }
         ],
@@ -19907,9 +19907,9 @@
           "trainerId": 1,
           "count": 24
         },
-        "battles": 65,
-        "wins": 45,
-        "winRate": "69.23",
+        "battles": 66,
+        "wins": 46,
+        "winRate": "69.70",
         "tags": [
           "most-used"
         ]
@@ -19969,7 +19969,7 @@
             "lumiName": "Pincock - Variant",
             "topSkill": {
               "skillId": 7004,
-              "count": 48
+              "count": 50
             }
           },
           {
@@ -19977,7 +19977,7 @@
             "lumiName": "Unicorn",
             "topSkill": {
               "skillId": 13003,
-              "count": 61
+              "count": 63
             }
           },
           {
@@ -19985,7 +19985,7 @@
             "lumiName": "Jolkat",
             "topSkill": {
               "skillId": 5004,
-              "count": 52
+              "count": 54
             }
           }
         ],
@@ -19993,9 +19993,9 @@
           "trainerId": 1,
           "count": 19
         },
-        "battles": 61,
-        "wins": 40,
-        "winRate": "65.57",
+        "battles": 63,
+        "wins": 41,
+        "winRate": "65.08",
         "tags": [
           "other"
         ]
@@ -20763,7 +20763,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9002,
-              "count": 36
+              "count": 37
             }
           },
           {
@@ -20771,17 +20771,17 @@
             "lumiName": "Floragon",
             "topSkill": {
               "skillId": 4003,
-              "count": 75
+              "count": 76
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 89
+          "count": 90
         },
-        "battles": 108,
-        "wins": 66,
-        "winRate": "61.11",
+        "battles": 109,
+        "wins": 67,
+        "winRate": "61.47",
         "tags": [
           "other"
         ]
@@ -20894,7 +20894,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9002,
-              "count": 36
+              "count": 37
             }
           },
           {
@@ -20902,17 +20902,17 @@
             "lumiName": "Floragon",
             "topSkill": {
               "skillId": 4003,
-              "count": 75
+              "count": 76
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 89
+          "count": 90
         },
-        "battles": 108,
-        "wins": 66,
-        "winRate": "61.11",
+        "battles": 109,
+        "wins": 67,
+        "winRate": "61.47",
         "tags": [
           "other"
         ]
@@ -21025,7 +21025,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9002,
-              "count": 36
+              "count": 37
             }
           },
           {
@@ -21033,17 +21033,17 @@
             "lumiName": "Floragon",
             "topSkill": {
               "skillId": 4003,
-              "count": 75
+              "count": 76
             }
           }
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 89
+          "count": 90
         },
-        "battles": 108,
-        "wins": 66,
-        "winRate": "61.11",
+        "battles": 109,
+        "wins": 67,
+        "winRate": "61.47",
         "tags": [
           "other"
         ]
