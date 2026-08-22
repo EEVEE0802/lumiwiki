@@ -17,6 +17,7 @@ export const STAGE_TYPES = ['combat', 'concept', 'model', 'rigging', 'anim', 'vf
 
 const stmtGetOrder = db.prepare('SELECT * FROM production_orders WHERE lumiId = ?')
 const stmtListOrders = db.prepare('SELECT * FROM production_orders ORDER BY pokedexId, lumiId')
+const stmtDeleteOrder = db.prepare('DELETE FROM production_orders WHERE lumiId = ?')
 const stmtUpsertOrder = db.prepare(`
   INSERT INTO production_orders(
     lumiId, pokedexId, name, type1, type2, maxScore, workType, combatStrength, workBuilding,
@@ -122,6 +123,40 @@ export function patchOrder(lumiId, patch) {
     status: patch.status ?? null,
   })
   return getOrder(lumiId)
+}
+
+// 级联删除 order + 所有 stages + activity 记录（管理员用）
+// stages 通过 FOREIGN KEY ON DELETE CASCADE 自动删；activity 无外键约束，手动删
+const stmtDeleteActivityForOrder = db.prepare('DELETE FROM production_activity WHERE lumiId = ?')
+export function deleteOrder(lumiId) {
+  const lid = Number(lumiId)
+  const tx = db.transaction(() => {
+    stmtDeleteActivityForOrder.run(lid)
+    stmtDeleteOrder.run(lid)  // stages 通过 FK CASCADE 自动删
+  })
+  tx()
+}
+
+// 一次性把 9 个环节都初始化为 todo（新建 order 后自动跑）
+// 如果某环节已存在，不覆盖
+export function initStagesForOrder(lumiId) {
+  const lid = Number(lumiId)
+  const existing = new Set(listStages(lid).map(s => s.stageType))
+  const now = new Date().toISOString()
+  const stmt = db.prepare(`
+    INSERT OR IGNORE INTO production_stages(
+      lumiId, stageType, assignee, status, plannedStart, plannedEnd, actualStart, actualEnd,
+      iterationCount, tapdSubStoryId, deliverables, updatedAt, updatedBy
+    ) VALUES (?, ?, NULL, 'todo', NULL, NULL, NULL, NULL, 0, NULL, NULL, ?, ?)
+  `)
+  const tx = db.transaction(() => {
+    for (const st of STAGE_TYPES) {
+      if (existing.has(st)) continue
+      stmt.run(lid, st, now, 'system')
+    }
+  })
+  tx()
+  return listStages(lid)
 }
 
 // ==================== stages ====================

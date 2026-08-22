@@ -8,6 +8,7 @@ const props = defineProps({
   stageType: { type: String, required: true },
   stageMeta: { type: Array, required: true },
   statusMeta: { type: Object, required: true },
+  users: { type: Array, default: () => [] },
 })
 const emit = defineEmits(['close', 'saved'])
 
@@ -118,7 +119,10 @@ async function save() {
         </div>
         <div class="field-row">
           <label>负责人</label>
-          <input v-model="assignee" placeholder="用户名 / TAPD ID" :disabled="!canEdit" />
+          <input v-model="assignee" list="assignee-users" placeholder="用户名 / TAPD ID" :disabled="!canEdit" />
+          <datalist id="assignee-users">
+            <option v-for="u in users" :key="u.username" :value="u.username">{{ u.role }}</option>
+          </datalist>
         </div>
 
         <div class="field-grid">

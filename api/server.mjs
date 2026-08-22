@@ -37,6 +37,8 @@ import {
   listOrders,
   upsertOrder,
   patchOrder,
+  deleteOrder,
+  initStagesForOrder,
   getStage,
   listStages,
   upsertStage,
@@ -253,13 +255,21 @@ app.get('/api/production/orders/:lumiId', { preHandler: requirePermission('produ
 })
 
 // 创建/覆盖 order（仅 PM）
+// 新建时同步初始化 9 个 stage 记录（都是 todo 空态），让 PM 立刻可以在 cell 里排期
 app.post('/api/production/orders', { preHandler: requirePermission('production.pm') }, async (request, reply) => {
   const body = request.body || {}
   const lid = Number(body.lumiId)
   if (!Number.isFinite(lid) || lid <= 0) return reply.code(400).send({ error: 'lumiId 无效' })
+  const existed = getOrder(lid)
   const order = upsertOrder(body)
-  logProductionActivity({ lumiId: lid, username: request.currentUser.username, action: 'upsert_order', detail: JSON.stringify({ status: order.status }) })
-  return { order }
+  if (!existed) initStagesForOrder(lid)
+  logProductionActivity({
+    lumiId: lid,
+    username: request.currentUser.username,
+    action: existed ? 'upsert_order' : 'create_order',
+    detail: JSON.stringify({ status: order.status, initStages: !existed }),
+  })
+  return { order, created: !existed }
 })
 
 app.patch('/api/production/orders/:lumiId', { preHandler: requirePermission('production.pm') }, async (request, reply) => {
@@ -269,6 +279,17 @@ app.patch('/api/production/orders/:lumiId', { preHandler: requirePermission('pro
   const patched = patchOrder(lid, request.body || {})
   logProductionActivity({ lumiId: lid, username: request.currentUser.username, action: 'patch_order' })
   return { order: patched }
+})
+
+// 删除 order + 级联所有 stages / activity（仅管理员）
+app.delete('/api/production/orders/:lumiId', { preHandler: requireAdmin }, async (request, reply) => {
+  const lid = Number(request.params.lumiId)
+  if (!Number.isFinite(lid) || lid <= 0) return reply.code(400).send({ error: 'lumiId 无效' })
+  if (!getOrder(lid)) return reply.code(404).send({ error: 'order 不存在' })
+  deleteOrder(lid)
+  // 删完再记 audit（不进 production_activity，因为整条都没了）
+  appendAudit({ username: request.currentUser.username, action: 'delete_production_order', target: String(lid) })
+  return { ok: true, lumiId: lid }
 })
 
 // 改 stage（对应角色 or PM）
@@ -306,6 +327,18 @@ app.get('/api/production/activity', { preHandler: requirePermission('production.
   const offset = Math.max(Number(request.query.offset) || 0, 0)
   const items = listProductionActivity({ lumiId: lid, limit, offset })
   return { items }
+})
+
+// 可指派人员列表（复用 admin/users 的字段但去掉 lastActiveAt 之类）
+// 供环节 assignee 下拉、order.designer 下拉使用
+// 任何有 production.readAll 权限的人都能拿（PM 排期需要，各角色查看时也可能想知道队友）
+app.get('/api/production/users', { preHandler: requirePermission('production.readAll') }, async () => {
+  const users = listUsers().map(u => ({
+    username: u.username,
+    role: u.role,
+    isAdmin: !!u.isAdmin,
+  }))
+  return { users }
 })
 
 // -------- 启动 --------

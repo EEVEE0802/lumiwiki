@@ -5,8 +5,12 @@ import { useAuth } from '../composables/useAuth'
 import { TYPE_NAMES, TYPE_COLORS } from '../data'
 import { avatarUrl } from '../data/imageUrl'
 import ProductionStageEditor from '../components/ProductionStageEditor.vue'
+import ProductionOrderEditor from '../components/ProductionOrderEditor.vue'
 
 const { currentUser, hasPermission } = useAuth()
+const canPm = computed(() => hasPermission('production.pm'))
+
+const users = ref([])
 
 const STAGE_META = [
   { key: 'combat',  label: '战设', color: '#e74c3c', icon: '⚔️' },
@@ -51,6 +55,11 @@ async function load() {
   try {
     const data = await apiFetch('/api/production/orders')
     orders.value = data.orders
+    // 拉可指派用户列表（失败不阻塞主流程）
+    try {
+      const u = await apiFetch('/api/production/users')
+      users.value = u.users || []
+    } catch { /* ignore */ }
   } catch (e) {
     error.value = e.message
     if (e.status === 403) error.value = '没有生产管线查看权限（production.readAll），请联系管理员'
@@ -136,6 +145,23 @@ function onStageSaved() {
   load()
 }
 
+// Order 编辑器（新增 / 编辑元数据）
+const orderEditor = ref(null)  // null | { mode, order }
+function openCreateOrder() {
+  orderEditor.value = { mode: 'create', order: null }
+}
+function openEditOrder(order) {
+  orderEditor.value = { mode: 'edit', order }
+}
+function onOrderSaved() {
+  orderEditor.value = null
+  load()
+}
+function onOrderDeleted() {
+  orderEditor.value = null
+  load()
+}
+
 function typeName(id) { return TYPE_NAMES[id] || '' }
 function typeColor(id) { return TYPE_COLORS[id] || '#666' }
 
@@ -162,6 +188,7 @@ function clearFilters() {
         <p class="prod-subtitle">噜咪生产全流程管理 · PM / 各环节协作 · 从腾讯文档导入</p>
       </div>
       <div class="prod-header-right">
+        <button v-if="canPm" class="btn-create" @click="openCreateOrder">➕ 新增噜咪</button>
         <span v-if="currentUser" class="prod-user">👤 {{ currentUser.username }} · {{ currentUser.role }}</span>
       </div>
     </div>
@@ -260,7 +287,7 @@ function clearFilters() {
           </thead>
           <tbody>
             <tr v-for="order in filtered" :key="order.lumiId" class="prod-row">
-              <td class="cell-lumi">
+              <td class="cell-lumi" @click="openEditOrder(order)">
                 <img
                   v-if="order.pokedexId != null"
                   :src="avatarUrl(order.lumiId)"
@@ -272,6 +299,7 @@ function clearFilters() {
                   <div class="cell-lumi-name">
                     <span v-if="order.pokedexId != null" class="cell-pokedex">#{{ order.pokedexId }}</span>
                     <span>{{ order.name || `#${order.lumiId}` }}</span>
+                    <span v-if="canPm" class="cell-edit-hint" title="点击编辑元数据">✏️</span>
                   </div>
                   <div class="cell-lumi-sub">
                     <span
@@ -279,7 +307,7 @@ function clearFilters() {
                       class="cell-type"
                       :style="{ background: typeColor(order.type1) }"
                     >{{ typeName(order.type1) }}</span>
-                    <span v-if="order.tapdStoryUrl" class="cell-tapd" @click="goToTapd(order)">TAPD</span>
+                    <span v-if="order.tapdStoryUrl" class="cell-tapd" @click.stop="goToTapd(order)">TAPD</span>
                     <span class="cell-id">{{ order.lumiId }}</span>
                   </div>
                 </div>
@@ -339,8 +367,20 @@ function clearFilters() {
       :stage-type="editing.stageType"
       :stage-meta="STAGE_META"
       :status-meta="STATUS_META"
+      :users="users"
       @close="editing = null"
       @saved="onStageSaved"
+    />
+
+    <ProductionOrderEditor
+      v-if="orderEditor"
+      :mode="orderEditor.mode"
+      :order="orderEditor.order"
+      :progress-options="uniqueProgress"
+      :designer-options="uniqueDesigners"
+      @close="orderEditor = null"
+      @saved="onOrderSaved"
+      @deleted="onOrderDeleted"
     />
   </div>
 </template>
@@ -364,6 +404,32 @@ function clearFilters() {
   color: var(--text-dim);
   font-size: 0.9em;
 }
+.prod-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.btn-create {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9em;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.35);
+}
+.btn-create:hover { filter: brightness(1.1); }
+.cell-lumi { cursor: pointer; }
+.cell-edit-hint {
+  opacity: 0;
+  color: var(--text-dim);
+  font-size: 0.75em;
+  margin-left: 2px;
+  transition: opacity 0.15s;
+}
+.cell-lumi:hover .cell-edit-hint { opacity: 0.7; }
 .error-box {
   padding: 16px;
   background: rgba(233, 69, 96, 0.1);
