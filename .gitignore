@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# 「噜咪图鉴」快照（离线分享用，不进 git）
+snapshot/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
