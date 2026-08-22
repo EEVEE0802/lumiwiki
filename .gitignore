@@ -31,6 +31,8 @@ auto-watch.log
 
 # Sensitive config (contains Bearer Token for game-data-ta)
 scripts/ta-config.json
+# TAPD access token
+scripts/tapd-config.json
 
 # API SQLite 数据（内部数据，跟 db.json 一起不进 git）
 api/data/lumiwiki.db

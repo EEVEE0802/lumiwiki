@@ -4510,7 +4510,7 @@
     "Type1": 15,
     "Type2": 0,
     "NormalAttack": 10240101,
-    "ActiveSkill": 10240102,
+    "ActiveSkill": 10240402,
     "SkillPool1": [
       15001,
       1001
@@ -7119,7 +7119,7 @@
     "Type1": 6,
     "Type2": 0,
     "NormalAttack": 10370101,
-    "ActiveSkill": 10370102,
+    "ActiveSkill": 10370402,
     "SkillPool1": [
       6002,
       9004
@@ -7521,7 +7521,7 @@
     "Type1": 6,
     "Type2": 0,
     "NormalAttack": 10380101,
-    "ActiveSkill": 10380102,
+    "ActiveSkill": 10380402,
     "SkillPool1": [
       6003,
       14003
@@ -10884,7 +10884,7 @@
     "Type1": 5,
     "Type2": 0,
     "NormalAttack": 10550101,
-    "ActiveSkill": 10550102,
+    "ActiveSkill": 10550402,
     "SkillPool1": [
       5003,
       5005
@@ -11677,7 +11677,7 @@
     "Type1": 2,
     "Type2": 9,
     "NormalAttack": 10580101,
-    "ActiveSkill": 10580102,
+    "ActiveSkill": 10580402,
     "SkillPool1": [
       2003,
       9006
@@ -13086,7 +13086,7 @@
     "Type1": 7,
     "Type2": 0,
     "NormalAttack": 10640101,
-    "ActiveSkill": 10640102,
+    "ActiveSkill": 10640402,
     "SkillPool1": [
       7001,
       7005
@@ -30930,7 +30930,7 @@
     "Type1": 2,
     "Type2": 4,
     "NormalAttack": 11920101,
-    "ActiveSkill": 11920102,
+    "ActiveSkill": 11920402,
     "SkillPool1": [
       4003,
       2003
@@ -33245,6 +33245,213 @@
     "AvartarAtlas": "LumiAvatar2"
   },
   {
+    "Id": 120902,
+    "PokedexId": 10030,
+    "IfLock": false,
+    "LumiTag": 1,
+    "Name": "LumiName_120902",
+    "MaxScore": 90,
+    "MinScore": 90,
+    "Genius": 1,
+    "ShardId": 120902,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Flower_ZhanFang_3D",
+    "Avatar": "Avatar_120902",
+    "CA": "CA_120902",
+    "CardBack": 98,
+    "CardBackRes": [
+      "com_card_9_120902",
+      "com_card_9_120902_score"
+    ],
+    "CardType": 98,
+    "CardResName": [
+      "Card3D_Flower_ZhanFang_3D",
+      "Card3DLumi_Flower_ZhanFang_3D",
+      "Card3DLumi_Flower_ZhanFang_3D_XC"
+    ],
+    "Type1": 4,
+    "Type2": 10,
+    "NormalAttack": 12090201,
+    "ActiveSkill": 12090402,
+    "SkillPool1": [
+      4003,
+      15001
+    ],
+    "SkillPool2": [
+      1004,
+      4005
+    ],
+    "SkillPool3": [
+      1001,
+      4006
+    ],
+    "BattlePassive": 1120902,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 60,
+    "MinAtkState": 78,
+    "MinDefState": 60,
+    "MinWorkState": 34,
+    "MaxHpState": 92,
+    "MaxAtkState": 110,
+    "MaxDefState": 92,
+    "MaxWorkState": 66,
+    "Satiety": 220000,
+    "SatietyDownSpeed": 40,
+    "WorkAbility": [
+      {
+        "Type": 2,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          126,
+          141
+        ]
+      ],
+      [
+        2,
+        [
+          21,
+          28
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        3000
+      ],
+      [
+        2,
+        7000
+      ]
+    ],
+    "scoreShow": "90-90",
+    "Story": "story_120902",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1600,
+    "CatchRateCheckHeight": 800,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": -0.077,
+      "Y": 0.207,
+      "Z": -0.003
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0.412,
+      "Y": 0.003,
+      "Z": -0.013
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Flower_ZhanFang_3D_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 120901,
+    "BodySizeType": 1,
+    "ModelBaseScale": 0.9,
+    "SizeScaleRange": [
+      0.1,
+      0.1
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 4,
+    "StarSoulid": 1209020,
+    "AvartarAtlas": "LumiAvatar2"
+  },
+  {
     "Id": 120904,
     "PokedexId": 10034,
     "IfLock": true,
@@ -33332,7 +33539,7 @@
     "Type1": 4,
     "Type2": 0,
     "NormalAttack": 12090101,
-    "ActiveSkill": 12090102,
+    "ActiveSkill": 12090202,
     "SkillPool1": [
       4003,
       15001
@@ -34524,7 +34731,7 @@
     "Type1": 9,
     "Type2": 0,
     "NormalAttack": 12130101,
-    "ActiveSkill": 12130102,
+    "ActiveSkill": 12130402,
     "SkillPool1": [
       4002,
       3003
@@ -36836,7 +37043,7 @@
     "Id": 125001,
     "PokedexId": 2010140,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 103,
     "Name": "LumiName_125001",
     "MaxScore": 84,
     "MinScore": 52,
@@ -37036,7 +37243,7 @@
     "Id": 125002,
     "PokedexId": 2010140,
     "IfLock": true,
-    "LumiTag": 2,
+    "LumiTag": 103,
     "Name": "LumiName_125002",
     "MaxScore": 88,
     "MinScore": 88,
@@ -37229,7 +37436,7 @@
     "Id": 125101,
     "PokedexId": 2010150,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 103,
     "Name": "LumiName_125101",
     "MaxScore": 84,
     "MinScore": 52,
@@ -37429,7 +37636,7 @@
     "Id": 125201,
     "PokedexId": 2010160,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 103,
     "Name": "LumiName_125201",
     "MaxScore": 84,
     "MinScore": 52,
@@ -37629,7 +37836,7 @@
     "Id": 125301,
     "PokedexId": 2010170,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 103,
     "Name": "LumiName_125301",
     "MaxScore": 84,
     "MinScore": 52,
@@ -37829,7 +38036,7 @@
     "Id": 125401,
     "PokedexId": 2010180,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 103,
     "Name": "LumiName_125401",
     "MaxScore": 84,
     "MinScore": 52,
@@ -38029,7 +38236,7 @@
     "Id": 125501,
     "PokedexId": 2010190,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 103,
     "Name": "LumiName_125501",
     "MaxScore": 84,
     "MinScore": 52,
@@ -41309,7 +41516,7 @@
       11007,
       2006
     ],
-    "BattlePassive": 1133801,
+    "BattlePassive": 1133901,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -41509,7 +41716,7 @@
       11007,
       2006
     ],
-    "BattlePassive": 1133801,
+    "BattlePassive": 1134001,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -42296,10 +42503,10 @@
     ],
     "CardType": 99,
     "CardResName": [
-      "CardVedio_Bird_Vermilion",
-      "Bird_Vermilion",
-      "CardVedio_Bird_Vermilion_Tex_D",
-      "CardVedio_Bird_Vermilion_bg_D"
+      "CardVedio_Dragon_Legend",
+      "Dragon_Legend",
+      "CardVedio_Dragon_Legend_Tex_D",
+      "CardVedio_Dragon_Legend_bg_D"
     ],
     "Type1": 17,
     "Type2": 9,
@@ -42348,12 +42555,8 @@
     ],
     "GenderWeight": [
       [
-        1,
-        5000
-      ],
-      [
-        2,
-        5000
+        3,
+        10000
       ]
     ],
     "scoreShow": "95-95",
@@ -42426,7 +42629,7 @@
     "Id": 136901,
     "PokedexId": 2010200,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 103,
     "Name": "LumiName_136901",
     "MaxScore": 86,
     "MinScore": 54,
@@ -43018,7 +43221,7 @@
     "Id": 139001,
     "PokedexId": 99999999,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 201,
     "Name": "LumiName_139001",
     "MaxScore": 88,
     "MinScore": 56,
@@ -43216,7 +43419,7 @@
     "Id": 139101,
     "PokedexId": 99999999,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 201,
     "Name": "LumiName_139101",
     "MaxScore": 82,
     "MinScore": 50,
@@ -43411,7 +43614,7 @@
     "Id": 139201,
     "PokedexId": 99999999,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 201,
     "Name": "LumiName_139201",
     "MaxScore": 82,
     "MinScore": 50,
@@ -44791,7 +44994,7 @@
     "Id": 147301,
     "PokedexId": 1010010,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 201,
     "Name": "LumiName_147301",
     "MaxScore": 82,
     "MinScore": 50,
@@ -44982,7 +45185,7 @@
     "Id": 147401,
     "PokedexId": 1010010,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 201,
     "Name": "LumiName_147401",
     "MaxScore": 82,
     "MinScore": 50,
@@ -45180,7 +45383,7 @@
     "Id": 147501,
     "PokedexId": 1010010,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 201,
     "Name": "LumiName_147501",
     "MaxScore": 82,
     "MinScore": 50,
@@ -45375,10 +45578,208 @@
     "AvartarAtlas": "LumiAvatar4"
   },
   {
-    "Id": 147701,
+    "Id": 147601,
     "PokedexId": 1010010,
     "IfLock": false,
     "LumiTag": 2,
+    "Name": "LumiName_147601",
+    "MaxScore": 82,
+    "MinScore": 50,
+    "Genius": 1,
+    "ShardId": 147601,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Snails_Candy",
+    "Avatar": "Avatar_147601",
+    "CA": "CA_147601",
+    "CardBack": 0,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 14,
+    "Type2": 0,
+    "NormalAttack": 14760101,
+    "ActiveSkill": 14760102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 1147601,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 50,
+    "MinAtkState": 50,
+    "MinDefState": 50,
+    "MinWorkState": 50,
+    "MaxHpState": 82,
+    "MaxAtkState": 82,
+    "MaxDefState": 82,
+    "MaxWorkState": 82,
+    "Satiety": 140000,
+    "SatietyDownSpeed": 24,
+    "WorkAbility": [
+      {
+        "Type": 4,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          1
+        ]
+      ],
+      [
+        2,
+        [
+          1
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "50-82",
+    "Story": "story_147601",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Snails_Candy_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 147601,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 1,
+    "StarSoulid": 1476010,
+    "AvartarAtlas": "LumiAvatar4"
+  },
+  {
+    "Id": 147701,
+    "PokedexId": 1010010,
+    "IfLock": false,
+    "LumiTag": 201,
     "Name": "LumiName_147701",
     "MaxScore": 82,
     "MinScore": 50,
@@ -45576,7 +45977,7 @@
     "Id": 147801,
     "PokedexId": 1010020,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 201,
     "Name": "LumiName_147801",
     "MaxScore": 85,
     "MinScore": 53,
@@ -45767,7 +46168,7 @@
     "Id": 1000101,
     "PokedexId": 2010010,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1000101",
     "MaxScore": 84,
     "MinScore": 52,
@@ -45965,7 +46366,7 @@
     "Id": 1000201,
     "PokedexId": 2010020,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1000201",
     "MaxScore": 84,
     "MinScore": 52,
@@ -46164,7 +46565,7 @@
     "Id": 1000301,
     "PokedexId": 2010110,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 101,
     "Name": "LumiName_1000301",
     "MaxScore": 81,
     "MinScore": 49,
@@ -46363,7 +46764,7 @@
     "Id": 1000401,
     "PokedexId": 2010120,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 101,
     "Name": "LumiName_1000401",
     "MaxScore": 84,
     "MinScore": 52,
@@ -46562,7 +46963,7 @@
     "Id": 1000501,
     "PokedexId": 2010130,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 101,
     "Name": "LumiName_1000501",
     "MaxScore": 87,
     "MinScore": 55,
@@ -46761,7 +47162,7 @@
     "Id": 1000502,
     "PokedexId": 2010132,
     "IfLock": true,
-    "LumiTag": 2,
+    "LumiTag": 101,
     "Name": "LumiName_1000502",
     "MaxScore": 88,
     "MinScore": 88,
@@ -46964,7 +47365,7 @@
     "Id": 1000601,
     "PokedexId": 2010070,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1000601",
     "MaxScore": 86,
     "MinScore": 54,
@@ -47158,7 +47559,7 @@
     "Id": 1000701,
     "PokedexId": 2010080,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1000701",
     "MaxScore": 86,
     "MinScore": 54,
@@ -47352,7 +47753,7 @@
     "Id": 1000801,
     "PokedexId": 2010040,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1000801",
     "MaxScore": 86,
     "MinScore": 54,
@@ -47550,7 +47951,7 @@
     "Id": 1000902,
     "PokedexId": 2010012,
     "IfLock": true,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1000902",
     "MaxScore": 88,
     "MinScore": 88,
@@ -47753,7 +48154,7 @@
     "Id": 1003201,
     "PokedexId": 2010060,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1003201",
     "MaxScore": 84,
     "MinScore": 52,
@@ -47951,7 +48352,7 @@
     "Id": 1003301,
     "PokedexId": 2010050,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1003301",
     "MaxScore": 84,
     "MinScore": 52,
@@ -48149,7 +48550,7 @@
     "Id": 1003401,
     "PokedexId": 2010030,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1003401",
     "MaxScore": 84,
     "MinScore": 52,
@@ -48347,7 +48748,7 @@
     "Id": 1003501,
     "PokedexId": 2010090,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1003501",
     "MaxScore": 86,
     "MinScore": 54,
@@ -48546,7 +48947,7 @@
     "Id": 1003601,
     "PokedexId": 2010100,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 102,
     "Name": "LumiName_1003601",
     "MaxScore": 86,
     "MinScore": 54,
@@ -48745,7 +49146,7 @@
     "Id": 1004101,
     "PokedexId": 2010210,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 104,
     "Name": "LumiName_1004101",
     "MaxScore": 81,
     "MinScore": 52,
@@ -48939,7 +49340,7 @@
     "Id": 1004201,
     "PokedexId": 2010210,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 104,
     "Name": "LumiName_1004201",
     "MaxScore": 81,
     "MinScore": 52,
@@ -49138,7 +49539,7 @@
     "Id": 1004302,
     "PokedexId": 2010210,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 104,
     "Name": "LumiName_1004302",
     "MaxScore": 88,
     "MinScore": 52,

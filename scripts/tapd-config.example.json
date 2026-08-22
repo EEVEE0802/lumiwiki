@@ -1,0 +1,12 @@
+# TAPD 认证 & 生产协作站配置
+# 这份跟 ta-config.json 分开，避免混淆
+# tapd-config.json 不进 git（含 access_token）
+
+{
+  "_comment": "复制本文件为 tapd-config.json 并填入真实值",
+  "tapd": {
+    "baseUrl": "https://api.tapd.cn",
+    "accessToken": "your-tapd-access-token",
+    "workspaceId": "46491618"
+  }
+}

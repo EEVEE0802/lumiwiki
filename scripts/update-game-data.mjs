@@ -112,7 +112,6 @@ function runDerivativeScripts(cfg) {
   const branchArg = cfg.isInternal ? ['--branch=internal'] : []
   runCommand(process.execPath, ['scripts/process-robot-teams.js', ...branchArg])
   runCommand(process.execPath, ['scripts/convert-adventure-drop.mjs', ...branchArg])
-  runCommand(process.execPath, ['scripts/process-egg-drop.mjs', ...branchArg])
 }
 
 function syncAvatars(cfg) {
