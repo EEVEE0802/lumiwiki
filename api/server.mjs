@@ -31,6 +31,21 @@ import {
   appendAudit,
   listAudit,
 } from './store.mjs'
+import {
+  STAGE_TYPES,
+  getOrder,
+  listOrders,
+  upsertOrder,
+  patchOrder,
+  getStage,
+  listStages,
+  upsertStage,
+  patchStage,
+  logProductionActivity,
+  listProductionActivity,
+  listOrdersWithStages,
+  getOrderWithStages,
+} from './production-store.mjs'
 
 const PORT = Number(process.env.PORT || 3006)
 const JWT_SECRET = process.env.JWT_SECRET || 'lumiwiki-internal-dev-secret-change-me'
@@ -199,6 +214,99 @@ app.get('/api/admin/audit', { preHandler: requireAdmin }, async (request) => {
 // -------- 健康检查 --------
 
 app.get('/api/health', async () => ({ ok: true, ts: new Date().toISOString() }))
+
+// -------- 生产管线 --------
+//
+// 权限：
+//   GET  /api/production/orders           需 production.readAll
+//   GET  /api/production/orders/:lumiId   需 production.readAll
+//   POST /api/production/orders           需 production.pm（创建/覆盖 order 元数据）
+//   PATCH /api/production/orders/:lumiId  需 production.pm
+//   PATCH /api/production/stages/:lumiId/:stageType
+//     - 有对应 production.stage.{X}.write 权限的人可以改自己那个环节
+//     - production.pm 可以改任意环节
+//   GET  /api/production/activity         需 production.readAll
+
+function requireStageWrite(stageType) {
+  return async (request, reply) => {
+    await requireAuth(request, reply)
+    if (reply.sent) return
+    const uname = request.currentUser.username
+    if (hasPermission(uname, 'production.pm')) return
+    if (hasPermission(uname, `production.stage.${stageType}.write`)) return
+    return reply.code(403).send({ error: `缺少权限: production.stage.${stageType}.write 或 production.pm` })
+  }
+}
+
+// 一次拿全表，前端 PM 视图用
+app.get('/api/production/orders', { preHandler: requirePermission('production.readAll') }, async () => ({
+  stages: STAGE_TYPES,
+  orders: listOrdersWithStages(),
+}))
+
+app.get('/api/production/orders/:lumiId', { preHandler: requirePermission('production.readAll') }, async (request, reply) => {
+  const lid = Number(request.params.lumiId)
+  if (!Number.isFinite(lid)) return reply.code(400).send({ error: 'lumiId 无效' })
+  const o = getOrderWithStages(lid)
+  if (!o) return reply.code(404).send({ error: 'order 不存在' })
+  return { order: o, stages: STAGE_TYPES }
+})
+
+// 创建/覆盖 order（仅 PM）
+app.post('/api/production/orders', { preHandler: requirePermission('production.pm') }, async (request, reply) => {
+  const body = request.body || {}
+  const lid = Number(body.lumiId)
+  if (!Number.isFinite(lid) || lid <= 0) return reply.code(400).send({ error: 'lumiId 无效' })
+  const order = upsertOrder(body)
+  logProductionActivity({ lumiId: lid, username: request.currentUser.username, action: 'upsert_order', detail: JSON.stringify({ status: order.status }) })
+  return { order }
+})
+
+app.patch('/api/production/orders/:lumiId', { preHandler: requirePermission('production.pm') }, async (request, reply) => {
+  const lid = Number(request.params.lumiId)
+  if (!Number.isFinite(lid) || lid <= 0) return reply.code(400).send({ error: 'lumiId 无效' })
+  if (!getOrder(lid)) return reply.code(404).send({ error: 'order 不存在' })
+  const patched = patchOrder(lid, request.body || {})
+  logProductionActivity({ lumiId: lid, username: request.currentUser.username, action: 'patch_order' })
+  return { order: patched }
+})
+
+// 改 stage（对应角色 or PM）
+app.patch('/api/production/stages/:lumiId/:stageType', async (request, reply) => {
+  const stageType = request.params.stageType
+  if (!STAGE_TYPES.includes(stageType)) return reply.code(400).send({ error: `stageType 必须是 ${STAGE_TYPES.join('/')}` })
+  await requireStageWrite(stageType)(request, reply)
+  if (reply.sent) return
+  const lid = Number(request.params.lumiId)
+  if (!Number.isFinite(lid) || lid <= 0) return reply.code(400).send({ error: 'lumiId 无效' })
+  if (!getOrder(lid)) return reply.code(404).send({ error: 'order 不存在' })
+  // 允许改的字段白名单（避免误传别的字段）
+  const allowed = ['assignee', 'status', 'plannedStart', 'plannedEnd', 'actualStart', 'actualEnd', 'iterationCount', 'tapdSubStoryId', 'deliverables']
+  const patch = {}
+  for (const k of allowed) if (k in (request.body || {})) patch[k] = request.body[k]
+  // 有 stage 就 patch，没就 upsert（保证从未初始化的环节也能改）
+  let updated
+  if (getStage(lid, stageType)) {
+    updated = patchStage(lid, stageType, patch, request.currentUser.username)
+  } else {
+    updated = upsertStage({ lumiId: lid, stageType, ...patch, updatedBy: request.currentUser.username })
+  }
+  logProductionActivity({
+    lumiId: lid, stageType,
+    username: request.currentUser.username,
+    action: 'patch_stage',
+    detail: JSON.stringify(patch),
+  })
+  return { stage: updated }
+})
+
+app.get('/api/production/activity', { preHandler: requirePermission('production.readAll') }, async (request) => {
+  const lid = request.query.lumiId ? Number(request.query.lumiId) : null
+  const limit = Math.min(Number(request.query.limit) || 100, 500)
+  const offset = Math.max(Number(request.query.offset) || 0, 0)
+  const items = listProductionActivity({ lumiId: lid, limit, offset })
+  return { items }
+})
 
 // -------- 启动 --------
 

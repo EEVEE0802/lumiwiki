@@ -1,0 +1,267 @@
+// 生产管线数据访问层
+// 表：production_orders / production_stages / production_activity（已在 store.mjs 建好）
+//
+// 环节 stageType 固定枚举，跟前端 STAGE_META 保持一致：
+//   combat  战设      concept  原画   model  模型   rigging  绑定   anim  动作
+//   vfx     特效      gui      GUI/立绘   audio  音效   config  配置
+//   iteration 迭代循环（占位，不算独立环节，从 CSV 里"原画迭代" / "特效迭代"识别）
+//
+// stage.status: 'todo' | 'in-progress' | 'pending-review' | 'done' | 'rejected'
+// order.status: 'planning' | 'in-progress' | 'pending-review' | 'done'
+
+import { sqliteDb as db } from './store.mjs'
+
+export const STAGE_TYPES = ['combat', 'concept', 'model', 'rigging', 'anim', 'vfx', 'gui', 'audio', 'config']
+
+// ==================== orders ====================
+
+const stmtGetOrder = db.prepare('SELECT * FROM production_orders WHERE lumiId = ?')
+const stmtListOrders = db.prepare('SELECT * FROM production_orders ORDER BY pokedexId, lumiId')
+const stmtUpsertOrder = db.prepare(`
+  INSERT INTO production_orders(
+    lumiId, pokedexId, name, type1, type2, maxScore, workType, combatStrength, workBuilding,
+    tapdStoryId, tapdStoryUrl, milestone, releaseStatus, progressStage, designer, status,
+    createdAt, updatedAt, ganttRaw
+  ) VALUES (
+    @lumiId, @pokedexId, @name, @type1, @type2, @maxScore, @workType, @combatStrength, @workBuilding,
+    @tapdStoryId, @tapdStoryUrl, @milestone, @releaseStatus, @progressStage, @designer, @status,
+    @createdAt, @updatedAt, @ganttRaw
+  )
+  ON CONFLICT(lumiId) DO UPDATE SET
+    pokedexId=excluded.pokedexId,
+    name=excluded.name,
+    type1=excluded.type1,
+    type2=excluded.type2,
+    maxScore=excluded.maxScore,
+    workType=excluded.workType,
+    combatStrength=excluded.combatStrength,
+    workBuilding=excluded.workBuilding,
+    tapdStoryId=excluded.tapdStoryId,
+    tapdStoryUrl=excluded.tapdStoryUrl,
+    milestone=excluded.milestone,
+    releaseStatus=excluded.releaseStatus,
+    progressStage=excluded.progressStage,
+    designer=excluded.designer,
+    updatedAt=excluded.updatedAt,
+    ganttRaw=excluded.ganttRaw
+`)
+const stmtPatchOrder = db.prepare(`
+  UPDATE production_orders SET
+    pokedexId = COALESCE(@pokedexId, pokedexId),
+    name = COALESCE(@name, name),
+    type1 = COALESCE(@type1, type1),
+    type2 = COALESCE(@type2, type2),
+    maxScore = COALESCE(@maxScore, maxScore),
+    workType = COALESCE(@workType, workType),
+    combatStrength = COALESCE(@combatStrength, combatStrength),
+    workBuilding = COALESCE(@workBuilding, workBuilding),
+    tapdStoryId = COALESCE(@tapdStoryId, tapdStoryId),
+    tapdStoryUrl = COALESCE(@tapdStoryUrl, tapdStoryUrl),
+    milestone = COALESCE(@milestone, milestone),
+    releaseStatus = COALESCE(@releaseStatus, releaseStatus),
+    progressStage = COALESCE(@progressStage, progressStage),
+    designer = COALESCE(@designer, designer),
+    status = COALESCE(@status, status),
+    updatedAt = @updatedAt
+  WHERE lumiId = @lumiId
+`)
+
+export function getOrder(lumiId) {
+  return stmtGetOrder.get(Number(lumiId)) || null
+}
+
+export function listOrders() {
+  return stmtListOrders.all()
+}
+
+export function upsertOrder(order) {
+  const now = new Date().toISOString()
+  stmtUpsertOrder.run({
+    lumiId: Number(order.lumiId),
+    pokedexId: order.pokedexId ?? null,
+    name: order.name ?? null,
+    type1: order.type1 ?? null,
+    type2: order.type2 ?? null,
+    maxScore: order.maxScore ?? null,
+    workType: order.workType ?? null,
+    combatStrength: order.combatStrength ?? null,
+    workBuilding: order.workBuilding ?? null,
+    tapdStoryId: order.tapdStoryId ?? null,
+    tapdStoryUrl: order.tapdStoryUrl ?? null,
+    milestone: order.milestone ?? null,
+    releaseStatus: order.releaseStatus ?? null,
+    progressStage: order.progressStage ?? null,
+    designer: order.designer ?? null,
+    status: order.status ?? 'planning',
+    createdAt: order.createdAt || now,
+    updatedAt: now,
+    ganttRaw: order.ganttRaw ?? null,
+  })
+  return getOrder(order.lumiId)
+}
+
+export function patchOrder(lumiId, patch) {
+  const now = new Date().toISOString()
+  stmtPatchOrder.run({
+    lumiId: Number(lumiId),
+    updatedAt: now,
+    pokedexId: patch.pokedexId ?? null,
+    name: patch.name ?? null,
+    type1: patch.type1 ?? null,
+    type2: patch.type2 ?? null,
+    maxScore: patch.maxScore ?? null,
+    workType: patch.workType ?? null,
+    combatStrength: patch.combatStrength ?? null,
+    workBuilding: patch.workBuilding ?? null,
+    tapdStoryId: patch.tapdStoryId ?? null,
+    tapdStoryUrl: patch.tapdStoryUrl ?? null,
+    milestone: patch.milestone ?? null,
+    releaseStatus: patch.releaseStatus ?? null,
+    progressStage: patch.progressStage ?? null,
+    designer: patch.designer ?? null,
+    status: patch.status ?? null,
+  })
+  return getOrder(lumiId)
+}
+
+// ==================== stages ====================
+
+const stmtGetStage = db.prepare('SELECT * FROM production_stages WHERE lumiId = ? AND stageType = ?')
+const stmtListStagesForLumi = db.prepare('SELECT * FROM production_stages WHERE lumiId = ?')
+const stmtListAllStages = db.prepare('SELECT * FROM production_stages')
+const stmtUpsertStage = db.prepare(`
+  INSERT INTO production_stages(
+    lumiId, stageType, assignee, status, plannedStart, plannedEnd, actualStart, actualEnd,
+    iterationCount, tapdSubStoryId, deliverables, updatedAt, updatedBy
+  ) VALUES (
+    @lumiId, @stageType, @assignee, @status, @plannedStart, @plannedEnd, @actualStart, @actualEnd,
+    @iterationCount, @tapdSubStoryId, @deliverables, @updatedAt, @updatedBy
+  )
+  ON CONFLICT(lumiId, stageType) DO UPDATE SET
+    assignee=excluded.assignee,
+    status=excluded.status,
+    plannedStart=excluded.plannedStart,
+    plannedEnd=excluded.plannedEnd,
+    actualStart=excluded.actualStart,
+    actualEnd=excluded.actualEnd,
+    iterationCount=excluded.iterationCount,
+    tapdSubStoryId=excluded.tapdSubStoryId,
+    deliverables=excluded.deliverables,
+    updatedAt=excluded.updatedAt,
+    updatedBy=excluded.updatedBy
+`)
+const stmtPatchStage = db.prepare(`
+  UPDATE production_stages SET
+    assignee = COALESCE(@assignee, assignee),
+    status = COALESCE(@status, status),
+    plannedStart = COALESCE(@plannedStart, plannedStart),
+    plannedEnd = COALESCE(@plannedEnd, plannedEnd),
+    actualStart = COALESCE(@actualStart, actualStart),
+    actualEnd = COALESCE(@actualEnd, actualEnd),
+    iterationCount = COALESCE(@iterationCount, iterationCount),
+    tapdSubStoryId = COALESCE(@tapdSubStoryId, tapdSubStoryId),
+    deliverables = COALESCE(@deliverables, deliverables),
+    updatedAt = @updatedAt,
+    updatedBy = @updatedBy
+  WHERE lumiId = @lumiId AND stageType = @stageType
+`)
+
+export function getStage(lumiId, stageType) {
+  return stmtGetStage.get(Number(lumiId), stageType) || null
+}
+
+export function listStages(lumiId) {
+  return lumiId ? stmtListStagesForLumi.all(Number(lumiId)) : stmtListAllStages.all()
+}
+
+export function upsertStage(stage) {
+  const now = new Date().toISOString()
+  stmtUpsertStage.run({
+    lumiId: Number(stage.lumiId),
+    stageType: stage.stageType,
+    assignee: stage.assignee ?? null,
+    status: stage.status || 'todo',
+    plannedStart: stage.plannedStart ?? null,
+    plannedEnd: stage.plannedEnd ?? null,
+    actualStart: stage.actualStart ?? null,
+    actualEnd: stage.actualEnd ?? null,
+    iterationCount: stage.iterationCount ?? 0,
+    tapdSubStoryId: stage.tapdSubStoryId ?? null,
+    deliverables: stage.deliverables ? JSON.stringify(stage.deliverables) : null,
+    updatedAt: now,
+    updatedBy: stage.updatedBy || null,
+  })
+  return getStage(stage.lumiId, stage.stageType)
+}
+
+export function patchStage(lumiId, stageType, patch, updatedBy) {
+  const now = new Date().toISOString()
+  stmtPatchStage.run({
+    lumiId: Number(lumiId),
+    stageType,
+    updatedAt: now,
+    updatedBy: updatedBy || null,
+    assignee: patch.assignee ?? null,
+    status: patch.status ?? null,
+    plannedStart: patch.plannedStart ?? null,
+    plannedEnd: patch.plannedEnd ?? null,
+    actualStart: patch.actualStart ?? null,
+    actualEnd: patch.actualEnd ?? null,
+    iterationCount: patch.iterationCount ?? null,
+    tapdSubStoryId: patch.tapdSubStoryId ?? null,
+    deliverables: patch.deliverables ? JSON.stringify(patch.deliverables) : null,
+  })
+  return getStage(lumiId, stageType)
+}
+
+// ==================== activity ====================
+
+const stmtInsAct = db.prepare(`
+  INSERT INTO production_activity(lumiId, stageType, username, action, detail, at)
+  VALUES (?, ?, ?, ?, ?, ?)
+`)
+const stmtListActLumi = db.prepare(`
+  SELECT id, lumiId, stageType, username, action, detail, at FROM production_activity
+  WHERE lumiId = ? ORDER BY id DESC LIMIT ?
+`)
+const stmtListActAll = db.prepare(`
+  SELECT id, lumiId, stageType, username, action, detail, at FROM production_activity
+  ORDER BY id DESC LIMIT ? OFFSET ?
+`)
+
+export function logProductionActivity({ lumiId, stageType, username, action, detail }) {
+  stmtInsAct.run(Number(lumiId), stageType || null, username, action, detail || null, new Date().toISOString())
+}
+
+export function listProductionActivity({ lumiId, limit = 100, offset = 0 } = {}) {
+  if (lumiId) return stmtListActLumi.all(Number(lumiId), limit)
+  return stmtListActAll.all(limit, offset)
+}
+
+// ==================== 组合视图：orders + stages ====================
+
+// 一次取全表：orders + 每只噜咪的 9 个 stage
+// 返回 [{ ...order, stages: { combat: {...}, concept: {...}, ... } }]
+export function listOrdersWithStages() {
+  const orders = listOrders()
+  const stages = listStages()
+  const stagesByLumi = new Map()
+  for (const s of stages) {
+    if (!stagesByLumi.has(s.lumiId)) stagesByLumi.set(s.lumiId, {})
+    const parsed = s.deliverables ? JSON.parse(s.deliverables) : null
+    stagesByLumi.get(s.lumiId)[s.stageType] = { ...s, deliverables: parsed }
+  }
+  return orders.map(o => ({ ...o, stages: stagesByLumi.get(o.lumiId) || {} }))
+}
+
+// 单只噜咪的完整生产单
+export function getOrderWithStages(lumiId) {
+  const order = getOrder(lumiId)
+  if (!order) return null
+  const stages = {}
+  for (const s of listStages(lumiId)) {
+    const parsed = s.deliverables ? JSON.parse(s.deliverables) : null
+    stages[s.stageType] = { ...s, deliverables: parsed }
+  }
+  return { ...order, stages }
+}
