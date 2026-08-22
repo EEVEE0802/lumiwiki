@@ -12,6 +12,9 @@
 //   JWT_SECRET 生产环境务必替换 (默认值仅用于内网单机)
 
 import Fastify from 'fastify'
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import cors from '@fastify/cors'
 import jwt from '@fastify/jwt'
 import {
@@ -53,6 +56,16 @@ import {
 
 const PORT = Number(process.env.PORT || 3006)
 const JWT_SECRET = process.env.JWT_SECRET || 'lumiwiki-internal-dev-secret-change-me'
+
+// TAPD 配置：从 scripts/tapd-config.json 读，push 用
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const TAPD_CONFIG_PATH = path.join(__dirname, '../scripts/tapd-config.json')
+let TAPD = null
+try {
+  TAPD = JSON.parse(fs.readFileSync(TAPD_CONFIG_PATH, 'utf-8')).tapd
+} catch (e) {
+  console.warn('[tapd] 未找到 scripts/tapd-config.json，push TAPD 功能将不可用')
+}
 
 const app = Fastify({ logger: true })
 
@@ -365,6 +378,67 @@ app.get('/api/production/board', { preHandler: requirePermission('production.rea
     assignee,
   })
   return { cards, stages: STAGE_TYPES }
+})
+
+// 把本地 stage 变更 push 到 TAPD 子单
+// 只 push 3 个字段：iteration_id / status / owner
+// 需要 tapdSubStoryId 已关联；无 TAPD config 会 503
+async function pushStageToTapd(stage) {
+  if (!TAPD) throw new Error('TAPD 未配置，无法 push')
+  if (!stage.tapdSubStoryId) throw new Error('该环节未关联 TAPD 子单')
+
+  // 本地 status → TAPD status（跟同步脚本反向映射）
+  const STATUS_TO_TAPD = {
+    'todo': 'planning',
+    'in-progress': 'developing',
+    'pending-review': 'status_14',
+    'done': 'status_19',
+    'rejected': 'rejected',
+  }
+  const body = {
+    workspace_id: TAPD.workspaceId,
+    id: stage.tapdSubStoryId,
+  }
+  if (stage.tapdIterationId) body.iteration_id = stage.tapdIterationId
+  if (stage.status && STATUS_TO_TAPD[stage.status]) body.status = STATUS_TO_TAPD[stage.status]
+  if (stage.assignee) body.owner = stage.assignee
+
+  const resp = await fetch(`${TAPD.baseUrl}/stories`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${TAPD.accessToken}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams(body).toString(),
+  })
+  const text = await resp.text()
+  if (!resp.ok) throw new Error(`TAPD HTTP ${resp.status}: ${text.slice(0, 200)}`)
+  let data
+  try { data = JSON.parse(text) } catch { throw new Error(`TAPD 返回非 JSON: ${text.slice(0, 200)}`) }
+  if (data.status !== 1) throw new Error(`TAPD 返回错误: ${data.info || JSON.stringify(data).slice(0, 200)}`)
+  return data.data
+}
+
+app.post('/api/production/stages/:lumiId/:stageType/push-tapd', async (request, reply) => {
+  const stageType = request.params.stageType
+  if (!STAGE_TYPES.includes(stageType)) return reply.code(400).send({ error: '无效 stageType' })
+  await requireStageWrite(stageType)(request, reply)
+  if (reply.sent) return
+  const lid = Number(request.params.lumiId)
+  const stage = getStage(lid, stageType)
+  if (!stage) return reply.code(404).send({ error: 'stage 不存在' })
+  try {
+    const result = await pushStageToTapd(stage)
+    logProductionActivity({
+      lumiId: lid, stageType,
+      username: request.currentUser.username,
+      action: 'push_tapd',
+      detail: JSON.stringify({ iterationId: stage.tapdIterationId, status: stage.status, assignee: stage.assignee }),
+    })
+    return { ok: true, result }
+  } catch (e) {
+    return reply.code(502).send({ error: e.message })
+  }
 })
 
 // -------- 启动 --------

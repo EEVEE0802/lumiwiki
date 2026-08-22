@@ -1,12 +1,13 @@
 <script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, computed } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useLanguage } from '../composables/useLanguage'
 import { useVersion } from '../composables/useVersion'
 import { useAuth } from '../composables/useAuth'
 import LoginModal from './LoginModal.vue'
 
 const router = useRouter()
+const route = useRoute()
 const mobileMenuOpen = ref(false)
 const langMenuOpen = ref(false)
 const userMenuOpen = ref(false)
@@ -15,8 +16,12 @@ const loginModalOpen = ref(false)
 const { isInternal } = useVersion()
 const { currentUser, isAdmin, logout } = useAuth()
 
-// 导航链接
-const navLinks = [
+// 根据路径判断当前处于哪个"应用"
+// /production* → 生产协作站；其它 → LumiWiki 图鉴
+const isProductionApp = computed(() => route.path.startsWith('/production'))
+
+// LumiWiki 图鉴导航
+const wikiLinks = [
   { path: '/', label: '首页' },
   { path: '/lumi', label: '噜咪图鉴' },
   { path: '/skill', label: '技能图鉴' },
@@ -24,7 +29,6 @@ const navLinks = [
   { path: '/type-chart', label: '属性克制表' },
   { path: '/damage-calculator', label: '伤害计算器' },
   { path: '/online-data', label: '线上数据' },
-  { path: '/production', label: '📋 生产看板' },
   { path: '/adventure-drop', label: '冒险掉落' },
   { path: '/battle-buff', label: '✨ Buff 图鉴' },
   { path: '/robot-team', label: '🤖 机器人阵容' },
@@ -33,17 +37,46 @@ const navLinks = [
   { path: '/claude-code-guide', label: '🤖 Claude 教程' },
 ]
 
+// 生产协作站导航
+const productionLinks = [
+  { path: '/production', label: '📋 看板' },
+  { path: '/production/dispatch', label: '🗂️ 排期总览' },
+]
+
+const navLinks = computed(() => isProductionApp.value ? productionLinks : wikiLinks)
+
+const brandInfo = computed(() => isProductionApp.value
+  ? { icon: '🎨', text: '生产协作', path: '/production', color: '#a493e0' }
+  : { icon: '🌟', text: 'LumiWiki', path: '/', color: '#e94560' }
+)
+
+function switchApp() {
+  // 从生产站切到图鉴 → 跳 / ；反之跳 /production
+  router.push(isProductionApp.value ? '/' : '/production')
+}
+
 // 语言切换
 const { currentLang, languages, setLanguage } = useLanguage()
 </script>
 
 <template>
-  <nav class="navbar">
-    <div class="nav-brand" @click="router.push('/')">
-      <span class="brand-icon">🌟</span>
-      <span class="brand-text">LumiWiki</span>
-      <span v-if="isInternal" class="internal-badge" title="当前为对内开发分支数据">🔒 对内</span>
+  <nav class="navbar" :class="{ 'nav-production': isProductionApp }">
+    <div class="nav-brand" @click="router.push(brandInfo.path)" :style="{ color: brandInfo.color }">
+      <span class="brand-icon">{{ brandInfo.icon }}</span>
+      <span class="brand-text">{{ brandInfo.text }}</span>
+      <span v-if="isInternal && !isProductionApp" class="internal-badge" title="当前为对内开发分支数据">🔒 对内</span>
     </div>
+
+    <button
+      class="app-switch"
+      @click="switchApp"
+      :title="isProductionApp ? '切换到 LumiWiki 图鉴' : '切换到生产协作站'"
+    >
+      <span class="app-switch-icon">⇄</span>
+      <span class="app-switch-text">
+        {{ isProductionApp ? '🌟 LumiWiki' : '🎨 生产站' }}
+      </span>
+    </button>
 
     <button class="mobile-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
       {{ mobileMenuOpen ? '✕' : '☰' }}
@@ -125,6 +158,34 @@ const { currentLang, languages, setLanguage } = useLanguage()
   background: #1a1a2e;
   border-bottom: 2px solid #e94560;
   flex-wrap: wrap;
+}
+.navbar.nav-production {
+  border-bottom-color: #a493e0;
+  background: linear-gradient(180deg, #1a1a2e 0%, #22203a 100%);
+}
+.app-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #ccc;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85em;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.app-switch:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.3);
+  color: #fff;
+}
+.app-switch-icon {
+  font-size: 1.1em;
+  opacity: 0.7;
 }
 .nav-brand {
   cursor: pointer;
