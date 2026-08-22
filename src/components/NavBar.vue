@@ -24,7 +24,7 @@ const navLinks = [
   { path: '/type-chart', label: '属性克制表' },
   { path: '/damage-calculator', label: '伤害计算器' },
   { path: '/online-data', label: '线上数据' },
-  { path: '/production', label: '📋 生产管线' },
+  { path: '/production', label: '📋 生产看板' },
   { path: '/adventure-drop', label: '冒险掉落' },
   { path: '/battle-buff', label: '✨ Buff 图鉴' },
   { path: '/robot-team', label: '🤖 机器人阵容' },
