@@ -6,6 +6,7 @@ import { TYPE_NAMES, TYPE_COLORS } from '../data'
 import { avatarUrl } from '../data/imageUrl'
 import ProductionStageEditor from '../components/ProductionStageEditor.vue'
 import ProductionOrderEditor from '../components/ProductionOrderEditor.vue'
+import ProductionGantt from '../components/ProductionGantt.vue'
 
 const { currentUser, hasPermission } = useAuth()
 const canPm = computed(() => hasPermission('production.pm'))
@@ -48,6 +49,7 @@ const filterStageStatusStage = ref('') // 配合上面：过滤哪个环节
 const filterDesigner = ref('')
 const filterProgress = ref('')
 const activeTab = ref('all')  // all / mine / active-week
+const viewMode = ref('table')  // 'table' | 'gantt'
 
 async function load() {
   loading.value = true
@@ -188,6 +190,16 @@ function clearFilters() {
         <p class="prod-subtitle">噜咪生产全流程管理 · PM / 各环节协作 · 从腾讯文档导入</p>
       </div>
       <div class="prod-header-right">
+        <div class="view-toggle">
+          <button
+            :class="['view-btn', { active: viewMode === 'table' }]"
+            @click="viewMode = 'table'"
+          >📋 表格</button>
+          <button
+            :class="['view-btn', { active: viewMode === 'gantt' }]"
+            @click="viewMode = 'gantt'"
+          >📊 甘特</button>
+        </div>
         <button v-if="canPm" class="btn-create" @click="openCreateOrder">➕ 新增噜咪</button>
         <span v-if="currentUser" class="prod-user">👤 {{ currentUser.username }} · {{ currentUser.role }}</span>
       </div>
@@ -265,7 +277,7 @@ function clearFilters() {
       </div>
 
       <!-- 表格 -->
-      <div class="prod-table-wrap">
+      <div v-if="viewMode === 'table'" class="prod-table-wrap">
         <table class="prod-table">
           <thead>
             <tr>
@@ -359,6 +371,16 @@ function clearFilters() {
           </tbody>
         </table>
       </div>
+
+      <!-- 甘特图 -->
+      <ProductionGantt
+        v-else
+        :orders="filtered"
+        :stage-meta="STAGE_META"
+        :status-meta="STATUS_META"
+        @stage-click="openStageEditor($event.order, $event.stage)"
+        @refresh="load"
+      />
     </div>
 
     <ProductionStageEditor
@@ -408,6 +430,29 @@ function clearFilters() {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+.view-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.view-btn {
+  background: transparent;
+  border: none;
+  padding: 6px 12px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 0.85em;
+  font-family: inherit;
+}
+.view-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+.view-btn:hover:not(.active) {
+  color: var(--text);
+  background: rgba(255,255,255,0.05);
 }
 .btn-create {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
