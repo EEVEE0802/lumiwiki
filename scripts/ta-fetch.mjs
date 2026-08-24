@@ -242,9 +242,14 @@ async function submitSql(cfg, sql, format = 'csv') {
   return data.data.taskId
 }
 
-// 拉取单页；同时能识别"任务还在跑"的错误码，返回 { done, running, errored, chunk }
+// 拉取单页；同时能识别"任务还在跑"的错误码，返回 { done, running, errored, bytesWritten, msg }
 // pageId=0 时收到 -1008 说明任务还没跑完（返回 running）；pageId>0 收到 -1008 才是到末尾
-async function fetchResultPage(cfg, taskId, pageId) {
+//
+// out 参数：CSV body 直接流式写入这个 write stream，避免整页 Buffer 化。
+// 之前用 resp.arrayBuffer() 会把整页读进 Buffer，>2GB 就撞 Node 上限
+// （国内 gym 累积到 8/21 每次报 "length ... out of range. Received 2333579092"）。
+// 现在用 for await 逐 chunk 写盘，单页可以任意大。
+async function fetchResultPage(cfg, taskId, pageId, out) {
   const url = `${cfg.baseUrl}/open/sql-result-page?token=${cfg.token}&projectId=${cfg.projectId}&taskId=${taskId}&pageId=${pageId}`
   const resp = await fetchWithRetry(url, undefined, { label: `sql-result-page pageId=${pageId}` })
   const ct = resp.headers.get('content-type') || ''
@@ -271,11 +276,17 @@ async function fetchResultPage(cfg, taskId, pageId) {
     return { errored: true, msg }
   }
 
-  // 二进制流 = CSV chunk
-  const buf = Buffer.from(await resp.arrayBuffer())
+  // 二进制流 = CSV chunk，流式写入 out（backpressure 用 drain 事件等待）
+  let bytesWritten = 0
+  for await (const chunk of resp.body) {
+    if (!out.write(chunk)) {
+      await new Promise(res => out.once('drain', res))
+    }
+    bytesWritten += chunk.length
+  }
   // 数数会把空页返回为空 body（0 字节）
-  if (buf.length === 0) return { done: true }
-  return { chunk: buf }
+  if (bytesWritten === 0) return { done: true }
+  return { bytesWritten }
 }
 
 async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs = 600000, pollIntervalMs = 2500 } = {}) {
@@ -289,7 +300,7 @@ async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs
   const start = Date.now()
 
   while (true) {
-    const r = await fetchResultPage(cfg, taskId, pageId)
+    const r = await fetchResultPage(cfg, taskId, pageId, out)
 
     if (r.running) {
       if (Date.now() - start > maxWaitPerPollMs) {
@@ -311,9 +322,8 @@ async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs
       break
     }
 
-    // 写入 chunk（数数开放 API 每页都是纯数据，不含表头）
-    out.write(r.chunk)
-    totalBytes += r.chunk.length
+    // fetchResultPage 已把该页 chunk 流式写入 out，这里只累加字节数用作进度显示
+    totalBytes += r.bytesWritten
 
     if (pageId % 5 === 0 || pageId < 3) {
       console.log(`  已下载 pageId=${pageId} (${(totalBytes / 1024 / 1024).toFixed(2)} MB)`)
@@ -373,7 +383,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToP
   const out = getArg('--out')
 
   if (!start || !end || !out) {
-    console.log('用法: node ta-fetch.mjs --region domestic --mode ladder --start 2026-08-08 --end 2026-08-10 --out data/domestic/archive/week5/ladder_week5.csv')
+    console.log('用法: node ta-fetch.mjs --region domestic --mode ladder --start 2026-08-08 --end 2026-08-08 --out data/domestic/archive/daily/ladder/2026-08-08.csv')
     process.exit(1)
   }
 

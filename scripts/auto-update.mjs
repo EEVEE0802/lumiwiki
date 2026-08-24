@@ -50,19 +50,14 @@ function formatDate(date) {
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`
 }
 
-// 计算当前游戏周编号和时间范围
-// 游戏周：每周五 03:00 ~ 下周五 03:00
-// 首周从 config.baseFriday 03:00 开始
+// 计算当前游戏周编号和时间范围（新架构：按自然日归属周）
+// 游戏周：周五 00:00 ~ 下周四 23:59（自然日归属周，配合按天分片方案）
+// 首周从 config.baseFriday 00:00 开始
 // 国内 / 海外全球通服，共用同一套 baseFriday
 export function computeWeekInfo(baseFriday) {
   const now = new Date()
-  const base = new Date(baseFriday + 'T03:00:00')
-  let week = Math.floor((now - base) / (7 * 24 * 60 * 60 * 1000)) + 1
-
-  // 周五 03:00 ~ 03:59 跑的算上一周
-  if (now.getDay() === 5 && now.getHours() === 3) {
-    week -= 1
-  }
+  const base = new Date(baseFriday + 'T00:00:00')
+  const week = Math.floor((now - base) / (7 * 24 * 60 * 60 * 1000)) + 1
 
   const weekStart = new Date(base)
   weekStart.setDate(weekStart.getDate() + (week - 1) * 7)
@@ -74,27 +69,8 @@ export function computeWeekInfo(baseFriday) {
   }
 }
 
-// 周赛是否开放：全球通服，用国内时间的窗口
-// 周五 19:00 ~ 周一 07:00
-export function isTournamentActive(now = new Date()) {
-  const day = now.getDay()  // 0=周日, 1=周一, ..., 5=周五
-  const hour = now.getHours()
-  if (day === 5 && hour >= 19) return true          // 周五 19:00+
-  if (day === 6) return true                         // 周六全天
-  if (day === 0) return true                         // 周日全天
-  if (day === 1 && hour < 7) return true            // 周一 <07:00
-  return false
-}
-
-// 是否应该拉周赛数据：窗口内 + 窗口关闭后 1 小时（周一 07:00-07:59 收尾一次，
-// 抓上 06:59 前最后一场对战；否则最后一小时的数据会被漏掉）
-export function shouldFetchTournament(now = new Date()) {
-  if (isTournamentActive(now)) return true
-  const day = now.getDay()
-  const hour = now.getHours()
-  if (day === 1 && hour === 7) return true          // 周一 07:00 ~ 07:59 收尾
-  return false
-}
+// 每天固定拉取所有模式（含周赛），因此不再需要 isTournamentActive / shouldFetchTournament 判断窗口
+// 周赛在非开放日拉出来是空 CSV，process 脚本能处理，不影响任何东西
 
 function ensureWeekInJson(region, week) {
   const weeksJsonPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/weeks.json`)
@@ -113,16 +89,25 @@ function ensureWeekInJson(region, week) {
 
 /**
  * 拉取并处理某区域某模式（ladder / tournament）的数据
+ * 新架构：每次只拉 [昨天, 今天] 2 天到 daily/{mode}/{date}.csv
+ * process 脚本根据 --week 读该周 7 天 daily 分片汇总
+ *
  * @param {'domestic'|'overseas'} region
  * @param {'ladder'|'tournament'} mode
  * @param {object} weekInfo { week, startDate, endDate }
  */
 export async function updateRegionMode(region, mode, weekInfo) {
-  const { week, startDate, endDate } = weekInfo
-  const fileName = mode === 'tournament' ? `tournament_week${week}.csv` : `ladder_week${week}.csv`
-  const outputPath = path.join(PROJECT_ROOT, 'data', region, 'archive', `week${week}`, fileName)
+  const { week } = weekInfo
+  const pad = n => String(n).padStart(2, '0')
+  const fmt = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+  const now = new Date()
+  const yesterday = new Date(now); yesterday.setDate(yesterday.getDate() - 1)
+  const dates = [fmt(yesterday), fmt(now)]
 
-  await fetchCsv(region, mode, startDate, endDate, outputPath)
+  for (const date of dates) {
+    const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', mode, `${date}.csv`)
+    await fetchCsv(region, mode, date, date, outPath)
+  }
 
   const scriptFile = mode === 'tournament' ? 'scripts/process-tournament-data.js' : 'scripts/process-battle-data.js'
   runCommand(process.execPath, [scriptFile, '--week', String(week), '--region', region])
@@ -139,18 +124,31 @@ export async function updateRegionMode(region, mode, weekInfo) {
 }
 
 /**
- * 拉取参与走势（内部会拉 login CSV + 聚合），失败不阻塞
+ * 拉取参与走势相关的原始事件流（login/guild-war）+ recharge，然后跑聚合脚本
+ * login/guild-war 也走 daily 分片，每次拉昨天+今天覆盖
  */
 export async function updateRegionParticipation(region, week, baseFriday) {
   try {
-    // 先拉 recharge CSV（累计全量，用于给玩家打付费档位）
-    // 单独 try：recharge 失败不影响参与走势主流程
+    const pad = n => String(n).padStart(2, '0')
+    const fmt = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+    const now = new Date()
+    const yesterday = new Date(now); yesterday.setDate(yesterday.getDate() - 1)
+    const dates = [fmt(yesterday), fmt(now)]
+
+    // login daily 分片（每天创号+登录事件）
+    for (const date of dates) {
+      const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'login', `${date}.csv`)
+      await fetchCsv(region, 'login', date, date, outPath)
+    }
+    // guild-war daily 分片（异步 PVP 事件）
+    for (const date of dates) {
+      const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'guild-war', `${date}.csv`)
+      await fetchCsv(region, 'guild-war', date, date, outPath)
+    }
+    // recharge：累计全量（不按天分片，每人历史最大 recharge_total）
     try {
       const rechargeCsvPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'recharge.csv')
-      const now = new Date()
-      const pad = n => String(n).padStart(2, '0')
-      const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`
-      await fetchCsv(region, 'recharge', baseFriday, today, rechargeCsvPath)
+      await fetchCsv(region, 'recharge', baseFriday, fmt(now), rechargeCsvPath)
     } catch (e) {
       console.error(`⚠️  [${region}] recharge 拉取失败（不阻塞参与走势）: ${e.message}`)
     }
@@ -171,47 +169,45 @@ export function updateRegionLumiTeams(region) {
 }
 
 /**
- * 无限道馆数据：CSV 累计（从 baseFriday 到今天覆盖式拉全量），处理后输出 JSON
- * 因为是一次性玩法（没有周概念），累计存到 data/{region}/archive/gym_infinity.csv
- * 助战数据（use_assist_lumi 事件）也一并拉，累计存到 assist_infinity.csv
- * process 用 --max-old-space-size=4096（累计 CSV 会到几百 MB，加大 heap 保底）
+ * 无限道馆数据：改成按天分片，每次只拉 [昨天, 今天] 2 天覆盖对应 daily 文件
+ * 输出: data/{region}/archive/daily/infinity-gym/{YYYY-MM-DD}.csv (& daily/assist/...)
+ *
+ * 昨天 = 补齐上次任务运行到今日凌晨这段时间新增的战斗（跨零点部分）
+ * 今天 = 当天累积到目前为止的数据（覆盖式覆盖今日文件）
+ *
+ * 历史数据由 backfill-daily.mjs 一次性回填，后续每天只增量拉这 2 天。
+ * process-infinity-gym.mjs 会读整个 daily 目录累计聚合。
  */
-export async function updateRegionInfinityGym(region, baseFriday) {
-  const csvPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'gym_infinity.csv')
-  const assistPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'assist_infinity.csv')
-  // 拉从开服到今天全部无限道馆数据（无限道馆 08-07 才上线，但用 baseFriday 兜底也没事，SQL 会自然过滤为空）
-  const now = new Date()
+export async function updateRegionInfinityGym(region /* baseFriday 不再使用 */) {
   const pad = n => String(n).padStart(2, '0')
-  const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`
-  await fetchCsv(region, 'infinity-gym', baseFriday, today, csvPath)
-  // 助战埋点（跟无限道馆同周期，累计全量）
-  await fetchCsv(region, 'assist', baseFriday, today, assistPath)
+  const fmt = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+  const now = new Date()
+  const yesterday = new Date(now); yesterday.setDate(yesterday.getDate() - 1)
+  const dates = [fmt(yesterday), fmt(now)]
+
+  for (const date of dates) {
+    const gymPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'infinity-gym', `${date}.csv`)
+    const assistPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'assist', `${date}.csv`)
+    await fetchCsv(region, 'infinity-gym', date, date, gymPath)
+    await fetchCsv(region, 'assist', date, date, assistPath)
+  }
+
+  // process 遍历所有 daily CSV 聚合；heap 大一点兜底跨天累计后的中间数据结构
   runCommand(process.execPath, ['--max-old-space-size=4096', 'scripts/process-infinity-gym.mjs', '--region', region])
 }
 
-/**
- * 公会战数据（GvG1v1，异步 PVP）：仅拉 CSV，不做 process；参与走势脚本会读它做 UV/重合率
- * 按周分档存到 data/{region}/archive/weekN/guild_war_weekN.csv
- */
-export async function updateRegionGuildWar(region, weekInfo) {
-  const { week, startDate, endDate } = weekInfo
-  const csvPath = path.join(PROJECT_ROOT, 'data', region, 'archive', `week${week}`, `guild_war_week${week}.csv`)
-  await fetchCsv(region, 'guild-war', startDate, endDate, csvPath)
-}
+// updateRegionGuildWar 已并入 updateRegionParticipation（公会战 daily CSV 跟 login 一起拉）
 
 async function main() {
   const args = process.argv.slice(2)
   const onlyMode = args.find(a => a === '--tournament' || a === '--ladder')?.slice(2) || null
-  const forceTournament = args.includes('--force-tournament')
   const config = loadConfig()
   const weekInfo = computeWeekInfo(config.baseFriday)
-  const tournamentOpen = isTournamentActive()
-  const shouldTournament = shouldFetchTournament() || forceTournament
 
   console.log(`\n===== LumiWiki 线上数据自动更新 =====`)
   console.log(`游戏周: Week ${weekInfo.week} (${weekInfo.startDate} ~ ${weekInfo.endDate})`)
   console.log(`区域: ${REGIONS.join(', ')}`)
-  console.log(`周赛窗口: ${tournamentOpen ? '开放中' : '未开放'}${shouldTournament && !tournamentOpen ? '（本次为收尾拉取）' : ''}${forceTournament ? '（--force-tournament 强制拉取）' : ''}`)
+  console.log(`架构: 每天拉一次，按 daily 分片`)
 
   const modeFilter = onlyMode // 'ladder' / 'tournament' / null
   const modeSummary = []
@@ -225,37 +221,29 @@ async function main() {
       modeSummary.push(`${region}: 天梯`)
     }
 
-    // 2. 周赛（仅在窗口期，且非首周；窗口关闭后 1 小时内再拉一次收尾，抓上 06:59 前最后一场对战）
-    //    可用 --force-tournament 手动补跑（例如某次窗口内故障错过）
-    if ((!modeFilter || modeFilter === 'tournament') && weekInfo.week > 1 && shouldTournament) {
+    // 2. 周赛（非首周直接拉；开放窗口外拉出来是空 CSV，无害）
+    if ((!modeFilter || modeFilter === 'tournament') && weekInfo.week > 1) {
       await updateRegionMode(region, 'tournament', weekInfo)
-      modeSummary.push(`${region}: 周赛${tournamentOpen ? '' : '(收尾)'}`)
+      modeSummary.push(`${region}: 周赛`)
     }
 
-    // 3. 无限道馆（累计口径，每次拉从 baseFriday 到今天全量）
+    // 3. 无限道馆（每次拉昨天+今天两天到 daily 分片，process 遍历所有 daily 汇总）
     //    只在没有 --tournament 显式 filter 时跑（跟 ladder 一起）
     if (!modeFilter || modeFilter === 'ladder') {
       try {
-        await updateRegionInfinityGym(region, config.baseFriday)
+        await updateRegionInfinityGym(region)
         modeSummary.push(`${region}: 无限道馆`)
       } catch (e) {
         console.error(`⚠️  [${region}] 无限道馆更新失败（不阻塞其他）: ${e.message}`)
       }
     }
 
-    // 3.5 公会战（异步 PVP，只拉 CSV 供参与走势用，失败不阻塞）
-    if (!modeFilter || modeFilter === 'ladder') {
-      try {
-        await updateRegionGuildWar(region, weekInfo)
-        modeSummary.push(`${region}: 公会战`)
-      } catch (e) {
-        console.error(`⚠️  [${region}] 公会战拉取失败（不阻塞其他）: ${e.message}`)
-      }
-    }
+    // 3.5 公会战数据由 updateRegionParticipation 统一拉取到 daily/guild-war/{date}.csv
 
-    // 4. 参与走势（跟着 ladder 一起，失败不阻塞；读取 ladder/tournament/login/gym/guild_war CSV 聚合）
+    // 4. 参与走势（跟着 ladder 一起，失败不阻塞；同时拉 login/guild-war/recharge，然后调聚合脚本）
     if (!modeFilter || modeFilter === 'ladder') {
       await updateRegionParticipation(region, weekInfo.week, config.baseFriday)
+      modeSummary.push(`${region}: 参与走势`)
     }
 
     // 5. 推荐配队（跟着最新的 ladder/tournament 数据重算）
@@ -297,7 +285,6 @@ async function main() {
   await notify(
     `线上数据更新完成（Week ${weekInfo.week}）\n` +
     `区域: ${REGIONS.join(' + ')}\n` +
-    `周赛: ${tournamentOpen ? '含' : '未开放'}\n` +
     `内容: ${modeSummary.join(' | ') || '无'}`,
     'success'
   )

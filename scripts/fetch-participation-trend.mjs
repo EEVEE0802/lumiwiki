@@ -28,8 +28,9 @@ if (!['domestic', 'overseas'].includes(region)) {
 }
 
 // 读取 baseFriday（从 ta-config.json）
+// 新架构：周五 00:00 ~ 下周四 23:59 = 一周（自然日归属周，跟 daily 分片对齐）
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'ta-config.json'), 'utf-8'))
-const baseFriday = new Date(config.baseFriday + 'T03:00:00+08:00')
+const baseFriday = new Date(config.baseFriday + 'T00:00:00+08:00')
 
 // 计算周时间范围
 const startTime = new Date(baseFriday)
@@ -45,21 +46,27 @@ const endDate = fmtDate(new Date(endTime - 1000)) // 结束当天算最后一天
 console.log(`\n===== 参与走势拉取 Week ${week} (${region}) =====`)
 console.log(`日期范围: ${startDate} ~ ${endDate}`)
 
-// login CSV 路径
-const loginCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/login_week${week}.csv`)
-if (skipFetch && fs.existsSync(loginCsvPath)) {
-  console.log(`✓ --skip-fetch 且 login CSV 已存在，跳过拉取`)
-} else {
-  console.log(`\n📤 拉取 player_login 数据 (${region})...`)
-  await fetchCsv(region, 'login', startDate, endDate, loginCsvPath)
+// 本周 7 天的日期数组（YYYY-MM-DD）
+const weekDates = []
+{
+  const s = new Date(startTime), e = new Date(endTime)
+  for (let d = new Date(s); d < e; d.setDate(d.getDate() + 1)) {
+    weekDates.push(fmtDate(d))
+  }
 }
+const dailyPaths = mode => weekDates.map(d =>
+  path.join(PROJECT_ROOT, `data/${region}/archive/daily/${mode}/${d}.csv`)
+)
 
-const ladderCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/ladder_week${week}.csv`)
-const tournamentCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/tournament_week${week}.csv`)
-// 无限道馆 CSV 是累计的（不按周分），所有周共用一份；参与走势按 part_date 过滤到本周
-const gymCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/gym_infinity.csv`)
-// 公会战 CSV 按周分档，跟 ladder 结构类似
-const guildWarCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/week${week}/guild_war_week${week}.csv`)
+// 所有事件流都读 daily 分片
+// 参与走势脚本本身不再拉数据 —— 数据由 auto-update.mjs 每天调 fetchCsv 到 daily 目录
+// 如果 daily CSV 缺失，dailyDistinct 内部会跳过（不阻塞），最终 UV=0
+// --skip-fetch 参数保留但已无效（未来所有拉取都由 auto-update 统一负责）
+const ladderCsvPaths = dailyPaths('ladder')
+const tournamentCsvPaths = dailyPaths('tournament')
+const gymCsvPaths = dailyPaths('infinity-gym')
+const guildWarCsvPaths = dailyPaths('guild-war')
+const loginCsvPaths = dailyPaths('login')
 // 充值 CSV：累计全量（每人历史最大 recharge_total，单位：分）
 const rechargeCsvPath = path.join(PROJECT_ROOT, `data/${region}/archive/recharge.csv`)
 
@@ -115,33 +122,37 @@ function isRetention(date, createDay) {
 
 // 从 login CSV 建立 b_role_id -> 创号日期(YYYY-MM-DD) 的映射
 // 新 CSV 是长表（每行一次 login），同一 b_role_id 可能出现多次，取第一次遇到即可
-async function buildCreateTimeMap(csvPath) {
+async function buildCreateTimeMap(csvPathOrPaths) {
   const map = new Map()
-  if (!fs.existsSync(csvPath)) return map
-  const fileStream = fs.createReadStream(csvPath)
-  const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity })
+  const csvPaths = Array.isArray(csvPathOrPaths) ? csvPathOrPaths : [csvPathOrPaths]
 
-  let headers = null
-  let bRoleIdIdx = -1
-  let createTimeIdx = -1
-  for await (const line of rl) {
-    if (!line.trim()) continue
-    const values = parseCSVLine(line)
-    if (!headers) {
-      headers = values.map(h => h.replace(/^﻿/, '').trim())
-      bRoleIdIdx = headers.indexOf('b_role_id')
-      createTimeIdx = headers.indexOf('b_create_time_str')
-      if (bRoleIdIdx === -1 || createTimeIdx === -1) {
-        console.warn(`⚠️ login CSV 缺少 b_role_id / b_create_time_str 列，留存统计不可用`)
-        return map
+  for (const csvPath of csvPaths) {
+    if (!fs.existsSync(csvPath)) continue
+    const fileStream = fs.createReadStream(csvPath)
+    const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity })
+
+    let headers = null
+    let bRoleIdIdx = -1
+    let createTimeIdx = -1
+    for await (const line of rl) {
+      if (!line.trim()) continue
+      const values = parseCSVLine(line)
+      if (!headers) {
+        headers = values.map(h => h.replace(/^﻿/, '').trim())
+        bRoleIdIdx = headers.indexOf('b_role_id')
+        createTimeIdx = headers.indexOf('b_create_time_str')
+        if (bRoleIdIdx === -1 || createTimeIdx === -1) {
+          console.warn(`⚠️ login CSV 缺少 b_role_id / b_create_time_str 列: ${csvPath}`)
+          break
+        }
+        continue
       }
-      continue
-    }
-    const bRoleId = values[bRoleIdIdx]
-    const createTimeStr = values[createTimeIdx]
-    if (bRoleId && createTimeStr && !map.has(bRoleId)) {
-      // b_create_time_str 形如 "2026-07-15 10:23:00"，取日期部分
-      map.set(bRoleId, createTimeStr.slice(0, 10))
+      const bRoleId = values[bRoleIdIdx]
+      const createTimeStr = values[createTimeIdx]
+      if (bRoleId && createTimeStr && !map.has(bRoleId)) {
+        // b_create_time_str 形如 "2026-07-15 10:23:00"，取日期部分
+        map.set(bRoleId, createTimeStr.slice(0, 10))
+      }
     }
   }
   console.log(`  创号时间映射: ${map.size} 个玩家`)
@@ -194,16 +205,10 @@ function tierOf(roleId, tierMap) {
 // 长表 CSV：每行一场事件。按 part_date 分组，distinct b_role_id + 累加行数（=事件数）
 // 顶层字段是"全量汇总"（不分档），byTier[tier] 是每档独立的结果（用于付费档筛选）
 // 一次遍历，同时输出全量 + 5 档 —— 避免多次遍历 CSV
-async function dailyDistinct(csvPath, createTimeMap, tierMap) {
+// 支持传单文件路径或路径数组（按天分片场景：本周 7 天 daily CSV）
+async function dailyDistinct(csvPathOrPaths, createTimeMap, tierMap) {
+  const csvPaths = Array.isArray(csvPathOrPaths) ? csvPathOrPaths : [csvPathOrPaths]
   const emptyBucket = () => ({ uv: {}, retentionUv: {}, battles: {}, retentionBattles: {}, sets: {}, retentionSets: {} })
-  const empty = { ...emptyBucket(), byTier: Object.fromEntries(PAYMENT_TIERS.map(t => [t, emptyBucket()])) }
-  if (!fs.existsSync(csvPath)) return empty
-  const fileStream = fs.createReadStream(csvPath)
-  const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity })
-
-  let headers = null
-  let dateIdx = -1
-  let bRoleIdIdx = -1
   // 全量桶
   const dailySets = {}, retentionSets = {}, dailyBattles = {}, retentionBattles = {}
   // 每档桶（延迟初始化，用到才建 date key）
@@ -218,48 +223,59 @@ async function dailyDistinct(csvPath, createTimeMap, tierMap) {
     }
   }
 
-  for await (const line of rl) {
-    if (!line.trim()) continue
-    const values = parseCSVLine(line)
-    if (!headers) {
-      headers = values.map(h => h.replace(/^﻿/, '').trim())
-      dateIdx = headers.indexOf('part_date')
-      bRoleIdIdx = headers.indexOf('b_role_id')
-      if (dateIdx === -1 || bRoleIdIdx === -1) {
-        console.error(`❌ CSV 未找到 part_date/b_role_id 列: ${csvPath}`)
-        return empty
+  // 逐文件流式处理，累加到同一份桶
+  for (const csvPath of csvPaths) {
+    if (!fs.existsSync(csvPath)) continue
+    const fileStream = fs.createReadStream(csvPath)
+    const rl = readline.createInterface({ input: fileStream, crlfDelay: Infinity })
+
+    let headers = null
+    let dateIdx = -1
+    let bRoleIdIdx = -1
+
+    for await (const line of rl) {
+      if (!line.trim()) continue
+      const values = parseCSVLine(line)
+      if (!headers) {
+        headers = values.map(h => h.replace(/^﻿/, '').trim())
+        dateIdx = headers.indexOf('part_date')
+        bRoleIdIdx = headers.indexOf('b_role_id')
+        if (dateIdx === -1 || bRoleIdIdx === -1) {
+          console.error(`❌ CSV 未找到 part_date/b_role_id 列: ${csvPath}`)
+          break
+        }
+        continue
       }
-      continue
-    }
-    const date = values[dateIdx]
-    const bRoleId = values[bRoleIdIdx]
-    if (!date || !bRoleId) continue
+      const date = values[dateIdx]
+      const bRoleId = values[bRoleIdIdx]
+      if (!date || !bRoleId) continue
 
-    // 全量累加
-    if (!dailySets[date]) {
-      dailySets[date] = new Set()
-      retentionSets[date] = new Set()
-      dailyBattles[date] = 0
-      retentionBattles[date] = 0
-    }
-    dailySets[date].add(bRoleId)
-    dailyBattles[date]++
-    const createDay = createTimeMap ? createTimeMap.get(bRoleId) : null
-    const isRet = createDay && isRetention(date, createDay)
-    if (isRet) {
-      retentionSets[date].add(bRoleId)
-      retentionBattles[date]++
-    }
+      // 全量累加
+      if (!dailySets[date]) {
+        dailySets[date] = new Set()
+        retentionSets[date] = new Set()
+        dailyBattles[date] = 0
+        retentionBattles[date] = 0
+      }
+      dailySets[date].add(bRoleId)
+      dailyBattles[date]++
+      const createDay = createTimeMap ? createTimeMap.get(bRoleId) : null
+      const isRet = createDay && isRetention(date, createDay)
+      if (isRet) {
+        retentionSets[date].add(bRoleId)
+        retentionBattles[date]++
+      }
 
-    // 按 tier 分档累加
-    const tier = tierOf(bRoleId, tierMap)
-    const bucket = tierSets[tier]
-    ensureDay(bucket, date)
-    bucket.sets[date].add(bRoleId)
-    bucket.battles[date]++
-    if (isRet) {
-      bucket.retentionSets[date].add(bRoleId)
-      bucket.retentionBattles[date]++
+      // 按 tier 分档累加
+      const tier = tierOf(bRoleId, tierMap)
+      const bucket = tierSets[tier]
+      ensureDay(bucket, date)
+      bucket.sets[date].add(bRoleId)
+      bucket.battles[date]++
+      if (isRet) {
+        bucket.retentionSets[date].add(bRoleId)
+        bucket.retentionBattles[date]++
+      }
     }
   }
 
@@ -283,55 +299,34 @@ async function dailyDistinct(csvPath, createTimeMap, tierMap) {
   return { uv, retentionUv, battles: dailyBattles, retentionBattles, sets: dailySets, retentionSets, byTier }
 }
 
-console.log(`\n建立创号时间映射（login CSV）...`)
-const createTimeMap = await buildCreateTimeMap(loginCsvPath)
+console.log(`\n建立创号时间映射（login daily CSV × ${loginCsvPaths.length} 天）...`)
+const createTimeMap = await buildCreateTimeMap(loginCsvPaths)
 
 console.log(`\n建立付费档映射（recharge CSV）...`)
 const tierMap = await buildTierMap(rechargeCsvPath)
 
-console.log(`\n处理 ladder CSV...`)
-const ladderResult = await dailyDistinct(ladderCsvPath, createTimeMap, tierMap)
+console.log(`\n处理 ladder daily CSV（本周 ${ladderCsvPaths.length} 天）...`)
+const ladderResult = await dailyDistinct(ladderCsvPaths, createTimeMap, tierMap)
 console.log(`  天梯每日 UV:`, ladderResult.uv)
 console.log(`  天梯每日留存 UV:`, ladderResult.retentionUv)
 
-console.log(`处理 tournament CSV...`)
-const tournamentResult = await dailyDistinct(tournamentCsvPath, createTimeMap, tierMap)
+console.log(`处理 tournament daily CSV（本周 ${tournamentCsvPaths.length} 天）...`)
+const tournamentResult = await dailyDistinct(tournamentCsvPaths, createTimeMap, tierMap)
 console.log(`  周赛每日 UV:`, tournamentResult.uv)
 console.log(`  周赛每日留存 UV:`, tournamentResult.retentionUv)
 
-console.log(`处理 login CSV...`)
-const loginResult = await dailyDistinct(loginCsvPath, createTimeMap, tierMap)
+console.log(`处理 login daily CSV（本周 ${loginCsvPaths.length} 天）...`)
+const loginResult = await dailyDistinct(loginCsvPaths, createTimeMap, tierMap)
 console.log(`  登录每日 UV:`, loginResult.uv)
 console.log(`  登录每日留存 UV:`, loginResult.retentionUv)
 
-console.log(`处理 gym_infinity CSV（累计，按本周日期过滤）...`)
-const gymResultAll = await dailyDistinct(gymCsvPath, createTimeMap, tierMap)
-// 只保留本周的日期（gym 是累计 CSV，可能包含前几周）
-const weekDates = new Set()
-{
-  const s = new Date(startTime), e = new Date(endTime)
-  for (let d = new Date(s); d < e; d.setDate(d.getDate() + 1)) {
-    weekDates.add(fmtDate(d))
-  }
-}
-const filterToWeek = obj => Object.fromEntries(Object.entries(obj).filter(([k]) => weekDates.has(k)))
-const filterBucketToWeek = (b) => ({
-  uv: filterToWeek(b.uv),
-  retentionUv: filterToWeek(b.retentionUv),
-  battles: filterToWeek(b.battles),
-  retentionBattles: filterToWeek(b.retentionBattles),
-  sets: filterToWeek(b.sets),
-  retentionSets: filterToWeek(b.retentionSets),
-})
-const gymResult = {
-  ...filterBucketToWeek(gymResultAll),
-  byTier: Object.fromEntries(PAYMENT_TIERS.map(t => [t, filterBucketToWeek(gymResultAll.byTier[t])])),
-}
+console.log(`处理无限道馆 daily CSV（本周 ${gymCsvPaths.length} 天）...`)
+const gymResult = await dailyDistinct(gymCsvPaths, createTimeMap, tierMap)
 console.log(`  无限道馆每日 UV:`, gymResult.uv)
 console.log(`  无限道馆每日留存 UV:`, gymResult.retentionUv)
 
-console.log(`处理 guild_war CSV...`)
-const guildWarResult = await dailyDistinct(guildWarCsvPath, createTimeMap, tierMap)
+console.log(`处理 guild-war daily CSV（本周 ${guildWarCsvPaths.length} 天）...`)
+const guildWarResult = await dailyDistinct(guildWarCsvPaths, createTimeMap, tierMap)
 console.log(`  公会战每日 UV:`, guildWarResult.uv)
 console.log(`  公会战每日留存 UV:`, guildWarResult.retentionUv)
 

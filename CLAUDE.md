@@ -39,25 +39,31 @@ LumiWiki/
 │   │   └── ...                      # 游戏核心数据
 │   └── images/                      # 图片资源
 ├── data/                            # 中间产物（CSV 不进 git）
-│   ├── domestic/archive/weekN/      # 国内 CSV 归档
-│   │   ├── ladder_weekN.csv
-│   │   ├── tournament_weekN.csv
-│   │   └── login_weekN.csv          # 参与走势用（player_login 事件）
-│   └── overseas/archive/weekN/      # 海外 CSV 归档（同结构）
+│   ├── domestic/archive/             # 国内 CSV 归档
+│   │   ├── daily/                    # 按天分片（所有事件流）
+│   │   │   ├── ladder/{YYYY-MM-DD}.csv
+│   │   │   ├── tournament/{YYYY-MM-DD}.csv
+│   │   │   ├── login/{YYYY-MM-DD}.csv
+│   │   │   ├── infinity-gym/{YYYY-MM-DD}.csv
+│   │   │   ├── assist/{YYYY-MM-DD}.csv
+│   │   │   └── guild-war/{YYYY-MM-DD}.csv
+│   │   └── recharge.csv              # 累计全量（每 role_id 历史最大充值，不按天分片）
+│   └── overseas/archive/             # 海外 CSV 归档（同结构）
 ├── scripts/
-│   ├── process-battle-data.js       # 天梯数据处理
-│   ├── process-tournament-data.js   # 周赛数据处理
+│   ├── process-battle-data.js       # 天梯数据处理（读本周 7 天 daily/ladder）
+│   ├── process-tournament-data.js   # 周赛数据处理（读本周 7 天 daily/tournament）
 │   ├── process-robot-teams.js       # 机器人阵容数据处理
 │   ├── convert-adventure-drop.mjs   # 冒险掉落数据处理
 │   ├── process-egg-drop.mjs         # 蛋掉落数据处理
 │   ├── process-lumi-teams.mjs       # 噜咪推荐配队数据处理
-│   ├── fetch-participation-trend.mjs # 参与走势数据处理（拉 login + 按日 distinct 聚合）
-│   ├── ta-fetch.mjs                 # 数数开放 API 拉取（长期 token，支持 domestic/overseas 双区）
+│   ├── fetch-participation-trend.mjs # 参与走势聚合（读 daily/{login,ladder,tournament,gym,guild-war}）
+│   ├── ta-fetch.mjs                 # 数数开放 API 拉取（流式写入，支持大响应）
 │   ├── notify.mjs                   # 飞书/企业微信通知
-│   ├── auto-update.mjs              # 每小时线上数据总控（拉取+处理+发布，双区）
+│   ├── auto-update.mjs              # 每天线上数据总控（拉昨天+今天 daily 分片 + 处理 + 发布）
 │   ├── auto-update-all.mjs          # 每日游戏数据总控（对外+对内 + 立绘 + 衍生）
-│   ├── auto-update.bat              # 每小时任务 wrapper
-│   ├── auto-update-all.bat          # 每日任务 wrapper
+│   ├── backfill-daily.mjs           # 按天回填历史 daily CSV（一次性用）
+│   ├── auto-update.bat              # 每日线上任务 wrapper
+│   ├── auto-update-all.bat          # 每日游戏任务 wrapper
 │   └── ta-config.example.json       # 配置模板（ta-config.json 含 token 不进 git）
 ├── src/
 │   ├── components/                  # Vue 组件
@@ -173,34 +179,22 @@ comm -23 /tmp/source_ca.txt /tmp/wiki_ca.txt | while read f; do cp "$SRC/$f" "$D
 | 星耀  | star    | 121-150 |
 | 传说  | legend  | 151     |
 
-### 每周数据更新步骤
+### 每周数据更新（已由 auto-update.mjs 自动完成，手动仅供故障恢复）
 
+日常无需手动更新。定时任务 `LumiWiki_Online_Daily` 每天 04:30 自动拉取昨天+今天到 daily 分片、聚合、发布、push。
+
+**手动补跑某周**（例如某天定时任务没跑成功）：
 ```bash
 cd D:/LumiWiki
 
-# 1. 归档上周天梯数据（第 2 周及以后）
-mv data/battle_end.csv data/archive/week{N-1}/ladder_week{N-1}.csv
+# 补拉某天的原始事件（按需选模式）
+node scripts/backfill-daily.mjs --region domestic --modes ladder,tournament,login,guild-war,infinity-gym,assist --start 2026-08-21 --end 2026-08-21 --force
 
-# 2. 放入本周数据到 data/archive/week{N}/
-#    - ladder_week{N}.csv（天梯）
-#    - tournament_week{N}.csv（周赛）
-
-# 3. 处理天梯数据
-npm run process-data:week {N}
-
-# 4. 处理周赛数据
-npm run process-tournament:week {N}
-
-# 5. 更新 battle-stats.json 为最新周
-cp public/data/online/weekly/ladder-week{N}.json public/data/online/battle-stats.json
-
-# 6. 更新 weeks.json（添加新周条目）
-
-# 7. 同步到 dist
-cp public/data/online/weekly/ladder-week{N}.json dist/data/online/weekly/
-cp public/data/online/weekly/tournament-week{N}.json dist/data/online/weekly/
-cp public/data/online/battle-stats.json dist/data/online/
-cp public/data/online/weekly/weeks.json dist/data/online/weekly/
+# 重新处理该周（--week N 会读该周 7 天 daily CSV 聚合）
+node scripts/process-battle-data.js --week N --region domestic
+node scripts/process-tournament-data.js --week N --region domestic
+node scripts/process-infinity-gym.mjs --region domestic
+node scripts/fetch-participation-trend.mjs --week N --region domestic --publish
 ```
 
 ### 常用命令
@@ -231,10 +225,33 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 ## 自动化数据更新
 
 **两个定时任务**：
-- **每小时**（LumiWiki_Online，:07 分）跑线上数据：数数开放 API 拉双区（国内+海外）天梯/周赛/参与走势，处理后 build + push
+- **每天 04:30**（LumiWiki_Online_Daily）跑线上数据：拉双区（国内+海外）昨天+今天数据到 daily 分片（ladder / tournament / infinity-gym / assist / login / guild-war），处理后 build + push
 - **每天 03:00**（LumiWiki_Daily）跑游戏数据：svn update → 复制 JSON → 多语言 → 衍生脚本（robot-teams / adventure-drop / egg-drop）→ 立绘同步 → build + push
 
 失败时通过飞书机器人通知。
+
+### 数据分片架构（面向 10x 数据设计）
+
+线上数据全部**按天分片**，每次拉取只写「昨天 + 今天」，历史数据用 `backfill-daily.mjs` 一次性回填。
+
+**目录结构**：
+```
+data/{region}/archive/
+  daily/
+    ladder/{YYYY-MM-DD}.csv          ← 每天一个文件，永远只增不改（除了当天覆盖）
+    tournament/{YYYY-MM-DD}.csv
+    infinity-gym/{YYYY-MM-DD}.csv
+    assist/{YYYY-MM-DD}.csv
+    login/{YYYY-MM-DD}.csv
+    guild-war/{YYYY-MM-DD}.csv
+  recharge.csv                        ← 累计全量（每 role_id 历史最大充值，特殊模式）
+```
+
+**关键设计**：
+- **每小时改每天**：原每小时全量重拉 → 每天只拉昨天+今天两天（避免累积 CSV 无限增长）
+- **周聚合**：process 脚本按 `--week N` 读该周 7 天 daily CSV 汇总
+- **周编号规则**：周五 00:00 ~ 下周四 23:59 = 一周（自然日归属周，跟 daily 分片对齐）
+- **流式写入**：`ta-fetch.mjs` 用 `for await (const chunk of resp.body)` 逐 chunk 写盘，避免 2GB Buffer 上限（老代码在国内 gym 累积到 8/21 撞过这个坑）
 
 ### 前置要求
 
@@ -268,14 +285,16 @@ GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
 
 | 脚本 | 职责 |
 |---|---|
-| `scripts/ta-fetch.mjs` | 数数开放 API 拉取：submit-sql → 分页 sql-result-page → CSV 落盘。参数：`--region domestic\|overseas --mode ladder\|tournament\|login --start --end --out` |
-| `scripts/fetch-participation-trend.mjs` | 参与走势：拉 login CSV + 按 part_date group + 按日 distinct b_role_id。参数：`--week N --region` |
+| `scripts/ta-fetch.mjs` | 数数开放 API 拉取：submit-sql → 分页 sql-result-page → **流式写入 CSV**（绕过 Buffer 2GB 上限）。参数：`--region domestic\|overseas --mode ladder\|tournament\|login\|infinity-gym\|assist\|guild-war\|recharge --start YYYY-MM-DD --end YYYY-MM-DD --out` |
+| `scripts/backfill-daily.mjs` | **按天回填历史数据**（一次性用）。参数：`--region --modes m1,m2 --start --end [--force]`。已存在的文件默认跳过 |
+| `scripts/fetch-participation-trend.mjs` | 参与走势聚合（读 daily/{ladder,tournament,login,infinity-gym,guild-war} × 本周 7 天）。参数：`--week N --region [--publish]` |
+| `scripts/process-infinity-gym.mjs` | 无限道馆数据处理（遍历 daily/infinity-gym/*.csv 累计聚合） |
 | `scripts/notify.mjs` | 飞书/企业微信通知（根据 webhook URL 自动判断平台） |
 | `scripts/update-game-data.mjs` | 游戏数据更新：svn update → 复制 JSON → 多语言 → 衍生脚本 → 立绘同步 |
-| `scripts/auto-update.mjs` | **每小时线上数据总控**：双区拉天梯 + (窗口内)周赛 + 参与走势 → 推荐配队 → build + push |
+| `scripts/auto-update.mjs` | **每日线上数据总控**：双区拉昨天+今天各模式 daily → process → 参与走势 → 推荐配队 → build + push |
 | `scripts/auto-update-all.mjs` | **每日游戏数据总控**：对外+对内游戏数据 + 立绘 + 衍生 → build + push |
-| `scripts/auto-update.bat` | 每小时任务 wrapper |
-| `scripts/auto-update-all.bat` | 每日任务 wrapper |
+| `scripts/auto-update.bat` | 每日线上任务 wrapper |
+| `scripts/auto-update-all.bat` | 每日游戏任务 wrapper |
 | `scripts/ta-config.json` | 配置（regions.{domestic,overseas}.{token,projectId,bZoneIds,baseUrl} + webhook，**不进 git**） |
 | `scripts/ta-config.example.json` | 配置模板（进 git） |
 
@@ -283,33 +302,35 @@ GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
 
 | 任务名 | 频率 | 时间 | 模式 |
 |---|---|---|---|
-| `LumiWiki_Online` | 每小时 | :07 分 | 双区线上数据（天梯 + 参与走势 + 窗口内周赛） |
+| `LumiWiki_Online_Daily` | 每天 | 04:30 | 双区线上数据（ladder / tournament / infinity-gym / assist / login / guild-war + 参与走势） |
 | `LumiWiki_Daily` | 每天 | 03:00 | 游戏配置 + 立绘 + 衍生（对外+对内 svn） |
 
 注册命令（Git Bash 里执行，需 `MSYS_NO_PATHCONV=1` 防止 `/create` 等参数被误转成路径）：
 
 ```bash
-MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Online" /tr "D:\lumiwiki\scripts\auto-update.bat" /sc HOURLY /st 00:07 /f
+# 删除老任务
+MSYS_NO_PATHCONV=1 schtasks /delete /tn "LumiWiki_Online" /f
+
+# 新架构：每天 04:30 拉线上数据
+MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Online_Daily" /tr "D:\lumiwiki\scripts\auto-update.bat" /sc DAILY /st 04:30 /f
 MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Daily"  /tr "D:\lumiwiki\scripts\auto-update-all.bat" /sc DAILY /st 03:00 /f
 ```
 
 ### 游戏周期
 
-- **游戏周**：周五 03:00 ~ 下周五 03:00（凌晨 3 点为周分界）
-- **首周（Week 1）**：2026-07-10 03:00 开始，**无周赛**
+- **游戏周**：周五 00:00 ~ 下周四 23:59（自然日归属周，跟 daily 分片对齐）
+- **首周（Week 1）**：2026-07-10 00:00 开始，**无周赛**
 - **国内 + 海外全球通服**，共用同一套 baseFriday
-- **数据范围**：每次拉取"本周周五 03:00 ~ 当前"，覆盖更新 `data/{region}/archive/weekN/*.csv`
-- **周编号算法**：`week = floor((现在 - 2026-07-10 03:00) / 7天) + 1`；周五 03:00 ~ 03:59 跑的算上一周
-- **每周独立**：Week N 只含第 N 周的战斗，不累积之前周
+- **数据范围**：每次拉取"昨天 + 今天"两天到对应 daily 分片；老数据永久保留
+- **周编号算法**：`week = floor((现在 - 2026-07-10 00:00) / 7天) + 1`
+- **每周独立**：process 脚本按 `--week N` 读该周 7 天 daily CSV 汇总
 
 ### 周赛策略
 
 **周赛开放时间**：国内时间**周五 19:00 ~ 周一 07:00**（全球通服共用国内时间）
 
-- 窗口内每小时拉，实时更新
-- **周一 07:00 ~ 07:59** 再拉一次收尾，抓上 06:59 前最后一场对战
+- 每天固定拉，非开放日 SQL 返回空 CSV（无害）
 - 首周（Week 1）跳过
-- **手动补跑**：`node scripts/auto-update.mjs --force-tournament`（强制拉当周周赛，不看时间窗）
 
 ### 前端区域切换
 
@@ -327,31 +348,31 @@ MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Daily"  /tr "D:\lumiwiki\scrip
 ### 常用命令
 
 ```bash
-# 手动触发一次每小时任务（双区，含周赛-如果在窗口内）
+# 手动触发一次每日线上任务（双区）
 node scripts/auto-update.mjs
-
-# 手动补跑周赛（不受时间窗限制，用于修复漏拉）
-node scripts/auto-update.mjs --force-tournament
 
 # 只拉某个模式
 node scripts/auto-update.mjs --ladder
 node scripts/auto-update.mjs --tournament
 
-# 单独跑数数拉取（调试用）
-node scripts/ta-fetch.mjs --region overseas --mode ladder --start 2026-08-07 --end 2026-08-10 --out data/overseas/archive/week5/ladder_week5.csv
+# 单独跑数数拉取（调试用，按天）
+node scripts/ta-fetch.mjs --region overseas --mode ladder --start 2026-08-08 --end 2026-08-08 --out data/overseas/archive/daily/ladder/2026-08-08.csv
 
-# 手动触发每日任务
+# 按天回填历史（一次性用）—— 换机器 / 首次部署时跑
+node scripts/backfill-daily.mjs --region domestic --modes ladder,tournament,login,guild-war,infinity-gym,assist --start 2026-07-10 --end 2026-08-23
+
+# 手动触发每日游戏任务
 node scripts/auto-update-all.mjs
 
 # 查看运行日志
 cat auto-update.log
 
 # 手动触发定时任务
-MSYS_NO_PATHCONV=1 schtasks /run /tn LumiWiki_Online
+MSYS_NO_PATHCONV=1 schtasks /run /tn LumiWiki_Online_Daily
 MSYS_NO_PATHCONV=1 schtasks /run /tn LumiWiki_Daily
 
 # 查看任务状态/下次运行时间
-MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Online
+MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Online_Daily
 MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
 ```
 
@@ -369,38 +390,44 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
 ### 数据流（完整链路）
 
 ```
-[每小时 :07 触发：auto-update.bat → auto-update.mjs]
+[每日 04:30 触发：auto-update.bat → auto-update.mjs]
 
-  computeWeekInfo() 算游戏周编号
-  isTournamentActive() / shouldFetchTournament() 算周赛窗口
+  computeWeekInfo() 算游戏周编号（自然日归属周）
+  今天/昨天日期 = 每次拉取的目标日期
 
   for region in [domestic, overseas]:
     1. 天梯 (updateRegionMode('ladder')):
-       → ta-fetch.mjs: POST submit-sql → 轮询 sql-result-page 分页拉 CSV
-       → 存到 data/{region}/archive/weekN/ladder_weekN.csv
+       → ta-fetch.mjs: 拉昨天 + 今天 2 天，各写入
+         data/{region}/archive/daily/ladder/{date}.csv
        → process-battle-data.js --week N --region {region}
-       → 输出 public/data/online/{region}/weekly/ladder-weekN.json
+         读该周 7 天 daily 分片 → 输出 public/data/online/{region}/weekly/ladder-weekN.json
        → cp 到 battle-stats.json，更新 weeks.json
 
-    2. 周赛 (如果在窗口内 or 收尾):
-       → 类似流程，SQL 换成 game_type='Week1v1'
+    2. 周赛 (updateRegionMode('tournament')，非首周):
+       → 类似流程，写 daily/tournament/{date}.csv，process 读本周 7 天聚合
 
-    3. 参与走势 (fetch-participation-trend.mjs):
-       → 拉 login CSV
-       → 从 ladder/tournament/login CSV 按 part_date 分组，distinct b_role_id
-       → 输出 public/data/online/{region}/weekly/participation-weekN.json
+    3. 无限道馆 + 助战 (updateRegionInfinityGym):
+       → 拉昨天 + 今天写 daily/infinity-gym/{date}.csv & daily/assist/{date}.csv
+       → process-infinity-gym.mjs 遍历整个 daily 目录累计聚合
+         → 输出 public/data/online/{region}/infinity-gym.json
 
-    4. 推荐配队 (process-lumi-teams.mjs --region):
+    4. 参与走势 (updateRegionParticipation):
+       → 拉昨天 + 今天写 daily/login/{date}.csv & daily/guild-war/{date}.csv
+       → 拉 recharge 累计全量 → data/{region}/archive/recharge.csv
+       → fetch-participation-trend.mjs --week N --region 读本周 7 天各 daily CSV
+         → 输出 public/data/online/{region}/weekly/participation-weekN.json
+
+    5. 推荐配队 (process-lumi-teams.mjs --region):
        → 读所有周 ladder no-bot + tournament，按 lumi 聚合 top 3 队伍
        → 输出 public/data/{region}/lumi-teams.json
 
-  5. 镜像 lumi-teams 到 internal 分支（对内版复用对外的推荐配队）
+  6. 镜像 lumi-teams 到 internal 分支（对内版复用对外的推荐配队）
 
-  6. 统一 publish (bash publish.sh)
+  7. 统一 publish (bash publish.sh)
 
-  7. git add -A && commit && push
+  8. git add -A && commit && push
 
-  8. 飞书通知
+  9. 飞书通知
 
 
 [每日 03:00 触发：auto-update-all.bat → auto-update-all.mjs]
@@ -513,46 +540,41 @@ npm run process-egg-drop   # 重新生成 egg-drop.json
 
 ## 参与走势更新
 
-线上数据页「📈 参与走势」tab 展示每周每日 UV 走势（登录 / 天梯 / 周赛），数据由 `scripts/fetch-participation-trend.mjs` 生成到 `public/data/online/weekly/participation-weekN.json`。
+线上数据页「📈 参与走势」tab 展示每周每日 UV 走势（登录 / 天梯 / 周赛 / 无限道馆 / 公会战），数据由 `scripts/fetch-participation-trend.mjs` 生成到 `public/data/online/{region}/weekly/participation-weekN.json`。
 
 ### 数据链路
 
 ```
-数数平台 player_login 事件 → login_weekN.csv           ┐
-data/archive/weekN/ladder_weekN.csv（按日拆列 CSV）    ├→ 按日 distinct b_role_id
-data/archive/weekN/tournament_weekN.csv                ┘   → 汇总登录/天梯/周赛 UV 及占比
+data/{region}/archive/daily/{login,ladder,tournament,infinity-gym,guild-war}/{YYYY-MM-DD}.csv
+  → 读本周 7 天各 daily CSV，按 part_date distinct b_role_id
+  → 汇总每日各玩法 UV / 场均 / 重合率 / 付费档
 ```
 
-CSV 里每个 `b_role_id` 对应一行，日期是**列**（每天一列，值为该玩家当天事件数）。脚本按列扫，每列开 `Set<b_role_id>` 收集 count > 0 的玩家。
+每个 daily CSV 是长表（每行一场事件），脚本按 `part_date` 分组，每天开 `Set<b_role_id>` 收集独立玩家。
 
 ### 常用命令
 
 ```bash
-# 指定周次（必需参数）
-node scripts/fetch-participation-trend.mjs --week 2
-
-# --skip-fetch：CSV 已存在时跳过 API 拉取，仅重新聚合（本地调试用）
-node scripts/fetch-participation-trend.mjs --week 2 --skip-fetch
+# 参与走势聚合（依赖 daily CSV 已被 auto-update 或 backfill 提前拉好）
+node scripts/fetch-participation-trend.mjs --week N --region domestic
 
 # --publish：跑完自动 bash publish.sh，把结果推到 dist + 重启 3005 服务
 # 手动补跑时强烈建议加，否则浏览器看到的还是老数据（见「数据分离机制」小节）
-node scripts/fetch-participation-trend.mjs --week 6 --region domestic --skip-fetch --publish
+node scripts/fetch-participation-trend.mjs --week 6 --region domestic --publish
 ```
 
 ### 集成位置
 
-- `auto-update.mjs` 的 `updateMode('ladder')` 末尾自动跑：ladder CSV 落盘后、publish 前调用
-- 每天 03:00 全量任务里跟着 ladder 一起更新，`login_weekN.csv` 每天覆盖拉取（本周累积到当天）
-- 周赛任务（周一 08:00）**不触发**，因为那时 ladder CSV 是上周数据，会产生错误结果
+- `auto-update.mjs` 的 `updateRegionParticipation` 里调用：先拉 login/guild-war/recharge 到 daily，再跑聚合
+- 每天 04:30 自动流程内跟 ladder 一起触发
 - 参与走势失败**不阻塞发布**（`try/catch` 包裹），仅日志报错
 
 ### 注意事项
 
-- **ta-fetch.mjs 的 login 模式**：`buildGroupBy('login')` 只 groupBy `b_role_id`（无 game_id_str/player_type）；`buildFilts` 不加 `game_type`（登录事件无此字段）；事件名是 `player_login` 不是 `battle_end`
-- **跨周同日 UV 重复**：Thinkingdata 按自然日分桶，跨周分界日（周五）在两周 CSV 里都会出现全量 UV（例如 07-17 03:00 是 Week 1/2 分界，两周 CSV 里这天的 login UV 相同）。前端展示时每周独立看，用户能理解。
-- **输出结构**：`{ updateTime, week, startTime, endTime, dates: [{date, ladder, tournament, login, ladderRate, tournamentRate}] }`
-- **前端**：`OnlineData.vue` 新增「📈 参与走势」tab，用 Chart.js 画两张折线图（UV 数走势 + 占比走势）；切换周次自动重新 fetch `participation-week{N}.json`，缺失时显示"该周暂无参与走势数据"占位
-- **首周（Week 1）**：无周赛，`tournament_week1.csv` 不存在，脚本 `dailyDistinct` 返回 `{}`，前端图例仍显示"周赛=0"
+- **参与走势脚本本身不再拉数据**：所有 daily CSV 由 `auto-update.mjs` 或 `backfill-daily.mjs` 提前拉好，脚本只做聚合
+- **输出结构**：`{ updateTime, week, region, startTime, endTime, dates: [{date, ladder, tournament, infinityGym, guildWar, login, ...Rate, ...BattlesPerUser, overlap, retention, byTier}], weekLoginBase, weekOverlap, weekByTier }`
+- **前端**：`OnlineData.vue` 的「📈 参与走势」tab，用 Chart.js 画折线图（UV 走势 + 占比走势）；切换周次自动重新 fetch，缺失时显示"该周暂无参与走势数据"占位
+- **首周（Week 1）**：无周赛，`daily/tournament/` 里没有该周日期文件，脚本自动跳过
 
 ---
 

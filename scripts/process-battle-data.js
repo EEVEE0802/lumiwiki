@@ -17,10 +17,33 @@ if (!['domestic', 'overseas'].includes(region)) {
   process.exit(1)
 }
 
-// CSV 文件路径 - 如果指定周次，从归档目录读取
-const battleEndPath = week
-  ? path.join(__dirname, `../data/${region}/archive/week${week}/ladder_week${week}.csv`)
-  : path.join(__dirname, `../data/${region}/battle_end.csv`)
+// CSV 文件路径
+// 指定 --week 时读该周 7 天 daily 分片（data/{region}/archive/daily/ladder/{date}.csv）
+// 不指定 --week 时读单文件 data/{region}/battle_end.csv（保留兼容手工测试）
+function getWeekDates(weekNum, baseFriday) {
+  // 周编号规则：周五 00:00 ~ 下周四 23:59 = 一周（自然日归属周，参见 CLAUDE.md「按天分片方案 α」）
+  // baseFriday = 2026-07-10（Week 1 首日）
+  const s = new Date(baseFriday + 'T00:00:00+08:00')
+  s.setDate(s.getDate() + (weekNum - 1) * 7)
+  const dates = []
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(s); d.setDate(d.getDate() + i)
+    const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0')
+    dates.push(`${y}-${m}-${day}`)
+  }
+  return dates
+}
+
+function loadBaseFriday() {
+  const cfgPath = path.join(__dirname, 'ta-config.json')
+  try {
+    return JSON.parse(fs.readFileSync(cfgPath, 'utf-8')).baseFriday
+  } catch { return '2026-07-10' }
+}
+
+const battleEndPaths = week
+  ? getWeekDates(week, loadBaseFriday()).map(d => path.join(__dirname, `../data/${region}/archive/daily/ladder/${d}.csv`))
+  : [path.join(__dirname, `../data/${region}/battle_end.csv`)]
 
 // 根据周次决定输出路径
 const outputPath = week
@@ -59,32 +82,41 @@ function parseCSVLine(line) {
   return result
 }
 
-// 流式读取 CSV 文件
-async function processCSVStream(filePath, processor) {
-  const fileStream = fs.createReadStream(filePath)
-  const rl = readline.createInterface({
-    input: fileStream,
-    crlfDelay: Infinity
-  })
-
+// 流式读取 CSV 文件（支持传单路径或路径数组：daily 分片下需要遍历本周所有天）
+async function processCSVStream(pathOrPaths, processor) {
+  const paths = Array.isArray(pathOrPaths) ? pathOrPaths : [pathOrPaths]
+  let totalRows = 0
   let headers = []
-  let rowIndex = 0
 
-  for await (const line of rl) {
-    if (rowIndex === 0) {
-      headers = parseCSVLine(line).map(h => h.replace(/^﻿/, '').trim()) // 去除 BOM
-    } else {
-      const values = parseCSVLine(line)
-      const obj = {}
-      headers.forEach((header, index) => {
-        obj[header] = values[index]
-      })
-      await processor(obj, rowIndex)
+  for (const filePath of paths) {
+    if (!fs.existsSync(filePath)) continue
+    const fileStream = fs.createReadStream(filePath)
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity
+    })
+
+    let fileRowIndex = 0
+    for await (const line of rl) {
+      if (fileRowIndex === 0) {
+        // 每个文件都有表头，只留第一次的
+        if (headers.length === 0) {
+          headers = parseCSVLine(line).map(h => h.replace(/^﻿/, '').trim())
+        }
+      } else {
+        const values = parseCSVLine(line)
+        const obj = {}
+        headers.forEach((header, index) => {
+          obj[header] = values[index]
+        })
+        await processor(obj, totalRows + fileRowIndex)
+      }
+      fileRowIndex++
     }
-    rowIndex++
+    totalRows += Math.max(0, fileRowIndex - 1)
   }
 
-  return { headers, totalRows: rowIndex - 1 }
+  return { headers, totalRows }
 }
 
 // 段位分组配置
@@ -127,7 +159,7 @@ async function processBattleData() {
   const playerMaxRank = new Map() // b_role_id -> max_rank
 
   console.log('第一遍扫描：收集人机信息和玩家段位...')
-  await processCSVStream(battleEndPath, (row) => {
+  await processCSVStream(battleEndPaths, (row) => {
     const game_id_str = row.game_id_str
     const b_role_id = row.b_role_id
     const playerType = parseInt(row.player_type)
@@ -182,7 +214,7 @@ async function processBattleData() {
   console.log('第二遍扫描：统计噜咪数据...')
   let successCount = 0
 
-  await processCSVStream(battleEndPath, (row) => {
+  await processCSVStream(battleEndPaths, (row) => {
     const game_id_str = row.game_id_str
     const playerType = parseInt(row.player_type)
     const rank = parseInt(row.player_rank)

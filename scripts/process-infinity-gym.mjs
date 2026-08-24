@@ -1,5 +1,6 @@
 // 处理无限道馆 CSV → JSON
-// 输入: data/{region}/archive/gym_infinity.csv (累计，覆盖更新)
+// 输入: data/{region}/archive/daily/infinity-gym/{YYYY-MM-DD}.csv (按天分片，累计遍历目录)
+//       data/{region}/archive/daily/assist/{YYYY-MM-DD}.csv       (助战埋点，同样按天分片)
 // 输出: public/data/online/{region}/infinity-gym.json
 //
 // 每行 CSV = 一场道馆战斗（已合并 player_type=1/4 两条埋点）:
@@ -26,9 +27,18 @@ if (!['domestic', 'overseas'].includes(region)) {
   process.exit(1)
 }
 
-const INPUT_CSV = path.join(PROJECT_ROOT, `data/${region}/archive/gym_infinity.csv`)
-const ASSIST_CSV = path.join(PROJECT_ROOT, `data/${region}/archive/assist_infinity.csv`)
+const INPUT_DIR = path.join(PROJECT_ROOT, `data/${region}/archive/daily/infinity-gym`)
+const ASSIST_DIR = path.join(PROJECT_ROOT, `data/${region}/archive/daily/assist`)
 const OUTPUT_JSON = path.join(PROJECT_ROOT, `public/data/online/${region}/infinity-gym.json`)
+
+// 列出 daily 目录里所有 CSV 按日期排序（文件名格式 YYYY-MM-DD.csv）
+function listDailyCsvs(dir) {
+  if (!fs.existsSync(dir)) return []
+  return fs.readdirSync(dir)
+    .filter(f => /^\d{4}-\d{2}-\d{2}\.csv$/.test(f))
+    .sort()
+    .map(f => path.join(dir, f))
+}
 
 // 无限道馆 gym_uid 范围
 const GYM_UID_BASE = 128100000
@@ -158,17 +168,24 @@ async function processCsvStream(csvPath, onRow) {
 // ==========================================
 async function main() {
   console.log(`\n===== 无限道馆数据处理 (${region}) =====`)
-  console.log(`输入: ${INPUT_CSV}`)
+  const gymCsvs = listDailyCsvs(INPUT_DIR)
+  const assistCsvs = listDailyCsvs(ASSIST_DIR)
+  console.log(`输入: ${INPUT_DIR}/*.csv（${gymCsvs.length} 天）`)
+  console.log(`助战: ${ASSIST_DIR}/*.csv（${assistCsvs.length} 天）`)
+  if (gymCsvs.length === 0) {
+    console.error(`❌ ${INPUT_DIR} 下未找到任何 daily CSV，退出`)
+    process.exit(1)
+  }
 
-  // 预读助战 CSV 建 Set<battle_uid>（=对应 battle_end 事件的 game_id_str）
-  // 累计全量 CSV，同 gym_infinity 一样
+  // 预读所有 daily assist CSV 建 Set<battle_uid>（=对应 battle_end 事件的 game_id_str）
   const assistBattleUids = new Set()
-  if (fs.existsSync(ASSIST_CSV)) {
-    console.log(`助战: ${ASSIST_CSV}`)
-    await processCsvStream(ASSIST_CSV, (row) => {
+  for (const csvPath of assistCsvs) {
+    await processCsvStream(csvPath, (row) => {
       const uid = row.battle_uid
       if (uid) assistBattleUids.add(uid)
     })
+  }
+  if (assistCsvs.length) {
     console.log(`  助战场次总数（battle_uid 独立值）: ${assistBattleUids.size.toLocaleString('en-US')}`)
   } else {
     console.log(`  助战 CSV 不存在，跳过助战统计`)
@@ -183,7 +200,8 @@ async function main() {
   let totalBattlesAllFloors = 0
   let assistBattlesAllFloors = 0            // 全局助战场次（gym CSV 中 game_id_str 命中 assistBattleUids 的场次）
 
-  const { total: rowCount } = await processCsvStream(INPUT_CSV, (row) => {
+  let rowCount = 0
+  const gymRowHandler = (row) => {
     const gymUid = parseInt(row.gym_uid)
     if (!Number.isFinite(gymUid) || gymUid < GYM_UID_MIN || gymUid > GYM_UID_MAX) return
 
@@ -276,7 +294,13 @@ async function main() {
     const trainerId = parseInt(row.trainer_id)
     const tid = !Number.isNaN(trainerId) ? trainerId : 0
     team.trainerSkills.set(tid, (team.trainerSkills.get(tid) || 0) + 1)
-  })
+  }
+
+  // 逐日流式处理所有 daily gym CSV
+  for (const csvPath of gymCsvs) {
+    const { total } = await processCsvStream(csvPath, gymRowHandler)
+    rowCount += total
+  }
 
   console.log(`  总场次: ${totalBattlesAllFloors}`)
   console.log(`  独立玩家数: ${uniqueChallengersGlobal.size}`)
