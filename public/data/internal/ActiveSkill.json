@@ -23833,9 +23833,9 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 900,
+    "AttackInterval": 1000,
     "SkillPowerList": [
-      9
+      10
     ],
     "SkillCost": [
       0
@@ -30875,15 +30875,15 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 700,
+    "AttackInterval": 1000,
     "SkillPowerList": [
-      7
+      10
     ],
     "SkillCost": [
       0
     ],
     "BaseCrit": 500,
-    "AddEnergy": 5,
+    "AddEnergy": 7,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
@@ -31036,6 +31036,65 @@
     "SkillCost": [
       1,
       60
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 13930101,
+    "name": "",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 11,
+    "UnlockCost": 0,
+    "SA": "SA_13930101",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "",
+    "SkillType": 0,
+    "TargetType": 1,
+    "AttackInterval": 900,
+    "SkillPowerList": [
+      9
+    ],
+    "SkillCost": [
+      0
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 7,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 13930102,
+    "name": "A_Skill_13930102",
+    "Des": "A_SkillText_13930102",
+    "DesParam": [],
+    "LumiTpye": 11,
+    "UnlockCost": 0,
+    "SA": "SA_13930102",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      60
+    ],
+    "SkillCost": [
+      1,
+      40
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -32248,15 +32307,15 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 1100,
+    "AttackInterval": 1000,
     "SkillPowerList": [
-      11
+      10
     ],
     "SkillCost": [
       0
     ],
     "BaseCrit": 500,
-    "AddEnergy": 8,
+    "AddEnergy": 7,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
@@ -32340,14 +32399,27 @@
       60
     ],
     "SkillCost": [
-      40
+      2,
+      30,
+      5
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 3,
+        "TriggerCondition": 100,
+        "TriggerEffect": 202
+      },
+      {
+        "TriggerType": 3,
+        "TriggerCondition": 100,
+        "TriggerEffect": 207
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -32364,9 +32436,9 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 900,
+    "AttackInterval": 1000,
     "SkillPowerList": [
-      9
+      10
     ],
     "SkillCost": [
       0
@@ -32398,6 +32470,7 @@
       60
     ],
     "SkillCost": [
+      1,
       40
     ],
     "BaseCrit": 500,
@@ -32456,6 +32529,7 @@
       60
     ],
     "SkillCost": [
+      1,
       40
     ],
     "BaseCrit": 500,
@@ -35772,6 +35846,65 @@
       60
     ],
     "SkillCost": [
+      40
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 100430101,
+    "name": "",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 12,
+    "UnlockCost": 0,
+    "SA": "SA_100430101",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "",
+    "SkillType": 0,
+    "TargetType": 1,
+    "AttackInterval": 1000,
+    "SkillPowerList": [
+      10
+    ],
+    "SkillCost": [
+      0
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 7,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 100430102,
+    "name": "A_Skill_100430102",
+    "Des": "A_SkillText_100430102",
+    "DesParam": [],
+    "LumiTpye": 12,
+    "UnlockCost": 0,
+    "SA": "SA_100430102",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      60
+    ],
+    "SkillCost": [
+      1,
       40
     ],
     "BaseCrit": 500,
