@@ -104,9 +104,23 @@ export async function updateRegionMode(region, mode, weekInfo) {
   const yesterday = new Date(now); yesterday.setDate(yesterday.getDate() - 1)
   const dates = [fmt(yesterday), fmt(now)]
 
+  // 单天失败不阻塞其他天（fetchCsv 内部有 3 次重试；空结果 SQL 已能秒返回）
+  const failures = []
   for (const date of dates) {
     const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', mode, `${date}.csv`)
-    await fetchCsv(region, mode, date, date, outPath)
+    try {
+      await fetchCsv(region, mode, date, date, outPath)
+    } catch (e) {
+      console.error(`⚠️  [${region}/${mode}/${date}] 拉取失败（不阻塞其他天）: ${e.message}`)
+      failures.push({ date, error: e.message })
+    }
+  }
+
+  // 就算今天失败了，process 也可以基于「昨天成功 + 本周之前已有 daily」聚合出一份"到昨天为止"的 JSON，
+  // 比彻底没数据强。除非两天都失败才跳过 process
+  if (failures.length === dates.length) {
+    console.error(`⚠️  [${region}] ${mode} 所有 ${dates.length} 天全失败，跳过 process`)
+    return
   }
 
   const scriptFile = mode === 'tournament' ? 'scripts/process-tournament-data.js' : 'scripts/process-battle-data.js'
@@ -135,15 +149,23 @@ export async function updateRegionParticipation(region, week, baseFriday) {
     const yesterday = new Date(now); yesterday.setDate(yesterday.getDate() - 1)
     const dates = [fmt(yesterday), fmt(now)]
 
-    // login daily 分片（每天创号+登录事件）
+    // login daily 分片（每天创号+登录事件），单天失败不阻塞
     for (const date of dates) {
       const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'login', `${date}.csv`)
-      await fetchCsv(region, 'login', date, date, outPath)
+      try {
+        await fetchCsv(region, 'login', date, date, outPath)
+      } catch (e) {
+        console.error(`⚠️  [${region}/login/${date}] 拉取失败: ${e.message}`)
+      }
     }
-    // guild-war daily 分片（异步 PVP 事件）
+    // guild-war daily 分片（异步 PVP 事件），单天失败不阻塞
     for (const date of dates) {
       const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'guild-war', `${date}.csv`)
-      await fetchCsv(region, 'guild-war', date, date, outPath)
+      try {
+        await fetchCsv(region, 'guild-war', date, date, outPath)
+      } catch (e) {
+        console.error(`⚠️  [${region}/guild-war/${date}] 拉取失败: ${e.message}`)
+      }
     }
     // recharge：累计全量（不按天分片，每人历史最大 recharge_total）
     try {
@@ -185,14 +207,24 @@ export async function updateRegionInfinityGym(region /* baseFriday 不再使用 
   const yesterday = new Date(now); yesterday.setDate(yesterday.getDate() - 1)
   const dates = [fmt(yesterday), fmt(now)]
 
+  // 单模式/单天失败不阻塞其他，process 阶段还能基于历史 daily 数据聚合出结果
   for (const date of dates) {
     const gymPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'infinity-gym', `${date}.csv`)
     const assistPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'assist', `${date}.csv`)
-    await fetchCsv(region, 'infinity-gym', date, date, gymPath)
-    await fetchCsv(region, 'assist', date, date, assistPath)
+    try {
+      await fetchCsv(region, 'infinity-gym', date, date, gymPath)
+    } catch (e) {
+      console.error(`⚠️  [${region}/infinity-gym/${date}] 拉取失败: ${e.message}`)
+    }
+    try {
+      await fetchCsv(region, 'assist', date, date, assistPath)
+    } catch (e) {
+      console.error(`⚠️  [${region}/assist/${date}] 拉取失败: ${e.message}`)
+    }
   }
 
   // process 遍历所有 daily CSV 聚合；heap 大一点兜底跨天累计后的中间数据结构
+  // 即使这次两天全失败，历史 daily 还在，process 也能给出"到上次成功为止"的结果
   runCommand(process.execPath, ['--max-old-space-size=4096', 'scripts/process-infinity-gym.mjs', '--region', region])
 }
 
@@ -217,14 +249,22 @@ async function main() {
 
     // 1. 天梯（每次都拉）
     if (!modeFilter || modeFilter === 'ladder') {
-      await updateRegionMode(region, 'ladder', weekInfo)
-      modeSummary.push(`${region}: 天梯`)
+      try {
+        await updateRegionMode(region, 'ladder', weekInfo)
+        modeSummary.push(`${region}: 天梯`)
+      } catch (e) {
+        console.error(`⚠️  [${region}] 天梯更新失败（不阻塞其他）: ${e.message}`)
+      }
     }
 
     // 2. 周赛（非首周直接拉；开放窗口外拉出来是空 CSV，无害）
     if ((!modeFilter || modeFilter === 'tournament') && weekInfo.week > 1) {
-      await updateRegionMode(region, 'tournament', weekInfo)
-      modeSummary.push(`${region}: 周赛`)
+      try {
+        await updateRegionMode(region, 'tournament', weekInfo)
+        modeSummary.push(`${region}: 周赛`)
+      } catch (e) {
+        console.error(`⚠️  [${region}] 周赛更新失败（不阻塞其他）: ${e.message}`)
+      }
     }
 
     // 3. 无限道馆（每次拉昨天+今天两天到 daily 分片，process 遍历所有 daily 汇总）
@@ -242,12 +282,21 @@ async function main() {
 
     // 4. 参与走势（跟着 ladder 一起，失败不阻塞；同时拉 login/guild-war/recharge，然后调聚合脚本）
     if (!modeFilter || modeFilter === 'ladder') {
-      await updateRegionParticipation(region, weekInfo.week, config.baseFriday)
-      modeSummary.push(`${region}: 参与走势`)
+      // updateRegionParticipation 内部已经完全 try/catch 包裹了；这里再套一层防御
+      try {
+        await updateRegionParticipation(region, weekInfo.week, config.baseFriday)
+        modeSummary.push(`${region}: 参与走势`)
+      } catch (e) {
+        console.error(`⚠️  [${region}] 参与走势更新失败（不阻塞其他）: ${e.message}`)
+      }
     }
 
-    // 5. 推荐配队（跟着最新的 ladder/tournament 数据重算）
-    updateRegionLumiTeams(region)
+    // 5. 推荐配队（跟着最新的 ladder/tournament 数据重算，失败不阻塞发布）
+    try {
+      updateRegionLumiTeams(region)
+    } catch (e) {
+      console.error(`⚠️  [${region}] 推荐配队更新失败（不阻塞其他）: ${e.message}`)
+    }
   }
 
   // 5. 镜像 lumi-teams 到 internal 分支（对内版复用对外的推荐配队数据）

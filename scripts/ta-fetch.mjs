@@ -243,13 +243,19 @@ async function submitSql(cfg, sql, format = 'csv') {
 }
 
 // 拉取单页；同时能识别"任务还在跑"的错误码，返回 { done, running, errored, bytesWritten, msg }
-// pageId=0 时收到 -1008 说明任务还没跑完（返回 running）；pageId>0 收到 -1008 才是到末尾
 //
-// out 参数：CSV body 直接流式写入这个 write stream，避免整页 Buffer 化。
-// 之前用 resp.arrayBuffer() 会把整页读进 Buffer，>2GB 就撞 Node 上限
-// （国内 gym 累积到 8/21 每次报 "length ... out of range. Received 2333579092"）。
-// 现在用 for await 逐 chunk 写盘，单页可以任意大。
-async function fetchResultPage(cfg, taskId, pageId, out) {
+// 数数 API 状态迁移（实测）：
+//   1. 任务刚 submit：pageId=0 GET 返回 `-1 / The task is running`
+//   2. 任务完成 & 有数据：pageId=0 GET 返回二进制 CSV chunk
+//   3. 任务完成 & 空结果：pageId=0 GET 返回 `-1008 / the page data does not exist`
+//   4. 任务完成 & 已拉完（超出末尾页）：pageId=N GET 返回 `-1008 / the page data does not exist`
+//
+// 关键：状态 3（空结果）跟"pageId=0 任务还在起步阶段"看起来一样，
+// 需要 sawRunning 参数区分：如果之前 poll 见过 running 状态，那 pageId=0 上的 -1008 = 空结果（done）
+// 从没见过 running 也没关系 —— 空结果 SQL 数数常常任务瞬间完成，直接给 -1008
+//
+// out 参数：CSV body 直接流式写入这个 write stream，避免整页 Buffer 化（2GB 上限）
+async function fetchResultPage(cfg, taskId, pageId, out, { sawRunning = false, pollElapsedMs = 0 } = {}) {
   const url = `${cfg.baseUrl}/open/sql-result-page?token=${cfg.token}&projectId=${cfg.projectId}&taskId=${taskId}&pageId=${pageId}`
   const resp = await fetchWithRetry(url, undefined, { label: `sql-result-page pageId=${pageId}` })
   const ct = resp.headers.get('content-type') || ''
@@ -265,12 +271,15 @@ async function fetchResultPage(cfg, taskId, pageId, out) {
     if (data.return_code === -1 && /running|processing|pending/i.test(msg)) {
       return { running: true }
     }
-    // pageId=0 时的 -1008 说明任务还没开始产出（还在跑）
-    if (pageId === 0 && (data.return_code === -1008 || /page data does not exist/i.test(msg))) {
-      return { running: true }
-    }
-    // 后续 pageId 的 -1008 = 到末尾
+    // pageId=0 收到 -1008 的三种可能，逻辑：
+    //   - 见过 running → 任务已完成 & 空结果（done）
+    //   - 没见过 running 且已 poll 超过 30s → 任务已完成 & 空结果（done）
+    //     （空结果 SQL 常常从提交就直接返回 -1008，从不经过 running 阶段）
+    //   - 没见过 running 且刚 poll 不久 → 任务还在起步（running）
     if (data.return_code === -1008 || /page data does not exist/i.test(msg)) {
+      if (pageId === 0 && !sawRunning && pollElapsedMs < 30000) {
+        return { running: true }
+      }
       return { done: true }
     }
     return { errored: true, msg }
@@ -289,7 +298,9 @@ async function fetchResultPage(cfg, taskId, pageId, out) {
   return { bytesWritten }
 }
 
-async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs = 600000, pollIntervalMs = 2500 } = {}) {
+// 单个任务最多等 15 分钟（数数早高峰或跨天数据倾斜时会拖很久）
+// 卡超时后 fetchCsv 会重试，重新 submit-sql 一般都能成功（新任务往往不撞高峰）
+async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs = 900000, pollIntervalMs = 2500 } = {}) {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true })
   const out = fs.createWriteStream(outputPath)
   // 数数开放 API 返回的 CSV 不含表头，按 SELECT 列顺序手动补上
@@ -298,11 +309,16 @@ async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs
   let totalBytes = headerLine.length
   let pageId = 0
   const start = Date.now()
+  let sawRunning = false  // 是否曾见过 "The task is running" 状态
 
   while (true) {
-    const r = await fetchResultPage(cfg, taskId, pageId, out)
+    const r = await fetchResultPage(cfg, taskId, pageId, out, {
+      sawRunning,
+      pollElapsedMs: Date.now() - start,
+    })
 
     if (r.running) {
+      sawRunning = true
       if (Date.now() - start > maxWaitPerPollMs) {
         out.close()
         throw new Error(`任务 ${taskId} 等待超时（>${maxWaitPerPollMs / 1000}s 仍在跑）`)
@@ -350,23 +366,42 @@ async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs
  * @param {string} startDate 'YYYY-MM-DD'（含）
  * @param {string} endDate 'YYYY-MM-DD'（含）
  * @param {string} outputPath 输出 CSV 绝对路径
+ * @param {object} opts { retries: 3 } 整体重试次数（submit-sql + 下载 一起重试；超时/网络中断都会触发）
+ *
+ * 单个 submit-sql 任务超过 pollAndDownload 的 maxWaitPerPollMs（20 分钟）就会 throw，
+ * 通常是数数服务端早高峰/跨天数据倾斜。重新 submit-sql 走全新任务往往就能顺利跑完。
  */
-export async function fetchCsv(region, mode, startDate, endDate, outputPath) {
+export async function fetchCsv(region, mode, startDate, endDate, outputPath, { retries = 2 } = {}) {
   const cfg = getRegionConfig(region)
-  console.log(`\n📤 发起 ${region}/${mode} 拉取任务`)
-  console.log(`   时间范围: ${startDate} ~ ${endDate}`)
-  console.log(`   projectId: ${cfg.projectId}, bZoneIds: [${cfg.bZoneIds.join(', ')}]`)
+  let lastErr
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      if (attempt > 0) {
+        console.log(`\n🔁 [${region}/${mode}/${startDate}~${endDate}] 第 ${attempt + 1} 次尝试（前次失败: ${lastErr?.message}）`)
+        // 大响应网络中断/服务端超时后先等一会儿让服务端清理 socket 池
+        await sleep(3000 * attempt)
+      }
+      console.log(`\n📤 发起 ${region}/${mode} 拉取任务`)
+      console.log(`   时间范围: ${startDate} ~ ${endDate}`)
+      console.log(`   projectId: ${cfg.projectId}, bZoneIds: [${cfg.bZoneIds.join(', ')}]`)
 
-  const sql = buildSql(mode, startDate, endDate, cfg)
-  console.log(`   SQL: ${sql.length > 200 ? sql.slice(0, 200) + '...' : sql}`)
+      const sql = buildSql(mode, startDate, endDate, cfg)
+      console.log(`   SQL: ${sql.length > 200 ? sql.slice(0, 200) + '...' : sql}`)
 
-  const taskId = await submitSql(cfg, sql, 'csv')
-  console.log(`   任务 ID: ${taskId}`)
+      const taskId = await submitSql(cfg, sql, 'csv')
+      console.log(`   任务 ID: ${taskId}`)
 
-  console.log(`📥 分页下载...`)
-  const size = await pollAndDownload(cfg, taskId, mode, outputPath)
+      console.log(`📥 分页下载...`)
+      const size = await pollAndDownload(cfg, taskId, mode, outputPath)
 
-  return { taskId, outputPath, size }
+      return { taskId, outputPath, size }
+    } catch (e) {
+      lastErr = e
+      // TOKEN 失效不该重试（重试也是同样错误，浪费时间）
+      if (e.message.includes('TOKEN 失效')) throw e
+    }
+  }
+  throw lastErr
 }
 
 // 命令行直接运行
