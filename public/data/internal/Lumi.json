@@ -14276,13 +14276,211 @@
     "CanRename": true
   },
   {
+    "Id": 108001,
+    "PokedexId": 10640,
+    "IfLock": true,
+    "LumiTag": 2,
+    "Name": "LumiName_108001",
+    "MaxScore": 95,
+    "MinScore": 95,
+    "Genius": 1,
+    "ShardId": 108001,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Dragon_Azure",
+    "Avatar": "Avatar_108001",
+    "CA": "CA_108001",
+    "CardBack": 99,
+    "CardBackRes": [
+      "com_card_10_108301",
+      "com_card_10_108301_score"
+    ],
+    "CardType": 99,
+    "CardResName": [
+      "CardVedio_Tortoise_Black_Full",
+      "Tortoise_Black_Full",
+      "CardVedio_Tortoise_Black_Full_Tex_D",
+      "CardVedio_Tortoise_Black_Full_bg_D"
+    ],
+    "Type1": 5,
+    "Type2": 9,
+    "NormalAttack": 10800101,
+    "ActiveSkill": 10800102,
+    "SkillPool1": [
+      9002,
+      5003
+    ],
+    "SkillPool2": [
+      9006,
+      5005
+    ],
+    "SkillPool3": [
+      9003,
+      5006
+    ],
+    "BattlePassive": 1108001,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 73,
+    "MinAtkState": 78,
+    "MinDefState": 64,
+    "MinWorkState": 37,
+    "MaxHpState": 105,
+    "MaxAtkState": 110,
+    "MaxDefState": 96,
+    "MaxWorkState": 69,
+    "Satiety": 400000,
+    "SatietyDownSpeed": 40,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          98
+        ]
+      ],
+      [
+        2,
+        [
+          56
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        3,
+        10000
+      ]
+    ],
+    "scoreShow": "95-95",
+    "Story": "story_108001",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 2600,
+    "CatchRateCheckHeight": 1550,
+    "HomeMoveSpeed": 1.9,
+    "HomeRotateSpeed": 180,
+    "Distance": 8000,
+    "Height": 0,
+    "LookatHeight": 450,
+    "VFXScale": 2,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0.3,
+      "Z": 0
+    },
+    "AdventureVFXScale": 2,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0.3,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Dragon_Azure_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 108001,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 999,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 5,
+    "StarSoulid": 1080010,
+    "AvartarAtlas": "LumiAvatar1",
+    "CanRename": true
+  },
+  {
     "Id": 108201,
     "PokedexId": 99999999,
     "IfLock": true,
     "LumiTag": 0,
     "Name": "LumiName_108201",
-    "MaxScore": 92,
-    "MinScore": 92,
+    "MaxScore": 95,
+    "MinScore": 95,
     "Genius": 1,
     "ShardId": 108201,
     "LumiMap": 100,
@@ -14390,13 +14588,13 @@
     "InbornHomePassive": 0,
     "MinHpState": 83,
     "MinAtkState": 68,
-    "MinDefState": 54,
-    "MinWorkState": 35,
+    "MinDefState": 64,
+    "MinWorkState": 37,
     "MaxHpState": 115,
     "MaxAtkState": 100,
-    "MaxDefState": 86,
-    "MaxWorkState": 67,
-    "Satiety": 340000,
+    "MaxDefState": 96,
+    "MaxWorkState": 69,
+    "Satiety": 400000,
     "SatietyDownSpeed": 40,
     "WorkAbility": [],
     "LumiAttribute": [
@@ -14419,7 +14617,7 @@
         10000
       ]
     ],
-    "scoreShow": "92-92",
+    "scoreShow": "95-95",
     "Story": "story_108201",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 2000,
@@ -33413,7 +33611,7 @@
   {
     "Id": 120902,
     "PokedexId": 10030,
-    "IfLock": false,
+    "IfLock": true,
     "LumiTag": 1,
     "Name": "LumiName_120902",
     "MaxScore": 90,
@@ -33505,7 +33703,7 @@
     "Type1": 4,
     "Type2": 10,
     "NormalAttack": 12090201,
-    "ActiveSkill": 12090402,
+    "ActiveSkill": 12090202,
     "SkillPool1": [
       4003,
       15001
@@ -33706,7 +33904,7 @@
     "Type1": 4,
     "Type2": 0,
     "NormalAttack": 12090101,
-    "ActiveSkill": 12090202,
+    "ActiveSkill": 12090402,
     "SkillPool1": [
       4003,
       15001
@@ -42629,7 +42827,7 @@
   },
   {
     "Id": 136301,
-    "PokedexId": 10640,
+    "PokedexId": 10650,
     "IfLock": true,
     "LumiTag": 2,
     "Name": "LumiName_136301",
@@ -43435,12 +43633,12 @@
   },
   {
     "Id": 139001,
-    "PokedexId": 99999999,
+    "PokedexId": 1010030,
     "IfLock": false,
     "LumiTag": 201,
     "Name": "LumiName_139001",
-    "MaxScore": 88,
-    "MinScore": 56,
+    "MaxScore": 83,
+    "MinScore": 51,
     "Genius": 1,
     "ShardId": 139001,
     "LumiMap": 100,
@@ -43538,16 +43736,16 @@
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
-    "MinHpState": 56,
-    "MinAtkState": 63,
-    "MinDefState": 73,
-    "MinWorkState": 32,
-    "MaxHpState": 88,
-    "MaxAtkState": 95,
-    "MaxDefState": 105,
-    "MaxWorkState": 64,
-    "Satiety": 260000,
-    "SatietyDownSpeed": 36,
+    "MinHpState": 54,
+    "MinAtkState": 73,
+    "MinDefState": 48,
+    "MinWorkState": 29,
+    "MaxHpState": 86,
+    "MaxAtkState": 105,
+    "MaxDefState": 80,
+    "MaxWorkState": 61,
+    "Satiety": 160000,
+    "SatietyDownSpeed": 26,
     "WorkAbility": [
       {
         "Type": 2,
@@ -43578,7 +43776,7 @@
         5000
       ]
     ],
-    "scoreShow": "56-88",
+    "scoreShow": "51-83",
     "Story": "story_139001",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -43634,7 +43832,7 @@
   },
   {
     "Id": 139101,
-    "PokedexId": 99999999,
+    "PokedexId": 1010080,
     "IfLock": false,
     "LumiTag": 201,
     "Name": "LumiName_139101",
@@ -43737,14 +43935,14 @@
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
-    "MinHpState": 68,
-    "MinAtkState": 18,
-    "MinDefState": 25,
-    "MinWorkState": 89,
-    "MaxHpState": 100,
-    "MaxAtkState": 50,
-    "MaxDefState": 57,
-    "MaxWorkState": 121,
+    "MinHpState": 48,
+    "MinAtkState": 68,
+    "MinDefState": 56,
+    "MinWorkState": 28,
+    "MaxHpState": 80,
+    "MaxAtkState": 100,
+    "MaxDefState": 88,
+    "MaxWorkState": 60,
     "Satiety": 140000,
     "SatietyDownSpeed": 24,
     "WorkAbility": [],
@@ -43830,7 +44028,7 @@
   },
   {
     "Id": 139201,
-    "PokedexId": 99999999,
+    "PokedexId": 1010090,
     "IfLock": false,
     "LumiTag": 201,
     "Name": "LumiName_139201",
@@ -43933,14 +44131,14 @@
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
-    "MinHpState": 68,
-    "MinAtkState": 18,
-    "MinDefState": 37,
-    "MinWorkState": 89,
-    "MaxHpState": 100,
-    "MaxAtkState": 50,
-    "MaxDefState": 69,
-    "MaxWorkState": 121,
+    "MinHpState": 53,
+    "MinAtkState": 73,
+    "MinDefState": 56,
+    "MinWorkState": 30,
+    "MaxHpState": 85,
+    "MaxAtkState": 105,
+    "MaxDefState": 88,
+    "MaxWorkState": 62,
     "Satiety": 200000,
     "SatietyDownSpeed": 30,
     "WorkAbility": [],
@@ -44024,7 +44222,7 @@
   },
   {
     "Id": 139301,
-    "PokedexId": 99999999,
+    "PokedexId": 1010100,
     "IfLock": false,
     "LumiTag": 201,
     "Name": "LumiName_139301",
@@ -44127,14 +44325,14 @@
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
-    "MinHpState": 68,
-    "MinAtkState": 18,
-    "MinDefState": 49,
-    "MinWorkState": 89,
-    "MaxHpState": 100,
-    "MaxAtkState": 50,
-    "MaxDefState": 81,
-    "MaxWorkState": 121,
+    "MinHpState": 53,
+    "MinAtkState": 83,
+    "MinDefState": 56,
+    "MinWorkState": 32,
+    "MaxHpState": 85,
+    "MaxAtkState": 115,
+    "MaxDefState": 88,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [],
@@ -44218,8 +44416,8 @@
   },
   {
     "Id": 139304,
-    "PokedexId": 99999999,
-    "IfLock": false,
+    "PokedexId": 1010104,
+    "IfLock": true,
     "LumiTag": 201,
     "Name": "LumiName_139304",
     "MaxScore": 88,
@@ -44321,14 +44519,14 @@
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
-    "MinHpState": 68,
-    "MinAtkState": 18,
-    "MinDefState": 49,
-    "MinWorkState": 89,
-    "MaxHpState": 100,
-    "MaxAtkState": 50,
-    "MaxDefState": 81,
-    "MaxWorkState": 121,
+    "MinHpState": 53,
+    "MinAtkState": 83,
+    "MinDefState": 56,
+    "MinWorkState": 32,
+    "MaxHpState": 85,
+    "MaxAtkState": 115,
+    "MaxDefState": 88,
+    "MaxWorkState": 64,
     "Satiety": 260000,
     "SatietyDownSpeed": 36,
     "WorkAbility": [],
@@ -45604,6 +45802,202 @@
     "CanRename": true
   },
   {
+    "Id": 147101,
+    "PokedexId": 1010110,
+    "IfLock": true,
+    "LumiTag": 201,
+    "Name": "LumiName_147101",
+    "MaxScore": 89,
+    "MinScore": 89,
+    "Genius": 1,
+    "ShardId": 147101,
+    "LumiMap": 100,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        1300000
+      ],
+      [
+        5,
+        130000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Knight_Headless",
+    "Avatar": "Avatar_147101",
+    "CA": "CA_147101",
+    "CardBack": 80,
+    "CardBackRes": [
+      "com_card_12"
+    ],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 16,
+    "Type2": 0,
+    "NormalAttack": 14710101,
+    "ActiveSkill": 14710102,
+    "SkillPool1": [
+      7001,
+      7005
+    ],
+    "SkillPool2": [
+      7002,
+      7003
+    ],
+    "SkillPool3": [
+      7004,
+      7006
+    ],
+    "BattlePassive": 1147101,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 65,
+    "MinAtkState": 65,
+    "MinDefState": 65,
+    "MinWorkState": 33,
+    "MaxHpState": 97,
+    "MaxAtkState": 97,
+    "MaxDefState": 97,
+    "MaxWorkState": 65,
+    "Satiety": 280000,
+    "SatietyDownSpeed": 38,
+    "WorkAbility": [],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          1
+        ]
+      ],
+      [
+        2,
+        [
+          1
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "89-89",
+    "Story": "story_147101",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Knight_Headless_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 147101,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 2,
+    "StarSoulid": 1471010,
+    "AvartarAtlas": "LumiAvatar4",
+    "CanRename": true
+  },
+  {
     "Id": 147301,
     "PokedexId": 1010010,
     "IfLock": false,
@@ -45612,7 +46006,7 @@
     "MaxScore": 82,
     "MinScore": 50,
     "Genius": 1,
-    "ShardId": 13001,
+    "ShardId": 147301,
     "LumiMap": 100,
     "MarketOrder": 0,
     "DefaultPrice": [
@@ -45791,18 +46185,18 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 130010,
+    "StarSoulid": 1473010,
     "AvartarAtlas": "LumiAvatar4",
     "CanRename": true
   },
   {
     "Id": 147401,
-    "PokedexId": 1010010,
+    "PokedexId": 1010070,
     "IfLock": false,
     "LumiTag": 201,
     "Name": "LumiName_147401",
-    "MaxScore": 82,
-    "MinScore": 50,
+    "MaxScore": 87,
+    "MinScore": 55,
     "Genius": 1,
     "ShardId": 147401,
     "LumiMap": 100,
@@ -45900,16 +46294,16 @@
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
-    "MinHpState": 50,
-    "MinAtkState": 50,
-    "MinDefState": 50,
-    "MinWorkState": 50,
-    "MaxHpState": 82,
-    "MaxAtkState": 82,
-    "MaxDefState": 82,
-    "MaxWorkState": 82,
-    "Satiety": 140000,
-    "SatietyDownSpeed": 24,
+    "MinHpState": 68,
+    "MinAtkState": 64,
+    "MinDefState": 56,
+    "MinWorkState": 32,
+    "MaxHpState": 100,
+    "MaxAtkState": 96,
+    "MaxDefState": 88,
+    "MaxWorkState": 64,
+    "Satiety": 240000,
+    "SatietyDownSpeed": 34,
     "WorkAbility": [
       {
         "Type": 1,
@@ -45940,7 +46334,7 @@
         5000
       ]
     ],
-    "scoreShow": "50-82",
+    "scoreShow": "55-87",
     "Story": "story_147401",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -45996,13 +46390,13 @@
   },
   {
     "Id": 147501,
-    "PokedexId": 1010010,
+    "PokedexId": 1010050,
     "IfLock": false,
     "LumiTag": 201,
     "Name": "LumiName_147501",
-    "MaxScore": 82,
-    "MinScore": 50,
-    "Genius": 1,
+    "MaxScore": 83,
+    "MinScore": 51,
+    "Genius": 2,
     "ShardId": 147501,
     "LumiMap": 100,
     "MarketOrder": 0,
@@ -46095,20 +46489,20 @@
       7004,
       7006
     ],
-    "BattlePassive": 1147501,
+    "BattlePassive": 0,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
-    "MinHpState": 50,
-    "MinAtkState": 50,
-    "MinDefState": 50,
-    "MinWorkState": 50,
-    "MaxHpState": 82,
-    "MaxAtkState": 82,
-    "MaxDefState": 82,
-    "MaxWorkState": 82,
-    "Satiety": 140000,
-    "SatietyDownSpeed": 24,
+    "MinHpState": 42,
+    "MinAtkState": 56,
+    "MinDefState": 36,
+    "MinWorkState": 70,
+    "MaxHpState": 66,
+    "MaxAtkState": 80,
+    "MaxDefState": 60,
+    "MaxWorkState": 126,
+    "Satiety": 160000,
+    "SatietyDownSpeed": 26,
     "WorkAbility": [
       {
         "Type": 1,
@@ -46139,7 +46533,7 @@
         5000
       ]
     ],
-    "scoreShow": "50-82",
+    "scoreShow": "51-83",
     "Story": "story_147501",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -46195,13 +46589,13 @@
   },
   {
     "Id": 147601,
-    "PokedexId": 1010010,
+    "PokedexId": 1010040,
     "IfLock": false,
-    "LumiTag": 2,
+    "LumiTag": 201,
     "Name": "LumiName_147601",
-    "MaxScore": 82,
-    "MinScore": 50,
-    "Genius": 1,
+    "MaxScore": 85,
+    "MinScore": 53,
+    "Genius": 2,
     "ShardId": 147601,
     "LumiMap": 100,
     "MarketOrder": 0,
@@ -46294,20 +46688,20 @@
       7004,
       7006
     ],
-    "BattlePassive": 1147601,
+    "BattlePassive": 0,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
-    "MinHpState": 50,
-    "MinAtkState": 50,
-    "MinDefState": 50,
-    "MinWorkState": 50,
-    "MaxHpState": 82,
-    "MaxAtkState": 82,
-    "MaxDefState": 82,
-    "MaxWorkState": 82,
-    "Satiety": 140000,
-    "SatietyDownSpeed": 24,
+    "MinHpState": 56,
+    "MinAtkState": 16,
+    "MinDefState": 64,
+    "MinWorkState": 76,
+    "MaxHpState": 80,
+    "MaxAtkState": 40,
+    "MaxDefState": 88,
+    "MaxWorkState": 132,
+    "Satiety": 200000,
+    "SatietyDownSpeed": 30,
     "WorkAbility": [
       {
         "Type": 4,
@@ -46338,7 +46732,7 @@
         5000
       ]
     ],
-    "scoreShow": "50-82",
+    "scoreShow": "53-85",
     "Story": "story_147601",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -46394,12 +46788,12 @@
   },
   {
     "Id": 147701,
-    "PokedexId": 1010010,
+    "PokedexId": 1010060,
     "IfLock": false,
     "LumiTag": 201,
     "Name": "LumiName_147701",
-    "MaxScore": 82,
-    "MinScore": 50,
+    "MaxScore": 86,
+    "MinScore": 54,
     "Genius": 1,
     "ShardId": 147701,
     "LumiMap": 100,
@@ -46497,16 +46891,16 @@
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
-    "MinHpState": 50,
-    "MinAtkState": 50,
-    "MinDefState": 50,
-    "MinWorkState": 50,
-    "MaxHpState": 82,
-    "MaxAtkState": 82,
-    "MaxDefState": 82,
-    "MaxWorkState": 82,
-    "Satiety": 140000,
-    "SatietyDownSpeed": 24,
+    "MinHpState": 63,
+    "MinAtkState": 54,
+    "MinDefState": 68,
+    "MinWorkState": 31,
+    "MaxHpState": 95,
+    "MaxAtkState": 86,
+    "MaxDefState": 100,
+    "MaxWorkState": 63,
+    "Satiety": 220000,
+    "SatietyDownSpeed": 32,
     "WorkAbility": [
       {
         "Type": 1,
@@ -46537,7 +46931,7 @@
         5000
       ]
     ],
-    "scoreShow": "50-82",
+    "scoreShow": "54-86",
     "Story": "story_147701",
     "EscapeRotationY": 180000,
     "EscapeMoveSpeed": 1000,
@@ -49886,9 +50280,9 @@
     "MinAtkState": 26,
     "MinDefState": 82,
     "MinWorkState": 44,
-    "MaxHpState": 84,
-    "MaxAtkState": 95,
-    "MaxDefState": 85,
+    "MaxHpState": 86,
+    "MaxAtkState": 88,
+    "MaxDefState": 90,
     "MaxWorkState": 60,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
@@ -49973,7 +50367,7 @@
   },
   {
     "Id": 1004201,
-    "PokedexId": 2010210,
+    "PokedexId": 2010220,
     "IfLock": false,
     "LumiTag": 104,
     "Name": "LumiName_1004201",
@@ -50081,10 +50475,10 @@
     "MinAtkState": 26,
     "MinDefState": 82,
     "MinWorkState": 44,
-    "MaxHpState": 84,
-    "MaxAtkState": 95,
-    "MaxDefState": 97,
-    "MaxWorkState": 60,
+    "MaxHpState": 90,
+    "MaxAtkState": 90,
+    "MaxDefState": 94,
+    "MaxWorkState": 62,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [
@@ -50173,7 +50567,7 @@
   },
   {
     "Id": 1004301,
-    "PokedexId": 2010210,
+    "PokedexId": 2010230,
     "IfLock": false,
     "LumiTag": 104,
     "Name": "LumiName_1004301",
@@ -50281,10 +50675,10 @@
     "MinAtkState": 26,
     "MinDefState": 82,
     "MinWorkState": 44,
-    "MaxHpState": 84,
-    "MaxAtkState": 95,
-    "MaxDefState": 109,
-    "MaxWorkState": 60,
+    "MaxHpState": 100,
+    "MaxAtkState": 90,
+    "MaxDefState": 94,
+    "MaxWorkState": 64,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,
     "WorkAbility": [],
@@ -50368,8 +50762,8 @@
   },
   {
     "Id": 1004302,
-    "PokedexId": 2010210,
-    "IfLock": false,
+    "PokedexId": 2010232,
+    "IfLock": true,
     "LumiTag": 104,
     "Name": "LumiName_1004302",
     "MaxScore": 88,
@@ -50476,9 +50870,9 @@
     "MinAtkState": 26,
     "MinDefState": 82,
     "MinWorkState": 44,
-    "MaxHpState": 88,
-    "MaxAtkState": 115,
-    "MaxDefState": 85,
+    "MaxHpState": 100,
+    "MaxAtkState": 90,
+    "MaxDefState": 98,
     "MaxWorkState": 64,
     "Satiety": 180000,
     "SatietyDownSpeed": 28,

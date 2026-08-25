@@ -1746,7 +1746,7 @@
         "BuffId": 10800102,
         "BuffLv": 1,
         "Duration": 0,
-        "Target": 1
+        "Target": 3
       }
     ],
     "Priority": 1
@@ -3122,7 +3122,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1120601,
@@ -4108,7 +4108,7 @@
         "Target": 8
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1139101,
@@ -4219,6 +4219,60 @@
     "Priority": 1
   },
   {
+    "Id": 1147101,
+    "name": "P_Skill_1147101",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1147101",
+    "DesParam": [],
+    "BuffList": [],
+    "Priority": 1
+  },
+  {
+    "Id": 1147111,
+    "name": "P_Skill_1147111",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1147111",
+    "DesParam": [
+      3
+    ],
+    "BuffList": [],
+    "Priority": 1
+  },
+  {
+    "Id": 1147121,
+    "name": "P_Skill_1147121",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1147121",
+    "DesParam": [
+      20
+    ],
+    "BuffList": [],
+    "Priority": 1
+  },
+  {
+    "Id": 1147131,
+    "name": "P_Skill_1147131",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1147131",
+    "DesParam": [
+      20,
+      0.1
+    ],
+    "BuffList": [],
+    "Priority": 1
+  },
+  {
+    "Id": 1147141,
+    "name": "P_Skill_1147141",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1147141",
+    "DesParam": [
+      5
+    ],
+    "BuffList": [],
+    "Priority": 1
+  },
+  {
     "Id": 1147301,
     "name": "P_Skill_1147301",
     "icon": "Die_Poison",
@@ -4252,7 +4306,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1147501,
@@ -4270,7 +4324,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1147601,
@@ -4288,7 +4342,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1147701,
@@ -4306,7 +4360,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 1147801,
@@ -4614,7 +4668,7 @@
         "Target": 1
       }
     ],
-    "Priority": 0
+    "Priority": 1
   },
   {
     "Id": 11004401,

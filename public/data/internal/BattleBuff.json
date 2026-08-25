@@ -31417,29 +31417,101 @@
     "TriggerVFX": [],
     "ConflictType": [],
     "SwitchRemove": false,
-    "TriggerCondition": 4,
+    "TriggerCondition": 15,
     "DelayTime": 0,
     "TickTime": 0,
     "TriggerParam": [],
-    "ConditonIndex": 10800101,
+    "ConditonIndex": 411,
     "EffectId": [
       10800102
     ],
-    "ConditonIndex2": 10800102,
+    "ConditonIndex2": 412,
     "EffectId2": [
       10800103
     ],
-    "ConditonIndex3": 10800103,
+    "ConditonIndex3": 413,
     "EffectId3": [
       10800104
     ],
-    "ConditonIndex4": 10800104,
+    "ConditonIndex4": 414,
     "EffectId4": [
       10800105
     ],
-    "ConditonIndex5": 10800105,
+    "ConditonIndex5": 415,
     "EffectId5": [
       10800106
+    ],
+    "RemoveCondition": 0,
+    "RemoveConditonIndex": 0,
+    "AttackEnhance": 0,
+    "DefenceEnhance": 0,
+    "CritRateEnhance": 0,
+    "CritOnHitRateEnhance": 0,
+    "TotalDamageEnhance": 0,
+    "SkillDamageEnhance": 0,
+    "NormalDamageEnhance": 0,
+    "TypeDamageEnhance": [],
+    "TotalOnHitEnhance": 0,
+    "TypeOnHitEnhance": [],
+    "ImmuBuffType": [],
+    "ImmuBuffId": 0,
+    "AttackSpeedEnhance": 0,
+    "SkillCostChange": [],
+    "Vertigo": false,
+    "Restriction": false,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "SkillPowerChange": 0,
+    "FirstSkillChange": [],
+    "AttackDamageLock": 0,
+    "AttackGlobalDamageChange": 0,
+    "OnHitGlobalDamageChange": 0,
+    "AttackGlobalDamageChange2": 0,
+    "OnHitGlobalDamageChange2": 0,
+    "AttackCounterRateChange": 0,
+    "OnHitCounterRateChange": 0,
+    "AttackCritRateChange": 0,
+    "OnHitCritRateChange": 0,
+    "DebuffDamageResistance": 0,
+    "RecoveryEfficiency": 0
+  },
+  {
+    "BuffId": 10800103,
+    "BuffLv": 1,
+    "Name": [],
+    "Des": [],
+    "DesParam": [],
+    "Icon": [],
+    "BuffType": 0,
+    "AddVFX": [],
+    "RemoveVFX": [],
+    "ContinueVFX": [],
+    "TriggerVFX": [],
+    "ConflictType": [],
+    "SwitchRemove": false,
+    "TriggerCondition": 11,
+    "DelayTime": 0,
+    "TickTime": 0,
+    "TriggerParam": [],
+    "ConditonIndex": 401,
+    "EffectId": [
+      581
+    ],
+    "ConditonIndex2": 402,
+    "EffectId2": [
+      582
+    ],
+    "ConditonIndex3": 403,
+    "EffectId3": [
+      583
+    ],
+    "ConditonIndex4": 404,
+    "EffectId4": [
+      584
+    ],
+    "ConditonIndex5": 405,
+    "EffectId5": [
+      585
     ],
     "RemoveCondition": 0,
     "RemoveConditonIndex": 0,
@@ -55390,9 +55462,7 @@
     "Name": [],
     "Des": [],
     "DesParam": [],
-    "Icon": [
-      "Buff_133801"
-    ],
+    "Icon": [],
     "BuffType": 0,
     "AddVFX": [],
     "RemoveVFX": [],
@@ -55922,9 +55992,7 @@
     "Name": [],
     "Des": [],
     "DesParam": [],
-    "Icon": [
-      "Buff_133901"
-    ],
+    "Icon": [],
     "BuffType": 0,
     "AddVFX": [],
     "RemoveVFX": [],
@@ -55988,9 +56056,7 @@
     "Name": [],
     "Des": [],
     "DesParam": [],
-    "Icon": [
-      "Buff_134001"
-    ],
+    "Icon": [],
     "BuffType": 0,
     "AddVFX": [],
     "RemoveVFX": [],

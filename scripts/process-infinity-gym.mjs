@@ -2,12 +2,19 @@
 // 输入: data/{region}/archive/daily/infinity-gym/{YYYY-MM-DD}.csv (按天分片，累计遍历目录)
 //       data/{region}/archive/daily/assist/{YYYY-MM-DD}.csv       (助战埋点，同样按天分片)
 // 输出: public/data/online/{region}/infinity-gym.json
+// 状态: data/{region}/archive/gym-state.json（增量处理用，冻结历史聚合结果）
 //
 // 每行 CSV = 一场道馆战斗（已合并 player_type=1/4 两条埋点）:
 //   part_date | game_id_str | b_role_id | gym_uid | player_lumis | battle_result | trainer_id
 //
 // gym_uid = MonsterGroupID = 128100000 + 层数
 // battle_result: 1=胜 2=负
+//
+// 增量策略：
+// - state.processedDates 记录"已冻结"的日期（不会再重扫）
+// - 只 freeze 「date <= today - 2」的日子：给数数按天分区留足写入延迟余量
+// - 每天跑：新天数据 append 到 state；最近 2 天数据每次都从 state 基础上"临时叠加"跑一遍
+// - state 缺失（如首次部署）→ 全量扫描重建
 
 import fs from 'fs'
 import path from 'path'
@@ -22,6 +29,7 @@ const PROJECT_ROOT = path.join(__dirname, '..')
 const args = process.argv.slice(2)
 const regionIdx = args.indexOf('--region')
 const region = regionIdx !== -1 ? args[regionIdx + 1] : 'domestic'
+const forceRebuild = args.includes('--rebuild')  // 强制全量重算 state（用于回归测试或首次迁移）
 if (!['domestic', 'overseas'].includes(region)) {
   console.error(`未知 --region: ${region}（仅支持 domestic / overseas）`)
   process.exit(1)
@@ -29,7 +37,175 @@ if (!['domestic', 'overseas'].includes(region)) {
 
 const INPUT_DIR = path.join(PROJECT_ROOT, `data/${region}/archive/daily/infinity-gym`)
 const ASSIST_DIR = path.join(PROJECT_ROOT, `data/${region}/archive/daily/assist`)
+const STATE_JSON = path.join(PROJECT_ROOT, `data/${region}/archive/gym-state.json`)
 const OUTPUT_JSON = path.join(PROJECT_ROOT, `public/data/online/${region}/infinity-gym.json`)
+
+// 冻结阈值：只把 date < today - FREEZE_DELAY_DAYS 的日子写入 state.processedDates
+// 剩下的每次全量重扫。取 2 天 = 给数数分区延迟留余量（同一天的战斗可能在次日凌晨才写入分区）
+const FREEZE_DELAY_DAYS = 2
+
+// ==========================================
+// 聚合状态：所有累加得到的中间结果
+// - freeze 阶段的数据从 state.json 反序列化过来（历史累计）
+// - 每次跑再叠加"未冻结的天"（最近 2 天 + 新增天）
+// - 只有"冻结的天"部分会写回 state.json（append-only）
+// ==========================================
+function createEmptyState() {
+  return {
+    floors: new Map(),                       // floor -> { totalBattles, wins, loses, assistBattles, uniqueClearers:Set, uniqueChallengers:Set, teamsWon:Map<teamKey, teamStats> }
+    uniqueChallengersGlobal: new Set(),
+    playerMaxFloor: new Map(),               // b_role_id -> max floor
+    globalLumiCount: new Map(),              // lumiId -> 出场场次
+    assistBattleUids: new Set(),             // battle_uid（对应 gym CSV 的 game_id_str）
+    totalBattlesAllFloors: 0,
+    assistBattlesAllFloors: 0,
+    processedDates: new Set(),               // 已冻结（写入 state）的日期（YYYY-MM-DD）
+    processedAssistDates: new Set(),         // 已冻结的 assist 日期
+  }
+}
+
+// 深拷贝 state 用于"临时叠加最近未冻结天"—— 保持 state.json 里的冻结状态不被污染
+function cloneState(s) {
+  const c = createEmptyState()
+  c.totalBattlesAllFloors = s.totalBattlesAllFloors
+  c.assistBattlesAllFloors = s.assistBattlesAllFloors
+  c.processedDates = new Set(s.processedDates)
+  c.processedAssistDates = new Set(s.processedAssistDates)
+  c.uniqueChallengersGlobal = new Set(s.uniqueChallengersGlobal)
+  c.playerMaxFloor = new Map(s.playerMaxFloor)
+  c.globalLumiCount = new Map(s.globalLumiCount)
+  c.assistBattleUids = new Set(s.assistBattleUids)
+  for (const [floor, f] of s.floors) {
+    const clonedTeams = new Map()
+    for (const [tk, t] of f.teamsWon) {
+      clonedTeams.set(tk, {
+        teamLumiIds: [...t.teamLumiIds],
+        lumis: t.lumis.map(l => ({
+          lumiId: l.lumiId,
+          lumiName: l.lumiName,
+          secondSkills: new Map(l.secondSkills),
+        })),
+        trainerSkills: new Map(t.trainerSkills),
+        battles: t.battles,
+        latestGameId: t.latestGameId,
+      })
+    }
+    c.floors.set(floor, {
+      totalBattles: f.totalBattles,
+      wins: f.wins,
+      loses: f.loses,
+      assistBattles: f.assistBattles,
+      uniqueClearers: new Set(f.uniqueClearers),
+      uniqueChallengers: new Set(f.uniqueChallengers),
+      teamsWon: clonedTeams,
+    })
+  }
+  return c
+}
+
+// 序列化/反序列化：JSON 不能直接存 Map/Set/BigInt，手动展开
+function serializeState(s) {
+  return {
+    version: 1,
+    totalBattlesAllFloors: s.totalBattlesAllFloors,
+    assistBattlesAllFloors: s.assistBattlesAllFloors,
+    processedDates: [...s.processedDates],
+    processedAssistDates: [...s.processedAssistDates],
+    uniqueChallengersGlobal: [...s.uniqueChallengersGlobal],
+    playerMaxFloor: [...s.playerMaxFloor],           // [[b_role_id, maxFloor], ...]
+    globalLumiCount: [...s.globalLumiCount],         // [[lumiId, count], ...]
+    assistBattleUids: [...s.assistBattleUids],
+    floors: [...s.floors].map(([floor, f]) => [floor, {
+      totalBattles: f.totalBattles,
+      wins: f.wins,
+      loses: f.loses,
+      assistBattles: f.assistBattles,
+      uniqueClearers: [...f.uniqueClearers],
+      uniqueChallengers: [...f.uniqueChallengers],
+      teamsWon: [...f.teamsWon].map(([tk, t]) => [tk, {
+        teamLumiIds: t.teamLumiIds,
+        lumis: t.lumis.map(l => ({
+          lumiId: l.lumiId,
+          lumiName: l.lumiName,
+          secondSkills: [...l.secondSkills],   // [[skillId, count], ...]
+        })),
+        trainerSkills: [...t.trainerSkills],
+        battles: t.battles,
+        latestGameId: t.latestGameId.toString(),  // BigInt → string
+      }]),
+    }]),
+  }
+}
+
+function deserializeState(obj) {
+  const s = createEmptyState()
+  s.totalBattlesAllFloors = obj.totalBattlesAllFloors || 0
+  s.assistBattlesAllFloors = obj.assistBattlesAllFloors || 0
+  s.processedDates = new Set(obj.processedDates || [])
+  s.processedAssistDates = new Set(obj.processedAssistDates || [])
+  s.uniqueChallengersGlobal = new Set(obj.uniqueChallengersGlobal || [])
+  s.playerMaxFloor = new Map(obj.playerMaxFloor || [])
+  s.globalLumiCount = new Map(obj.globalLumiCount || [])
+  s.assistBattleUids = new Set(obj.assistBattleUids || [])
+  for (const [floor, f] of obj.floors || []) {
+    const teams = new Map()
+    for (const [tk, t] of f.teamsWon || []) {
+      teams.set(tk, {
+        teamLumiIds: t.teamLumiIds,
+        lumis: t.lumis.map(l => ({
+          lumiId: l.lumiId,
+          lumiName: l.lumiName,
+          secondSkills: new Map(l.secondSkills || []),
+        })),
+        trainerSkills: new Map(t.trainerSkills || []),
+        battles: t.battles,
+        latestGameId: BigInt(t.latestGameId || '0'),
+      })
+    }
+    s.floors.set(floor, {
+      totalBattles: f.totalBattles,
+      wins: f.wins,
+      loses: f.loses,
+      assistBattles: f.assistBattles,
+      uniqueClearers: new Set(f.uniqueClearers || []),
+      uniqueChallengers: new Set(f.uniqueChallengers || []),
+      teamsWon: teams,
+    })
+  }
+  return s
+}
+
+function loadState() {
+  if (!fs.existsSync(STATE_JSON)) return null
+  try {
+    const obj = JSON.parse(fs.readFileSync(STATE_JSON, 'utf-8'))
+    return deserializeState(obj)
+  } catch (e) {
+    console.warn(`⚠️ 加载 state 失败（将全量重建）: ${e.message}`)
+    return null
+  }
+}
+
+function saveState(s) {
+  fs.mkdirSync(path.dirname(STATE_JSON), { recursive: true })
+  fs.writeFileSync(STATE_JSON, JSON.stringify(serializeState(s)), 'utf-8')
+  const size = fs.statSync(STATE_JSON).size
+  console.log(`  💾 state 已保存: ${STATE_JSON} (${(size / 1024).toFixed(1)} KB)`)
+}
+
+// 从文件名解析日期：daily/infinity-gym/2026-08-24.csv → '2026-08-24'
+function dateOfCsvPath(p) {
+  const m = path.basename(p).match(/^(\d{4}-\d{2}-\d{2})\.csv$/)
+  return m ? m[1] : null
+}
+
+// 计算"冻结截止日"（含）—— 今天 - FREEZE_DELAY_DAYS
+function freezeCutoff() {
+  const d = new Date()
+  d.setDate(d.getDate() - FREEZE_DELAY_DAYS)
+  const pad = n => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+}
 
 // 列出 daily 目录里所有 CSV 按日期排序（文件名格式 YYYY-MM-DD.csv）
 function listDailyCsvs(dir) {
@@ -164,6 +340,103 @@ async function processCsvStream(csvPath, onRow) {
 }
 
 // ==========================================
+// 把一行 gym CSV 累加到 state
+// ==========================================
+function accumulateGymRow(state, row) {
+  const gymUid = parseInt(row.gym_uid)
+  if (!Number.isFinite(gymUid) || gymUid < GYM_UID_MIN || gymUid > GYM_UID_MAX) return
+
+  const floor = uidToFloor(gymUid)
+  const roleId = row.b_role_id
+  const isWin = parseInt(row.battle_result) === 1
+  const isAssist = state.assistBattleUids.has(row.game_id_str)
+
+  if (!state.floors.has(floor)) {
+    state.floors.set(floor, {
+      totalBattles: 0,
+      wins: 0,
+      loses: 0,
+      assistBattles: 0,
+      uniqueClearers: new Set(),
+      uniqueChallengers: new Set(),
+      teamsWon: new Map(),   // 只统计胜利场次（口径 1）
+    })
+  }
+  const f = state.floors.get(floor)
+  f.totalBattles++
+  f.uniqueChallengers.add(roleId)
+  if (isAssist) {
+    f.assistBattles++
+    state.assistBattlesAllFloors++
+  }
+  if (isWin) {
+    f.wins++
+    f.uniqueClearers.add(roleId)
+  } else {
+    f.loses++
+  }
+
+  state.uniqueChallengersGlobal.add(roleId)
+  state.totalBattlesAllFloors++
+
+  // 玩家最高层（"能打到"就算 —— 挑战即算，不管胜负）
+  const cur = state.playerMaxFloor.get(roleId) || 0
+  if (floor > cur) state.playerMaxFloor.set(roleId, floor)
+
+  // 解析 player_lumis（战斗中玩家阵容）
+  let lumis = []
+  try {
+    lumis = JSON.parse(row.player_lumis.replace(/""/g, '"'))
+  } catch {
+    return
+  }
+  if (lumis.length === 0) return
+  lumis.sort((a, b) => String(a.lumi_id).localeCompare(String(b.lumi_id)))
+
+  // 全局噜咪出场率（所有场次都算，不限胜负）
+  lumis.forEach(l => {
+    const id = String(l.lumi_id)
+    state.globalLumiCount.set(id, (state.globalLumiCount.get(id) || 0) + 1)
+  })
+
+  // 每层胜利队伍 top（口径 1：只有胜利场次计入）
+  if (!isWin) return
+  const teamKey = lumis.map(l => l.lumi_id).sort().join('-')
+  if (!f.teamsWon.has(teamKey)) {
+    f.teamsWon.set(teamKey, {
+      teamLumiIds: lumis.map(l => l.lumi_id),
+      lumis: lumis.map(l => ({
+        lumiId: l.lumi_id,
+        lumiName: l.lumi_name,
+        secondSkills: new Map()
+      })),
+      trainerSkills: new Map(),
+      battles: 0,
+      latestGameId: 0n,   // 该队所有胜利场次中 game_id_str 的最大值（BigInt，用于"最近使用"排序）
+    })
+  }
+  const team = f.teamsWon.get(teamKey)
+  team.battles++
+  // 更新该队"最近一次胜利"的 game_id_str（BigInt 比较）
+  try {
+    const gid = BigInt(row.game_id_str)
+    if (gid > team.latestGameId) team.latestGameId = gid
+  } catch { /* game_id_str 非数字直接跳过 */ }
+  // 累加各噜咪携带的第二技能
+  lumis.forEach((l, idx) => {
+    const skillId = parseInt(l.lumi_secondskill)
+    if (!Number.isNaN(skillId)) {
+      const map = team.lumis[idx].secondSkills
+      map.set(skillId, (map.get(skillId) || 0) + 1)
+    }
+  })
+  // 训练家技能（行级）
+  const trainerId = parseInt(row.trainer_id)
+  const tid = !Number.isNaN(trainerId) ? trainerId : 0
+  team.trainerSkills.set(tid, (team.trainerSkills.get(tid) || 0) + 1)
+}
+
+// ==========================================
 // 主处理
 // ==========================================
 async function main() {
@@ -177,139 +450,90 @@ async function main() {
     process.exit(1)
   }
 
-  // 预读所有 daily assist CSV 建 Set<battle_uid>（=对应 battle_end 事件的 game_id_str）
-  const assistBattleUids = new Set()
-  for (const csvPath of assistCsvs) {
+  // 尝试加载增量 state（存在且非 --rebuild 时用增量模式）
+  const savedState = forceRebuild ? null : loadState()
+  const cutoff = freezeCutoff()  // 冻结截止日（含）：date <= cutoff 就 freeze
+  const state = savedState || createEmptyState()
+
+  if (savedState) {
+    console.log(`\n📦 增量模式：state 已加载`)
+    console.log(`   已冻结 gym 天数: ${state.processedDates.size}, assist 天数: ${state.processedAssistDates.size}`)
+    console.log(`   冻结截止日（含）: ${cutoff}`)
+  } else {
+    console.log(`\n🔄 全量模式：${forceRebuild ? '--rebuild 强制' : 'state 缺失'}，从头扫描所有 daily CSV`)
+  }
+
+  // ---- 第 1 步：assist CSV 累加到 state（先做，因为 gym 累加时需要 assistBattleUids） ----
+  // 新的（未 freeze）assist CSV 全都要读，读完的按 cutoff 决定是否 freeze
+  const freshAssistCsvs = assistCsvs.filter(p => {
+    const d = dateOfCsvPath(p)
+    return d && !state.processedAssistDates.has(d)
+  })
+  for (const csvPath of freshAssistCsvs) {
     await processCsvStream(csvPath, (row) => {
       const uid = row.battle_uid
-      if (uid) assistBattleUids.add(uid)
+      if (uid) state.assistBattleUids.add(uid)
     })
+    const d = dateOfCsvPath(csvPath)
+    if (d && d <= cutoff) state.processedAssistDates.add(d)
   }
   if (assistCsvs.length) {
-    console.log(`  助战场次总数（battle_uid 独立值）: ${assistBattleUids.size.toLocaleString('en-US')}`)
+    console.log(`  助战场次总数（battle_uid 独立值）: ${state.assistBattleUids.size.toLocaleString('en-US')}`)
+    console.log(`  本次新增 assist 天数: ${freshAssistCsvs.length}`)
   } else {
     console.log(`  助战 CSV 不存在，跳过助战统计`)
   }
 
-  // 每层聚合器
-  // floor -> { totalBattles, wins, loses, uniqueChallengers:Set, uniqueClearers:Set, teamsWon:Map<teamKey, teamStats>, assistBattles }
-  const floors = new Map()
-  const uniqueChallengersGlobal = new Set()
-  const playerMaxFloor = new Map()          // b_role_id -> max floor
-  const globalLumiCount = new Map()         // lumiId -> 出场场次
-  let totalBattlesAllFloors = 0
-  let assistBattlesAllFloors = 0            // 全局助战场次（gym CSV 中 game_id_str 命中 assistBattleUids 的场次）
-
-  let rowCount = 0
-  const gymRowHandler = (row) => {
-    const gymUid = parseInt(row.gym_uid)
-    if (!Number.isFinite(gymUid) || gymUid < GYM_UID_MIN || gymUid > GYM_UID_MAX) return
-
-    const floor = uidToFloor(gymUid)
-    const roleId = row.b_role_id
-    const isWin = parseInt(row.battle_result) === 1
-    const isAssist = assistBattleUids.has(row.game_id_str)
-
-    if (!floors.has(floor)) {
-      floors.set(floor, {
-        totalBattles: 0,
-        wins: 0,
-        loses: 0,
-        assistBattles: 0,
-        uniqueClearers: new Set(),
-        uniqueChallengers: new Set(),
-        teamsWon: new Map(),   // 只统计胜利场次（口径 1）
-      })
-    }
-    const f = floors.get(floor)
-    f.totalBattles++
-    f.uniqueChallengers.add(roleId)
-    if (isAssist) {
-      f.assistBattles++
-      assistBattlesAllFloors++
-    }
-    if (isWin) {
-      f.wins++
-      f.uniqueClearers.add(roleId)
+  // ---- 第 2 步：gym CSV 分两批 —— 冻结候选 vs 需要临时叠加 ----
+  // 冻结候选：date <= cutoff 且不在 processedDates —— 累加到 state，加入 processedDates（下次不再读）
+  // 临时叠加：date > cutoff（最近 2 天） —— 每次都从 state 基础上重新叠加（不写入 processedDates）
+  const freshFreezeCsvs = []
+  const overlayCsvs = []
+  for (const csvPath of gymCsvs) {
+    const d = dateOfCsvPath(csvPath)
+    if (!d) continue
+    if (d <= cutoff) {
+      if (!state.processedDates.has(d)) freshFreezeCsvs.push(csvPath)
     } else {
-      f.loses++
+      overlayCsvs.push(csvPath)
     }
-
-    uniqueChallengersGlobal.add(roleId)
-    totalBattlesAllFloors++
-
-    // 玩家最高层（"能打到"就算 —— 挑战即算，不管胜负）
-    // 你说的口径：玩家最高层分布应该反映"卡到多少层" —— 用挑战记录合理
-    const cur = playerMaxFloor.get(roleId) || 0
-    if (floor > cur) playerMaxFloor.set(roleId, floor)
-
-    // 解析 player_lumis（战斗中玩家阵容）
-    let lumis = []
-    try {
-      lumis = JSON.parse(row.player_lumis.replace(/""/g, '"'))
-    } catch {
-      return
-    }
-    if (lumis.length === 0) return
-    lumis.sort((a, b) => String(a.lumi_id).localeCompare(String(b.lumi_id)))
-
-    // 全局噜咪出场率（所有场次都算，不限胜负）
-    lumis.forEach(l => {
-      const id = String(l.lumi_id)
-      globalLumiCount.set(id, (globalLumiCount.get(id) || 0) + 1)
-    })
-
-    // 每层胜利队伍 top（口径 1：只有胜利场次计入）
-    if (!isWin) return
-    const teamKey = lumis.map(l => l.lumi_id).sort().join('-')
-    if (!f.teamsWon.has(teamKey)) {
-      f.teamsWon.set(teamKey, {
-        teamLumiIds: lumis.map(l => l.lumi_id),
-        lumis: lumis.map(l => ({
-          lumiId: l.lumi_id,
-          lumiName: l.lumi_name,
-          secondSkills: new Map()
-        })),
-        trainerSkills: new Map(),
-        battles: 0,
-        latestGameId: 0n,   // 该队所有胜利场次中 game_id_str 的最大值（BigInt，用于"最近使用"排序）
-      })
-    }
-    const team = f.teamsWon.get(teamKey)
-    team.battles++
-    // 更新该队"最近一次胜利"的 game_id_str（BigInt 比较）
-    try {
-      const gid = BigInt(row.game_id_str)
-      if (gid > team.latestGameId) team.latestGameId = gid
-    } catch { /* game_id_str 非数字直接跳过 */ }
-    // 累加各噜咪携带的第二技能
-    lumis.forEach((l, idx) => {
-      const skillId = parseInt(l.lumi_secondskill)
-      if (!Number.isNaN(skillId)) {
-        const map = team.lumis[idx].secondSkills
-        map.set(skillId, (map.get(skillId) || 0) + 1)
-      }
-    })
-    // 训练家技能（行级）
-    const trainerId = parseInt(row.trainer_id)
-    const tid = !Number.isNaN(trainerId) ? trainerId : 0
-    team.trainerSkills.set(tid, (team.trainerSkills.get(tid) || 0) + 1)
   }
 
-  // 逐日流式处理所有 daily gym CSV
-  for (const csvPath of gymCsvs) {
-    const { total } = await processCsvStream(csvPath, gymRowHandler)
+  console.log(`\n📥 需要新冻结的 gym 天数: ${freshFreezeCsvs.length}`)
+  console.log(`📥 每次重叠加的 gym 天数（date > ${cutoff}）: ${overlayCsvs.length}`)
+
+  // 先累加冻结候选到 state
+  let rowCount = 0
+  for (const csvPath of freshFreezeCsvs) {
+    const { total } = await processCsvStream(csvPath, (row) => accumulateGymRow(state, row))
+    rowCount += total
+    const d = dateOfCsvPath(csvPath)
+    if (d) state.processedDates.add(d)
+  }
+
+  // 现在 state 里包含"所有 date <= cutoff 的冻结数据" —— 立即写盘保存（省得后面出错丢冻结进度）
+  if (freshFreezeCsvs.length > 0) {
+    saveState(state)
+  } else if (!savedState) {
+    // 全量模式但没有冻结天要写：可能还没到 FREEZE_DELAY_DAYS 时长的部署早期，跳过 state 保存
+    console.log(`  ⏭️  暂无可冻结天，跳过 state 保存`)
+  }
+
+  // 再基于 state 副本叠加 overlayCsvs（不污染 state）
+  const finalState = overlayCsvs.length > 0 ? cloneState(state) : state
+  for (const csvPath of overlayCsvs) {
+    const { total } = await processCsvStream(csvPath, (row) => accumulateGymRow(finalState, row))
     rowCount += total
   }
 
-  console.log(`  总场次: ${totalBattlesAllFloors}`)
-  console.log(`  独立玩家数: ${uniqueChallengersGlobal.size}`)
-  console.log(`  覆盖层数: ${floors.size}`)
-  console.log(`  助战场次（gym 命中）: ${assistBattlesAllFloors}${totalBattlesAllFloors > 0 ? ` (${(assistBattlesAllFloors/totalBattlesAllFloors*100).toFixed(1)}%)` : ''}`)
-  console.log(`  CSV 行数: ${rowCount}`)
+  console.log(`\n  总场次: ${finalState.totalBattlesAllFloors}`)
+  console.log(`  独立玩家数: ${finalState.uniqueChallengersGlobal.size}`)
+  console.log(`  覆盖层数: ${finalState.floors.size}`)
+  console.log(`  助战场次（gym 命中）: ${finalState.assistBattlesAllFloors}${finalState.totalBattlesAllFloors > 0 ? ` (${(finalState.assistBattlesAllFloors/finalState.totalBattlesAllFloors*100).toFixed(1)}%)` : ''}`)
+  console.log(`  本次 CSV 处理行数: ${rowCount}`)
 
   // 构建 floors 输出（按 floor 降序 —— 高层在前，方便玩家看到"卡关点"和进度峰值）
-  const floorsOutput = [...floors.entries()]
+  const floorsOutput = [...finalState.floors.entries()]
     .sort(([a], [b]) => b - a)
     .map(([floor, f]) => {
       // 平均通过尝试次数：总场次 / 通过独立玩家数
@@ -376,29 +600,28 @@ async function main() {
 
   // 最高层数分布
   const maxFloorDist = {}
-  for (const [, maxFloor] of playerMaxFloor) {
+  for (const [, maxFloor] of finalState.playerMaxFloor) {
     maxFloorDist[maxFloor] = (maxFloorDist[maxFloor] || 0) + 1
   }
 
   // 全局噜咪出场率
-  const totalLumiSlots = totalBattlesAllFloors * 3   // 每场 3 只
-  const globalLumiUsage = [...globalLumiCount.entries()]
+  const globalLumiUsage = [...finalState.globalLumiCount.entries()]
     .sort(([, a], [, b]) => b - a)
     .slice(0, GLOBAL_LUMI_TOP_N)
     .map(([lumiId, count]) => ({
       lumiId,
       lumiName: lumiNameOf(Number(lumiId)),
       battles: count,
-      appearanceRate: totalBattlesAllFloors > 0 ? +(count / totalBattlesAllFloors * 100).toFixed(2) : 0
+      appearanceRate: finalState.totalBattlesAllFloors > 0 ? +(count / finalState.totalBattlesAllFloors * 100).toFixed(2) : 0
     }))
 
   const output = {
     updateTime: new Date().toISOString(),
     region,
-    totalChallengers: uniqueChallengersGlobal.size,
-    totalBattles: totalBattlesAllFloors,
-    assistBattles: assistBattlesAllFloors,
-    assistRate: totalBattlesAllFloors > 0 ? +(assistBattlesAllFloors / totalBattlesAllFloors * 100).toFixed(2) : 0,
+    totalChallengers: finalState.uniqueChallengersGlobal.size,
+    totalBattles: finalState.totalBattlesAllFloors,
+    assistBattles: finalState.assistBattlesAllFloors,
+    assistRate: finalState.totalBattlesAllFloors > 0 ? +(finalState.assistBattlesAllFloors / finalState.totalBattlesAllFloors * 100).toFixed(2) : 0,
     maxFloorDistribution: maxFloorDist,
     globalLumiUsage,
     floors: floorsOutput,
