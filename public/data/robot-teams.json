@@ -20141,22 +20141,22 @@
       "name": "联盟晋阶赛",
       "lumis": [
         {
-          "lumiId": 105504,
+          "lumiId": 101701,
           "level": 110,
           "breakthrough": 10,
-          "score": 87
+          "score": 89
         },
         {
-          "lumiId": 119101,
+          "lumiId": 116001,
+          "level": 110,
+          "breakthrough": 10,
+          "score": 89
+        },
+        {
+          "lumiId": 107001,
           "level": 110,
           "breakthrough": 10,
           "score": 86
-        },
-        {
-          "lumiId": 109001,
-          "level": 110,
-          "breakthrough": 10,
-          "score": 88
         }
       ]
     }
@@ -58576,22 +58576,22 @@
       "teamId": 128100650,
       "lumis": [
         {
-          "lumiId": 105504,
+          "lumiId": 101701,
           "level": 110,
           "breakthrough": 10,
-          "score": 87
+          "score": 89
         },
         {
-          "lumiId": 119101,
+          "lumiId": 116001,
+          "level": 110,
+          "breakthrough": 10,
+          "score": 89
+        },
+        {
+          "lumiId": 107001,
           "level": 110,
           "breakthrough": 10,
           "score": 86
-        },
-        {
-          "lumiId": 109001,
-          "level": 110,
-          "breakthrough": 10,
-          "score": 88
         }
       ]
     },
