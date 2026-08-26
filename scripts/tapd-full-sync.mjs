@@ -155,6 +155,23 @@ async function fetchStoriesByIds(ids) {
   return out
 }
 
+// 反查：拉所有 parent_id 指向本单的子单
+// 用途：兜底 story.children_id 字段可能缺项（TAPD 有单向坏链现象，
+// 子单的 parent_id 指对了，但父单的 children_id 没列出该子单，导致同步漏 stage）
+async function fetchChildrenByParentId(parentId) {
+  const out = []
+  let page = 1
+  const pageSize = 50
+  while (true) {
+    const r = await tapd(`/stories?workspace_id=${workspaceId}&parent_id=${parentId}&limit=${pageSize}&page=${page}`)
+    const items = r.data || []
+    for (const item of items) out.push(unwrap(item, 'Story'))
+    if (items.length < pageSize) break
+    page++
+  }
+  return out
+}
+
 // 数子单的"状态变更次数"作为 iterationCount
 // iterationCount = 0 表示直通没返工；每次 status 从 pending-review/done → 回退到 in-progress/todo 视为一次返工
 async function countIterations(storyId) {
@@ -182,10 +199,29 @@ async function syncOneLumi(db, order, stmts) {
   const story = await fetchStory(tapdStoryId)
   if (!story) return { skip: 'story not found' }
 
-  const childrenIds = parseChildrenIds(story.children_id)
-  if (!childrenIds.length) return { skip: 'no children' }
+  // 双源拉子单：
+  //   1. parent_id 反查（主源，最可靠 —— TAPD 里 children 都有 parent_id 反向指针）
+  //   2. story.children_id 字段（兜底，有单向坏链风险，见 fetchChildrenByParentId 注释）
+  let reverseChildren = []
+  try {
+    reverseChildren = await fetchChildrenByParentId(tapdStoryId)
+  } catch (e) {
+    console.log(`  ⚠ parent_id 反查失败（${String(e.message).slice(0, 80)}），fallback children_id`)
+  }
+  const reverseIds = new Set(reverseChildren.map(s => String(s.id)))
 
-  const children = await fetchStoriesByIds(childrenIds)
+  const forwardIds = parseChildrenIds(story.children_id)
+  const missingForwardIds = forwardIds.filter(id => !reverseIds.has(id))
+  const missingChildren = missingForwardIds.length ? await fetchStoriesByIds(missingForwardIds) : []
+
+  // 记录不一致情况（帮 PM 感知 TAPD 数据质量问题）
+  const reverseOnlyCount = reverseChildren.filter(s => !forwardIds.includes(String(s.id))).length
+  if (reverseOnlyCount) {
+    console.log(`  ⚠ [${lumiId}] children_id 缺 ${reverseOnlyCount} 条子单（父单单向坏链），已通过 parent_id 反查补齐`)
+  }
+
+  const children = [...reverseChildren, ...missingChildren]
+  if (!children.length) return { skip: 'no children' }
 
   const now = new Date().toISOString()
   let stagesUpdated = 0
@@ -193,6 +229,9 @@ async function syncOneLumi(db, order, stmts) {
 
   for (const child of children) {
     if (!child?.name) continue
+    // 排除文案类子单：TAPD 里策划环节可能拆成"文案包装/文案配置/表现设计/表现配置"，
+    // 我们只跟"表现"这条线（对应本地 combat/config），"文案"直接忽略
+    if (/文案/.test(child.name)) continue
     // 匹配 stageType
     let matched = null
     for (const m of STAGE_SUFFIX_MAP) {

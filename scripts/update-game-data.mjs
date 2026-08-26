@@ -30,6 +30,7 @@ function runCommand(cmd, args = []) {
     stdio: 'pipe'
   })
   if (result.stdout) console.log(result.stdout.slice(-2000))
+  if (result.stderr) console.log(result.stderr.slice(-2000))
   if (result.error) {
     throw new Error(`命令启动失败: ${result.error.message}`)
   }
@@ -67,8 +68,14 @@ function svnUpdate(cfg) {
   runCommand('svn', ['update', cfg.LUBAN_DATA_DIR])
   console.log(`\n📦 git pull 客户端资源（${cfg.branch}）...`)
   // 策划机器无 git 提交权限，本地改动都是引擎运行产生的临时变更，直接 reset 丢弃后再 pull
-  runCommand('git', ['-C', cfg.CLIENT_ROOT, 'reset', '--hard', 'HEAD'])
-  runCommand('git', ['-C', cfg.CLIENT_ROOT, 'pull', '--ff-only'])
+  // git 出错时只警告不 throw：客户端资源仅用于新增立绘同步，缺了 syncAvatars 会自然跳过；
+  // wiki 核心数据由 svn 拉，跟 git repo 无关，不能因为 git 挂就阻塞整个 wiki 数据更新
+  try {
+    runCommand('git', ['-C', cfg.CLIENT_ROOT, 'reset', '--hard', 'HEAD'])
+    runCommand('git', ['-C', cfg.CLIENT_ROOT, 'pull', '--ff-only'])
+  } catch (e) {
+    console.log(`  ⚠ 客户端资源 git 拉取失败（${e.message.slice(0, 120)}）— 跳过，不影响 wiki 数据同步`)
+  }
 }
 
 function copyCoreFiles(cfg) {

@@ -38,6 +38,7 @@ scripts/tapd-config.json
 api/data/lumiwiki.db
 api/data/lumiwiki.db-shm
 api/data/lumiwiki.db-wal
+api/data/lumiwiki.db.bak*
 api/data/db.json
 api/data/db.json.migrated
 
@@ -45,6 +46,8 @@ api/data/db.json.migrated
 data/archive/**/*.csv
 data/domestic/archive/**/*.csv
 data/overseas/archive/**/*.csv
+# 无限道馆增量拉取的状态文件（中间产物，动辄几百 MB，超 GitHub 100 MB 限制）
+data/**/gym-state.json
 
 # 归档压缩包（本地打包用，绝不进 git —— auto-update 用 git add -A 会误卷）
 *.7z

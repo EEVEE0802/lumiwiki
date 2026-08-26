@@ -1,44 +1,64 @@
 <script setup>
-// 生产协作站 · 排期总览页 (PM 视角)
-// - 只展 order 元数据（名字/图鉴号/属性/里程碑/投放/进度/策划）
-// - 顶部多维筛选
-// - 每行右侧 ✏️ 编辑 · 📅 排期 · TAPD 直跳
-// - 顶部 ➕ 新增噜咪
-// - 展示所有噜咪：包括未上包的（图鉴里没数据的）
+// 生产协作站 · 排期总览页
+// 状态 3 tab：未排期（7 环节都没排周） / 未完成 / 已完成
+// 里程碑单选：未安排 / M0…M5
+// 视图规则：
+//   · 未完成 × 具体里程碑（M0…M5） → 周版本时间轴
+//   · 其他所有组合（未排期 / 已完成 / 里程碑=未安排） → 卡片流铺开
+// 完成判定：7 个 stage 全部 status === 'done'
 
 import { ref, computed, onMounted } from 'vue'
 import { apiFetch } from '../data/api'
 import { useAuth } from '../composables/useAuth'
-import { TYPE_COLORS, TYPE_NAMES, LUMI_TAG_NAMES } from '../data'
-import { avatarUrl } from '../data/imageUrl'
+import { TYPE_NAMES } from '../data'
 import ProductionOrderEditor from '../components/ProductionOrderEditor.vue'
 import ProductionScheduleEditor from '../components/ProductionScheduleEditor.vue'
+import ProductionLumiCard from '../components/ProductionLumiCard.vue'
 
-const { currentUser, hasPermission } = useAuth()
+const { hasPermission } = useAuth()
 const canPm = computed(() => hasPermission('production.pm'))
+
+const STAGE_META = [
+  { key: 'combat',  label: '策划设计', color: '#e74c3c', icon: '⚔️' },
+  { key: 'concept', label: '原画',     color: '#f39c12', icon: '🎨' },
+  { key: 'model',   label: '模型',     color: '#e67e22', icon: '🧱' },
+  { key: 'anim',    label: '动作',     color: '#c0392b', icon: '🎬' },
+  { key: 'vfx',     label: '特效',     color: '#9b59b6', icon: '✨' },
+  { key: 'gui',     label: 'GUI',      color: '#3498db', icon: '🖼️' },
+  { key: 'config',  label: '策划配置', color: '#16a085', icon: '⚙️' },
+]
+const STAGE_TYPES = STAGE_META.map(s => s.key)
+
+const STATUS_META = {
+  'todo':           { label: '待办',   color: '#666' },
+  'in-progress':    { label: '进行中', color: '#3498db' },
+  'pending-review': { label: '待验收', color: '#f39c12' },
+  'done':           { label: '完成',   color: '#27ae60' },
+  'rejected':       { label: '打回',   color: '#e74c3c' },
+}
+
+// 赛季 tab（用 releaseStatus 字段）：'未排期' 代表还没决定投放赛季的噜咪
+const RELEASE_TABS = ['未排期', '主线', 'S1', 'S2', 'S3', 'S4', 'S5', '完全体']
+
+const STATUS_TABS = [
+  { key: 'unscheduled', label: '⏸ 未排期', desc: '7 环节都没排周版本' },
+  { key: 'unfinished',  label: '⏳ 未完成', desc: '至少一个环节已排周，仍未全部完成' },
+  { key: 'done',        label: '✅ 已完成', desc: '7 个环节全部标记为完成' },
+]
 
 const orders = ref([])
 const iterations = ref([])
 const loading = ref(true)
 const error = ref('')
 
-// 筛选
+const activeRelease = ref('S1')             // 未排期 / 主线 / S1…S5 / 完全体
+const anchorMode = ref('start')             // 'start' | 'end'
+const activeStatus = ref('unfinished')      // 'unscheduled' | 'unfinished' | 'done'
+
 const searchQuery = ref('')
-const filterMilestone = ref('')
-const filterRelease = ref('')
 const filterType = ref('')
 const filterProgress = ref('')
 const filterDesigner = ref('')
-const filterStatus = ref('')          // order.status: planning/in-progress/pending-review/done
-
-const MILESTONE_OPTIONS = ['M0', 'M1', 'M2', 'M3', 'M4', 'M5']
-const RELEASE_OPTIONS = ['未排期', '主线', 'S1', 'S2', 'S3', 'S4', 'S5', '完全体']
-const STATUS_OPTIONS = [
-  { value: 'planning', label: '规划中' },
-  { value: 'in-progress', label: '进行中' },
-  { value: 'pending-review', label: '待验收' },
-  { value: 'done', label: '完成' },
-]
 
 async function load() {
   loading.value = true
@@ -58,13 +78,60 @@ async function load() {
     loading.value = false
   }
 }
-
 onMounted(load)
 
 const uniqueDesigners = computed(() => [...new Set(orders.value.map(o => o.designer).filter(Boolean))].sort())
 const uniqueProgress = computed(() => [...new Set(orders.value.map(o => o.progressStage).filter(Boolean))].sort())
 
-const filtered = computed(() => {
+const iterationsAsc = computed(() => [...iterations.value].reverse())
+const iterationMap = computed(() => {
+  const m = new Map()
+  for (const it of iterationsAsc.value) m.set(it.id, it)
+  return m
+})
+
+// 拿到实际存在且"计入统计"的 stage：
+// 排除 import-script 早期占位（有 stage 行但 tapdSubStoryId 为空 = TAPD 那边没这条子单，用户也没填过）
+// 这样"该环节不适用"（例如异色版没特效单）就不会阻塞已完成判定
+function existingStages(order) {
+  return STAGE_TYPES
+    .map(k => order.stages?.[k])
+    .filter(s => s && s.tapdSubStoryId)
+}
+function hasAnySchedule(order) {
+  return existingStages(order).some(s => s.tapdIterationId)
+}
+function isDone(order) {
+  const stages = existingStages(order)
+  if (!stages.length) return false   // 一个 stage 记录都没 = 还没开动，不算完成
+  return stages.every(s => s.status === 'done')
+}
+function classifyOrder(order) {
+  if (isDone(order)) return 'done'
+  if (!hasAnySchedule(order)) return 'unscheduled'
+  return 'unfinished'
+}
+
+function anchorIteration(order, mode) {
+  const scheduled = STAGE_TYPES
+    .map(k => order.stages?.[k])
+    .filter(s => s && s.tapdIterationId && iterationMap.value.has(s.tapdIterationId))
+  if (!scheduled.length) return null
+  let best = null
+  for (const s of scheduled) {
+    const it = iterationMap.value.get(s.tapdIterationId)
+    if (!best) { best = it; continue }
+    if (mode === 'start') {
+      if ((it.startdate || '') < (best.startdate || '')) best = it
+    } else {
+      if ((it.enddate || '') > (best.enddate || '')) best = it
+    }
+  }
+  return best
+}
+
+// 基础筛选：搜索 / 属性 / 进度 / 策划
+const baseFiltered = computed(() => {
   const q = searchQuery.value.trim().toLowerCase()
   return orders.value.filter(o => {
     if (q) {
@@ -73,27 +140,95 @@ const filtered = computed(() => {
         || (o.pokedexId != null && String(o.pokedexId).includes(q))
       if (!hit) return false
     }
-    if (filterMilestone.value && o.milestone !== filterMilestone.value) return false
-    if (filterRelease.value && o.releaseStatus !== filterRelease.value) return false
     if (filterType.value && String(o.type1) !== filterType.value && String(o.type2) !== filterType.value) return false
     if (filterProgress.value && o.progressStage !== filterProgress.value) return false
     if (filterDesigner.value && o.designer !== filterDesigner.value) return false
-    if (filterStatus.value && o.status !== filterStatus.value) return false
     return true
   })
 })
 
+// 赛季筛选（tab）
+const releaseBase = computed(() =>
+  baseFiltered.value.filter(o => o.releaseStatus === activeRelease.value)
+)
+
+// 3 分区
+const statusPartitions = computed(() => {
+  const unscheduled = []
+  const unfinished = []
+  const done = []
+  for (const o of releaseBase.value) {
+    const cat = classifyOrder(o)
+    if (cat === 'done') done.push(o)
+    else if (cat === 'unscheduled') unscheduled.push(o)
+    else unfinished.push(o)
+  }
+  return { unscheduled, unfinished, done }
+})
+
+const displayOrders = computed(() => statusPartitions.value[activeStatus.value] || [])
+
+// 时间轴视图条件：只在「未完成」状态下展开时间轴
+const showTimeline = computed(() => activeStatus.value === 'unfinished')
+
+const placedOrders = computed(() => {
+  if (!showTimeline.value) return []
+  return displayOrders.value.map(o => ({ order: o, anchor: anchorIteration(o, anchorMode.value) }))
+})
+
+// 今日周版本
+const todayIterationId = computed(() => {
+  const today = new Date().toISOString().slice(0, 10)
+  const it = iterationsAsc.value.find(i => i.startdate && i.enddate && i.startdate <= today && today <= i.enddate)
+  return it?.id || null
+})
+
+// 可见周版本列（时间轴模式）：min anchor.startdate ~ max anchor.startdate，含今日
+const visibleIterations = computed(() => {
+  if (!showTimeline.value) return []
+  const anchorIds = new Set()
+  for (const p of placedOrders.value) if (p.anchor) anchorIds.add(p.anchor.id)
+  if (todayIterationId.value) anchorIds.add(todayIterationId.value)
+  const anchored = iterationsAsc.value.filter(it => anchorIds.has(it.id))
+  if (!anchored.length) return []
+  const dates = anchored.map(it => it.startdate).filter(Boolean).sort()
+  const minStart = dates[0]
+  const maxStart = dates[dates.length - 1]
+  return iterationsAsc.value.filter(it =>
+    it.startdate && it.startdate >= minStart && it.startdate <= maxStart
+  )
+})
+
+// 时间轴模式：把 placedOrders 按 iteration 分格
+const timelineLayout = computed(() => {
+  if (!showTimeline.value) return null
+  const byIter = new Map()
+  for (const p of placedOrders.value) {
+    if (!p.anchor) continue   // 时间轴模式下不该出现（未完成的一定有排期），保险
+    const arr = byIter.get(p.anchor.id) || []
+    arr.push(p.order)
+    byIter.set(p.anchor.id, arr)
+  }
+  return byIter
+})
+
+// 各状态数量（在当前里程碑下）
+const statusCounts = computed(() => ({
+  unscheduled: statusPartitions.value.unscheduled.length,
+  unfinished: statusPartitions.value.unfinished.length,
+  done: statusPartitions.value.done.length,
+}))
+
 // 编辑弹窗
-const editing = ref(null)   // { mode, order }
+const editing = ref(null)
 function openCreate() { editing.value = { mode: 'create', order: null } }
 function openEdit(o) { editing.value = { mode: 'edit', order: o } }
 function onSaved() { editing.value = null; load() }
 function onDeleted() { editing.value = null; load() }
 
 // 排期弹窗
-const scheduling = ref(null)  // 完整 order
+const scheduling = ref(null)
 async function openSchedule(o) {
-  // 拉这只噜咪的完整 stages
   try {
     const { order } = await apiFetch(`/api/production/orders/${o.lumiId}`)
     scheduling.value = order
@@ -103,20 +238,13 @@ async function openSchedule(o) {
 }
 function onScheduleSaved() { scheduling.value = null; load() }
 
-// TAPD 快跳
 function goTapd(url) { if (url) window.open(url, '_blank') }
-
-function typeColor(id) { return TYPE_COLORS[id] || '#666' }
-function typeName(id) { return TYPE_NAMES[id] || '' }
 
 function clearFilters() {
   searchQuery.value = ''
-  filterMilestone.value = ''
-  filterRelease.value = ''
   filterType.value = ''
   filterProgress.value = ''
   filterDesigner.value = ''
-  filterStatus.value = ''
 }
 </script>
 
@@ -125,7 +253,7 @@ function clearFilters() {
     <div class="dispatch-header">
       <div>
         <h1 class="page-title">🗂️ 排期总览</h1>
-        <p class="dispatch-subtitle">PM 视角 · 按噜咪管理排期 · 不展环节，只看 order 元数据</p>
+        <p class="dispatch-subtitle">按赛季 × 状态查看噜咪排期 · 未完成的走周版本时间轴</p>
       </div>
       <div class="dispatch-actions">
         <button v-if="canPm" class="btn-create" @click="openCreate">➕ 新增噜咪</button>
@@ -135,17 +263,45 @@ function clearFilters() {
     <div v-if="error" class="error-box">⚠️ {{ error }}</div>
 
     <div v-else>
-      <!-- 筛选栏 -->
+      <!-- 赛季 tab -->
+      <div class="ms-tabs">
+        <span class="bar-label">赛季：</span>
+        <button
+          v-for="r in RELEASE_TABS"
+          :key="r"
+          :class="['ms-tab', { active: activeRelease === r }]"
+          @click="activeRelease = r"
+        >{{ r }}</button>
+      </div>
+
+      <!-- 状态 tab -->
+      <div class="tabs">
+        <button
+          v-for="s in STATUS_TABS"
+          :key="s.key"
+          :class="['tab', { active: activeStatus === s.key }]"
+          :title="s.desc"
+          @click="activeStatus = s.key"
+        >{{ s.label }} <span class="tab-count">{{ statusCounts[s.key] }}</span></button>
+      </div>
+
+      <!-- 锚点模式（只在时间轴视图显示） -->
+      <div v-if="showTimeline" class="anchor-bar">
+        <span class="bar-label">时间轴锚点：</span>
+        <button
+          :class="['mode-chip', { active: anchorMode === 'start' }]"
+          @click="anchorMode = 'start'"
+        >📌 按开始时间</button>
+        <button
+          :class="['mode-chip', { active: anchorMode === 'end' }]"
+          @click="anchorMode = 'end'"
+        >🏁 按结束时间</button>
+        <span class="mode-hint">{{ anchorMode === 'start' ? '取子单最早的那周' : '取子单最晚的那周' }}</span>
+      </div>
+
+      <!-- 筛选 -->
       <div class="filter-bar">
         <input v-model="searchQuery" placeholder="🔍 搜索名称 / ID / 图鉴号" />
-        <select v-model="filterMilestone">
-          <option value="">全部里程碑</option>
-          <option v-for="m in MILESTONE_OPTIONS" :key="m" :value="m">{{ m }}</option>
-        </select>
-        <select v-model="filterRelease">
-          <option value="">全部投放</option>
-          <option v-for="r in RELEASE_OPTIONS" :key="r" :value="r">{{ r }}</option>
-        </select>
         <select v-model="filterType">
           <option value="">全部属性</option>
           <option v-for="(name, id) in TYPE_NAMES" :key="id" :value="id">{{ name }}</option>
@@ -158,90 +314,69 @@ function clearFilters() {
           <option value="">全部策划</option>
           <option v-for="d in uniqueDesigners" :key="d" :value="d">{{ d }}</option>
         </select>
-        <select v-model="filterStatus">
-          <option value="">全部状态</option>
-          <option v-for="s in STATUS_OPTIONS" :key="s.value" :value="s.value">{{ s.label }}</option>
-        </select>
         <button class="chip-clear" @click="clearFilters">清空</button>
-        <span class="result-count">共 {{ filtered.length }} / {{ orders.length }} 只</span>
+        <span class="result-count">共 {{ displayOrders.length }} 只</span>
       </div>
 
       <div v-if="loading" class="loading">加载中...</div>
 
-      <div v-else class="dispatch-table-wrap">
-        <table class="dispatch-table">
-          <thead>
-            <tr>
-              <th class="col-avatar"></th>
-              <th class="col-name">噜咪</th>
-              <th class="col-type">属性</th>
-              <th class="col-narrow">里程碑</th>
-              <th class="col-narrow">投放</th>
-              <th class="col-narrow">进度</th>
-              <th class="col-designer">策划</th>
-              <th class="col-narrow">状态</th>
-              <th class="col-actions">操作</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="o in filtered" :key="o.lumiId" class="dispatch-row">
-              <td>
-                <img
-                  v-if="o.pokedexId != null"
-                  :src="avatarUrl(o.lumiId)"
-                  class="row-avatar"
-                  loading="lazy"
-                  @error="$event.target.style.display='none'"
-                />
-                <div v-else class="row-avatar row-avatar-empty" title="尚未入包">?</div>
-              </td>
-              <td class="col-name">
-                <div class="row-name">
-                  <span v-if="o.pokedexId != null" class="row-pokedex">#{{ o.pokedexId }}</span>
-                  <span>{{ o.name || `#${o.lumiId}` }}</span>
-                </div>
-                <div class="row-sub">
-                  <span class="row-id">id {{ o.lumiId }}</span>
-                  <span v-if="o.tapdStoryUrl" class="row-tapd" @click="goTapd(o.tapdStoryUrl)">TAPD</span>
-                </div>
-              </td>
-              <td class="col-type">
-                <span
-                  v-if="o.type1"
-                  class="type-tag"
-                  :style="{ background: typeColor(o.type1) }"
-                >{{ typeName(o.type1) }}</span>
-                <span
-                  v-if="o.type2"
-                  class="type-tag"
-                  :style="{ background: typeColor(o.type2) }"
-                >{{ typeName(o.type2) }}</span>
-              </td>
-              <td class="col-narrow">
-                <span v-if="o.milestone" class="milestone-tag">{{ o.milestone }}</span>
-              </td>
-              <td class="col-narrow">
-                <span v-if="o.releaseStatus" :class="['release-tag', `release-${o.releaseStatus}`]">
-                  {{ o.releaseStatus }}
-                </span>
-              </td>
-              <td class="col-narrow">
-                <span v-if="o.progressStage" class="progress-tag">{{ o.progressStage }}</span>
-              </td>
-              <td class="col-designer">{{ o.designer || '-' }}</td>
-              <td class="col-narrow">
-                <span :class="['status-tag', `st-${o.status}`]">{{ (STATUS_OPTIONS.find(s => s.value === o.status) || {}).label || o.status }}</span>
-              </td>
-              <td class="col-actions">
-                <button class="act-btn" @click="openEdit(o)" title="编辑元数据">✏️</button>
-                <button class="act-btn" @click="openSchedule(o)" title="调整排期（环节 × 周版本）">📅</button>
-              </td>
-            </tr>
-            <tr v-if="!filtered.length">
-              <td colspan="9" class="empty">没有匹配的噜咪</td>
-            </tr>
-          </tbody>
-        </table>
+      <div v-else-if="!displayOrders.length" class="empty">— 当前条件下没有噜咪 —</div>
+
+      <!-- 时间轴视图（未完成 tab） -->
+      <div
+        v-else-if="showTimeline"
+        class="board-scroll"
+        :style="{ '--iter-count': visibleIterations.length }"
+      >
+        <div class="board-row board-header">
+          <div
+            v-for="it in visibleIterations"
+            :key="it.id"
+            class="col-head"
+            :class="{ 'is-today': it.id === todayIterationId }"
+          >
+            <div class="col-head-name">
+              <span v-if="it.id === todayIterationId" class="today-tag">📍 本周</span>
+              {{ it.name }}
+            </div>
+            <div class="col-head-date">{{ it.startdate }} ~ {{ it.enddate }}</div>
+          </div>
+        </div>
+        <div class="board-row">
+          <div
+            v-for="it in visibleIterations"
+            :key="it.id"
+            class="cell"
+            :class="{ 'is-today': it.id === todayIterationId }"
+          >
+            <ProductionLumiCard
+              v-for="o in (timelineLayout.get(it.id) || [])"
+              :key="o.lumiId"
+              :order="o"
+              :stage-meta="STAGE_META"
+              :status-meta="STATUS_META"
+              :iteration-map="iterationMap"
+              @edit="openEdit"
+              @schedule="openSchedule"
+              @tapd="goTapd"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片流视图（未排期 / 已完成 / 未安排里程碑） -->
+      <div v-else class="flat-grid">
+        <ProductionLumiCard
+          v-for="o in displayOrders"
+          :key="o.lumiId"
+          :order="o"
+          :stage-meta="STAGE_META"
+          :status-meta="STATUS_META"
+          :iteration-map="iterationMap"
+          @edit="openEdit"
+          @schedule="openSchedule"
+          @tapd="goTapd"
+        />
       </div>
     </div>
 
@@ -297,10 +432,95 @@ function clearFilters() {
   color: #ff8b95;
 }
 
-.filter-bar {
+/* 里程碑 tab */
+.ms-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ms-tab {
+  padding: 6px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 0.9em;
+  font-family: inherit;
+  font-weight: 600;
+}
+.ms-tab:hover { border-color: #5dade2; color: #5dade2; }
+.ms-tab.active {
+  background: rgba(52, 152, 219, 0.15);
+  color: #5dade2;
+  border-color: #5dade2;
+}
+
+/* 状态 tab */
+.tabs {
   display: flex;
   gap: 8px;
   margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.tab {
+  padding: 6px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 0.9em;
+  font-family: inherit;
+}
+.tab.active {
+  background: rgba(233, 69, 96, 0.12);
+  color: var(--accent-light);
+  border-color: var(--accent);
+}
+.tab-count {
+  background: rgba(255,255,255,0.08);
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 0.85em;
+  margin-left: 4px;
+}
+
+/* 锚点模式 */
+.anchor-bar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.bar-label { color: var(--text-dim); font-size: 0.85em; }
+.mode-chip {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 4px 12px;
+  color: var(--text);
+  font-size: 0.85em;
+  cursor: pointer;
+  font-family: inherit;
+}
+.mode-chip:hover { border-color: #a493e0; }
+.mode-chip.active {
+  background: rgba(164, 147, 224, 0.15);
+  border-color: #a493e0;
+  color: #d1c3f0;
+  font-weight: 600;
+}
+.mode-hint { color: var(--text-dim); font-size: 0.8em; margin-left: 8px; }
+
+/* 筛选 */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -325,151 +545,78 @@ function clearFilters() {
   font-size: 0.85em;
   font-family: inherit;
 }
-.result-count {
-  color: var(--text-dim);
-  font-size: 0.85em;
-  margin-left: auto;
-}
+.result-count { color: var(--text-dim); font-size: 0.85em; margin-left: auto; }
 
-.dispatch-table-wrap {
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--bg-card);
-}
-.dispatch-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9em;
-  min-width: 1100px;
-}
-.dispatch-table thead th {
-  background: rgba(0,0,0,0.2);
-  color: #a493e0;
-  padding: 10px;
-  text-align: left;
-  font-weight: 600;
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  border-bottom: 2px solid var(--border);
-  white-space: nowrap;
-}
-.col-avatar { width: 50px; }
-.col-name { min-width: 180px; }
-.col-type { width: 100px; }
-.col-narrow { width: 90px; text-align: center; }
-.col-designer { min-width: 130px; }
-.col-actions { width: 100px; text-align: right; }
-
-.dispatch-row td {
-  padding: 8px 10px;
-  border-bottom: 1px solid var(--border);
-  vertical-align: middle;
-}
-.dispatch-row:hover td { background: rgba(164,147,224,0.06); }
-
-.row-avatar {
-  width: 40px; height: 40px;
-  border-radius: 6px;
-  background: rgba(0,0,0,0.2);
-  object-fit: contain;
-}
-.row-avatar-empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dim);
-  font-size: 1.2em;
-}
-.row-name {
-  color: #fff;
-  font-weight: 600;
-  display: flex;
-  gap: 6px;
-  align-items: baseline;
-}
-.row-pokedex { color: var(--text-dim); font-size: 0.85em; }
-.row-sub {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  margin-top: 2px;
-  font-size: 0.75em;
-}
-.row-id { color: var(--text-dim); }
-.row-tapd {
-  color: #a493e0;
-  padding: 1px 6px;
-  background: rgba(164,147,224,0.15);
-  border-radius: 4px;
-  cursor: pointer;
-}
-.row-tapd:hover { background: rgba(164,147,224,0.3); }
-
-.type-tag {
-  color: #fff;
-  padding: 2px 8px;
-  border-radius: 8px;
-  font-size: 0.8em;
-  margin-right: 4px;
-  display: inline-block;
-}
-.milestone-tag {
-  background: rgba(52, 152, 219, 0.15);
-  color: #5dade2;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 0.8em;
-  font-weight: 600;
-}
-.progress-tag {
-  background: rgba(46, 204, 113, 0.15);
-  color: #4ade80;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 0.8em;
-  font-weight: 600;
-}
-.release-tag {
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 0.8em;
-  font-weight: 600;
-  background: rgba(155, 89, 182, 0.15);
-  color: #bb8fce;
-  display: inline-block;
-}
-.release-tag.release-未排期 { background: rgba(148,163,184,0.15); color: #94a3b8; }
-.release-tag.release-完全体 { background: rgba(241,196,15,0.15); color: #f1c40f; }
-.release-tag.release-主线 { background: rgba(46,204,113,0.15); color: #4ade80; }
-
-.status-tag {
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 0.8em;
-  font-weight: 600;
-}
-.status-tag.st-planning { background: rgba(100,100,100,0.2); color: #999; }
-.status-tag.st-in-progress { background: rgba(52,152,219,0.15); color: #5dade2; }
-.status-tag.st-pending-review { background: rgba(243,156,18,0.15); color: #f39c12; }
-.status-tag.st-done { background: rgba(46,204,113,0.15); color: #4ade80; }
-
-.act-btn {
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 4px 8px;
-  color: var(--text);
-  cursor: pointer;
-  font-size: 1em;
-  margin-left: 2px;
-}
-.act-btn:hover { border-color: #a493e0; background: rgba(164,147,224,0.1); }
-
+.loading { padding: 40px; text-align: center; color: var(--text-dim); }
 .empty {
+  padding: 40px;
   text-align: center;
-  padding: 40px 20px;
   color: var(--text-dim);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
 }
+
+/* 卡片流视图 */
+.flat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+}
+
+/* 时间轴视图 */
+.board-scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+}
+.board-row {
+  display: grid;
+  grid-template-columns: repeat(var(--iter-count), 260px);
+  align-items: stretch;
+}
+.board-header { position: sticky; top: 0; z-index: 4; }
+.col-head {
+  padding: 10px 12px;
+  border-right: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
+  background: rgba(0,0,0,0.25);
+}
+.col-head:last-child { border-right: none; }
+.col-head.is-today {
+  background: rgba(233, 69, 96, 0.12);
+  border-bottom-color: var(--accent);
+}
+.col-head-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.col-head-date { color: var(--text-dim); font-size: 0.72em; margin-top: 2px; }
+.today-tag {
+  background: var(--accent);
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.72em;
+}
+
+.cell {
+  padding: 8px;
+  border-right: 1px solid var(--border);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cell:last-child { border-right: none; }
+.cell.is-today { background: rgba(233, 69, 96, 0.04); }
 </style>

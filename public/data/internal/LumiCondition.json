@@ -4269,6 +4269,33 @@
     "Param2": []
   },
   {
+    "LumiCondtionID": 20051,
+    "des": "LumiCondition_20051",
+    "DesParam": [
+      1
+    ],
+    "Target": 1,
+    "LumiConditionType": 14,
+    "Param1": [
+      1020
+    ],
+    "Param2": []
+  },
+  {
+    "LumiCondtionID": 20052,
+    "des": "LumiCondition_20052",
+    "DesParam": [
+      1
+    ],
+    "Target": 1,
+    "LumiConditionType": 5,
+    "Param1": [
+      85,
+      100
+    ],
+    "Param2": []
+  },
+  {
     "LumiCondtionID": 10001,
     "des": "LumiCondition_10001",
     "DesParam": [

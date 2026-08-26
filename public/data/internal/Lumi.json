@@ -19607,7 +19607,7 @@
     ],
     "BattlePassive": 1108901,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 1111004,
     "InbornHomePassive": 0,
     "MinHpState": 58,
     "MinAtkState": 66,
@@ -42988,7 +42988,7 @@
       "Y": 0,
       "Z": 0
     },
-    "AdventureVFXScale": 1,
+    "AdventureVFXScale": 1.8,
     "AdventureZeroOffset": {
       "X": 0,
       "Y": 0,
@@ -44501,8 +44501,8 @@
     "CardResName": [],
     "Type1": 11,
     "Type2": 3,
-    "NormalAttack": 13930101,
-    "ActiveSkill": 13930102,
+    "NormalAttack": 13930401,
+    "ActiveSkill": 13930402,
     "SkillPool1": [
       7001,
       7005
@@ -45956,10 +45956,10 @@
     "Distance": 6000,
     "Height": 0,
     "LookatHeight": 200,
-    "VFXScale": 1,
+    "VFXScale": 1.5,
     "ZeroOffset": {
       "X": 0,
-      "Y": 0,
+      "Y": 0.4,
       "Z": 0
     },
     "AdventureVFXScale": 1,

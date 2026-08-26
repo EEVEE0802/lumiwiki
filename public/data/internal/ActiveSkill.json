@@ -15278,6 +15278,15 @@
     "name": "A_Skill_11100402",
     "Des": "A_SkillText_11100402",
     "DesParam": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      10,
+      30,
+      50,
+      70,
       100
     ],
     "LumiTpye": 7,
@@ -15304,64 +15313,34 @@
     "SkillEffect": [],
     "SkillValueChange": [
       {
-        "TriggerCondition": 1260,
+        "TriggerCondition": 11100401,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 1000
+      },
+      {
+        "TriggerCondition": 11100402,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 3000
+      },
+      {
+        "TriggerCondition": 11100403,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 5000
+      },
+      {
+        "TriggerCondition": 11100404,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 7000
+      },
+      {
+        "TriggerCondition": 11100405,
         "ValueType": 1,
         "ModifyType": 2,
         "Num": 10000
-      },
-      {
-        "TriggerCondition": 1259,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 8000
-      },
-      {
-        "TriggerCondition": 1258,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 6000
-      },
-      {
-        "TriggerCondition": 1257,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 4000
-      },
-      {
-        "TriggerCondition": 1256,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 4000
-      },
-      {
-        "TriggerCondition": 1255,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 4000
-      },
-      {
-        "TriggerCondition": 1254,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 4000
-      },
-      {
-        "TriggerCondition": 1253,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 2000
-      },
-      {
-        "TriggerCondition": 1252,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 2000
-      },
-      {
-        "TriggerCondition": 1251,
-        "ValueType": 1,
-        "ModifyType": 2,
-        "Num": 2000
       }
     ],
     "CastCondition": []
@@ -30984,8 +30963,7 @@
     "Des": "A_SkillText_13910102",
     "DesParam": [
       1,
-      10,
-      300
+      10
     ],
     "LumiTpye": 11,
     "UnlockCost": 0,
@@ -31047,8 +31025,7 @@
     "Des": "A_SkillText_13920102",
     "DesParam": [
       1,
-      10,
-      300
+      20
     ],
     "LumiTpye": 11,
     "UnlockCost": 0,
@@ -31108,10 +31085,77 @@
     "Id": 13930102,
     "name": "A_Skill_13930102",
     "Des": "A_SkillText_13930102",
-    "DesParam": [],
+    "DesParam": [
+      1,
+      40
+    ],
     "LumiTpye": 11,
     "UnlockCost": 0,
     "SA": "SA_13930102",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      60
+    ],
+    "SkillCost": [
+      1,
+      40
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 13930401,
+    "name": "",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 11,
+    "UnlockCost": 0,
+    "SA": "SA_13930401",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "",
+    "SkillType": 0,
+    "TargetType": 1,
+    "AttackInterval": 900,
+    "SkillPowerList": [
+      9
+    ],
+    "SkillCost": [
+      0
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 7,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 13930402,
+    "name": "A_Skill_13930402",
+    "Des": "A_SkillText_13930402",
+    "DesParam": [
+      1,
+      10,
+      10,
+      2
+    ],
+    "LumiTpye": 11,
+    "UnlockCost": 0,
+    "SA": "SA_13930402",
     "AssSkill": [],
     "MontageType": 0,
     "icon": "Netral_01",
@@ -34147,7 +34191,9 @@
     "Id": 100090202,
     "name": "A_Skill_100090202",
     "Des": "A_SkillText_100090202",
-    "DesParam": [],
+    "DesParam": [
+      1
+    ],
     "LumiTpye": 13,
     "UnlockCost": 0,
     "SA": "SA_100090202",
@@ -35638,7 +35684,9 @@
     "Id": 100350102,
     "name": "A_Skill_100350102",
     "Des": "A_SkillText_100350102",
-    "DesParam": [],
+    "DesParam": [
+      20
+    ],
     "LumiTpye": 10,
     "UnlockCost": 0,
     "SA": "SA_100350102",
@@ -35697,7 +35745,10 @@
     "Id": 100360102,
     "name": "A_Skill_100360102",
     "Des": "A_SkillText_100360102",
-    "DesParam": [],
+    "DesParam": [
+      10,
+      10
+    ],
     "LumiTpye": 11,
     "UnlockCost": 0,
     "SA": "SA_100360102",
@@ -35998,7 +36049,10 @@
     "Id": 100410102,
     "name": "A_Skill_100410102",
     "Des": "A_SkillText_100410102",
-    "DesParam": [],
+    "DesParam": [
+      5,
+      10
+    ],
     "LumiTpye": 12,
     "UnlockCost": 0,
     "SA": "SA_100410102",
@@ -36057,7 +36111,9 @@
     "Id": 100420102,
     "name": "A_Skill_100420102",
     "Des": "A_SkillText_100420102",
-    "DesParam": [],
+    "DesParam": [
+      1
+    ],
     "LumiTpye": 12,
     "UnlockCost": 0,
     "SA": "SA_100420102",
@@ -36115,7 +36171,10 @@
     "Id": 100430102,
     "name": "A_Skill_100430102",
     "Des": "A_SkillText_100430102",
-    "DesParam": [],
+    "DesParam": [
+      50,
+      20
+    ],
     "LumiTpye": 12,
     "UnlockCost": 0,
     "SA": "SA_100430102",
@@ -36174,7 +36233,10 @@
     "Id": 100430202,
     "name": "A_Skill_100430202",
     "Des": "A_SkillText_100430202",
-    "DesParam": [],
+    "DesParam": [
+      99,
+      5
+    ],
     "LumiTpye": 12,
     "UnlockCost": 0,
     "SA": "SA_100430202",

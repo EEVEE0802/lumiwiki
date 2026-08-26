@@ -9,8 +9,7 @@ const props = defineProps({
   mode: { type: String, required: true },
   // edit 模式必传：完整 order 对象
   order: { type: Object, default: null },
-  // 建议列表：里程碑 / 投放 / 进度 / 策划
-  milestoneOptions: { type: Array, default: () => ['M0', 'M1', 'M2', 'M3', 'M4', 'M5'] },
+  // 建议列表：投放 / 进度 / 策划
   releaseOptions: { type: Array, default: () => ['未排期', '主线', 'S1', 'S2', 'S3', 'S4', 'S5', '完全体'] },
   progressOptions: { type: Array, default: () => [] },
   designerOptions: { type: Array, default: () => [] },
@@ -33,7 +32,6 @@ const workType = ref('')
 const combatStrength = ref('')
 const workBuilding = ref('')
 const tapdStoryUrl = ref('')
-const milestone = ref('')
 const releaseStatus = ref('')
 const progressStage = ref('')
 const designer = ref('')
@@ -56,7 +54,6 @@ function resetFromOrder() {
   combatStrength.value = o.combatStrength ?? ''
   workBuilding.value = o.workBuilding ?? ''
   tapdStoryUrl.value = o.tapdStoryUrl ?? ''
-  milestone.value = o.milestone ?? ''
   releaseStatus.value = o.releaseStatus ?? ''
   progressStage.value = o.progressStage ?? ''
   designer.value = o.designer ?? ''
@@ -100,7 +97,6 @@ function buildPayload() {
     workBuilding: workBuilding.value.trim() || null,
     tapdStoryUrl: tapdStoryUrl.value.trim() || null,
     tapdStoryId: tapdStoryId.value,
-    milestone: milestone.value || null,
     releaseStatus: releaseStatus.value || null,
     progressStage: progressStage.value.trim() || null,
     designer: designer.value.trim() || null,
@@ -206,13 +202,6 @@ const title = computed(() => props.mode === 'create' ? '➕ 新增噜咪生产�
         <!-- 排期 -->
         <div class="field-section">排期</div>
         <div class="field-grid">
-          <div class="field-col">
-            <label>里程碑</label>
-            <select v-model="milestone" :disabled="!canEdit">
-              <option value="">—</option>
-              <option v-for="m in milestoneOptions" :key="m" :value="m">{{ m }}</option>
-            </select>
-          </div>
           <div class="field-col">
             <label>投放状态</label>
             <select v-model="releaseStatus" :disabled="!canEdit">
