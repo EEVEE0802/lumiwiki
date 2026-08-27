@@ -90,6 +90,20 @@ const iterationMap = computed(() => {
   return m
 })
 
+// 判定：这个 iteration 是不是"占位池"（Backlog / 需求池 —— TAPD 里挂着未确定周版本的子单）
+// 视为未排期，不进时间轴、不参与锚点计算
+function isBacklogIteration(itId) {
+  if (!itId) return false
+  const it = iterationMap.value.get(itId)
+  if (!it) return false
+  return /Backlog|backlog|需求池/.test(it.name || '')
+}
+
+// 判定：stage 是否已"排到具体周版本"（有 iteration 且不是 Backlog）
+function isScheduledStage(s) {
+  return !!(s && s.tapdIterationId && !isBacklogIteration(s.tapdIterationId))
+}
+
 // 拿到实际存在且"计入统计"的 stage：
 // 排除 import-script 早期占位（有 stage 行但 tapdSubStoryId 为空 = TAPD 那边没这条子单，用户也没填过）
 // 这样"该环节不适用"（例如异色版没特效单）就不会阻塞已完成判定
@@ -99,7 +113,7 @@ function existingStages(order) {
     .filter(s => s && s.tapdSubStoryId)
 }
 function hasAnySchedule(order) {
-  return existingStages(order).some(s => s.tapdIterationId)
+  return existingStages(order).some(s => isScheduledStage(s))
 }
 function isDone(order) {
   const stages = existingStages(order)
@@ -115,7 +129,7 @@ function classifyOrder(order) {
 function anchorIteration(order, mode) {
   const scheduled = STAGE_TYPES
     .map(k => order.stages?.[k])
-    .filter(s => s && s.tapdIterationId && iterationMap.value.has(s.tapdIterationId))
+    .filter(s => isScheduledStage(s) && iterationMap.value.has(s.tapdIterationId))
   if (!scheduled.length) return null
   let best = null
   for (const s of scheduled) {
