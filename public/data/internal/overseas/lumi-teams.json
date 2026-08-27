@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-26T23:34:24.104Z",
+  "updateTime": "2026-08-27T23:33:54.908Z",
   "weeks": [
     1,
     2,
@@ -7,7 +7,8 @@
     4,
     5,
     6,
-    7
+    7,
+    8
   ],
   "lumiTeams": {
     "100801": [
@@ -10591,7 +10592,7 @@
             "lumiName": "Geniphant",
             "topSkill": {
               "skillId": 13002,
-              "count": 58
+              "count": 59
             }
           },
           {
@@ -10599,7 +10600,7 @@
             "lumiName": "Unicorn",
             "topSkill": {
               "skillId": 13003,
-              "count": 57
+              "count": 58
             }
           },
           {
@@ -10607,17 +10608,17 @@
             "lumiName": "Fistune",
             "topSkill": {
               "skillId": 14005,
-              "count": 113
+              "count": 114
             }
           }
         ],
         "topTrainerSkill": {
-          "trainerId": 1,
-          "count": 56
+          "trainerId": 2,
+          "count": 57
         },
-        "battles": 117,
-        "wins": 70,
-        "winRate": "59.83",
+        "battles": 118,
+        "wins": 71,
+        "winRate": "60.17",
         "tags": [
           "most-used"
         ]
@@ -16170,7 +16171,7 @@
             "lumiName": "Puncheroo - Variant",
             "topSkill": {
               "skillId": 12003,
-              "count": 43
+              "count": 46
             }
           },
           {
@@ -16178,7 +16179,7 @@
             "lumiName": "Charigon",
             "topSkill": {
               "skillId": 9001,
-              "count": 52
+              "count": 55
             }
           },
           {
@@ -16192,11 +16193,11 @@
         ],
         "topTrainerSkill": {
           "trainerId": 1,
-          "count": 83
+          "count": 86
         },
-        "battles": 98,
-        "wins": 68,
-        "winRate": "69.39",
+        "battles": 101,
+        "wins": 70,
+        "winRate": "69.31",
         "tags": [
           "other"
         ]
@@ -18121,6 +18122,94 @@
         "winRate": "35.06",
         "tags": [
           "other"
+        ]
+      }
+    ],
+    "121004": [
+      {
+        "teamLumiIds": [
+          "102602",
+          "109001",
+          "121004"
+        ],
+        "lumis": [
+          {
+            "lumiId": "121004",
+            "lumiName": "Battlantis - Variant",
+            "topSkill": {
+              "skillId": 4003,
+              "count": 1
+            }
+          },
+          {
+            "lumiId": "102602",
+            "lumiName": "Cyclodoge",
+            "topSkill": {
+              "skillId": 12003,
+              "count": 1
+            }
+          },
+          {
+            "lumiId": "109001",
+            "lumiName": "Flamblades",
+            "topSkill": {
+              "skillId": 3005,
+              "count": 1
+            }
+          }
+        ],
+        "topTrainerSkill": {
+          "trainerId": 1,
+          "count": 1
+        },
+        "battles": 1,
+        "wins": 0,
+        "winRate": "0.00",
+        "tags": [
+          "most-used"
+        ]
+      },
+      {
+        "teamLumiIds": [
+          "102602",
+          "109001",
+          "121004"
+        ],
+        "lumis": [
+          {
+            "lumiId": "121004",
+            "lumiName": "Battlantis - Variant",
+            "topSkill": {
+              "skillId": 4003,
+              "count": 1
+            }
+          },
+          {
+            "lumiId": "102602",
+            "lumiName": "Cyclodoge",
+            "topSkill": {
+              "skillId": 12003,
+              "count": 1
+            }
+          },
+          {
+            "lumiId": "109001",
+            "lumiName": "Flamblades",
+            "topSkill": {
+              "skillId": 3005,
+              "count": 1
+            }
+          }
+        ],
+        "topTrainerSkill": {
+          "trainerId": 1,
+          "count": 1
+        },
+        "battles": 1,
+        "wins": 0,
+        "winRate": "0.00",
+        "tags": [
+          "highest-winrate"
         ]
       }
     ],

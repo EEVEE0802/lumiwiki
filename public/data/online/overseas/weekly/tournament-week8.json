@@ -1,0 +1,45 @@
+{
+  "updateTime": "2026-08-27T23:33:04.937Z",
+  "totalBattles": 0,
+  "gameMode": "tournament",
+  "stats": {
+    "all": {
+      "appearance": [],
+      "winRate": [],
+      "totalBattles": 0,
+      "rankRange": {
+        "min": 1,
+        "max": null
+      }
+    }
+  },
+  "popularTeams": [],
+  "winDistribution": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0
+  },
+  "totalPlayers": 0,
+  "tournamentPlayerRankDistribution": {
+    "bronze": 0,
+    "silver": 0,
+    "gold": 0,
+    "diamond": 0,
+    "star": 0,
+    "legend": 0,
+    "total": 0
+  }
+}
