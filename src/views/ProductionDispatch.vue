@@ -127,12 +127,18 @@ function classifyOrder(order) {
 }
 
 function anchorIteration(order, mode) {
-  const scheduled = STAGE_TYPES
+  // 只看"未完成"的环节来算锚点：已完成的环节不影响位置
+  //   按开始时间 = 未完成环节里 startdate 最早的那个 iteration
+  //   按结束时间 = 未完成环节里 enddate 最晚的那个 iteration
+  // 若所有已排环节都完成了（即将进已完成 tab），fallback 用所有已排环节兜底避免出现空位
+  const scheduledStages = STAGE_TYPES
     .map(k => order.stages?.[k])
     .filter(s => isScheduledStage(s) && iterationMap.value.has(s.tapdIterationId))
-  if (!scheduled.length) return null
+  if (!scheduledStages.length) return null
+  const unfinishedStages = scheduledStages.filter(s => s.status !== 'done')
+  const pool = unfinishedStages.length ? unfinishedStages : scheduledStages
   let best = null
-  for (const s of scheduled) {
+  for (const s of pool) {
     const it = iterationMap.value.get(s.tapdIterationId)
     if (!best) { best = it; continue }
     if (mode === 'start') {
@@ -310,7 +316,7 @@ function clearFilters() {
           :class="['mode-chip', { active: anchorMode === 'end' }]"
           @click="anchorMode = 'end'"
         >🏁 按结束时间</button>
-        <span class="mode-hint">{{ anchorMode === 'start' ? '取子单最早的那周' : '取子单最晚的那周' }}</span>
+        <span class="mode-hint">{{ anchorMode === 'start' ? '未完成环节里最早的那周' : '未完成环节里最晚的那周' }}</span>
       </div>
 
       <!-- 筛选 -->
