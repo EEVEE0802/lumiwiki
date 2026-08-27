@@ -6383,31 +6383,99 @@
     "LumiTpye": 8,
     "UnlockCost": 0,
     "SA": "SA_10200102",
-    "AssSkill": [],
+    "AssSkill": [
+      10200103
+    ],
     "MontageType": 0,
     "icon": "Ice_102001",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      30,
-      30,
-      30
+      40
     ],
     "SkillCost": [
       1,
       60
     ],
-    "BaseCrit": 2500,
+    "BaseCrit": 500,
     "AddEnergy": 0,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
     "SkillEffect": [
       {
-        "TriggerType": 3,
+        "TriggerType": 1,
+        "TriggerCondition": 1801,
+        "TriggerEffect": 10200102
+      },
+      {
+        "TriggerType": 6,
         "TriggerCondition": 100,
         "TriggerEffect": 702
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 904
+      }
+    ],
+    "SkillValueChange": [
+      {
+        "TriggerCondition": 21081,
+        "ValueType": 2,
+        "ModifyType": 1,
+        "Num": -10
+      },
+      {
+        "TriggerCondition": 21082,
+        "ValueType": 2,
+        "ModifyType": 1,
+        "Num": -20
+      },
+      {
+        "TriggerCondition": 21083,
+        "ValueType": 2,
+        "ModifyType": 1,
+        "Num": -30
+      }
+    ],
+    "CastCondition": []
+  },
+  {
+    "Id": 10200103,
+    "name": "A_Skill_10200102",
+    "Des": "A_SkillText_10200102",
+    "DesParam": [
+      1,
+      1
+    ],
+    "LumiTpye": 8,
+    "UnlockCost": 0,
+    "SA": "SA_10200103",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Ice_102001",
+    "SkillType": 1,
+    "TargetType": 3,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      20
+    ],
+    "SkillCost": [
+      1,
+      60
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 707
       },
       {
         "TriggerType": 6,
@@ -23859,7 +23927,7 @@
   },
   {
     "Id": 12090202,
-    "name": "A_Skill_12090402",
+    "name": "A_Skill_12090202",
     "Des": "A_SkillText_12090402",
     "DesParam": [
       1,
@@ -26480,7 +26548,11 @@
     "Id": 12500202,
     "name": "A_Skill_12500202",
     "Des": "A_SkillText_12500202",
-    "DesParam": [],
+    "DesParam": [
+      1,
+      25,
+      6
+    ],
     "LumiTpye": 14,
     "UnlockCost": 0,
     "SA": "SA_12500202",
@@ -26491,18 +26563,203 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      60
+      75
     ],
     "SkillCost": [
       1,
-      40
+      60
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 1708,
+        "TriggerEffect": 12500201
+      },
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 1709,
+        "TriggerEffect": 12500202
+      },
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 1710,
+        "TriggerEffect": 12500203
+      },
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 1711,
+        "TriggerEffect": 12500204
+      }
+    ],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 12500203,
+    "name": "A_Skill_12500202",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 14,
+    "UnlockCost": 0,
+    "SA": "SA_12500203",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      100
+    ],
+    "SkillCost": [
+      1,
+      60
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100,
+        "TriggerEffect": 1501
+      },
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100,
+        "TriggerEffect": 12500205
+      }
+    ],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 12500204,
+    "name": "A_Skill_12500202",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 14,
+    "UnlockCost": 0,
+    "SA": "SA_12500204",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      125
+    ],
+    "SkillCost": [
+      1,
+      60
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100,
+        "TriggerEffect": 1502
+      },
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100,
+        "TriggerEffect": 12500206
+      }
+    ],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 12500205,
+    "name": "A_Skill_12500202",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 14,
+    "UnlockCost": 0,
+    "SA": "SA_12500205",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      150
+    ],
+    "SkillCost": [
+      1,
+      60
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100,
+        "TriggerEffect": 1503
+      },
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100,
+        "TriggerEffect": 12500207
+      }
+    ],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 12500206,
+    "name": "A_Skill_12500202",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 14,
+    "UnlockCost": 0,
+    "SA": "SA_12500206",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      175
+    ],
+    "SkillCost": [
+      1,
+      60
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100,
+        "TriggerEffect": 1504
+      },
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100,
+        "TriggerEffect": 12500208
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -30808,6 +31065,65 @@
     "CastCondition": []
   },
   {
+    "Id": 13820101,
+    "name": "",
+    "Des": "",
+    "DesParam": [],
+    "LumiTpye": 10,
+    "UnlockCost": 0,
+    "SA": "SA_13820101",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "",
+    "SkillType": 0,
+    "TargetType": 1,
+    "AttackInterval": 1300,
+    "SkillPowerList": [
+      13
+    ],
+    "SkillCost": [
+      0
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 10,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 13820102,
+    "name": "A_Skill_13820102",
+    "Des": "A_SkillText_13820102",
+    "DesParam": [],
+    "LumiTpye": 10,
+    "UnlockCost": 0,
+    "SA": "SA_13820102",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Netral_01",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      60
+    ],
+    "SkillCost": [
+      1,
+      40
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
     "Id": 13830101,
     "name": "",
     "Des": "",
@@ -30914,9 +31230,10 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      60
+      20
     ],
     "SkillCost": [
+      1,
       40
     ],
     "BaseCrit": 500,
@@ -30924,7 +31241,18 @@
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 3,
+        "TriggerCondition": 100,
+        "TriggerEffect": 406
+      },
+      {
+        "TriggerType": 3,
+        "TriggerCondition": 100,
+        "TriggerEffect": 751
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -31127,9 +31455,9 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 900,
+    "AttackInterval": 1000,
     "SkillPowerList": [
-      9
+      10
     ],
     "SkillCost": [
       0
@@ -32364,7 +32692,23 @@
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 1
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 101
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 2060
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -32396,7 +32740,73 @@
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 1
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 101
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 241,
+        "TriggerEffect": 2071
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 242,
+        "TriggerEffect": 2072
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 243,
+        "TriggerEffect": 2073
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 244,
+        "TriggerEffect": 2074
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 245,
+        "TriggerEffect": 2075
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 541,
+        "TriggerEffect": 2071
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 542,
+        "TriggerEffect": 2072
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 543,
+        "TriggerEffect": 2073
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 544,
+        "TriggerEffect": 2074
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 545,
+        "TriggerEffect": 2075
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 1054
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -32427,8 +32837,39 @@
     "AddEnergy": 0,
     "HealthSteal": 0,
     "Piercing": 0,
-    "DefCalculate": false,
-    "SkillEffect": [],
+    "DefCalculate": true,
+    "SkillEffect": [
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 101
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 101,
+        "TriggerEffect": 101
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 102,
+        "TriggerEffect": 102
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 103,
+        "TriggerEffect": 103
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 104,
+        "TriggerEffect": 104
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 105,
+        "TriggerEffect": 105
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -32459,12 +32900,23 @@
       1,
       50
     ],
-    "BaseCrit": 500,
+    "BaseCrit": 2000,
     "AddEnergy": 0,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 1
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 1341,
+        "TriggerEffect": 1
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -32493,12 +32945,33 @@
       1,
       50
     ],
-    "BaseCrit": 500,
+    "BaseCrit": 2500,
     "AddEnergy": 0,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 1
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 101
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 2060
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 2061
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -32607,9 +33080,10 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      60
+      40
     ],
     "SkillCost": [
+      1,
       40
     ],
     "BaseCrit": 500,
@@ -32617,7 +33091,18 @@
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 3,
+        "TriggerCondition": 100,
+        "TriggerEffect": 406
+      },
+      {
+        "TriggerType": 3,
+        "TriggerCondition": 100,
+        "TriggerEffect": 506
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -32764,9 +33249,9 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 1000,
+    "AttackInterval": 900,
     "SkillPowerList": [
-      10
+      9
     ],
     "SkillCost": [
       0
@@ -34017,18 +34502,24 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      60
+      45
     ],
     "SkillCost": [
       1,
-      40
+      30
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 100060101
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -34076,18 +34567,24 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      60
+      45
     ],
     "SkillCost": [
       1,
-      40
+      30
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,
-    "SkillEffect": [],
+    "SkillEffect": [
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 100,
+        "TriggerEffect": 100070101
+      }
+    ],
     "SkillValueChange": [],
     "CastCondition": []
   },
@@ -34192,7 +34689,8 @@
     "name": "A_Skill_100090202",
     "Des": "A_SkillText_100090202",
     "DesParam": [
-      1
+      1,
+      100
     ],
     "LumiTpye": 13,
     "UnlockCost": 0,
@@ -34204,7 +34702,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      60
+      40
     ],
     "SkillCost": [
       1,
@@ -34216,7 +34714,32 @@
     "Piercing": 0,
     "DefCalculate": false,
     "SkillEffect": [],
-    "SkillValueChange": [],
+    "SkillValueChange": [
+      {
+        "TriggerCondition": 100090202,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 10000
+      },
+      {
+        "TriggerCondition": 100090203,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 20000
+      },
+      {
+        "TriggerCondition": 100090204,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 30000
+      },
+      {
+        "TriggerCondition": 100090205,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 40000
+      }
+    ],
     "CastCondition": []
   },
   {

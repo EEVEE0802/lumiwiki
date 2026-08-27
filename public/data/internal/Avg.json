@@ -9261,7 +9261,7 @@
     "GuideMaxTime": 0,
     "IsAuto": true,
     "Content": [
-      "i_13516"
+      "N_NPCText_180001"
     ],
     "speed": 33,
     "jumpTime": -1,
@@ -9296,7 +9296,7 @@
     "GuideMaxTime": 0,
     "IsAuto": true,
     "Content": [
-      "i_13517"
+      "N_NPCText_180002"
     ],
     "speed": 33,
     "jumpTime": -1,
@@ -9331,7 +9331,7 @@
     "GuideMaxTime": 0,
     "IsAuto": true,
     "Content": [
-      "i_13518"
+      "N_NPCText_190001"
     ],
     "speed": 33,
     "jumpTime": -1,
@@ -9366,7 +9366,7 @@
     "GuideMaxTime": 0,
     "IsAuto": true,
     "Content": [
-      "i_13519"
+      "N_NPCText_190002"
     ],
     "speed": 33,
     "jumpTime": -1,
@@ -23924,7 +23924,9 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": true,
-    "Content": [],
+    "Content": [
+      "AVG_Text_138201"
+    ],
     "speed": 33,
     "jumpTime": 0,
     "nextTime": 2000,

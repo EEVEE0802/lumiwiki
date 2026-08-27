@@ -5,7 +5,7 @@
     "quality": 0,
     "order": 1,
     "isOnline": true,
-    "times": 50000,
+    "times": 100000,
     "priceAdjust": [
       200,
       50
@@ -27,7 +27,7 @@
     "quality": 0,
     "order": 2,
     "isOnline": true,
-    "times": 30000,
+    "times": 60000,
     "priceAdjust": [
       200,
       50
@@ -49,7 +49,7 @@
     "quality": 0,
     "order": 3,
     "isOnline": true,
-    "times": 20000,
+    "times": 40000,
     "priceAdjust": [
       200,
       50
@@ -71,7 +71,7 @@
     "quality": 0,
     "order": 4,
     "isOnline": true,
-    "times": 10000,
+    "times": 20000,
     "priceAdjust": [
       200,
       50
@@ -93,7 +93,7 @@
     "quality": 0,
     "order": 5,
     "isOnline": true,
-    "times": 5000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -115,7 +115,7 @@
     "quality": 5,
     "order": 1,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -126,10 +126,10 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 100501,
@@ -137,7 +137,7 @@
     "quality": 5,
     "order": 2,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -148,10 +148,10 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 100601,
@@ -159,7 +159,7 @@
     "quality": 5,
     "order": 3,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -170,10 +170,10 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 100701,
@@ -181,7 +181,7 @@
     "quality": 5,
     "order": 4,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -192,10 +192,10 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 100801,
@@ -203,7 +203,7 @@
     "quality": 5,
     "order": 5,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -214,18 +214,40 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 100901,
+    "type": 4,
+    "quality": 5,
+    "order": 6,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 101001,
     "type": 4,
     "quality": 5,
-    "order": 6,
+    "order": 7,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -236,18 +258,18 @@
       9500,
       10500
     ],
-    "priceDefault": 45000,
-    "priceLow": 20000,
-    "PriceUp": 67500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 101101,
     "type": 4,
     "quality": 5,
-    "order": 7,
+    "order": 8,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -258,18 +280,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 101201,
     "type": 4,
     "quality": 5,
-    "order": 8,
+    "order": 9,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -281,17 +303,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 101301,
     "type": 4,
     "quality": 5,
-    "order": 9,
+    "order": 10,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -302,18 +324,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 101601,
     "type": 4,
     "quality": 5,
-    "order": 10,
+    "order": 11,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -325,17 +347,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 101801,
     "type": 4,
     "quality": 5,
-    "order": 11,
+    "order": 12,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -347,17 +369,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 101901,
     "type": 4,
     "quality": 5,
-    "order": 12,
+    "order": 13,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -368,18 +390,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 102001,
     "type": 4,
     "quality": 5,
-    "order": 13,
+    "order": 14,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -391,17 +413,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 102201,
     "type": 4,
     "quality": 5,
-    "order": 14,
+    "order": 15,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -412,18 +434,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 102301,
     "type": 4,
     "quality": 5,
-    "order": 15,
+    "order": 16,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -434,18 +456,18 @@
       9500,
       10500
     ],
-    "priceDefault": 80000,
-    "priceLow": 20000,
-    "PriceUp": 120000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 102401,
     "type": 4,
     "quality": 5,
-    "order": 16,
+    "order": 17,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -456,18 +478,18 @@
       9500,
       10500
     ],
-    "priceDefault": 80000,
-    "priceLow": 20000,
-    "PriceUp": 120000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 102501,
     "type": 4,
     "quality": 5,
-    "order": 17,
+    "order": 18,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -478,18 +500,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 102601,
     "type": 4,
     "quality": 5,
-    "order": 18,
+    "order": 19,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -501,17 +523,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 102701,
     "type": 4,
     "quality": 5,
-    "order": 19,
+    "order": 20,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -522,18 +544,18 @@
       9500,
       10500
     ],
-    "priceDefault": 45000,
-    "priceLow": 20000,
-    "PriceUp": 67500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 102801,
     "type": 4,
     "quality": 5,
-    "order": 20,
+    "order": 21,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -545,17 +567,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 102901,
     "type": 4,
     "quality": 5,
-    "order": 21,
+    "order": 22,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -566,18 +588,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 103201,
     "type": 4,
     "quality": 5,
-    "order": 22,
+    "order": 23,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -589,17 +611,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 103301,
     "type": 4,
     "quality": 5,
-    "order": 23,
+    "order": 24,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -610,18 +632,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 103401,
     "type": 4,
     "quality": 5,
-    "order": 24,
+    "order": 25,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -632,18 +654,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 103501,
     "type": 4,
     "quality": 5,
-    "order": 25,
+    "order": 26,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -654,18 +676,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 103601,
     "type": 4,
     "quality": 5,
-    "order": 26,
+    "order": 27,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -676,18 +698,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 103701,
     "type": 4,
     "quality": 5,
-    "order": 27,
+    "order": 28,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -698,18 +720,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 103801,
     "type": 4,
     "quality": 5,
-    "order": 28,
+    "order": 29,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -720,18 +742,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 103901,
     "type": 4,
     "quality": 5,
-    "order": 29,
+    "order": 30,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -743,17 +765,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 104101,
     "type": 4,
     "quality": 5,
-    "order": 30,
+    "order": 31,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -764,18 +786,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 104201,
     "type": 4,
     "quality": 5,
-    "order": 31,
+    "order": 32,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -786,18 +808,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 104301,
     "type": 4,
     "quality": 5,
-    "order": 32,
+    "order": 33,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -808,18 +830,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 104401,
     "type": 4,
     "quality": 5,
-    "order": 33,
+    "order": 34,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -830,18 +852,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 104501,
     "type": 4,
     "quality": 5,
-    "order": 34,
+    "order": 35,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -852,18 +874,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 104601,
     "type": 4,
     "quality": 5,
-    "order": 35,
+    "order": 36,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -874,18 +896,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 104701,
     "type": 4,
     "quality": 5,
-    "order": 36,
+    "order": 37,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -896,18 +918,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 104801,
     "type": 4,
     "quality": 5,
-    "order": 37,
+    "order": 38,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -918,18 +940,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 104901,
     "type": 4,
     "quality": 5,
-    "order": 38,
+    "order": 39,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -940,18 +962,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 105001,
     "type": 4,
     "quality": 5,
-    "order": 39,
+    "order": 40,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -962,18 +984,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 105101,
     "type": 4,
     "quality": 5,
-    "order": 40,
+    "order": 41,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -984,18 +1006,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 105201,
     "type": 4,
     "quality": 5,
-    "order": 41,
+    "order": 42,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1006,18 +1028,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 105401,
     "type": 4,
     "quality": 5,
-    "order": 42,
+    "order": 43,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1028,18 +1050,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 105501,
     "type": 4,
     "quality": 5,
-    "order": 43,
+    "order": 44,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1050,18 +1072,18 @@
       9500,
       10500
     ],
-    "priceDefault": 55000,
-    "priceLow": 20000,
-    "PriceUp": 82500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 105601,
     "type": 4,
     "quality": 5,
-    "order": 44,
+    "order": 45,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1072,18 +1094,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 105701,
     "type": 4,
     "quality": 5,
-    "order": 45,
+    "order": 46,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1094,18 +1116,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 106101,
     "type": 4,
     "quality": 5,
-    "order": 46,
+    "order": 47,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1116,18 +1138,18 @@
       9500,
       10500
     ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 106201,
     "type": 4,
     "quality": 5,
-    "order": 47,
+    "order": 48,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1139,17 +1161,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 106301,
     "type": 4,
     "quality": 5,
-    "order": 48,
+    "order": 49,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1160,18 +1182,18 @@
       9500,
       10500
     ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 106401,
     "type": 4,
     "quality": 5,
-    "order": 49,
+    "order": 50,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1183,39 +1205,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 106601,
     "type": 4,
     "quality": 5,
-    "order": 50,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 107801,
-    "type": 4,
-    "quality": 5,
     "order": 51,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -1227,1953 +1227,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 107901,
-    "type": 4,
-    "quality": 5,
-    "order": 52,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108401,
-    "type": 4,
-    "quality": 5,
-    "order": 53,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108501,
-    "type": 4,
-    "quality": 5,
-    "order": 54,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108601,
-    "type": 4,
-    "quality": 5,
-    "order": 55,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108701,
-    "type": 4,
-    "quality": 5,
-    "order": 56,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108801,
-    "type": 4,
-    "quality": 5,
-    "order": 57,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 45000,
-    "priceLow": 20000,
-    "PriceUp": 67500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108901,
-    "type": 4,
-    "quality": 5,
-    "order": 58,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109401,
-    "type": 4,
-    "quality": 5,
-    "order": 59,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109501,
-    "type": 4,
-    "quality": 5,
-    "order": 60,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109601,
-    "type": 4,
-    "quality": 5,
-    "order": 61,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109701,
-    "type": 4,
-    "quality": 5,
-    "order": 62,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109801,
-    "type": 4,
-    "quality": 5,
-    "order": 63,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109901,
-    "type": 4,
-    "quality": 5,
-    "order": 64,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 111801,
-    "type": 4,
-    "quality": 5,
-    "order": 65,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 55000,
-    "priceLow": 20000,
-    "PriceUp": 82500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112001,
-    "type": 4,
-    "quality": 5,
-    "order": 66,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112101,
-    "type": 4,
-    "quality": 5,
-    "order": 67,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112301,
-    "type": 4,
-    "quality": 5,
-    "order": 68,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112401,
-    "type": 4,
-    "quality": 5,
-    "order": 69,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112501,
-    "type": 4,
-    "quality": 5,
-    "order": 70,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112801,
-    "type": 4,
-    "quality": 5,
-    "order": 71,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112901,
-    "type": 4,
-    "quality": 5,
-    "order": 72,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 113101,
-    "type": 4,
-    "quality": 5,
-    "order": 73,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 45000,
-    "priceLow": 20000,
-    "PriceUp": 67500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 113301,
-    "type": 4,
-    "quality": 5,
-    "order": 74,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 113601,
-    "type": 4,
-    "quality": 5,
-    "order": 75,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114001,
-    "type": 4,
-    "quality": 5,
-    "order": 76,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114101,
-    "type": 4,
-    "quality": 5,
-    "order": 77,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114301,
-    "type": 4,
-    "quality": 5,
-    "order": 78,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114401,
-    "type": 4,
-    "quality": 5,
-    "order": 79,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114501,
-    "type": 4,
-    "quality": 5,
-    "order": 80,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114701,
-    "type": 4,
-    "quality": 5,
-    "order": 81,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114801,
-    "type": 4,
-    "quality": 5,
-    "order": 82,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 45000,
-    "priceLow": 20000,
-    "PriceUp": 67500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115001,
-    "type": 4,
-    "quality": 5,
-    "order": 83,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115101,
-    "type": 4,
-    "quality": 5,
-    "order": 84,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 45000,
-    "priceLow": 20000,
-    "PriceUp": 67500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115301,
-    "type": 4,
-    "quality": 5,
-    "order": 85,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115501,
-    "type": 4,
-    "quality": 5,
-    "order": 86,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115601,
-    "type": 4,
-    "quality": 5,
-    "order": 87,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115701,
-    "type": 4,
-    "quality": 5,
-    "order": 88,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115801,
-    "type": 4,
-    "quality": 5,
-    "order": 89,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115901,
-    "type": 4,
-    "quality": 5,
-    "order": 90,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116501,
-    "type": 4,
-    "quality": 5,
-    "order": 91,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116601,
-    "type": 4,
-    "quality": 5,
-    "order": 92,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 45000,
-    "priceLow": 20000,
-    "PriceUp": 67500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116701,
-    "type": 4,
-    "quality": 5,
-    "order": 93,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116801,
-    "type": 4,
-    "quality": 5,
-    "order": 94,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116901,
-    "type": 4,
-    "quality": 5,
-    "order": 95,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 117501,
-    "type": 4,
-    "quality": 5,
-    "order": 96,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 118101,
-    "type": 4,
-    "quality": 5,
-    "order": 97,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 118201,
-    "type": 4,
-    "quality": 5,
-    "order": 98,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 118301,
-    "type": 4,
-    "quality": 5,
-    "order": 99,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 118901,
-    "type": 4,
-    "quality": 5,
-    "order": 100,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119101,
-    "type": 4,
-    "quality": 5,
-    "order": 101,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119201,
-    "type": 4,
-    "quality": 5,
-    "order": 102,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 45000,
-    "priceLow": 20000,
-    "PriceUp": 67500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119601,
-    "type": 4,
-    "quality": 5,
-    "order": 103,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119701,
-    "type": 4,
-    "quality": 5,
-    "order": 104,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119801,
-    "type": 4,
-    "quality": 5,
-    "order": 105,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119901,
-    "type": 4,
-    "quality": 5,
-    "order": 106,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120501,
-    "type": 4,
-    "quality": 5,
-    "order": 107,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120601,
-    "type": 4,
-    "quality": 5,
-    "order": 108,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120701,
-    "type": 4,
-    "quality": 5,
-    "order": 109,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120801,
-    "type": 4,
-    "quality": 5,
-    "order": 110,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120901,
-    "type": 4,
-    "quality": 5,
-    "order": 111,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 121001,
-    "type": 4,
-    "quality": 5,
-    "order": 112,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 60000,
-    "priceLow": 20000,
-    "PriceUp": 90000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 121101,
-    "type": 4,
-    "quality": 5,
-    "order": 113,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 121201,
-    "type": 4,
-    "quality": 5,
-    "order": 114,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 122301,
-    "type": 4,
-    "quality": 5,
-    "order": 115,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 123101,
-    "type": 4,
-    "quality": 5,
-    "order": 116,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 45000,
-    "priceLow": 20000,
-    "PriceUp": 67500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 123401,
-    "type": 4,
-    "quality": 5,
-    "order": 117,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 123801,
-    "type": 4,
-    "quality": 5,
-    "order": 118,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 123901,
-    "type": 4,
-    "quality": 5,
-    "order": 119,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 124001,
-    "type": 4,
-    "quality": 5,
-    "order": 120,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 124301,
-    "type": 4,
-    "quality": 5,
-    "order": 121,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 124401,
-    "type": 4,
-    "quality": 5,
-    "order": 122,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 125801,
-    "type": 4,
-    "quality": 5,
-    "order": 123,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 125901,
-    "type": 4,
-    "quality": 5,
-    "order": 124,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 127001,
-    "type": 4,
-    "quality": 5,
-    "order": 125,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 127101,
-    "type": 4,
-    "quality": 5,
-    "order": 126,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 60000,
-    "priceLow": 20000,
-    "PriceUp": 90000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 127301,
-    "type": 4,
-    "quality": 5,
-    "order": 127,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 80000,
-    "priceLow": 20000,
-    "PriceUp": 120000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 127401,
-    "type": 4,
-    "quality": 5,
-    "order": 128,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 129101,
-    "type": 4,
-    "quality": 5,
-    "order": 129,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 130001,
-    "type": 4,
-    "quality": 5,
-    "order": 130,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 135901,
-    "type": 4,
-    "quality": 5,
-    "order": 131,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 136101,
-    "type": 4,
-    "quality": 5,
-    "order": 132,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 136201,
-    "type": 4,
-    "quality": 5,
-    "order": 133,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 139801,
-    "type": 4,
-    "quality": 5,
-    "order": 134,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 141301,
-    "type": 4,
-    "quality": 5,
-    "order": 135,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 35000,
-    "priceLow": 20000,
-    "PriceUp": 52500,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 141401,
-    "type": 4,
-    "quality": 5,
-    "order": 136,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 142301,
-    "type": 4,
-    "quality": 5,
-    "order": 137,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 142401,
-    "type": 4,
-    "quality": 5,
-    "order": 138,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 110801,
-    "type": 4,
-    "quality": 5,
-    "order": 139,
-    "isOnline": true,
-    "times": 500,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 40000,
-    "priceLow": 20000,
-    "PriceUp": 60000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 106901,
     "type": 4,
     "quality": 5,
-    "order": 140,
+    "order": 52,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -3185,17 +1249,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 107001,
     "type": 4,
     "quality": 5,
-    "order": 141,
+    "order": 53,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -3207,17 +1271,325 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 107801,
+    "type": 4,
+    "quality": 5,
+    "order": 54,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 107901,
+    "type": 4,
+    "quality": 5,
+    "order": 55,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108401,
+    "type": 4,
+    "quality": 5,
+    "order": 56,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108501,
+    "type": 4,
+    "quality": 5,
+    "order": 57,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108601,
+    "type": 4,
+    "quality": 5,
+    "order": 58,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108701,
+    "type": 4,
+    "quality": 5,
+    "order": 59,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108801,
+    "type": 4,
+    "quality": 5,
+    "order": 60,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108901,
+    "type": 4,
+    "quality": 5,
+    "order": 61,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109401,
+    "type": 4,
+    "quality": 5,
+    "order": 62,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109501,
+    "type": 4,
+    "quality": 5,
+    "order": 63,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109601,
+    "type": 4,
+    "quality": 5,
+    "order": 64,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109701,
+    "type": 4,
+    "quality": 5,
+    "order": 65,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109801,
+    "type": 4,
+    "quality": 5,
+    "order": 66,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109901,
+    "type": 4,
+    "quality": 5,
+    "order": 67,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 110501,
     "type": 4,
     "quality": 5,
-    "order": 142,
+    "order": 68,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -3229,17 +1601,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 110601,
     "type": 4,
     "quality": 5,
-    "order": 143,
+    "order": 69,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -3251,17 +1623,39 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 110801,
+    "type": 4,
+    "quality": 5,
+    "order": 70,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 111501,
     "type": 4,
     "quality": 5,
-    "order": 144,
+    "order": 71,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -3273,17 +1667,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 111601,
     "type": 4,
     "quality": 5,
-    "order": 145,
+    "order": 72,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -3295,17 +1689,17 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 111701,
     "type": 4,
     "quality": 5,
-    "order": 146,
+    "order": 73,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -3317,17 +1711,1161 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 111801,
+    "type": 4,
+    "quality": 5,
+    "order": 74,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112001,
+    "type": 4,
+    "quality": 5,
+    "order": 75,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112101,
+    "type": 4,
+    "quality": 5,
+    "order": 76,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112301,
+    "type": 4,
+    "quality": 5,
+    "order": 77,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112401,
+    "type": 4,
+    "quality": 5,
+    "order": 78,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112501,
+    "type": 4,
+    "quality": 5,
+    "order": 79,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112801,
+    "type": 4,
+    "quality": 5,
+    "order": 80,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112901,
+    "type": 4,
+    "quality": 5,
+    "order": 81,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 113101,
+    "type": 4,
+    "quality": 5,
+    "order": 82,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 113301,
+    "type": 4,
+    "quality": 5,
+    "order": 83,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 113601,
+    "type": 4,
+    "quality": 5,
+    "order": 84,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114001,
+    "type": 4,
+    "quality": 5,
+    "order": 85,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114101,
+    "type": 4,
+    "quality": 5,
+    "order": 86,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114301,
+    "type": 4,
+    "quality": 5,
+    "order": 87,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114401,
+    "type": 4,
+    "quality": 5,
+    "order": 88,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114501,
+    "type": 4,
+    "quality": 5,
+    "order": 89,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114701,
+    "type": 4,
+    "quality": 5,
+    "order": 90,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114801,
+    "type": 4,
+    "quality": 5,
+    "order": 91,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115001,
+    "type": 4,
+    "quality": 5,
+    "order": 92,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115101,
+    "type": 4,
+    "quality": 5,
+    "order": 93,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115301,
+    "type": 4,
+    "quality": 5,
+    "order": 94,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115501,
+    "type": 4,
+    "quality": 5,
+    "order": 95,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115601,
+    "type": 4,
+    "quality": 5,
+    "order": 96,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115701,
+    "type": 4,
+    "quality": 5,
+    "order": 97,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115801,
+    "type": 4,
+    "quality": 5,
+    "order": 98,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115901,
+    "type": 4,
+    "quality": 5,
+    "order": 99,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116501,
+    "type": 4,
+    "quality": 5,
+    "order": 100,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116601,
+    "type": 4,
+    "quality": 5,
+    "order": 101,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116701,
+    "type": 4,
+    "quality": 5,
+    "order": 102,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116801,
+    "type": 4,
+    "quality": 5,
+    "order": 103,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116901,
+    "type": 4,
+    "quality": 5,
+    "order": 104,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 117501,
+    "type": 4,
+    "quality": 5,
+    "order": 105,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 118101,
+    "type": 4,
+    "quality": 5,
+    "order": 106,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 118201,
+    "type": 4,
+    "quality": 5,
+    "order": 107,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 118301,
+    "type": 4,
+    "quality": 5,
+    "order": 108,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 118901,
+    "type": 4,
+    "quality": 5,
+    "order": 109,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119101,
+    "type": 4,
+    "quality": 5,
+    "order": 110,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119201,
+    "type": 4,
+    "quality": 5,
+    "order": 111,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119601,
+    "type": 4,
+    "quality": 5,
+    "order": 112,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119701,
+    "type": 4,
+    "quality": 5,
+    "order": 113,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119801,
+    "type": 4,
+    "quality": 5,
+    "order": 114,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119901,
+    "type": 4,
+    "quality": 5,
+    "order": 115,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120501,
+    "type": 4,
+    "quality": 5,
+    "order": 116,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120601,
+    "type": 4,
+    "quality": 5,
+    "order": 117,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120701,
+    "type": 4,
+    "quality": 5,
+    "order": 118,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120801,
+    "type": 4,
+    "quality": 5,
+    "order": 119,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120901,
+    "type": 4,
+    "quality": 5,
+    "order": 120,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 121001,
+    "type": 4,
+    "quality": 5,
+    "order": 121,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 121101,
+    "type": 4,
+    "quality": 5,
+    "order": 122,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 121201,
+    "type": 4,
+    "quality": 5,
+    "order": 123,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 122301,
+    "type": 4,
+    "quality": 5,
+    "order": 124,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 123101,
+    "type": 4,
+    "quality": 5,
+    "order": 125,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 123201,
     "type": 4,
     "quality": 5,
-    "order": 147,
+    "order": 126,
     "isOnline": true,
-    "times": 500,
+    "times": 5000,
     "priceAdjust": [
       200,
       50
@@ -3339,9 +2877,713 @@
       10500
     ],
     "priceDefault": 50000,
-    "priceLow": 20000,
-    "PriceUp": 75000,
-    "PurchaseNum": 20
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 123401,
+    "type": 4,
+    "quality": 5,
+    "order": 127,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 123801,
+    "type": 4,
+    "quality": 5,
+    "order": 128,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 123901,
+    "type": 4,
+    "quality": 5,
+    "order": 129,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 124001,
+    "type": 4,
+    "quality": 5,
+    "order": 130,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 124301,
+    "type": 4,
+    "quality": 5,
+    "order": 131,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 124401,
+    "type": 4,
+    "quality": 5,
+    "order": 132,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125801,
+    "type": 4,
+    "quality": 5,
+    "order": 133,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125901,
+    "type": 4,
+    "quality": 5,
+    "order": 134,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 127001,
+    "type": 4,
+    "quality": 5,
+    "order": 135,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 127101,
+    "type": 4,
+    "quality": 5,
+    "order": 136,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 127301,
+    "type": 4,
+    "quality": 5,
+    "order": 137,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 130001,
+    "type": 4,
+    "quality": 5,
+    "order": 138,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 132301,
+    "type": 4,
+    "quality": 5,
+    "order": 139,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 132401,
+    "type": 4,
+    "quality": 5,
+    "order": 140,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 133801,
+    "type": 4,
+    "quality": 5,
+    "order": 141,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 133901,
+    "type": 4,
+    "quality": 5,
+    "order": 142,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 135901,
+    "type": 4,
+    "quality": 5,
+    "order": 143,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 136101,
+    "type": 4,
+    "quality": 5,
+    "order": 144,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 139801,
+    "type": 4,
+    "quality": 5,
+    "order": 145,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 141301,
+    "type": 4,
+    "quality": 5,
+    "order": 146,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 141401,
+    "type": 4,
+    "quality": 5,
+    "order": 147,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1000101,
+    "type": 4,
+    "quality": 5,
+    "order": 148,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1000201,
+    "type": 4,
+    "quality": 5,
+    "order": 149,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1003201,
+    "type": 4,
+    "quality": 5,
+    "order": 150,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1003301,
+    "type": 4,
+    "quality": 5,
+    "order": 151,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1003401,
+    "type": 4,
+    "quality": 5,
+    "order": 152,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125001,
+    "type": 4,
+    "quality": 5,
+    "order": 153,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125101,
+    "type": 4,
+    "quality": 5,
+    "order": 154,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125201,
+    "type": 4,
+    "quality": 5,
+    "order": 155,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125301,
+    "type": 4,
+    "quality": 5,
+    "order": 156,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125401,
+    "type": 4,
+    "quality": 5,
+    "order": 157,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125501,
+    "type": 4,
+    "quality": 5,
+    "order": 158,
+    "isOnline": true,
+    "times": 5000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 50000,
+    "priceLow": 40000,
+    "PriceUp": 62500,
+    "PurchaseNum": 100
   },
   {
     "id": 100101,
@@ -3349,7 +3591,7 @@
     "quality": 4,
     "order": 1,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3363,7 +3605,7 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 100501,
@@ -3371,7 +3613,7 @@
     "quality": 4,
     "order": 2,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3385,7 +3627,7 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 100601,
@@ -3393,7 +3635,7 @@
     "quality": 4,
     "order": 3,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3407,7 +3649,7 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 100701,
@@ -3415,7 +3657,7 @@
     "quality": 4,
     "order": 4,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3429,7 +3671,7 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 100801,
@@ -3437,7 +3679,7 @@
     "quality": 4,
     "order": 5,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3451,15 +3693,37 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
+  },
+  {
+    "id": 100901,
+    "type": 4,
+    "quality": 4,
+    "order": 6,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
   },
   {
     "id": 101001,
     "type": 4,
     "quality": 4,
-    "order": 6,
+    "order": 7,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3473,15 +3737,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 101101,
     "type": 4,
     "quality": 4,
-    "order": 7,
+    "order": 8,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3495,15 +3759,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 101201,
     "type": 4,
     "quality": 4,
-    "order": 8,
+    "order": 9,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3517,15 +3781,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 101301,
     "type": 4,
     "quality": 4,
-    "order": 9,
+    "order": 10,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3539,15 +3803,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 101601,
     "type": 4,
     "quality": 4,
-    "order": 10,
+    "order": 11,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3561,15 +3825,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 101801,
     "type": 4,
     "quality": 4,
-    "order": 11,
+    "order": 12,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3583,15 +3847,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 101901,
     "type": 4,
     "quality": 4,
-    "order": 12,
+    "order": 13,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3605,15 +3869,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 102001,
     "type": 4,
     "quality": 4,
-    "order": 13,
+    "order": 14,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3627,15 +3891,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 102201,
     "type": 4,
     "quality": 4,
-    "order": 14,
+    "order": 15,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3649,15 +3913,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 102301,
     "type": 4,
     "quality": 4,
-    "order": 15,
+    "order": 16,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3671,15 +3935,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 102401,
     "type": 4,
     "quality": 4,
-    "order": 16,
+    "order": 17,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3693,15 +3957,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 102501,
     "type": 4,
     "quality": 4,
-    "order": 17,
+    "order": 18,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3715,15 +3979,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 102601,
     "type": 4,
     "quality": 4,
-    "order": 18,
+    "order": 19,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3737,15 +4001,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 102701,
     "type": 4,
     "quality": 4,
-    "order": 19,
+    "order": 20,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3759,15 +4023,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 102801,
     "type": 4,
     "quality": 4,
-    "order": 20,
+    "order": 21,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3781,15 +4045,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 102901,
     "type": 4,
     "quality": 4,
-    "order": 21,
+    "order": 22,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3803,15 +4067,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 103201,
     "type": 4,
     "quality": 4,
-    "order": 22,
+    "order": 23,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3825,15 +4089,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 103301,
     "type": 4,
     "quality": 4,
-    "order": 23,
+    "order": 24,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3847,15 +4111,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 103401,
     "type": 4,
     "quality": 4,
-    "order": 24,
+    "order": 25,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3869,15 +4133,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 103501,
     "type": 4,
     "quality": 4,
-    "order": 25,
+    "order": 26,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3891,15 +4155,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 103601,
     "type": 4,
     "quality": 4,
-    "order": 26,
+    "order": 27,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3913,15 +4177,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 103701,
     "type": 4,
     "quality": 4,
-    "order": 27,
+    "order": 28,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3935,15 +4199,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 103801,
     "type": 4,
     "quality": 4,
-    "order": 28,
+    "order": 29,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3957,15 +4221,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 103901,
     "type": 4,
     "quality": 4,
-    "order": 29,
+    "order": 30,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -3979,15 +4243,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 104101,
     "type": 4,
     "quality": 4,
-    "order": 30,
+    "order": 31,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4001,15 +4265,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 104201,
     "type": 4,
     "quality": 4,
-    "order": 31,
+    "order": 32,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4023,15 +4287,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 104301,
     "type": 4,
     "quality": 4,
-    "order": 32,
+    "order": 33,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4045,15 +4309,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 104401,
     "type": 4,
     "quality": 4,
-    "order": 33,
+    "order": 34,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4067,15 +4331,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 104501,
     "type": 4,
     "quality": 4,
-    "order": 34,
+    "order": 35,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4089,15 +4353,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 104601,
     "type": 4,
     "quality": 4,
-    "order": 35,
+    "order": 36,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4111,15 +4375,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 104701,
     "type": 4,
     "quality": 4,
-    "order": 36,
+    "order": 37,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4133,15 +4397,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 104801,
     "type": 4,
     "quality": 4,
-    "order": 37,
+    "order": 38,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4155,15 +4419,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 104901,
     "type": 4,
     "quality": 4,
-    "order": 38,
+    "order": 39,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4177,15 +4441,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 105001,
     "type": 4,
     "quality": 4,
-    "order": 39,
+    "order": 40,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4199,15 +4463,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 105101,
     "type": 4,
     "quality": 4,
-    "order": 40,
+    "order": 41,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4221,15 +4485,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 105201,
     "type": 4,
     "quality": 4,
-    "order": 41,
+    "order": 42,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4243,15 +4507,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 105401,
     "type": 4,
     "quality": 4,
-    "order": 42,
+    "order": 43,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4265,15 +4529,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 105501,
     "type": 4,
     "quality": 4,
-    "order": 43,
+    "order": 44,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4287,15 +4551,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 105601,
     "type": 4,
     "quality": 4,
-    "order": 44,
+    "order": 45,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4309,15 +4573,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 105701,
     "type": 4,
     "quality": 4,
-    "order": 45,
+    "order": 46,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4331,15 +4595,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 106101,
     "type": 4,
     "quality": 4,
-    "order": 46,
+    "order": 47,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4353,15 +4617,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 106201,
     "type": 4,
     "quality": 4,
-    "order": 47,
+    "order": 48,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4375,15 +4639,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 106301,
     "type": 4,
     "quality": 4,
-    "order": 48,
+    "order": 49,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4397,15 +4661,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 106401,
     "type": 4,
     "quality": 4,
-    "order": 49,
+    "order": 50,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4419,37 +4683,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 106601,
     "type": 4,
     "quality": 4,
-    "order": 50,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 107801,
-    "type": 4,
-    "quality": 4,
     "order": 51,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -4463,1951 +4705,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 107901,
-    "type": 4,
-    "quality": 4,
-    "order": 52,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108401,
-    "type": 4,
-    "quality": 4,
-    "order": 53,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108501,
-    "type": 4,
-    "quality": 4,
-    "order": 54,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108601,
-    "type": 4,
-    "quality": 4,
-    "order": 55,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108701,
-    "type": 4,
-    "quality": 4,
-    "order": 56,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108801,
-    "type": 4,
-    "quality": 4,
-    "order": 57,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 108901,
-    "type": 4,
-    "quality": 4,
-    "order": 58,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109401,
-    "type": 4,
-    "quality": 4,
-    "order": 59,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109501,
-    "type": 4,
-    "quality": 4,
-    "order": 60,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109601,
-    "type": 4,
-    "quality": 4,
-    "order": 61,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109701,
-    "type": 4,
-    "quality": 4,
-    "order": 62,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109801,
-    "type": 4,
-    "quality": 4,
-    "order": 63,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 109901,
-    "type": 4,
-    "quality": 4,
-    "order": 64,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 111801,
-    "type": 4,
-    "quality": 4,
-    "order": 65,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112001,
-    "type": 4,
-    "quality": 4,
-    "order": 66,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112101,
-    "type": 4,
-    "quality": 4,
-    "order": 67,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112301,
-    "type": 4,
-    "quality": 4,
-    "order": 68,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112401,
-    "type": 4,
-    "quality": 4,
-    "order": 69,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112501,
-    "type": 4,
-    "quality": 4,
-    "order": 70,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112801,
-    "type": 4,
-    "quality": 4,
-    "order": 71,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 112901,
-    "type": 4,
-    "quality": 4,
-    "order": 72,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 113101,
-    "type": 4,
-    "quality": 4,
-    "order": 73,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 113301,
-    "type": 4,
-    "quality": 4,
-    "order": 74,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 113601,
-    "type": 4,
-    "quality": 4,
-    "order": 75,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114001,
-    "type": 4,
-    "quality": 4,
-    "order": 76,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114101,
-    "type": 4,
-    "quality": 4,
-    "order": 77,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114301,
-    "type": 4,
-    "quality": 4,
-    "order": 78,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114401,
-    "type": 4,
-    "quality": 4,
-    "order": 79,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114501,
-    "type": 4,
-    "quality": 4,
-    "order": 80,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114701,
-    "type": 4,
-    "quality": 4,
-    "order": 81,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 114801,
-    "type": 4,
-    "quality": 4,
-    "order": 82,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115001,
-    "type": 4,
-    "quality": 4,
-    "order": 83,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115101,
-    "type": 4,
-    "quality": 4,
-    "order": 84,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115301,
-    "type": 4,
-    "quality": 4,
-    "order": 85,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115501,
-    "type": 4,
-    "quality": 4,
-    "order": 86,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115601,
-    "type": 4,
-    "quality": 4,
-    "order": 87,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115701,
-    "type": 4,
-    "quality": 4,
-    "order": 88,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115801,
-    "type": 4,
-    "quality": 4,
-    "order": 89,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 115901,
-    "type": 4,
-    "quality": 4,
-    "order": 90,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116501,
-    "type": 4,
-    "quality": 4,
-    "order": 91,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116601,
-    "type": 4,
-    "quality": 4,
-    "order": 92,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116701,
-    "type": 4,
-    "quality": 4,
-    "order": 93,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116801,
-    "type": 4,
-    "quality": 4,
-    "order": 94,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 116901,
-    "type": 4,
-    "quality": 4,
-    "order": 95,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 117501,
-    "type": 4,
-    "quality": 4,
-    "order": 96,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 118101,
-    "type": 4,
-    "quality": 4,
-    "order": 97,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 118201,
-    "type": 4,
-    "quality": 4,
-    "order": 98,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 118301,
-    "type": 4,
-    "quality": 4,
-    "order": 99,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 118901,
-    "type": 4,
-    "quality": 4,
-    "order": 100,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119101,
-    "type": 4,
-    "quality": 4,
-    "order": 101,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119201,
-    "type": 4,
-    "quality": 4,
-    "order": 102,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119601,
-    "type": 4,
-    "quality": 4,
-    "order": 103,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119701,
-    "type": 4,
-    "quality": 4,
-    "order": 104,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119801,
-    "type": 4,
-    "quality": 4,
-    "order": 105,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 119901,
-    "type": 4,
-    "quality": 4,
-    "order": 106,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120501,
-    "type": 4,
-    "quality": 4,
-    "order": 107,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120601,
-    "type": 4,
-    "quality": 4,
-    "order": 108,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120701,
-    "type": 4,
-    "quality": 4,
-    "order": 109,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120801,
-    "type": 4,
-    "quality": 4,
-    "order": 110,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 120901,
-    "type": 4,
-    "quality": 4,
-    "order": 111,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 121001,
-    "type": 4,
-    "quality": 4,
-    "order": 112,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 121101,
-    "type": 4,
-    "quality": 4,
-    "order": 113,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 121201,
-    "type": 4,
-    "quality": 4,
-    "order": 114,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 122301,
-    "type": 4,
-    "quality": 4,
-    "order": 115,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 123101,
-    "type": 4,
-    "quality": 4,
-    "order": 116,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 123401,
-    "type": 4,
-    "quality": 4,
-    "order": 117,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 123801,
-    "type": 4,
-    "quality": 4,
-    "order": 118,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 123901,
-    "type": 4,
-    "quality": 4,
-    "order": 119,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 124001,
-    "type": 4,
-    "quality": 4,
-    "order": 120,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 124301,
-    "type": 4,
-    "quality": 4,
-    "order": 121,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 124401,
-    "type": 4,
-    "quality": 4,
-    "order": 122,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 125801,
-    "type": 4,
-    "quality": 4,
-    "order": 123,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 125901,
-    "type": 4,
-    "quality": 4,
-    "order": 124,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 127001,
-    "type": 4,
-    "quality": 4,
-    "order": 125,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 127101,
-    "type": 4,
-    "quality": 4,
-    "order": 126,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 127301,
-    "type": 4,
-    "quality": 4,
-    "order": 127,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 127401,
-    "type": 4,
-    "quality": 4,
-    "order": 128,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 129101,
-    "type": 4,
-    "quality": 4,
-    "order": 129,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 130001,
-    "type": 4,
-    "quality": 4,
-    "order": 130,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 135901,
-    "type": 4,
-    "quality": 4,
-    "order": 131,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 136101,
-    "type": 4,
-    "quality": 4,
-    "order": 132,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 136201,
-    "type": 4,
-    "quality": 4,
-    "order": 133,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 139801,
-    "type": 4,
-    "quality": 4,
-    "order": 134,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 141301,
-    "type": 4,
-    "quality": 4,
-    "order": 135,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 141401,
-    "type": 4,
-    "quality": 4,
-    "order": 136,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 142301,
-    "type": 4,
-    "quality": 4,
-    "order": 136,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 142401,
-    "type": 4,
-    "quality": 4,
-    "order": 137,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
-  },
-  {
-    "id": 110801,
-    "type": 4,
-    "quality": 4,
-    "order": 138,
-    "isOnline": true,
-    "times": 1000,
-    "priceAdjust": [
-      200,
-      50
-    ],
-    "adjustParm": 1,
-    "adjustTimes": 100,
-    "adjustLimit": [
-      9500,
-      10500
-    ],
-    "priceDefault": 5000,
-    "priceLow": 4000,
-    "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 106901,
     "type": 4,
     "quality": 4,
-    "order": 139,
+    "order": 52,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -6421,15 +4727,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 107001,
     "type": 4,
     "quality": 4,
-    "order": 140,
+    "order": 53,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -6443,15 +4749,323 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
+  },
+  {
+    "id": 107801,
+    "type": 4,
+    "quality": 4,
+    "order": 54,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 107901,
+    "type": 4,
+    "quality": 4,
+    "order": 55,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108401,
+    "type": 4,
+    "quality": 4,
+    "order": 56,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108501,
+    "type": 4,
+    "quality": 4,
+    "order": 57,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108601,
+    "type": 4,
+    "quality": 4,
+    "order": 58,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108701,
+    "type": 4,
+    "quality": 4,
+    "order": 59,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108801,
+    "type": 4,
+    "quality": 4,
+    "order": 60,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 108901,
+    "type": 4,
+    "quality": 4,
+    "order": 61,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109401,
+    "type": 4,
+    "quality": 4,
+    "order": 62,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109501,
+    "type": 4,
+    "quality": 4,
+    "order": 63,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109601,
+    "type": 4,
+    "quality": 4,
+    "order": 64,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109701,
+    "type": 4,
+    "quality": 4,
+    "order": 65,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109801,
+    "type": 4,
+    "quality": 4,
+    "order": 66,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 109901,
+    "type": 4,
+    "quality": 4,
+    "order": 67,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
   },
   {
     "id": 110501,
     "type": 4,
     "quality": 4,
-    "order": 141,
+    "order": 68,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -6465,15 +5079,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 110601,
     "type": 4,
     "quality": 4,
-    "order": 142,
+    "order": 69,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -6487,15 +5101,37 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
+  },
+  {
+    "id": 110801,
+    "type": 4,
+    "quality": 4,
+    "order": 70,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
   },
   {
     "id": 111501,
     "type": 4,
     "quality": 4,
-    "order": 143,
+    "order": 71,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -6509,15 +5145,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 111601,
     "type": 4,
     "quality": 4,
-    "order": 144,
+    "order": 72,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -6531,15 +5167,15 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
   },
   {
     "id": 111701,
     "type": 4,
     "quality": 4,
-    "order": 145,
+    "order": 73,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -6553,15 +5189,1159 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
+  },
+  {
+    "id": 111801,
+    "type": 4,
+    "quality": 4,
+    "order": 74,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112001,
+    "type": 4,
+    "quality": 4,
+    "order": 75,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112101,
+    "type": 4,
+    "quality": 4,
+    "order": 76,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112301,
+    "type": 4,
+    "quality": 4,
+    "order": 77,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112401,
+    "type": 4,
+    "quality": 4,
+    "order": 78,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112501,
+    "type": 4,
+    "quality": 4,
+    "order": 79,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112801,
+    "type": 4,
+    "quality": 4,
+    "order": 80,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 112901,
+    "type": 4,
+    "quality": 4,
+    "order": 81,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 113101,
+    "type": 4,
+    "quality": 4,
+    "order": 82,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 113301,
+    "type": 4,
+    "quality": 4,
+    "order": 83,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 113601,
+    "type": 4,
+    "quality": 4,
+    "order": 84,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114001,
+    "type": 4,
+    "quality": 4,
+    "order": 85,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114101,
+    "type": 4,
+    "quality": 4,
+    "order": 86,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114301,
+    "type": 4,
+    "quality": 4,
+    "order": 87,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114401,
+    "type": 4,
+    "quality": 4,
+    "order": 88,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114501,
+    "type": 4,
+    "quality": 4,
+    "order": 89,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114701,
+    "type": 4,
+    "quality": 4,
+    "order": 90,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 114801,
+    "type": 4,
+    "quality": 4,
+    "order": 91,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115001,
+    "type": 4,
+    "quality": 4,
+    "order": 92,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115101,
+    "type": 4,
+    "quality": 4,
+    "order": 93,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115301,
+    "type": 4,
+    "quality": 4,
+    "order": 94,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115501,
+    "type": 4,
+    "quality": 4,
+    "order": 95,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115601,
+    "type": 4,
+    "quality": 4,
+    "order": 96,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115701,
+    "type": 4,
+    "quality": 4,
+    "order": 97,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115801,
+    "type": 4,
+    "quality": 4,
+    "order": 98,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 115901,
+    "type": 4,
+    "quality": 4,
+    "order": 99,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116501,
+    "type": 4,
+    "quality": 4,
+    "order": 100,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116601,
+    "type": 4,
+    "quality": 4,
+    "order": 101,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116701,
+    "type": 4,
+    "quality": 4,
+    "order": 102,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116801,
+    "type": 4,
+    "quality": 4,
+    "order": 103,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 116901,
+    "type": 4,
+    "quality": 4,
+    "order": 104,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 117501,
+    "type": 4,
+    "quality": 4,
+    "order": 105,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 118101,
+    "type": 4,
+    "quality": 4,
+    "order": 106,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 118201,
+    "type": 4,
+    "quality": 4,
+    "order": 107,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 118301,
+    "type": 4,
+    "quality": 4,
+    "order": 108,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 118901,
+    "type": 4,
+    "quality": 4,
+    "order": 109,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119101,
+    "type": 4,
+    "quality": 4,
+    "order": 110,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119201,
+    "type": 4,
+    "quality": 4,
+    "order": 111,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119601,
+    "type": 4,
+    "quality": 4,
+    "order": 112,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119701,
+    "type": 4,
+    "quality": 4,
+    "order": 113,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119801,
+    "type": 4,
+    "quality": 4,
+    "order": 114,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 119901,
+    "type": 4,
+    "quality": 4,
+    "order": 115,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120501,
+    "type": 4,
+    "quality": 4,
+    "order": 116,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120601,
+    "type": 4,
+    "quality": 4,
+    "order": 117,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120701,
+    "type": 4,
+    "quality": 4,
+    "order": 118,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120801,
+    "type": 4,
+    "quality": 4,
+    "order": 119,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 120901,
+    "type": 4,
+    "quality": 4,
+    "order": 120,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 121001,
+    "type": 4,
+    "quality": 4,
+    "order": 121,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 121101,
+    "type": 4,
+    "quality": 4,
+    "order": 122,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 121201,
+    "type": 4,
+    "quality": 4,
+    "order": 123,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 122301,
+    "type": 4,
+    "quality": 4,
+    "order": 124,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 123101,
+    "type": 4,
+    "quality": 4,
+    "order": 125,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
   },
   {
     "id": 123201,
     "type": 4,
     "quality": 4,
-    "order": 146,
+    "order": 126,
     "isOnline": true,
-    "times": 1000,
+    "times": 10000,
     "priceAdjust": [
       200,
       50
@@ -6575,6 +6355,578 @@
     "priceDefault": 5000,
     "priceLow": 4000,
     "PriceUp": 6000,
-    "PurchaseNum": 20
+    "PurchaseNum": 100
+  },
+  {
+    "id": 123401,
+    "type": 4,
+    "quality": 4,
+    "order": 127,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 123801,
+    "type": 4,
+    "quality": 4,
+    "order": 128,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 123901,
+    "type": 4,
+    "quality": 4,
+    "order": 129,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 124001,
+    "type": 4,
+    "quality": 4,
+    "order": 130,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 124301,
+    "type": 4,
+    "quality": 4,
+    "order": 131,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 124401,
+    "type": 4,
+    "quality": 4,
+    "order": 132,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125801,
+    "type": 4,
+    "quality": 4,
+    "order": 133,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 125901,
+    "type": 4,
+    "quality": 4,
+    "order": 134,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 127001,
+    "type": 4,
+    "quality": 4,
+    "order": 135,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 127101,
+    "type": 4,
+    "quality": 4,
+    "order": 136,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 127301,
+    "type": 4,
+    "quality": 4,
+    "order": 137,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 130001,
+    "type": 4,
+    "quality": 4,
+    "order": 138,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 132301,
+    "type": 4,
+    "quality": 4,
+    "order": 139,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 132401,
+    "type": 4,
+    "quality": 4,
+    "order": 140,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 133801,
+    "type": 4,
+    "quality": 4,
+    "order": 141,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 133901,
+    "type": 4,
+    "quality": 4,
+    "order": 142,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 135901,
+    "type": 4,
+    "quality": 4,
+    "order": 143,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 136101,
+    "type": 4,
+    "quality": 4,
+    "order": 144,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 139801,
+    "type": 4,
+    "quality": 4,
+    "order": 145,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 141301,
+    "type": 4,
+    "quality": 4,
+    "order": 146,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 141401,
+    "type": 4,
+    "quality": 4,
+    "order": 147,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1000101,
+    "type": 4,
+    "quality": 4,
+    "order": 148,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1000201,
+    "type": 4,
+    "quality": 4,
+    "order": 149,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1003201,
+    "type": 4,
+    "quality": 4,
+    "order": 150,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1003301,
+    "type": 4,
+    "quality": 4,
+    "order": 151,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
+  },
+  {
+    "id": 1003401,
+    "type": 4,
+    "quality": 4,
+    "order": 152,
+    "isOnline": true,
+    "times": 10000,
+    "priceAdjust": [
+      200,
+      50
+    ],
+    "adjustParm": 1,
+    "adjustTimes": 100,
+    "adjustLimit": [
+      9500,
+      10500
+    ],
+    "priceDefault": 5000,
+    "priceLow": 4000,
+    "PriceUp": 6000,
+    "PurchaseNum": 100
   }
 ]

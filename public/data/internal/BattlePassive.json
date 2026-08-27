@@ -3562,7 +3562,20 @@
     "icon": "Die_Poison",
     "Des": "P_SkillText_1125002",
     "DesParam": [],
-    "BuffList": [],
+    "BuffList": [
+      {
+        "BuffId": 12500201,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 8
+      },
+      {
+        "BuffId": 12500203,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      }
+    ],
     "Priority": 1
   },
   {
@@ -4099,28 +4112,22 @@
         "BuffId": 13690102,
         "BuffLv": 1,
         "Duration": 0,
-        "Target": 1
-      },
-      {
-        "BuffId": 13690103,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      },
-      {
-        "BuffId": 13690105,
-        "BuffLv": 1,
-        "Duration": 0,
         "Target": 8
+      },
+      {
+        "BuffId": 13690106,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
       }
     ],
     "Priority": 1
   },
   {
-    "Id": 1139001,
-    "name": "P_Skill_1139001",
+    "Id": 1138201,
+    "name": "P_Skill_1138201",
     "icon": "Start_Palsy",
-    "Des": "P_SkillText_1139001",
+    "Des": "P_SkillText_1138201",
     "DesParam": [],
     "BuffList": [
       {
@@ -4140,6 +4147,28 @@
         "BuffLv": 1,
         "Duration": 0,
         "Target": 8
+      }
+    ],
+    "Priority": 0
+  },
+  {
+    "Id": 1139001,
+    "name": "P_Skill_1139001",
+    "icon": "Start_Palsy",
+    "Des": "P_SkillText_1139001",
+    "DesParam": [],
+    "BuffList": [
+      {
+        "BuffId": 13900101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 8
+      },
+      {
+        "BuffId": 13900105,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
       }
     ],
     "Priority": 1
@@ -4287,9 +4316,22 @@
     "icon": "Die_Poison",
     "Des": "P_SkillText_1147111",
     "DesParam": [
-      3
+      4
     ],
-    "BuffList": [],
+    "BuffList": [
+      {
+        "BuffId": 14711101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14711102,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      }
+    ],
     "Priority": 1
   },
   {
@@ -4303,6 +4345,36 @@
     "BuffList": [
       {
         "BuffId": 101001,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14712101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14712102,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14712103,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14712104,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14712105,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
@@ -4325,6 +4397,36 @@
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
+      },
+      {
+        "BuffId": 14713101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14713102,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14713103,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14713104,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14713105,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
       }
     ],
     "Priority": 1
@@ -4340,6 +4442,66 @@
     "BuffList": [
       {
         "BuffId": 101000,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714102,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714103,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714104,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714105,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714106,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714107,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714108,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714109,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14714110,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
@@ -4379,39 +4541,9 @@
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
-      }
-    ],
-    "Priority": 1
-  },
-  {
-    "Id": 1147501,
-    "name": "P_Skill_1147501",
-    "icon": "Die_Poison",
-    "Des": "P_SkillText_1147501",
-    "DesParam": [
-      1
-    ],
-    "BuffList": [
+      },
       {
-        "BuffId": 14730101,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      }
-    ],
-    "Priority": 1
-  },
-  {
-    "Id": 1147601,
-    "name": "P_Skill_1147601",
-    "icon": "Die_Poison",
-    "Des": "P_SkillText_1147601",
-    "DesParam": [
-      1
-    ],
-    "BuffList": [
-      {
-        "BuffId": 14730101,
+        "BuffId": 14740102,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
@@ -4425,11 +4557,19 @@
     "icon": "Die_Poison",
     "Des": "P_SkillText_1147701",
     "DesParam": [
-      1
+      50,
+      1,
+      0.2
     ],
     "BuffList": [
       {
-        "BuffId": 14730101,
+        "BuffId": 14770101,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 14770102,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
@@ -4512,19 +4652,7 @@
     ],
     "BuffList": [
       {
-        "BuffId": 100050201,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      },
-      {
-        "BuffId": 100050202,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      },
-      {
-        "BuffId": 100050203,
+        "BuffId": 100060101,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
@@ -4542,19 +4670,7 @@
     ],
     "BuffList": [
       {
-        "BuffId": 100050201,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      },
-      {
-        "BuffId": 100050202,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      },
-      {
-        "BuffId": 100050203,
+        "BuffId": 100070101,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
@@ -4595,19 +4711,7 @@
     ],
     "BuffList": [
       {
-        "BuffId": 100050201,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      },
-      {
-        "BuffId": 100050202,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      },
-      {
-        "BuffId": 100050203,
+        "BuffId": 100090204,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
