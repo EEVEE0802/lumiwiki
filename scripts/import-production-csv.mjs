@@ -30,7 +30,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const PROJECT_ROOT = path.resolve(__dirname, '..')
 const DB_PATH = path.join(PROJECT_ROOT, 'api/data/lumiwiki.db')
 const LUMI_JSON = path.join(PROJECT_ROOT, 'public/data/Lumi.json')
+const LUMI_JSON_INTERNAL = path.join(PROJECT_ROOT, 'public/data/internal/Lumi.json')
 const LOC_JSON = path.join(PROJECT_ROOT, 'public/data/zh-CN.json')
+const LOC_JSON_INTERNAL = path.join(PROJECT_ROOT, 'public/data/internal/zh-CN.json')
 
 // 复用 api/node_modules 里的 better-sqlite3，避免根目录加依赖
 const require = createRequire(path.join(PROJECT_ROOT, 'api/package.json'))
@@ -159,9 +161,22 @@ function main() {
 
   const ganttDates = buildGanttDateMap(headers)
 
-  const lumis = JSON.parse(fs.readFileSync(LUMI_JSON, 'utf-8'))
-  const loc = JSON.parse(fs.readFileSync(LOC_JSON, 'utf-8'))
-  const lumiById = new Map(lumis.map(l => [String(l.Id), l]))
+  // 优先读对内 Lumi.json / zh-CN.json（对内包更全，含还没上对外包的新噜咪 —— 如青龙）
+  // 对外作为兜底，防止对内文件缺失
+  const lumisInternal = fs.existsSync(LUMI_JSON_INTERNAL)
+    ? JSON.parse(fs.readFileSync(LUMI_JSON_INTERNAL, 'utf-8'))
+    : []
+  const lumisExternal = JSON.parse(fs.readFileSync(LUMI_JSON, 'utf-8'))
+  const lumiById = new Map()
+  // 先塞对外，再用对内覆盖 —— 对内条目优先
+  for (const l of lumisExternal) lumiById.set(String(l.Id), l)
+  for (const l of lumisInternal) lumiById.set(String(l.Id), l)
+
+  const locInternal = fs.existsSync(LOC_JSON_INTERNAL)
+    ? JSON.parse(fs.readFileSync(LOC_JSON_INTERNAL, 'utf-8'))
+    : {}
+  const locExternal = JSON.parse(fs.readFileSync(LOC_JSON, 'utf-8'))
+  const loc = { ...locExternal, ...locInternal }   // 对内覆盖对外
 
   // 打开 DB
   let db = null
