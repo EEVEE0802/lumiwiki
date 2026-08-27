@@ -138,33 +138,56 @@ function anchorIteration(order, mode) {
   // 只看"未完成"的环节来算锚点：已完成的环节不影响位置
   //   按开始时间 = 未完成环节里 startdate 最早的那个 iteration
   //   按结束时间 = 未完成环节里 enddate 最晚的那个 iteration
-  // 若所有已排环节都完成了（即将进已完成 tab），fallback 用所有已排环节兜底避免出现空位
-  // 若"未完成环节全部挂在 Backlog"或"该噜咪根本没排到具体周"，返回 BACKLOG_ANCHOR，落到 Backlog 列
-  const stagesWithSpecificWeek = STAGE_TYPES
-    .map(k => order.stages?.[k])
-    .filter(s => isScheduledStage(s) && iterationMap.value.has(s.tapdIterationId))
+  //
+  // 决策树：
+  //   1. 未完成环节里有具体周 → 用它们算锚点
+  //   2. 未完成环节里没具体周（全在 Backlog 或都没挂）→ 只要有一个挂 Backlog 就落 Backlog 列
+  //   3. 全都完成了（fallback，即将归入已完成 tab）→ 用已完成环节的具体周兜底避免出现空位
 
-  if (stagesWithSpecificWeek.length) {
-    const unfinished = stagesWithSpecificWeek.filter(s => s.status !== 'done')
-    const pool = unfinished.length ? unfinished : stagesWithSpecificWeek
-    let best = null
-    for (const s of pool) {
-      const it = iterationMap.value.get(s.tapdIterationId)
-      if (!best) { best = it; continue }
-      if (mode === 'start') {
-        if ((it.startdate || '') < (best.startdate || '')) best = it
-      } else {
-        if ((it.enddate || '') > (best.enddate || '')) best = it
-      }
-    }
-    if (best) return best
+  const stagesWithSubStory = STAGE_TYPES
+    .map(k => order.stages?.[k])
+    .filter(s => s && s.tapdSubStoryId)
+
+  const unfinished = stagesWithSubStory.filter(s => s.status !== 'done')
+
+  // 情况 1：未完成环节里有具体周
+  const unfinishedSpecific = unfinished.filter(s =>
+    isScheduledStage(s) && iterationMap.value.has(s.tapdIterationId)
+  )
+  if (unfinishedSpecific.length) {
+    return pickBy(unfinishedSpecific, mode)
   }
 
-  // 没有具体周的锚点 —— 是否至少挂了 Backlog？
-  const anyBacklog = existingStages(order).some(s =>
+  // 情况 2：未完成环节里没具体周 —— 若有 Backlog 就落 Backlog
+  if (unfinished.some(s => s.tapdIterationId && isBacklogIteration(s.tapdIterationId))) {
+    return BACKLOG_ANCHOR
+  }
+
+  // 情况 3：全都完成了 —— 用已完成环节的具体周兜底
+  const doneSpecific = stagesWithSubStory
+    .filter(s => s.status === 'done')
+    .filter(s => isScheduledStage(s) && iterationMap.value.has(s.tapdIterationId))
+  if (doneSpecific.length) return pickBy(doneSpecific, mode)
+
+  // 兜底：所有环节都在 Backlog
+  const anyBacklog = stagesWithSubStory.some(s =>
     s.tapdIterationId && isBacklogIteration(s.tapdIterationId)
   )
   return anyBacklog ? BACKLOG_ANCHOR : null
+}
+
+function pickBy(stages, mode) {
+  let best = null
+  for (const s of stages) {
+    const it = iterationMap.value.get(s.tapdIterationId)
+    if (!best) { best = it; continue }
+    if (mode === 'start') {
+      if ((it.startdate || '') < (best.startdate || '')) best = it
+    } else {
+      if ((it.enddate || '') > (best.enddate || '')) best = it
+    }
+  }
+  return best
 }
 
 // 基础筛选：搜索 / 属性 / 进度 / 策划
