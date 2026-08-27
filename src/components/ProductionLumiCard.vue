@@ -3,7 +3,7 @@
 // 抽出来避免 flat/timeline 两种视图下的模板重复
 
 import { TYPE_COLORS, TYPE_NAMES } from '../data'
-import { avatarUrl } from '../data/imageUrl'
+import { internalAvatarUrl } from '../data/imageUrl'
 
 const props = defineProps({
   order: { type: Object, required: true },
@@ -42,7 +42,7 @@ function stageTip(k) {
     <div class="card-head">
       <img
         v-if="order.pokedexId != null"
-        :src="avatarUrl(order.lumiId)"
+        :src="internalAvatarUrl(order.lumiId)"
         class="card-avatar"
         loading="lazy"
         @error="$event.target.style.display='none'"

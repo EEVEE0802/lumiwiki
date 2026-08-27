@@ -12,6 +12,17 @@ export function avatarUrl(idOrCA) {
   return `${imagePrefix()}/avatars/${fileName}.png`
 }
 
+// 强制对内立绘（不跟随版本切换）
+// 用途：生产管理页面（排期总览、生产看板等）——PM 关心开发中的噜咪，立绘总要用最新对内版
+export function internalAvatarUrl(idOrCA) {
+  if (idOrCA == null || idOrCA === '') {
+    return `/images/internal/avatars/unknown.png`
+  }
+  const s = String(idOrCA)
+  const fileName = s.startsWith('CA_') ? s : `CA_${s}`
+  return `/images/internal/avatars/${fileName}.png`
+}
+
 export function buffIconUrl(icon) {
   if (!icon) return `${imagePrefix()}/buffs/unknown.png`
   return `${imagePrefix()}/buffs/${icon}.png`
