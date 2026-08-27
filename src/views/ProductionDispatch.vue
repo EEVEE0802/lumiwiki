@@ -91,7 +91,9 @@ const iterationMap = computed(() => {
 })
 
 // 判定：这个 iteration 是不是"占位池"（Backlog / 需求池 —— TAPD 里挂着未确定周版本的子单）
-// 视为未排期，不进时间轴、不参与锚点计算
+// 时间轴里单独列在最左边一列，不参与"具体周"锚点计算
+const BACKLOG_ANCHOR_ID = '__backlog__'
+const BACKLOG_ANCHOR = Object.freeze({ id: BACKLOG_ANCHOR_ID, name: '⏳ Backlog 需求池', startdate: '', enddate: '' })
 function isBacklogIteration(itId) {
   if (!itId) return false
   const it = iterationMap.value.get(itId)
@@ -103,6 +105,10 @@ function isBacklogIteration(itId) {
 function isScheduledStage(s) {
   return !!(s && s.tapdIterationId && !isBacklogIteration(s.tapdIterationId))
 }
+// 判定：stage 是否至少挂了某个 iteration（Backlog 也算 —— 说明 PM 至少入了个池）
+function hasAnyIteration(s) {
+  return !!(s && s.tapdIterationId)
+}
 
 // 拿到实际存在且"计入统计"的 stage：
 // 排除 import-script 早期占位（有 stage 行但 tapdSubStoryId 为空 = TAPD 那边没这条子单，用户也没填过）
@@ -113,7 +119,9 @@ function existingStages(order) {
     .filter(s => s && s.tapdSubStoryId)
 }
 function hasAnySchedule(order) {
-  return existingStages(order).some(s => isScheduledStage(s))
+  // 挂了任意 iteration（含 Backlog）都算已排 → 归入未完成 tab
+  // 完全没挂 iteration 的噜咪才归入未排期 tab
+  return existingStages(order).some(s => hasAnyIteration(s))
 }
 function isDone(order) {
   const stages = existingStages(order)
@@ -131,23 +139,32 @@ function anchorIteration(order, mode) {
   //   按开始时间 = 未完成环节里 startdate 最早的那个 iteration
   //   按结束时间 = 未完成环节里 enddate 最晚的那个 iteration
   // 若所有已排环节都完成了（即将进已完成 tab），fallback 用所有已排环节兜底避免出现空位
-  const scheduledStages = STAGE_TYPES
+  // 若"未完成环节全部挂在 Backlog"或"该噜咪根本没排到具体周"，返回 BACKLOG_ANCHOR，落到 Backlog 列
+  const stagesWithSpecificWeek = STAGE_TYPES
     .map(k => order.stages?.[k])
     .filter(s => isScheduledStage(s) && iterationMap.value.has(s.tapdIterationId))
-  if (!scheduledStages.length) return null
-  const unfinishedStages = scheduledStages.filter(s => s.status !== 'done')
-  const pool = unfinishedStages.length ? unfinishedStages : scheduledStages
-  let best = null
-  for (const s of pool) {
-    const it = iterationMap.value.get(s.tapdIterationId)
-    if (!best) { best = it; continue }
-    if (mode === 'start') {
-      if ((it.startdate || '') < (best.startdate || '')) best = it
-    } else {
-      if ((it.enddate || '') > (best.enddate || '')) best = it
+
+  if (stagesWithSpecificWeek.length) {
+    const unfinished = stagesWithSpecificWeek.filter(s => s.status !== 'done')
+    const pool = unfinished.length ? unfinished : stagesWithSpecificWeek
+    let best = null
+    for (const s of pool) {
+      const it = iterationMap.value.get(s.tapdIterationId)
+      if (!best) { best = it; continue }
+      if (mode === 'start') {
+        if ((it.startdate || '') < (best.startdate || '')) best = it
+      } else {
+        if ((it.enddate || '') > (best.enddate || '')) best = it
+      }
     }
+    if (best) return best
   }
-  return best
+
+  // 没有具体周的锚点 —— 是否至少挂了 Backlog？
+  const anyBacklog = existingStages(order).some(s =>
+    s.tapdIterationId && isBacklogIteration(s.tapdIterationId)
+  )
+  return anyBacklog ? BACKLOG_ANCHOR : null
 }
 
 // 基础筛选：搜索 / 属性 / 进度 / 策划
@@ -204,10 +221,13 @@ const todayIterationId = computed(() => {
 })
 
 // 可见周版本列（时间轴模式）：min anchor.startdate ~ max anchor.startdate，含今日
+// Backlog 是虚拟锚点，不参与日期区间计算 —— 它单独作为最左边一列渲染（见 template）
 const visibleIterations = computed(() => {
   if (!showTimeline.value) return []
   const anchorIds = new Set()
-  for (const p of placedOrders.value) if (p.anchor) anchorIds.add(p.anchor.id)
+  for (const p of placedOrders.value) {
+    if (p.anchor && p.anchor.id !== BACKLOG_ANCHOR_ID) anchorIds.add(p.anchor.id)
+  }
   if (todayIterationId.value) anchorIds.add(todayIterationId.value)
   const anchored = iterationsAsc.value.filter(it => anchorIds.has(it.id))
   if (!anchored.length) return []
@@ -217,6 +237,12 @@ const visibleIterations = computed(() => {
   return iterationsAsc.value.filter(it =>
     it.startdate && it.startdate >= minStart && it.startdate <= maxStart
   )
+})
+
+// 是否需要渲染 Backlog 虚拟列（有噜咪落在这里时才显示）
+const showBacklogColumn = computed(() => {
+  if (!showTimeline.value) return false
+  return placedOrders.value.some(p => p.anchor?.id === BACKLOG_ANCHOR_ID)
 })
 
 // 时间轴模式：把 placedOrders 按 iteration 分格
@@ -358,6 +384,14 @@ function clearFilters() {
       >
         <div class="board-row board-header">
           <div
+            v-if="showBacklogColumn"
+            class="col-head col-head-backlog"
+            :style="{ '--sub-cols': subColCount(BACKLOG_ANCHOR_ID) }"
+          >
+            <div class="col-head-name">⏳ Backlog</div>
+            <div class="col-head-date">未定周版本</div>
+          </div>
+          <div
             v-for="it in visibleIterations"
             :key="it.id"
             class="col-head"
@@ -372,6 +406,23 @@ function clearFilters() {
           </div>
         </div>
         <div class="board-row">
+          <div
+            v-if="showBacklogColumn"
+            class="cell cell-backlog"
+            :style="{ '--sub-cols': subColCount(BACKLOG_ANCHOR_ID) }"
+          >
+            <ProductionLumiCard
+              v-for="o in (timelineLayout.get(BACKLOG_ANCHOR_ID) || [])"
+              :key="o.lumiId"
+              :order="o"
+              :stage-meta="STAGE_META"
+              :status-meta="STATUS_META"
+              :iteration-map="iterationMap"
+              @edit="openEdit"
+              @schedule="openSchedule"
+              @tapd="goTapd"
+            />
+          </div>
           <div
             v-for="it in visibleIterations"
             :key="it.id"
@@ -628,6 +679,11 @@ function clearFilters() {
   background: rgba(233, 69, 96, 0.12);
   border-bottom-color: var(--accent);
 }
+.col-head-backlog {
+  background: rgba(148, 163, 184, 0.15);
+  border-bottom-color: #94a3b8;
+}
+.col-head-backlog .col-head-name { color: #cbd5e1; }
 .col-head-name {
   color: #fff;
   font-weight: 600;
@@ -660,4 +716,5 @@ function clearFilters() {
 }
 .cell:last-child { border-right: none; }
 .cell.is-today { background: rgba(233, 69, 96, 0.04); }
+.cell-backlog { background: rgba(148, 163, 184, 0.06); }
 </style>
