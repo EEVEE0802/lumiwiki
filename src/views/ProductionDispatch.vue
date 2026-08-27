@@ -597,7 +597,10 @@ function clearFilters() {
   background: rgba(255,255,255,0.02);
 }
 
-/* 时间轴视图 */
+/* 时间轴视图
+   两行 grid（header + body）通过 grid-auto-columns: max-content 让每列取内容最大宽；
+   col-head 和 cell 都用相同的 --sub-cols 算出 width（显式 width，避免 grid 忽略 min-width），
+   确保两个 grid 的第 N 列宽度一致，抬头和内容对齐 */
 .board-scroll {
   overflow-x: auto;
   overflow-y: visible;
@@ -617,7 +620,7 @@ function clearFilters() {
   border-right: 1px solid var(--border);
   border-bottom: 2px solid var(--border);
   background: rgba(0,0,0,0.25);
-  min-width: calc(var(--sub-cols, 1) * 200px + (var(--sub-cols, 1) - 1) * 6px + 16px);
+  width: calc(var(--sub-cols, 1) * 200px + (var(--sub-cols, 1) - 1) * 6px + 16px);
   box-sizing: border-box;
 }
 .col-head:last-child { border-right: none; }
@@ -646,7 +649,7 @@ function clearFilters() {
   padding: 8px;
   border-right: 1px solid var(--border);
   min-height: 120px;
-  min-width: calc(var(--sub-cols, 1) * 200px + (var(--sub-cols, 1) - 1) * 6px + 16px);
+  width: calc(var(--sub-cols, 1) * 200px + (var(--sub-cols, 1) - 1) * 6px + 16px);
   box-sizing: border-box;
   display: grid;
   grid-auto-flow: column;
