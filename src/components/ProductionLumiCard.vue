@@ -100,11 +100,11 @@ function stageTip(k) {
 .lumi-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 10px;
+  border-radius: 6px;
+  padding: 6px 8px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   transition: all 0.15s;
 }
 .lumi-card:hover {
@@ -112,10 +112,10 @@ function stageTip(k) {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(233, 69, 96, 0.12);
 }
-.card-head { display: flex; gap: 8px; align-items: flex-start; }
+.card-head { display: flex; gap: 6px; align-items: flex-start; }
 .card-avatar {
-  width: 36px; height: 36px;
-  border-radius: 6px;
+  width: 28px; height: 28px;
+  border-radius: 4px;
   background: rgba(0,0,0,0.2);
   object-fit: contain;
   flex-shrink: 0;
@@ -166,12 +166,12 @@ function stageTip(k) {
   gap: 2px;
 }
 .stage-seg {
-  height: 20px;
+  height: 16px;
   border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7em;
+  font-size: 0.65em;
   color: #fff;
   cursor: help;
   opacity: 0.9;

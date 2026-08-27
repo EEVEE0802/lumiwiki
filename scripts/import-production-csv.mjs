@@ -68,6 +68,9 @@ const args = process.argv.slice(2)
 const csvArgIdx = args.indexOf('--csv')
 const csvPath = csvArgIdx !== -1 ? args[csvArgIdx + 1] : 'D:/G36-Lumi资产进展表-Lumi甘特.csv'
 const dryRun = args.includes('--dry-run')
+// --only-orders: 只更新 order 元数据（名字/TAPD/里程碑/投放/进度/策划等），不动 production_stages
+// 用途：CSV 通常比 TAPD 同步落后，跑全量会用粗略推断的 status 覆盖掉 TAPD 拉来的准确 status
+const onlyOrders = args.includes('--only-orders')
 
 // 表头列 → 索引（保持跟腾讯文档一致）
 const META_COLS = {
@@ -288,8 +291,9 @@ function main() {
       if (insertOrder) insertOrder.run(orderRow)
       stats.orders++
 
-      // upsert stages
-      for (const [stageType, range] of stageRanges) {
+      // upsert stages（--only-orders 时跳过，避免用粗略推断覆盖 TAPD 同步的准确状态）
+      if (!onlyOrders) {
+        for (const [stageType, range] of stageRanges) {
         let status = 'todo'
         if (isFullyDone || range.maxDate < today) status = 'done'
         else if (range.minDate <= today && today <= range.maxDate) status = 'in-progress'
@@ -311,6 +315,7 @@ function main() {
         }
         if (insertStage) insertStage.run(stageRow)
         stats.stages++
+        }
       }
     }
   }

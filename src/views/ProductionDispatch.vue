@@ -232,6 +232,14 @@ const timelineLayout = computed(() => {
   return byIter
 })
 
+// 单列上限 6 张卡：超出的自动折到该周版本的第 2/3... 子列
+// 用于 CSS grid：每周版本 cell 分成 ceil(N/6) 个子列
+const MAX_CARDS_PER_COL = 6
+function subColCount(iterationId) {
+  const n = timelineLayout.value?.get(iterationId)?.length || 0
+  return Math.max(1, Math.ceil(n / MAX_CARDS_PER_COL))
+}
+
 // 各状态数量（在当前里程碑下）
 const statusCounts = computed(() => ({
   unscheduled: statusPartitions.value.unscheduled.length,
@@ -354,6 +362,7 @@ function clearFilters() {
             :key="it.id"
             class="col-head"
             :class="{ 'is-today': it.id === todayIterationId }"
+            :style="{ '--sub-cols': subColCount(it.id) }"
           >
             <div class="col-head-name">
               <span v-if="it.id === todayIterationId" class="today-tag">📍 本周</span>
@@ -368,6 +377,7 @@ function clearFilters() {
             :key="it.id"
             class="cell"
             :class="{ 'is-today': it.id === todayIterationId }"
+            :style="{ '--sub-cols': subColCount(it.id) }"
           >
             <ProductionLumiCard
               v-for="o in (timelineLayout.get(it.id) || [])"
@@ -597,7 +607,8 @@ function clearFilters() {
 }
 .board-row {
   display: grid;
-  grid-template-columns: repeat(var(--iter-count), 260px);
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
   align-items: stretch;
 }
 .board-header { position: sticky; top: 0; z-index: 4; }
@@ -606,6 +617,8 @@ function clearFilters() {
   border-right: 1px solid var(--border);
   border-bottom: 2px solid var(--border);
   background: rgba(0,0,0,0.25);
+  min-width: calc(var(--sub-cols, 1) * 200px + (var(--sub-cols, 1) - 1) * 6px + 16px);
+  box-sizing: border-box;
 }
 .col-head:last-child { border-right: none; }
 .col-head.is-today {
@@ -633,9 +646,14 @@ function clearFilters() {
   padding: 8px;
   border-right: 1px solid var(--border);
   min-height: 120px;
-  display: flex;
-  flex-direction: column;
+  min-width: calc(var(--sub-cols, 1) * 200px + (var(--sub-cols, 1) - 1) * 6px + 16px);
+  box-sizing: border-box;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(6, min-content);
+  grid-template-columns: repeat(var(--sub-cols, 1), 200px);
   gap: 6px;
+  align-content: start;
 }
 .cell:last-child { border-right: none; }
 .cell.is-today { background: rgba(233, 69, 96, 0.04); }
