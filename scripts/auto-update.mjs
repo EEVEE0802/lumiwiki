@@ -69,6 +69,19 @@ export function computeWeekInfo(baseFriday) {
   }
 }
 
+// 返回本次需要 process 的所有周（昨天所属周 + 今天所属周，去重升序，通常 1 项；跨周日 2 项）
+// 目的：跨周边界日（如周五凌晨跑）时，前一周周四的数据在 daily CSV 里已经完整，
+// 但只 process 当前周会让上一周 JSON 停留在上一周周四早上残缺状态。
+// 拉数据只做一次（昨天+今天），process 循环这个数组即可保证跨周正确性。
+export function weeksToProcess(baseFriday) {
+  const base = new Date(baseFriday + 'T00:00:00')
+  const now = new Date()
+  const yesterday = new Date(now); yesterday.setDate(yesterday.getDate() - 1)
+  const weekOf = d => Math.floor((d - base) / (7 * 24 * 60 * 60 * 1000)) + 1
+  const set = new Set([weekOf(yesterday), weekOf(now)])
+  return [...set].filter(w => w >= 1).sort((a, b) => a - b)
+}
+
 // 每天固定拉取所有模式（含周赛），因此不再需要 isTournamentActive / shouldFetchTournament 判断窗口
 // 周赛在非开放日拉出来是空 CSV，process 脚本能处理，不影响任何东西
 
@@ -92,12 +105,13 @@ function ensureWeekInJson(region, week) {
  * 新架构：每次只拉 [昨天, 今天] 2 天到 daily/{mode}/{date}.csv
  * process 脚本根据 --week 读该周 7 天 daily 分片汇总
  *
+ * 跨周日会传两个 week（昨天所属周 + 今天所属周），拉数据只做一次，process 循环所有 week
+ *
  * @param {'domestic'|'overseas'} region
  * @param {'ladder'|'tournament'} mode
- * @param {object} weekInfo { week, startDate, endDate }
+ * @param {number[]} weeks 升序，末尾是当前周（用于更新 battle-stats.json）
  */
-export async function updateRegionMode(region, mode, weekInfo) {
-  const { week } = weekInfo
+export async function updateRegionMode(region, mode, weeks) {
   const pad = n => String(n).padStart(2, '0')
   const fmt = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
   const now = new Date()
@@ -124,24 +138,32 @@ export async function updateRegionMode(region, mode, weekInfo) {
   }
 
   const scriptFile = mode === 'tournament' ? 'scripts/process-tournament-data.js' : 'scripts/process-battle-data.js'
-  runCommand(process.execPath, [scriptFile, '--week', String(week), '--region', region])
+  const currentWeek = weeks[weeks.length - 1]
+  for (const week of weeks) {
+    runCommand(process.execPath, [scriptFile, '--week', String(week), '--region', region])
+    if (mode === 'ladder') ensureWeekInJson(region, week)
+  }
 
+  // battle-stats.json 是当前周的镜像（前端默认视图），只用最新那个周覆盖
   if (mode === 'ladder') {
-    const src = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/ladder-week${week}.json`)
+    const src = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/ladder-week${currentWeek}.json`)
     const dst = path.join(PROJECT_ROOT, `public/data/online/${region}/battle-stats.json`)
     if (fs.existsSync(src)) {
       fs.copyFileSync(src, dst)
-      console.log(`  ✓ [${region}] battle-stats.json 已更新`)
+      console.log(`  ✓ [${region}] battle-stats.json 已更新（Week ${currentWeek}）`)
     }
-    ensureWeekInJson(region, week)
   }
 }
 
 /**
  * 拉取参与走势相关的原始事件流（login/guild-war）+ recharge，然后跑聚合脚本
  * login/guild-war 也走 daily 分片，每次拉昨天+今天覆盖
+ *
+ * 跨周日会传两个 week，拉数据只做一次，聚合循环所有 week
+ *
+ * @param {number[]} weeks 升序，通常 1 项；跨周日 2 项
  */
-export async function updateRegionParticipation(region, week, baseFriday) {
+export async function updateRegionParticipation(region, weeks, baseFriday) {
   try {
     const pad = n => String(n).padStart(2, '0')
     const fmt = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
@@ -176,7 +198,9 @@ export async function updateRegionParticipation(region, week, baseFriday) {
     }
     // 注意：这里故意不传 --publish，因为 auto-update 末尾统一 publish 一次即可；
     // --publish 是给「手动补跑」用的，让操作者不用另外记着 bash publish.sh（详见 CLAUDE.md「数据分离机制」）
-    runCommand(process.execPath, ['scripts/fetch-participation-trend.mjs', '--week', String(week), '--region', region])
+    for (const week of weeks) {
+      runCommand(process.execPath, ['scripts/fetch-participation-trend.mjs', '--week', String(week), '--region', region])
+    }
   } catch (e) {
     console.error(`⚠️  [${region}] 参与走势生成失败（不阻塞发布）: ${e.message}`)
   }
@@ -235,14 +259,21 @@ async function main() {
   const onlyMode = args.find(a => a === '--tournament' || a === '--ladder')?.slice(2) || null
   const config = loadConfig()
   const weekInfo = computeWeekInfo(config.baseFriday)
+  // 跨周日（如周五凌晨跑）weeks 会是 [上一周, 本周]；平时是 [本周] 一项
+  // 目的：跨周边界前一周周四的 daily CSV 是完整的但 JSON 是残缺的，需要重新聚合
+  const weeks = weeksToProcess(config.baseFriday)
 
   console.log(`\n===== LumiWiki 线上数据自动更新 =====`)
   console.log(`游戏周: Week ${weekInfo.week} (${weekInfo.startDate} ~ ${weekInfo.endDate})`)
+  console.log(`本次 process 周: ${weeks.map(w => `Week ${w}`).join(', ')}`)
   console.log(`区域: ${REGIONS.join(', ')}`)
   console.log(`架构: 每天拉一次，按 daily 分片`)
 
   const modeFilter = onlyMode // 'ladder' / 'tournament' / null
   const modeSummary = []
+
+  // 周赛过滤掉 week=1（首周无周赛，process-tournament 也会跳过）
+  const tournamentWeeks = weeks.filter(w => w > 1)
 
   for (const region of REGIONS) {
     console.log(`\n──── [${region}] ────`)
@@ -250,7 +281,7 @@ async function main() {
     // 1. 天梯（每次都拉）
     if (!modeFilter || modeFilter === 'ladder') {
       try {
-        await updateRegionMode(region, 'ladder', weekInfo)
+        await updateRegionMode(region, 'ladder', weeks)
         modeSummary.push(`${region}: 天梯`)
       } catch (e) {
         console.error(`⚠️  [${region}] 天梯更新失败（不阻塞其他）: ${e.message}`)
@@ -258,9 +289,9 @@ async function main() {
     }
 
     // 2. 周赛（非首周直接拉；开放窗口外拉出来是空 CSV，无害）
-    if ((!modeFilter || modeFilter === 'tournament') && weekInfo.week > 1) {
+    if ((!modeFilter || modeFilter === 'tournament') && tournamentWeeks.length > 0) {
       try {
-        await updateRegionMode(region, 'tournament', weekInfo)
+        await updateRegionMode(region, 'tournament', tournamentWeeks)
         modeSummary.push(`${region}: 周赛`)
       } catch (e) {
         console.error(`⚠️  [${region}] 周赛更新失败（不阻塞其他）: ${e.message}`)
@@ -284,7 +315,7 @@ async function main() {
     if (!modeFilter || modeFilter === 'ladder') {
       // updateRegionParticipation 内部已经完全 try/catch 包裹了；这里再套一层防御
       try {
-        await updateRegionParticipation(region, weekInfo.week, config.baseFriday)
+        await updateRegionParticipation(region, weeks, config.baseFriday)
         modeSummary.push(`${region}: 参与走势`)
       } catch (e) {
         console.error(`⚠️  [${region}] 参与走势更新失败（不阻塞其他）: ${e.message}`)
