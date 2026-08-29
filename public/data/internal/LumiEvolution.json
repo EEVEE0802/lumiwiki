@@ -1431,6 +1431,24 @@
     "EvolutionProbGroup": 5
   },
   {
+    "Lumi": 147301,
+    "order": 1,
+    "EvoType": 1,
+    "evoLumiID": 147801,
+    "GenderEvo": [],
+    "evoLevel": 15,
+    "cost": [
+      {
+        "Type": 2,
+        "Id": 10024,
+        "Count": 1
+      }
+    ],
+    "colorWeight": 2000,
+    "param": 250,
+    "EvolutionProbGroup": 2
+  },
+  {
     "Lumi": 110801,
     "order": 1,
     "EvoType": 2,

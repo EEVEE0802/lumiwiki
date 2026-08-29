@@ -3595,7 +3595,7 @@
       0.15
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
@@ -5221,7 +5221,7 @@
       0.15
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
@@ -12588,7 +12588,7 @@
       0.15
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
@@ -24212,7 +24212,7 @@
       0.15
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
@@ -24819,213 +24819,6 @@
     "Growid": 1,
     "StarUpid": 1,
     "StarSoulid": 1144010,
-    "AvartarAtlas": "LumiAvatar1",
-    "CanRename": true
-  },
-  {
-    "Id": 114502,
-    "PokedexId": 322,
-    "IfLock": true,
-    "LumiTag": 1,
-    "Name": "LumiName_114502",
-    "MaxScore": 88,
-    "MinScore": 88,
-    "Genius": 1,
-    "ShardId": 114502,
-    "MarketOrder": 0,
-    "DefaultPrice": [
-      [
-        6,
-        1200000
-      ],
-      [
-        5,
-        120000
-      ],
-      [
-        4,
-        3000
-      ],
-      [
-        3,
-        -1
-      ],
-      [
-        2,
-        -1
-      ]
-    ],
-    "DefaultPriceMin": [
-      [
-        2,
-        0
-      ],
-      [
-        3,
-        0
-      ],
-      [
-        4,
-        2000
-      ],
-      [
-        5,
-        20000
-      ],
-      [
-        6,
-        200000
-      ]
-    ],
-    "DefaultPriceMax": [
-      [
-        6,
-        6000000
-      ],
-      [
-        5,
-        240000
-      ],
-      [
-        4,
-        6000
-      ],
-      [
-        3,
-        -1
-      ],
-      [
-        2,
-        -1
-      ]
-    ],
-    "Model": "Doll_CherryBlossom_3D",
-    "Avatar": "Avatar_114502",
-    "CA": "CA_114502",
-    "CardBack": 98,
-    "CardBackRes": [
-      "com_card_9_114502",
-      "com_card_9_114502_score"
-    ],
-    "CardType": 98,
-    "CardResName": [
-      "Card3D_Doll_CherryBlossom",
-      "Card3DLumi_Doll_CherryBlossom",
-      "Card3DLumi_Doll_CherryBlossom_XC"
-    ],
-    "Type1": 4,
-    "Type2": 14,
-    "NormalAttack": 11450201,
-    "ActiveSkill": 11450202,
-    "SkillPool1": [
-      4001,
-      14001
-    ],
-    "SkillPool2": [
-      4004,
-      14005
-    ],
-    "SkillPool3": [
-      4006,
-      3004
-    ],
-    "BattlePassive": 1114502,
-    "HomePassive": 0,
-    "InbornBattlePassive": 0,
-    "InbornHomePassive": 0,
-    "MinHpState": 63,
-    "MinAtkState": 63,
-    "MinDefState": 68,
-    "MinWorkState": 30,
-    "MaxHpState": 95,
-    "MaxAtkState": 95,
-    "MaxDefState": 100,
-    "MaxWorkState": 62,
-    "Satiety": 140000,
-    "SatietyDownSpeed": 36,
-    "WorkAbility": [
-      {
-        "Type": 1,
-        "Level": 1
-      }
-    ],
-    "LumiAttribute": [
-      [
-        1,
-        [
-          105
-        ]
-      ],
-      [
-        2,
-        [
-          3
-        ]
-      ]
-    ],
-    "GenderWeight": [
-      [
-        1,
-        0
-      ],
-      [
-        2,
-        10000
-      ]
-    ],
-    "scoreShow": "88-88",
-    "Story": "story_114502",
-    "EscapeRotationY": 180000,
-    "EscapeMoveSpeed": 1000,
-    "EscapeTransformTime": 1000,
-    "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1300,
-    "CatchRateCheckHeight": 500,
-    "HomeMoveSpeed": 1.6,
-    "HomeRotateSpeed": 90,
-    "Distance": 6000,
-    "Height": 0,
-    "LookatHeight": 200,
-    "VFXScale": 1,
-    "ZeroOffset": {
-      "X": 0,
-      "Y": -0.1,
-      "Z": 0
-    },
-    "AdventureVFXScale": 1,
-    "AdventureZeroOffset": {
-      "X": 0,
-      "Y": -0.1,
-      "Z": 0
-    },
-    "BubbleOffset": {
-      "X": 0,
-      "Y": 0.5,
-      "Z": 0
-    },
-    "NewJumpTo": [
-      4064
-    ],
-    "LumiFavor": 1,
-    "ColorVariantType": 1,
-    "AchievementType": 1,
-    "ModleColorVariant": "Doll_CherryBlossom_3D_XC",
-    "SpineAssetFolder": "",
-    "ConflictID": 114501,
-    "BodySizeType": 1,
-    "ModelBaseScale": 1,
-    "SizeScaleRange": [
-      0.15,
-      0.15
-    ],
-    "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
-    "LimitedEditionUI": "",
-    "ParallaxCardAsset": [],
-    "BattleEntranceVFX": [],
-    "Growid": 1,
-    "StarUpid": 4,
-    "StarSoulid": 1145020,
     "AvartarAtlas": "LumiAvatar1",
     "CanRename": true
   },
@@ -33424,7 +33217,7 @@
       0.1
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
@@ -37222,7 +37015,7 @@
     "StarUpid": 1,
     "StarSoulid": 1250010,
     "AvartarAtlas": "LumiAvatar2",
-    "CanRename": true
+    "CanRename": false
   },
   {
     "Id": 125002,
@@ -37307,7 +37100,11 @@
     "CardBack": 98,
     "CardBackRes": [],
     "CardType": 0,
-    "CardResName": [],
+    "CardResName": [
+      "Card3D_Stina_Princess_3D",
+      "Card3DLumi_Stina_Princess_3D",
+      "Card3DLumi_Stina_Princess_3D_XC"
+    ],
     "Type1": 14,
     "Type2": 0,
     "NormalAttack": 12500201,
@@ -37409,7 +37206,7 @@
       0.15
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
@@ -37417,7 +37214,7 @@
     "StarUpid": 1,
     "StarSoulid": 1250020,
     "AvartarAtlas": "LumiAvatar2",
-    "CanRename": true
+    "CanRename": false
   },
   {
     "Id": 125101,
@@ -37619,7 +37416,7 @@
     "StarUpid": 1,
     "StarSoulid": 1251010,
     "AvartarAtlas": "LumiAvatar2",
-    "CanRename": true
+    "CanRename": false
   },
   {
     "Id": 125201,
@@ -37821,7 +37618,7 @@
     "StarUpid": 1,
     "StarSoulid": 1252010,
     "AvartarAtlas": "LumiAvatar2",
-    "CanRename": true
+    "CanRename": false
   },
   {
     "Id": 125301,
@@ -38023,7 +37820,7 @@
     "StarUpid": 1,
     "StarSoulid": 1253010,
     "AvartarAtlas": "LumiAvatar2",
-    "CanRename": true
+    "CanRename": false
   },
   {
     "Id": 125401,
@@ -38225,7 +38022,7 @@
     "StarUpid": 1,
     "StarSoulid": 1254010,
     "AvartarAtlas": "LumiAvatar2",
-    "CanRename": true
+    "CanRename": false
   },
   {
     "Id": 125501,
@@ -38427,7 +38224,7 @@
     "StarUpid": 1,
     "StarSoulid": 1255010,
     "AvartarAtlas": "LumiAvatar2",
-    "CanRename": true
+    "CanRename": false
   },
   {
     "Id": 125801,
@@ -42232,7 +42029,7 @@
     "StarUpid": 1,
     "StarSoulid": 1369010,
     "AvartarAtlas": "LumiAvatar3",
-    "CanRename": true
+    "CanRename": false
   },
   {
     "Id": 139001,
@@ -42532,7 +42329,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1139101,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -42727,7 +42524,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1139101,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -42920,7 +42717,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1139101,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -43113,7 +42910,7 @@
       7004,
       7006
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 1139304,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -43991,7 +43788,7 @@
       0.15
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
@@ -44946,7 +44743,7 @@
     "VFXScale": 1,
     "ZeroOffset": {
       "X": 0,
-      "Y": 0,
+      "Y": -0.15,
       "Z": 0
     },
     "AdventureVFXScale": 1,
@@ -45277,7 +45074,7 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 42,
@@ -45478,7 +45275,7 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 42,
     "MinAtkState": 52,
@@ -46265,7 +46062,9 @@
     ],
     "CardType": 98,
     "CardResName": [
-      "Card3D_Tomato_L"
+      "Card3D_Tomato_L",
+      "Card3DLumi_Tomato_L",
+      "Card3DLumi_Tomato_L_XC"
     ],
     "Type1": 11,
     "Type2": 0,
@@ -46374,7 +46173,7 @@
       0.15
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
@@ -46487,7 +46286,7 @@
     ],
     "BattlePassive": 11000601,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 54,
@@ -46683,7 +46482,7 @@
     ],
     "BattlePassive": 11000701,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 54,
     "MinAtkState": 68,
@@ -46878,7 +46677,7 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 42,
@@ -47062,7 +46861,9 @@
     ],
     "CardType": 98,
     "CardResName": [
-      "Card3D_Wolf_Frostwild"
+      "Card3D_Cat_Doja_Super",
+      "Card3DLumi_Cat_Doja_Super",
+      "Card3DLumi_Cat_Doja_Super_XC"
     ],
     "Type1": 13,
     "Type2": 0,
@@ -47171,13 +46972,417 @@
       0.15
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 4,
     "StarSoulid": 10009020,
+    "AvartarAtlas": "LumiAvatarCollab1",
+    "CanRename": false
+  },
+  {
+    "Id": 1002202,
+    "PokedexId": 99999999,
+    "IfLock": true,
+    "LumiTag": 3,
+    "Name": "LumiName_1002202",
+    "MaxScore": 82,
+    "MinScore": 82,
+    "Genius": 1,
+    "ShardId": 1002202,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        450000
+      ],
+      [
+        5,
+        45000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Diandian_Magic_3D",
+    "Avatar": "Avatar_1002202",
+    "CA": "CA_1002202",
+    "CardBack": 98,
+    "CardBackRes": [
+      "com_card_9_1002202"
+    ],
+    "CardType": 98,
+    "CardResName": [
+      "Card3D_Diandian_Magic"
+    ],
+    "Type1": 13,
+    "Type2": 0,
+    "NormalAttack": 100220201,
+    "ActiveSkill": 100220202,
+    "SkillPool1": [
+      6001,
+      6002
+    ],
+    "SkillPool2": [
+      12003,
+      12006
+    ],
+    "SkillPool3": [
+      13002,
+      13003
+    ],
+    "BattlePassive": 11002202,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 63,
+    "MinAtkState": 18,
+    "MinDefState": 37,
+    "MinWorkState": 82,
+    "MaxHpState": 95,
+    "MaxAtkState": 50,
+    "MaxDefState": 69,
+    "MaxWorkState": 114,
+    "Satiety": 140000,
+    "SatietyDownSpeed": 24,
+    "WorkAbility": [
+      {
+        "Type": 4,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          117
+        ]
+      ],
+      [
+        2,
+        [
+          20
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "82-82",
+    "Story": "story_1002202",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1300,
+    "CatchRateCheckHeight": 600,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 90,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.15,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0.1,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 0,
+    "AchievementType": 1,
+    "ModleColorVariant": "Diandian_Magic_3D_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 1002201,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 999,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 2,
+    "StarUpid": 4,
+    "StarSoulid": 10022020,
+    "AvartarAtlas": "LumiAvatarCollab1",
+    "CanRename": false
+  },
+  {
+    "Id": 1002602,
+    "PokedexId": 99999999,
+    "IfLock": true,
+    "LumiTag": 3,
+    "Name": "LumiName_1002602",
+    "MaxScore": 82,
+    "MinScore": 82,
+    "Genius": 1,
+    "ShardId": 1002602,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        450000
+      ],
+      [
+        5,
+        45000
+      ],
+      [
+        4,
+        2500
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "SharkCat_Koifish_3D",
+    "Avatar": "Avatar_1002602",
+    "CA": "CA_1002602",
+    "CardBack": 98,
+    "CardBackRes": [
+      "com_card_9_1002602"
+    ],
+    "CardType": 98,
+    "CardResName": [
+      "Card3D_SharkCat_Koifish"
+    ],
+    "Type1": 14,
+    "Type2": 0,
+    "NormalAttack": 100260201,
+    "ActiveSkill": 100260202,
+    "SkillPool1": [
+      6001,
+      6002
+    ],
+    "SkillPool2": [
+      12003,
+      12006
+    ],
+    "SkillPool3": [
+      13002,
+      13003
+    ],
+    "BattlePassive": 11002602,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 63,
+    "MinAtkState": 18,
+    "MinDefState": 37,
+    "MinWorkState": 82,
+    "MaxHpState": 95,
+    "MaxAtkState": 50,
+    "MaxDefState": 69,
+    "MaxWorkState": 114,
+    "Satiety": 140000,
+    "SatietyDownSpeed": 24,
+    "WorkAbility": [
+      {
+        "Type": 4,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          126
+        ]
+      ],
+      [
+        2,
+        [
+          38
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "82-82",
+    "Story": "story_1002602",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 900,
+    "CatchRateCheckHeight": 450,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 90,
+    "Distance": 6000,
+    "Height": 0,
+    "LookatHeight": 200,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.3,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0.3,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 0,
+    "AchievementType": 1,
+    "ModleColorVariant": "SharkCat_Koifish_3D_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 1002601,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 999,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 4,
+    "StarSoulid": 10026020,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -47283,7 +47488,7 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 42,
     "MinAtkState": 52,
@@ -47483,7 +47688,7 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 42,
     "MinAtkState": 52,
@@ -47683,7 +47888,7 @@
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 52,
     "MinAtkState": 42,
@@ -47882,9 +48087,9 @@
       7001,
       13001
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 11003501,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 68,
     "MinAtkState": 54,
@@ -48083,9 +48288,9 @@
       7001,
       13001
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 11003601,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 63,
     "MinAtkState": 68,
@@ -48284,7 +48489,7 @@
       7001,
       13001
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 11004101,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -48480,7 +48685,7 @@
       7001,
       13001
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 11004201,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -48681,7 +48886,7 @@
       7001,
       13001
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 11004301,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -48859,7 +49064,9 @@
     "CardBack": 98,
     "CardBackRes": [],
     "CardType": 0,
-    "CardResName": [],
+    "CardResName": [
+      "Card3D_Dasima_Big_3D"
+    ],
     "Type1": 12,
     "Type2": 0,
     "NormalAttack": 100430201,
@@ -48877,7 +49084,7 @@
       7001,
       13001
     ],
-    "BattlePassive": 0,
+    "BattlePassive": 11004302,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -48967,7 +49174,7 @@
       0.15
     ],
     "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 0,
+    "LimitedEditionNumber": 999,
     "LimitedEditionUI": "",
     "ParallaxCardAsset": [],
     "BattleEntranceVFX": [],
