@@ -16,20 +16,21 @@ export const STAGE_TYPES = ['combat', 'concept', 'model', 'anim', 'vfx', 'gui', 
 // ==================== orders ====================
 
 const stmtGetOrder = db.prepare('SELECT * FROM production_orders WHERE lumiId = ?')
-const stmtListOrders = db.prepare('SELECT * FROM production_orders ORDER BY pokedexId, lumiId')
+const stmtListOrders = db.prepare('SELECT * FROM production_orders ORDER BY lumiId')
 const stmtDeleteOrder = db.prepare('DELETE FROM production_orders WHERE lumiId = ?')
 const stmtUpsertOrder = db.prepare(`
   INSERT INTO production_orders(
-    lumiId, pokedexId, name, type1, type2, maxScore, workType, combatStrength, workBuilding,
+    lumiId, model, level, name, type1, type2, maxScore, workType, combatStrength, workBuilding,
     tapdStoryId, tapdStoryUrl, milestone, releaseStatus, progressStage, designer, status,
     createdAt, updatedAt, ganttRaw
   ) VALUES (
-    @lumiId, @pokedexId, @name, @type1, @type2, @maxScore, @workType, @combatStrength, @workBuilding,
+    @lumiId, @model, @level, @name, @type1, @type2, @maxScore, @workType, @combatStrength, @workBuilding,
     @tapdStoryId, @tapdStoryUrl, @milestone, @releaseStatus, @progressStage, @designer, @status,
     @createdAt, @updatedAt, @ganttRaw
   )
   ON CONFLICT(lumiId) DO UPDATE SET
-    pokedexId=excluded.pokedexId,
+    model=excluded.model,
+    level=excluded.level,
     name=excluded.name,
     type1=excluded.type1,
     type2=excluded.type2,
@@ -48,7 +49,8 @@ const stmtUpsertOrder = db.prepare(`
 `)
 const stmtPatchOrder = db.prepare(`
   UPDATE production_orders SET
-    pokedexId = COALESCE(@pokedexId, pokedexId),
+    model = COALESCE(@model, model),
+    level = COALESCE(@level, level),
     name = COALESCE(@name, name),
     type1 = COALESCE(@type1, type1),
     type2 = COALESCE(@type2, type2),
@@ -79,7 +81,8 @@ export function upsertOrder(order) {
   const now = new Date().toISOString()
   stmtUpsertOrder.run({
     lumiId: Number(order.lumiId),
-    pokedexId: order.pokedexId ?? null,
+    model: order.model ?? null,
+    level: order.level ?? null,
     name: order.name ?? null,
     type1: order.type1 ?? null,
     type2: order.type2 ?? null,
@@ -106,7 +109,8 @@ export function patchOrder(lumiId, patch) {
   stmtPatchOrder.run({
     lumiId: Number(lumiId),
     updatedAt: now,
-    pokedexId: patch.pokedexId ?? null,
+    model: patch.model ?? null,
+    level: patch.level ?? null,
     name: patch.name ?? null,
     type1: patch.type1 ?? null,
     type2: patch.type2 ?? null,
@@ -226,6 +230,7 @@ export function upsertStage(stage) {
     updatedAt: now,
     updatedBy: stage.updatedBy || null,
   })
+  recomputeOrderStatus(stage.lumiId)
   return getStage(stage.lumiId, stage.stageType)
 }
 
@@ -246,7 +251,25 @@ export function patchStage(lumiId, stageType, patch, updatedBy) {
     tapdSubStoryId: patch.tapdSubStoryId ?? null,
     deliverables: patch.deliverables ? JSON.stringify(patch.deliverables) : null,
   })
+  recomputeOrderStatus(lumiId)
   return getStage(lumiId, stageType)
+}
+
+// order.status 根据 stages 自动推导：
+// - 所有 stage 都是 done → 'done'
+// - 至少有一个 in-progress / pending-review → 'in-progress'
+// - 有 stage 但都是 todo/rejected → 'planning'
+// - 没有 stage → 保留原状态（一般是 'planning'）
+// 判断只看"有 tapdSubStoryId 的 stage"（即真实存在的环节），忽略占位行
+const stmtUpdateOrderStatus = db.prepare('UPDATE production_orders SET status = ?, updatedAt = ? WHERE lumiId = ?')
+export function recomputeOrderStatus(lumiId) {
+  const lid = Number(lumiId)
+  const stages = listStages(lid).filter(s => s.tapdSubStoryId)  // 只看真实环节
+  if (!stages.length) return
+  const anyInProgress = stages.some(s => s.status === 'in-progress' || s.status === 'pending-review')
+  const allDone = stages.every(s => s.status === 'done')
+  const next = allDone ? 'done' : (anyInProgress ? 'in-progress' : 'planning')
+  stmtUpdateOrderStatus.run(next, new Date().toISOString(), lid)
 }
 
 // ==================== activity ====================
@@ -326,7 +349,7 @@ const stmtBoardCards = db.prepare(`
     s.lumiId, s.stageType, s.assignee, s.status, s.plannedStart, s.plannedEnd,
     s.actualStart, s.actualEnd, s.iterationCount, s.tapdSubStoryId, s.tapdIterationId,
     s.tapdRawStatus, s.tapdSyncedAt, s.deliverables, s.updatedAt, s.updatedBy,
-    o.pokedexId, o.name AS orderName, o.type1, o.type2, o.milestone, o.designer,
+    o.model, o.level, o.name AS orderName, o.type1, o.type2, o.milestone, o.designer,
     o.tapdStoryUrl, o.tapdStoryId,
     i.name AS iterationName, i.startdate AS iterationStart, i.enddate AS iterationEnd, i.milestone AS iterationMilestone
   FROM production_stages s

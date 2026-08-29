@@ -23,7 +23,8 @@ const canDelete = computed(() => isAdmin.value)
 
 // 字段
 const lumiId = ref('')
-const pokedexId = ref('')
+const model = ref('')
+const level = ref('')
 const name = ref('')
 const type1 = ref('')
 const type2 = ref('')
@@ -35,7 +36,7 @@ const tapdStoryUrl = ref('')
 const releaseStatus = ref('')
 const progressStage = ref('')
 const designer = ref('')
-const status = ref('planning')
+// 注：order.status 不再由 UI 编辑，后端根据 stages 自动推导（见 api/production-store.mjs 的 recomputeOrderStatus）
 
 const saving = ref(false)
 const deleting = ref(false)
@@ -45,7 +46,8 @@ const showDeleteConfirm = ref(false)
 function resetFromOrder() {
   const o = props.order || {}
   lumiId.value = o.lumiId ?? ''
-  pokedexId.value = o.pokedexId ?? ''
+  model.value = o.model ?? ''
+  level.value = o.level ?? ''
   name.value = o.name ?? ''
   type1.value = o.type1 ?? ''
   type2.value = o.type2 ?? ''
@@ -57,7 +59,6 @@ function resetFromOrder() {
   releaseStatus.value = o.releaseStatus ?? ''
   progressStage.value = o.progressStage ?? ''
   designer.value = o.designer ?? ''
-  status.value = o.status ?? 'planning'
 }
 resetFromOrder()
 watch(() => props.order, resetFromOrder)
@@ -77,17 +78,23 @@ const workTypeOptions = computed(() => [
   { value: '', label: '—' },
   ...Object.entries(WORK_TYPE_NAMES).map(([k, v]) => ({ value: v, label: v })),
 ])
-const orderStatusOptions = [
-  { value: 'planning', label: '规划中' },
-  { value: 'in-progress', label: '进行中' },
-  { value: 'pending-review', label: '待验收' },
-  { value: 'done', label: '完成' },
+// 表现级别 / 个体类型（对应图鉴 CardBack）：
+// 普通 / 霸主（图鉴上跟普通同类，但规划里独立标记）/ 异色 / 顶级 / 3D / 全景
+const levelOptions = [
+  { value: '', label: '—' },
+  { value: '普通', label: '普通' },
+  { value: '霸主', label: '霸主' },
+  { value: '异色', label: '异色' },
+  { value: '顶级', label: '顶级' },
+  { value: '3D', label: '3D' },
+  { value: '全景', label: '全景' },
 ]
 
 function buildPayload() {
   const p = {
     lumiId: Number(lumiId.value),
-    pokedexId: pokedexId.value !== '' ? Number(pokedexId.value) : null,
+    model: model.value.trim() || null,
+    level: level.value || null,
     name: name.value.trim() || null,
     type1: type1.value !== '' ? Number(type1.value) : null,
     type2: type2.value !== '' ? Number(type2.value) : null,
@@ -100,7 +107,6 @@ function buildPayload() {
     releaseStatus: releaseStatus.value || null,
     progressStage: progressStage.value.trim() || null,
     designer: designer.value.trim() || null,
-    status: status.value,
   }
   return p
 }
@@ -166,8 +172,8 @@ const title = computed(() => props.mode === 'create' ? '➕ 新增噜咪生产�
             <input v-model="lumiId" type="number" placeholder="如 108501" :disabled="mode === 'edit' || !canEdit" />
           </div>
           <div class="field-col">
-            <label>图鉴号 (PokedexId)</label>
-            <input v-model="pokedexId" type="number" :disabled="!canEdit" />
+            <label>模型名</label>
+            <input v-model="model" placeholder="如 Capibara" :disabled="!canEdit" />
           </div>
           <div class="field-col">
             <label>噜咪名</label>
@@ -176,6 +182,12 @@ const title = computed(() => props.mode === 'create' ? '➕ 新增噜咪生产�
           <div class="field-col">
             <label>最高分</label>
             <input v-model="maxScore" type="number" :disabled="!canEdit" />
+          </div>
+          <div class="field-col">
+            <label>类型</label>
+            <select v-model="level" :disabled="!canEdit">
+              <option v-for="o in levelOptions" :key="o.value" :value="o.value">{{ o.label }}</option>
+            </select>
           </div>
           <div class="field-col">
             <label>属性 1</label>
@@ -210,22 +222,16 @@ const title = computed(() => props.mode === 'create' ? '➕ 新增噜咪生产�
             </select>
           </div>
           <div class="field-col">
-            <label>进度</label>
+            <label>技能设计</label>
             <input v-model="progressStage" list="progress-suggest" placeholder="如 完全体 / 技能表现完成" :disabled="!canEdit" />
             <datalist id="progress-suggest">
               <option v-for="p in progressOptions" :key="p" :value="p" />
             </datalist>
           </div>
-          <div class="field-col">
-            <label>Order 总状态</label>
-            <select v-model="status" :disabled="!canEdit">
-              <option v-for="o in orderStatusOptions" :key="o.value" :value="o.value">{{ o.label }}</option>
-            </select>
-          </div>
         </div>
 
-        <!-- 业务 -->
-        <div class="field-section">业务</div>
+        <!-- 策划配置 -->
+        <div class="field-section">策划配置</div>
         <div class="field-grid">
           <div class="field-col">
             <label>负责策划</label>
@@ -247,6 +253,14 @@ const title = computed(() => props.mode === 'create' ? '➕ 新增噜咪生产�
           <div class="field-col">
             <label>专有建筑</label>
             <input v-model="workBuilding" :disabled="!canEdit" />
+          </div>
+        </div>
+
+        <!-- 动特表现（内容后续再补） -->
+        <div class="field-section">动特表现</div>
+        <div class="field-grid">
+          <div class="field-col field-placeholder">
+            <span class="placeholder-hint">🚧 具体字段待定，稍后补充</span>
           </div>
         </div>
 
@@ -391,6 +405,14 @@ const title = computed(() => props.mode === 'create' ? '➕ 新增噜咪生产�
   color: #4ade80;
   padding: 1px 5px;
   border-radius: 3px;
+}
+.field-placeholder {
+  padding: 8px 0;
+}
+.placeholder-hint {
+  color: var(--text-dim);
+  font-size: 0.85em;
+  font-style: italic;
 }
 .editor-error {
   color: #ff8b95;

@@ -121,7 +121,7 @@ function iterationLabel(id) {
         <div>
           <h3>📅 调整排期 · {{ order.name || order.lumiId }}</h3>
           <div class="editor-sub">
-            #{{ order.pokedexId ?? '-' }} · id {{ order.lumiId }}
+            {{ order.model || '-' }} · id {{ order.lumiId }}
             <span v-if="order.tapdStoryUrl">· <a :href="order.tapdStoryUrl" target="_blank">TAPD 总单</a></span>
           </div>
         </div>

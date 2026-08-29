@@ -113,7 +113,7 @@ const filtered = computed(() => {
     list = list.filter(o =>
       String(o.lumiId).includes(q) ||
       (o.name || '').toLowerCase().includes(q) ||
-      (o.pokedexId != null && String(o.pokedexId).includes(q))
+      (o.model || '').toLowerCase().includes(q)
     )
   }
   if (filterMilestone.value) list = list.filter(o => o.milestone === filterMilestone.value)
@@ -301,7 +301,6 @@ function clearFilters() {
             <tr v-for="order in filtered" :key="order.lumiId" class="prod-row">
               <td class="cell-lumi" @click="openEditOrder(order)">
                 <img
-                  v-if="order.pokedexId != null"
                   :src="avatarUrl(order.lumiId)"
                   class="cell-avatar"
                   loading="lazy"
@@ -309,8 +308,8 @@ function clearFilters() {
                 />
                 <div class="cell-lumi-info">
                   <div class="cell-lumi-name">
-                    <span v-if="order.pokedexId != null" class="cell-pokedex">#{{ order.pokedexId }}</span>
                     <span>{{ order.name || `#${order.lumiId}` }}</span>
+                    <span v-if="order.model" class="cell-pokedex">{{ order.model }}</span>
                     <span v-if="canPm" class="cell-edit-hint" title="点击编辑元数据">✏️</span>
                   </div>
                   <div class="cell-lumi-sub">

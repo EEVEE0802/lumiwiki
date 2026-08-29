@@ -81,7 +81,8 @@ CREATE TABLE IF NOT EXISTS audit (
 
 CREATE TABLE IF NOT EXISTS production_orders (
   lumiId INTEGER PRIMARY KEY,
-  pokedexId INTEGER,
+  model TEXT,
+  level TEXT,
   name TEXT,
   type1 INTEGER,
   type2 INTEGER,
@@ -154,6 +155,11 @@ function ensureColumn(table, column, ddl) {
 ensureColumn('production_stages', 'tapdIterationId', 'tapdIterationId TEXT')
 ensureColumn('production_stages', 'tapdRawStatus', 'tapdRawStatus TEXT')
 ensureColumn('production_stages', 'tapdSyncedAt', 'tapdSyncedAt TEXT')
+// P2 决定：图鉴号（pokedexId）从 UI 里移除，改用 model（模型名）作为标识展示；level（表现级别，
+// 对应图鉴 CardBack：普通/异色/王/3D/全景，"霸主"归到普通）新增到 order。
+// pokedexId 列保留以防旧数据兼容 —— SQLite 不支持删列且业务上没有必要清除历史。
+ensureColumn('production_orders', 'model', 'model TEXT')
+ensureColumn('production_orders', 'level', 'level TEXT')
 
 // 环节从 9 → 7：删掉旧数据里的 rigging / audio
 // （P1 决定：rigging 合入 anim，audio 合入 gui，跟 TAPD 子单对齐）

@@ -197,7 +197,7 @@ const baseFiltered = computed(() => {
     if (q) {
       const hit = String(o.lumiId).includes(q)
         || (o.name || '').toLowerCase().includes(q)
-        || (o.pokedexId != null && String(o.pokedexId).includes(q))
+        || (o.model || '').toLowerCase().includes(q)
       if (!hit) return false
     }
     if (filterType.value && String(o.type1) !== filterType.value && String(o.type2) !== filterType.value) return false

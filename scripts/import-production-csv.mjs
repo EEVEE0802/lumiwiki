@@ -184,22 +184,28 @@ function main() {
     db = new Database(DB_PATH)
     db.pragma('journal_mode = WAL')
     db.pragma('foreign_keys = ON')
+    // 幂等迁移：api/store.mjs 的 ensureColumn 只在 api 服务启动时跑，脚本走 raw 连接，
+    // 所以这里自己保底加一下（跟 store.mjs 里的定义保持一致）
+    const cols = db.prepare("PRAGMA table_info('production_orders')").all().map(c => c.name)
+    if (!cols.includes('model')) db.exec('ALTER TABLE production_orders ADD COLUMN model TEXT')
+    if (!cols.includes('level')) db.exec('ALTER TABLE production_orders ADD COLUMN level TEXT')
   }
 
   const stats = { orders: 0, stages: 0, iterations: 0, unmatched: 0 }
 
   const insertOrder = db ? db.prepare(`
     INSERT INTO production_orders(
-      lumiId, pokedexId, name, type1, type2, maxScore, workType, combatStrength, workBuilding,
+      lumiId, model, level, name, type1, type2, maxScore, workType, combatStrength, workBuilding,
       tapdStoryId, tapdStoryUrl, milestone, releaseStatus, progressStage, designer, status,
       createdAt, updatedAt, ganttRaw
     ) VALUES (
-      @lumiId, @pokedexId, @name, @type1, @type2, @maxScore, @workType, @combatStrength, @workBuilding,
+      @lumiId, @model, @level, @name, @type1, @type2, @maxScore, @workType, @combatStrength, @workBuilding,
       @tapdStoryId, @tapdStoryUrl, @milestone, @releaseStatus, @progressStage, @designer, @status,
       @createdAt, @updatedAt, @ganttRaw
     )
     ON CONFLICT(lumiId) DO UPDATE SET
-      pokedexId=excluded.pokedexId, name=excluded.name, type1=excluded.type1, type2=excluded.type2,
+      model=excluded.model, level=excluded.level, name=excluded.name,
+      type1=excluded.type1, type2=excluded.type2,
       maxScore=excluded.maxScore, workType=excluded.workType, combatStrength=excluded.combatStrength,
       workBuilding=excluded.workBuilding, tapdStoryId=excluded.tapdStoryId, tapdStoryUrl=excluded.tapdStoryUrl,
       milestone=excluded.milestone, releaseStatus=excluded.releaseStatus, progressStage=excluded.progressStage,
@@ -285,9 +291,15 @@ function main() {
       const now = new Date().toISOString()
       const progressStage = (r[META_COLS.progressStage] || '').trim() || null
       const isFullyDone = progressStage === '完全体'
+      // CSV 表现级别原样保留：普通 / 霸主 / 异色 / 王 / 3D / 全景。
+      // 霸主在图鉴个体类型（CardBack）上跟普通同类（都是 CardBack=0），但在生产规划里是独立标记，
+      // 所以数据库里存原值，"霸主归普通"只在图鉴联动展示时做（如果以后要用 CardBack）
+      const level = (r[META_COLS.level] || '').trim() || null
+      const model = (r[META_COLS.model] || '').trim() || null
       const orderRow = {
         lumiId,
-        pokedexId: lumiInWiki?.PokedexId ?? null,
+        model,
+        level,
         name: displayName,
         type1, type2, maxScore,
         workType: (r[META_COLS.workType] || '').trim() || null,

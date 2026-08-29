@@ -216,7 +216,6 @@ function isMineCard(c) {
             >
               <div class="card-head">
                 <img
-                  v-if="c.pokedexId != null"
                   :src="avatarUrl(c.lumiId)"
                   class="card-avatar"
                   loading="lazy"
@@ -224,8 +223,8 @@ function isMineCard(c) {
                 />
                 <div class="card-title">
                   <div class="card-name">
-                    <span v-if="c.pokedexId != null" class="card-pokedex">#{{ c.pokedexId }}</span>
                     {{ c.orderName || `#${c.lumiId}` }}
+                    <span v-if="c.model" class="card-pokedex">{{ c.model }}</span>
                   </div>
                   <div class="card-meta">
                     <span

@@ -231,8 +231,8 @@ function typeColor(stage) {
       >
         <div class="gantt-row-label" :style="{ width: LABEL_W + 'px' }">
           <div class="gantt-lumi-name">
-            <span v-if="order.pokedexId != null" class="gantt-pokedex">#{{ order.pokedexId }}</span>
             {{ order.name || `#${order.lumiId}` }}
+            <span v-if="order.model" class="gantt-pokedex">{{ order.model }}</span>
           </div>
           <div class="gantt-lumi-sub">
             <span v-if="order.milestone" class="gantt-milestone">{{ order.milestone }}</span>

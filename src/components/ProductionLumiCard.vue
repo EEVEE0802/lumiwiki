@@ -41,17 +41,15 @@ function stageTip(k) {
   <div class="lumi-card">
     <div class="card-head">
       <img
-        v-if="order.pokedexId != null"
         :src="internalAvatarUrl(order.lumiId)"
         class="card-avatar"
         loading="lazy"
         @error="$event.target.style.display='none'"
       />
-      <div v-else class="card-avatar card-avatar-empty">?</div>
       <div class="card-title">
         <div class="card-name">
-          <span v-if="order.pokedexId != null" class="card-pokedex">#{{ order.pokedexId }}</span>
           {{ order.name || `#${order.lumiId}` }}
+          <span v-if="order.model" class="card-pokedex">{{ order.model }}</span>
         </div>
         <div class="card-meta">
           <span
