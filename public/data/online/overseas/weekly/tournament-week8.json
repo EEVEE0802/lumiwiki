@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-08-30T23:32:58.158Z",
+  "updateTime": "2026-08-31T23:32:55.708Z",
   "totalBattles": 917,
   "gameMode": "tournament",
   "stats": {
@@ -14523,80 +14523,6 @@
     },
     {
       "teamLumiIds": [
-        "102401",
-        "118204",
-        "127301"
-      ],
-      "lumis": [
-        {
-          "lumiId": "102401",
-          "lumiName": "Lycanite",
-          "secondSkills": [
-            {
-              "skillId": 15005,
-              "count": 1
-            }
-          ]
-        },
-        {
-          "lumiId": "118204",
-          "lumiName": "Puncheroo - Variant",
-          "secondSkills": [
-            {
-              "skillId": 12003,
-              "count": 1
-            }
-          ]
-        },
-        {
-          "lumiId": "127301",
-          "lumiName": "Rhiniron",
-          "secondSkills": [
-            {
-              "skillId": 12007,
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "trainerSkills": [
-        {
-          "trainerId": 1,
-          "count": 1
-        }
-      ],
-      "battles": 1,
-      "wins": 1,
-      "winRate": "100.00"
-    },
-    {
-      "teamLumiIds": [
-        "115001"
-      ],
-      "lumis": [
-        {
-          "lumiId": "115001",
-          "lumiName": "Dimmey",
-          "secondSkills": [
-            {
-              "skillId": 0,
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "trainerSkills": [
-        {
-          "trainerId": 1,
-          "count": 1
-        }
-      ],
-      "battles": 1,
-      "wins": 0,
-      "winRate": "0.00"
-    },
-    {
-      "teamLumiIds": [
         "111701",
         "114901",
         "115201"
@@ -14930,6 +14856,80 @@
       "battles": 1,
       "wins": 1,
       "winRate": "100.00"
+    },
+    {
+      "teamLumiIds": [
+        "115001"
+      ],
+      "lumis": [
+        {
+          "lumiId": "115001",
+          "lumiName": "Dimmey",
+          "secondSkills": [
+            {
+              "skillId": 0,
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 1
+        }
+      ],
+      "battles": 1,
+      "wins": 0,
+      "winRate": "0.00"
+    },
+    {
+      "teamLumiIds": [
+        "102401",
+        "118204",
+        "127301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102401",
+          "lumiName": "Lycanite",
+          "secondSkills": [
+            {
+              "skillId": 15005,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "118204",
+          "lumiName": "Puncheroo - Variant",
+          "secondSkills": [
+            {
+              "skillId": 12003,
+              "count": 1
+            }
+          ]
+        },
+        {
+          "lumiId": "127301",
+          "lumiName": "Rhiniron",
+          "secondSkills": [
+            {
+              "skillId": 12007,
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 1
+        }
+      ],
+      "battles": 1,
+      "wins": 1,
+      "winRate": "100.00"
     }
   ],
   "winDistribution": {
@@ -14954,10 +14954,10 @@
   "tournamentPlayerRankDistribution": {
     "bronze": 2,
     "silver": 7,
-    "gold": 6,
-    "diamond": 30,
-    "star": 48,
-    "legend": 30,
-    "total": 123
+    "gold": 5,
+    "diamond": 32,
+    "star": 49,
+    "legend": 31,
+    "total": 126
   }
 }
