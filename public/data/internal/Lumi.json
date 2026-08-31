@@ -42318,16 +42318,16 @@
     "NormalAttack": 13910101,
     "ActiveSkill": 13910102,
     "SkillPool1": [
-      7001,
-      7005
+      3005,
+      11003
     ],
     "SkillPool2": [
-      7002,
-      7003
+      3003,
+      11002
     ],
     "SkillPool3": [
-      7004,
-      7006
+      11007,
+      1001
     ],
     "BattlePassive": 1139101,
     "HomePassive": 0,
@@ -42513,16 +42513,16 @@
     "NormalAttack": 13920101,
     "ActiveSkill": 13920102,
     "SkillPool1": [
-      7001,
-      7005
+      3005,
+      11003
     ],
     "SkillPool2": [
-      7002,
-      7003
+      3003,
+      11002
     ],
     "SkillPool3": [
-      7004,
-      7006
+      11007,
+      1001
     ],
     "BattlePassive": 1139101,
     "HomePassive": 0,
@@ -42706,16 +42706,16 @@
     "NormalAttack": 13930101,
     "ActiveSkill": 13930102,
     "SkillPool1": [
-      7001,
-      7005
+      3005,
+      11003
     ],
     "SkillPool2": [
-      7002,
-      7003
+      3003,
+      11002
     ],
     "SkillPool3": [
-      7004,
-      7006
+      11007,
+      1001
     ],
     "BattlePassive": 1139101,
     "HomePassive": 0,
@@ -45061,16 +45061,16 @@
     "NormalAttack": 100010101,
     "ActiveSkill": 100010102,
     "SkillPool1": [
-      1001,
-      6005
+      10004,
+      1003
     ],
     "SkillPool2": [
-      1002,
-      1004
+      10002,
+      12002
     ],
     "SkillPool3": [
-      1003,
-      13002
+      10003,
+      10007
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -45261,17 +45261,16 @@
     "NormalAttack": 100020101,
     "ActiveSkill": 100020102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      11004,
+      1003
     ],
     "SkillPool2": [
-      1001,
-      6005
+      11002,
+      12002
     ],
     "SkillPool3": [
-      1002,
-      1004
+      11003,
+      11007
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -46272,17 +46271,16 @@
     "NormalAttack": 100060101,
     "ActiveSkill": 100060102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      9001,
+      9002
     ],
     "SkillPool2": [
-      5001,
-      6001
+      9003,
+      9006
     ],
     "SkillPool3": [
-      7001,
-      13001
+      10004,
+      1001
     ],
     "BattlePassive": 11000601,
     "HomePassive": 0,
@@ -46468,17 +46466,16 @@
     "NormalAttack": 100070101,
     "ActiveSkill": 100070102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      9001,
+      9002
     ],
     "SkillPool2": [
-      5001,
-      6001
+      9003,
+      9006
     ],
     "SkillPool3": [
-      7001,
-      13001
+      12001,
+      12003
     ],
     "BattlePassive": 11000701,
     "HomePassive": 0,
@@ -46870,17 +46867,16 @@
     "NormalAttack": 100090201,
     "ActiveSkill": 100090202,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      13001,
+      13003
     ],
     "SkillPool2": [
-      5001,
-      6001
+      14006,
+      15005
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1001,
+      10004
     ],
     "BattlePassive": 11000902,
     "HomePassive": 0,
@@ -48276,17 +48272,16 @@
     "NormalAttack": 100360101,
     "ActiveSkill": 100360102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      11004,
+      1003
     ],
     "SkillPool2": [
-      5001,
-      6001
+      11002,
+      12002
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1001,
+      9004
     ],
     "BattlePassive": 11003601,
     "HomePassive": 0,
@@ -48477,17 +48472,16 @@
     "NormalAttack": 100410101,
     "ActiveSkill": 100410102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      12001,
+      12003
     ],
     "SkillPool2": [
-      5001,
-      6001
+      15001,
+      12006
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1001,
+      1004
     ],
     "BattlePassive": 11004101,
     "HomePassive": 0,
@@ -48673,17 +48667,16 @@
     "NormalAttack": 100420101,
     "ActiveSkill": 100420102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      12001,
+      12003
     ],
     "SkillPool2": [
-      5001,
-      6001
+      15001,
+      12006
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1001,
+      1004
     ],
     "BattlePassive": 11004201,
     "HomePassive": 0,
@@ -48874,17 +48867,16 @@
     "NormalAttack": 100430101,
     "ActiveSkill": 100430102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      12001,
+      12003
     ],
     "SkillPool2": [
-      5001,
-      6001
+      15001,
+      12006
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1001,
+      1004
     ],
     "BattlePassive": 11004301,
     "HomePassive": 0,
@@ -49072,17 +49064,16 @@
     "NormalAttack": 100430201,
     "ActiveSkill": 100430202,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      12001,
+      12003
     ],
     "SkillPool2": [
-      5001,
-      6001
+      15001,
+      12006
     ],
     "SkillPool3": [
-      7001,
-      13001
+      1001,
+      1004
     ],
     "BattlePassive": 11004302,
     "HomePassive": 0,

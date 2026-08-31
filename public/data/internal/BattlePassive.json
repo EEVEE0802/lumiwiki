@@ -3562,7 +3562,8 @@
     "icon": "Die_Poison",
     "Des": "P_SkillText_1125002",
     "DesParam": [
-      1
+      1,
+      10
     ],
     "BuffList": [
       {
@@ -4109,7 +4110,7 @@
     "icon": "Start_Palsy",
     "Des": "P_SkillText_1136901",
     "DesParam": [
-      5,
+      4,
       1,
       1,
       4,
@@ -4230,6 +4231,12 @@
     "BuffList": [
       {
         "BuffId": 13930401,
+        "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      },
+      {
+        "BuffId": 13930406,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
