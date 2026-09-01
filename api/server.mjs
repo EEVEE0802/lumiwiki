@@ -97,6 +97,8 @@ function requirePermission(permission) {
   return async (request, reply) => {
     await requireAuth(request, reply)
     if (reply.sent) return
+    // 【临时】生产站构建阶段：production.* 对所有登录用户开放。等阶段结束再删这两行。
+    if (permission.startsWith('production.')) return
     if (!hasPermission(request.currentUser.username, permission)) {
       return reply.code(403).send({ error: `缺少权限: ${permission}` })
     }
@@ -248,6 +250,9 @@ function requireStageWrite(stageType) {
   return async (request, reply) => {
     await requireAuth(request, reply)
     if (reply.sent) return
+    // 【临时】生产站构建阶段：登录即可改任意环节。等阶段结束再删这一行。
+    return
+    // eslint-disable-next-line no-unreachable
     const uname = request.currentUser.username
     if (hasPermission(uname, 'production.pm')) return
     if (hasPermission(uname, `production.stage.${stageType}.write`)) return

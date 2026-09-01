@@ -76,6 +76,8 @@ function logout() {
 function hasPermission(permission) {
   if (!currentUser.value) return false
   if (currentUser.value.isAdmin) return true
+  // 【临时】生产站构建阶段：production.* 对所有登录用户开放。等阶段结束再删这一行。
+  if (permission.startsWith('production.')) return true
   return permissions.value.includes(permission)
 }
 
