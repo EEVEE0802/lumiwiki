@@ -12092,7 +12092,7 @@
       10006
     ],
     "BattlePassive": 0,
-    "HomePassive": 2106101,
+    "HomePassive": 2106104,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
     "MinHpState": 51,
@@ -35718,7 +35718,7 @@
       15003
     ],
     "BattlePassive": 0,
-    "HomePassive": 2123401,
+    "HomePassive": 2123404,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
     "MinHpState": 46,
@@ -41925,16 +41925,16 @@
     "NormalAttack": 13690101,
     "ActiveSkill": 13690102,
     "SkillPool1": [
-      6001,
-      6002
+      1001,
+      1003
     ],
     "SkillPool2": [
-      12003,
-      12006
+      4003,
+      14003
     ],
     "SkillPool3": [
-      13002,
-      13003
+      14006,
+      14005
     ],
     "BattlePassive": 1136901,
     "HomePassive": 0,
@@ -42127,16 +42127,16 @@
     "NormalAttack": 13900101,
     "ActiveSkill": 13900102,
     "SkillPool1": [
-      6002,
-      8001
+      4003,
+      4006
     ],
     "SkillPool2": [
-      15003,
-      2006
+      11002,
+      4002
     ],
     "SkillPool3": [
-      1004,
-      6006
+      11006,
+      4007
     ],
     "BattlePassive": 1139001,
     "HomePassive": 0,
@@ -42906,16 +42906,16 @@
     "NormalAttack": 13930401,
     "ActiveSkill": 13930402,
     "SkillPool1": [
-      7001,
-      7005
+      3005,
+      11003
     ],
     "SkillPool2": [
-      7002,
-      7003
+      3003,
+      11002
     ],
     "SkillPool3": [
-      7004,
-      7006
+      11007,
+      1001
     ],
     "BattlePassive": 1139304,
     "HomePassive": 0,
@@ -43894,16 +43894,16 @@
     "NormalAttack": 14730101,
     "ActiveSkill": 14730102,
     "SkillPool1": [
-      7001,
-      7005
+      3002,
+      13003
     ],
     "SkillPool2": [
-      7002,
+      3005,
       7003
     ],
     "SkillPool3": [
-      7004,
-      7006
+      13004,
+      13006
     ],
     "BattlePassive": 1147301,
     "HomePassive": 0,
@@ -44085,16 +44085,16 @@
     "NormalAttack": 14740101,
     "ActiveSkill": 14740102,
     "SkillPool1": [
-      7001,
-      7005
+      3002,
+      3003
     ],
     "SkillPool2": [
-      7002,
-      7003
+      11002,
+      11006
     ],
     "SkillPool3": [
-      7004,
-      7006
+      3007,
+      11007
     ],
     "BattlePassive": 1147401,
     "HomePassive": 0,
@@ -44295,7 +44295,7 @@
       7006
     ],
     "BattlePassive": 0,
-    "HomePassive": 0,
+    "HomePassive": 2147501,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
     "MinHpState": 42,
@@ -44481,19 +44481,19 @@
     "NormalAttack": 14760101,
     "ActiveSkill": 14760102,
     "SkillPool1": [
-      7001,
-      7005
+      13001,
+      13003
     ],
     "SkillPool2": [
-      7002,
-      7003
+      13002,
+      13004
     ],
     "SkillPool3": [
-      7004,
-      7006
+      13006,
+      13005
     ],
     "BattlePassive": 0,
-    "HomePassive": 0,
+    "HomePassive": 2147601,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
     "MinHpState": 42,
@@ -44679,16 +44679,16 @@
     "NormalAttack": 14770101,
     "ActiveSkill": 14770102,
     "SkillPool1": [
-      7001,
-      7005
+      6002,
+      11002
     ],
     "SkillPool2": [
-      7002,
-      7003
+      6004,
+      6003
     ],
     "SkillPool3": [
-      7004,
-      7006
+      11007,
+      12007
     ],
     "BattlePassive": 1147701,
     "HomePassive": 0,
@@ -44877,16 +44877,16 @@
     "NormalAttack": 14780101,
     "ActiveSkill": 14780102,
     "SkillPool1": [
-      7001,
-      7005
+      3002,
+      13003
     ],
     "SkillPool2": [
-      7002,
+      3005,
       7003
     ],
     "SkillPool3": [
-      7004,
-      7006
+      13004,
+      13006
     ],
     "BattlePassive": 1147301,
     "HomePassive": 0,
@@ -45080,7 +45080,7 @@
       1004
     ],
     "BattlePassive": 0,
-    "HomePassive": 0,
+    "HomePassive": 21000101,
     "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 52,
@@ -45280,7 +45280,7 @@
       11007
     ],
     "BattlePassive": 0,
-    "HomePassive": 0,
+    "HomePassive": 21000201,
     "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 42,
@@ -46681,7 +46681,7 @@
       13002
     ],
     "BattlePassive": 0,
-    "HomePassive": 0,
+    "HomePassive": 21000801,
     "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 52,
@@ -47088,7 +47088,7 @@
       13002
     ],
     "BattlePassive": 0,
-    "HomePassive": 0,
+    "HomePassive": 21003201,
     "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 42,
@@ -47288,7 +47288,7 @@
       4006
     ],
     "BattlePassive": 0,
-    "HomePassive": 0,
+    "HomePassive": 21003301,
     "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 42,
@@ -47303,7 +47303,7 @@
     "SatietyDownSpeed": 28,
     "WorkAbility": [
       {
-        "Type": 1,
+        "Type": 15,
         "Level": 1
       }
     ],
@@ -47488,7 +47488,7 @@
       15001
     ],
     "BattlePassive": 0,
-    "HomePassive": 0,
+    "HomePassive": 21003401,
     "InbornBattlePassive": 11000901,
     "InbornHomePassive": 0,
     "MinHpState": 52,
@@ -48665,7 +48665,9 @@
     ],
     "CardType": 98,
     "CardResName": [
-      "Card3D_Dasima_Big_3D"
+      "Card3D_Dasima_Big_3D",
+      "Card3DLumi_Dasima_Big_3D",
+      "Card3DLumi_Dasima_Big_3D_XC"
     ],
     "Type1": 12,
     "Type2": 0,

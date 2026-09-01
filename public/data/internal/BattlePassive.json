@@ -4113,11 +4113,7 @@
       4,
       1,
       1,
-      4,
-      4,
-      1,
-      1,
-      5
+      4
     ],
     "BuffList": [
       {
@@ -4176,9 +4172,7 @@
     "Des": "P_SkillText_1139001",
     "DesParam": [
       1,
-      1,
-      4,
-      15
+      1
     ],
     "BuffList": [
       {
@@ -4607,8 +4601,8 @@
     "Des": "P_SkillText_1147701",
     "DesParam": [
       50,
-      1,
-      0.2
+      0.2,
+      1
     ],
     "BuffList": [
       {
@@ -4729,9 +4723,9 @@
   },
   {
     "Id": 11000901,
-    "name": "",
-    "icon": "",
-    "Des": "",
+    "name": "P_Skill_11000901",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_11000901",
     "DesParam": [],
     "BuffList": [
       {
