@@ -1037,7 +1037,7 @@
     "SA": "SA_3007",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Fire_06",
+    "icon": "Fire_07",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -1397,7 +1397,7 @@
     "SA": "SA_4007",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Grass_06",
+    "icon": "Grass_07",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -3118,7 +3118,7 @@
     "SA": "SA_8006",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Ice_05",
+    "icon": "Ice_06",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -4059,7 +4059,7 @@
     "SA": "SA_11007",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Dark_05",
+    "icon": "Dark_06",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -5871,11 +5871,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      75
+      60
     ],
     "SkillCost": [
       1,
-      50
+      40
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -6274,11 +6274,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      70
+      55
     ],
     "SkillCost": [
       1,
-      50
+      40
     ],
     "BaseCrit": 2500,
     "AddEnergy": 0,
@@ -7314,11 +7314,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      90
+      80
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -7355,11 +7355,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      90
+      80
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 10000,
     "AddEnergy": 0,
@@ -7385,12 +7385,12 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      90,
-      90
+      80,
+      80
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 10000,
     "AddEnergy": 0,
@@ -7423,11 +7423,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      90
+      80
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -7464,11 +7464,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      90
+      80
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -7494,12 +7494,12 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      90,
-      90
+      80,
+      80
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -8208,11 +8208,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      65
+      45
     ],
     "SkillCost": [
       1,
-      50
+      40
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -9679,7 +9679,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      75
+      80
     ],
     "SkillCost": [
       1,
@@ -9759,7 +9759,7 @@
     "name": "A_Skill_10540102",
     "Des": "A_SkillText_10540102",
     "DesParam": [
-      50
+      40
     ],
     "LumiTpye": 11,
     "UnlockCost": 0,
@@ -9776,7 +9776,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      50
+      60
     ],
     "SkillCost": [
       1,
@@ -9817,7 +9817,7 @@
     "name": "A_Skill_10540102",
     "Des": "",
     "DesParam": [
-      50
+      40
     ],
     "LumiTpye": 11,
     "UnlockCost": 0,
@@ -9829,7 +9829,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      50
+      60
     ],
     "SkillCost": [
       1,
@@ -9852,7 +9852,7 @@
         "TriggerCondition": 100,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 5000
+        "Num": 4000
       }
     ],
     "CastCondition": []
@@ -9862,7 +9862,7 @@
     "name": "A_Skill_10540102",
     "Des": "",
     "DesParam": [
-      50
+      40
     ],
     "LumiTpye": 11,
     "UnlockCost": 0,
@@ -9874,7 +9874,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      50
+      60
     ],
     "SkillCost": [
       1,
@@ -9897,7 +9897,7 @@
         "TriggerCondition": 100,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 10000
+        "Num": 8000
       }
     ],
     "CastCondition": []
@@ -9907,7 +9907,7 @@
     "name": "A_Skill_10540102",
     "Des": "",
     "DesParam": [
-      50
+      40
     ],
     "LumiTpye": 11,
     "UnlockCost": 0,
@@ -9919,7 +9919,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      50
+      60
     ],
     "SkillCost": [
       1,
@@ -9942,7 +9942,7 @@
         "TriggerCondition": 100,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 15000
+        "Num": 12000
       }
     ],
     "CastCondition": []
@@ -9952,7 +9952,7 @@
     "name": "A_Skill_10540102",
     "Des": "",
     "DesParam": [
-      50
+      40
     ],
     "LumiTpye": 11,
     "UnlockCost": 0,
@@ -9964,7 +9964,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      50
+      60
     ],
     "SkillCost": [
       1,
@@ -9987,7 +9987,7 @@
         "TriggerCondition": 100,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 20000
+        "Num": 16000
       }
     ],
     "CastCondition": []
@@ -10580,11 +10580,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      75
+      60
     ],
     "SkillCost": [
       1,
-      50
+      40
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -10652,7 +10652,7 @@
     ],
     "SkillCost": [
       1,
-      50
+      40
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -12814,11 +12814,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      50
+      40
     ],
     "SkillCost": [
       1,
-      40
+      30
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -12881,11 +12881,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      50
+      35
     ],
     "SkillCost": [
       1,
-      40
+      30
     ],
     "BaseCrit": 2500,
     "AddEnergy": 0,
@@ -12940,11 +12940,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      60
+      45
     ],
     "SkillCost": [
       1,
-      40
+      30
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -13126,7 +13126,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      55
+      50
     ],
     "SkillCost": [
       1,
@@ -13195,11 +13195,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      95
+      80
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -13283,13 +13283,13 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      30,
-      30,
-      30
+      25,
+      25,
+      25
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 2500,
     "AddEnergy": 0,
@@ -13354,11 +13354,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      80
+      50
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -16713,11 +16713,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      50
+      40
     ],
     "SkillCost": [
       1,
-      40
+      30
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -16781,11 +16781,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      95
+      80
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -18655,11 +18655,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      80
+      60
     ],
     "SkillCost": [
       1,
-      50
+      40
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -18792,11 +18792,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      90
+      80
     ],
     "SkillCost": [
       1,
-      60
+      50
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -18895,7 +18895,7 @@
     "TargetType": 3,
     "AttackInterval": 0,
     "SkillPowerList": [
-      45
+      40
     ],
     "SkillCost": [
       1,
@@ -23952,7 +23952,7 @@
     "SA": "SA_12090202",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Netral_01",
+    "icon": "Grass_120902",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -26563,7 +26563,7 @@
     "Des": "A_SkillText_12500202",
     "DesParam": [
       1,
-      25,
+      30,
       6
     ],
     "LumiTpye": 14,
@@ -26576,7 +26576,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      75
+      90
     ],
     "SkillCost": [
       1,
@@ -26627,7 +26627,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      100
+      120
     ],
     "SkillCost": [
       1,
@@ -26668,7 +26668,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      125
+      150
     ],
     "SkillCost": [
       1,
@@ -26709,7 +26709,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      150
+      180
     ],
     "SkillCost": [
       1,
@@ -26750,7 +26750,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      175
+      210
     ],
     "SkillCost": [
       1,
@@ -30125,7 +30125,9 @@
     "Id": 13380102,
     "name": "A_Skill_13380102",
     "Des": "A_SkillText_13380102",
-    "DesParam": [],
+    "DesParam": [
+      1
+    ],
     "LumiTpye": 11,
     "UnlockCost": 0,
     "SA": "SA_13380102",
@@ -30133,7 +30135,7 @@
       13380103
     ],
     "MontageType": 0,
-    "icon": "Netral_01",
+    "icon": "Dark_133801",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -30188,13 +30190,15 @@
     "Id": 13380103,
     "name": "A_Skill_13380102",
     "Des": "A_SkillText_13380102",
-    "DesParam": [],
+    "DesParam": [
+      1
+    ],
     "LumiTpye": 11,
     "UnlockCost": 0,
     "SA": "SA_13380103",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Netral_01",
+    "icon": "Dark_133801",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -30258,7 +30262,9 @@
     "Id": 13390102,
     "name": "A_Skill_13390102",
     "Des": "A_SkillText_13390102",
-    "DesParam": [],
+    "DesParam": [
+      1
+    ],
     "LumiTpye": 11,
     "UnlockCost": 0,
     "SA": "SA_13390102",
@@ -30266,7 +30272,7 @@
       13390103
     ],
     "MontageType": 0,
-    "icon": "Netral_01",
+    "icon": "Dark_133901",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -30316,13 +30322,15 @@
     "Id": 13390103,
     "name": "A_Skill_13390102",
     "Des": "A_SkillText_13390102",
-    "DesParam": [],
+    "DesParam": [
+      1
+    ],
     "LumiTpye": 11,
     "UnlockCost": 0,
     "SA": "SA_13390103",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Netral_01",
+    "icon": "Dark_133901",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -30386,7 +30394,9 @@
     "Id": 13400102,
     "name": "A_Skill_13400102",
     "Des": "A_SkillText_13400102",
-    "DesParam": [],
+    "DesParam": [
+      1
+    ],
     "LumiTpye": 11,
     "UnlockCost": 0,
     "SA": "SA_13400102",
@@ -30394,7 +30404,7 @@
       13400103
     ],
     "MontageType": 0,
-    "icon": "Netral_01",
+    "icon": "Dark_134001",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -30444,13 +30454,15 @@
     "Id": 13400103,
     "name": "A_Skill_13400102",
     "Des": "A_SkillText_13400102",
-    "DesParam": [],
+    "DesParam": [
+      1
+    ],
     "LumiTpye": 11,
     "UnlockCost": 0,
     "SA": "SA_13400103",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Netral_01",
+    "icon": "Dark_134001",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,

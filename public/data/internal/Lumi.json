@@ -888,16 +888,16 @@
     "NormalAttack": 10060101,
     "ActiveSkill": 10080102,
     "SkillPool1": [
-      6001,
-      6002
+      1001,
+      12006
     ],
     "SkillPool2": [
       12002,
-      12003
+      6004
     ],
     "SkillPool3": [
-      9001,
-      12006
+      1003,
+      1004
     ],
     "BattlePassive": 1100801,
     "HomePassive": 0,
@@ -2485,7 +2485,7 @@
     "NormalAttack": 10180101,
     "ActiveSkill": 10180102,
     "SkillPool1": [
-      4003,
+      12007,
       12002
     ],
     "SkillPool2": [
@@ -5321,7 +5321,7 @@
     "ActiveSkill": 10270102,
     "SkillPool1": [
       12001,
-      8004
+      12007
     ],
     "SkillPool2": [
       12002,
@@ -5525,7 +5525,7 @@
     ],
     "SkillPool2": [
       2005,
-      6002
+      1001
     ],
     "SkillPool3": [
       2004,
@@ -6521,11 +6521,11 @@
     "ActiveSkill": 10350102,
     "SkillPool1": [
       2003,
-      3002
+      3003
     ],
     "SkillPool2": [
       2006,
-      3003
+      8002
     ],
     "SkillPool3": [
       2004,
@@ -6924,8 +6924,8 @@
       9004
     ],
     "SkillPool2": [
-      6003,
-      12003
+      1003,
+      1005
     ],
     "SkillPool3": [
       6005,
@@ -7124,8 +7124,8 @@
       9004
     ],
     "SkillPool2": [
-      6003,
-      12003
+      1003,
+      1005
     ],
     "SkillPool3": [
       6005,
@@ -7323,7 +7323,7 @@
     "ActiveSkill": 10380102,
     "SkillPool1": [
       6003,
-      14003
+      12006
     ],
     "SkillPool2": [
       6004,
@@ -7523,7 +7523,7 @@
     "ActiveSkill": 10380402,
     "SkillPool1": [
       6003,
-      14003
+      12006
     ],
     "SkillPool2": [
       6004,
@@ -7724,16 +7724,16 @@
     "NormalAttack": 10390101,
     "ActiveSkill": 10390102,
     "SkillPool1": [
-      13004,
-      12002
+      1001,
+      13003
     ],
     "SkillPool2": [
-      13005,
-      13002
+      1004,
+      14006
     ],
     "SkillPool3": [
-      14006,
-      11006
+      13002,
+      14005
     ],
     "BattlePassive": 1103901,
     "HomePassive": 0,
@@ -8724,7 +8724,7 @@
     "NormalAttack": 10450101,
     "ActiveSkill": 3001,
     "SkillPool1": [
-      3002,
+      3007,
       12003
     ],
     "SkillPool2": [
@@ -9120,7 +9120,7 @@
       12003
     ],
     "SkillPool2": [
-      8002,
+      8006,
       12006
     ],
     "SkillPool3": [
@@ -9312,7 +9312,7 @@
     "NormalAttack": 10480101,
     "ActiveSkill": 4001,
     "SkillPool1": [
-      4002,
+      4007,
       12003
     ],
     "SkillPool2": [
@@ -9508,7 +9508,7 @@
     "NormalAttack": 10490101,
     "ActiveSkill": 5001,
     "SkillPool1": [
-      5005,
+      5008,
       12003
     ],
     "SkillPool2": [
@@ -9704,7 +9704,7 @@
     "NormalAttack": 10500101,
     "ActiveSkill": 6001,
     "SkillPool1": [
-      6005,
+      1005,
       12003
     ],
     "SkillPool2": [
@@ -9908,7 +9908,7 @@
       12006
     ],
     "SkillPool3": [
-      11006,
+      11007,
       13003
     ],
     "BattlePassive": 1105101,
@@ -10298,11 +10298,11 @@
       6002
     ],
     "SkillPool2": [
-      7006,
+      1001,
       13003
     ],
     "SkillPool3": [
-      9002,
+      15001,
       14006
     ],
     "BattlePassive": 1105301,
@@ -11086,11 +11086,11 @@
     "ActiveSkill": 10560102,
     "SkillPool1": [
       5001,
-      5002
+      5008
     ],
     "SkillPool2": [
-      5006,
-      1001
+      5002,
+      5006
     ],
     "SkillPool3": [
       5005,
@@ -11276,12 +11276,12 @@
     "NormalAttack": 10570101,
     "ActiveSkill": 10570102,
     "SkillPool1": [
-      4002,
-      4003
+      1001,
+      6003
     ],
     "SkillPool2": [
       4004,
-      1001
+      6005
     ],
     "SkillPool3": [
       3004,
@@ -12289,7 +12289,7 @@
     ],
     "SkillPool3": [
       11006,
-      14006
+      11007
     ],
     "BattlePassive": 1106201,
     "HomePassive": 0,
@@ -12496,7 +12496,7 @@
     ],
     "SkillPool3": [
       11006,
-      14006
+      11007
     ],
     "BattlePassive": 1106202,
     "HomePassive": 0,
@@ -13894,7 +13894,7 @@
     "ActiveSkill": 10780102,
     "SkillPool1": [
       3003,
-      3005
+      12007
     ],
     "SkillPool2": [
       3002,
@@ -14286,8 +14286,8 @@
     "CA": "CA_108001",
     "CardBack": 99,
     "CardBackRes": [
-      "com_card_10_108301",
-      "com_card_10_108301_score"
+      "com_card_10_108001",
+      "com_card_10_108001_score"
     ],
     "CardType": 99,
     "CardResName": [
@@ -14382,7 +14382,7 @@
     "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Dragon_Azure_XC",
-    "SpineAssetFolder": "",
+    "SpineAssetFolder": "Dragon_Azure",
     "ConflictID": 108001,
     "BodySizeType": 1,
     "ModelBaseScale": 1,
@@ -14390,10 +14390,23 @@
       0.15,
       0.15
     ],
-    "NpcAnimationSequence": [],
+    "NpcAnimationSequence": [
+      {
+        "Animation": "Sp_Dragon_Azure_Char",
+        "Layer": 0
+      },
+      {
+        "Animation": "Sp_Dragon_Azure_Fx",
+        "Layer": 1
+      }
+    ],
     "LimitedEditionNumber": 999,
-    "LimitedEditionUI": "",
-    "ParallaxCardAsset": [],
+    "LimitedEditionUI": "Card_Bg_Movie_108001_tag",
+    "ParallaxCardAsset": [
+      "Card_Panoramic_Dragon_Azure",
+      "PanoramicLumi_Dragon_Azure",
+      "PanoramicLumi_Dragon_Azure_XC"
+    ],
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 5,
@@ -14902,7 +14915,7 @@
     "NormalAttack": 10850101,
     "ActiveSkill": 10850102,
     "SkillPool1": [
-      4003,
+      12007,
       12002
     ],
     "SkillPool2": [
@@ -15302,7 +15315,7 @@
     "NormalAttack": 10870101,
     "ActiveSkill": 10870102,
     "SkillPool1": [
-      13001,
+      13006,
       11002
     ],
     "SkillPool2": [
@@ -15310,8 +15323,8 @@
       5003
     ],
     "SkillPool3": [
-      13006,
-      9006
+      4003,
+      3003
     ],
     "BattlePassive": 1108701,
     "HomePassive": 0,
@@ -15502,7 +15515,7 @@
     "NormalAttack": 10870101,
     "ActiveSkill": 10870102,
     "SkillPool1": [
-      13001,
+      13006,
       11002
     ],
     "SkillPool2": [
@@ -15510,8 +15523,8 @@
       5003
     ],
     "SkillPool3": [
-      13006,
-      9006
+      4003,
+      3003
     ],
     "BattlePassive": 1108704,
     "HomePassive": 0,
@@ -15909,11 +15922,11 @@
     ],
     "SkillPool2": [
       7004,
-      8005
+      14003
     ],
     "SkillPool3": [
       7006,
-      8004
+      14004
     ],
     "BattlePassive": 1108901,
     "HomePassive": 0,
@@ -16306,7 +16319,7 @@
     "NormalAttack": 10910101,
     "ActiveSkill": 10910102,
     "SkillPool1": [
-      4003,
+      12007,
       12002
     ],
     "SkillPool2": [
@@ -16710,7 +16723,7 @@
     "NormalAttack": 10450101,
     "ActiveSkill": 10940102,
     "SkillPool1": [
-      3002,
+      3007,
       12003
     ],
     "SkillPool2": [
@@ -17106,7 +17119,7 @@
       12003
     ],
     "SkillPool2": [
-      8002,
+      8006,
       12006
     ],
     "SkillPool3": [
@@ -17298,7 +17311,7 @@
     "NormalAttack": 10480101,
     "ActiveSkill": 10970102,
     "SkillPool1": [
-      4002,
+      4007,
       12003
     ],
     "SkillPool2": [
@@ -17494,7 +17507,7 @@
     "NormalAttack": 10490101,
     "ActiveSkill": 10980102,
     "SkillPool1": [
-      5005,
+      5008,
       12003
     ],
     "SkillPool2": [
@@ -17690,7 +17703,7 @@
     "NormalAttack": 10500101,
     "ActiveSkill": 10990102,
     "SkillPool1": [
-      6005,
+      1005,
       12003
     ],
     "SkillPool2": [
@@ -17894,7 +17907,7 @@
       12006
     ],
     "SkillPool3": [
-      11006,
+      11007,
       13003
     ],
     "BattlePassive": 1105101,
@@ -18484,17 +18497,16 @@
     "NormalAttack": 11050101,
     "ActiveSkill": 11050102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      1004,
+      1002
     ],
     "SkillPool2": [
-      5001,
-      6001
+      10004,
+      11002
     ],
     "SkillPool3": [
-      7001,
-      13001
+      10006,
+      11006
     ],
     "BattlePassive": 1110501,
     "HomePassive": 0,
@@ -18682,7 +18694,7 @@
     "NormalAttack": 11060101,
     "ActiveSkill": 11060102,
     "SkillPool1": [
-      4001,
+      4007,
       4002
     ],
     "SkillPool2": [
@@ -18884,18 +18896,10 @@
     "NormalAttack": 11080101,
     "ActiveSkill": 11080102,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      1004
     ],
-    "SkillPool2": [
-      5001,
-      6001
-    ],
-    "SkillPool3": [
-      7001,
-      13001
-    ],
+    "SkillPool2": [],
+    "SkillPool3": [],
     "BattlePassive": 1110501,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
@@ -19087,11 +19091,11 @@
     ],
     "SkillPool2": [
       7004,
-      8005
+      14003
     ],
     "SkillPool3": [
       7006,
-      8004
+      14004
     ],
     "BattlePassive": 1108901,
     "HomePassive": 0,
@@ -19289,11 +19293,11 @@
     ],
     "SkillPool2": [
       7004,
-      8005
+      14003
     ],
     "SkillPool3": [
       7006,
-      8004
+      14004
     ],
     "BattlePassive": 1108901,
     "HomePassive": 0,
@@ -19495,7 +19499,7 @@
     ],
     "SkillPool3": [
       4005,
-      9003
+      9004
     ],
     "BattlePassive": 1111201,
     "HomePassive": 0,
@@ -19688,7 +19692,7 @@
     "NormalAttack": 11150101,
     "ActiveSkill": 11150102,
     "SkillPool1": [
-      3001,
+      3007,
       3002
     ],
     "SkillPool2": [
@@ -19890,7 +19894,7 @@
     "NormalAttack": 11160101,
     "ActiveSkill": 11160102,
     "SkillPool1": [
-      5001,
+      5008,
       5005
     ],
     "SkillPool2": [
@@ -20295,15 +20299,15 @@
     "ActiveSkill": 11180102,
     "SkillPool1": [
       13004,
-      12002
+      14006
     ],
     "SkillPool2": [
       13002,
-      12005
+      14005
     ],
     "SkillPool3": [
       13005,
-      12004
+      14004
     ],
     "BattlePassive": 1111801,
     "HomePassive": 0,
@@ -20703,7 +20707,7 @@
     ],
     "SkillPool3": [
       11006,
-      14006
+      11007
     ],
     "BattlePassive": 1106201,
     "HomePassive": 0,
@@ -20903,7 +20907,7 @@
     ],
     "SkillPool3": [
       11006,
-      14006
+      11007
     ],
     "BattlePassive": 1106201,
     "HomePassive": 0,
@@ -21705,7 +21709,7 @@
     ],
     "SkillPool3": [
       4005,
-      9003
+      9004
     ],
     "BattlePassive": 1112801,
     "HomePassive": 0,
@@ -22301,7 +22305,7 @@
     ],
     "SkillPool2": [
       2005,
-      6002
+      1001
     ],
     "SkillPool3": [
       2004,
@@ -22501,7 +22505,7 @@
     ],
     "SkillPool2": [
       13002,
-      7005
+      7006
     ],
     "SkillPool3": [
       1003,
@@ -22701,7 +22705,7 @@
     ],
     "SkillPool2": [
       13002,
-      7005
+      7006
     ],
     "SkillPool3": [
       1003,
@@ -22903,7 +22907,7 @@
     ],
     "SkillPool2": [
       13002,
-      7005
+      7006
     ],
     "SkillPool3": [
       1003,
@@ -23105,7 +23109,7 @@
     ],
     "SkillPool2": [
       13002,
-      7005
+      7006
     ],
     "SkillPool3": [
       1003,
@@ -23307,7 +23311,7 @@
     ],
     "SkillPool2": [
       13002,
-      7005
+      7006
     ],
     "SkillPool3": [
       1003,
@@ -23711,7 +23715,7 @@
     ],
     "SkillPool3": [
       8004,
-      15002
+      8006
     ],
     "BattlePassive": 1114001,
     "HomePassive": 0,
@@ -23911,7 +23915,7 @@
     ],
     "SkillPool3": [
       8004,
-      15002
+      8006
     ],
     "BattlePassive": 1114001,
     "HomePassive": 0,
@@ -24120,7 +24124,7 @@
     ],
     "SkillPool3": [
       8004,
-      15002
+      8006
     ],
     "BattlePassive": 1114202,
     "HomePassive": 0,
@@ -28317,11 +28321,11 @@
     ],
     "SkillPool2": [
       14004,
-      12003
+      6002
     ],
     "SkillPool3": [
       14005,
-      12006
+      10006
     ],
     "BattlePassive": 1116601,
     "HomePassive": 0,
@@ -30123,7 +30127,7 @@
     ],
     "SkillPool3": [
       4005,
-      9003
+      9004
     ],
     "BattlePassive": 1112801,
     "HomePassive": 0,
@@ -30315,11 +30319,11 @@
     "ActiveSkill": 11910102,
     "SkillPool1": [
       5001,
-      5002
+      5008
     ],
     "SkillPool2": [
-      5006,
-      1001
+      5002,
+      5006
     ],
     "SkillPool3": [
       5005,
@@ -31520,7 +31524,7 @@
     ],
     "SkillPool3": [
       12005,
-      15003
+      12007
     ],
     "BattlePassive": 1119801,
     "HomePassive": 0,
@@ -31711,16 +31715,16 @@
     "NormalAttack": 11990101,
     "ActiveSkill": 11990102,
     "SkillPool1": [
-      2002,
-      2003
+      2003,
+      15002
     ],
     "SkillPool2": [
       2005,
-      13006
+      15003
     ],
     "SkillPool3": [
-      15002,
-      13001
+      2006,
+      15004
     ],
     "BattlePassive": 1119901,
     "HomePassive": 0,
@@ -34125,7 +34129,7 @@
     ],
     "SkillPool3": [
       9002,
-      9001
+      9004
     ],
     "BattlePassive": 1121201,
     "HomePassive": 0,
@@ -34320,7 +34324,7 @@
     ],
     "SkillPool3": [
       9002,
-      9001
+      9004
     ],
     "BattlePassive": 1121301,
     "HomePassive": 0,
@@ -34517,7 +34521,7 @@
     ],
     "SkillPool3": [
       9002,
-      9001
+      9004
     ],
     "BattlePassive": 1121304,
     "HomePassive": 0,
@@ -34712,7 +34716,7 @@
     ],
     "SkillPool3": [
       9002,
-      9001
+      9004
     ],
     "BattlePassive": 1121401,
     "HomePassive": 0,
@@ -35300,7 +35304,7 @@
     "NormalAttack": 12320101,
     "ActiveSkill": 12320102,
     "SkillPool1": [
-      6001,
+      1005,
       6002
     ],
     "SkillPool2": [
@@ -37098,8 +37102,11 @@
     "Avatar": "Avatar_125002",
     "CA": "CA_125002",
     "CardBack": 98,
-    "CardBackRes": [],
-    "CardType": 0,
+    "CardBackRes": [
+      "com_card_9_125002",
+      "com_card_9_125002_score"
+    ],
+    "CardType": 98,
     "CardResName": [
       "Card3D_Stina_Princess_3D",
       "Card3DLumi_Stina_Princess_3D",
@@ -38920,11 +38927,11 @@
     ],
     "SkillPool2": [
       7004,
-      8005
+      14003
     ],
     "SkillPool3": [
       7006,
-      8004
+      14004
     ],
     "BattlePassive": 1126301,
     "HomePassive": 0,
@@ -39122,11 +39129,11 @@
     ],
     "SkillPool2": [
       7004,
-      8005
+      14003
     ],
     "SkillPool3": [
       7006,
-      8004
+      14004
     ],
     "BattlePassive": 1126304,
     "HomePassive": 0,
@@ -39520,11 +39527,11 @@
     "ActiveSkill": 12710102,
     "SkillPool1": [
       2003,
-      3002
+      3003
     ],
     "SkillPool2": [
       2006,
-      3003
+      8002
     ],
     "SkillPool3": [
       2004,
@@ -43694,16 +43701,16 @@
     "NormalAttack": 14710101,
     "ActiveSkill": 14710102,
     "SkillPool1": [
-      7001,
-      7005
+      3003,
+      11004
     ],
     "SkillPool2": [
-      7002,
-      7003
+      8004,
+      11006
     ],
     "SkillPool3": [
-      7004,
-      7006
+      3006,
+      6004
     ],
     "BattlePassive": 1147101,
     "HomePassive": 0,
@@ -45070,7 +45077,7 @@
     ],
     "SkillPool3": [
       10003,
-      10007
+      1004
     ],
     "BattlePassive": 0,
     "HomePassive": 0,
@@ -46057,7 +46064,8 @@
     "CA": "CA_1000502",
     "CardBack": 98,
     "CardBackRes": [
-      "com_card_9_1000502"
+      "com_card_9_1000502",
+      "com_card_9_1000502_score"
     ],
     "CardType": 98,
     "CardResName": [
@@ -46854,7 +46862,8 @@
     "CA": "CA_1000902",
     "CardBack": 98,
     "CardBackRes": [
-      "com_card_9_114202"
+      "com_card_9_1000902",
+      "com_card_9_1000902_score"
     ],
     "CardType": 98,
     "CardResName": [
@@ -46975,410 +46984,6 @@
     "Growid": 1,
     "StarUpid": 4,
     "StarSoulid": 10009020,
-    "AvartarAtlas": "LumiAvatarCollab1",
-    "CanRename": false
-  },
-  {
-    "Id": 1002202,
-    "PokedexId": 99999999,
-    "IfLock": true,
-    "LumiTag": 3,
-    "Name": "LumiName_1002202",
-    "MaxScore": 82,
-    "MinScore": 82,
-    "Genius": 1,
-    "ShardId": 1002202,
-    "MarketOrder": 0,
-    "DefaultPrice": [
-      [
-        6,
-        450000
-      ],
-      [
-        5,
-        45000
-      ],
-      [
-        4,
-        2500
-      ],
-      [
-        3,
-        -1
-      ],
-      [
-        2,
-        -1
-      ]
-    ],
-    "DefaultPriceMin": [
-      [
-        2,
-        0
-      ],
-      [
-        3,
-        0
-      ],
-      [
-        4,
-        2000
-      ],
-      [
-        5,
-        20000
-      ],
-      [
-        6,
-        200000
-      ]
-    ],
-    "DefaultPriceMax": [
-      [
-        6,
-        -1
-      ],
-      [
-        5,
-        -1
-      ],
-      [
-        4,
-        -1
-      ],
-      [
-        3,
-        -1
-      ],
-      [
-        2,
-        -1
-      ]
-    ],
-    "Model": "Diandian_Magic_3D",
-    "Avatar": "Avatar_1002202",
-    "CA": "CA_1002202",
-    "CardBack": 98,
-    "CardBackRes": [
-      "com_card_9_1002202"
-    ],
-    "CardType": 98,
-    "CardResName": [
-      "Card3D_Diandian_Magic"
-    ],
-    "Type1": 13,
-    "Type2": 0,
-    "NormalAttack": 100220201,
-    "ActiveSkill": 100220202,
-    "SkillPool1": [
-      6001,
-      6002
-    ],
-    "SkillPool2": [
-      12003,
-      12006
-    ],
-    "SkillPool3": [
-      13002,
-      13003
-    ],
-    "BattlePassive": 11002202,
-    "HomePassive": 0,
-    "InbornBattlePassive": 0,
-    "InbornHomePassive": 0,
-    "MinHpState": 63,
-    "MinAtkState": 18,
-    "MinDefState": 37,
-    "MinWorkState": 82,
-    "MaxHpState": 95,
-    "MaxAtkState": 50,
-    "MaxDefState": 69,
-    "MaxWorkState": 114,
-    "Satiety": 140000,
-    "SatietyDownSpeed": 24,
-    "WorkAbility": [
-      {
-        "Type": 4,
-        "Level": 1
-      }
-    ],
-    "LumiAttribute": [
-      [
-        1,
-        [
-          117
-        ]
-      ],
-      [
-        2,
-        [
-          20
-        ]
-      ]
-    ],
-    "GenderWeight": [
-      [
-        1,
-        5000
-      ],
-      [
-        2,
-        5000
-      ]
-    ],
-    "scoreShow": "82-82",
-    "Story": "story_1002202",
-    "EscapeRotationY": 180000,
-    "EscapeMoveSpeed": 1000,
-    "EscapeTransformTime": 1000,
-    "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1300,
-    "CatchRateCheckHeight": 600,
-    "HomeMoveSpeed": 1,
-    "HomeRotateSpeed": 90,
-    "Distance": 6000,
-    "Height": 0,
-    "LookatHeight": 200,
-    "VFXScale": 1,
-    "ZeroOffset": {
-      "X": 0,
-      "Y": -0.15,
-      "Z": 0
-    },
-    "AdventureVFXScale": 1,
-    "AdventureZeroOffset": {
-      "X": 0,
-      "Y": 0.1,
-      "Z": 0
-    },
-    "BubbleOffset": {
-      "X": 0,
-      "Y": 0.5,
-      "Z": 0
-    },
-    "NewJumpTo": [],
-    "LumiFavor": 1,
-    "ColorVariantType": 0,
-    "AchievementType": 1,
-    "ModleColorVariant": "Diandian_Magic_3D_XC",
-    "SpineAssetFolder": "",
-    "ConflictID": 1002201,
-    "BodySizeType": 1,
-    "ModelBaseScale": 1,
-    "SizeScaleRange": [
-      0.15,
-      0.15
-    ],
-    "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 999,
-    "LimitedEditionUI": "",
-    "ParallaxCardAsset": [],
-    "BattleEntranceVFX": [],
-    "Growid": 2,
-    "StarUpid": 4,
-    "StarSoulid": 10022020,
-    "AvartarAtlas": "LumiAvatarCollab1",
-    "CanRename": false
-  },
-  {
-    "Id": 1002602,
-    "PokedexId": 99999999,
-    "IfLock": true,
-    "LumiTag": 3,
-    "Name": "LumiName_1002602",
-    "MaxScore": 82,
-    "MinScore": 82,
-    "Genius": 1,
-    "ShardId": 1002602,
-    "MarketOrder": 0,
-    "DefaultPrice": [
-      [
-        6,
-        450000
-      ],
-      [
-        5,
-        45000
-      ],
-      [
-        4,
-        2500
-      ],
-      [
-        3,
-        -1
-      ],
-      [
-        2,
-        -1
-      ]
-    ],
-    "DefaultPriceMin": [
-      [
-        2,
-        0
-      ],
-      [
-        3,
-        0
-      ],
-      [
-        4,
-        2000
-      ],
-      [
-        5,
-        20000
-      ],
-      [
-        6,
-        200000
-      ]
-    ],
-    "DefaultPriceMax": [
-      [
-        6,
-        -1
-      ],
-      [
-        5,
-        -1
-      ],
-      [
-        4,
-        -1
-      ],
-      [
-        3,
-        -1
-      ],
-      [
-        2,
-        -1
-      ]
-    ],
-    "Model": "SharkCat_Koifish_3D",
-    "Avatar": "Avatar_1002602",
-    "CA": "CA_1002602",
-    "CardBack": 98,
-    "CardBackRes": [
-      "com_card_9_1002602"
-    ],
-    "CardType": 98,
-    "CardResName": [
-      "Card3D_SharkCat_Koifish"
-    ],
-    "Type1": 14,
-    "Type2": 0,
-    "NormalAttack": 100260201,
-    "ActiveSkill": 100260202,
-    "SkillPool1": [
-      6001,
-      6002
-    ],
-    "SkillPool2": [
-      12003,
-      12006
-    ],
-    "SkillPool3": [
-      13002,
-      13003
-    ],
-    "BattlePassive": 11002602,
-    "HomePassive": 0,
-    "InbornBattlePassive": 0,
-    "InbornHomePassive": 0,
-    "MinHpState": 63,
-    "MinAtkState": 18,
-    "MinDefState": 37,
-    "MinWorkState": 82,
-    "MaxHpState": 95,
-    "MaxAtkState": 50,
-    "MaxDefState": 69,
-    "MaxWorkState": 114,
-    "Satiety": 140000,
-    "SatietyDownSpeed": 24,
-    "WorkAbility": [
-      {
-        "Type": 4,
-        "Level": 1
-      }
-    ],
-    "LumiAttribute": [
-      [
-        1,
-        [
-          126
-        ]
-      ],
-      [
-        2,
-        [
-          38
-        ]
-      ]
-    ],
-    "GenderWeight": [
-      [
-        1,
-        5000
-      ],
-      [
-        2,
-        5000
-      ]
-    ],
-    "scoreShow": "82-82",
-    "Story": "story_1002602",
-    "EscapeRotationY": 180000,
-    "EscapeMoveSpeed": 1000,
-    "EscapeTransformTime": 1000,
-    "EscapeFootTime": 1000,
-    "LoveHeartHeight": 900,
-    "CatchRateCheckHeight": 450,
-    "HomeMoveSpeed": 1,
-    "HomeRotateSpeed": 90,
-    "Distance": 6000,
-    "Height": 0,
-    "LookatHeight": 200,
-    "VFXScale": 1,
-    "ZeroOffset": {
-      "X": 0,
-      "Y": -0.3,
-      "Z": 0
-    },
-    "AdventureVFXScale": 1,
-    "AdventureZeroOffset": {
-      "X": 0.3,
-      "Y": 0,
-      "Z": 0
-    },
-    "BubbleOffset": {
-      "X": 0,
-      "Y": 0.5,
-      "Z": 0
-    },
-    "NewJumpTo": [],
-    "LumiFavor": 1,
-    "ColorVariantType": 0,
-    "AchievementType": 1,
-    "ModleColorVariant": "SharkCat_Koifish_3D_XC",
-    "SpineAssetFolder": "",
-    "ConflictID": 1002601,
-    "BodySizeType": 1,
-    "ModelBaseScale": 1,
-    "SizeScaleRange": [
-      0.15,
-      0.15
-    ],
-    "NpcAnimationSequence": [],
-    "LimitedEditionNumber": 999,
-    "LimitedEditionUI": "",
-    "ParallaxCardAsset": [],
-    "BattleEntranceVFX": [],
-    "Growid": 1,
-    "StarUpid": 4,
-    "StarSoulid": 10026020,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -49054,8 +48659,11 @@
     "Avatar": "Avatar_1004302",
     "CA": "CA_1004302",
     "CardBack": 98,
-    "CardBackRes": [],
-    "CardType": 0,
+    "CardBackRes": [
+      "com_card_9_1004302",
+      "com_card_9_1004302_score"
+    ],
+    "CardType": 98,
     "CardResName": [
       "Card3D_Dasima_Big_3D"
     ],
