@@ -5756,8 +5756,12 @@
     "des": "ItemD_30008",
     "order": 200080,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -5828,8 +5832,12 @@
     "des": "ItemD_30010",
     "order": 200082,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -5864,8 +5872,12 @@
     "des": "ItemD_30011",
     "order": 200083,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -5936,8 +5948,12 @@
     "des": "ItemD_30013",
     "order": 200085,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      1011
+    ],
+    "LackJumpto": [
+      1011
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6044,8 +6060,12 @@
     "des": "ItemD_30016",
     "order": 200088,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6080,8 +6100,12 @@
     "des": "ItemD_30017",
     "order": 200089,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6116,8 +6140,12 @@
     "des": "ItemD_30018",
     "order": 200090,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6188,8 +6216,12 @@
     "des": "ItemD_30020",
     "order": 200092,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      1011
+    ],
+    "LackJumpto": [
+      1011
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6404,8 +6436,12 @@
     "des": "ItemD_30026",
     "order": 200076,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6692,8 +6728,12 @@
     "des": "ItemD_30034",
     "order": 200084,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7524,8 +7564,12 @@
     "des": "ItemD_30101",
     "order": 200098,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      53012
+    ],
+    "LackJumpto": [
+      53012
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7560,8 +7604,12 @@
     "des": "ItemD_30102",
     "order": 200099,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      53012
+    ],
+    "LackJumpto": [
+      53012
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -10586,7 +10634,7 @@
     "ItemGetType": 2,
     "model": "",
     "material": "",
-    "endPosition": 2,
+    "endPosition": 3,
     "lumieggtype": "",
     "lumieggrand": 0,
     "lumieggdes": "",
@@ -28294,7 +28342,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_145801",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28338,7 +28386,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_146901",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28382,7 +28430,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147101",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28426,7 +28474,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147301",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28470,7 +28518,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147401",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28514,7 +28562,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147501",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28558,7 +28606,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147601",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28602,7 +28650,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147701",
     "HdIcon": "",
     "des": "ItemD_100101",

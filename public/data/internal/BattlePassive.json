@@ -2301,12 +2301,33 @@
     "Des": "P_SkillText_1113601",
     "DesParam": [
       50,
-      50
+      50,
+      1
     ],
     "BuffList": [
       {
         "BuffId": 11360101,
         "BuffLv": 1,
+        "Duration": 0,
+        "Target": 1
+      }
+    ],
+    "Priority": 1
+  },
+  {
+    "Id": 1113804,
+    "name": "P_Skill_1113804",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_1113601",
+    "DesParam": [
+      60,
+      30,
+      2
+    ],
+    "BuffList": [
+      {
+        "BuffId": 11380401,
+        "BuffLv": 2,
         "Duration": 0,
         "Target": 1
       }

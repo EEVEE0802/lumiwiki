@@ -10427,7 +10427,9 @@
     "name": "A_Skill_10580402",
     "Des": "A_SkillText_10580402",
     "DesParam": [
-      5
+      4,
+      1,
+      25
     ],
     "LumiTpye": 2,
     "UnlockCost": 0,
@@ -10453,10 +10455,28 @@
     "SkillEffect": [],
     "SkillValueChange": [
       {
-        "TriggerCondition": 1614,
+        "TriggerCondition": 1603,
         "ValueType": 1,
         "ModifyType": 2,
         "Num": 10000
+      },
+      {
+        "TriggerCondition": 1602,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 12500
+      },
+      {
+        "TriggerCondition": 1601,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 15000
+      },
+      {
+        "TriggerCondition": 1600,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 17500
       }
     ],
     "CastCondition": []
@@ -15597,6 +15617,94 @@
         "TriggerType": 6,
         "TriggerCondition": 615,
         "TriggerEffect": 120
+      }
+    ],
+    "SkillValueChange": [],
+    "CastCondition": []
+  },
+  {
+    "Id": 11120402,
+    "name": "A_Skill_11120402",
+    "Des": "A_SkillText_11120402",
+    "DesParam": [
+      1
+    ],
+    "LumiTpye": 0,
+    "UnlockCost": 0,
+    "SA": "SA_11120402",
+    "AssSkill": [],
+    "MontageType": 0,
+    "icon": "Grass_111201",
+    "SkillType": 1,
+    "TargetType": 1,
+    "AttackInterval": 0,
+    "SkillPowerList": [
+      100
+    ],
+    "SkillCost": [
+      1,
+      70
+    ],
+    "BaseCrit": 500,
+    "AddEnergy": 0,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "DefCalculate": false,
+    "SkillEffect": [
+      {
+        "TriggerType": 3,
+        "TriggerCondition": 100,
+        "TriggerEffect": 751
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 611,
+        "TriggerEffect": 1
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 611,
+        "TriggerEffect": 2081
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 612,
+        "TriggerEffect": 2
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 612,
+        "TriggerEffect": 2082
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 613,
+        "TriggerEffect": 3
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 613,
+        "TriggerEffect": 2083
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 614,
+        "TriggerEffect": 4
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 614,
+        "TriggerEffect": 2084
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 615,
+        "TriggerEffect": 5
+      },
+      {
+        "TriggerType": 6,
+        "TriggerCondition": 615,
+        "TriggerEffect": 2085
       }
     ],
     "SkillValueChange": [],
@@ -26568,7 +26676,12 @@
     "LumiTpye": 14,
     "UnlockCost": 0,
     "SA": "SA_12500202",
-    "AssSkill": [],
+    "AssSkill": [
+      12500203,
+      12500204,
+      12500205,
+      12500206
+    ],
     "MontageType": 0,
     "icon": "Fairy_125002",
     "SkillType": 1,
@@ -26618,7 +26731,7 @@
     "DesParam": [],
     "LumiTpye": 14,
     "UnlockCost": 0,
-    "SA": "SA_12500202",
+    "SA": "SA_12500203",
     "AssSkill": [],
     "MontageType": 0,
     "icon": "Fairy_125002",
@@ -26659,7 +26772,7 @@
     "DesParam": [],
     "LumiTpye": 14,
     "UnlockCost": 0,
-    "SA": "SA_12500202",
+    "SA": "SA_12500204",
     "AssSkill": [],
     "MontageType": 0,
     "icon": "Fairy_125002",
@@ -26700,7 +26813,7 @@
     "DesParam": [],
     "LumiTpye": 14,
     "UnlockCost": 0,
-    "SA": "SA_12500202",
+    "SA": "SA_12500205",
     "AssSkill": [],
     "MontageType": 0,
     "icon": "Fairy_125002",
@@ -26741,7 +26854,7 @@
     "DesParam": [],
     "LumiTpye": 14,
     "UnlockCost": 0,
-    "SA": "SA_12500202",
+    "SA": "SA_12500206",
     "AssSkill": [],
     "MontageType": 0,
     "icon": "Fairy_125002",
@@ -33021,7 +33134,7 @@
     "SA": "SA_14710102",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "King_14710142",
+    "icon": "King_14710102",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -33816,7 +33929,7 @@
     "SA": "SA_100010102",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Bright_01",
+    "icon": "Bright_03",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -33883,7 +33996,7 @@
     "SA": "SA_100020102",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Dark_01",
+    "icon": "Dark_03",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -34980,7 +35093,7 @@
     "SA": "SA_100080102",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Bright_01",
+    "icon": "Bright_03",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -35048,7 +35161,7 @@
     "SA": "SA_100090202",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Bright_01",
+    "icon": "Psychic_1000902",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -36371,7 +36484,7 @@
     "SA": "SA_100320102",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Netral_100801",
+    "icon": "Netral_110801",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -36432,7 +36545,7 @@
     "SA": "SA_100330102",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Netral_100801",
+    "icon": "Grass_105701",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -36499,7 +36612,7 @@
     "SA": "SA_100340102",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Netral_100801",
+    "icon": "Lighting_05",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
@@ -36972,32 +37085,32 @@
     "DefCalculate": false,
     "SkillEffect": [
       {
-        "TriggerType": 3,
+        "TriggerType": 1,
         "TriggerCondition": 100410101,
         "TriggerEffect": 100410102
       },
       {
-        "TriggerType": 3,
+        "TriggerType": 1,
         "TriggerCondition": 100410102,
         "TriggerEffect": 100410103
       },
       {
-        "TriggerType": 3,
+        "TriggerType": 1,
         "TriggerCondition": 100410103,
         "TriggerEffect": 100410104
       },
       {
-        "TriggerType": 3,
+        "TriggerType": 1,
         "TriggerCondition": 100410104,
         "TriggerEffect": 100410105
       },
       {
-        "TriggerType": 3,
+        "TriggerType": 1,
         "TriggerCondition": 100410105,
         "TriggerEffect": 100410106
       },
       {
-        "TriggerType": 3,
+        "TriggerType": 1,
         "TriggerCondition": 100410106,
         "TriggerEffect": 100410107
       },
@@ -37209,11 +37322,11 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      75
+      20
     ],
     "SkillCost": [
       1,
-      50
+      60
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -37230,11 +37343,6 @@
         "TriggerType": 6,
         "TriggerCondition": 100,
         "TriggerEffect": 100430204
-      },
-      {
-        "TriggerType": 6,
-        "TriggerCondition": 100,
-        "TriggerEffect": 100430205
       }
     ],
     "SkillValueChange": [],

@@ -6383,8 +6383,8 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1000,
-    "CatchRateCheckHeight": 250,
+    "LoveHeartHeight": 1100,
+    "CatchRateCheckHeight": 350,
     "HomeMoveSpeed": 1.7,
     "HomeRotateSpeed": 180,
     "Distance": 6000,
@@ -23011,6 +23011,206 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
+    "StarSoulid": 1136010,
+    "AvartarAtlas": "LumiAvatar1",
+    "CanRename": true
+  },
+  {
+    "Id": 113804,
+    "PokedexId": 1034,
+    "IfLock": true,
+    "LumiTag": 1,
+    "Name": "LumiName_113804",
+    "MaxScore": 87,
+    "MinScore": 87,
+    "Genius": 1,
+    "ShardId": 113601,
+    "MarketOrder": 102,
+    "DefaultPrice": [
+      [
+        6,
+        1450000
+      ],
+      [
+        5,
+        145000
+      ],
+      [
+        4,
+        3000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        7250000
+      ],
+      [
+        5,
+        290000
+      ],
+      [
+        4,
+        6000
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Butterfly_Cloud_01",
+    "Avatar": "Avatar_113804",
+    "CA": "CA_113804",
+    "CardBack": 50,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 13,
+    "Type2": 7,
+    "NormalAttack": 11380101,
+    "ActiveSkill": 11380102,
+    "SkillPool1": [
+      13006,
+      7002
+    ],
+    "SkillPool2": [
+      13002,
+      7006
+    ],
+    "SkillPool3": [
+      1003,
+      7004
+    ],
+    "BattlePassive": 1113804,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 58,
+    "MinAtkState": 66,
+    "MinDefState": 64,
+    "MinWorkState": 32,
+    "MaxHpState": 90,
+    "MaxAtkState": 98,
+    "MaxDefState": 96,
+    "MaxWorkState": 64,
+    "Satiety": 240000,
+    "SatietyDownSpeed": 34,
+    "WorkAbility": [
+      {
+        "Type": 4,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          82,
+          98
+        ]
+      ],
+      [
+        2,
+        [
+          11,
+          14
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "87-87",
+    "Story": "story_113804",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 2000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 0,
+    "CatchRateCheckHeight": 0,
+    "HomeMoveSpeed": 1.8,
+    "HomeRotateSpeed": 180,
+    "Distance": 0,
+    "Height": 0,
+    "LookatHeight": 0,
+    "VFXScale": 1,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": -0.1,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Butterfly_Cloud_01_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 113801,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 3,
     "StarSoulid": 1136010,
     "AvartarAtlas": "LumiAvatar1",
     "CanRename": true
@@ -43892,7 +44092,7 @@
     "Type1": 13,
     "Type2": 0,
     "NormalAttack": 14730101,
-    "ActiveSkill": 14730102,
+    "ActiveSkill": 13001,
     "SkillPool1": [
       3002,
       13003
@@ -46696,7 +46896,7 @@
     "SatietyDownSpeed": 32,
     "WorkAbility": [
       {
-        "Type": 1,
+        "Type": 6,
         "Level": 1
       }
     ],
@@ -48665,9 +48865,9 @@
     ],
     "CardType": 98,
     "CardResName": [
-      "Card3D_Dasima_Big_3D",
-      "Card3DLumi_Dasima_Big_3D",
-      "Card3DLumi_Dasima_Big_3D_XC"
+      "Card3D_Dasima_Muscle",
+      "Card3DLumi_Dasima_Muscle",
+      "Card3DLumi_Dasima_Muscle_XC"
     ],
     "Type1": 12,
     "Type2": 0,
