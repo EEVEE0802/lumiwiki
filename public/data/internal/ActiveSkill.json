@@ -15629,7 +15629,7 @@
     "DesParam": [
       1
     ],
-    "LumiTpye": 0,
+    "LumiTpye": 4,
     "UnlockCost": 0,
     "SA": "SA_11120402",
     "AssSkill": [],
@@ -33713,15 +33713,15 @@
     "icon": "",
     "SkillType": 0,
     "TargetType": 1,
-    "AttackInterval": 900,
+    "AttackInterval": 1500,
     "SkillPowerList": [
-      9
+      15
     ],
     "SkillCost": [
       0
     ],
     "BaseCrit": 500,
-    "AddEnergy": 7,
+    "AddEnergy": 11,
     "HealthSteal": 0,
     "Piercing": 0,
     "DefCalculate": false,

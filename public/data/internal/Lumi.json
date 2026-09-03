@@ -3485,7 +3485,7 @@
     ],
     "CardType": 98,
     "CardResName": [
-      "Card3D_Deer_Rainbow",
+      "Card3D_Deer_Rainbow_Full",
       "Card3DLumi_Deer_Rainbow_Full",
       "Card3DLumi_Deer_Rainbow_Full_XC"
     ],
@@ -5111,9 +5111,9 @@
     ],
     "CardType": 98,
     "CardResName": [
-      "Card3D_Muscle_Dog",
-      "Card3DLumi_Muscle_Dog",
-      "Card3DLumi_Muscle_Dog_XC"
+      "Card3D_Muscle_Dog_3D",
+      "Card3DLumi_Muscle_Dog_3D",
+      "Card3DLumi_Muscle_Dog_3D_XC"
     ],
     "Type1": 12,
     "Type2": 0,
@@ -12478,9 +12478,9 @@
     ],
     "CardType": 98,
     "CardResName": [
-      "Card3D_Mustela_Shadow",
-      "Card3DLumi_Mustela_Shadow",
-      "Card3DLumi_Mustela_Shadow_XC"
+      "Card3D_Mustela_Shadow_3D",
+      "Card3DLumi_Mustela_Shadow_3D",
+      "Card3DLumi_Mustela_Shadow_3D_XC"
     ],
     "Type1": 11,
     "Type2": 0,
@@ -19604,6 +19604,204 @@
     "CanRename": true
   },
   {
+    "Id": 111204,
+    "PokedexId": 10500,
+    "IfLock": false,
+    "LumiTag": 2,
+    "Name": "LumiName_111204",
+    "MaxScore": 89,
+    "MinScore": 89,
+    "Genius": 1,
+    "ShardId": 112801,
+    "MarketOrder": 0,
+    "DefaultPrice": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "DefaultPriceMin": [
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        2000
+      ],
+      [
+        5,
+        20000
+      ],
+      [
+        6,
+        200000
+      ]
+    ],
+    "DefaultPriceMax": [
+      [
+        6,
+        -1
+      ],
+      [
+        5,
+        -1
+      ],
+      [
+        4,
+        -1
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        2,
+        -1
+      ]
+    ],
+    "Model": "Dragon_Forest_01",
+    "Avatar": "Avatar_111204",
+    "CA": "CA_111204",
+    "CardBack": 50,
+    "CardBackRes": [],
+    "CardType": 0,
+    "CardResName": [],
+    "Type1": 4,
+    "Type2": 9,
+    "NormalAttack": 11120101,
+    "ActiveSkill": 11120402,
+    "SkillPool1": [
+      4002,
+      9006
+    ],
+    "SkillPool2": [
+      4003,
+      9002
+    ],
+    "SkillPool3": [
+      4005,
+      9004
+    ],
+    "BattlePassive": 1111201,
+    "HomePassive": 0,
+    "InbornBattlePassive": 0,
+    "InbornHomePassive": 0,
+    "MinHpState": 78,
+    "MinAtkState": 53,
+    "MinDefState": 64,
+    "MinWorkState": 33,
+    "MaxHpState": 110,
+    "MaxAtkState": 85,
+    "MaxDefState": 96,
+    "MaxWorkState": 65,
+    "Satiety": 280000,
+    "SatietyDownSpeed": 38,
+    "WorkAbility": [
+      {
+        "Type": 3,
+        "Level": 1
+      }
+    ],
+    "LumiAttribute": [
+      [
+        1,
+        [
+          1
+        ]
+      ],
+      [
+        2,
+        [
+          1
+        ]
+      ]
+    ],
+    "GenderWeight": [
+      [
+        1,
+        5000
+      ],
+      [
+        2,
+        5000
+      ]
+    ],
+    "scoreShow": "89-89",
+    "Story": "story_111201",
+    "EscapeRotationY": 180000,
+    "EscapeMoveSpeed": 1000,
+    "EscapeTransformTime": 1000,
+    "EscapeFootTime": 1000,
+    "LoveHeartHeight": 1650,
+    "CatchRateCheckHeight": 650,
+    "HomeMoveSpeed": 1,
+    "HomeRotateSpeed": 180,
+    "Distance": 5500,
+    "Height": 0,
+    "LookatHeight": 300,
+    "VFXScale": 1.3,
+    "ZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "AdventureVFXScale": 1.3,
+    "AdventureZeroOffset": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "BubbleOffset": {
+      "X": 0,
+      "Y": 0.5,
+      "Z": 0
+    },
+    "NewJumpTo": [],
+    "LumiFavor": 1,
+    "ColorVariantType": 1,
+    "AchievementType": 1,
+    "ModleColorVariant": "Dragon_Forest_01_XC",
+    "SpineAssetFolder": "",
+    "ConflictID": 111201,
+    "BodySizeType": 1,
+    "ModelBaseScale": 1,
+    "SizeScaleRange": [
+      0.15,
+      0.15
+    ],
+    "NpcAnimationSequence": [],
+    "LimitedEditionNumber": 0,
+    "LimitedEditionUI": "",
+    "ParallaxCardAsset": [],
+    "BattleEntranceVFX": [],
+    "Growid": 1,
+    "StarUpid": 3,
+    "StarSoulid": 1128010,
+    "AvartarAtlas": "LumiAvatar1",
+    "CanRename": true
+  },
+  {
     "Id": 111501,
     "PokedexId": 1080,
     "IfLock": false,
@@ -24306,9 +24504,9 @@
     ],
     "CardType": 98,
     "CardResName": [
-      "Card3D_Wolf_Frostwild",
-      "Card3DLumi_Wolf_Frostwild",
-      "Card3DLumi_Wolf_Frostwild_XC"
+      "Card3D_Wolf_Frostwild_3D",
+      "Card3DLumi_Wolf_Frostwild_3D",
+      "Card3DLumi_Wolf_Frostwild_3D_XC"
     ],
     "Type1": 8,
     "Type2": 0,
@@ -46269,9 +46467,9 @@
     ],
     "CardType": 98,
     "CardResName": [
-      "Card3D_Tomato_L",
-      "Card3DLumi_Tomato_L",
-      "Card3DLumi_Tomato_L_XC"
+      "Card3D_Tomato_Assassin_3D",
+      "Card3DLumi_Tomato_Assassin_3D",
+      "Card3DLumi_Tomato_Assassin_3D_XC"
     ],
     "Type1": 11,
     "Type2": 0,
