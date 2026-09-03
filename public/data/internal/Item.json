@@ -1034,7 +1034,6 @@
       52
     ],
     "LackJumpto": [
-      61,
       62,
       65
     ],
@@ -5098,7 +5097,7 @@
     "quality": 3,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItem",
     "icon": "Item_23002",
     "HdIcon": "",
     "des": "ItemD_23002",
@@ -5134,7 +5133,7 @@
     "quality": 4,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItem",
     "icon": "Item_23003",
     "HdIcon": "",
     "des": "ItemD_23003",
@@ -5170,7 +5169,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItem",
     "icon": "Item_23004",
     "HdIcon": "",
     "des": "ItemD_23004",
@@ -5206,7 +5205,7 @@
     "quality": 6,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItem",
     "icon": "Item_23005",
     "HdIcon": "",
     "des": "ItemD_23005",
@@ -5242,14 +5241,18 @@
     "quality": 6,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItemHomeBuilding",
     "icon": "Item_23006",
     "HdIcon": "",
     "des": "ItemD_23006",
     "order": 200071,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      61
+    ],
+    "LackJumpto": [
+      61
+    ],
     "IsMarket": false,
     "goldPrice": 0,
     "DefaultBasePrice": -1,
@@ -5912,8 +5915,12 @@
     "des": "ItemD_30012",
     "order": 200084,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -5988,8 +5995,12 @@
     "des": "ItemD_30014",
     "order": 200086,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6024,8 +6035,12 @@
     "des": "ItemD_30015",
     "order": 200087,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6180,8 +6195,12 @@
     "des": "ItemD_30019",
     "order": 200091,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6256,8 +6275,12 @@
     "des": "ItemD_30021",
     "order": 200093,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6292,8 +6315,12 @@
     "des": "ItemD_30022",
     "order": 200094,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      64
+    ],
+    "LackJumpto": [
+      64
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6328,8 +6355,12 @@
     "des": "ItemD_30023",
     "order": 200095,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      64
+    ],
+    "LackJumpto": [
+      64
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6364,8 +6395,12 @@
     "des": "ItemD_30024",
     "order": 200096,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      64
+    ],
+    "LackJumpto": [
+      64
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6400,8 +6435,12 @@
     "des": "ItemD_30025",
     "order": 200097,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      64
+    ],
+    "LackJumpto": [
+      64
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6512,8 +6551,12 @@
     "des": "ItemD_30028",
     "order": 200078,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6548,8 +6591,12 @@
     "des": "ItemD_30029",
     "order": 200079,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6620,8 +6667,12 @@
     "des": "ItemD_30031",
     "order": 200081,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6984,8 +7035,12 @@
     "des": "Arch_30041",
     "order": 200091,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      1002
+    ],
+    "LackJumpto": [
+      1002
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7020,8 +7075,12 @@
     "des": "ItemD_30042",
     "order": 200092,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      72
+    ],
+    "LackJumpto": [
+      72
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7056,8 +7115,12 @@
     "des": "ItemD_30047",
     "order": 200097,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      1002
+    ],
+    "LackJumpto": [
+      1002
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -11926,8 +11989,14 @@
     "des": "ItemD_61002",
     "order": 1,
     "isShow": true,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      52,
+      70
+    ],
+    "LackJumpto": [
+      52,
+      70
+    ],
     "IsMarket": false,
     "goldPrice": 0,
     "DefaultBasePrice": 0,
@@ -12898,8 +12967,14 @@
     "des": "ItemD_61107",
     "order": 1,
     "isShow": true,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      52,
+      4022
+    ],
+    "LackJumpto": [
+      52,
+      4022
+    ],
     "IsMarket": false,
     "goldPrice": 0,
     "DefaultBasePrice": 0,
@@ -26374,7 +26449,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemCollab1",
+    "Atlas": "IconItemShard2",
     "icon": "Item_125002",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -47170,13 +47245,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47214,13 +47287,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47433,12 +47504,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47477,12 +47550,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47521,12 +47596,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48488,13 +48565,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48532,13 +48607,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48576,13 +48649,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48621,12 +48692,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48665,12 +48738,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
