@@ -121,24 +121,38 @@ function runDerivativeScripts(cfg) {
   runCommand(process.execPath, ['scripts/convert-adventure-drop.mjs', ...branchArg])
 }
 
+// 判断是否需要复制：缺失 → 'add'；size 变化 → 'update'；一致 → 'skip'
+// size 比 mtime 稳（复制会改 mtime，但 size 不会说谎），避免每次跑都全量重写
+function fileCopyStatus(srcPath, dstPath) {
+  if (!fs.existsSync(dstPath)) return 'add'
+  try {
+    if (fs.statSync(srcPath).size !== fs.statSync(dstPath).size) return 'update'
+  } catch {
+    return 'update'
+  }
+  return 'skip'
+}
+
 function syncAvatars(cfg) {
-  console.log('\n🖼️  同步立绘资源（仅复制缺失文件）...')
+  console.log('\n🖼️  同步立绘资源（缺失或 size 变化即覆盖）...')
   fs.mkdirSync(cfg.AVATAR_DST_DIR, { recursive: true })
   if (!fs.existsSync(cfg.AVATAR_SRC_DIR)) {
     console.log(`  ⚠ 立绘源目录不存在，跳过: ${cfg.AVATAR_SRC_DIR}`)
     return
   }
   const srcFiles = fs.readdirSync(cfg.AVATAR_SRC_DIR).filter(f => f.startsWith('CA_') && f.endsWith('.png'))
-  const dstFiles = new Set(fs.readdirSync(cfg.AVATAR_DST_DIR).filter(f => f.startsWith('CA_')))
 
-  let added = 0
+  let added = 0, updated = 0
   for (const file of srcFiles) {
-    if (!dstFiles.has(file)) {
-      fs.copyFileSync(path.join(cfg.AVATAR_SRC_DIR, file), path.join(cfg.AVATAR_DST_DIR, file))
-      added++
-    }
+    const srcPath = path.join(cfg.AVATAR_SRC_DIR, file)
+    const dstPath = path.join(cfg.AVATAR_DST_DIR, file)
+    const status = fileCopyStatus(srcPath, dstPath)
+    if (status === 'skip') continue
+    fs.copyFileSync(srcPath, dstPath)
+    if (status === 'add') added++
+    else updated++
   }
-  console.log(`  ✓ 新增 ${added} 张立绘`)
+  console.log(`  ✓ 新增 ${added} 张，更新 ${updated} 张`)
 
   // 兜底：确保 unknown.png / CA_lumi.png 存在（前端 helper 用做 fallback）
   ensureFallbackImages(cfg)
@@ -180,10 +194,7 @@ function syncBuffIcons(cfg) {
     if (b.Icon && b.Icon[0]) icons.add(b.Icon[0])
   })
 
-  const dstFiles = new Set(fs.readdirSync(cfg.BUFF_ICON_DST_DIR).filter(f => f.endsWith('.png')))
-  let added = 0
-  let missing = 0
-  let invalid = 0
+  let added = 0, updated = 0, missing = 0, invalid = 0
   for (const icon of icons) {
     const safeName = path.basename(icon)
     if (safeName !== icon) {
@@ -192,18 +203,21 @@ function syncBuffIcons(cfg) {
       continue
     }
     const fileName = safeName + '.png'
-    if (dstFiles.has(fileName)) continue
-    const src = path.join(cfg.BUFF_ICON_SRC_DIR, fileName)
-    if (fs.existsSync(src)) {
-      fs.copyFileSync(src, path.join(cfg.BUFF_ICON_DST_DIR, fileName))
-      added++
-    } else {
+    const srcPath = path.join(cfg.BUFF_ICON_SRC_DIR, fileName)
+    if (!fs.existsSync(srcPath)) {
       console.log(`  ⚠ 缺失源文件: ${fileName}`)
       missing++
+      continue
     }
+    const dstPath = path.join(cfg.BUFF_ICON_DST_DIR, fileName)
+    const status = fileCopyStatus(srcPath, dstPath)
+    if (status === 'skip') continue
+    fs.copyFileSync(srcPath, dstPath)
+    if (status === 'add') added++
+    else updated++
   }
   if (invalid) console.log(`  ⚠ 共 ${invalid} 个非法 icon 名已跳过`)
-  console.log(`  ✓ 新增 ${added} 个图标，缺失 ${missing} 个`)
+  console.log(`  ✓ 新增 ${added} 个图标，更新 ${updated} 个，缺失 ${missing} 个`)
 }
 
 // 同步技能图标（数据驱动：遍历 ActiveSkill.json 里所有 icon 字段引用）
@@ -231,8 +245,7 @@ function syncSkillIcons(cfg) {
     if (sk.icon) icons.add(sk.icon)
   }
 
-  const dstFiles = new Set(fs.readdirSync(cfg.SKILL_ICON_DST_DIR).filter(f => f.endsWith('.png')))
-  let added = 0, missing = 0, invalid = 0
+  let added = 0, updated = 0, missing = 0, invalid = 0
   for (const icon of icons) {
     const safeName = path.basename(icon)
     if (safeName !== icon) {
@@ -241,17 +254,20 @@ function syncSkillIcons(cfg) {
       continue
     }
     const fileName = safeName + '.png'
-    if (dstFiles.has(fileName)) continue
-    const src = path.join(cfg.SKILL_ICON_SRC_DIR, fileName)
-    if (fs.existsSync(src)) {
-      fs.copyFileSync(src, path.join(cfg.SKILL_ICON_DST_DIR, fileName))
-      added++
-    } else {
+    const srcPath = path.join(cfg.SKILL_ICON_SRC_DIR, fileName)
+    if (!fs.existsSync(srcPath)) {
       missing++
+      continue
     }
+    const dstPath = path.join(cfg.SKILL_ICON_DST_DIR, fileName)
+    const status = fileCopyStatus(srcPath, dstPath)
+    if (status === 'skip') continue
+    fs.copyFileSync(srcPath, dstPath)
+    if (status === 'add') added++
+    else updated++
   }
   if (invalid) console.log(`  ⚠ 共 ${invalid} 个非法 icon 名已跳过`)
-  console.log(`  ✓ 新增 ${added} 个图标，缺失源文件 ${missing} 个`)
+  console.log(`  ✓ 新增 ${added} 个图标，更新 ${updated} 个，缺失源文件 ${missing} 个`)
 }
 
 // 同步物品图标（数据驱动：全量遍历 Item.json 里所有 icon 字段引用）
@@ -273,26 +289,27 @@ function syncRequestItemIcons(cfg) {
     return Array.isArray(d) ? d : (d.data || Object.values(d))
   })()
 
-  const dstFiles = new Set(fs.readdirSync(cfg.ITEM_ICON_DST_DIR).filter(f => f.endsWith('.png')))
-  let added = 0, missing = 0, invalid = 0, skipped = 0
+  let added = 0, updated = 0, missing = 0, invalid = 0, skipped = 0
   for (const it of itemArr) {
     if (!it.icon) { skipped++; continue }
     const safeIcon = path.basename(it.icon)
     if (safeIcon !== it.icon) { invalid++; continue }
     const fileName = safeIcon + '.png'
-    if (dstFiles.has(fileName)) continue
     const atlas = path.basename(it.Atlas || 'IconItem')
-    const src = path.join(cfg.ITEM_ICON_BASE_DIR, atlas, fileName)
-    if (fs.existsSync(src)) {
-      fs.copyFileSync(src, path.join(cfg.ITEM_ICON_DST_DIR, fileName))
-      dstFiles.add(fileName)
-      added++
-    } else {
+    const srcPath = path.join(cfg.ITEM_ICON_BASE_DIR, atlas, fileName)
+    if (!fs.existsSync(srcPath)) {
       missing++
+      continue
     }
+    const dstPath = path.join(cfg.ITEM_ICON_DST_DIR, fileName)
+    const status = fileCopyStatus(srcPath, dstPath)
+    if (status === 'skip') continue
+    fs.copyFileSync(srcPath, dstPath)
+    if (status === 'add') added++
+    else updated++
   }
   if (invalid) console.log(`  ⚠ 共 ${invalid} 个非法 icon 名已跳过`)
-  console.log(`  ✓ 新增 ${added} 个图标，缺失源文件 ${missing} 个，无 icon 字段 ${skipped} 个`)
+  console.log(`  ✓ 新增 ${added} 个图标，更新 ${updated} 个，缺失源文件 ${missing} 个，无 icon 字段 ${skipped} 个`)
 }
 
 // 将对外的 extra.json 复制到 internal（社区维护的口味信息与游戏版本正交）

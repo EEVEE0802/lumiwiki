@@ -4696,7 +4696,19 @@
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1
-      },
+      }
+    ],
+    "Priority": 1
+  },
+  {
+    "Id": 110005021,
+    "name": "P_Skill_11000502",
+    "icon": "Die_Poison",
+    "Des": "P_SkillText_11000502",
+    "DesParam": [
+      15
+    ],
+    "BuffList": [
       {
         "BuffId": 100050203,
         "BuffLv": 1,
