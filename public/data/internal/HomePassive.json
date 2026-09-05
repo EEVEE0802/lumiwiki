@@ -63,22 +63,22 @@
   },
   {
     "Id": 2100501,
-    "icon": "WorkType_Corn",
+    "icon": "WorkType_Planting",
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2100501",
     "Des": "H_SkillText_2100501",
     "DesParam": [
-      40
+      35
     ],
     "BuffLv": 1,
-    "WorkTypeBuff": [],
-    "ArchBuff": [],
-    "RecipeBuff": [
+    "WorkTypeBuff": [
       {
-        "X": 44,
-        "Y": 4000
+        "WorkType": 3,
+        "Param": 3500
       }
     ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
     "HungryBuff": 0,
     "ExtraItem": [],
     "TravelRewardBuff": [],
@@ -849,7 +849,7 @@
   },
   {
     "Id": 2120501,
-    "icon": "WorkType_Plank",
+    "icon": "WorkType_Corn",
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2120501",
     "Des": "H_SkillText_2120501",
@@ -861,7 +861,7 @@
     "ArchBuff": [],
     "RecipeBuff": [
       {
-        "X": 45,
+        "X": 44,
         "Y": 4000
       }
     ],

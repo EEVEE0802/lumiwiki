@@ -1139,7 +1139,7 @@
     "type": 2,
     "Atlas": "IconItemLumi",
     "icon": "Item_10057",
-    "HdIcon": "",
+    "HdIcon": "Activity_HD_Item_10057",
     "des": "ItemD_10057",
     "order": 1,
     "isShow": true,
@@ -2021,7 +2021,7 @@
     "type": 2,
     "Atlas": "IconItemStarUp",
     "icon": "Starupicon_14004",
-    "HdIcon": "",
+    "HdIcon": "Activity_HD_Item_14004",
     "des": "ItemD_14004",
     "order": 3,
     "isShow": false,
@@ -5284,10 +5284,10 @@
     "order": 200071,
     "isShow": false,
     "JumpTo": [
-      61
+      72
     ],
     "LackJumpto": [
-      61
+      72
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -7743,8 +7743,12 @@
     "des": "ItemD_30103",
     "order": 200100,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      55
+    ],
+    "LackJumpto": [
+      55
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7779,8 +7783,12 @@
     "des": "ItemD_30104",
     "order": 200101,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      55
+    ],
+    "LackJumpto": [
+      55
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
