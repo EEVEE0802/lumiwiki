@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-09-06T23:33:55.059Z",
+  "updateTime": "2026-09-07T23:33:40.221Z",
   "totalBattles": 569,
   "gameMode": "tournament",
   "stats": {
@@ -4023,54 +4023,6 @@
     },
     {
       "teamLumiIds": [
-        "101701",
-        "105801",
-        "114601"
-      ],
-      "lumis": [
-        {
-          "lumiId": "101701",
-          "lumiName": "Charigon",
-          "secondSkills": [
-            {
-              "skillId": 9002,
-              "count": 3
-            }
-          ]
-        },
-        {
-          "lumiId": "105801",
-          "lumiName": "Shriegon",
-          "secondSkills": [
-            {
-              "skillId": 2004,
-              "count": 3
-            }
-          ]
-        },
-        {
-          "lumiId": "114601",
-          "lumiName": "Sunbelle",
-          "secondSkills": [
-            {
-              "skillId": 3004,
-              "count": 3
-            }
-          ]
-        }
-      ],
-      "trainerSkills": [
-        {
-          "trainerId": 1,
-          "count": 3
-        }
-      ],
-      "battles": 3,
-      "wins": 2,
-      "winRate": "66.67"
-    },
-    {
-      "teamLumiIds": [
         "101201",
         "105501",
         "126304"
@@ -4120,6 +4072,54 @@
       "battles": 3,
       "wins": 3,
       "winRate": "100.00"
+    },
+    {
+      "teamLumiIds": [
+        "101701",
+        "105801",
+        "114601"
+      ],
+      "lumis": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "secondSkills": [
+            {
+              "skillId": 9002,
+              "count": 3
+            }
+          ]
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "secondSkills": [
+            {
+              "skillId": 2004,
+              "count": 3
+            }
+          ]
+        },
+        {
+          "lumiId": "114601",
+          "lumiName": "Sunbelle",
+          "secondSkills": [
+            {
+              "skillId": 3004,
+              "count": 3
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 1,
+          "count": 3
+        }
+      ],
+      "battles": 3,
+      "wins": 2,
+      "winRate": "66.67"
     },
     {
       "teamLumiIds": [
@@ -6053,102 +6053,6 @@
     },
     {
       "teamLumiIds": [
-        "103704",
-        "116001",
-        "119301"
-      ],
-      "lumis": [
-        {
-          "lumiId": "103704",
-          "lumiName": "Screamhog - Variant",
-          "secondSkills": [
-            {
-              "skillId": 12003,
-              "count": 2
-            }
-          ]
-        },
-        {
-          "lumiId": "116001",
-          "lumiName": "Otterknight",
-          "secondSkills": [
-            {
-              "skillId": 15005,
-              "count": 2
-            }
-          ]
-        },
-        {
-          "lumiId": "119301",
-          "lumiName": "Clionia",
-          "secondSkills": [
-            {
-              "skillId": 4003,
-              "count": 2
-            }
-          ]
-        }
-      ],
-      "trainerSkills": [
-        {
-          "trainerId": 3,
-          "count": 2
-        }
-      ],
-      "battles": 2,
-      "wins": 1,
-      "winRate": "50.00"
-    },
-    {
-      "teamLumiIds": [
-        "102602",
-        "103804",
-        "121304"
-      ],
-      "lumis": [
-        {
-          "lumiId": "102602",
-          "lumiName": "Cyclodoge",
-          "secondSkills": [
-            {
-              "skillId": 6002,
-              "count": 2
-            }
-          ]
-        },
-        {
-          "lumiId": "103804",
-          "lumiName": "Sandlord - Variant",
-          "secondSkills": [
-            {
-              "skillId": 6003,
-              "count": 2
-            }
-          ]
-        },
-        {
-          "lumiId": "121304",
-          "lumiName": "Frutafyre - Variant",
-          "secondSkills": [
-            {
-              "skillId": 4002,
-              "count": 2
-            }
-          ]
-        }
-      ],
-      "trainerSkills": [
-        {
-          "trainerId": 3,
-          "count": 2
-        }
-      ],
-      "battles": 2,
-      "wins": 0,
-      "winRate": "0.00"
-    },
-    {
-      "teamLumiIds": [
         "101701",
         "118201",
         "126304"
@@ -6249,6 +6153,54 @@
     },
     {
       "teamLumiIds": [
+        "102602",
+        "103804",
+        "121304"
+      ],
+      "lumis": [
+        {
+          "lumiId": "102602",
+          "lumiName": "Cyclodoge",
+          "secondSkills": [
+            {
+              "skillId": 6002,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "103804",
+          "lumiName": "Sandlord - Variant",
+          "secondSkills": [
+            {
+              "skillId": 6003,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "121304",
+          "lumiName": "Frutafyre - Variant",
+          "secondSkills": [
+            {
+              "skillId": 4002,
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 3,
+          "count": 2
+        }
+      ],
+      "battles": 2,
+      "wins": 0,
+      "winRate": "0.00"
+    },
+    {
+      "teamLumiIds": [
         "105801",
         "120901",
         "142501"
@@ -6294,6 +6246,54 @@
       "battles": 2,
       "wins": 0,
       "winRate": "0.00"
+    },
+    {
+      "teamLumiIds": [
+        "103704",
+        "116001",
+        "119301"
+      ],
+      "lumis": [
+        {
+          "lumiId": "103704",
+          "lumiName": "Screamhog - Variant",
+          "secondSkills": [
+            {
+              "skillId": 12003,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "Otterknight",
+          "secondSkills": [
+            {
+              "skillId": 15005,
+              "count": 2
+            }
+          ]
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "secondSkills": [
+            {
+              "skillId": 4003,
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "trainerSkills": [
+        {
+          "trainerId": 3,
+          "count": 2
+        }
+      ],
+      "battles": 2,
+      "wins": 1,
+      "winRate": "50.00"
     },
     {
       "teamLumiIds": [
@@ -11425,10 +11425,10 @@
   "tournamentPlayerRankDistribution": {
     "bronze": 3,
     "silver": 2,
-    "gold": 2,
+    "gold": 1,
     "diamond": 20,
-    "star": 36,
-    "legend": 15,
-    "total": 78
+    "star": 38,
+    "legend": 17,
+    "total": 81
   }
 }
