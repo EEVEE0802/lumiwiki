@@ -3695,7 +3695,8 @@
       "CardVedio_Deer_Rainbow",
       "Deer_Rainbow",
       "CardVedio_Deer_Rainbow_Tex_D",
-      "CardVedio_Deer_Rainbow_bg_D"
+      "CardVedio_Deer_Rainbow_bg_D",
+      "Card_Panoramic_Frame_01"
     ],
     "Type1": 17,
     "Type2": 4,
@@ -14294,7 +14295,8 @@
       "CardVedio_Tortoise_Black_Full",
       "Tortoise_Black_Full",
       "CardVedio_Tortoise_Black_Full_Tex_D",
-      "CardVedio_Tortoise_Black_Full_bg_D"
+      "CardVedio_Tortoise_Black_Full_bg_D",
+      "Card_Panoramic_Frame_01"
     ],
     "Type1": 5,
     "Type2": 9,
@@ -14504,7 +14506,8 @@
       "CardVedio_Tortoise_Black_Full",
       "Tortoise_Black_Full",
       "CardVedio_Tortoise_Black_Full_Tex_D",
-      "CardVedio_Tortoise_Black_Full_bg_D"
+      "CardVedio_Tortoise_Black_Full_bg_D",
+      "Card_Panoramic_Frame_01"
     ],
     "Type1": 2,
     "Type2": 6,
@@ -40543,7 +40546,7 @@
     ],
     "BattlePassive": 1132301,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11323011,
     "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 58,
@@ -40738,7 +40741,7 @@
     ],
     "BattlePassive": 1132301,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11324011,
     "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 63,
@@ -40933,7 +40936,7 @@
     ],
     "BattlePassive": 1132301,
     "HomePassive": 0,
-    "InbornBattlePassive": 0,
+    "InbornBattlePassive": 11325011,
     "InbornHomePassive": 0,
     "MinHpState": 56,
     "MinAtkState": 68,
@@ -42116,7 +42119,8 @@
       "CardVedio_Dragon_Legend",
       "Dragon_Legend",
       "CardVedio_Dragon_Legend_Tex_D",
-      "CardVedio_Dragon_Legend_bg_D"
+      "CardVedio_Dragon_Legend_bg_D",
+      "Card_Panoramic_Frame_01"
     ],
     "Type1": 17,
     "Type2": 9,
@@ -42217,11 +42221,11 @@
     "NpcAnimationSequence": [
       {
         "Animation": "Sp_Dragon_Legend_Char",
-        "Layer": 0
+        "Layer": 1
       },
       {
         "Animation": "Sp_Dragon_Legend_Fx",
-        "Layer": 1
+        "Layer": 0
       }
     ],
     "LimitedEditionNumber": 999,

@@ -740,7 +740,7 @@
     "UnlockCost": 1000,
     "SA": "SA_3003",
     "AssSkill": [],
-    "MontageType": 2,
+    "MontageType": 1,
     "icon": "Fire_03",
     "SkillType": 1,
     "TargetType": 1,
@@ -1511,7 +1511,7 @@
     "UnlockCost": 1000,
     "SA": "SA_5003",
     "AssSkill": [],
-    "MontageType": 1,
+    "MontageType": 2,
     "icon": "Lighting_03",
     "SkillType": 1,
     "TargetType": 1,
@@ -1592,7 +1592,7 @@
     "UnlockCost": 1000,
     "SA": "SA_5005",
     "AssSkill": [],
-    "MontageType": 2,
+    "MontageType": 1,
     "icon": "Lighting_05",
     "SkillType": 1,
     "TargetType": 1,
@@ -36776,6 +36776,16 @@
         "TriggerEffect": 100360101
       },
       {
+        "TriggerType": 1,
+        "TriggerCondition": 100360199,
+        "TriggerEffect": 100360105
+      },
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100360199,
+        "TriggerEffect": 100360106
+      },
+      {
         "TriggerType": 6,
         "TriggerCondition": 100,
         "TriggerEffect": 100360102
@@ -37241,6 +37251,8 @@
     "Des": "A_SkillText_100430102",
     "DesParam": [
       50,
+      30,
+      50,
       20
     ],
     "LumiTpye": 12,
@@ -37253,7 +37265,7 @@
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      90
+      100
     ],
     "SkillCost": [
       1,
@@ -37276,7 +37288,14 @@
         "TriggerEffect": 100430102
       }
     ],
-    "SkillValueChange": [],
+    "SkillValueChange": [
+      {
+        "TriggerCondition": 100430103,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 5000
+      }
+    ],
     "CastCondition": [
       100430101
     ]
