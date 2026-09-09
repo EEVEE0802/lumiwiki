@@ -3172,7 +3172,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4090
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -3696,7 +3698,7 @@
       "Deer_Rainbow",
       "CardVedio_Deer_Rainbow_Tex_D",
       "CardVedio_Deer_Rainbow_bg_D",
-      "Card_Panoramic_Frame_01"
+      "Card_Panoramic_Frame_Deer_Lily"
     ],
     "Type1": 17,
     "Type2": 4,
@@ -5206,9 +5208,7 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [
-      4070
-    ],
+    "NewJumpTo": [],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -13176,7 +13176,7 @@
       "Z": 0
     },
     "NewJumpTo": [
-      4022
+      4092
     ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
@@ -14296,23 +14296,23 @@
       "Tortoise_Black_Full",
       "CardVedio_Tortoise_Black_Full_Tex_D",
       "CardVedio_Tortoise_Black_Full_bg_D",
-      "Card_Panoramic_Frame_01"
+      "Card_Panoramic_Frame_Dragon_Azure"
     ],
     "Type1": 5,
     "Type2": 9,
     "NormalAttack": 10800101,
     "ActiveSkill": 10800102,
     "SkillPool1": [
-      9002,
-      5003
+      5003,
+      9004
     ],
     "SkillPool2": [
-      9006,
-      5005
+      5004,
+      9006
     ],
     "SkillPool3": [
-      9003,
-      5006
+      5008,
+      9002
     ],
     "BattlePassive": 1108001,
     "HomePassive": 0,
@@ -14507,7 +14507,7 @@
       "Tortoise_Black_Full",
       "CardVedio_Tortoise_Black_Full_Tex_D",
       "CardVedio_Tortoise_Black_Full_bg_D",
-      "Card_Panoramic_Frame_01"
+      "Card_Panoramic_Frame_Tortoise_Black"
     ],
     "Type1": 2,
     "Type2": 6,
@@ -15606,7 +15606,7 @@
       "Z": 0
     },
     "NewJumpTo": [
-      4022
+      4019
     ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
@@ -26210,7 +26210,7 @@
       "Z": 0
     },
     "NewJumpTo": [
-      4079
+      4020
     ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
@@ -27013,7 +27013,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4091
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -31203,7 +31205,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4022
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -33721,7 +33725,7 @@
     "Type1": 4,
     "Type2": 0,
     "NormalAttack": 12090101,
-    "ActiveSkill": 12090402,
+    "ActiveSkill": 12090102,
     "SkillPool1": [
       4003,
       15001
@@ -34210,7 +34214,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4022
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -34997,7 +35003,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4022
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -37529,7 +37537,7 @@
     ],
     "SkillPool3": [
       14004,
-      14005
+      14003
     ],
     "BattlePassive": 1125002,
     "HomePassive": 0,
@@ -39012,7 +39020,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4070
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -40615,7 +40625,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4019
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -40810,7 +40822,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4019
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -41005,7 +41019,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4098
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -41205,7 +41221,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4020
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -41405,7 +41423,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4020
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -41605,7 +41625,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4099
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -42120,7 +42142,7 @@
       "Dragon_Legend",
       "CardVedio_Dragon_Legend_Tex_D",
       "CardVedio_Dragon_Legend_bg_D",
-      "Card_Panoramic_Frame_01"
+      "Card_Panoramic_Frame_Dragon_Legend"
     ],
     "Type1": 17,
     "Type2": 9,
@@ -46496,17 +46518,17 @@
     "NormalAttack": 100050201,
     "ActiveSkill": 100050202,
     "SkillPool1": [
-      2001,
-      3001,
-      4001
+      5001,
+      8001,
+      14001
     ],
     "SkillPool2": [
-      6001,
-      11001
+      1004,
+      11002
     ],
     "SkillPool3": [
-      8001,
-      12002
+      12002,
+      1003
     ],
     "BattlePassive": 11000502,
     "HomePassive": 0,
@@ -46617,7 +46639,7 @@
     "MaxScore": 86,
     "MinScore": 54,
     "Genius": 1,
-    "ShardId": 1000601,
+    "ShardId": 1000101,
     "MarketOrder": 0,
     "DefaultPrice": [
       [
@@ -46799,7 +46821,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10006010,
+    "StarSoulid": 10001010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -46812,7 +46834,7 @@
     "MaxScore": 86,
     "MinScore": 54,
     "Genius": 1,
-    "ShardId": 1000701,
+    "ShardId": 1000201,
     "MarketOrder": 0,
     "DefaultPrice": [
       [
@@ -46994,7 +47016,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10007010,
+    "StarSoulid": 10002010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -47007,7 +47029,7 @@
     "MaxScore": 86,
     "MinScore": 54,
     "Genius": 2,
-    "ShardId": 1000801,
+    "ShardId": 1000101,
     "MarketOrder": 0,
     "DefaultPrice": [
       [
@@ -47194,7 +47216,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10008010,
+    "StarSoulid": 10001010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -47414,7 +47436,7 @@
     "MaxScore": 84,
     "MinScore": 52,
     "Genius": 2,
-    "ShardId": 1003201,
+    "ShardId": 1000201,
     "MarketOrder": 0,
     "DefaultPrice": [
       [
@@ -47603,7 +47625,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10032010,
+    "StarSoulid": 10002010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -47616,7 +47638,7 @@
     "MaxScore": 84,
     "MinScore": 52,
     "Genius": 2,
-    "ShardId": 1003301,
+    "ShardId": 1000201,
     "MarketOrder": 0,
     "DefaultPrice": [
       [
@@ -47805,7 +47827,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10033010,
+    "StarSoulid": 10002010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -47818,7 +47840,7 @@
     "MaxScore": 84,
     "MinScore": 52,
     "Genius": 2,
-    "ShardId": 1003401,
+    "ShardId": 1000101,
     "MarketOrder": 0,
     "DefaultPrice": [
       [
@@ -48007,7 +48029,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10034010,
+    "StarSoulid": 10001010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -48020,7 +48042,7 @@
     "MaxScore": 86,
     "MinScore": 54,
     "Genius": 1,
-    "ShardId": 1003501,
+    "ShardId": 1000101,
     "MarketOrder": 0,
     "DefaultPrice": [
       [
@@ -48207,7 +48229,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10035010,
+    "StarSoulid": 10001010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -48220,7 +48242,7 @@
     "MaxScore": 86,
     "MinScore": 54,
     "Genius": 1,
-    "ShardId": 1003601,
+    "ShardId": 1000101,
     "MarketOrder": 0,
     "DefaultPrice": [
       [
@@ -48407,7 +48429,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10036010,
+    "StarSoulid": 10001010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -48511,7 +48533,7 @@
       1001,
       1004
     ],
-    "BattlePassive": 11004101,
+    "BattlePassive": 11004301,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,
@@ -48706,7 +48728,7 @@
       1001,
       1004
     ],
-    "BattlePassive": 11004201,
+    "BattlePassive": 11004301,
     "HomePassive": 0,
     "InbornBattlePassive": 0,
     "InbornHomePassive": 0,

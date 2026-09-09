@@ -8037,6 +8037,46 @@
     "SynthesisId": 0
   },
   {
+    "key1": 30119,
+    "name": "Arch_30119",
+    "quality": 5,
+    "WorkAmount": 0,
+    "type": 2,
+    "Atlas": "IconItemHomeBuilding",
+    "icon": "Item_30119",
+    "HdIcon": "",
+    "des": "ItemD_30119",
+    "order": 200107,
+    "isShow": false,
+    "JumpTo": [
+      12
+    ],
+    "LackJumpto": [
+      12
+    ],
+    "IsMarket": false,
+    "goldPrice": 1,
+    "DefaultBasePrice": 0,
+    "DefaultBasePriceMin": 0,
+    "maxStack": 1,
+    "isUse": false,
+    "itemUseId": 30119,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 0,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 1,
+    "homeProportion": "",
+    "maxModelCountHome": 0,
+    "maxModelCount": 0,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
     "key1": 30205,
     "name": "Arch_30205",
     "quality": 5,

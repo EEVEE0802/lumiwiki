@@ -255,7 +255,7 @@
     "Des": "A_SkillText_1005",
     "DesParam": [
       3,
-      15
+      10
     ],
     "LumiTpye": 1,
     "UnlockCost": 1000,
@@ -1511,7 +1511,7 @@
     "UnlockCost": 1000,
     "SA": "SA_5003",
     "AssSkill": [],
-    "MontageType": 2,
+    "MontageType": 1,
     "icon": "Lighting_03",
     "SkillType": 1,
     "TargetType": 1,
@@ -3194,7 +3194,7 @@
     "UnlockCost": 1000,
     "SA": "SA_9002",
     "AssSkill": [],
-    "MontageType": 2,
+    "MontageType": 1,
     "icon": "Dragon_02",
     "SkillType": 1,
     "TargetType": 1,
@@ -4019,7 +4019,7 @@
     "UnlockCost": 1000,
     "SA": "SA_11006",
     "AssSkill": [],
-    "MontageType": 2,
+    "MontageType": 1,
     "icon": "Dark_05",
     "SkillType": 1,
     "TargetType": 1,
@@ -4537,7 +4537,7 @@
     "UnlockCost": 1000,
     "SA": "SA_13002",
     "AssSkill": [],
-    "MontageType": 2,
+    "MontageType": 1,
     "icon": "Psychic_02",
     "SkillType": 1,
     "TargetType": 1,
@@ -24053,7 +24053,7 @@
     "DesParam": [
       1,
       40,
-      2
+      1
     ],
     "LumiTpye": 4,
     "UnlockCost": 0,
@@ -24134,7 +24134,7 @@
     "DesParam": [
       1,
       40,
-      2
+      1
     ],
     "LumiTpye": 4,
     "UnlockCost": 0,
@@ -29849,7 +29849,7 @@
     "DesParam": [
       50,
       50,
-      20
+      30
     ],
     "LumiTpye": 7,
     "UnlockCost": 0,
@@ -29907,7 +29907,7 @@
     "DesParam": [
       50,
       50,
-      20
+      30
     ],
     "LumiTpye": 7,
     "UnlockCost": 0,
@@ -29941,7 +29941,7 @@
     "DesParam": [
       50,
       50,
-      20
+      30
     ],
     "LumiTpye": 7,
     "UnlockCost": 0,
@@ -30525,7 +30525,7 @@
     ],
     "SkillCost": [
       1,
-      50
+      40
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -30994,7 +30994,9 @@
     "Des": "A_SkillText_13630102",
     "DesParam": [
       10,
-      10
+      1,
+      50,
+      5
     ],
     "LumiTpye": 17,
     "UnlockCost": 0,
@@ -31021,63 +31023,63 @@
     "SkillValueChange": [
       {
         "TriggerCondition": 881,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 1000
+        "Num": -10
       },
       {
         "TriggerCondition": 882,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 2000
+        "Num": -20
       },
       {
         "TriggerCondition": 883,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 3000
+        "Num": -30
       },
       {
         "TriggerCondition": 884,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 4000
+        "Num": -40
       },
       {
         "TriggerCondition": 885,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 5000
+        "Num": -50
       },
       {
         "TriggerCondition": 886,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 6000
+        "Num": -50
       },
       {
         "TriggerCondition": 887,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 7000
+        "Num": -50
       },
       {
         "TriggerCondition": 888,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 8000
+        "Num": -50
       },
       {
         "TriggerCondition": 889,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 9000
+        "Num": -50
       },
       {
         "TriggerCondition": 890,
-        "ValueType": 4,
+        "ValueType": 2,
         "ModifyType": 1,
-        "Num": 10000
+        "Num": -50
       },
       {
         "TriggerCondition": 881,
@@ -31113,31 +31115,31 @@
         "TriggerCondition": 886,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 6000
+        "Num": 5000
       },
       {
         "TriggerCondition": 887,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 7000
+        "Num": 5000
       },
       {
         "TriggerCondition": 888,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 8000
+        "Num": 5000
       },
       {
         "TriggerCondition": 889,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 9000
+        "Num": 5000
       },
       {
         "TriggerCondition": 890,
         "ValueType": 5,
         "ModifyType": 1,
-        "Num": 10000
+        "Num": 5000
       }
     ],
     "CastCondition": []
@@ -31184,16 +31186,16 @@
     "SA": "SA_13690102",
     "AssSkill": [],
     "MontageType": 0,
-    "icon": "Netral_100801",
+    "icon": "Neutral_136901",
     "SkillType": 1,
     "TargetType": 1,
     "AttackInterval": 0,
     "SkillPowerList": [
-      75
+      30
     ],
     "SkillCost": [
       1,
-      50
+      30
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -34881,7 +34883,6 @@
     "name": "A_Skill_100050202",
     "Des": "A_SkillText_100050202",
     "DesParam": [
-      15,
       450
     ],
     "LumiTpye": 11,
@@ -34918,9 +34919,7 @@
       }
     ],
     "SkillValueChange": [],
-    "CastCondition": [
-      100050202
-    ]
+    "CastCondition": []
   },
   {
     "Id": 100060101,
@@ -35154,7 +35153,7 @@
     "Des": "A_SkillText_100090202",
     "DesParam": [
       1,
-      50
+      40
     ],
     "LumiTpye": 13,
     "UnlockCost": 0,
@@ -35189,25 +35188,25 @@
         "TriggerCondition": 100090202,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 5000
+        "Num": 4000
       },
       {
         "TriggerCondition": 100090203,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 10000
+        "Num": 8000
       },
       {
         "TriggerCondition": 100090204,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 15000
+        "Num": 12000
       },
       {
         "TriggerCondition": 100090205,
         "ValueType": 1,
         "ModifyType": 2,
-        "Num": 20000
+        "Num": 16000
       }
     ],
     "CastCondition": []
@@ -37073,10 +37072,12 @@
   {
     "Id": 100410102,
     "name": "A_Skill_100410102",
-    "Des": "A_SkillText_100410102",
+    "Des": "A_SkillText_100430102",
     "DesParam": [
-      5,
-      10
+      50,
+      30,
+      20,
+      20
     ],
     "LumiTpye": 12,
     "UnlockCost": 0,
@@ -37102,42 +37103,26 @@
     "SkillEffect": [
       {
         "TriggerType": 1,
-        "TriggerCondition": 100410101,
-        "TriggerEffect": 100410102
-      },
-      {
-        "TriggerType": 1,
-        "TriggerCondition": 100410102,
-        "TriggerEffect": 100410103
-      },
-      {
-        "TriggerType": 1,
-        "TriggerCondition": 100410103,
-        "TriggerEffect": 100410104
-      },
-      {
-        "TriggerType": 1,
-        "TriggerCondition": 100410104,
-        "TriggerEffect": 100410105
-      },
-      {
-        "TriggerType": 1,
-        "TriggerCondition": 100410105,
-        "TriggerEffect": 100410106
-      },
-      {
-        "TriggerType": 1,
-        "TriggerCondition": 100410106,
-        "TriggerEffect": 100410107
+        "TriggerCondition": 100,
+        "TriggerEffect": 100430101
       },
       {
         "TriggerType": 6,
-        "TriggerCondition": 100410107,
-        "TriggerEffect": 100410108
+        "TriggerCondition": 100,
+        "TriggerEffect": 100430102
       }
     ],
-    "SkillValueChange": [],
-    "CastCondition": []
+    "SkillValueChange": [
+      {
+        "TriggerCondition": 100430103,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 2000
+      }
+    ],
+    "CastCondition": [
+      100430101
+    ]
   },
   {
     "Id": 100420101,
@@ -37171,9 +37156,12 @@
   {
     "Id": 100420102,
     "name": "A_Skill_100420102",
-    "Des": "A_SkillText_100420102",
+    "Des": "A_SkillText_100430102",
     "DesParam": [
-      1
+      50,
+      30,
+      30,
+      20
     ],
     "LumiTpye": 12,
     "UnlockCost": 0,
@@ -37200,21 +37188,25 @@
       {
         "TriggerType": 1,
         "TriggerCondition": 100,
-        "TriggerEffect": 100420101
-      },
-      {
-        "TriggerType": 1,
-        "TriggerCondition": 100,
-        "TriggerEffect": 100420103
+        "TriggerEffect": 100430101
       },
       {
         "TriggerType": 6,
         "TriggerCondition": 100,
-        "TriggerEffect": 100002
+        "TriggerEffect": 100430102
       }
     ],
-    "SkillValueChange": [],
-    "CastCondition": []
+    "SkillValueChange": [
+      {
+        "TriggerCondition": 100430103,
+        "ValueType": 1,
+        "ModifyType": 2,
+        "Num": 3000
+      }
+    ],
+    "CastCondition": [
+      100430101
+    ]
   },
   {
     "Id": 100430101,

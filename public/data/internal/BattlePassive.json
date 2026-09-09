@@ -4057,15 +4057,9 @@
     ],
     "BuffList": [
       {
-        "BuffId": 13380106,
+        "BuffId": 13380105,
         "BuffLv": 1,
-        "Duration": 0,
-        "Target": 3
-      },
-      {
-        "BuffId": 133801061,
-        "BuffLv": 1,
-        "Duration": 0,
+        "Duration": 100,
         "Target": 3
       }
     ],
@@ -4081,15 +4075,9 @@
     ],
     "BuffList": [
       {
-        "BuffId": 13390106,
+        "BuffId": 13390105,
         "BuffLv": 1,
-        "Duration": 0,
-        "Target": 3
-      },
-      {
-        "BuffId": 133901061,
-        "BuffLv": 1,
-        "Duration": 0,
+        "Duration": 100,
         "Target": 3
       }
     ],
@@ -4105,15 +4093,9 @@
     ],
     "BuffList": [
       {
-        "BuffId": 13400106,
+        "BuffId": 13400105,
         "BuffLv": 1,
-        "Duration": 0,
-        "Target": 3
-      },
-      {
-        "BuffId": 134001061,
-        "BuffLv": 1,
-        "Duration": 0,
+        "Duration": 100,
         "Target": 3
       }
     ],
@@ -4701,7 +4683,7 @@
     "Des": "P_SkillText_11000301",
     "DesParam": [
       15,
-      2
+      1
     ],
     "BuffList": [
       {
@@ -4719,7 +4701,8 @@
     "icon": "Die_Poison",
     "Des": "P_SkillText_11000502",
     "DesParam": [
-      15
+      100,
+      2
     ],
     "BuffList": [
       {
@@ -4743,7 +4726,8 @@
     "icon": "Die_Poison",
     "Des": "P_SkillText_11000502",
     "DesParam": [
-      15
+      100,
+      2
     ],
     "BuffList": [
       {
@@ -5015,42 +4999,6 @@
     "BuffList": [
       {
         "BuffId": 100360102,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      }
-    ],
-    "Priority": 1
-  },
-  {
-    "Id": 11004101,
-    "name": "P_Skill_11004101",
-    "icon": "Start_Palsy",
-    "Des": "P_SkillText_11004101",
-    "DesParam": [
-      1
-    ],
-    "BuffList": [
-      {
-        "BuffId": 100410101,
-        "BuffLv": 1,
-        "Duration": 0,
-        "Target": 1
-      }
-    ],
-    "Priority": 1
-  },
-  {
-    "Id": 11004201,
-    "name": "P_Skill_11004201",
-    "icon": "Start_Palsy",
-    "Des": "P_SkillText_11004201",
-    "DesParam": [
-      1
-    ],
-    "BuffList": [
-      {
-        "BuffId": 100420101,
         "BuffLv": 1,
         "Duration": 0,
         "Target": 1

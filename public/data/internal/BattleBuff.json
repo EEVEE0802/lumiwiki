@@ -4084,7 +4084,7 @@
       "BuffState_8"
     ],
     "DesParam": [
-      15
+      10
     ],
     "Icon": [
       "Buff_Freeze"
@@ -4134,7 +4134,7 @@
     "HealthSteal": 0,
     "Piercing": 0,
     "Silence": 0,
-    "SkillPowerChange": 15,
+    "SkillPowerChange": 10,
     "FirstSkillChange": [],
     "AttackDamageLock": 0,
     "AttackGlobalDamageChange": 0,
@@ -4151,6 +4151,80 @@
   {
     "BuffId": 8,
     "BuffLv": 2,
+    "Name": [
+      "BuffName_8"
+    ],
+    "Des": [
+      "BuffState_8"
+    ],
+    "DesParam": [
+      20
+    ],
+    "Icon": [
+      "Buff_Freeze"
+    ],
+    "BuffType": 3,
+    "AddVFX": [],
+    "AddVFXNoJump": [],
+    "RemoveVFX": [],
+    "ContinueVFX": [
+      7
+    ],
+    "TriggerVFX": [],
+    "ConflictType": [],
+    "SwitchRemove": false,
+    "TriggerCondition": 0,
+    "DelayTime": 0,
+    "TickTime": 0,
+    "TriggerParam": [],
+    "ConditonIndex": 11600124,
+    "EffectId": [],
+    "ConditonIndex2": 0,
+    "EffectId2": [],
+    "ConditonIndex3": 0,
+    "EffectId3": [],
+    "ConditonIndex4": 0,
+    "EffectId4": [],
+    "ConditonIndex5": 0,
+    "EffectId5": [],
+    "RemoveCondition": 0,
+    "RemoveConditonIndex": 0,
+    "AttackEnhance": 0,
+    "DefenceEnhance": 0,
+    "CritRateEnhance": 0,
+    "CritOnHitRateEnhance": 0,
+    "TotalDamageEnhance": 0,
+    "SkillDamageEnhance": 0,
+    "NormalDamageEnhance": 0,
+    "TypeDamageEnhance": [],
+    "TotalOnHitEnhance": 0,
+    "TypeOnHitEnhance": [],
+    "ImmuBuffType": [],
+    "ImmuBuffId": 0,
+    "AttackSpeedEnhance": 0,
+    "SkillCostChange": [],
+    "Vertigo": false,
+    "Restriction": false,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "Silence": 0,
+    "SkillPowerChange": 20,
+    "FirstSkillChange": [],
+    "AttackDamageLock": 0,
+    "AttackGlobalDamageChange": 0,
+    "OnHitGlobalDamageChange": 0,
+    "AttackGlobalDamageChange2": 0,
+    "OnHitGlobalDamageChange2": 0,
+    "AttackCounterRateChange": 0,
+    "OnHitCounterRateChange": 0,
+    "AttackCritRateChange": 0,
+    "OnHitCritRateChange": 0,
+    "DebuffDamageResistance": 0,
+    "RecoveryEfficiency": 0
+  },
+  {
+    "BuffId": 8,
+    "BuffLv": 3,
     "Name": [
       "BuffName_8"
     ],
@@ -4224,80 +4298,6 @@
   },
   {
     "BuffId": 8,
-    "BuffLv": 3,
-    "Name": [
-      "BuffName_8"
-    ],
-    "Des": [
-      "BuffState_8"
-    ],
-    "DesParam": [
-      45
-    ],
-    "Icon": [
-      "Buff_Freeze"
-    ],
-    "BuffType": 3,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [
-      7
-    ],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 11600124,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 0,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 45,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 8,
     "BuffLv": 4,
     "Name": [
       "BuffName_8"
@@ -4306,7 +4306,7 @@
       "BuffState_8"
     ],
     "DesParam": [
-      60
+      40
     ],
     "Icon": [
       "Buff_Freeze"
@@ -4356,7 +4356,7 @@
     "HealthSteal": 0,
     "Piercing": 0,
     "Silence": 0,
-    "SkillPowerChange": 60,
+    "SkillPowerChange": 40,
     "FirstSkillChange": [],
     "AttackDamageLock": 0,
     "AttackGlobalDamageChange": 0,
@@ -4380,7 +4380,7 @@
       "BuffState_8"
     ],
     "DesParam": [
-      75
+      50
     ],
     "Icon": [
       "Buff_Freeze"
@@ -4430,7 +4430,7 @@
     "HealthSteal": 0,
     "Piercing": 0,
     "Silence": 0,
-    "SkillPowerChange": 75,
+    "SkillPowerChange": 50,
     "FirstSkillChange": [],
     "AttackDamageLock": 0,
     "AttackGlobalDamageChange": 0,
@@ -23530,16 +23530,16 @@
     "BuffId": 300001,
     "BuffLv": 1,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       1
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -23602,16 +23602,16 @@
     "BuffId": 300001,
     "BuffLv": 2,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       2
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -23674,16 +23674,16 @@
     "BuffId": 300001,
     "BuffLv": 3,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       3
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -23746,16 +23746,16 @@
     "BuffId": 300001,
     "BuffLv": 4,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       4
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -23818,16 +23818,16 @@
     "BuffId": 300001,
     "BuffLv": 5,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       5
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -23890,16 +23890,16 @@
     "BuffId": 300001,
     "BuffLv": 6,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       6
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -23962,16 +23962,16 @@
     "BuffId": 300001,
     "BuffLv": 7,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       7
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24034,16 +24034,16 @@
     "BuffId": 300001,
     "BuffLv": 8,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       8
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24106,16 +24106,16 @@
     "BuffId": 300001,
     "BuffLv": 9,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       9
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24178,16 +24178,16 @@
     "BuffId": 300001,
     "BuffLv": 10,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       10
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24250,16 +24250,16 @@
     "BuffId": 300001,
     "BuffLv": 11,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       11
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24322,16 +24322,16 @@
     "BuffId": 300001,
     "BuffLv": 12,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       12
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24394,16 +24394,16 @@
     "BuffId": 300001,
     "BuffLv": 13,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       13
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24466,16 +24466,16 @@
     "BuffId": 300001,
     "BuffLv": 14,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       14
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24538,16 +24538,16 @@
     "BuffId": 300001,
     "BuffLv": 15,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       15
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24610,16 +24610,16 @@
     "BuffId": 300001,
     "BuffLv": 16,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       16
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24682,16 +24682,16 @@
     "BuffId": 300001,
     "BuffLv": 17,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       17
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24754,16 +24754,16 @@
     "BuffId": 300001,
     "BuffLv": 18,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       18
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24826,16 +24826,16 @@
     "BuffId": 300001,
     "BuffLv": 19,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       19
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24898,16 +24898,16 @@
     "BuffId": 300001,
     "BuffLv": 20,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       20
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -24970,16 +24970,16 @@
     "BuffId": 300001,
     "BuffLv": 21,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       21
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25042,16 +25042,16 @@
     "BuffId": 300001,
     "BuffLv": 22,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       22
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25114,16 +25114,16 @@
     "BuffId": 300001,
     "BuffLv": 23,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       23
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25186,16 +25186,16 @@
     "BuffId": 300001,
     "BuffLv": 24,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       24
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25258,16 +25258,16 @@
     "BuffId": 300001,
     "BuffLv": 25,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       25
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25330,16 +25330,16 @@
     "BuffId": 300001,
     "BuffLv": 26,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       26
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25402,16 +25402,16 @@
     "BuffId": 300001,
     "BuffLv": 27,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       27
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25474,16 +25474,16 @@
     "BuffId": 300001,
     "BuffLv": 28,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       28
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25546,16 +25546,16 @@
     "BuffId": 300001,
     "BuffLv": 29,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       29
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25618,16 +25618,16 @@
     "BuffId": 300001,
     "BuffLv": 30,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       30
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25690,16 +25690,16 @@
     "BuffId": 300001,
     "BuffLv": 31,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       31
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25762,16 +25762,16 @@
     "BuffId": 300001,
     "BuffLv": 32,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       32
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25834,16 +25834,16 @@
     "BuffId": 300001,
     "BuffLv": 33,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       33
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25906,16 +25906,16 @@
     "BuffId": 300001,
     "BuffLv": 34,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       34
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -25978,16 +25978,16 @@
     "BuffId": 300001,
     "BuffLv": 35,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       35
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26050,16 +26050,16 @@
     "BuffId": 300001,
     "BuffLv": 36,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       36
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26122,16 +26122,16 @@
     "BuffId": 300001,
     "BuffLv": 37,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       37
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26194,16 +26194,16 @@
     "BuffId": 300001,
     "BuffLv": 38,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       38
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26266,16 +26266,16 @@
     "BuffId": 300001,
     "BuffLv": 39,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       39
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26338,16 +26338,16 @@
     "BuffId": 300001,
     "BuffLv": 40,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       40
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26410,16 +26410,16 @@
     "BuffId": 300001,
     "BuffLv": 41,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       41
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26482,16 +26482,16 @@
     "BuffId": 300001,
     "BuffLv": 42,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       42
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26554,16 +26554,16 @@
     "BuffId": 300001,
     "BuffLv": 43,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       43
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26626,16 +26626,16 @@
     "BuffId": 300001,
     "BuffLv": 44,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       44
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26698,16 +26698,16 @@
     "BuffId": 300001,
     "BuffLv": 45,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       45
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26770,16 +26770,16 @@
     "BuffId": 300001,
     "BuffLv": 46,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       46
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26842,16 +26842,16 @@
     "BuffId": 300001,
     "BuffLv": 47,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       47
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26914,16 +26914,16 @@
     "BuffId": 300001,
     "BuffLv": 48,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       48
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -26986,16 +26986,16 @@
     "BuffId": 300001,
     "BuffLv": 49,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       49
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27058,16 +27058,16 @@
     "BuffId": 300001,
     "BuffLv": 50,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       50
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27130,16 +27130,16 @@
     "BuffId": 300001,
     "BuffLv": 51,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       51
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27202,16 +27202,16 @@
     "BuffId": 300001,
     "BuffLv": 52,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       52
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27274,16 +27274,16 @@
     "BuffId": 300001,
     "BuffLv": 53,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       53
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27346,16 +27346,16 @@
     "BuffId": 300001,
     "BuffLv": 54,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       54
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27418,16 +27418,16 @@
     "BuffId": 300001,
     "BuffLv": 55,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       55
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27490,16 +27490,16 @@
     "BuffId": 300001,
     "BuffLv": 56,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       56
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27562,16 +27562,16 @@
     "BuffId": 300001,
     "BuffLv": 57,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       57
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27634,16 +27634,16 @@
     "BuffId": 300001,
     "BuffLv": 58,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       58
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27706,16 +27706,16 @@
     "BuffId": 300001,
     "BuffLv": 59,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       59
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27778,16 +27778,16 @@
     "BuffId": 300001,
     "BuffLv": 60,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       60
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27850,16 +27850,16 @@
     "BuffId": 300001,
     "BuffLv": 61,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       61
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27922,16 +27922,16 @@
     "BuffId": 300001,
     "BuffLv": 62,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       62
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -27994,16 +27994,16 @@
     "BuffId": 300001,
     "BuffLv": 63,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       63
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28066,16 +28066,16 @@
     "BuffId": 300001,
     "BuffLv": 64,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       64
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28138,16 +28138,16 @@
     "BuffId": 300001,
     "BuffLv": 65,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       65
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28210,16 +28210,16 @@
     "BuffId": 300001,
     "BuffLv": 66,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       66
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28282,16 +28282,16 @@
     "BuffId": 300001,
     "BuffLv": 67,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       67
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28354,16 +28354,16 @@
     "BuffId": 300001,
     "BuffLv": 68,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       68
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28426,16 +28426,16 @@
     "BuffId": 300001,
     "BuffLv": 69,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       69
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28498,16 +28498,16 @@
     "BuffId": 300001,
     "BuffLv": 70,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       70
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28570,16 +28570,16 @@
     "BuffId": 300001,
     "BuffLv": 71,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       71
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28642,16 +28642,16 @@
     "BuffId": 300001,
     "BuffLv": 72,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       72
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28714,16 +28714,16 @@
     "BuffId": 300001,
     "BuffLv": 73,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       73
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28786,16 +28786,16 @@
     "BuffId": 300001,
     "BuffLv": 74,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       74
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28858,16 +28858,16 @@
     "BuffId": 300001,
     "BuffLv": 75,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       75
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -28930,16 +28930,16 @@
     "BuffId": 300001,
     "BuffLv": 76,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       76
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29002,16 +29002,16 @@
     "BuffId": 300001,
     "BuffLv": 77,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       77
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29074,16 +29074,16 @@
     "BuffId": 300001,
     "BuffLv": 78,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       78
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29146,16 +29146,16 @@
     "BuffId": 300001,
     "BuffLv": 79,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       79
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29218,16 +29218,16 @@
     "BuffId": 300001,
     "BuffLv": 80,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       80
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29290,16 +29290,16 @@
     "BuffId": 300001,
     "BuffLv": 81,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       81
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29362,16 +29362,16 @@
     "BuffId": 300001,
     "BuffLv": 82,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       82
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29434,16 +29434,16 @@
     "BuffId": 300001,
     "BuffLv": 83,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       83
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29506,16 +29506,16 @@
     "BuffId": 300001,
     "BuffLv": 84,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       84
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29578,16 +29578,16 @@
     "BuffId": 300001,
     "BuffLv": 85,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       85
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29650,16 +29650,16 @@
     "BuffId": 300001,
     "BuffLv": 86,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       86
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29722,16 +29722,16 @@
     "BuffId": 300001,
     "BuffLv": 87,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       87
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29794,16 +29794,16 @@
     "BuffId": 300001,
     "BuffLv": 88,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       88
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29866,16 +29866,16 @@
     "BuffId": 300001,
     "BuffLv": 89,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       89
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -29938,16 +29938,16 @@
     "BuffId": 300001,
     "BuffLv": 90,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       90
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30010,16 +30010,16 @@
     "BuffId": 300001,
     "BuffLv": 91,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       91
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30082,16 +30082,16 @@
     "BuffId": 300001,
     "BuffLv": 92,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       92
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30154,16 +30154,16 @@
     "BuffId": 300001,
     "BuffLv": 93,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       93
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30226,16 +30226,16 @@
     "BuffId": 300001,
     "BuffLv": 94,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       94
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30298,16 +30298,16 @@
     "BuffId": 300001,
     "BuffLv": 95,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       95
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30370,16 +30370,16 @@
     "BuffId": 300001,
     "BuffLv": 96,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       96
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30442,16 +30442,16 @@
     "BuffId": 300001,
     "BuffLv": 97,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       97
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30514,16 +30514,16 @@
     "BuffId": 300001,
     "BuffLv": 98,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       98
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30586,16 +30586,16 @@
     "BuffId": 300001,
     "BuffLv": 99,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       99
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -30658,16 +30658,16 @@
     "BuffId": 300001,
     "BuffLv": 100,
     "Name": [
-      "GymBuffName_18"
+      "GymBuffName_19"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_19"
     ],
     "DesParam": [
       100
     ],
     "Icon": [
-      "GymBuff_18"
+      "Buff_DefenceUp"
     ],
     "BuffType": 0,
     "AddVFX": [],
@@ -34296,7 +34296,7 @@
     ],
     "ConditonIndex2": 110200402,
     "EffectId2": [
-      707
+      703
     ],
     "ConditonIndex3": 0,
     "EffectId3": [],
@@ -42287,29 +42287,34 @@
     "TriggerVFX": [],
     "ConflictType": [],
     "SwitchRemove": false,
-    "TriggerCondition": 15,
+    "TriggerCondition": 4,
     "DelayTime": 0,
     "TickTime": 0,
     "TriggerParam": [],
-    "ConditonIndex": 411,
+    "ConditonIndex": 132211,
     "EffectId": [
-      10800102
+      10800102,
+      10800112
     ],
-    "ConditonIndex2": 412,
+    "ConditonIndex2": 132212,
     "EffectId2": [
-      10800103
+      10800103,
+      10800112
     ],
-    "ConditonIndex3": 413,
+    "ConditonIndex3": 132213,
     "EffectId3": [
-      10800104
+      10800104,
+      10800112
     ],
-    "ConditonIndex4": 414,
+    "ConditonIndex4": 132214,
     "EffectId4": [
-      10800105
+      10800105,
+      10800112
     ],
-    "ConditonIndex5": 415,
+    "ConditonIndex5": 132215,
     "EffectId5": [
-      10800106
+      10800106,
+      10800112
     ],
     "RemoveCondition": 0,
     "RemoveConditonIndex": 0,
@@ -42385,6 +42390,72 @@
     "EffectId5": [
       585
     ],
+    "RemoveCondition": 0,
+    "RemoveConditonIndex": 0,
+    "AttackEnhance": 0,
+    "DefenceEnhance": 0,
+    "CritRateEnhance": 0,
+    "CritOnHitRateEnhance": 0,
+    "TotalDamageEnhance": 0,
+    "SkillDamageEnhance": 0,
+    "NormalDamageEnhance": 0,
+    "TypeDamageEnhance": [],
+    "TotalOnHitEnhance": 0,
+    "TypeOnHitEnhance": [],
+    "ImmuBuffType": [],
+    "ImmuBuffId": 0,
+    "AttackSpeedEnhance": 0,
+    "SkillCostChange": [],
+    "Vertigo": false,
+    "Restriction": false,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "Silence": 0,
+    "SkillPowerChange": 0,
+    "FirstSkillChange": [],
+    "AttackDamageLock": 0,
+    "AttackGlobalDamageChange": 0,
+    "OnHitGlobalDamageChange": 0,
+    "AttackGlobalDamageChange2": 0,
+    "OnHitGlobalDamageChange2": 0,
+    "AttackCounterRateChange": 0,
+    "OnHitCounterRateChange": 0,
+    "AttackCritRateChange": 0,
+    "OnHitCritRateChange": 0,
+    "DebuffDamageResistance": 0,
+    "RecoveryEfficiency": 0
+  },
+  {
+    "BuffId": 10800104,
+    "BuffLv": 1,
+    "Name": [],
+    "Des": [],
+    "DesParam": [],
+    "Icon": [],
+    "BuffType": 0,
+    "AddVFX": [],
+    "AddVFXNoJump": [],
+    "RemoveVFX": [
+      10800101
+    ],
+    "ContinueVFX": [],
+    "TriggerVFX": [],
+    "ConflictType": [],
+    "SwitchRemove": true,
+    "TriggerCondition": 0,
+    "DelayTime": 0,
+    "TickTime": 0,
+    "TriggerParam": [],
+    "ConditonIndex": 0,
+    "EffectId": [],
+    "ConditonIndex2": 0,
+    "EffectId2": [],
+    "ConditonIndex3": 0,
+    "EffectId3": [],
+    "ConditonIndex4": 0,
+    "EffectId4": [],
+    "ConditonIndex5": 0,
+    "EffectId5": [],
     "RemoveCondition": 0,
     "RemoveConditonIndex": 0,
     "AttackEnhance": 0,
@@ -57857,7 +57928,7 @@
     "TriggerParam": [],
     "ConditonIndex": 0,
     "EffectId": [
-      1512
+      1511
     ],
     "ConditonIndex2": 0,
     "EffectId2": [],
@@ -71664,6 +71735,72 @@
     "RecoveryEfficiency": 0
   },
   {
+    "BuffId": 133801071,
+    "BuffLv": 1,
+    "Name": [],
+    "Des": [],
+    "DesParam": [],
+    "Icon": [],
+    "BuffType": 0,
+    "AddVFX": [],
+    "AddVFXNoJump": [],
+    "RemoveVFX": [],
+    "ContinueVFX": [],
+    "TriggerVFX": [],
+    "ConflictType": [],
+    "SwitchRemove": false,
+    "TriggerCondition": 2,
+    "DelayTime": 0,
+    "TickTime": 0,
+    "TriggerParam": [],
+    "ConditonIndex": 113380104,
+    "EffectId": [
+      1338010421
+    ],
+    "ConditonIndex2": 0,
+    "EffectId2": [],
+    "ConditonIndex3": 0,
+    "EffectId3": [],
+    "ConditonIndex4": 0,
+    "EffectId4": [],
+    "ConditonIndex5": 0,
+    "EffectId5": [],
+    "RemoveCondition": 0,
+    "RemoveConditonIndex": 0,
+    "AttackEnhance": 0,
+    "DefenceEnhance": 0,
+    "CritRateEnhance": 0,
+    "CritOnHitRateEnhance": 0,
+    "TotalDamageEnhance": 0,
+    "SkillDamageEnhance": 0,
+    "NormalDamageEnhance": 0,
+    "TypeDamageEnhance": [],
+    "TotalOnHitEnhance": 0,
+    "TypeOnHitEnhance": [],
+    "ImmuBuffType": [],
+    "ImmuBuffId": 0,
+    "AttackSpeedEnhance": 0,
+    "SkillCostChange": [],
+    "Vertigo": false,
+    "Restriction": false,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "Silence": 0,
+    "SkillPowerChange": 0,
+    "FirstSkillChange": [],
+    "AttackDamageLock": 0,
+    "AttackGlobalDamageChange": 0,
+    "OnHitGlobalDamageChange": 0,
+    "AttackGlobalDamageChange2": 0,
+    "OnHitGlobalDamageChange2": 0,
+    "AttackCounterRateChange": 0,
+    "OnHitCounterRateChange": 0,
+    "AttackCritRateChange": 0,
+    "OnHitCritRateChange": 0,
+    "DebuffDamageResistance": 0,
+    "RecoveryEfficiency": 0
+  },
+  {
     "BuffId": 13390103,
     "BuffLv": 1,
     "Name": [],
@@ -71751,6 +71888,141 @@
     "ConditonIndex": 0,
     "EffectId": [
       134001027
+    ],
+    "ConditonIndex2": 0,
+    "EffectId2": [],
+    "ConditonIndex3": 0,
+    "EffectId3": [],
+    "ConditonIndex4": 0,
+    "EffectId4": [],
+    "ConditonIndex5": 0,
+    "EffectId5": [],
+    "RemoveCondition": 0,
+    "RemoveConditonIndex": 0,
+    "AttackEnhance": 0,
+    "DefenceEnhance": 0,
+    "CritRateEnhance": 0,
+    "CritOnHitRateEnhance": 0,
+    "TotalDamageEnhance": 0,
+    "SkillDamageEnhance": 0,
+    "NormalDamageEnhance": 0,
+    "TypeDamageEnhance": [],
+    "TotalOnHitEnhance": 0,
+    "TypeOnHitEnhance": [],
+    "ImmuBuffType": [],
+    "ImmuBuffId": 0,
+    "AttackSpeedEnhance": 0,
+    "SkillCostChange": [],
+    "Vertigo": false,
+    "Restriction": false,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "Silence": 0,
+    "SkillPowerChange": 0,
+    "FirstSkillChange": [],
+    "AttackDamageLock": 0,
+    "AttackGlobalDamageChange": 0,
+    "OnHitGlobalDamageChange": 0,
+    "AttackGlobalDamageChange2": 0,
+    "OnHitGlobalDamageChange2": 0,
+    "AttackCounterRateChange": 0,
+    "OnHitCounterRateChange": 0,
+    "AttackCritRateChange": 0,
+    "OnHitCritRateChange": 0,
+    "DebuffDamageResistance": 0,
+    "RecoveryEfficiency": 0
+  },
+  {
+    "BuffId": 13400104,
+    "BuffLv": 1,
+    "Name": [],
+    "Des": [],
+    "DesParam": [],
+    "Icon": [],
+    "BuffType": 0,
+    "AddVFX": [],
+    "AddVFXNoJump": [],
+    "RemoveVFX": [],
+    "ContinueVFX": [],
+    "TriggerVFX": [],
+    "ConflictType": [],
+    "SwitchRemove": false,
+    "TriggerCondition": 0,
+    "DelayTime": 0,
+    "TickTime": 0,
+    "TriggerParam": [],
+    "ConditonIndex": 0,
+    "EffectId": [],
+    "ConditonIndex2": 0,
+    "EffectId2": [],
+    "ConditonIndex3": 0,
+    "EffectId3": [],
+    "ConditonIndex4": 0,
+    "EffectId4": [],
+    "ConditonIndex5": 0,
+    "EffectId5": [],
+    "RemoveCondition": 0,
+    "RemoveConditonIndex": 0,
+    "AttackEnhance": 0,
+    "DefenceEnhance": 0,
+    "CritRateEnhance": 0,
+    "CritOnHitRateEnhance": 0,
+    "TotalDamageEnhance": 0,
+    "SkillDamageEnhance": 0,
+    "NormalDamageEnhance": 0,
+    "TypeDamageEnhance": [],
+    "TotalOnHitEnhance": 0,
+    "TypeOnHitEnhance": [],
+    "ImmuBuffType": [],
+    "ImmuBuffId": 0,
+    "AttackSpeedEnhance": 0,
+    "SkillCostChange": [],
+    "Vertigo": false,
+    "Restriction": false,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "Silence": 0,
+    "SkillPowerChange": 0,
+    "FirstSkillChange": [
+      {
+        "ValueType": 2,
+        "Num": -30
+      }
+    ],
+    "AttackDamageLock": 0,
+    "AttackGlobalDamageChange": 0,
+    "OnHitGlobalDamageChange": 0,
+    "AttackGlobalDamageChange2": 0,
+    "OnHitGlobalDamageChange2": 0,
+    "AttackCounterRateChange": 0,
+    "OnHitCounterRateChange": 0,
+    "AttackCritRateChange": 0,
+    "OnHitCritRateChange": 0,
+    "DebuffDamageResistance": 0,
+    "RecoveryEfficiency": 0
+  },
+  {
+    "BuffId": 13390105,
+    "BuffLv": 1,
+    "Name": [],
+    "Des": [],
+    "DesParam": [],
+    "Icon": [],
+    "BuffType": 0,
+    "AddVFX": [],
+    "AddVFXNoJump": [],
+    "RemoveVFX": [],
+    "ContinueVFX": [],
+    "TriggerVFX": [],
+    "ConflictType": [],
+    "SwitchRemove": false,
+    "TriggerCondition": 2,
+    "DelayTime": 0,
+    "TickTime": 0,
+    "TriggerParam": [],
+    "ConditonIndex": 0,
+    "EffectId": [
+      133901031
     ],
     "ConditonIndex2": 0,
     "EffectId2": [],
@@ -72014,6 +72286,138 @@
     "RecoveryEfficiency": 0
   },
   {
+    "BuffId": 133901071,
+    "BuffLv": 1,
+    "Name": [],
+    "Des": [],
+    "DesParam": [],
+    "Icon": [],
+    "BuffType": 0,
+    "AddVFX": [],
+    "AddVFXNoJump": [],
+    "RemoveVFX": [],
+    "ContinueVFX": [],
+    "TriggerVFX": [],
+    "ConflictType": [],
+    "SwitchRemove": false,
+    "TriggerCondition": 2,
+    "DelayTime": 0,
+    "TickTime": 0,
+    "TriggerParam": [],
+    "ConditonIndex": 113390104,
+    "EffectId": [
+      1339010421
+    ],
+    "ConditonIndex2": 0,
+    "EffectId2": [],
+    "ConditonIndex3": 0,
+    "EffectId3": [],
+    "ConditonIndex4": 0,
+    "EffectId4": [],
+    "ConditonIndex5": 0,
+    "EffectId5": [],
+    "RemoveCondition": 0,
+    "RemoveConditonIndex": 0,
+    "AttackEnhance": 0,
+    "DefenceEnhance": 0,
+    "CritRateEnhance": 0,
+    "CritOnHitRateEnhance": 0,
+    "TotalDamageEnhance": 0,
+    "SkillDamageEnhance": 0,
+    "NormalDamageEnhance": 0,
+    "TypeDamageEnhance": [],
+    "TotalOnHitEnhance": 0,
+    "TypeOnHitEnhance": [],
+    "ImmuBuffType": [],
+    "ImmuBuffId": 0,
+    "AttackSpeedEnhance": 0,
+    "SkillCostChange": [],
+    "Vertigo": false,
+    "Restriction": false,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "Silence": 0,
+    "SkillPowerChange": 0,
+    "FirstSkillChange": [],
+    "AttackDamageLock": 0,
+    "AttackGlobalDamageChange": 0,
+    "OnHitGlobalDamageChange": 0,
+    "AttackGlobalDamageChange2": 0,
+    "OnHitGlobalDamageChange2": 0,
+    "AttackCounterRateChange": 0,
+    "OnHitCounterRateChange": 0,
+    "AttackCritRateChange": 0,
+    "OnHitCritRateChange": 0,
+    "DebuffDamageResistance": 0,
+    "RecoveryEfficiency": 0
+  },
+  {
+    "BuffId": 13400105,
+    "BuffLv": 1,
+    "Name": [],
+    "Des": [],
+    "DesParam": [],
+    "Icon": [],
+    "BuffType": 0,
+    "AddVFX": [],
+    "AddVFXNoJump": [],
+    "RemoveVFX": [],
+    "ContinueVFX": [],
+    "TriggerVFX": [],
+    "ConflictType": [],
+    "SwitchRemove": false,
+    "TriggerCondition": 2,
+    "DelayTime": 0,
+    "TickTime": 0,
+    "TriggerParam": [],
+    "ConditonIndex": 0,
+    "EffectId": [
+      134001031
+    ],
+    "ConditonIndex2": 0,
+    "EffectId2": [],
+    "ConditonIndex3": 0,
+    "EffectId3": [],
+    "ConditonIndex4": 0,
+    "EffectId4": [],
+    "ConditonIndex5": 0,
+    "EffectId5": [],
+    "RemoveCondition": 0,
+    "RemoveConditonIndex": 0,
+    "AttackEnhance": 0,
+    "DefenceEnhance": 0,
+    "CritRateEnhance": 0,
+    "CritOnHitRateEnhance": 0,
+    "TotalDamageEnhance": 0,
+    "SkillDamageEnhance": 0,
+    "NormalDamageEnhance": 0,
+    "TypeDamageEnhance": [],
+    "TotalOnHitEnhance": 0,
+    "TypeOnHitEnhance": [],
+    "ImmuBuffType": [],
+    "ImmuBuffId": 0,
+    "AttackSpeedEnhance": 0,
+    "SkillCostChange": [],
+    "Vertigo": false,
+    "Restriction": false,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "Silence": 0,
+    "SkillPowerChange": 0,
+    "FirstSkillChange": [],
+    "AttackDamageLock": 0,
+    "AttackGlobalDamageChange": 0,
+    "OnHitGlobalDamageChange": 0,
+    "AttackGlobalDamageChange2": 0,
+    "OnHitGlobalDamageChange2": 0,
+    "AttackCounterRateChange": 0,
+    "OnHitCounterRateChange": 0,
+    "AttackCritRateChange": 0,
+    "OnHitCritRateChange": 0,
+    "DebuffDamageResistance": 0,
+    "RecoveryEfficiency": 0
+  },
+  {
     "BuffId": 13400106,
     "BuffLv": 1,
     "Name": [],
@@ -72187,6 +72591,72 @@
     "ConditonIndex": 113400104,
     "EffectId": [
       134001042
+    ],
+    "ConditonIndex2": 0,
+    "EffectId2": [],
+    "ConditonIndex3": 0,
+    "EffectId3": [],
+    "ConditonIndex4": 0,
+    "EffectId4": [],
+    "ConditonIndex5": 0,
+    "EffectId5": [],
+    "RemoveCondition": 0,
+    "RemoveConditonIndex": 0,
+    "AttackEnhance": 0,
+    "DefenceEnhance": 0,
+    "CritRateEnhance": 0,
+    "CritOnHitRateEnhance": 0,
+    "TotalDamageEnhance": 0,
+    "SkillDamageEnhance": 0,
+    "NormalDamageEnhance": 0,
+    "TypeDamageEnhance": [],
+    "TotalOnHitEnhance": 0,
+    "TypeOnHitEnhance": [],
+    "ImmuBuffType": [],
+    "ImmuBuffId": 0,
+    "AttackSpeedEnhance": 0,
+    "SkillCostChange": [],
+    "Vertigo": false,
+    "Restriction": false,
+    "HealthSteal": 0,
+    "Piercing": 0,
+    "Silence": 0,
+    "SkillPowerChange": 0,
+    "FirstSkillChange": [],
+    "AttackDamageLock": 0,
+    "AttackGlobalDamageChange": 0,
+    "OnHitGlobalDamageChange": 0,
+    "AttackGlobalDamageChange2": 0,
+    "OnHitGlobalDamageChange2": 0,
+    "AttackCounterRateChange": 0,
+    "OnHitCounterRateChange": 0,
+    "AttackCritRateChange": 0,
+    "OnHitCritRateChange": 0,
+    "DebuffDamageResistance": 0,
+    "RecoveryEfficiency": 0
+  },
+  {
+    "BuffId": 134001071,
+    "BuffLv": 1,
+    "Name": [],
+    "Des": [],
+    "DesParam": [],
+    "Icon": [],
+    "BuffType": 0,
+    "AddVFX": [],
+    "AddVFXNoJump": [],
+    "RemoveVFX": [],
+    "ContinueVFX": [],
+    "TriggerVFX": [],
+    "ConflictType": [],
+    "SwitchRemove": false,
+    "TriggerCondition": 2,
+    "DelayTime": 0,
+    "TickTime": 0,
+    "TriggerParam": [],
+    "ConditonIndex": 113400104,
+    "EffectId": [
+      1340010421
     ],
     "ConditonIndex2": 0,
     "EffectId2": [],
@@ -85901,7 +86371,7 @@
     "ConditonIndex": 0,
     "EffectId": [
       1315,
-      1512
+      1511
     ],
     "ConditonIndex2": 0,
     "EffectId2": [],
@@ -85961,14 +86431,12 @@
     "TriggerVFX": [],
     "ConflictType": [],
     "SwitchRemove": false,
-    "TriggerCondition": 4,
+    "TriggerCondition": 0,
     "DelayTime": 0,
     "TickTime": 0,
     "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [
-      1000502021
-    ],
+    "ConditonIndex": 100050202,
+    "EffectId": [],
     "ConditonIndex2": 0,
     "EffectId2": [],
     "ConditonIndex3": 0,
@@ -85981,7 +86449,7 @@
     "RemoveConditonIndex": 0,
     "AttackEnhance": 0,
     "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
+    "CritRateEnhance": 10000,
     "CritOnHitRateEnhance": 0,
     "TotalDamageEnhance": 0,
     "SkillDamageEnhance": 0,
@@ -86475,13 +86943,13 @@
     "TriggerVFX": [],
     "ConflictType": [],
     "SwitchRemove": false,
-    "TriggerCondition": 4,
+    "TriggerCondition": 14,
     "DelayTime": 0,
     "TickTime": 0,
     "TriggerParam": [],
-    "ConditonIndex": 1341,
+    "ConditonIndex": 0,
     "EffectId": [
-      1000502022
+      1512
     ],
     "ConditonIndex2": 0,
     "EffectId2": [],
@@ -86595,10 +87063,16 @@
   {
     "BuffId": 100050204,
     "BuffLv": 1,
-    "Name": [],
-    "Des": [],
+    "Name": [
+      "BuffName_100050204"
+    ],
+    "Des": [
+      "BuffState_100050204"
+    ],
     "DesParam": [],
-    "Icon": [],
+    "Icon": [
+      "Buff_PowerUp"
+    ],
     "BuffType": 0,
     "AddVFX": [],
     "AddVFXNoJump": [],
@@ -86675,7 +87149,7 @@
     "DelayTime": 0,
     "TickTime": 0,
     "TriggerParam": [],
-    "ConditonIndex": 0,
+    "ConditonIndex": 100050202,
     "EffectId": [],
     "ConditonIndex2": 0,
     "EffectId2": [],
@@ -89553,1938 +90027,6 @@
     "Icon": [
       "Buff_100360101"
     ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 0,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410101,
-    "BuffLv": 1,
-    "Name": [
-      "BuffName_100360101"
-    ],
-    "Des": [
-      "BuffState_100360101"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100360101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 4,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [
-      100410101
-    ],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 0,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410102,
-    "BuffLv": 1,
-    "Name": [
-      "BuffName_100360101"
-    ],
-    "Des": [
-      "BuffState_100360101"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100360101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 6,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [
-      100410101
-    ],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 0,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 1,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 2,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 1000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 3,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 1500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 4,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 2000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 5,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 2500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 6,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 3000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 7,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 3500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 8,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 4000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 9,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 4500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 10,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 5000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 11,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 5500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 12,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 6000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 13,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 6500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 14,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 7000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 15,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 7500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 16,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 8000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 17,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 8500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 18,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 9000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 19,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 9500,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100410103,
-    "BuffLv": 20,
-    "Name": [
-      "BuffName_100410103"
-    ],
-    "Des": [
-      "BuffState_100410103"
-    ],
-    "DesParam": [],
-    "Icon": [
-      "Buff_100410101"
-    ],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 10000,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100420101,
-    "BuffLv": 1,
-    "Name": [],
-    "Des": [],
-    "DesParam": [],
-    "Icon": [],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 6,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 1324,
-    "EffectId": [
-      100002
-    ],
-    "ConditonIndex2": 100420106,
-    "EffectId2": [
-      100420103
-    ],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 0,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100420102,
-    "BuffLv": 1,
-    "Name": [],
-    "Des": [],
-    "DesParam": [],
-    "Icon": [],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 0,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100420102,
-    "BuffLv": 2,
-    "Name": [],
-    "Des": [],
-    "DesParam": [],
-    "Icon": [],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 0,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100420102,
-    "BuffLv": 3,
-    "Name": [],
-    "Des": [],
-    "DesParam": [],
-    "Icon": [],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 0,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100420102,
-    "BuffLv": 4,
-    "Name": [],
-    "Des": [],
-    "DesParam": [],
-    "Icon": [],
-    "BuffType": 0,
-    "AddVFX": [],
-    "AddVFXNoJump": [],
-    "RemoveVFX": [],
-    "ContinueVFX": [],
-    "TriggerVFX": [],
-    "ConflictType": [],
-    "SwitchRemove": false,
-    "TriggerCondition": 0,
-    "DelayTime": 0,
-    "TickTime": 0,
-    "TriggerParam": [],
-    "ConditonIndex": 0,
-    "EffectId": [],
-    "ConditonIndex2": 0,
-    "EffectId2": [],
-    "ConditonIndex3": 0,
-    "EffectId3": [],
-    "ConditonIndex4": 0,
-    "EffectId4": [],
-    "ConditonIndex5": 0,
-    "EffectId5": [],
-    "RemoveCondition": 0,
-    "RemoveConditonIndex": 0,
-    "AttackEnhance": 0,
-    "DefenceEnhance": 0,
-    "CritRateEnhance": 0,
-    "CritOnHitRateEnhance": 0,
-    "TotalDamageEnhance": 0,
-    "SkillDamageEnhance": 0,
-    "NormalDamageEnhance": 0,
-    "TypeDamageEnhance": [],
-    "TotalOnHitEnhance": 0,
-    "TypeOnHitEnhance": [],
-    "ImmuBuffType": [],
-    "ImmuBuffId": 0,
-    "AttackSpeedEnhance": 0,
-    "SkillCostChange": [],
-    "Vertigo": false,
-    "Restriction": false,
-    "HealthSteal": 0,
-    "Piercing": 0,
-    "Silence": 0,
-    "SkillPowerChange": 0,
-    "FirstSkillChange": [],
-    "AttackDamageLock": 0,
-    "AttackGlobalDamageChange": 0,
-    "OnHitGlobalDamageChange": 0,
-    "AttackGlobalDamageChange2": 0,
-    "OnHitGlobalDamageChange2": 0,
-    "AttackCounterRateChange": 0,
-    "OnHitCounterRateChange": 0,
-    "AttackCritRateChange": 0,
-    "OnHitCritRateChange": 0,
-    "DebuffDamageResistance": 0,
-    "RecoveryEfficiency": 0
-  },
-  {
-    "BuffId": 100420102,
-    "BuffLv": 5,
-    "Name": [],
-    "Des": [],
-    "DesParam": [],
-    "Icon": [],
     "BuffType": 0,
     "AddVFX": [],
     "AddVFXNoJump": [],
