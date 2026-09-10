@@ -425,22 +425,24 @@ function calcSingleDamage(params) {
   // F(Lv)
   const fLv = calcF(attacker.level, attacker.breakLevel)
 
-  // 先应用攻防等级到属性值
+  // 暴击时忽略对己不利的攻防等级：攻击等级 < 0 视为 0，防御等级 > 0 视为 0
+  let effectiveAtkBuff = attacker.atkBuff
+  let effectiveDefBuff = defender.defBuff
+  if (isCrit) {
+    if (effectiveAtkBuff < 0) effectiveAtkBuff = 0
+    if (effectiveDefBuff > 0) effectiveDefBuff = 0
+  }
+
+  // 应用攻防等级到属性值
   const { adjustedAtk, adjustedDef } = applyBuffsToStats(
     attacker.atk,
     defender.def,
-    attacker.atkBuff,
-    defender.defBuff
+    effectiveAtkBuff,
+    effectiveDefBuff
   )
 
-  // 暴击穿防：如果调整后的攻击 < 调整后的防御，则穿防（攻击 = 防御）
-  let finalAtk = adjustedAtk
-  if (isCrit && adjustedAtk < adjustedDef) {
-    finalAtk = adjustedDef
-  }
-
-  // 攻防比（使用穿防后的攻击）
-  const atkDefRatio = finalAtk / adjustedDef
+  // 攻防比
+  const atkDefRatio = adjustedAtk / adjustedDef
 
   // 技能威力
   const skillPower = getSkillPower(skill)
