@@ -58,6 +58,7 @@ const CORE_FILES = [
   'LumiCatch.json',
   'LumiLevel.json',
   'LumiBreak.json',
+  'LumiStarUp.json',
   'BattleConst.json',
   'LumiRareLevel.json',
   'MarketPrice.json',

@@ -1,0 +1,570 @@
+[
+  {
+    "id": 1,
+    "starlv": 0,
+    "cost": 0,
+    "Buffid": [],
+    "param": [
+      0,
+      0,
+      0
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 1,
+    "starlv": 1,
+    "cost": 1,
+    "Buffid": [
+      201
+    ],
+    "param": [
+      10,
+      10,
+      10
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 1,
+    "starlv": 2,
+    "cost": 1,
+    "Buffid": [
+      202
+    ],
+    "param": [
+      20,
+      20,
+      20
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 1,
+    "starlv": 3,
+    "cost": 1,
+    "Buffid": [
+      203
+    ],
+    "param": [
+      30,
+      30,
+      30
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 1,
+    "starlv": 4,
+    "cost": 2,
+    "Buffid": [
+      204
+    ],
+    "param": [
+      40,
+      40,
+      40
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 1,
+    "starlv": 5,
+    "cost": 2,
+    "Buffid": [
+      205
+    ],
+    "param": [
+      50,
+      50,
+      50
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 3,
+    "starlv": 0,
+    "cost": 0,
+    "Buffid": [
+      210
+    ],
+    "param": [
+      0,
+      0,
+      0
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 3,
+    "starlv": 1,
+    "cost": 1,
+    "Buffid": [
+      211
+    ],
+    "param": [
+      10,
+      10,
+      10
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 3,
+    "starlv": 2,
+    "cost": 1,
+    "Buffid": [
+      212
+    ],
+    "param": [
+      20,
+      20,
+      20
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 3,
+    "starlv": 3,
+    "cost": 1,
+    "Buffid": [
+      213
+    ],
+    "param": [
+      30,
+      30,
+      30
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 3,
+    "starlv": 4,
+    "cost": 2,
+    "Buffid": [
+      214
+    ],
+    "param": [
+      40,
+      40,
+      40
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 3,
+    "starlv": 5,
+    "cost": 2,
+    "Buffid": [
+      215
+    ],
+    "param": [
+      50,
+      50,
+      50
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 2,
+    "starlv": 0,
+    "cost": 0,
+    "Buffid": [
+      220
+    ],
+    "param": [
+      20,
+      20,
+      0
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 2,
+    "starlv": 1,
+    "cost": 1,
+    "Buffid": [
+      221
+    ],
+    "param": [
+      30,
+      30,
+      10
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 2,
+    "starlv": 2,
+    "cost": 1,
+    "Buffid": [
+      222
+    ],
+    "param": [
+      40,
+      40,
+      20
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 2,
+    "starlv": 3,
+    "cost": 1,
+    "Buffid": [
+      223
+    ],
+    "param": [
+      50,
+      50,
+      30
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 2,
+    "starlv": 4,
+    "cost": 2,
+    "Buffid": [
+      224
+    ],
+    "param": [
+      60,
+      60,
+      40
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 2,
+    "starlv": 5,
+    "cost": 2,
+    "Buffid": [
+      225
+    ],
+    "param": [
+      70,
+      70,
+      50
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 4,
+    "starlv": 0,
+    "cost": 0,
+    "Buffid": [
+      230
+    ],
+    "param": [
+      20,
+      20,
+      0
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 4,
+    "starlv": 1,
+    "cost": 1,
+    "Buffid": [
+      231
+    ],
+    "param": [
+      30,
+      30,
+      10
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 4,
+    "starlv": 2,
+    "cost": 1,
+    "Buffid": [
+      232
+    ],
+    "param": [
+      40,
+      40,
+      20
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 4,
+    "starlv": 3,
+    "cost": 1,
+    "Buffid": [
+      233
+    ],
+    "param": [
+      50,
+      50,
+      30
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 4,
+    "starlv": 4,
+    "cost": 2,
+    "Buffid": [
+      234
+    ],
+    "param": [
+      60,
+      60,
+      40
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 4,
+    "starlv": 5,
+    "cost": 2,
+    "Buffid": [
+      235
+    ],
+    "param": [
+      70,
+      70,
+      50
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 5,
+    "starlv": 0,
+    "cost": 0,
+    "Buffid": [
+      240
+    ],
+    "param": [
+      40,
+      40,
+      0
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 5,
+    "starlv": 1,
+    "cost": 1,
+    "Buffid": [
+      241
+    ],
+    "param": [
+      50,
+      50,
+      10
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 5,
+    "starlv": 2,
+    "cost": 1,
+    "Buffid": [
+      242
+    ],
+    "param": [
+      60,
+      60,
+      20
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 5,
+    "starlv": 3,
+    "cost": 1,
+    "Buffid": [
+      243
+    ],
+    "param": [
+      70,
+      70,
+      30
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 5,
+    "starlv": 4,
+    "cost": 2,
+    "Buffid": [
+      244
+    ],
+    "param": [
+      80,
+      80,
+      40
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  },
+  {
+    "id": 5,
+    "starlv": 5,
+    "cost": 2,
+    "Buffid": [
+      245
+    ],
+    "param": [
+      90,
+      90,
+      50
+    ],
+    "des": [
+      "StarUp_des_1",
+      "StarUp_des_2",
+      "StarUp_des_3"
+    ],
+    "DesAll": "StarUp_des_total_1"
+  }
+]

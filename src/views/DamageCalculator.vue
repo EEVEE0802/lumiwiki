@@ -12,12 +12,14 @@ const typeCounters = ref([])
 const battleConst = ref(null)   // { HP, Attack, Defence, Fv }
 const lumiLevels = ref([])      // LumiLevel.json：Id=等级 → battleState[攻,防,HP] 万分比
 const lumiBreaks = ref([])      // LumiBreak.json：Id=突破 → battleState[攻,防,HP] 万分比
+const lumiStarUps = ref([])     // LumiStarUp.json：{id: 1~5 组, starlv: 0~5, param: [增伤%, 减伤%, ...]}
 const loading = ref(true)
 
 // 左侧设置
 const leftLumi = ref(null)
 const leftLevel = ref(50)
 const leftBreakLevel = ref(4)
+const leftStarLv = ref(0)
 const leftNatureUp = ref('none')   // 性格 +10% 的属性：'none' | 'hp' | 'atk' | 'def'
 const leftNatureDown = ref('none') // 性格 -10% 的属性
 const leftSkill = ref(null)
@@ -30,6 +32,7 @@ const leftReductionCoeffs = ref([]) // 减伤系数
 const rightLumi = ref(null)
 const rightLevel = ref(50)
 const rightBreakLevel = ref(4)
+const rightStarLv = ref(0)
 const rightNatureUp = ref('none')
 const rightNatureDown = ref('none')
 const rightSkill = ref(null)
@@ -127,14 +130,15 @@ const getSkillName = (skill) => {
 
 // 数据加载
 onMounted(async () => {
-  const [lumis, skills, loc, counters, bc, levels, breaks] = await Promise.all([
+  const [lumis, skills, loc, counters, bc, levels, breaks, stars] = await Promise.all([
     loadData('Lumi'),
     loadData('ActiveSkill'),
     loadData('localization'),
     loadData('LumiTypeCounter'),
     loadData('BattleConst'),
     loadData('LumiLevel'),
-    loadData('LumiBreak')
+    loadData('LumiBreak'),
+    loadData('LumiStarUp')
   ])
   allLumis.value = lumis
   allSkills.value = skills
@@ -143,8 +147,23 @@ onMounted(async () => {
   battleConst.value = bc[0] || bc  // 表里就一条记录
   lumiLevels.value = levels
   lumiBreaks.value = breaks
+  lumiStarUps.value = stars
   loading.value = false
 })
+
+// CardBack → LumiStarUp 组 Id 映射：0 普通→1，80 王→2，50 异色→3，98 3D→4，99 全景→5
+const CARDBACK_TO_STAR_GROUP = { 0: 1, 80: 2, 50: 3, 98: 4, 99: 5 }
+function getStarGroupId(lumi) {
+  if (!lumi) return 1
+  return CARDBACK_TO_STAR_GROUP[lumi.CardBack] || 1
+}
+// 获取某只噜咪某星级下的 [增伤百分比, 减伤百分比]
+function getStarParams(lumi, starLv) {
+  const groupId = getStarGroupId(lumi)
+  const row = lumiStarUps.value.find(r => r.id === groupId && r.starlv === starLv)
+  if (!row) return { bonus: 0, reduction: 0 }
+  return { bonus: (row.param?.[0] || 0) / 100, reduction: (row.param?.[1] || 0) / 100 }
+}
 
 // 属性索引：battleState[0]=攻, [1]=防, [2]=HP
 const BS_ATK = 0
@@ -440,6 +459,12 @@ function calcSingleDamage(params) {
     baseDamage = baseDamage * 1.5
   }
 
+  // 星级拮抗系数（全局，普攻+技能都乘）：(攻方增伤% - 守方减伤%) + 1
+  if (attacker.starParams && defender.starParams) {
+    const starCoeff = attacker.starParams.bonus - defender.starParams.reduction + 1
+    baseDamage = baseDamage * starCoeff
+  }
+
   // 只有技能（mode 1 常规 / mode 2 蚀命）才应用增减伤系数，普攻（mode 0 或无消耗）不应用
   const cost = parseSkillCost(skill.SkillCost)
   const isSkill = !!cost && cost.mode !== 0
@@ -468,6 +493,9 @@ async function calculateDamage() {
   const leftStats = leftBattleStats.value
   const rightStats = rightBattleStats.value
 
+  const leftStarParams = getStarParams(leftLumi.value, leftStarLv.value)
+  const rightStarParams = getStarParams(rightLumi.value, rightStarLv.value)
+
   const leftParams = {
     lumi: leftLumi.value,
     level: leftLevel.value,
@@ -478,7 +506,8 @@ async function calculateDamage() {
     atk: leftStats.atk,
     def: leftStats.def,
     type1: leftLumi.value.Type1,
-    type2: leftLumi.value.Type2
+    type2: leftLumi.value.Type2,
+    starParams: leftStarParams
   }
 
   const rightParams = {
@@ -491,7 +520,8 @@ async function calculateDamage() {
     atk: rightStats.atk,
     def: rightStats.def,
     type1: rightLumi.value.Type1,
-    type2: rightLumi.value.Type2
+    type2: rightLumi.value.Type2,
+    starParams: rightStarParams
   }
 
   // 获取普攻技能威力
@@ -504,7 +534,7 @@ async function calculateDamage() {
   // 左对右普攻
   const leftToRightNormal = calcSingleDamage({
     attacker: { ...leftParams, type1: leftLumi.value.Type1, type2: leftLumi.value.Type2 },
-    defender: { type1: rightLumi.value.Type1, type2: rightLumi.value.Type2, def: rightStats.def, defBuff: rightDefBuff.value, hp: rightStats.hp },
+    defender: { type1: rightLumi.value.Type1, type2: rightLumi.value.Type2, def: rightStats.def, defBuff: rightDefBuff.value, hp: rightStats.hp, starParams: rightStarParams },
     skill: { SkillPowerList: [leftNormalPower] },
     isCrit: false,
     bonusCoeffs: leftBonusCoeffs.value,
@@ -514,7 +544,7 @@ async function calculateDamage() {
   // 左对右技能（暴击）
   const leftToRightSkill = calcSingleDamage({
     attacker: { ...leftParams, type1: leftLumi.value.Type1, type2: leftLumi.value.Type2 },
-    defender: { type1: rightLumi.value.Type1, type2: rightLumi.value.Type2, def: rightStats.def, defBuff: rightDefBuff.value, hp: rightStats.hp },
+    defender: { type1: rightLumi.value.Type1, type2: rightLumi.value.Type2, def: rightStats.def, defBuff: rightDefBuff.value, hp: rightStats.hp, starParams: rightStarParams },
     skill: leftSkill.value,
     isCrit: true,
     bonusCoeffs: leftBonusCoeffs.value,
@@ -524,7 +554,7 @@ async function calculateDamage() {
   // 右对左普攻
   const rightToLeftNormal = calcSingleDamage({
     attacker: { ...rightParams, type1: rightLumi.value.Type1, type2: rightLumi.value.Type2 },
-    defender: { type1: leftLumi.value.Type1, type2: leftLumi.value.Type2, def: leftStats.def, defBuff: leftDefBuff.value, hp: leftStats.hp },
+    defender: { type1: leftLumi.value.Type1, type2: leftLumi.value.Type2, def: leftStats.def, defBuff: leftDefBuff.value, hp: leftStats.hp, starParams: leftStarParams },
     skill: { SkillPowerList: [rightNormalPower] },
     isCrit: false,
     bonusCoeffs: rightBonusCoeffs.value,
@@ -534,7 +564,7 @@ async function calculateDamage() {
   // 右对左技能（暴击）
   const rightToLeftSkill = calcSingleDamage({
     attacker: { ...rightParams, type1: rightLumi.value.Type1, type2: rightLumi.value.Type2 },
-    defender: { type1: leftLumi.value.Type1, type2: leftLumi.value.Type2, def: leftStats.def, defBuff: leftDefBuff.value, hp: leftStats.hp },
+    defender: { type1: leftLumi.value.Type1, type2: leftLumi.value.Type2, def: leftStats.def, defBuff: leftDefBuff.value, hp: leftStats.hp, starParams: leftStarParams },
     skill: rightSkill.value,
     isCrit: true,
     bonusCoeffs: rightBonusCoeffs.value,
@@ -544,7 +574,7 @@ async function calculateDamage() {
   // 普攻暴击伤害
   const leftToRightNormalCrit = calcSingleDamage({
     attacker: { ...leftParams, type1: leftLumi.value.Type1, type2: leftLumi.value.Type2 },
-    defender: { type1: rightLumi.value.Type1, type2: rightLumi.value.Type2, def: rightStats.def, defBuff: rightDefBuff.value, hp: rightStats.hp },
+    defender: { type1: rightLumi.value.Type1, type2: rightLumi.value.Type2, def: rightStats.def, defBuff: rightDefBuff.value, hp: rightStats.hp, starParams: rightStarParams },
     skill: { SkillPowerList: [leftNormalPower] },
     isCrit: true,
     bonusCoeffs: leftBonusCoeffs.value,
@@ -553,7 +583,7 @@ async function calculateDamage() {
 
   const rightToLeftNormalCrit = calcSingleDamage({
     attacker: { ...rightParams, type1: rightLumi.value.Type1, type2: rightLumi.value.Type2 },
-    defender: { type1: leftLumi.value.Type1, type2: leftLumi.value.Type2, def: leftStats.def, defBuff: leftDefBuff.value, hp: leftStats.hp },
+    defender: { type1: leftLumi.value.Type1, type2: leftLumi.value.Type2, def: leftStats.def, defBuff: leftDefBuff.value, hp: leftStats.hp, starParams: leftStarParams },
     skill: { SkillPowerList: [rightNormalPower] },
     isCrit: true,
     bonusCoeffs: rightBonusCoeffs.value,
@@ -563,7 +593,7 @@ async function calculateDamage() {
   // 技能正常伤害
   const leftToRightSkillNormal = calcSingleDamage({
     attacker: { ...leftParams, type1: leftLumi.value.Type1, type2: leftLumi.value.Type2 },
-    defender: { type1: rightLumi.value.Type1, type2: rightLumi.value.Type2, def: rightStats.def, defBuff: rightDefBuff.value, hp: rightStats.hp },
+    defender: { type1: rightLumi.value.Type1, type2: rightLumi.value.Type2, def: rightStats.def, defBuff: rightDefBuff.value, hp: rightStats.hp, starParams: rightStarParams },
     skill: leftSkill.value,
     isCrit: false,
     bonusCoeffs: leftBonusCoeffs.value,
@@ -572,7 +602,7 @@ async function calculateDamage() {
 
   const rightToLeftSkillNormal = calcSingleDamage({
     attacker: { ...rightParams, type1: rightLumi.value.Type1, type2: rightLumi.value.Type2 },
-    defender: { type1: leftLumi.value.Type1, type2: leftLumi.value.Type2, def: leftStats.def, defBuff: leftDefBuff.value, hp: leftStats.hp },
+    defender: { type1: leftLumi.value.Type1, type2: leftLumi.value.Type2, def: leftStats.def, defBuff: leftDefBuff.value, hp: leftStats.hp, starParams: leftStarParams },
     skill: rightSkill.value,
     isCrit: false,
     bonusCoeffs: rightBonusCoeffs.value,
@@ -614,13 +644,15 @@ async function calculateDamage() {
     calculationLog: [
       `=== 左侧 ===`,
       `噜咪: ${getLumiName(leftLumi.value)}`,
-      `等级: ${leftLevel.value}, 突破: +${leftBreakLevel.value}, 性格: ${natureDesc(leftNatureUp.value, leftNatureDown.value)}`,
+      `等级: ${leftLevel.value}, 突破: +${leftBreakLevel.value}, 星级: ${leftStarLv.value}★, 性格: ${natureDesc(leftNatureUp.value, leftNatureDown.value)}`,
+      `星级加成: 增伤 ${(leftStarParams.bonus * 100).toFixed(0)}%, 减伤 ${(leftStarParams.reduction * 100).toFixed(0)}%`,
       `战斗资质 - HP: ${leftStats.hp}, 攻击: ${leftStats.atk}, 防御: ${leftStats.def}`,
       `攻击等级: ${leftAtkBuff.value >= 0 ? '+' : ''}${leftAtkBuff.value}, 防御等级: ${leftDefBuff.value >= 0 ? '+' : ''}${leftDefBuff.value}`,
       ``,
       `=== 右侧 ===`,
       `噜咪: ${getLumiName(rightLumi.value)}`,
-      `等级: ${rightLevel.value}, 突破: +${rightBreakLevel.value}, 性格: ${natureDesc(rightNatureUp.value, rightNatureDown.value)}`,
+      `等级: ${rightLevel.value}, 突破: +${rightBreakLevel.value}, 星级: ${rightStarLv.value}★, 性格: ${natureDesc(rightNatureUp.value, rightNatureDown.value)}`,
+      `星级加成: 增伤 ${(rightStarParams.bonus * 100).toFixed(0)}%, 减伤 ${(rightStarParams.reduction * 100).toFixed(0)}%`,
       `战斗资质 - HP: ${rightStats.hp}, 攻击: ${rightStats.atk}, 防御: ${rightStats.def}`,
       `攻击等级: ${rightAtkBuff.value >= 0 ? '+' : ''}${rightAtkBuff.value}, 防御等级: ${rightDefBuff.value >= 0 ? '+' : ''}${rightDefBuff.value}`,
       ``,
@@ -646,6 +678,7 @@ async function calculateDamage() {
 watch([
   leftLumi, rightLumi, leftLevel, rightLevel,
   leftBreakLevel, rightBreakLevel,
+  leftStarLv, rightStarLv,
   leftNatureUp, leftNatureDown, rightNatureUp, rightNatureDown,
   leftSkill, rightSkill,
   leftAtkBuff, rightAtkBuff, leftDefBuff, rightDefBuff
@@ -712,6 +745,12 @@ watch([
             <label class="input-label">突破 (0-14)</label>
             <input v-model.number="leftBreakLevel" type="number" min="0" max="14" class="form-input" />
           </div>
+          <div class="input-group half">
+            <label class="input-label">星级 (0-5)</label>
+            <select v-model.number="leftStarLv" class="form-select">
+              <option v-for="i in 6" :key="i-1" :value="i-1">{{ i-1 }}★</option>
+            </select>
+          </div>
         </div>
 
         <div class="input-row">
@@ -736,7 +775,7 @@ watch([
         </div>
 
         <div class="input-group" v-if="leftLumi">
-          <label class="input-label">战斗资质 (等级{{ leftLevel }} 突破+{{ leftBreakLevel }} 性格：{{ natureDesc(leftNatureUp, leftNatureDown) }})</label>
+          <label class="input-label">战斗资质 (等级{{ leftLevel }} 突破+{{ leftBreakLevel }} 星级{{ leftStarLv }}★ 性格：{{ natureDesc(leftNatureUp, leftNatureDown) }})</label>
           <div class="stats-display">
             <div class="stat-item-inline">
               <span class="stat-label">HP</span>
@@ -909,6 +948,12 @@ watch([
             <label class="input-label">突破 (0-14)</label>
             <input v-model.number="rightBreakLevel" type="number" min="0" max="14" class="form-input" />
           </div>
+          <div class="input-group half">
+            <label class="input-label">星级 (0-5)</label>
+            <select v-model.number="rightStarLv" class="form-select">
+              <option v-for="i in 6" :key="i-1" :value="i-1">{{ i-1 }}★</option>
+            </select>
+          </div>
         </div>
 
         <div class="input-row">
@@ -933,7 +978,7 @@ watch([
         </div>
 
         <div class="input-group" v-if="rightLumi">
-          <label class="input-label">战斗资质 (等级{{ rightLevel }} 突破+{{ rightBreakLevel }} 性格：{{ natureDesc(rightNatureUp, rightNatureDown) }})</label>
+          <label class="input-label">战斗资质 (等级{{ rightLevel }} 突破+{{ rightBreakLevel }} 星级{{ rightStarLv }}★ 性格：{{ natureDesc(rightNatureUp, rightNatureDown) }})</label>
           <div class="stats-display">
             <div class="stat-item-inline">
               <span class="stat-label">HP</span>
