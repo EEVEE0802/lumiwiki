@@ -335,16 +335,17 @@ function calcF(level, breakLevel) {
     * (1 + brkRow.battleState[BS_HP] / 10000)
 }
 
-// 属性一致加成
-function calcTypeBonus(atkType, defType1, defType2) {
-  if (atkType === defType1 || atkType === defType2) return 1.25
+// 属性一致加成（STAB）：技能属性 == 攻方任一属性时 ×1.25
+// 普攻属性固定 = 攻方第一属性，故普攻永远触发一致加成
+function calcTypeBonus(skillType, atkType1, atkType2) {
+  if (skillType === atkType1 || skillType === atkType2) return 1.25
   return 1
 }
 
-// 属性克制系数
-function calcTypeCounter(atkType, defType1, defType2, counters) {
+// 属性克制系数：技能属性 → 守方双属性
+function calcTypeCounter(skillType, defType1, defType2, counters) {
   // 查找攻击属性的数据
-  const atkData = counters.find(t => t.LumiType === atkType)
+  const atkData = counters.find(t => t.LumiType === skillType)
   if (!atkData) return 1
 
   // 属性键名映射
@@ -447,11 +448,14 @@ function calcSingleDamage(params) {
   // 技能威力
   const skillPower = getSkillPower(skill)
 
-  // 属性一致加成
-  const typeBonus = calcTypeBonus(attacker.type1, defender.type1, defender.type2)
+  // 技能属性：技能自身 LumiTpye，普攻（无该字段）fallback 到攻方第一属性
+  const skillType = skill?.LumiTpye ?? attacker.type1
 
-  // 属性克制系数
-  const typeCounter = calcTypeCounter(attacker.type1, defender.type1, defender.type2, typeCounters.value)
+  // 属性一致加成（STAB）：技能属性 vs 攻方双属性
+  const typeBonus = calcTypeBonus(skillType, attacker.type1, attacker.type2)
+
+  // 属性克制系数：技能属性 vs 守方双属性
+  const typeCounter = calcTypeCounter(skillType, defender.type1, defender.type2, typeCounters.value)
 
   // 基础伤害
   let baseDamage = fLv * atkDefRatio * skillPower * typeBonus * typeCounter
