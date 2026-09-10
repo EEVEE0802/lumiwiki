@@ -9,13 +9,17 @@ const allLumis = ref([])
 const allSkills = ref([])
 const locMap = ref({})
 const typeCounters = ref([])
+const battleConst = ref(null)   // { HP, Attack, Defence, Fv }
+const lumiLevels = ref([])      // LumiLevel.json：Id=等级 → battleState[攻,防,HP] 万分比
+const lumiBreaks = ref([])      // LumiBreak.json：Id=突破 → battleState[攻,防,HP] 万分比
 const loading = ref(true)
 
 // 左侧设置
 const leftLumi = ref(null)
 const leftLevel = ref(50)
-const leftBreakLevel = ref(5)
-const leftGrowth = ref(0)
+const leftBreakLevel = ref(4)
+const leftNatureUp = ref('none')   // 性格 +10% 的属性：'none' | 'hp' | 'atk' | 'def'
+const leftNatureDown = ref('none') // 性格 -10% 的属性
 const leftSkill = ref(null)
 const leftAtkBuff = ref(0)
 const leftDefBuff = ref(0)
@@ -25,14 +29,9 @@ const leftReductionCoeffs = ref([]) // 减伤系数
 // 右侧设置
 const rightLumi = ref(null)
 const rightLevel = ref(50)
-const rightBreakLevel = ref(5)
-const rightGrowth = ref(0)
-
-// 极化/钝化：突破 6 开始每级 +0.05
-const leftPolarize = computed(() => Math.max(0, leftBreakLevel.value - 5) * 0.05)
-const leftPassivate = computed(() => Math.max(0, leftBreakLevel.value - 5) * 0.05)
-const rightPolarize = computed(() => Math.max(0, rightBreakLevel.value - 5) * 0.05)
-const rightPassivate = computed(() => Math.max(0, rightBreakLevel.value - 5) * 0.05)
+const rightBreakLevel = ref(4)
+const rightNatureUp = ref('none')
+const rightNatureDown = ref('none')
 const rightSkill = ref(null)
 const rightAtkBuff = ref(0)
 const rightDefBuff = ref(0)
@@ -128,18 +127,46 @@ const getSkillName = (skill) => {
 
 // 数据加载
 onMounted(async () => {
-  const [lumis, skills, loc, counters] = await Promise.all([
+  const [lumis, skills, loc, counters, bc, levels, breaks] = await Promise.all([
     loadData('Lumi'),
     loadData('ActiveSkill'),
     loadData('localization'),
-    loadData('LumiTypeCounter')
+    loadData('LumiTypeCounter'),
+    loadData('BattleConst'),
+    loadData('LumiLevel'),
+    loadData('LumiBreak')
   ])
   allLumis.value = lumis
   allSkills.value = skills
   locMap.value = loc
   typeCounters.value = counters
+  battleConst.value = bc[0] || bc  // 表里就一条记录
+  lumiLevels.value = levels
+  lumiBreaks.value = breaks
   loading.value = false
 })
+
+// 属性索引：battleState[0]=攻, [1]=防, [2]=HP
+const BS_ATK = 0
+const BS_DEF = 1
+const BS_HP = 2
+
+// 性格倍率：up===down 视作抵消（中性性格）
+function natureMul(stat, up, down) {
+  if (up === down) return 1
+  if (up === stat) return 1.1
+  if (down === stat) return 0.9
+  return 1
+}
+
+// 性格描述文案
+const NATURE_LABELS = { none: '无', hp: 'HP', atk: '攻', def: '防' }
+function natureDesc(up, down) {
+  if (up === down) return '中性'
+  const upTxt = up === 'none' ? '' : `${NATURE_LABELS[up]}+`
+  const downTxt = down === 'none' ? '' : `${NATURE_LABELS[down]}-`
+  return [upTxt, downTxt].filter(Boolean).join(' ')
+}
 
 // 设置左侧 Lumi 的函数（自动选择专属技能）
 function setLeftLumi(lumi) {
@@ -172,27 +199,35 @@ function setRightLumi(lumi) {
 }
 
 // 计算实际战斗资质
-function calcBattleStats(lumi, level, breakLevel, growth) {
-  if (!lumi) return { hp: 0, atk: 0, def: 0 }
+// 公式：数值 = (系数/10000) × 资质 × (1 + 等级 battleState / 10000) × (1 + 突破 battleState / 10000) × 性格，最终取整
+function calcBattleStats(lumi, level, breakLevel, natureUp, natureDown) {
+  if (!lumi || !battleConst.value) return { hp: 0, atk: 0, def: 0 }
 
-  const power = 1 + breakLevel * 0.05 + (breakLevel * 10 + growth) * 0.002
-  const base = 4 * (level + 10) * power
+  const lvlRow = lumiLevels.value.find(r => r.Id === level)
+  const brkRow = lumiBreaks.value.find(r => r.Id === breakLevel)
+  if (!lvlRow || !brkRow) return { hp: 0, atk: 0, def: 0 }
 
-  const hp = Math.floor(lumi.MaxHpState * base / 5)
-  const atk = Math.floor(lumi.MaxAtkState * base / 50)
-  const def = Math.floor(lumi.MaxDefState * base / 50)
+  const bc = battleConst.value
+  const lvl = lvlRow.battleState  // [攻, 防, HP]
+  const brk = brkRow.battleState
+
+  const factor = (i) => (1 + lvl[i] / 10000) * (1 + brk[i] / 10000)
+
+  const atk = Math.floor((bc.Attack  / 10000) * lumi.MaxAtkState * factor(BS_ATK) * natureMul('atk', natureUp, natureDown))
+  const def = Math.floor((bc.Defence / 10000) * lumi.MaxDefState * factor(BS_DEF) * natureMul('def', natureUp, natureDown))
+  const hp  = Math.floor((bc.HP      / 10000) * lumi.MaxHpState  * factor(BS_HP)  * natureMul('hp',  natureUp, natureDown))
 
   return { hp, atk, def }
 }
 
 // 左侧实际战斗资质
 const leftBattleStats = computed(() => {
-  return calcBattleStats(leftLumi.value, leftLevel.value, leftBreakLevel.value, leftGrowth.value)
+  return calcBattleStats(leftLumi.value, leftLevel.value, leftBreakLevel.value, leftNatureUp.value, leftNatureDown.value)
 })
 
 // 右侧实际战斗资质
 const rightBattleStats = computed(() => {
-  return calcBattleStats(rightLumi.value, rightLevel.value, rightBreakLevel.value, rightGrowth.value)
+  return calcBattleStats(rightLumi.value, rightLevel.value, rightBreakLevel.value, rightNatureUp.value, rightNatureDown.value)
 })
 
 // 获取技能威力总和
@@ -270,9 +305,15 @@ const rightNormalAttackInfo = computed(() => {
 })
 
 // F(Lv) 函数
-function calcF(level, breakLevel, growth) {
-  const power = 1 + breakLevel * 0.05 + (breakLevel * 10 + growth) * 0.002
-  return 400 * ((level + 10) * power) / 1875
+// 公式：F(Lv) = (Fv/10000) × (1 + 等级 battleState[HP] / 10000) × (1 + 突破 battleState[HP] / 10000)
+function calcF(level, breakLevel) {
+  if (!battleConst.value) return 0
+  const lvlRow = lumiLevels.value.find(r => r.Id === level)
+  const brkRow = lumiBreaks.value.find(r => r.Id === breakLevel)
+  if (!lvlRow || !brkRow) return 0
+  return (battleConst.value.Fv / 10000)
+    * (1 + lvlRow.battleState[BS_HP] / 10000)
+    * (1 + brkRow.battleState[BS_HP] / 10000)
 }
 
 // 属性一致加成
@@ -282,8 +323,7 @@ function calcTypeBonus(atkType, defType1, defType2) {
 }
 
 // 属性克制系数
-// 极化/钝化：克制因子 16000 (1.6x) 替换为 (1.6 + 极化 - 钝化)
-function calcTypeCounter(atkType, defType1, defType2, counters, polarize = 0, passivate = 0) {
+function calcTypeCounter(atkType, defType1, defType2, counters) {
   // 查找攻击属性的数据
   const atkData = counters.find(t => t.LumiType === atkType)
   if (!atkData) return 1
@@ -295,10 +335,6 @@ function calcTypeCounter(atkType, defType1, defType2, counters, polarize = 0, pa
     'Fairy', 'Steel', 'King', 'God'
   ]
 
-  // 极化系数：每个 1.6 因子替换为 (1.6 + δ)，δ = 极化 - 钝化
-  const delta = (polarize || 0) - (passivate || 0)
-  const adjustedRate = rawRate => rawRate === 16000 ? 16000 + delta * 10000 : rawRate
-
   // 计算克制倍率
   let multiplier = 10000
 
@@ -306,7 +342,7 @@ function calcTypeCounter(atkType, defType1, defType2, counters, polarize = 0, pa
   if (defType1) {
     const defKey1 = TYPE_KEYS[defType1 - 1]
     if (defKey1 && atkData[defKey1] !== undefined) {
-      multiplier = (multiplier * adjustedRate(atkData[defKey1])) / 10000
+      multiplier = (multiplier * atkData[defKey1]) / 10000
     }
   }
 
@@ -314,7 +350,7 @@ function calcTypeCounter(atkType, defType1, defType2, counters, polarize = 0, pa
   if (defType2) {
     const defKey2 = TYPE_KEYS[defType2 - 1]
     if (defKey2 && atkData[defKey2] !== undefined) {
-      multiplier = (multiplier * adjustedRate(atkData[defKey2])) / 10000
+      multiplier = (multiplier * atkData[defKey2]) / 10000
     }
   }
 
@@ -368,7 +404,7 @@ function calcSingleDamage(params) {
   const { attacker, defender, skill, isCrit, bonusCoeffs, reductionCoeffs } = params
 
   // F(Lv)
-  const fLv = calcF(attacker.level, attacker.breakLevel, attacker.growth)
+  const fLv = calcF(attacker.level, attacker.breakLevel)
 
   // 先应用攻防等级到属性值
   const { adjustedAtk, adjustedDef } = applyBuffsToStats(
@@ -394,7 +430,7 @@ function calcSingleDamage(params) {
   const typeBonus = calcTypeBonus(attacker.type1, defender.type1, defender.type2)
 
   // 属性克制系数
-  const typeCounter = calcTypeCounter(attacker.type1, defender.type1, defender.type2, typeCounters.value, attacker.polarize, defender.passivate)
+  const typeCounter = calcTypeCounter(attacker.type1, defender.type1, defender.type2, typeCounters.value)
 
   // 基础伤害
   let baseDamage = fLv * atkDefRatio * skillPower * typeBonus * typeCounter
@@ -436,9 +472,6 @@ async function calculateDamage() {
     lumi: leftLumi.value,
     level: leftLevel.value,
     breakLevel: leftBreakLevel.value,
-    growth: leftGrowth.value,
-    polarize: leftPolarize.value,
-    passivate: leftPassivate.value,
     skill: leftSkill.value,
     atkBuff: leftAtkBuff.value,
     defBuff: leftDefBuff.value,
@@ -452,9 +485,6 @@ async function calculateDamage() {
     lumi: rightLumi.value,
     level: rightLevel.value,
     breakLevel: rightBreakLevel.value,
-    growth: rightGrowth.value,
-    polarize: rightPolarize.value,
-    passivate: rightPassivate.value,
     skill: rightSkill.value,
     atkBuff: rightAtkBuff.value,
     defBuff: rightDefBuff.value,
@@ -584,15 +614,15 @@ async function calculateDamage() {
     calculationLog: [
       `=== 左侧 ===`,
       `噜咪: ${getLumiName(leftLumi.value)}`,
-      `等级: ${leftLevel}, 突破: +${leftBreakLevel}, 成长: ${leftGrowth}`,
+      `等级: ${leftLevel.value}, 突破: +${leftBreakLevel.value}, 性格: ${natureDesc(leftNatureUp.value, leftNatureDown.value)}`,
       `战斗资质 - HP: ${leftStats.hp}, 攻击: ${leftStats.atk}, 防御: ${leftStats.def}`,
-      `攻击等级: ${leftAtkBuff >= 0 ? '+' : ''}${leftAtkBuff}, 防御等级: ${leftDefBuff >= 0 ? '+' : ''}${leftDefBuff}`,
+      `攻击等级: ${leftAtkBuff.value >= 0 ? '+' : ''}${leftAtkBuff.value}, 防御等级: ${leftDefBuff.value >= 0 ? '+' : ''}${leftDefBuff.value}`,
       ``,
       `=== 右侧 ===`,
       `噜咪: ${getLumiName(rightLumi.value)}`,
-      `等级: ${rightLevel}, 突破: +${rightBreakLevel}, 成长: ${rightGrowth}`,
+      `等级: ${rightLevel.value}, 突破: +${rightBreakLevel.value}, 性格: ${natureDesc(rightNatureUp.value, rightNatureDown.value)}`,
       `战斗资质 - HP: ${rightStats.hp}, 攻击: ${rightStats.atk}, 防御: ${rightStats.def}`,
-      `攻击等级: ${rightAtkBuff >= 0 ? '+' : ''}${rightAtkBuff}, 防御等级: ${rightDefBuff >= 0 ? '+' : ''}${rightDefBuff}`,
+      `攻击等级: ${rightAtkBuff.value >= 0 ? '+' : ''}${rightAtkBuff.value}, 防御等级: ${rightDefBuff.value >= 0 ? '+' : ''}${rightDefBuff.value}`,
       ``,
       `=== 计算结果 ===`,
       `左侧→右侧:`,
@@ -612,14 +642,12 @@ async function calculateDamage() {
   showResults.value = true
 }
 
-// 突破=10 时强制 growth=0
-watch([leftBreakLevel], ([v]) => { if (v >= 10) leftGrowth.value = 0 })
-watch([rightBreakLevel], ([v]) => { if (v >= 10) rightGrowth.value = 0 })
-
 // 重置计算结果
 watch([
   leftLumi, rightLumi, leftLevel, rightLevel,
-  leftBreakLevel, rightBreakLevel, leftGrowth, rightGrowth, leftSkill, rightSkill,
+  leftBreakLevel, rightBreakLevel,
+  leftNatureUp, leftNatureDown, rightNatureUp, rightNatureDown,
+  leftSkill, rightSkill,
   leftAtkBuff, rightAtkBuff, leftDefBuff, rightDefBuff
 ], () => {
   if (showResults.value) {
@@ -677,21 +705,38 @@ watch([
 
         <div class="input-row">
           <div class="input-group half">
-            <label class="input-label">等级</label>
-            <input v-model.number="leftLevel" type="number" min="1" class="form-input" />
+            <label class="input-label">等级 (1-150)</label>
+            <input v-model.number="leftLevel" type="number" min="1" max="150" class="form-input" />
           </div>
           <div class="input-group half">
-            <label class="input-label">突破 (0-10)</label>
-            <input v-model.number="leftBreakLevel" type="number" min="0" max="10" class="form-input" />
+            <label class="input-label">突破 (0-14)</label>
+            <input v-model.number="leftBreakLevel" type="number" min="0" max="14" class="form-input" />
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group half">
+            <label class="input-label">性格 +10%</label>
+            <select v-model="leftNatureUp" class="form-select">
+              <option value="none">无（工作）</option>
+              <option value="hp">HP</option>
+              <option value="atk">攻击</option>
+              <option value="def">防御</option>
+            </select>
           </div>
           <div class="input-group half">
-            <label class="input-label">成长<span v-if="leftBreakLevel >= 10" class="growth-locked-hint">（突破10时锁定）</span></label>
-            <input v-model.number="leftGrowth" type="number" min="0" class="form-input" :disabled="leftBreakLevel >= 10" />
+            <label class="input-label">性格 -10%</label>
+            <select v-model="leftNatureDown" class="form-select">
+              <option value="none">无（工作）</option>
+              <option value="hp">HP</option>
+              <option value="atk">攻击</option>
+              <option value="def">防御</option>
+            </select>
           </div>
         </div>
 
         <div class="input-group" v-if="leftLumi">
-          <label class="input-label">战斗资质 (等级{{ leftLevel }} 突破+{{ leftBreakLevel }} 成长{{ leftGrowth }} 极化{{ leftPolarize.toFixed(2) }} 钝化{{ leftPassivate.toFixed(2) }})</label>
+          <label class="input-label">战斗资质 (等级{{ leftLevel }} 突破+{{ leftBreakLevel }} 性格：{{ natureDesc(leftNatureUp, leftNatureDown) }})</label>
           <div class="stats-display">
             <div class="stat-item-inline">
               <span class="stat-label">HP</span>
@@ -857,21 +902,38 @@ watch([
 
         <div class="input-row">
           <div class="input-group half">
-            <label class="input-label">等级</label>
-            <input v-model.number="rightLevel" type="number" min="1" class="form-input" />
+            <label class="input-label">等级 (1-150)</label>
+            <input v-model.number="rightLevel" type="number" min="1" max="150" class="form-input" />
           </div>
           <div class="input-group half">
-            <label class="input-label">突破 (0-10)</label>
-            <input v-model.number="rightBreakLevel" type="number" min="0" max="10" class="form-input" />
+            <label class="input-label">突破 (0-14)</label>
+            <input v-model.number="rightBreakLevel" type="number" min="0" max="14" class="form-input" />
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group half">
+            <label class="input-label">性格 +10%</label>
+            <select v-model="rightNatureUp" class="form-select">
+              <option value="none">无（工作）</option>
+              <option value="hp">HP</option>
+              <option value="atk">攻击</option>
+              <option value="def">防御</option>
+            </select>
           </div>
           <div class="input-group half">
-            <label class="input-label">成长<span v-if="rightBreakLevel >= 10" class="growth-locked-hint">（突破10时锁定）</span></label>
-            <input v-model.number="rightGrowth" type="number" min="0" class="form-input" :disabled="rightBreakLevel >= 10" />
+            <label class="input-label">性格 -10%</label>
+            <select v-model="rightNatureDown" class="form-select">
+              <option value="none">无（工作）</option>
+              <option value="hp">HP</option>
+              <option value="atk">攻击</option>
+              <option value="def">防御</option>
+            </select>
           </div>
         </div>
 
         <div class="input-group" v-if="rightLumi">
-          <label class="input-label">战斗资质 (等级{{ rightLevel }} 突破+{{ rightBreakLevel }} 成长{{ rightGrowth }} 极化{{ rightPolarize.toFixed(2) }} 钝化{{ rightPassivate.toFixed(2) }})</label>
+          <label class="input-label">战斗资质 (等级{{ rightLevel }} 突破+{{ rightBreakLevel }} 性格：{{ natureDesc(rightNatureUp, rightNatureDown) }})</label>
           <div class="stats-display">
             <div class="stat-item-inline">
               <span class="stat-label">HP</span>
@@ -1181,13 +1243,6 @@ watch([
   color: var(--text-dim);
   cursor: not-allowed;
   opacity: 0.6;
-}
-
-.growth-locked-hint {
-  font-size: 0.75em;
-  color: var(--text-dim);
-  font-weight: normal;
-  margin-left: 4px;
 }
 
 .stats-display {

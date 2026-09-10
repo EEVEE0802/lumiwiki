@@ -108,6 +108,9 @@ LumiWiki/
 | LumiEvolution.json    | LumiEvolution.json    | 进化链        |
 | LumiTypeCounter.json  | LumiTypeCounter.json  | 属性克制       |
 | BattleKeywordDes.json | BattleKeywordDes.json | 战斗关键字描述    |
+| LumiLevel.json        | LumiLevel.json        | 等级加成（伤害计算器用） |
+| LumiBreak.json        | LumiBreak.json        | 突破加成（伤害计算器用） |
+| BattleConst.json      | BattleConst.json      | 战斗常量（HP/攻/防/Fv 系数） |
 | localization.json     | MultilingualCN.json   | 多语言（需转换格式） |
 
 ---
@@ -123,6 +126,7 @@ DST="D:/LumiWiki/public/data"
 cp "$SRC/ActiveSkill.json" "$SRC/BattlePassive.json" "$SRC/HomePassive.json" "$DST/"
 cp "$SRC/Lumi.json" "$SRC/LumiEvolution.json" "$SRC/LumiTypeCounter.json" "$DST/"
 cp "$SRC/Item.json" "$SRC/BattleKeywordDes.json" "$DST/"
+cp "$SRC/LumiLevel.json" "$SRC/LumiBreak.json" "$SRC/BattleConst.json" "$DST/"
 
 # 2. 必须运行：转换多语言数据
 cd D:/LumiWiki && node prepare-i18n-data.cjs
