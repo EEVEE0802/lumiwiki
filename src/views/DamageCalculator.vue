@@ -744,11 +744,11 @@ watch([
 
         <div class="input-row">
           <div class="input-group half">
-            <label class="input-label">等级 <span class="hint-mini">(玩家 1-150，PVE 敌方可更高)</span></label>
+            <label class="input-label">等级</label>
             <input v-model.number="leftLevel" type="number" min="1" max="500" class="form-input" />
           </div>
           <div class="input-group half">
-            <label class="input-label">突破 <span class="hint-mini">(玩家 0-14，PVE 敌方可更高)</span></label>
+            <label class="input-label">突破</label>
             <input v-model.number="leftBreakLevel" type="number" min="0" max="100" class="form-input" />
           </div>
           <div class="input-group half">
@@ -947,11 +947,11 @@ watch([
 
         <div class="input-row">
           <div class="input-group half">
-            <label class="input-label">等级 <span class="hint-mini">(玩家 1-150，PVE 敌方可更高)</span></label>
+            <label class="input-label">等级</label>
             <input v-model.number="rightLevel" type="number" min="1" max="500" class="form-input" />
           </div>
           <div class="input-group half">
-            <label class="input-label">突破 <span class="hint-mini">(玩家 0-14，PVE 敌方可更高)</span></label>
+            <label class="input-label">突破</label>
             <input v-model.number="rightBreakLevel" type="number" min="0" max="100" class="form-input" />
           </div>
           <div class="input-group half">
@@ -1263,13 +1263,6 @@ watch([
   color: var(--text);
   font-size: 0.85em;
   font-weight: 500;
-}
-
-.hint-mini {
-  color: var(--text-dim);
-  font-size: 0.75em;
-  font-weight: normal;
-  margin-left: 4px;
 }
 
 .form-input,
