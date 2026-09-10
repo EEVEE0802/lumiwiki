@@ -1,0 +1,4169 @@
+{
+  "updateTime": "2026-09-10T23:33:30.260Z",
+  "totalBattles": 67,
+  "rankGroups": [
+    {
+      "key": "bronze",
+      "start": 1,
+      "end": 30,
+      "label": "青铜"
+    },
+    {
+      "key": "silver",
+      "start": 31,
+      "end": 60,
+      "label": "白银"
+    },
+    {
+      "key": "gold",
+      "start": 61,
+      "end": 90,
+      "label": "黄金"
+    },
+    {
+      "key": "diamond",
+      "start": 91,
+      "end": 120,
+      "label": "钻石"
+    },
+    {
+      "key": "star",
+      "start": 121,
+      "end": 150,
+      "label": "星耀"
+    },
+    {
+      "key": "legend",
+      "start": 151,
+      "end": 151,
+      "label": "传说"
+    }
+  ],
+  "allRanks": [
+    1,
+    2,
+    3,
+    7,
+    9,
+    11,
+    13,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    54,
+    79,
+    80,
+    81,
+    83,
+    85,
+    86,
+    87,
+    88,
+    89,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    108,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    122,
+    123,
+    129,
+    130
+  ],
+  "stats": {
+    "all-with-bot": {
+      "appearance": [
+        {
+          "lumiId": "115201",
+          "lumiName": "Shadowbun",
+          "uniqueBattles": 18,
+          "appearanceRate": "31.58"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "uniqueBattles": 15,
+          "appearanceRate": "26.32"
+        },
+        {
+          "lumiId": "112201",
+          "lumiName": "Muskyx",
+          "uniqueBattles": 13,
+          "appearanceRate": "22.81"
+        },
+        {
+          "lumiId": "114904",
+          "lumiName": "Radibun - Variant",
+          "uniqueBattles": 13,
+          "appearanceRate": "22.81"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "uniqueBattles": 13,
+          "appearanceRate": "22.81"
+        },
+        {
+          "lumiId": "102001",
+          "lumiName": "Rimedeer",
+          "uniqueBattles": 12,
+          "appearanceRate": "21.05"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "uniqueBattles": 10,
+          "appearanceRate": "17.54"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "Rainbowdeer",
+          "uniqueBattles": 9,
+          "appearanceRate": "15.79"
+        },
+        {
+          "lumiId": "109201",
+          "lumiName": "Jellistel",
+          "uniqueBattles": 7,
+          "appearanceRate": "12.28"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "uniqueBattles": 6,
+          "appearanceRate": "10.53"
+        },
+        {
+          "lumiId": "120904",
+          "lumiName": "Bloom - Variant",
+          "uniqueBattles": 5,
+          "appearanceRate": "8.77"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "uniqueBattles": 4,
+          "appearanceRate": "7.02"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "uniqueBattles": 4,
+          "appearanceRate": "7.02"
+        },
+        {
+          "lumiId": "127301",
+          "lumiName": "Rhiniron",
+          "uniqueBattles": 3,
+          "appearanceRate": "5.26"
+        },
+        {
+          "lumiId": "102401",
+          "lumiName": "Lycanite",
+          "uniqueBattles": 3,
+          "appearanceRate": "5.26"
+        },
+        {
+          "lumiId": "105504",
+          "lumiName": "Zaphound - Variant",
+          "uniqueBattles": 3,
+          "appearanceRate": "5.26"
+        },
+        {
+          "lumiId": "102404",
+          "lumiName": "Lycanite - Variant",
+          "uniqueBattles": 3,
+          "appearanceRate": "5.26"
+        },
+        {
+          "lumiId": "110501",
+          "lumiName": "Sharkat",
+          "uniqueBattles": 3,
+          "appearanceRate": "5.26"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "Meteofly",
+          "uniqueBattles": 3,
+          "appearanceRate": "5.26"
+        },
+        {
+          "lumiId": "121401",
+          "lumiName": "Infernadra",
+          "uniqueBattles": 3,
+          "appearanceRate": "5.26"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "Crysion",
+          "uniqueBattles": 2,
+          "appearanceRate": "3.51"
+        },
+        {
+          "lumiId": "127101",
+          "lumiName": "Loongster",
+          "uniqueBattles": 2,
+          "appearanceRate": "3.51"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "uniqueBattles": 2,
+          "appearanceRate": "3.51"
+        },
+        {
+          "lumiId": "124001",
+          "lumiName": "Hexdeer",
+          "uniqueBattles": 2,
+          "appearanceRate": "3.51"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "Psykat",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "119101",
+          "lumiName": "Princess Bee",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "104201",
+          "lumiName": "Mudhorn",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "Flamblades",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "101201",
+          "lumiName": "Flaricat",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "101601",
+          "lumiName": "Charwyn",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "103201",
+          "lumiName": "Jellibow",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "112301",
+          "lumiName": "Spookling",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "114101",
+          "lumiName": "Cryswolf",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        },
+        {
+          "lumiId": "121001",
+          "lumiName": "Battlantis",
+          "uniqueBattles": 1,
+          "appearanceRate": "1.75"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "112201",
+          "lumiName": "Muskyx",
+          "battles": 13,
+          "wins": 13,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114904",
+          "lumiName": "Radibun - Variant",
+          "battles": 13,
+          "wins": 13,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "Shadowbun",
+          "battles": 18,
+          "wins": 18,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "battles": 10,
+          "wins": 10,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "Crysion",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "127301",
+          "lumiName": "Rhiniron",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "Rainbowdeer",
+          "battles": 9,
+          "wins": 9,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "109201",
+          "lumiName": "Jellistel",
+          "battles": 7,
+          "wins": 7,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "battles": 4,
+          "wins": 4,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "120904",
+          "lumiName": "Bloom - Variant",
+          "battles": 5,
+          "wins": 5,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "127101",
+          "lumiName": "Loongster",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "Psykat",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "119101",
+          "lumiName": "Princess Bee",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "102401",
+          "lumiName": "Lycanite",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "105504",
+          "lumiName": "Zaphound - Variant",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "102404",
+          "lumiName": "Lycanite - Variant",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "battles": 4,
+          "wins": 4,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "battles": 6,
+          "wins": 6,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "104201",
+          "lumiName": "Mudhorn",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "Flamblades",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "110501",
+          "lumiName": "Sharkat",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "101201",
+          "lumiName": "Flaricat",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "101601",
+          "lumiName": "Charwyn",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "Meteofly",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "121401",
+          "lumiName": "Infernadra",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114101",
+          "lumiName": "Cryswolf",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "121001",
+          "lumiName": "Battlantis",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "battles": 15,
+          "wins": 11,
+          "winRate": "73.33"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "battles": 13,
+          "wins": 9,
+          "winRate": "69.23"
+        },
+        {
+          "lumiId": "102001",
+          "lumiName": "Rimedeer",
+          "battles": 12,
+          "wins": 8,
+          "winRate": "66.67"
+        },
+        {
+          "lumiId": "124001",
+          "lumiName": "Hexdeer",
+          "battles": 2,
+          "wins": 1,
+          "winRate": "50.00"
+        },
+        {
+          "lumiId": "103201",
+          "lumiName": "Jellibow",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "112301",
+          "lumiName": "Spookling",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "teams": [
+        {
+          "teamLumiIds": [
+            "112201",
+            "114904",
+            "115201"
+          ],
+          "lumis": [
+            {
+              "lumiId": "112201",
+              "lumiName": "Muskyx",
+              "secondSkills": [
+                {
+                  "skillId": 11002,
+                  "count": 13
+                }
+              ]
+            },
+            {
+              "lumiId": "114904",
+              "lumiName": "Radibun - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 6004,
+                  "count": 13
+                }
+              ]
+            },
+            {
+              "lumiId": "115201",
+              "lumiName": "Shadowbun",
+              "secondSkills": [
+                {
+                  "skillId": 11004,
+                  "count": 13
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 13
+            }
+          ],
+          "battles": 13,
+          "wins": 13,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "102001",
+            "110201",
+            "120901"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102001",
+              "lumiName": "Rimedeer",
+              "secondSkills": [
+                {
+                  "skillId": 8002,
+                  "count": 12
+                }
+              ]
+            },
+            {
+              "lumiId": "110201",
+              "lumiName": "Regaffin",
+              "secondSkills": [
+                {
+                  "skillId": 7004,
+                  "count": 12
+                }
+              ]
+            },
+            {
+              "lumiId": "120901",
+              "lumiName": "Bloom",
+              "secondSkills": [
+                {
+                  "skillId": 4006,
+                  "count": 12
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 12
+            }
+          ],
+          "battles": 12,
+          "wins": 8,
+          "winRate": "66.67"
+        },
+        {
+          "teamLumiIds": [
+            "102101",
+            "115201",
+            "120904"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102101",
+              "lumiName": "Rainbowdeer",
+              "secondSkills": [
+                {
+                  "skillId": 10004,
+                  "count": 5
+                }
+              ]
+            },
+            {
+              "lumiId": "115201",
+              "lumiName": "Shadowbun",
+              "secondSkills": [
+                {
+                  "skillId": 11002,
+                  "count": 5
+                }
+              ]
+            },
+            {
+              "lumiId": "120904",
+              "lumiName": "Bloom - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 4003,
+                  "count": 5
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 5
+            }
+          ],
+          "battles": 5,
+          "wins": 5,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "102101",
+            "109201",
+            "119301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102101",
+              "lumiName": "Rainbowdeer",
+              "secondSkills": [
+                {
+                  "skillId": 10004,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "109201",
+              "lumiName": "Jellistel",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "119301",
+              "lumiName": "Clionia",
+              "secondSkills": [
+                {
+                  "skillId": 4003,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 2,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "102401",
+            "105504"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9005,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "102401",
+              "lumiName": "Lycanite",
+              "secondSkills": [
+                {
+                  "skillId": 15002,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "105504",
+              "lumiName": "Zaphound - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 5006,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 3,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "102404",
+            "105801"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "102404",
+              "lumiName": "Lycanite - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 15001,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "105801",
+              "lumiName": "Shriegon",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "109201",
+            "110201",
+            "110501"
+          ],
+          "lumis": [
+            {
+              "lumiId": "109201",
+              "lumiName": "Jellistel",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "110201",
+              "lumiName": "Regaffin",
+              "secondSkills": [
+                {
+                  "skillId": 7001,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "110501",
+              "lumiName": "Sharkat",
+              "secondSkills": [
+                {
+                  "skillId": 2001,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "111201",
+            "113901",
+            "121401"
+          ],
+          "lumis": [
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 4002,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "113901",
+              "lumiName": "Meteofly",
+              "secondSkills": [
+                {
+                  "skillId": 13006,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "121401",
+              "lumiName": "Infernadra",
+              "secondSkills": [
+                {
+                  "skillId": 4002,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "114201",
+            "127301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "114201",
+              "lumiName": "Crysion",
+              "secondSkills": [
+                {
+                  "skillId": 1001,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "127301",
+              "lumiName": "Rhiniron",
+              "secondSkills": [
+                {
+                  "skillId": 6003,
+                  "count": 2
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 2
+            }
+          ],
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "109201",
+            "119301",
+            "127101"
+          ],
+          "lumis": [
+            {
+              "lumiId": "109201",
+              "lumiName": "Jellistel",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "119301",
+              "lumiName": "Clionia",
+              "secondSkills": [
+                {
+                  "skillId": 4003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "127101",
+              "lumiName": "Loongster",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 2,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "102101",
+            "107001",
+            "119101"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102101",
+              "lumiName": "Rainbowdeer",
+              "secondSkills": [
+                {
+                  "skillId": 12006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "107001",
+              "lumiName": "Psykat",
+              "secondSkills": [
+                {
+                  "skillId": 13006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "119101",
+              "lumiName": "Princess Bee",
+              "secondSkills": [
+                {
+                  "skillId": 1001,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "111201",
+            "114901"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "114901",
+              "lumiName": "Radibun",
+              "secondSkills": [
+                {
+                  "skillId": 1003,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 2,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "105801",
+            "111201",
+            "142501"
+          ],
+          "lumis": [
+            {
+              "lumiId": "105801",
+              "lumiName": "Shriegon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 4002,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "142501",
+              "lumiName": "Sythbat",
+              "secondSkills": [
+                {
+                  "skillId": 15002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "120901",
+            "127301",
+            "142501"
+          ],
+          "lumis": [
+            {
+              "lumiId": "120901",
+              "lumiName": "Bloom",
+              "secondSkills": [
+                {
+                  "skillId": 4005,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "127301",
+              "lumiName": "Rhiniron",
+              "secondSkills": [
+                {
+                  "skillId": 6006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "142501",
+              "lumiName": "Sythbat",
+              "secondSkills": [
+                {
+                  "skillId": 15002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "118201",
+            "138301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "118201",
+              "lumiName": "Puncheroo",
+              "secondSkills": [
+                {
+                  "skillId": 12001,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "138301",
+              "lumiName": "Clawrret",
+              "secondSkills": [
+                {
+                  "skillId": 6002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "104201",
+            "109001",
+            "111201"
+          ],
+          "lumis": [
+            {
+              "lumiId": "104201",
+              "lumiName": "Mudhorn",
+              "secondSkills": [
+                {
+                  "skillId": 6003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "109001",
+              "lumiName": "Flamblades",
+              "secondSkills": [
+                {
+                  "skillId": 15004,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101201",
+            "101601",
+            "124001"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101201",
+              "lumiName": "Flaricat",
+              "secondSkills": [
+                {
+                  "skillId": 3003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "101601",
+              "lumiName": "Charwyn",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "124001",
+              "lumiName": "Hexdeer",
+              "secondSkills": [
+                {
+                  "skillId": 10004,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "103201",
+            "112301",
+            "124001"
+          ],
+          "lumis": [
+            {
+              "lumiId": "103201",
+              "lumiName": "Jellibow",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "112301",
+              "lumiName": "Spookling",
+              "secondSkills": [
+                {
+                  "skillId": 13006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "124001",
+              "lumiName": "Hexdeer",
+              "secondSkills": [
+                {
+                  "skillId": 10004,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "teamLumiIds": [
+            "114101",
+            "121001",
+            "127101"
+          ],
+          "lumis": [
+            {
+              "lumiId": "114101",
+              "lumiName": "Cryswolf",
+              "secondSkills": [
+                {
+                  "skillId": 8004,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "121001",
+              "lumiName": "Battlantis",
+              "secondSkills": [
+                {
+                  "skillId": 15005,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "127101",
+              "lumiName": "Loongster",
+              "secondSkills": [
+                {
+                  "skillId": 3002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        }
+      ],
+      "totalBattles": 57,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "all-no-bot": {
+      "appearance": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "uniqueBattles": 8,
+          "appearanceRate": "80.00"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "uniqueBattles": 4,
+          "appearanceRate": "40.00"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "uniqueBattles": 3,
+          "appearanceRate": "30.00"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "uniqueBattles": 3,
+          "appearanceRate": "30.00"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "uniqueBattles": 3,
+          "appearanceRate": "30.00"
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "Otterknight",
+          "uniqueBattles": 2,
+          "appearanceRate": "20.00"
+        },
+        {
+          "lumiId": "126304",
+          "lumiName": "Pincock - Variant",
+          "uniqueBattles": 2,
+          "appearanceRate": "20.00"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "102602",
+          "lumiName": "Cyclodoge",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "Flamblades",
+          "uniqueBattles": 1,
+          "appearanceRate": "10.00"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "116001",
+          "lumiName": "Otterknight",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "126304",
+          "lumiName": "Pincock - Variant",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "battles": 3,
+          "wins": 2,
+          "winRate": "66.67"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "battles": 8,
+          "wins": 5,
+          "winRate": "62.50"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "battles": 4,
+          "wins": 2,
+          "winRate": "50.00"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "battles": 3,
+          "wins": 1,
+          "winRate": "33.33"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "battles": 3,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "102602",
+          "lumiName": "Cyclodoge",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "Flamblades",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "teams": [
+        {
+          "teamLumiIds": [
+            "101701",
+            "111201",
+            "114901"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "114901",
+              "lumiName": "Radibun",
+              "secondSkills": [
+                {
+                  "skillId": 1003,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 2,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 2,
+          "winRate": "66.67"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "116001",
+            "126304"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "116001",
+              "lumiName": "Otterknight",
+              "secondSkills": [
+                {
+                  "skillId": 15005,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "126304",
+              "lumiName": "Pincock - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 7006,
+                  "count": 2
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            },
+            {
+              "trainerId": 4,
+              "count": 1
+            }
+          ],
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "118201",
+            "138301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9003,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "118201",
+              "lumiName": "Puncheroo",
+              "secondSkills": [
+                {
+                  "skillId": 12001,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "138301",
+              "lumiName": "Clawrret",
+              "secondSkills": [
+                {
+                  "skillId": 6002,
+                  "count": 2
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 2
+            }
+          ],
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "teamLumiIds": [
+            "105801",
+            "111201",
+            "142501"
+          ],
+          "lumis": [
+            {
+              "lumiId": "105801",
+              "lumiName": "Shriegon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 4002,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "142501",
+              "lumiName": "Sythbat",
+              "secondSkills": [
+                {
+                  "skillId": 15002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "118201",
+            "120901"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "118201",
+              "lumiName": "Puncheroo",
+              "secondSkills": [
+                {
+                  "skillId": 12003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "120901",
+              "lumiName": "Bloom",
+              "secondSkills": [
+                {
+                  "skillId": 4003,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "102602",
+            "109001",
+            "138301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102602",
+              "lumiName": "Cyclodoge",
+              "secondSkills": [
+                {
+                  "skillId": 6002,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "109001",
+              "lumiName": "Flamblades",
+              "secondSkills": [
+                {
+                  "skillId": 3003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "138301",
+              "lumiName": "Clawrret",
+              "secondSkills": [
+                {
+                  "skillId": 6002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "totalBattles": 10,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "bronze-with-bot": {
+      "appearance": [
+        {
+          "lumiId": "112201",
+          "lumiName": "Muskyx",
+          "uniqueBattles": 10,
+          "appearanceRate": "50.00"
+        },
+        {
+          "lumiId": "114904",
+          "lumiName": "Radibun - Variant",
+          "uniqueBattles": 10,
+          "appearanceRate": "50.00"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "Shadowbun",
+          "uniqueBattles": 10,
+          "appearanceRate": "50.00"
+        },
+        {
+          "lumiId": "109201",
+          "lumiName": "Jellistel",
+          "uniqueBattles": 7,
+          "appearanceRate": "35.00"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "Rainbowdeer",
+          "uniqueBattles": 4,
+          "appearanceRate": "20.00"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "uniqueBattles": 4,
+          "appearanceRate": "20.00"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "uniqueBattles": 3,
+          "appearanceRate": "15.00"
+        },
+        {
+          "lumiId": "110501",
+          "lumiName": "Sharkat",
+          "uniqueBattles": 3,
+          "appearanceRate": "15.00"
+        },
+        {
+          "lumiId": "124001",
+          "lumiName": "Hexdeer",
+          "uniqueBattles": 2,
+          "appearanceRate": "10.00"
+        },
+        {
+          "lumiId": "127101",
+          "lumiName": "Loongster",
+          "uniqueBattles": 1,
+          "appearanceRate": "5.00"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "Psykat",
+          "uniqueBattles": 1,
+          "appearanceRate": "5.00"
+        },
+        {
+          "lumiId": "119101",
+          "lumiName": "Princess Bee",
+          "uniqueBattles": 1,
+          "appearanceRate": "5.00"
+        },
+        {
+          "lumiId": "101201",
+          "lumiName": "Flaricat",
+          "uniqueBattles": 1,
+          "appearanceRate": "5.00"
+        },
+        {
+          "lumiId": "101601",
+          "lumiName": "Charwyn",
+          "uniqueBattles": 1,
+          "appearanceRate": "5.00"
+        },
+        {
+          "lumiId": "103201",
+          "lumiName": "Jellibow",
+          "uniqueBattles": 1,
+          "appearanceRate": "5.00"
+        },
+        {
+          "lumiId": "112301",
+          "lumiName": "Spookling",
+          "uniqueBattles": 1,
+          "appearanceRate": "5.00"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "112201",
+          "lumiName": "Muskyx",
+          "battles": 10,
+          "wins": 10,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114904",
+          "lumiName": "Radibun - Variant",
+          "battles": 10,
+          "wins": 10,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "Shadowbun",
+          "battles": 10,
+          "wins": 10,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "Rainbowdeer",
+          "battles": 4,
+          "wins": 4,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "109201",
+          "lumiName": "Jellistel",
+          "battles": 7,
+          "wins": 7,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "119301",
+          "lumiName": "Clionia",
+          "battles": 4,
+          "wins": 4,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "127101",
+          "lumiName": "Loongster",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "107001",
+          "lumiName": "Psykat",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "119101",
+          "lumiName": "Princess Bee",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "110501",
+          "lumiName": "Sharkat",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "101201",
+          "lumiName": "Flaricat",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "101601",
+          "lumiName": "Charwyn",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "124001",
+          "lumiName": "Hexdeer",
+          "battles": 2,
+          "wins": 1,
+          "winRate": "50.00"
+        },
+        {
+          "lumiId": "103201",
+          "lumiName": "Jellibow",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "112301",
+          "lumiName": "Spookling",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "teams": [
+        {
+          "teamLumiIds": [
+            "112201",
+            "114904",
+            "115201"
+          ],
+          "lumis": [
+            {
+              "lumiId": "112201",
+              "lumiName": "Muskyx",
+              "secondSkills": [
+                {
+                  "skillId": 11002,
+                  "count": 10
+                }
+              ]
+            },
+            {
+              "lumiId": "114904",
+              "lumiName": "Radibun - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 6004,
+                  "count": 10
+                }
+              ]
+            },
+            {
+              "lumiId": "115201",
+              "lumiName": "Shadowbun",
+              "secondSkills": [
+                {
+                  "skillId": 11004,
+                  "count": 10
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 10
+            }
+          ],
+          "battles": 10,
+          "wins": 10,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "102101",
+            "109201",
+            "119301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102101",
+              "lumiName": "Rainbowdeer",
+              "secondSkills": [
+                {
+                  "skillId": 10004,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "109201",
+              "lumiName": "Jellistel",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "119301",
+              "lumiName": "Clionia",
+              "secondSkills": [
+                {
+                  "skillId": 4003,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 2,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "109201",
+            "110201",
+            "110501"
+          ],
+          "lumis": [
+            {
+              "lumiId": "109201",
+              "lumiName": "Jellistel",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "110201",
+              "lumiName": "Regaffin",
+              "secondSkills": [
+                {
+                  "skillId": 7001,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "110501",
+              "lumiName": "Sharkat",
+              "secondSkills": [
+                {
+                  "skillId": 2001,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "109201",
+            "119301",
+            "127101"
+          ],
+          "lumis": [
+            {
+              "lumiId": "109201",
+              "lumiName": "Jellistel",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "119301",
+              "lumiName": "Clionia",
+              "secondSkills": [
+                {
+                  "skillId": 4003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "127101",
+              "lumiName": "Loongster",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 2,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "102101",
+            "107001",
+            "119101"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102101",
+              "lumiName": "Rainbowdeer",
+              "secondSkills": [
+                {
+                  "skillId": 12006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "107001",
+              "lumiName": "Psykat",
+              "secondSkills": [
+                {
+                  "skillId": 13006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "119101",
+              "lumiName": "Princess Bee",
+              "secondSkills": [
+                {
+                  "skillId": 1001,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101201",
+            "101601",
+            "124001"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101201",
+              "lumiName": "Flaricat",
+              "secondSkills": [
+                {
+                  "skillId": 3003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "101601",
+              "lumiName": "Charwyn",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "124001",
+              "lumiName": "Hexdeer",
+              "secondSkills": [
+                {
+                  "skillId": 10004,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "103201",
+            "112301",
+            "124001"
+          ],
+          "lumis": [
+            {
+              "lumiId": "103201",
+              "lumiName": "Jellibow",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "112301",
+              "lumiName": "Spookling",
+              "secondSkills": [
+                {
+                  "skillId": 13006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "124001",
+              "lumiName": "Hexdeer",
+              "secondSkills": [
+                {
+                  "skillId": 10004,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "totalBattles": 20,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "bronze-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "silver-with-bot": {
+      "appearance": [
+        {
+          "lumiId": "112201",
+          "lumiName": "Muskyx",
+          "uniqueBattles": 3,
+          "appearanceRate": "75.00"
+        },
+        {
+          "lumiId": "114904",
+          "lumiName": "Radibun - Variant",
+          "uniqueBattles": 3,
+          "appearanceRate": "75.00"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "Shadowbun",
+          "uniqueBattles": 3,
+          "appearanceRate": "75.00"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "uniqueBattles": 1,
+          "appearanceRate": "25.00"
+        },
+        {
+          "lumiId": "127301",
+          "lumiName": "Rhiniron",
+          "uniqueBattles": 1,
+          "appearanceRate": "25.00"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "uniqueBattles": 1,
+          "appearanceRate": "25.00"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "112201",
+          "lumiName": "Muskyx",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114904",
+          "lumiName": "Radibun - Variant",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "Shadowbun",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "127301",
+          "lumiName": "Rhiniron",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        }
+      ],
+      "teams": [
+        {
+          "teamLumiIds": [
+            "112201",
+            "114904",
+            "115201"
+          ],
+          "lumis": [
+            {
+              "lumiId": "112201",
+              "lumiName": "Muskyx",
+              "secondSkills": [
+                {
+                  "skillId": 11002,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "114904",
+              "lumiName": "Radibun - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 6004,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "115201",
+              "lumiName": "Shadowbun",
+              "secondSkills": [
+                {
+                  "skillId": 11004,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "120901",
+            "127301",
+            "142501"
+          ],
+          "lumis": [
+            {
+              "lumiId": "120901",
+              "lumiName": "Bloom",
+              "secondSkills": [
+                {
+                  "skillId": 4005,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "127301",
+              "lumiName": "Rhiniron",
+              "secondSkills": [
+                {
+                  "skillId": 6006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "142501",
+              "lumiName": "Sythbat",
+              "secondSkills": [
+                {
+                  "skillId": 15002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        }
+      ],
+      "totalBattles": 4,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "silver-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "gold-with-bot": {
+      "appearance": [
+        {
+          "lumiId": "102001",
+          "lumiName": "Rimedeer",
+          "uniqueBattles": 12,
+          "appearanceRate": "100.00"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "uniqueBattles": 12,
+          "appearanceRate": "100.00"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "uniqueBattles": 12,
+          "appearanceRate": "100.00"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "102001",
+          "lumiName": "Rimedeer",
+          "battles": 12,
+          "wins": 8,
+          "winRate": "66.67"
+        },
+        {
+          "lumiId": "110201",
+          "lumiName": "Regaffin",
+          "battles": 12,
+          "wins": 8,
+          "winRate": "66.67"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "battles": 12,
+          "wins": 8,
+          "winRate": "66.67"
+        }
+      ],
+      "teams": [
+        {
+          "teamLumiIds": [
+            "102001",
+            "110201",
+            "120901"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102001",
+              "lumiName": "Rimedeer",
+              "secondSkills": [
+                {
+                  "skillId": 8002,
+                  "count": 12
+                }
+              ]
+            },
+            {
+              "lumiId": "110201",
+              "lumiName": "Regaffin",
+              "secondSkills": [
+                {
+                  "skillId": 7004,
+                  "count": 12
+                }
+              ]
+            },
+            {
+              "lumiId": "120901",
+              "lumiName": "Bloom",
+              "secondSkills": [
+                {
+                  "skillId": 4006,
+                  "count": 12
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 12
+            }
+          ],
+          "battles": 12,
+          "wins": 8,
+          "winRate": "66.67"
+        }
+      ],
+      "totalBattles": 12,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "gold-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "diamond-with-bot": {
+      "appearance": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "uniqueBattles": 10,
+          "appearanceRate": "47.62"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "uniqueBattles": 6,
+          "appearanceRate": "28.57"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "Rainbowdeer",
+          "uniqueBattles": 5,
+          "appearanceRate": "23.81"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "Shadowbun",
+          "uniqueBattles": 5,
+          "appearanceRate": "23.81"
+        },
+        {
+          "lumiId": "120904",
+          "lumiName": "Bloom - Variant",
+          "uniqueBattles": 5,
+          "appearanceRate": "23.81"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "uniqueBattles": 4,
+          "appearanceRate": "19.05"
+        },
+        {
+          "lumiId": "102401",
+          "lumiName": "Lycanite",
+          "uniqueBattles": 3,
+          "appearanceRate": "14.29"
+        },
+        {
+          "lumiId": "105504",
+          "lumiName": "Zaphound - Variant",
+          "uniqueBattles": 3,
+          "appearanceRate": "14.29"
+        },
+        {
+          "lumiId": "102404",
+          "lumiName": "Lycanite - Variant",
+          "uniqueBattles": 3,
+          "appearanceRate": "14.29"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "Meteofly",
+          "uniqueBattles": 3,
+          "appearanceRate": "14.29"
+        },
+        {
+          "lumiId": "121401",
+          "lumiName": "Infernadra",
+          "uniqueBattles": 3,
+          "appearanceRate": "14.29"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "Crysion",
+          "uniqueBattles": 2,
+          "appearanceRate": "9.52"
+        },
+        {
+          "lumiId": "127301",
+          "lumiName": "Rhiniron",
+          "uniqueBattles": 2,
+          "appearanceRate": "9.52"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "uniqueBattles": 1,
+          "appearanceRate": "4.76"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "uniqueBattles": 1,
+          "appearanceRate": "4.76"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "uniqueBattles": 1,
+          "appearanceRate": "4.76"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "uniqueBattles": 1,
+          "appearanceRate": "4.76"
+        },
+        {
+          "lumiId": "104201",
+          "lumiName": "Mudhorn",
+          "uniqueBattles": 1,
+          "appearanceRate": "4.76"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "Flamblades",
+          "uniqueBattles": 1,
+          "appearanceRate": "4.76"
+        },
+        {
+          "lumiId": "114101",
+          "lumiName": "Cryswolf",
+          "uniqueBattles": 1,
+          "appearanceRate": "4.76"
+        },
+        {
+          "lumiId": "121001",
+          "lumiName": "Battlantis",
+          "uniqueBattles": 1,
+          "appearanceRate": "4.76"
+        },
+        {
+          "lumiId": "127101",
+          "lumiName": "Loongster",
+          "uniqueBattles": 1,
+          "appearanceRate": "4.76"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "battles": 10,
+          "wins": 10,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114201",
+          "lumiName": "Crysion",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "127301",
+          "lumiName": "Rhiniron",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "102101",
+          "lumiName": "Rainbowdeer",
+          "battles": 5,
+          "wins": 5,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "115201",
+          "lumiName": "Shadowbun",
+          "battles": 5,
+          "wins": 5,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "120904",
+          "lumiName": "Bloom - Variant",
+          "battles": 5,
+          "wins": 5,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "102401",
+          "lumiName": "Lycanite",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "105504",
+          "lumiName": "Zaphound - Variant",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "102404",
+          "lumiName": "Lycanite - Variant",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "battles": 4,
+          "wins": 4,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "battles": 6,
+          "wins": 6,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "104201",
+          "lumiName": "Mudhorn",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "Flamblades",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "113901",
+          "lumiName": "Meteofly",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "121401",
+          "lumiName": "Infernadra",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "114101",
+          "lumiName": "Cryswolf",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "121001",
+          "lumiName": "Battlantis",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "127101",
+          "lumiName": "Loongster",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        }
+      ],
+      "teams": [
+        {
+          "teamLumiIds": [
+            "102101",
+            "115201",
+            "120904"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102101",
+              "lumiName": "Rainbowdeer",
+              "secondSkills": [
+                {
+                  "skillId": 10004,
+                  "count": 5
+                }
+              ]
+            },
+            {
+              "lumiId": "115201",
+              "lumiName": "Shadowbun",
+              "secondSkills": [
+                {
+                  "skillId": 11002,
+                  "count": 5
+                }
+              ]
+            },
+            {
+              "lumiId": "120904",
+              "lumiName": "Bloom - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 4003,
+                  "count": 5
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 5
+            }
+          ],
+          "battles": 5,
+          "wins": 5,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "102401",
+            "105504"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9005,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "102401",
+              "lumiName": "Lycanite",
+              "secondSkills": [
+                {
+                  "skillId": 15002,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "105504",
+              "lumiName": "Zaphound - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 5006,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 3,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "102404",
+            "105801"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "102404",
+              "lumiName": "Lycanite - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 15001,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "105801",
+              "lumiName": "Shriegon",
+              "secondSkills": [
+                {
+                  "skillId": 2003,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "111201",
+            "113901",
+            "121401"
+          ],
+          "lumis": [
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 4002,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "113901",
+              "lumiName": "Meteofly",
+              "secondSkills": [
+                {
+                  "skillId": 13006,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "121401",
+              "lumiName": "Infernadra",
+              "secondSkills": [
+                {
+                  "skillId": 4002,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "114201",
+            "127301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "114201",
+              "lumiName": "Crysion",
+              "secondSkills": [
+                {
+                  "skillId": 1001,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "127301",
+              "lumiName": "Rhiniron",
+              "secondSkills": [
+                {
+                  "skillId": 6003,
+                  "count": 2
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 2
+            }
+          ],
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "111201",
+            "114901"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "114901",
+              "lumiName": "Radibun",
+              "secondSkills": [
+                {
+                  "skillId": 1003,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 2,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "105801",
+            "111201",
+            "142501"
+          ],
+          "lumis": [
+            {
+              "lumiId": "105801",
+              "lumiName": "Shriegon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 4002,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "142501",
+              "lumiName": "Sythbat",
+              "secondSkills": [
+                {
+                  "skillId": 15002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "118201",
+            "138301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "118201",
+              "lumiName": "Puncheroo",
+              "secondSkills": [
+                {
+                  "skillId": 12001,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "138301",
+              "lumiName": "Clawrret",
+              "secondSkills": [
+                {
+                  "skillId": 6002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "104201",
+            "109001",
+            "111201"
+          ],
+          "lumis": [
+            {
+              "lumiId": "104201",
+              "lumiName": "Mudhorn",
+              "secondSkills": [
+                {
+                  "skillId": 6003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "109001",
+              "lumiName": "Flamblades",
+              "secondSkills": [
+                {
+                  "skillId": 15004,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "114101",
+            "121001",
+            "127101"
+          ],
+          "lumis": [
+            {
+              "lumiId": "114101",
+              "lumiName": "Cryswolf",
+              "secondSkills": [
+                {
+                  "skillId": 8004,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "121001",
+              "lumiName": "Battlantis",
+              "secondSkills": [
+                {
+                  "skillId": 15005,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "127101",
+              "lumiName": "Loongster",
+              "secondSkills": [
+                {
+                  "skillId": 3002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        }
+      ],
+      "totalBattles": 21,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "diamond-no-bot": {
+      "appearance": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "uniqueBattles": 5,
+          "appearanceRate": "83.33"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "uniqueBattles": 4,
+          "appearanceRate": "66.67"
+        },
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "uniqueBattles": 3,
+          "appearanceRate": "50.00"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "uniqueBattles": 2,
+          "appearanceRate": "33.33"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "uniqueBattles": 2,
+          "appearanceRate": "33.33"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "uniqueBattles": 1,
+          "appearanceRate": "16.67"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "uniqueBattles": 1,
+          "appearanceRate": "16.67"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "114901",
+          "lumiName": "Radibun",
+          "battles": 3,
+          "wins": 2,
+          "winRate": "66.67"
+        },
+        {
+          "lumiId": "111201",
+          "lumiName": "Floragon",
+          "battles": 4,
+          "wins": 2,
+          "winRate": "50.00"
+        },
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "battles": 5,
+          "wins": 2,
+          "winRate": "40.00"
+        },
+        {
+          "lumiId": "105801",
+          "lumiName": "Shriegon",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "142501",
+          "lumiName": "Sythbat",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "teams": [
+        {
+          "teamLumiIds": [
+            "101701",
+            "111201",
+            "114901"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 3
+                }
+              ]
+            },
+            {
+              "lumiId": "114901",
+              "lumiName": "Radibun",
+              "secondSkills": [
+                {
+                  "skillId": 1003,
+                  "count": 3
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 2,
+              "count": 3
+            }
+          ],
+          "battles": 3,
+          "wins": 2,
+          "winRate": "66.67"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "118201",
+            "138301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9003,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "118201",
+              "lumiName": "Puncheroo",
+              "secondSkills": [
+                {
+                  "skillId": 12001,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "138301",
+              "lumiName": "Clawrret",
+              "secondSkills": [
+                {
+                  "skillId": 6002,
+                  "count": 2
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 2
+            }
+          ],
+          "battles": 2,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "teamLumiIds": [
+            "105801",
+            "111201",
+            "142501"
+          ],
+          "lumis": [
+            {
+              "lumiId": "105801",
+              "lumiName": "Shriegon",
+              "secondSkills": [
+                {
+                  "skillId": 9006,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "111201",
+              "lumiName": "Floragon",
+              "secondSkills": [
+                {
+                  "skillId": 4002,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "142501",
+              "lumiName": "Sythbat",
+              "secondSkills": [
+                {
+                  "skillId": 15002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "totalBattles": 6,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "star-with-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "star-no-bot": {
+      "appearance": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "uniqueBattles": 3,
+          "appearanceRate": "75.00"
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "Otterknight",
+          "uniqueBattles": 2,
+          "appearanceRate": "50.00"
+        },
+        {
+          "lumiId": "126304",
+          "lumiName": "Pincock - Variant",
+          "uniqueBattles": 2,
+          "appearanceRate": "50.00"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "uniqueBattles": 1,
+          "appearanceRate": "25.00"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "uniqueBattles": 1,
+          "appearanceRate": "25.00"
+        },
+        {
+          "lumiId": "102602",
+          "lumiName": "Cyclodoge",
+          "uniqueBattles": 1,
+          "appearanceRate": "25.00"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "Flamblades",
+          "uniqueBattles": 1,
+          "appearanceRate": "25.00"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "uniqueBattles": 1,
+          "appearanceRate": "25.00"
+        }
+      ],
+      "winRate": [
+        {
+          "lumiId": "101701",
+          "lumiName": "Charigon",
+          "battles": 3,
+          "wins": 3,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "116001",
+          "lumiName": "Otterknight",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "126304",
+          "lumiName": "Pincock - Variant",
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "118201",
+          "lumiName": "Puncheroo",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "120901",
+          "lumiName": "Bloom",
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "lumiId": "102602",
+          "lumiName": "Cyclodoge",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "109001",
+          "lumiName": "Flamblades",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        },
+        {
+          "lumiId": "138301",
+          "lumiName": "Clawrret",
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "teams": [
+        {
+          "teamLumiIds": [
+            "101701",
+            "116001",
+            "126304"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "116001",
+              "lumiName": "Otterknight",
+              "secondSkills": [
+                {
+                  "skillId": 15005,
+                  "count": 2
+                }
+              ]
+            },
+            {
+              "lumiId": "126304",
+              "lumiName": "Pincock - Variant",
+              "secondSkills": [
+                {
+                  "skillId": 7006,
+                  "count": 2
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            },
+            {
+              "trainerId": 4,
+              "count": 1
+            }
+          ],
+          "battles": 2,
+          "wins": 2,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "101701",
+            "118201",
+            "120901"
+          ],
+          "lumis": [
+            {
+              "lumiId": "101701",
+              "lumiName": "Charigon",
+              "secondSkills": [
+                {
+                  "skillId": 9001,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "118201",
+              "lumiName": "Puncheroo",
+              "secondSkills": [
+                {
+                  "skillId": 12003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "120901",
+              "lumiName": "Bloom",
+              "secondSkills": [
+                {
+                  "skillId": 4003,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 1,
+          "winRate": "100.00"
+        },
+        {
+          "teamLumiIds": [
+            "102602",
+            "109001",
+            "138301"
+          ],
+          "lumis": [
+            {
+              "lumiId": "102602",
+              "lumiName": "Cyclodoge",
+              "secondSkills": [
+                {
+                  "skillId": 6002,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "109001",
+              "lumiName": "Flamblades",
+              "secondSkills": [
+                {
+                  "skillId": 3003,
+                  "count": 1
+                }
+              ]
+            },
+            {
+              "lumiId": "138301",
+              "lumiName": "Clawrret",
+              "secondSkills": [
+                {
+                  "skillId": 6002,
+                  "count": 1
+                }
+              ]
+            }
+          ],
+          "trainerSkills": [
+            {
+              "trainerId": 1,
+              "count": 1
+            }
+          ],
+          "battles": 1,
+          "wins": 0,
+          "winRate": "0.00"
+        }
+      ],
+      "totalBattles": 4,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "legend-with-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    },
+    "legend-no-bot": {
+      "appearance": [],
+      "winRate": [],
+      "teams": [],
+      "totalBattles": 1,
+      "rankRange": {
+        "min": 1,
+        "max": 151
+      }
+    }
+  },
+  "playerRankDistribution": {
+    "bronze": 5,
+    "silver": 2,
+    "gold": 1,
+    "diamond": 9,
+    "star": 3,
+    "legend": 0,
+    "total": 20
+  }
+}
