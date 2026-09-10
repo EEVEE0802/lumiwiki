@@ -1,0 +1,1602 @@
+[
+  {
+    "Id": 0,
+    "LevelLimit": 10,
+    "CostNum": 0,
+    "ShardNum": 5,
+    "Cost": [],
+    "battleState": [
+      0,
+      0,
+      0
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 1,
+    "LevelLimit": 20,
+    "CostNum": 0,
+    "ShardNum": 10,
+    "Cost": [],
+    "battleState": [
+      1000,
+      1000,
+      1000
+    ],
+    "workState": 1000,
+    "Unlock": 1,
+    "UnlockDes": "i_400195"
+  },
+  {
+    "Id": 2,
+    "LevelLimit": 30,
+    "CostNum": 0,
+    "ShardNum": 15,
+    "Cost": [],
+    "battleState": [
+      2100,
+      2100,
+      2100
+    ],
+    "workState": 2000,
+    "Unlock": 2,
+    "UnlockDes": "i_400196"
+  },
+  {
+    "Id": 3,
+    "LevelLimit": 40,
+    "CostNum": 0,
+    "ShardNum": 20,
+    "Cost": [],
+    "battleState": [
+      3310,
+      3310,
+      3310
+    ],
+    "workState": 3000,
+    "Unlock": 3,
+    "UnlockDes": "i_400197"
+  },
+  {
+    "Id": 4,
+    "LevelLimit": 50,
+    "CostNum": 0,
+    "ShardNum": 30,
+    "Cost": [],
+    "battleState": [
+      4641,
+      4641,
+      4641
+    ],
+    "workState": 4000,
+    "Unlock": 4,
+    "UnlockDes": "i_400197"
+  },
+  {
+    "Id": 5,
+    "LevelLimit": 60,
+    "CostNum": 0,
+    "ShardNum": 40,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      6105,
+      6105,
+      6105
+    ],
+    "workState": 5000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 6,
+    "LevelLimit": 70,
+    "CostNum": 0,
+    "ShardNum": 50,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 20
+      }
+    ],
+    "battleState": [
+      7715,
+      7715,
+      7715
+    ],
+    "workState": 6000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 7,
+    "LevelLimit": 80,
+    "CostNum": 0,
+    "ShardNum": 60,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 30
+      }
+    ],
+    "battleState": [
+      9486,
+      9486,
+      9486
+    ],
+    "workState": 7000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 8,
+    "LevelLimit": 90,
+    "CostNum": 0,
+    "ShardNum": 80,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 40
+      }
+    ],
+    "battleState": [
+      11434,
+      11434,
+      11434
+    ],
+    "workState": 8000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 9,
+    "LevelLimit": 100,
+    "CostNum": 0,
+    "ShardNum": 100,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 50
+      }
+    ],
+    "battleState": [
+      13577,
+      13577,
+      13577
+    ],
+    "workState": 9000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 10,
+    "LevelLimit": 110,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 150000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 5
+      }
+    ],
+    "battleState": [
+      15934,
+      15934,
+      15934
+    ],
+    "workState": 10000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 11,
+    "LevelLimit": 120,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 200000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 10
+      }
+    ],
+    "battleState": [
+      18527,
+      18527,
+      18527
+    ],
+    "workState": 11000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 12,
+    "LevelLimit": 130,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 300000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 15
+      }
+    ],
+    "battleState": [
+      21379,
+      21379,
+      21379
+    ],
+    "workState": 12000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 13,
+    "LevelLimit": 140,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 500000
+      },
+      {
+        "Type": 2,
+        "Id": 10064,
+        "Count": 1
+      }
+    ],
+    "battleState": [
+      24516,
+      24516,
+      24516
+    ],
+    "workState": 13000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 14,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10001,
+        "Count": 1000000
+      },
+      {
+        "Type": 2,
+        "Id": 10064,
+        "Count": 2
+      }
+    ],
+    "battleState": [
+      27967,
+      27967,
+      27967
+    ],
+    "workState": 14000,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 15,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      31763,
+      31763,
+      31763
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 16,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      35939,
+      35939,
+      35939
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 17,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      40532,
+      40532,
+      40532
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 18,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      45585,
+      45585,
+      45585
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 19,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      51143,
+      51143,
+      51143
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 20,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      57257,
+      57257,
+      57257
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 21,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      63982,
+      63982,
+      63982
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 22,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      71380,
+      71380,
+      71380
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 23,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      79518,
+      79518,
+      79518
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 24,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      88469,
+      88469,
+      88469
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 25,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      98315,
+      98315,
+      98315
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 26,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      109146,
+      109146,
+      109146
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 27,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      121060,
+      121060,
+      121060
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 28,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      134166,
+      134166,
+      134166
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 29,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      148582,
+      148582,
+      148582
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 30,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      164440,
+      164440,
+      164440
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 31,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      181884,
+      181884,
+      181884
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 32,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      201072,
+      201072,
+      201072
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 33,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      222179,
+      222179,
+      222179
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 34,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      245396,
+      245396,
+      245396
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 35,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      270935,
+      270935,
+      270935
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 36,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      299028,
+      299028,
+      299028
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 37,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      329930,
+      329930,
+      329930
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 38,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      363923,
+      363923,
+      363923
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 39,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      401315,
+      401315,
+      401315
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 40,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      442446,
+      442446,
+      442446
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 41,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      487690,
+      487690,
+      487690
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 42,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      537459,
+      537459,
+      537459
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 43,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      592204,
+      592204,
+      592204
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 44,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      652424,
+      652424,
+      652424
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 45,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      718666,
+      718666,
+      718666
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 46,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      791532,
+      791532,
+      791532
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 47,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      871685,
+      871685,
+      871685
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 48,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      959853,
+      959853,
+      959853
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 49,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      1056838,
+      1056838,
+      1056838
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 50,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      1163521,
+      1163521,
+      1163521
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 51,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      1280873,
+      1280873,
+      1280873
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 52,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      1409960,
+      1409960,
+      1409960
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 53,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      1551956,
+      1551956,
+      1551956
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 54,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      1708151,
+      1708151,
+      1708151
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 55,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      1879966,
+      1879966,
+      1879966
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 56,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      2068962,
+      2068962,
+      2068962
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 57,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      2276858,
+      2276858,
+      2276858
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 58,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      2505543,
+      2505543,
+      2505543
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 59,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      2757097,
+      2757097,
+      2757097
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 60,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      3033806,
+      3033806,
+      3033806
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 61,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      3338186,
+      3338186,
+      3338186
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 62,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      3673004,
+      3673004,
+      3673004
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 63,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      4041304,
+      4041304,
+      4041304
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 64,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      4446434,
+      4446434,
+      4446434
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 65,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      4892077,
+      4892077,
+      4892077
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 66,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      5382284,
+      5382284,
+      5382284
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 67,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      5921512,
+      5921512,
+      5921512
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 68,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      6514663,
+      6514663,
+      6514663
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 69,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      7167129,
+      7167129,
+      7167129
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 70,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      7884841,
+      7884841,
+      7884841
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 71,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      8674325,
+      8674325,
+      8674325
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 72,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      9542757,
+      9542757,
+      9542757
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 73,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      10498032,
+      10498032,
+      10498032
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 74,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      11548835,
+      11548835,
+      11548835
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 75,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      12704718,
+      12704718,
+      12704718
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 76,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      13976189,
+      13976189,
+      13976189
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 77,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      15374807,
+      15374807,
+      15374807
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 78,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      16913287,
+      16913287,
+      16913287
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 79,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      18605615,
+      18605615,
+      18605615
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 80,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      20467176,
+      20467176,
+      20467176
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 81,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      22514893,
+      22514893,
+      22514893
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 82,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      24767382,
+      24767382,
+      24767382
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 83,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      27245120,
+      27245120,
+      27245120
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 84,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      29970632,
+      29970632,
+      29970632
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 85,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      32968695,
+      32968695,
+      32968695
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 86,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      36266564,
+      36266564,
+      36266564
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 87,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      39894220,
+      39894220,
+      39894220
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 88,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      43884642,
+      43884642,
+      43884642
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 89,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      48274106,
+      48274106,
+      48274106
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 90,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      53102516,
+      53102516,
+      53102516
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 91,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      58413767,
+      58413767,
+      58413767
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 92,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      64256143,
+      64256143,
+      64256143
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 93,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      70682757,
+      70682757,
+      70682757
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 94,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      77752032,
+      77752032,
+      77752032
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 95,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      85528235,
+      85528235,
+      85528235
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 96,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      94082058,
+      94082058,
+      94082058
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 97,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      103491263,
+      103491263,
+      103491263
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 98,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      113841389,
+      113841389,
+      113841389
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 99,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      125226527,
+      125226527,
+      125226527
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  },
+  {
+    "Id": 100,
+    "LevelLimit": 150,
+    "CostNum": 0,
+    "ShardNum": 0,
+    "Cost": [],
+    "battleState": [
+      137750179,
+      137750179,
+      137750179
+    ],
+    "workState": 0,
+    "Unlock": 0,
+    "UnlockDes": ""
+  }
+]
