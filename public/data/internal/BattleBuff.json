@@ -32683,7 +32683,7 @@
       "GymBuffName_17"
     ],
     "Des": [
-      "GymBuff_18"
+      "GymBuff_17"
     ],
     "DesParam": [
       1,
@@ -68114,9 +68114,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13230101
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13230101
     ],
@@ -68246,9 +68244,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13230102
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13230102
     ],
@@ -68378,9 +68374,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13230103
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13230103
     ],
@@ -68510,9 +68504,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13240101
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13240101
     ],
@@ -68642,9 +68634,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13240102
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13240102
     ],
@@ -68774,9 +68764,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13240103
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13240103
     ],
@@ -68906,9 +68894,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13250101
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13250101
     ],
@@ -69038,9 +69024,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13250102
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13250102
     ],
@@ -69170,9 +69154,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13250103
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13250103
     ],
@@ -69430,9 +69412,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13380101
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13380101
     ],
@@ -69626,9 +69606,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13380102
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13380102
     ],
@@ -69822,9 +69800,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13380103
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13380103
     ],
@@ -70082,9 +70058,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13390101
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13390101
     ],
@@ -70278,9 +70252,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13390102
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13390102
     ],
@@ -70474,9 +70446,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13390103
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13390103
     ],
@@ -70734,9 +70704,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13400101
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13400101
     ],
@@ -70930,9 +70898,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13400102
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13400102
     ],
@@ -71126,9 +71092,7 @@
     "DesParam": [],
     "Icon": [],
     "BuffType": 0,
-    "AddVFX": [
-      13400103
-    ],
+    "AddVFX": [],
     "AddVFXNoJump": [
       13400103
     ],
@@ -71986,7 +71950,7 @@
     "FirstSkillChange": [
       {
         "ValueType": 2,
-        "Num": -30
+        "Num": -20
       }
     ],
     "AttackDamageLock": 0,
@@ -87071,7 +87035,7 @@
     ],
     "DesParam": [],
     "Icon": [
-      "Buff_PowerUp"
+      "Buff_100050204"
     ],
     "BuffType": 0,
     "AddVFX": [],

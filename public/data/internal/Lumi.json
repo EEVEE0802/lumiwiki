@@ -1946,8 +1946,8 @@
     "EscapeMoveSpeed": 2000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1480,
-    "CatchRateCheckHeight": 645,
+    "LoveHeartHeight": 1540,
+    "CatchRateCheckHeight": 750,
     "HomeMoveSpeed": 1.6,
     "HomeRotateSpeed": 180,
     "Distance": 6000,
@@ -3173,7 +3173,7 @@
       "Z": 0
     },
     "NewJumpTo": [
-      4090
+      4101
     ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
@@ -10973,7 +10973,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      51
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -11767,7 +11769,7 @@
       "Z": 0
     },
     "NewJumpTo": [
-      4034
+      52
     ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
@@ -13176,7 +13178,7 @@
       "Z": 0
     },
     "NewJumpTo": [
-      4092
+      4102
     ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
@@ -15606,7 +15608,7 @@
       "Z": 0
     },
     "NewJumpTo": [
-      4019
+      4100
     ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
@@ -23394,7 +23396,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4064
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -23796,7 +23800,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      70
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -26210,7 +26216,7 @@
       "Z": 0
     },
     "NewJumpTo": [
-      4020
+      4104
     ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
@@ -27014,7 +27020,7 @@
       "Z": 0
     },
     "NewJumpTo": [
-      4091
+      4103
     ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
@@ -33009,7 +33015,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      4105
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -33614,7 +33622,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      70
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -33814,7 +33824,9 @@
       "Y": 0.5,
       "Z": 0
     },
-    "NewJumpTo": [],
+    "NewJumpTo": [
+      51
+    ],
     "LumiFavor": 1,
     "ColorVariantType": 1,
     "AchievementType": 1,
@@ -42618,8 +42630,8 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1300,
-    "CatchRateCheckHeight": 600,
+    "LoveHeartHeight": 1000,
+    "CatchRateCheckHeight": 300,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
     "Distance": 6000,
@@ -44380,8 +44392,8 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1300,
-    "CatchRateCheckHeight": 600,
+    "LoveHeartHeight": 800,
+    "CatchRateCheckHeight": 200,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
     "Distance": 6000,
@@ -45176,7 +45188,7 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1300,
+    "LoveHeartHeight": 1000,
     "CatchRateCheckHeight": 600,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
@@ -45367,8 +45379,8 @@
     "EscapeMoveSpeed": 1000,
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
-    "LoveHeartHeight": 1300,
-    "CatchRateCheckHeight": 600,
+    "LoveHeartHeight": 800,
+    "CatchRateCheckHeight": 200,
     "HomeMoveSpeed": 1,
     "HomeRotateSpeed": 180,
     "Distance": 6000,

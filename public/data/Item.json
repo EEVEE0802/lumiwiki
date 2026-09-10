@@ -507,14 +507,14 @@
     "isShow": true,
     "JumpTo": [
       217,
-      326,
+      117,
       1005,
       65,
       68
     ],
     "LackJumpto": [
       217,
-      326,
+      117,
       1005,
       65,
       68
@@ -554,7 +554,8 @@
     "order": 14,
     "isShow": true,
     "JumpTo": [
-      46
+      46,
+      68
     ],
     "LackJumpto": [
       46,
@@ -1034,7 +1035,6 @@
       52
     ],
     "LackJumpto": [
-      61,
       62,
       65
     ],
@@ -1140,7 +1140,7 @@
     "type": 2,
     "Atlas": "IconItemLumi",
     "icon": "Item_10057",
-    "HdIcon": "",
+    "HdIcon": "Activity_HD_Item_10057",
     "des": "ItemD_10057",
     "order": 1,
     "isShow": true,
@@ -1378,13 +1378,13 @@
     "isShow": true,
     "JumpTo": [
       109,
-      329,
+      120,
       4097,
       65
     ],
     "LackJumpto": [
       109,
-      329,
+      120,
       4097,
       65
     ],
@@ -1498,8 +1498,8 @@
     "quality": 6,
     "WorkAmount": 0,
     "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_10064",
+    "Atlas": "IconItemActivity",
+    "icon": "Item_10066",
     "HdIcon": "",
     "des": "ItemD_10066",
     "order": 1,
@@ -1622,13 +1622,13 @@
     "isShow": true,
     "JumpTo": [
       109,
-      329,
+      120,
       4097,
       65
     ],
     "LackJumpto": [
       109,
-      329,
+      120,
       4097,
       65
     ],
@@ -2022,7 +2022,7 @@
     "type": 2,
     "Atlas": "IconItemStarUp",
     "icon": "Starupicon_14004",
-    "HdIcon": "",
+    "HdIcon": "Activity_HD_Item_14004",
     "des": "ItemD_14004",
     "order": 3,
     "isShow": false,
@@ -2140,7 +2140,7 @@
     "key1": 20000,
     "name": "Item_20000",
     "quality": 4,
-    "WorkAmount": 240,
+    "WorkAmount": 300,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20000",
@@ -2182,7 +2182,7 @@
     "key1": 20001,
     "name": "Item_20001",
     "quality": 1,
-    "WorkAmount": 40,
+    "WorkAmount": 60,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20001",
@@ -2224,7 +2224,7 @@
     "key1": 20002,
     "name": "Item_20002",
     "quality": 2,
-    "WorkAmount": 160,
+    "WorkAmount": 240,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20002",
@@ -2266,7 +2266,7 @@
     "key1": 20003,
     "name": "Item_20003",
     "quality": 3,
-    "WorkAmount": 1200,
+    "WorkAmount": 1296,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20003",
@@ -2306,7 +2306,7 @@
     "key1": 20004,
     "name": "Item_20004",
     "quality": 4,
-    "WorkAmount": 1200,
+    "WorkAmount": 1500,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20004",
@@ -2346,7 +2346,7 @@
     "key1": 20005,
     "name": "Item_20005",
     "quality": 5,
-    "WorkAmount": 7200,
+    "WorkAmount": 14800,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20005",
@@ -2458,7 +2458,7 @@
     "key1": 20008,
     "name": "Item_20008",
     "quality": 1,
-    "WorkAmount": 30,
+    "WorkAmount": 36,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20008",
@@ -2580,7 +2580,7 @@
     "key1": 20011,
     "name": "Item_20011",
     "quality": 1,
-    "WorkAmount": 180,
+    "WorkAmount": 188,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20011",
@@ -2780,7 +2780,7 @@
     "key1": 20016,
     "name": "Item_20016",
     "quality": 3,
-    "WorkAmount": 500,
+    "WorkAmount": 600,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20016",
@@ -2820,7 +2820,7 @@
     "key1": 20017,
     "name": "Item_20017",
     "quality": 2,
-    "WorkAmount": 150,
+    "WorkAmount": 180,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20017",
@@ -2860,7 +2860,7 @@
     "key1": 20018,
     "name": "Item_20018",
     "quality": 4,
-    "WorkAmount": 1000,
+    "WorkAmount": 1200,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20018",
@@ -2900,7 +2900,7 @@
     "key1": 20019,
     "name": "Item_20019",
     "quality": 2,
-    "WorkAmount": 360,
+    "WorkAmount": 460,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20019",
@@ -3060,7 +3060,7 @@
     "key1": 20023,
     "name": "Item_20023",
     "quality": 4,
-    "WorkAmount": 3600,
+    "WorkAmount": 3240,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20023",
@@ -3140,7 +3140,7 @@
     "key1": 20025,
     "name": "Item_20025",
     "quality": 4,
-    "WorkAmount": 900,
+    "WorkAmount": 1080,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20025",
@@ -3260,7 +3260,7 @@
     "key1": 20028,
     "name": "Item_20028",
     "quality": 3,
-    "WorkAmount": 1800,
+    "WorkAmount": 1728,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20028",
@@ -3300,7 +3300,7 @@
     "key1": 20029,
     "name": "Item_20029",
     "quality": 2,
-    "WorkAmount": 2100,
+    "WorkAmount": 1740,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20029",
@@ -3340,7 +3340,7 @@
     "key1": 20030,
     "name": "Item_20030",
     "quality": 3,
-    "WorkAmount": 3000,
+    "WorkAmount": 2808,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20030",
@@ -3380,7 +3380,7 @@
     "key1": 20031,
     "name": "Item_20031",
     "quality": 4,
-    "WorkAmount": 3600,
+    "WorkAmount": 3672,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20031",
@@ -3460,7 +3460,7 @@
     "key1": 20033,
     "name": "Item_20033",
     "quality": 3,
-    "WorkAmount": 450,
+    "WorkAmount": 540,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20033",
@@ -3500,7 +3500,7 @@
     "key1": 20034,
     "name": "Item_20034",
     "quality": 2,
-    "WorkAmount": 600,
+    "WorkAmount": 720,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20034",
@@ -3540,7 +3540,7 @@
     "key1": 20035,
     "name": "Item_20035",
     "quality": 3,
-    "WorkAmount": 1800,
+    "WorkAmount": 3500,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20035",
@@ -3580,7 +3580,7 @@
     "key1": 20036,
     "name": "Item_20036",
     "quality": 4,
-    "WorkAmount": 2400,
+    "WorkAmount": 6000,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20036",
@@ -3620,7 +3620,7 @@
     "key1": 20037,
     "name": "Item_20037",
     "quality": 5,
-    "WorkAmount": 10000,
+    "WorkAmount": 24000,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20037",
@@ -3660,7 +3660,7 @@
     "key1": 20038,
     "name": "Item_20038",
     "quality": 5,
-    "WorkAmount": 500,
+    "WorkAmount": 600,
     "type": 4,
     "Atlas": "IconItemHomeProduction",
     "icon": "Item_20038",
@@ -3914,6 +3914,42 @@
     "LackJumpto": [
       206
     ],
+    "IsMarket": false,
+    "goldPrice": 1,
+    "DefaultBasePrice": -1,
+    "DefaultBasePriceMin": -1,
+    "maxStack": 9999,
+    "isUse": false,
+    "itemUseId": 0,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "",
+    "endPosition": 1,
+    "lumieggtype": "",
+    "lumieggrand": 0,
+    "lumieggdes": "",
+    "proportion": 1,
+    "homeProportion": "",
+    "maxModelCountHome": 10,
+    "maxModelCount": 50,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
+    "key1": 20056,
+    "name": "Item_20056",
+    "quality": 5,
+    "WorkAmount": 0,
+    "type": 4,
+    "Atlas": "IconItemActivity",
+    "icon": "Item_20056",
+    "HdIcon": "",
+    "des": "ItemD_20056",
+    "order": 200045,
+    "isShow": true,
+    "JumpTo": [],
+    "LackJumpto": [],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": -1,
@@ -5098,7 +5134,7 @@
     "quality": 3,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItem",
     "icon": "Item_23002",
     "HdIcon": "",
     "des": "ItemD_23002",
@@ -5134,7 +5170,7 @@
     "quality": 4,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItem",
     "icon": "Item_23003",
     "HdIcon": "",
     "des": "ItemD_23003",
@@ -5170,7 +5206,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItem",
     "icon": "Item_23004",
     "HdIcon": "",
     "des": "ItemD_23004",
@@ -5206,7 +5242,7 @@
     "quality": 6,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItem",
     "icon": "Item_23005",
     "HdIcon": "",
     "des": "ItemD_23005",
@@ -5242,14 +5278,18 @@
     "quality": 6,
     "WorkAmount": 0,
     "type": 4,
-    "Atlas": "IconItemHomeProduction",
+    "Atlas": "IconItemHomeBuilding",
     "icon": "Item_23006",
     "HdIcon": "",
     "des": "ItemD_23006",
     "order": 200071,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      72
+    ],
+    "LackJumpto": [
+      72
+    ],
     "IsMarket": false,
     "goldPrice": 0,
     "DefaultBasePrice": -1,
@@ -5561,10 +5601,10 @@
     "order": 200075,
     "isShow": false,
     "JumpTo": [
-      4022
+      52
     ],
     "LackJumpto": [
-      4022
+      52
     ],
     "IsMarket": false,
     "goldPrice": 1,
@@ -5912,8 +5952,12 @@
     "des": "ItemD_30012",
     "order": 200084,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -5988,8 +6032,12 @@
     "des": "ItemD_30014",
     "order": 200086,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6024,8 +6072,12 @@
     "des": "ItemD_30015",
     "order": 200087,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6180,8 +6232,12 @@
     "des": "ItemD_30019",
     "order": 200091,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6256,8 +6312,12 @@
     "des": "ItemD_30021",
     "order": 200093,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6292,8 +6352,12 @@
     "des": "ItemD_30022",
     "order": 200094,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      64
+    ],
+    "LackJumpto": [
+      64
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6328,8 +6392,12 @@
     "des": "ItemD_30023",
     "order": 200095,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      64
+    ],
+    "LackJumpto": [
+      64
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6364,8 +6432,12 @@
     "des": "ItemD_30024",
     "order": 200096,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      64
+    ],
+    "LackJumpto": [
+      64
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6400,8 +6472,12 @@
     "des": "ItemD_30025",
     "order": 200097,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      64
+    ],
+    "LackJumpto": [
+      64
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6512,8 +6588,12 @@
     "des": "ItemD_30028",
     "order": 200078,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6548,8 +6628,12 @@
     "des": "ItemD_30029",
     "order": 200079,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6620,8 +6704,12 @@
     "des": "ItemD_30031",
     "order": 200081,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      112
+    ],
+    "LackJumpto": [
+      112
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -6984,8 +7072,12 @@
     "des": "Arch_30041",
     "order": 200091,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      1002
+    ],
+    "LackJumpto": [
+      1002
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7020,8 +7112,12 @@
     "des": "ItemD_30042",
     "order": 200092,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      72
+    ],
+    "LackJumpto": [
+      72
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7056,8 +7152,12 @@
     "des": "ItemD_30047",
     "order": 200097,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      1002
+    ],
+    "LackJumpto": [
+      1002
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7514,7 +7614,7 @@
   },
   {
     "key1": 30061,
-    "name": "Arch_10120",
+    "name": "i_200219",
     "quality": 5,
     "WorkAmount": 0,
     "type": 2,
@@ -7564,8 +7664,12 @@
     "des": "ItemD_30062",
     "order": 200119,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      12
+    ],
+    "LackJumpto": [
+      12
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7680,8 +7784,12 @@
     "des": "ItemD_30103",
     "order": 200100,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      55
+    ],
+    "LackJumpto": [
+      55
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7716,8 +7824,12 @@
     "des": "ItemD_30104",
     "order": 200101,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      55
+    ],
+    "LackJumpto": [
+      55
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7788,8 +7900,12 @@
     "des": "ItemD_30111",
     "order": 200103,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      60140
+    ],
+    "LackJumpto": [
+      60140
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7824,8 +7940,12 @@
     "des": "ItemD_30112",
     "order": 200104,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      60120
+    ],
+    "LackJumpto": [
+      60120
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7860,8 +7980,12 @@
     "des": "ItemD_30113",
     "order": 200104,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      60100
+    ],
+    "LackJumpto": [
+      60100
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7896,8 +8020,12 @@
     "des": "ItemD_30114",
     "order": 200103,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      60000
+    ],
+    "LackJumpto": [
+      60000
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -7932,8 +8060,12 @@
     "des": "ItemD_30115",
     "order": 200104,
     "isShow": false,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      60000
+    ],
+    "LackJumpto": [
+      60000
+    ],
     "IsMarket": false,
     "goldPrice": 1,
     "DefaultBasePrice": 0,
@@ -12002,8 +12134,14 @@
     "des": "ItemD_61002",
     "order": 1,
     "isShow": true,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      52,
+      70
+    ],
+    "LackJumpto": [
+      52,
+      70
+    ],
     "IsMarket": false,
     "goldPrice": 0,
     "DefaultBasePrice": 0,
@@ -12711,6 +12849,42 @@
     "SynthesisId": 0
   },
   {
+    "key1": 61036,
+    "name": "Item_61036",
+    "quality": 6,
+    "WorkAmount": 0,
+    "type": 6,
+    "Atlas": "IconItemEgg",
+    "icon": "Item_60100",
+    "HdIcon": "Activity_HD_Item_60100",
+    "des": "ItemD_61036",
+    "order": 1,
+    "isShow": false,
+    "JumpTo": [],
+    "LackJumpto": [],
+    "IsMarket": false,
+    "goldPrice": 0,
+    "DefaultBasePrice": 0,
+    "DefaultBasePriceMin": 0,
+    "maxStack": 1,
+    "isUse": true,
+    "itemUseId": 61036,
+    "ItemGetType": 2,
+    "model": "",
+    "material": "Mat_LumiEgg_Color",
+    "endPosition": 1,
+    "lumieggtype": "ItemEggType_61036",
+    "lumieggrand": 0,
+    "lumieggdes": "ItemEgg_60001",
+    "proportion": 0,
+    "homeProportion": "",
+    "maxModelCountHome": 0,
+    "maxModelCount": 0,
+    "Audio": "UI_CollectionItems",
+    "ItemParam": "",
+    "SynthesisId": 0
+  },
+  {
     "key1": 61100,
     "name": "Item_61100",
     "quality": 6,
@@ -12974,8 +13148,14 @@
     "des": "ItemD_61107",
     "order": 1,
     "isShow": true,
-    "JumpTo": [],
-    "LackJumpto": [],
+    "JumpTo": [
+      52,
+      4022
+    ],
+    "LackJumpto": [
+      52,
+      4022
+    ],
     "IsMarket": false,
     "goldPrice": 0,
     "DefaultBasePrice": 0,
@@ -13061,7 +13241,7 @@
     "endPosition": 1,
     "lumieggtype": "ItemEggType_61109",
     "lumieggrand": 0,
-    "lumieggdes": "ItemEgg_60101",
+    "lumieggdes": "ItemEgg_60001",
     "proportion": 0,
     "homeProportion": "",
     "maxModelCountHome": 0,
@@ -14862,7 +15042,7 @@
     "ItemGetType": 2,
     "model": "",
     "material": "",
-    "endPosition": 1,
+    "endPosition": 23,
     "lumieggtype": "",
     "lumieggrand": 0,
     "lumieggdes": "",
@@ -14887,10 +15067,10 @@
     "order": 1,
     "isShow": false,
     "JumpTo": [
-      4069
+      603
     ],
     "LackJumpto": [
-      4069
+      603
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -14927,10 +15107,10 @@
     "order": 2,
     "isShow": false,
     "JumpTo": [
-      4070
+      603
     ],
     "LackJumpto": [
-      4070
+      603
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -14967,10 +15147,10 @@
     "order": 3,
     "isShow": false,
     "JumpTo": [
-      4085
+      603
     ],
     "LackJumpto": [
-      4085
+      603
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -15007,10 +15187,10 @@
     "order": 4,
     "isShow": false,
     "JumpTo": [
-      4084
+      603
     ],
     "LackJumpto": [
-      4084
+      603
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -26486,7 +26666,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemCollab1",
+    "Atlas": "IconItemShard2",
     "icon": "Item_125002",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28454,7 +28634,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_145801",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28498,7 +28678,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_146901",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28542,7 +28722,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147101",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28586,7 +28766,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147301",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28630,7 +28810,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147401",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28674,7 +28854,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147501",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28718,7 +28898,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147601",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28762,7 +28942,7 @@
     "quality": 5,
     "WorkAmount": 0,
     "type": 5,
-    "Atlas": "IconItemShard3",
+    "Atlas": "IconItemShard4",
     "icon": "Item_147701",
     "HdIcon": "",
     "des": "ItemD_100101",
@@ -28901,13 +29081,11 @@
     "order": 3000276,
     "isShow": false,
     "JumpTo": [
-      48,
-      40,
+      53004,
       49
     ],
     "LackJumpto": [
-      48,
-      40,
+      53004,
       49
     ],
     "IsMarket": false,
@@ -28945,13 +29123,11 @@
     "order": 3000277,
     "isShow": false,
     "JumpTo": [
-      48,
-      40,
+      53004,
       49
     ],
     "LackJumpto": [
-      48,
-      40,
+      53004,
       49
     ],
     "IsMarket": false,
@@ -28989,13 +29165,11 @@
     "order": 3000278,
     "isShow": false,
     "JumpTo": [
-      48,
-      40,
+      53004,
       49
     ],
     "LackJumpto": [
-      48,
-      40,
+      53004,
       49
     ],
     "IsMarket": false,
@@ -30553,13 +30727,11 @@
     "order": 3000314,
     "isShow": false,
     "JumpTo": [
-      48,
-      40,
+      53023,
       49
     ],
     "LackJumpto": [
-      48,
-      40,
+      53023,
       49
     ],
     "IsMarket": false,
@@ -32685,800 +32857,6 @@
     "SynthesisId": 0
   },
   {
-    "key1": 150000,
-    "name": "Item_150000",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150000",
-    "HdIcon": "",
-    "des": "ItemD_150000",
-    "order": 5,
-    "isShow": true,
-    "JumpTo": [
-      109,
-      329,
-      4097,
-      65
-    ],
-    "LackJumpto": [
-      109,
-      329,
-      4097,
-      65
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": true,
-    "itemUseId": 150000,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150001,
-    "name": "Item_150001",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150001",
-    "HdIcon": "",
-    "des": "ItemD_150001",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150002,
-    "name": "Item_150002",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150002",
-    "HdIcon": "",
-    "des": "ItemD_150002",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150003,
-    "name": "Item_150003",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150003",
-    "HdIcon": "",
-    "des": "ItemD_150003",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150004,
-    "name": "Item_150004",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150004",
-    "HdIcon": "",
-    "des": "ItemD_150004",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150005,
-    "name": "Item_150005",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150005",
-    "HdIcon": "",
-    "des": "ItemD_150005",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150006,
-    "name": "Item_150006",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150006",
-    "HdIcon": "",
-    "des": "ItemD_150006",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150007,
-    "name": "Item_150007",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150007",
-    "HdIcon": "",
-    "des": "ItemD_150007",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150008,
-    "name": "Item_150008",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150008",
-    "HdIcon": "",
-    "des": "ItemD_150008",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150009,
-    "name": "Item_150009",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150009",
-    "HdIcon": "",
-    "des": "ItemD_150009",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150010,
-    "name": "Item_150010",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150010",
-    "HdIcon": "",
-    "des": "ItemD_150010",
-    "order": 3000129,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150011,
-    "name": "Item_150011",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150011",
-    "HdIcon": "",
-    "des": "ItemD_150011",
-    "order": 3000130,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150012,
-    "name": "Item_150012",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150012",
-    "HdIcon": "",
-    "des": "ItemD_150012",
-    "order": 3000130,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150013,
-    "name": "Item_150013",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150013",
-    "HdIcon": "",
-    "des": "ItemD_150013",
-    "order": 3000130,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150014,
-    "name": "Item_150014",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150014",
-    "HdIcon": "",
-    "des": "ItemD_150014",
-    "order": 3000130,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150015,
-    "name": "Item_150015",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150015",
-    "HdIcon": "",
-    "des": "ItemD_150015",
-    "order": 3000130,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150016,
-    "name": "Item_150016",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150016",
-    "HdIcon": "",
-    "des": "ItemD_150016",
-    "order": 3000130,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
-    "key1": 150017,
-    "name": "Item_150017",
-    "quality": 5,
-    "WorkAmount": 0,
-    "type": 2,
-    "Atlas": "IconItemLumi",
-    "icon": "Item_150017",
-    "HdIcon": "",
-    "des": "ItemD_150017",
-    "order": 3000131,
-    "isShow": true,
-    "JumpTo": [
-      250,
-      4097,
-      329
-    ],
-    "LackJumpto": [
-      250,
-      4097,
-      329
-    ],
-    "IsMarket": false,
-    "goldPrice": 0,
-    "DefaultBasePrice": -1,
-    "DefaultBasePriceMin": -1,
-    "maxStack": 9999,
-    "isUse": false,
-    "itemUseId": 0,
-    "ItemGetType": 2,
-    "model": "",
-    "material": "",
-    "endPosition": 1,
-    "lumieggtype": "",
-    "lumieggrand": 0,
-    "lumieggdes": "",
-    "proportion": 1,
-    "homeProportion": "",
-    "maxModelCountHome": 10,
-    "maxModelCount": 50,
-    "Audio": "UI_CollectionItems",
-    "ItemParam": "",
-    "SynthesisId": 0
-  },
-  {
     "key1": 1001010,
     "name": "Item_1001010",
     "quality": 6,
@@ -34373,11 +33751,9 @@
     "order": 3000022,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -34415,11 +33791,9 @@
     "order": 3000023,
     "isShow": false,
     "JumpTo": [
-      103,
       107
     ],
     "LackJumpto": [
-      103,
       107
     ],
     "IsMarket": false,
@@ -34541,11 +33915,9 @@
     "order": 3000026,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -34709,11 +34081,9 @@
     "order": 3000030,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -35843,11 +35213,9 @@
     "order": 3000057,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -35927,11 +35295,9 @@
     "order": 3000059,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -36305,11 +35671,9 @@
     "order": 3000068,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -36431,11 +35795,9 @@
     "order": 3000071,
     "isShow": false,
     "JumpTo": [
-      103,
       107
     ],
     "LackJumpto": [
-      103,
       107
     ],
     "IsMarket": false,
@@ -37061,11 +36423,9 @@
     "order": 3000086,
     "isShow": false,
     "JumpTo": [
-      103,
       107
     ],
     "LackJumpto": [
-      103,
       107
     ],
     "IsMarket": false,
@@ -37103,11 +36463,9 @@
     "order": 3000087,
     "isShow": false,
     "JumpTo": [
-      103,
       107
     ],
     "LackJumpto": [
-      103,
       107
     ],
     "IsMarket": false,
@@ -37145,11 +36503,9 @@
     "order": 3000088,
     "isShow": false,
     "JumpTo": [
-      103,
       107
     ],
     "LackJumpto": [
-      103,
       107
     ],
     "IsMarket": false,
@@ -37187,11 +36543,9 @@
     "order": 3000089,
     "isShow": false,
     "JumpTo": [
-      103,
       107
     ],
     "LackJumpto": [
-      103,
       107
     ],
     "IsMarket": false,
@@ -39245,11 +38599,9 @@
     "order": 3000138,
     "isShow": false,
     "JumpTo": [
-      103,
       107
     ],
     "LackJumpto": [
-      103,
       107
     ],
     "IsMarket": false,
@@ -39707,11 +39059,9 @@
     "order": 3000149,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -39875,11 +39225,9 @@
     "order": 3000153,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -40505,11 +39853,9 @@
     "order": 3000168,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -41555,11 +40901,9 @@
     "order": 3000193,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -42605,11 +41949,9 @@
     "order": 3000218,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -44371,11 +43713,9 @@
     "order": 3000260,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -45305,11 +44645,9 @@
     "order": 3000282,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -45683,11 +45021,9 @@
     "order": 3000291,
     "isShow": false,
     "JumpTo": [
-      103,
       107
     ],
     "LackJumpto": [
-      103,
       107
     ],
     "IsMarket": false,
@@ -46315,12 +45651,10 @@
     "order": 3000308,
     "isShow": false,
     "JumpTo": [
-      103,
-      104
+      106
     ],
     "LackJumpto": [
-      103,
-      104
+      106
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47282,13 +46616,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47326,13 +46658,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47369,12 +46699,10 @@
     "order": 3000334,
     "isShow": false,
     "JumpTo": [
-      103,
       104,
       53003
     ],
     "LackJumpto": [
-      103,
       104,
       53003
     ],
@@ -47413,12 +46741,10 @@
     "order": 3000335,
     "isShow": false,
     "JumpTo": [
-      103,
       104,
       53003
     ],
     "LackJumpto": [
-      103,
       104,
       53003
     ],
@@ -47457,12 +46783,10 @@
     "order": 3000336,
     "isShow": false,
     "JumpTo": [
-      103,
       104,
       53003
     ],
     "LackJumpto": [
-      103,
       104,
       53003
     ],
@@ -47501,12 +46825,12 @@
     "order": 3000337,
     "isShow": false,
     "JumpTo": [
-      103,
-      106
+      106,
+      53003
     ],
     "LackJumpto": [
-      103,
-      106
+      106,
+      53003
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47545,12 +46869,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47589,12 +46915,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47633,12 +46961,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47675,12 +47005,12 @@
     "order": 3000341,
     "isShow": false,
     "JumpTo": [
-      103,
-      106
+      106,
+      53017
     ],
     "LackJumpto": [
-      103,
-      106
+      106,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -47801,11 +47131,9 @@
     "order": 3000344,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -48263,11 +47591,9 @@
     "order": 3000355,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -48431,11 +47757,9 @@
     "order": 3000359,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,
@@ -48600,13 +47924,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48644,13 +47966,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48688,13 +48008,11 @@
     "isShow": false,
     "JumpTo": [
       103,
-      104,
-      53015
+      104
     ],
     "LackJumpto": [
       103,
-      104,
-      53015
+      104
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48733,12 +48051,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48777,12 +48097,14 @@
     "JumpTo": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "LackJumpto": [
       103,
       104,
-      53015
+      53015,
+      53017
     ],
     "IsMarket": false,
     "goldPrice": 0,
@@ -48987,12 +48309,10 @@
     "order": 3000372,
     "isShow": false,
     "JumpTo": [
-      103,
       104,
       53024
     ],
     "LackJumpto": [
-      103,
       104,
       53024
     ],
@@ -49031,11 +48351,9 @@
     "order": 3000374,
     "isShow": false,
     "JumpTo": [
-      103,
       106
     ],
     "LackJumpto": [
-      103,
       106
     ],
     "IsMarket": false,

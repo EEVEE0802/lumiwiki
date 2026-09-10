@@ -4537,7 +4537,7 @@
     "UnlockCost": 1000,
     "SA": "SA_13002",
     "AssSkill": [],
-    "MontageType": 1,
+    "MontageType": 3,
     "icon": "Psychic_02",
     "SkillType": 1,
     "TargetType": 1,
@@ -18214,12 +18214,12 @@
         "TriggerEffect": 11390104
       },
       {
-        "TriggerType": 6,
+        "TriggerType": 3,
         "TriggerCondition": 11390401,
         "TriggerEffect": 11390101
       },
       {
-        "TriggerType": 6,
+        "TriggerType": 3,
         "TriggerCondition": 11390402,
         "TriggerEffect": 11390401
       }
@@ -27941,12 +27941,7 @@
       {
         "TriggerType": 3,
         "TriggerCondition": 100,
-        "TriggerEffect": 12630103
-      },
-      {
-        "TriggerType": 3,
-        "TriggerCondition": 100,
-        "TriggerEffect": 1000
+        "TriggerEffect": 12630104
       }
     ],
     "SkillValueChange": [],
@@ -28009,12 +28004,12 @@
     "DefCalculate": false,
     "SkillEffect": [
       {
-        "TriggerType": 3,
+        "TriggerType": 6,
         "TriggerCondition": 100004,
         "TriggerEffect": 12630401
       },
       {
-        "TriggerType": 3,
+        "TriggerType": 6,
         "TriggerCondition": 100,
         "TriggerEffect": 10000401
       }
@@ -30591,6 +30586,11 @@
     "Piercing": 0,
     "DefCalculate": false,
     "SkillEffect": [
+      {
+        "TriggerType": 1,
+        "TriggerCondition": 100,
+        "TriggerEffect": 134001028
+      },
       {
         "TriggerType": 6,
         "TriggerCondition": 100,
