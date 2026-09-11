@@ -1,5 +1,5 @@
 {
-  "updateTime": "2026-09-10T19:00:36.200Z",
+  "updateTime": "2026-09-11T19:00:25.130Z",
   "note": "普通概率=解锁池权重占比；彩色=保底触发时池内分布近似（按 LumiDrop.WeightPool 取权）",
   "mainLineMaps": [
     {
@@ -3979,6 +3979,197 @@
           "name": "海精灵",
           "weight": 300,
           "probability": "2.78"
+        }
+      ]
+    },
+    {
+      "mapId": 1100,
+      "mapName": "绿林龙森",
+      "mapNameKey": "MapName_S1_01",
+      "type": "season",
+      "lumis": [
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 132401,
+          "name": "衡星鸮",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 132301,
+          "name": "木秤鸟",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 1000,
+          "probability": "6.67"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "6.67"
+        }
+      ],
+      "totalWeight": 15000,
+      "colorLumis": [
+        {
+          "id": 101001,
+          "name": "小菜鸡",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 101301,
+          "name": "好运鸟",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 103701,
+          "name": "呐喊君",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 108701,
+          "name": "响尾眼镜蛇",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 115501,
+          "name": "宝剑海獭",
+          "weight": 1000,
+          "probability": "10.31"
+        },
+        {
+          "id": 112501,
+          "name": "石角龟",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 120801,
+          "name": "含苞",
+          "weight": 666,
+          "probability": "6.87"
+        },
+        {
+          "id": 112801,
+          "name": "草龙宝宝",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 114401,
+          "name": "晴天娃娃",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 132301,
+          "name": "木秤鸟",
+          "weight": 600,
+          "probability": "6.19"
+        },
+        {
+          "id": 120901,
+          "name": "绽放",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 125901,
+          "name": "巨岩角龟",
+          "weight": 334,
+          "probability": "3.44"
+        },
+        {
+          "id": 114501,
+          "name": "晴天精灵",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 118901,
+          "name": "草龙",
+          "weight": 300,
+          "probability": "3.09"
+        },
+        {
+          "id": 132401,
+          "name": "衡星鸮",
+          "weight": 300,
+          "probability": "3.09"
         }
       ]
     },

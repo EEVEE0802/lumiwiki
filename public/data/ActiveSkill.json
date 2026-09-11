@@ -33558,12 +33558,12 @@
     "SkillEffect": [
       {
         "TriggerType": 3,
-        "TriggerCondition": 100,
+        "TriggerCondition": 75,
         "TriggerEffect": 406
       },
       {
         "TriggerType": 3,
-        "TriggerCondition": 100,
+        "TriggerCondition": 75,
         "TriggerEffect": 506
       }
     ],

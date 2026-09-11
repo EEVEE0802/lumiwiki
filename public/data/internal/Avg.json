@@ -4369,7 +4369,7 @@
   {
     "GroupId": 35,
     "avgId": 3,
-    "Type": 4,
+    "Type": 15,
     "LeftCharacter": 0,
     "RightCharacter": 0,
     "CurCharacter": 0,
@@ -4391,9 +4391,7 @@
     "AvgSystem": 0,
     "GuideMaxTime": 0,
     "IsAuto": false,
-    "Content": [
-      "AVG_Text_000"
-    ],
+    "Content": [],
     "speed": 33,
     "jumpTime": -1,
     "nextTime": -1,
