@@ -9,6 +9,44 @@
 
 ---
 
+## 🚨 零、读技能描述的必要步骤（**做任何强度分析前必看**）
+
+**规则**：LumiGO 技能/被动/buff 的**中文描述里嵌入了 `<link=N><color=red>关键字名</color></link>` 标签**（游戏里玩家点击红字弹关键字详情，来自 `BattleKeywordDes.json` 53 条）。**不展开关键字直接读描述会漏读核心机制**。
+
+**踩坑案例**（2026-09-12 分析 132501 裁星天秤）：
+- 技能描述："使用天秤裁决，有 50% 概率提高 50% 该技能威力……**裁决结果将依据【天秤星辉Ⅲ】变化**"
+- **不展开关键字的解读**：50% 大爆发 vs 50% 反爆炸，赌博型 → 预测中游胜率
+- **展开 `<link=44>` 后**（[[glossary]] Id 44 天秤星辉Ⅲ）：
+  - 恒星 ≥2 → 概率 70% · ≥4 → +威力升至 100% · ≥6 → 100%
+- **实际机制**：叠满 6 恒星时 P160 100% 触发的 T0 输出 —— 完全不是赌博技
+
+### 正确工作流
+
+1. 从 `zh-CN.json` 读**原始描述**（含 `<link>` 标签），别提前 `re.sub(r'<[^>]+>', '')` 清洗
+2. `grep <link=(\d+)>` 提取所有关键字 id
+3. 去 `BattleKeywordDes.json` 拿每个 id 的 `Name` + `Des`，同样用对内 `zh-CN.json` 翻译
+4. **递归展开**：关键字详情里如果还有 `<link>` 继续展开
+5. 分析时**把展开后的详情内嵌到原描述里**再评估机制
+
+**Python 模板**：
+```python
+import re
+raw_des = zh.get(skill['Des'], '')  # 保留 <link> 标签
+link_ids = re.findall(r'<link=(\d+)>', raw_des)
+for kid in link_ids:
+    k = keywords[kid]
+    print(f'关键字 {kid} 「{tr(k["Name"])}」: {tr(k["Des"])}')
+    # 对 k["Des"] 递归 re.findall(r'<link=(\d+)>', ...) 继续展开
+```
+
+**报告里的标注约定**：
+- ❌ "威力依据天秤星辉Ⅲ变化"（读者不知道天秤星辉Ⅲ是啥）
+- ✅ "威力依据【天秤星辉Ⅲ】变化（恒星 ≥2→70%，≥4→+100%威力，≥6→100%）"
+
+详见 [[glossary]] 53 条关键字全表 + [[feedback_skill_desc_keywords]] memory。
+
+---
+
 ## 一、SkillType 分类
 
 `ActiveSkill.json` 里每条技能有 `SkillType` 字段，954 条技能中：

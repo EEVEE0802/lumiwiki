@@ -107,28 +107,38 @@ Step 2  Start() 里：
 
 ---
 
-## Target 类型 7 种
+## Target 类型（13 种枚举，被动系统实际支持 7 种）
 
-**代码**：`PassiveSkill.ApplyOneBuff()`（138~187）
+**代码**：`TargetType.cs`（完整 13 值枚举）+ `PassiveSkill.ApplyOneBuff()`（`switch case` 只实现 7 种）
 
-`BattlePassive.BuffList[i].Target` 决定 buff 挂到谁身上：
+`BattlePassive.BuffList[i].Target` 决定 buff 挂到谁身上。**完整 13 种 TargetType**：
 
-| 值 | 名称 | 挂给谁 | 2v2 差异 |
+| 值 | 名称 | 语义 | 被动系统支持? |
 |---|---|---|---|
-| 1 | `Self` | 本 Lumi 自己 | 无差异 |
-| 2 | `Enemy` | 当前主目标（`GetAttackIngTargetMaster()` 返回的那只）| 主目标即敌方对位玩家的场上 Lumi |
-| 3 | `SelfTeam` | 本玩家名下所有 Lumi（`playerEntity.m_children_lumi`）| 只挂自己名下 3 只，**队友的 Lumi 不吃** |
-| 4 | `EnemyTeam` | 敌方对位玩家名下所有 Lumi | 只挂敌方对位那 1 个玩家名下 3 只，敌方队友的 Lumi 不吃 |
-| 5 | `SelfAll` | 整个 Team 全部玩家全部 Lumi（`TeamAllAddBuff`）| 2v2 时**队友的 Lumi 也吃** |
-| 6 | `EnemyAll` | 敌方 Team 全部玩家全部 Lumi | 2v2 时敌方队友的 Lumi 也吃 |
-| 7 | `EnemyFriend` | 敌方对位玩家的**队友**名下所有 Lumi（`TeamFriendAllAddBuff` 排除对位自己）| 仅 2v2 有意义；1v1 敌方 Team 只有 1 个 player 会走空遍历 |
+| **1** | `Self` | **自己场上的 1 只**（本 Lumi）| ✅ |
+| **2** | `Enemy` | **对位场上的 1 只**（`GetAttackIngTargetMaster` 返回的那只）| ✅ |
+| **3** | `SelfTeam` | **自己整队 3 只**（本玩家名下所有 Lumi）| ✅ |
+| **4** | `EnemyTeam` | **对位整队 3 只**（敌方对位玩家名下所有 Lumi）| ✅ |
+| 5 | `Switch` | 替换上场的噜咪 | ❌（被动不支持，仅技能效果用）|
+| 6 | `Friend` | 自己队友场上的 1 只（仅 2v2 有意义）| ❌ |
+| 7 | `FriendTeam` | 自己队友整队 3 只 | ❌ |
+| **8** | `SelfAll` | **我方 6 只**（整 Team 全部玩家全部 Lumi，走 `TeamAllAddBuff`）| ✅ |
+| **9** | `EnemyFriend` | **对位的隔壁的 1 只**（敌方队友的场上 Lumi）| ✅ |
+| 10 | `EnemyFriendTeam` | 对位的隔壁整队 3 只 | ❌ |
+| **11** | `EnemyAll` | **对方 6 只**（敌方整 Team 全部玩家全部 Lumi）| ✅ |
+| 12 | `SelfOffBattle` | 自己场下的 2 只 | ❌ |
+| 13 | `EnemyOffBattle` | 对位场下的 2 只 | ❌ |
 
-**关键区分**：
-- `SelfTeam` (3) vs `SelfAll` (5)：前者是"单个玩家名下"，后者是"整个 Team"。1v1 时两者等价（Team 就一个玩家）；**2v2 时差异 = 有没有影响队友的 Lumi**
-- 类型 3/4/5/6 都会遍历"目标玩家名下所有 Lumi" —— **包括场下的 Lumi**！这是**贯穿式挂 buff**（但没有 IsBattling 过滤）。跟 [[battle-piercing-overflow]] 里贯穿的机制类似
-- `Enemy` (2) 依赖 `GetAttackIngTargetMaster()` —— **战斗开始时刚初始化，targetMaster 应该已经就绪**；但如果发生"上场瞬间对方无目标"，可能取到 null
+**被动系统实际支持的 7 种**：**1 / 2 / 3 / 4 / 8 / 9 / 11**（其他值走到 `default` 打 `Error` 日志）
 
-**⚠️ 需要注意的 case**：`EnemyFriend` 只在 2v2 有意义。1v1 的敌方 Team 只有 1 个玩家（对位自己），`TeamFriendAllAddBuff` 排除对位后为空遍历 —— 相当于**这条被动 1v1 时不生效**。策划配这类被动时要留意。
+**关键区分**（2v2 差异）：
+- `SelfTeam` (3) vs `SelfAll` (8)：**前者只影响本玩家的 3 只 lumi，后者影响整 Team 6 只（含队友的 3 只）**。1v1 单 Team 只有 1 个玩家 3 只 lumi → 两者等价
+- `EnemyTeam` (4) vs `EnemyAll` (11)：同上对称
+- `EnemyFriend` (9)：**仅 2v2 有意义**。1v1 敌方 Team 只有 1 个 player（对位自己）→ `EnemyFriend` 找不到"敌方隔壁玩家"，走空遍历 → **1v1 时这条被动不生效**
+
+**关键理解**：`SelfTeam / EnemyTeam / SelfAll / EnemyAll` 都会遍历"目标玩家名下所有 Lumi"（含场下的替补）—— 类似 [[battle-piercing-overflow]] 的贯穿式挂 buff，没有 `IsBattling` 过滤。
+
+**其他 6 种（5/6/7/10/12/13）在哪用**：跳过被动系统，走**技能效果**（`SkillEffect.TriggerEffect` → `BattleEffect` 里的目标筛选）或**陷阱**等其他子系统。策划配被动 buff 时如果误用这 6 种会看到服务端 error log。
 
 ---
 
