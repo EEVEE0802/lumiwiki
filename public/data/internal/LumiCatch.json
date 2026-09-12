@@ -1430,7 +1430,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": 0,
-    "CatchRate": 2000,
+    "CatchRate": 4000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -1446,15 +1446,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 800
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 1200
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 2000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -1465,15 +1465,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 800
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 1200
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 2000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -1487,7 +1487,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": 1,
-    "CatchRate": 2000,
+    "CatchRate": 4000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -1503,15 +1503,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 800
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 1200
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 2000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -1522,15 +1522,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 800
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 1200
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 2000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -1544,7 +1544,7 @@
     "FootValue": 0,
     "NeedBattle": true,
     "BattleLevel": -1,
-    "CatchRate": 1000,
+    "CatchRate": 2000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -1560,15 +1560,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 200
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 300
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 500
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -1579,15 +1579,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 200
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 300
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 500
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -4280,7 +4280,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": 0,
-    "CatchRate": 4000,
+    "CatchRate": 2000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -4296,15 +4296,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -4315,15 +4315,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -4337,7 +4337,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": 1,
-    "CatchRate": 4000,
+    "CatchRate": 2000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -4353,15 +4353,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -4372,15 +4372,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -4394,7 +4394,7 @@
     "FootValue": 0,
     "NeedBattle": true,
     "BattleLevel": -1,
-    "CatchRate": 2000,
+    "CatchRate": 1000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -4410,15 +4410,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 200
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 300
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 500
       },
       {
         "CatchTapNoteLevel": 3,
@@ -4429,15 +4429,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 200
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 300
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 500
       },
       {
         "CatchTapNoteLevel": 3,
@@ -17105,7 +17105,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": -2,
-    "CatchRate": 4000,
+    "CatchRate": 2000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -17121,15 +17121,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -17140,15 +17140,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -17162,7 +17162,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": -2,
-    "CatchRate": 4000,
+    "CatchRate": 2000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -17178,15 +17178,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -17197,15 +17197,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -17219,7 +17219,7 @@
     "FootValue": 0,
     "NeedBattle": true,
     "BattleLevel": -1,
-    "CatchRate": 2000,
+    "CatchRate": 1000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -17235,15 +17235,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 200
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 300
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 500
       },
       {
         "CatchTapNoteLevel": 3,
@@ -17254,15 +17254,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 200
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 300
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 500
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59570,7 +59570,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": 0,
-    "CatchRate": 4000,
+    "CatchRate": 2000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -59586,15 +59586,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59605,15 +59605,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59627,7 +59627,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": 0,
-    "CatchRate": 4000,
+    "CatchRate": 2000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -59643,15 +59643,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59662,15 +59662,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59684,7 +59684,7 @@
     "FootValue": 0,
     "NeedBattle": true,
     "BattleLevel": 0,
-    "CatchRate": 2000,
+    "CatchRate": 1000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -59700,15 +59700,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 200
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 300
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 500
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59719,15 +59719,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 200
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 300
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 500
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59855,7 +59855,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": 0,
-    "CatchRate": 4000,
+    "CatchRate": 2000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -59871,15 +59871,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59890,15 +59890,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59912,7 +59912,7 @@
     "FootValue": 0,
     "NeedBattle": false,
     "BattleLevel": 0,
-    "CatchRate": 4000,
+    "CatchRate": 2000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -59928,15 +59928,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59947,15 +59947,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 800
+        "GetCatchRate": 400
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 1200
+        "GetCatchRate": 600
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 2000
+        "GetCatchRate": 1000
       },
       {
         "CatchTapNoteLevel": 3,
@@ -59969,7 +59969,7 @@
     "FootValue": 0,
     "NeedBattle": true,
     "BattleLevel": 0,
-    "CatchRate": 2000,
+    "CatchRate": 1000,
     "CatchLoseNotRun": 2,
     "EscapeParameter": 20000,
     "BattleEscapeParameter": 1000,
@@ -59985,15 +59985,15 @@
     "CatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 200
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 300
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 500
       },
       {
         "CatchTapNoteLevel": 3,
@@ -60004,15 +60004,15 @@
     "BattleCatchTapNoteRate": [
       {
         "CatchTapNoteLevel": 0,
-        "GetCatchRate": 400
+        "GetCatchRate": 200
       },
       {
         "CatchTapNoteLevel": 1,
-        "GetCatchRate": 600
+        "GetCatchRate": 300
       },
       {
         "CatchTapNoteLevel": 2,
-        "GetCatchRate": 1000
+        "GetCatchRate": 500
       },
       {
         "CatchTapNoteLevel": 3,
