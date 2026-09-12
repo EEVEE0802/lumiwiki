@@ -477,3 +477,17 @@
 - **12 章 §分析工作流**：给出"看到关键字 X → 找 Id → 看承载子系统 → 跳章 → 查配表上限"的 6 步流程
 - glossary 3 条新 P2 unknowns（Id=5 缺失、场地叠加规则、光能单位差异）—— 全 P2 不阻塞
 - README 更新记录追加 3 行（08 章 / 07 纠错 / glossary）
+
+### 2026-09-12 · 第四次会话 · 追加：appendix.md 4 附录一次写完
+
+- 读代码：`SyncRandom.cs`（37 行超薄）+ `serverBattle.proto::33`（BattleCreateArgs）+ `ProtoBattle.proto::221~330`（BattleStartLumiElem/BattleStartElem/SlogLumiCommon/BattleEndSlog）+ `BattleLifecycleHandler.cs::47`（种子从 CurrentTimeMillisecondsInt 来）+ `ta-fetch.mjs::81+136`（wiki 侧 SQL）
+- 写完 **appendix.md** 4 大附录：
+  - **A** `BattleCreateArgs` 协议 —— stage_id / battle_type / normal-or-banpick oneof / room_id (GVG) / extra_data (GVG); is_fast_simulate 会跳过所有 UI 表演
+  - **B** `BattleStartElem` + `BattleStartLumiElem` **25 字段全解读** —— 特别标注 use_ai / passive_id / skill2_id 是"业务服已过滤"的结果；分析同 lumi 不同强度先查这几个字段
+  - **C** `battle_end` 埋点定义（含 `SlogLumiCommon`）+ **wiki daily CSV Schema**（跟 `ta-fetch.mjs` 的 SELECT 列一一对应）+ 5 条常见分析坑
+  - **D** `SyncRandom` 伪随机 —— 种子来源（CurrentTimeMillisecondsInt）+ 客户端模式的固定种子 1（复现测试用）+ 5 种调用点（暴击万分比 / 目标随机 / Bot 换宠 / 效果随机）+ **"同步"是复现语义不是跨端**的澄清 + 复现战斗的 4 个必要条件 + .NET Random 跨版本坑
+- **新发现 unknowns**：
+  - 🟡 P1：battle_end 埋点没上报 random_seed，未来做严格复现需要加字段
+  - 🟢 P2：.NET Random 跨版本一致性
+- **战斗知识库 = 全部完成**：主章节 8/8 + glossary + 附录 + 词典/进度/疑问清单 全落地
+- README 目录 appendix 实链接化 + 更新记录 1 行

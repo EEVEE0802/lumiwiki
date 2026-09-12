@@ -17,6 +17,7 @@
 - [07-battle-modes.md](07-battle-modes.md) — 战斗模式差异（EBattleType 21 种枚举 · Pvp/Pve 分派 · 阵容规则 1v1/2v2 · 胜负判定 · BanPick 三阶段 · AI 支援 6 环节 · 疲劳）
 - [08-ai-behavior.md](08-ai-behavior.md) — AI 行为系统（4 级 AILevel · 5 段决策管线 · Rank→AILevel 映射 · NodeAct 特化脚本 · Bot BanPick 策略）
 - [glossary.md](glossary.md) — 战斗关键字词典（53 条，10 大类：异常状态/增益/场地/陷阱/印记/攻防等级/暴击/其他/专属/系统 + 子系统承载表）
+- [appendix.md](appendix.md) — 4 个附录（A 创建协议 BattleCreateArgs · B 启动数据 BattleStartElem · C battle_end 埋点字段 & wiki CSV Schema · D 伪随机同步 SyncRandom）
 - [unknowns.md](unknowns.md) — 我读代码时的疑问，等策划/程序回答
 - [_stubs.md](_stubs.md) — 各章骨架大纲（写到某章时拆出去）
 - [progress.md](progress.md) — **会话间接续用**：当前进度、下一步、恢复上下文指南
@@ -114,3 +115,4 @@ git log --oneline --since="1 day ago" -- battle/
 | 2026-09-12 | 08-ai-behavior | 4 级 BattleAILevel + 5 段决策管线（BanPick→换宠→技能→训练师→普攻）+ Rank→AILevel 映射（<90 High, ≥90 Top）+ NodeAct 特化脚本 7 种 + 9 种 NodeCond + Bot BanPick 贪心策略 + 分析工作流 | 1bf7b708d |
 | 2026-09-12 | 08 & 07 AI 生效逻辑深挖 | AI 粒度到 Lumi 级（不是玩家）；CommonAiLogic 走完整五段管线（不是仅 NodeAct 动作）；死亡换宠强制 Low 级；NodeAct 没配 UseSkill entry → 该管线永远跳过；07 章 AI 支援描述连带纠错（3 处错） | 1bf7b708d |
 | 2026-09-12 | glossary | 53 条战斗关键字全填；10 大类分组（异常状态/增益/场地/陷阱/印记/攻防等级/暴击增伤减伤/其他/专属/系统）；每条捎带承载子系统 + 分析视角 + 跨章跳转 | 1bf7b708d |
+| 2026-09-12 | appendix | 4 个附录：A 创建协议 BattleCreateArgs / B 启动数据 BattleStartElem+BattleStartLumiElem 25 字段 / C battle_end 埋点 & wiki CSV Schema+常见坑 / D 伪随机 SyncRandom（种子来源、复现条件、.NET Random 跨版本坑） | 1bf7b708d |
