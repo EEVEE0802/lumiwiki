@@ -60,7 +60,7 @@
     "ShowThreePartFx": "FX_MX_Chouka_Part03_Purple",
     "CardModelBg": "Tex_Lumi_Card_Base_Purple",
     "CardBg": "Card_xl_4",
-    "CriticalRate": 0,
+    "CriticalRate": 40,
     "CriticalMultipler": 5
   },
   {
@@ -76,14 +76,14 @@
     "ShowThreePartFx": "FX_MX_Chouka_Part03_Golden",
     "CardModelBg": "Tex_Lumi_Card_Base_Gold",
     "CardBg": "Card_xl_5",
-    "CriticalRate": 0,
+    "CriticalRate": 120,
     "CriticalMultipler": 10
   },
   {
     "Id": 6,
     "LumiQuality": 6,
     "QualityIcon": "com_goods_s_6",
-    "ShardNum": 0,
+    "ShardNum": 50,
     "ReleaseReward": [],
     "LowerLimit": -1,
     "UpperLimit": -1,
@@ -92,7 +92,7 @@
     "ShowThreePartFx": "FX_MX_Chouka_Part03_Color",
     "CardModelBg": "Tex_Lumi_Card_Base_Color",
     "CardBg": "Card_xl_6",
-    "CriticalRate": 200,
+    "CriticalRate": 255,
     "CriticalMultipler": 20
   }
 ]

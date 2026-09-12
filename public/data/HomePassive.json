@@ -63,22 +63,22 @@
   },
   {
     "Id": 2100501,
-    "icon": "WorkType_Planting",
-    "icon2": "comConfig_skill_enhance_S",
+    "icon": "WorkType_Corn",
+    "icon2": "comConfig_skill_enhance_M",
     "name": "H_Skill_2100501",
     "Des": "H_SkillText_2100501",
     "DesParam": [
-      35
+      45
     ],
     "BuffLv": 1,
-    "WorkTypeBuff": [
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
       {
-        "WorkType": 3,
-        "Param": 3500
+        "X": 44,
+        "Y": 4500
       }
     ],
-    "ArchBuff": [],
-    "RecipeBuff": [],
     "HungryBuff": 0,
     "ExtraItem": [],
     "TravelRewardBuff": [],
@@ -132,12 +132,12 @@
   },
   {
     "Id": 2100901,
-    "icon": "WorkType_Mushroom",
-    "icon2": "comConfig_skill_enhance_S",
+    "icon": "Passive_Planting_04",
+    "icon2": "",
     "name": "H_Skill_2100901",
     "Des": "H_SkillText_2100901",
     "DesParam": [
-      45
+      60
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -145,7 +145,7 @@
     "RecipeBuff": [
       {
         "X": 27,
-        "Y": 4500
+        "Y": 6000
       }
     ],
     "HungryBuff": 0,
@@ -201,21 +201,21 @@
   },
   {
     "Id": 2101301,
-    "icon": "WorkType_Wood",
+    "icon": "WorkType_Logging",
     "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2101301",
     "Des": "H_SkillText_2101301",
     "DesParam": [
-      40
+      30
     ],
     "BuffLv": 1,
-    "WorkTypeBuff": [],
-    "ArchBuff": [
+    "WorkTypeBuff": [
       {
-        "X": 10102,
-        "Y": 4000
+        "WorkType": 2,
+        "Param": 3000
       }
     ],
+    "ArchBuff": [],
     "RecipeBuff": [],
     "HungryBuff": 0,
     "ExtraItem": [],
@@ -275,7 +275,7 @@
     "name": "H_Skill_2102901",
     "Des": "H_SkillText_2102901",
     "DesParam": [
-      35
+      40
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -283,7 +283,7 @@
     "RecipeBuff": [
       {
         "X": 17,
-        "Y": 3500
+        "Y": 4000
       }
     ],
     "HungryBuff": 0,
@@ -344,13 +344,13 @@
     "name": "H_Skill_2104401",
     "Des": "H_SkillText_2104401",
     "DesParam": [
-      30
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 9,
-        "Param": 3000
+        "Param": 3500
       }
     ],
     "ArchBuff": [],
@@ -427,12 +427,11 @@
   {
     "Id": 2106104,
     "icon": "WorkType_Experience Leaves",
-    "icon2": "comConfig_skill_enhance_M",
+    "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_2106104",
     "Des": "H_SkillText_2106104",
     "DesParam": [
-      25,
-      20
+      50
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -440,19 +439,11 @@
     "RecipeBuff": [
       {
         "X": 55,
-        "Y": 2500
+        "Y": 5000
       }
     ],
     "HungryBuff": 0,
-    "ExtraItem": [
-      {
-        "AimRecipeID": 55,
-        "Rate": 2000,
-        "Type": 2,
-        "Id": 10020,
-        "Count": 1
-      }
-    ],
+    "ExtraItem": [],
     "TravelRewardBuff": [],
     "TravelLocalRewardBuff": 0
   },
@@ -463,7 +454,7 @@
     "name": "H_Skill_2106601",
     "Des": "H_SkillText_2106601",
     "DesParam": [
-      30
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -474,7 +465,7 @@
     "TravelRewardBuff": [
       {
         "X": 10001,
-        "Y": 3000
+        "Y": 3500
       }
     ],
     "TravelLocalRewardBuff": 0
@@ -509,7 +500,7 @@
     "name": "H_Skill_2108801",
     "Des": "H_SkillText_2108801",
     "DesParam": [
-      35
+      40
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -517,7 +508,7 @@
     "RecipeBuff": [
       {
         "X": 24,
-        "Y": 3500
+        "Y": 4000
       }
     ],
     "HungryBuff": 0,
@@ -647,13 +638,13 @@
     "name": "H_Skill_2116901",
     "Des": "H_SkillText_2116901",
     "DesParam": [
-      30
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 1,
-        "Param": 3000
+        "Param": 3500
       }
     ],
     "ArchBuff": [],
@@ -849,22 +840,22 @@
   },
   {
     "Id": 2120501,
-    "icon": "WorkType_Corn",
-    "icon2": "comConfig_skill_enhance_S",
+    "icon": "WorkType_Logging",
+    "icon2": "comConfig_skill_enhance_M",
     "name": "H_Skill_2120501",
     "Des": "H_SkillText_2120501",
     "DesParam": [
-      40
+      35
     ],
     "BuffLv": 1,
-    "WorkTypeBuff": [],
-    "ArchBuff": [],
-    "RecipeBuff": [
+    "WorkTypeBuff": [
       {
-        "X": 44,
-        "Y": 4000
+        "WorkType": 2,
+        "Param": 3500
       }
     ],
+    "ArchBuff": [],
+    "RecipeBuff": [],
     "HungryBuff": 0,
     "ExtraItem": [],
     "TravelRewardBuff": [],
@@ -900,7 +891,7 @@
     "name": "H_Skill_2122301",
     "Des": "H_SkillText_2122301",
     "DesParam": [
-      30
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -911,7 +902,7 @@
     "TravelRewardBuff": [
       {
         "X": 10001,
-        "Y": 3000
+        "Y": 3500
       }
     ],
     "TravelLocalRewardBuff": 0
@@ -964,12 +955,12 @@
   },
   {
     "Id": 2123401,
-    "icon": "WorkType_Amethyst sand",
+    "icon": "WorkType_Mining",
     "icon2": "comConfig_skill_enhance_M",
     "name": "H_Skill_2123401",
     "Des": "H_SkillText_2123401",
     "DesParam": [
-      40
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -977,7 +968,7 @@
     "RecipeBuff": [
       {
         "X": 24,
-        "Y": 4000
+        "Y": 4500
       }
     ],
     "HungryBuff": 0,
@@ -987,13 +978,12 @@
   },
   {
     "Id": 2123404,
-    "icon": "WorkType_Amethyst sand",
-    "icon2": "comConfig_skill_enhance_L",
+    "icon": "WorkType_Mining",
+    "icon2": "comConfig_skill_enhance_M",
     "name": "H_Skill_2123404",
     "Des": "H_SkillText_2123404",
     "DesParam": [
-      25,
-      20
+      55
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1001,19 +991,11 @@
     "RecipeBuff": [
       {
         "X": 24,
-        "Y": 2500
+        "Y": 5500
       }
     ],
     "HungryBuff": 0,
-    "ExtraItem": [
-      {
-        "AimRecipeID": 24,
-        "Rate": 2000,
-        "Type": 2,
-        "Id": 20004,
-        "Count": 1
-      }
-    ],
+    "ExtraItem": [],
     "TravelRewardBuff": [],
     "TravelLocalRewardBuff": 0
   },
@@ -1024,13 +1006,13 @@
     "name": "H_Skill_2124401",
     "Des": "H_SkillText_2124401",
     "DesParam": [
-      30
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 4,
-        "Param": 3000
+        "Param": 3500
       }
     ],
     "ArchBuff": [],
@@ -1042,19 +1024,19 @@
   },
   {
     "Id": 2125001,
-    "icon": "WorkType_Stardust",
-    "icon2": "comConfig_skill_enhance_M",
+    "icon": "WorkType_Wishing",
+    "icon2": "",
     "name": "H_Skill_2125001",
     "Des": "H_SkillText_2125001",
     "DesParam": [
-      40
+      60
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
     "ArchBuff": [
       {
         "X": 10103,
-        "Y": 4000
+        "Y": 6000
       }
     ],
     "RecipeBuff": [],
@@ -1065,19 +1047,19 @@
   },
   {
     "Id": 2125101,
-    "icon": "WorkType_Amethyst sand",
-    "icon2": "comConfig_skill_enhance_M",
+    "icon": "Upup_Mining_02",
+    "icon2": "",
     "name": "H_Skill_2125101",
     "Des": "H_SkillText_2125101",
     "DesParam": [
-      45
+      60
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
     "ArchBuff": [
       {
         "X": 10114,
-        "Y": 4500
+        "Y": 6000
       }
     ],
     "RecipeBuff": [],
@@ -1088,19 +1070,19 @@
   },
   {
     "Id": 2125201,
-    "icon": "WorkType_candy",
-    "icon2": "comConfig_skill_enhance_M",
+    "icon": "Passive_HandWorking",
+    "icon2": "",
     "name": "H_Skill_2125201",
     "Des": "H_SkillText_2125201",
     "DesParam": [
-      40
+      50
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
     "ArchBuff": [
       {
-        "X": 10120,
-        "Y": 4000
+        "X": 10109,
+        "Y": 5000
       }
     ],
     "RecipeBuff": [],
@@ -1111,19 +1093,46 @@
   },
   {
     "Id": 2125301,
-    "icon": "WorkType_Lumicard",
-    "icon2": "comConfig_skill_enhance_S",
+    "icon": "Upup_LumiCard",
+    "icon2": "",
     "name": "H_Skill_2125301",
     "Des": "H_SkillText_2125301",
     "DesParam": [
-      40
+      30,
+      1
+    ],
+    "BuffLv": 1,
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": [
+      {
+        "AimRecipeID": 4,
+        "Rate": 3000,
+        "Type": 2,
+        "Id": 10033,
+        "Count": 1
+      }
+    ],
+    "TravelRewardBuff": [],
+    "TravelLocalRewardBuff": 0
+  },
+  {
+    "Id": 2125501,
+    "icon": "WorkType_Wishing",
+    "icon2": "",
+    "name": "H_Skill_2125501",
+    "Des": "H_SkillText_2125501",
+    "DesParam": [
+      60
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
     "ArchBuff": [
       {
-        "X": 10110,
-        "Y": 4000
+        "X": 10106,
+        "Y": 6000
       }
     ],
     "RecipeBuff": [],
@@ -1133,45 +1142,19 @@
     "TravelLocalRewardBuff": 0
   },
   {
-    "Id": 2125501,
-    "icon": "WorkType_Starlight",
-    "icon2": "comConfig_skill_enhance_M",
-    "name": "H_Skill_2125501",
-    "Des": "H_SkillText_2125501",
-    "DesParam": [
-      45
-    ],
-    "BuffLv": 1,
-    "WorkTypeBuff": [],
-    "ArchBuff": [],
-    "RecipeBuff": [],
-    "HungryBuff": 0,
-    "ExtraItem": [
-      {
-        "AimRecipeID": 43,
-        "Rate": 4500,
-        "Type": 2,
-        "Id": 20038,
-        "Count": 1
-      }
-    ],
-    "TravelRewardBuff": [],
-    "TravelLocalRewardBuff": 0
-  },
-  {
     "Id": 2127001,
     "icon": "WorkType_Logging",
-    "icon2": "comConfig_skill_enhance_S",
+    "icon2": "comConfig_skill_enhance_M",
     "name": "H_Skill_2127001",
     "Des": "H_SkillText_2127001",
     "DesParam": [
-      30
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 2,
-        "Param": 3000
+        "Param": 3500
       }
     ],
     "ArchBuff": [],
@@ -1188,7 +1171,7 @@
     "name": "H_Skill_2130001",
     "Des": "H_SkillText_2130001",
     "DesParam": [
-      40
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1196,7 +1179,7 @@
     "RecipeBuff": [
       {
         "X": 17,
-        "Y": 4000
+        "Y": 4500
       }
     ],
     "HungryBuff": 0,
@@ -1234,17 +1217,17 @@
     "name": "H_Skill_2136101",
     "Des": "H_SkillText_2136101",
     "DesParam": [
-      35
+      40
     ],
     "BuffLv": 1,
-    "WorkTypeBuff": [
+    "WorkTypeBuff": [],
+    "ArchBuff": [],
+    "RecipeBuff": [
       {
-        "WorkType": 4,
-        "Param": 3500
+        "X": 101,
+        "Y": 4000
       }
     ],
-    "ArchBuff": [],
-    "RecipeBuff": [],
     "HungryBuff": 0,
     "ExtraItem": [],
     "TravelRewardBuff": [],
@@ -1290,7 +1273,71 @@
     "ExtraItem": [],
     "TravelRewardBuff": [
       {
-        "X": 10069,
+        "X": 150001,
+        "Y": 2000
+      },
+      {
+        "X": 150002,
+        "Y": 2000
+      },
+      {
+        "X": 150003,
+        "Y": 2000
+      },
+      {
+        "X": 150004,
+        "Y": 2000
+      },
+      {
+        "X": 150005,
+        "Y": 2000
+      },
+      {
+        "X": 150006,
+        "Y": 2000
+      },
+      {
+        "X": 150007,
+        "Y": 2000
+      },
+      {
+        "X": 150008,
+        "Y": 2000
+      },
+      {
+        "X": 150009,
+        "Y": 2000
+      },
+      {
+        "X": 150010,
+        "Y": 2000
+      },
+      {
+        "X": 150011,
+        "Y": 2000
+      },
+      {
+        "X": 150012,
+        "Y": 2000
+      },
+      {
+        "X": 150013,
+        "Y": 2000
+      },
+      {
+        "X": 150014,
+        "Y": 2000
+      },
+      {
+        "X": 150015,
+        "Y": 2000
+      },
+      {
+        "X": 150016,
+        "Y": 2000
+      },
+      {
+        "X": 150017,
         "Y": 2000
       }
     ],
@@ -1303,7 +1350,7 @@
     "name": "H_Skill_2141301",
     "Des": "H_SkillText_2141301",
     "DesParam": [
-      30
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1314,7 +1361,7 @@
     "TravelRewardBuff": [
       {
         "X": 10001,
-        "Y": 3000
+        "Y": 3500
       }
     ],
     "TravelLocalRewardBuff": 0
@@ -1322,7 +1369,7 @@
   {
     "Id": 2141401,
     "icon": "WorkType_Berries",
-    "icon2": "comConfig_skill_enhance_S",
+    "icon2": "comConfig_skill_enhance_M",
     "name": "H_Skill_2141401",
     "Des": "H_SkillText_2141401",
     "DesParam": [
@@ -1343,62 +1390,13 @@
     "TravelLocalRewardBuff": 0
   },
   {
-    "Id": 2147501,
-    "icon": "WorkType_candy",
-    "icon2": "comConfig_skill_enhance_L",
-    "name": "H_Skill_2147501",
-    "Des": "H_SkillText_2147501",
-    "DesParam": [
-      50
-    ],
-    "BuffLv": 1,
-    "WorkTypeBuff": [],
-    "ArchBuff": [],
-    "RecipeBuff": [
-      {
-        "X": 42,
-        "Y": 5000
-      }
-    ],
-    "HungryBuff": 0,
-    "ExtraItem": [],
-    "TravelRewardBuff": [],
-    "TravelLocalRewardBuff": 0
-  },
-  {
-    "Id": 2147601,
-    "icon": "WorkType_candy",
-    "icon2": "comConfig_skill_enhance_M",
-    "name": "H_Skill_2147601",
-    "Des": "H_SkillText_2147601",
-    "DesParam": [
-      40
-    ],
-    "BuffLv": 1,
-    "WorkTypeBuff": [],
-    "ArchBuff": [],
-    "RecipeBuff": [],
-    "HungryBuff": 0,
-    "ExtraItem": [
-      {
-        "AimRecipeID": 8,
-        "Rate": 4000,
-        "Type": 2,
-        "Id": 21001,
-        "Count": 1
-      }
-    ],
-    "TravelRewardBuff": [],
-    "TravelLocalRewardBuff": 0
-  },
-  {
     "Id": 21000101,
     "icon": "WorkType_Stardust",
     "icon2": "comConfig_skill_enhance_M",
     "name": "H_Skill_21000101",
     "Des": "H_SkillText_21000101",
     "DesParam": [
-      50
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1406,7 +1404,7 @@
     "RecipeBuff": [
       {
         "X": 8,
-        "Y": 5000
+        "Y": 4500
       }
     ],
     "HungryBuff": 0,
@@ -1425,12 +1423,7 @@
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
-    "ArchBuff": [
-      {
-        "X": 10109,
-        "Y": 4500
-      }
-    ],
+    "ArchBuff": [],
     "RecipeBuff": [],
     "HungryBuff": 0,
     "ExtraItem": [],
@@ -1439,12 +1432,12 @@
   },
   {
     "Id": 21000801,
-    "icon": "WorkType_Stellum",
+    "icon": "WorkType_candy",
     "icon2": "comConfig_skill_enhance_M",
     "name": "H_Skill_21000801",
     "Des": "H_SkillText_21000801",
     "DesParam": [
-      30
+      45
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
@@ -1452,12 +1445,7 @@
     "RecipeBuff": [],
     "HungryBuff": 0,
     "ExtraItem": [],
-    "TravelRewardBuff": [
-      {
-        "X": 10069,
-        "Y": 3000
-      }
-    ],
+    "TravelRewardBuff": [],
     "TravelLocalRewardBuff": 0
   },
   {
@@ -1531,7 +1519,71 @@
     "ExtraItem": [],
     "TravelRewardBuff": [
       {
-        "X": 10069,
+        "X": 150001,
+        "Y": 4000
+      },
+      {
+        "X": 150002,
+        "Y": 4000
+      },
+      {
+        "X": 150003,
+        "Y": 4000
+      },
+      {
+        "X": 150004,
+        "Y": 4000
+      },
+      {
+        "X": 150005,
+        "Y": 4000
+      },
+      {
+        "X": 150006,
+        "Y": 4000
+      },
+      {
+        "X": 150007,
+        "Y": 4000
+      },
+      {
+        "X": 150008,
+        "Y": 4000
+      },
+      {
+        "X": 150009,
+        "Y": 4000
+      },
+      {
+        "X": 150010,
+        "Y": 4000
+      },
+      {
+        "X": 150011,
+        "Y": 4000
+      },
+      {
+        "X": 150012,
+        "Y": 4000
+      },
+      {
+        "X": 150013,
+        "Y": 4000
+      },
+      {
+        "X": 150014,
+        "Y": 4000
+      },
+      {
+        "X": 150015,
+        "Y": 4000
+      },
+      {
+        "X": 150016,
+        "Y": 4000
+      },
+      {
+        "X": 150017,
         "Y": 4000
       }
     ],
@@ -1567,13 +1619,13 @@
     "name": "H_Skill_21003201",
     "Des": "H_SkillText_21003201",
     "DesParam": [
-      40
+      35
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [
       {
         "WorkType": 1,
-        "Param": 4000
+        "Param": 3500
       }
     ],
     "ArchBuff": [],
@@ -1585,21 +1637,21 @@
   },
   {
     "Id": 21003301,
-    "icon": "WorkType_FishFarming",
-    "icon2": "comConfig_skill_enhance_M",
+    "icon": "WorkType_HandWorking",
+    "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_21003301",
     "Des": "H_SkillText_21003301",
     "DesParam": [
       40
     ],
     "BuffLv": 1,
-    "WorkTypeBuff": [
+    "WorkTypeBuff": [],
+    "ArchBuff": [
       {
-        "WorkType": 15,
-        "Param": 4000
+        "X": 10118,
+        "Y": 4000
       }
     ],
-    "ArchBuff": [],
     "RecipeBuff": [],
     "HungryBuff": 0,
     "ExtraItem": [],
@@ -1608,27 +1660,24 @@
   },
   {
     "Id": 21003401,
-    "icon": "WorkType_Lumicard",
-    "icon2": "comConfig_skill_enhance_M",
+    "icon": "WorkType_HandWorking",
+    "icon2": "comConfig_skill_enhance_S",
     "name": "H_Skill_21003401",
     "Des": "H_SkillText_21003401",
     "DesParam": [
-      1
+      40
     ],
     "BuffLv": 1,
     "WorkTypeBuff": [],
-    "ArchBuff": [],
-    "RecipeBuff": [],
-    "HungryBuff": 0,
-    "ExtraItem": [
+    "ArchBuff": [
       {
-        "AimRecipeID": 5,
-        "Rate": 10000,
-        "Type": 2,
-        "Id": 10034,
-        "Count": 1
+        "X": 10110,
+        "Y": 4000
       }
     ],
+    "RecipeBuff": [],
+    "HungryBuff": 0,
+    "ExtraItem": [],
     "TravelRewardBuff": [],
     "TravelLocalRewardBuff": 0
   }
