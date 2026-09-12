@@ -4,16 +4,16 @@
 
 ## 当前状态
 
-**最近更新**：2026-09-11（第三次会话末尾，用户答完 unknowns 后收尾）
-**服务端基线 commit**：`8d59ed518`（LumiServer OB-dev）
-**主章节完成度**：**7/8 完成**（00/01/02/03/04/05/06/07 全部完成，只差 08-ai-behavior + glossary + 附录）
-**unknowns 状态**：**已解决 25 条，待确认仅剩 1 条**（🟢 P2 Tick 服务端频率，需真实 debug log 反推）
+**最近更新**：2026-09-12（第四次会话，08-ai-behavior 完成）
+**服务端基线 commit**：`1bf7b708d`（LumiServer OB-dev；8d59ed518→1bf7b708d battle 目录零改动）
+**主章节完成度**：**8/8 全部完成** 🎉（00/01/02/03/04/05/06/07/08）
+**unknowns 状态**：已解决 25 条，待确认仅剩 1 条（🟢 P2 Tick 服务端频率，需真实 debug log 反推）
 
-**下一步（下次会话）**：
-- (a) 🎯 **写 08-ai-behavior**（唯一剩余主章节；关键入口 `PlayerSupportLogic.cs` / `AiUtils.cs`，默认 `BattleAILevel.Top`，见 07 章 §AI 支援）
-- (b) 🎯 拿真实 debug log 校准所有已写章节的数值（进 debug log 数值验证会大幅提升知识库权威性）
-- (c) 填 `glossary.md` 关键字词典（`BattleKeywordDes.json`）
-- (d) 写附录（`BattleCreateArgs` 协议 / `battle_end` 事件字段解读 / 伪随机同步细节）
+**剩余工作**：
+- (a) 🎯 拿真实 debug log 校准所有已写章节的数值
+- (b) 填 `glossary.md` 关键字词典（`BattleKeywordDes.json`）
+- (c) 写附录（`BattleCreateArgs` 协议 / `battle_end` 事件字段解读 / 伪随机同步细节）
+- (d) 用知识库产出第一份"平衡分析报告"（前 6 章的成果落地到具体噜咪评估）
 
 ### 💾 本次会话建立的重要 memory（下次会话务必先读）
 
@@ -389,3 +389,59 @@
   - 各模式速查表 InfinityGym 行加版本迁移警示
   - 专门段落解释"为啥 CSV 靠 stageId 分片" + 未来版本升级需要改 SQL
 - unknowns #14 消化（累计 25 条已解决，**待确认仅剩 1 条**（Tick 值））
+
+### 2026-09-12 · 第四次会话：写完 08-ai-behavior，主章节 8/8 全部完成 🎉
+
+- 服务端 pull：基线 `8d59ed518` → `1bf7b708d`；battle 目录 **零改动**（新提交都在 battle/ 外）
+- 用户选："今天推进哪项？" → 08-ai-behavior
+- 读代码：
+  - `IBattleAiLogic.cs`（接口 + `BaseAiLogic.UpdateAI` 五段管线）
+  - `LowAiLogic.cs` / `MiddleAiLogic.cs` / `HighAiLogic.cs` / `TopAiLogic.cs`（4 级等级 AI）
+  - `CommonAiLogic.cs`（特化脚本 AI，258 行）
+  - `PlayerSupportLogic.cs`（真人 AI 载体）/ `SimpleBattleAi.cs`（Bot AI 载体）
+  - `SupportMgr.cs`（AI 分派入口 `InitSupport` + AI 等级映射 `GetInitAiLevel`）
+  - `AiUtils.cs`（片段，主要 `TryUseSkill1` / `ActionChangeLumi` / `TryBanPickLogic`）
+  - `AiConditionFactory.cs`（9 种 NodeCond 条件构建）
+  - 表：`BattleAILevel.cs`（4 级枚举）· `NodeActEnum.cs`（7 种动作）· `AIAct.json`（157 条）· `AIConditionNode.json`（120 条）· `LadderRank.json`（151 条）
+- **关键发现**：
+  - **Rank 1-89 = High（3）, Rank 90+ = Top（4）** —— 天梯从黄金后段开始 AI 就是最强的 Top 级！
+  - **PlayerSupport 默认 AiLevel.Top**：所有玩家掉线 / 主动开 AI 的都用最高级
+  - **SimpleBattleAi vs PlayerSupport**：前者用于非真人（Bot/镜像/Pve 敌人），后者用于真人；tick 节流也不同（300ms vs 150ms）
+  - **NodeAct 特化 AI**：`Lumi.m_ai > 0` 时走 CommonAiLogic 脚本；157 个 NodeAct 组合 120 个 NodeCond，能表达复杂决策；**不覆盖普攻**（NodeAct 只管换宠/技能/训练师技能）
+  - **Low vs Middle 差别**：Low 憋满 100 蓝才放技能（输出下限低）；Middle 一直尝试放
+  - **High vs Top 差别**：训练师技能使用与否；ChangeLumi 代码 100% 一样
+  - **意外**：Low AI 的换宠代码有 bug —— `ChangeLumiCond` 判定 IsCounter<10000 返回 true，但 `ChangeLumiAct` 中该分支被注释掉，实际不换（Middle/High/Top 正常）
+- 写完 **08-ai-behavior.md** 10 大节 + 常见误解澄清表 + 跨章速查表
+- **主章节 8/8 全部完成** 🎉
+- README 目录 08 章实链接化；基线更新到 `1bf7b708d`；更新记录加一行
+- _stubs 里 08 章骨架清理
+- 交接点：**剩余工作**：
+  - (a) 拿真实 debug log 校准数值
+  - (b) 填 glossary（BattleKeywordDes.json 关键字词典）
+  - (c) 写附录（协议字段 / 伪随机）
+  - (d) **产出第一份平衡分析报告**（把 6 章知识落地到具体噜咪评估）
+
+### 2026-09-12 · 第四次会话 · 追加：08 章 AI 生效逻辑深挖 + 07 章连带纠错
+
+- 用户："你找一下实际 AI 的生效逻辑，关于特化脚本 AI 和等级 AI 的"
+- 深挖代码：`LumiEntity.m_ai` 字段（line 49 注释 + line 322 `= lumiStartElem.UseAi`）+ `BattleLumiAttributeElem.cs::160` `lumi.UseAi = lumiData.UseAi` + `SimpleBattleAi.BuildLumiLogics` 和 `PlayerSupportLogic.BuildLumiLogics` 对比 + `CommonAiLogic.UpdateAI` 继承链
+- **关键发现（08 章原文表述不完整/错误的地方）**：
+  1. **AI 分派粒度是每只 Lumi**（不是每玩家）—— m_lumiLogicMap 按 lumiUid 索引，换宠时 AI 自动切换到新上场 Lumi 的 logic
+  2. **PlayerSupport 和 SimpleBattleAi 的 BuildLumiLogics 代码 100% 相同** —— 只是 defaultLevel 参数不同（PlayerSupport 传 Top，SimpleBattleAi 传 GetInitAiLevel 结果）
+  3. **CommonAiLogic 走完整五段管线**（继承 BaseAiLogic），不是"只跑 NodeAct 定义的动作"—— 只是把每段的 Cond/Act 换成 NodeAct 里的脚本；普攻兜底和等级 AI 一样
+  4. **CommonAiLogic 死亡换宠强制用 Low 级**（`ActionChangeLumi(..., BattleAILevel.Low, tick)`）—— 不选属性克制，比 High/Top 等级 AI 的死亡换宠**退化**！这是意外的坑
+  5. **NodeAct 没配 UseSkill 类 entry → Lumi 永远不主动放技能**（哪怕 100 蓝）；同理没配 UseTrainerSkill 就不用训练师技能。而普攻永远兜底跑（继承 BaseAiLogic.UpdateAI 最后一行）
+  6. **NodeAct entry 是 OR 关系 + 按配置顺序判定**（`_useSkillEntries.Any` + `foreach` 第一个满足的执行）—— 策划配置顺序有意义
+  7. **UseAi 字段来源**：LumiEntity.m_ai ← lumiStartElem.UseAi ← proto `BattleStartLumiElem.UseAi`（上游业务服注入）；代码注释还留了 TODO 说未来会把 UseAi 移到 BattleLumiAttribute 里
+- **08 章修改**：
+  - §一 表格补充："**BuildLumiLogics 逻辑**"行说明"两者代码 100% 一样"
+  - 新增 §二 "AI 分派决策树" —— 一整节讲每只 Lumi 独立决定用哪种 AI + 分派决策图 + m_ai 字段来源
+  - 原 §五 "特化 AI 脚本"重写为 §六，加 5.2 完整对比表（等级 AI vs CommonAiLogic 每段管线的行为差异）+ 4 个反直觉点（含"死亡换宠强制 Low"的意外坑）
+  - 章节号全部顺移：三→四→五→六→七→八→九→十→十一
+- **07 章连带纠错**（08 章调查过程中发现的旧错误）：
+  - 原 07 章说"AI 级别默认 Top" —— 错的！只有 PlayerSupport（真人挂机）默认 Top，SimpleBattleAi 走 GetInitAiLevel 按段位/关卡定
+  - 原 07 章说"AI 强度不随段位变化" —— **完全反了**！Rank<90=High, Rank>=90=Top（这个是我 08 章调查时纠正的）
+  - 原 07 章说"决策 6 环节" —— 应该是"5 段管线"（BanPick + 换人 + 技能 + 训练师 + 普攻兜底），"BP|索敌|换人|..." 那句是 IBattleAiLogic 头部注释直接抄的没消化
+  - §AI 支援/助战机制 整节重写，指向 08 章交叉引用
+- 08 章 336 → 438 行（增加约 100 行），07 章 §AI 支援也扩了 10+ 行
+- **教训固化到 progress**：写章节时一旦引用另一个章节还没写的内容（"AI 支援 6 环节"这种），后写的章节调查完要**反向纠错**前面章节。以后写章节前先建立"下游会写 08"这个心理预期。

@@ -166,40 +166,44 @@ public bool Isover(TeamEntity teamEntity)
 
 ## AI 支援 / 助战机制
 
-**代码入口**：`SupportMgr.UpdateSupport`（每 tick step 4 在 `BattleWorker.BattleLoop` 里跑）→ `PlayerSupport.UpdatePlayerSupport`
+**代码入口**：`SupportMgr.UpdateSupport`（每 tick step 4 在 `BattleWorker.BattleLoop` 里跑）→ `PlayerSupport.UpdatePlayerSupport` / `SimpleBattleAi.UpdateTickAI`
 
-**核心机制**：**所有** `PlayerEntity` 都可以挂 `PlayerSupport`，AI 逻辑接管出招。触发条件：
-1. `PlayerEntity.PlayerSupport = true`（进场时上游注入）—— 明确要 AI 接管
-2. 或者 `IsBot = true`（Pve 对手 / 掉线玩家）
+**核心机制**：**所有** `PlayerEntity` 都可能挂 AI 载体（`PlayerSupport` 或 `SimpleBattleAi`）。触发条件：
+- `IsReallyPlayer == true`（真人）→ 挂 `PlayerSupport`，玩家可以自己控制启用/禁用（掉线时接管）
+- `IsReallyPlayer == false`（Bot / 镜像 / Pve 敌人）→ 挂 `SimpleBattleAi`
 
-**AI 级别**：默认 `BattleAILevel.Top`（`PlayerSupport.cs::38`）—— 服务端 AI 全部是最高级别。**AI 强度不随段位变化**（跟 wiki 里"AI 强度是否随段位变化"这个疑问的答案是"**不变**"）。
+**AI 等级**（**随段位/关卡变化，见 [[08-ai-behavior]] §五 完整映射**）：
+- **PlayerSupport（真人挂机）**：固定 `BattleAILevel.Top`
+- **SimpleBattleAi（非真人）**：走 `SupportMgr.GetInitAiLevel(battleType, rank, stageId)`
+  - PVE 类：按 `BattleAiLevelMap` 静态表（`GymPve` → High，`HomeBlock` / `AdvPk` → Middle，冒险 → Low）；关卡表 `TbGuanQiaData.AILevel` 可覆盖
+  - PVP 类：按 `TbLadderRank.AILevel` 查 rank → **Rank 1-89 = High，Rank 90+ = Top**
 
-**每只 Lumi 独立 AI**：
+**每只 Lumi 独立选 AI**（**决策粒度是 Lumi，不是玩家**，见 [[08-ai-behavior]] §二）：
 ```csharp
 foreach (var lumi in player.m_children_lumi)
 {
     var logic = lumi.m_ai > 0 
-        ? TryCreateCommonLogic(lumi.m_ai)      // 特定行为脚本
-        : CreateLevelLogic(defaultLevel);       // 通用 Top 级 AI
+        ? TryCreateCommonLogic(lumi.m_ai)      // NodeAct 特化脚本（CommonAiLogic）
+        : CreateLevelLogic(defaultLevel);       // 4 级等级 AI
     m_lumiLogicMap[lumi.Id] = logic;
 }
 ```
 
-`lumi.m_ai` 来源于 `Monster.json.AiId`（机器人/野怪表 → 见 wiki `robot-teams` 页数据链路）。**普通玩家 Lumi `m_ai = 0`**，走通用 Top 级 AI。
+`lumi.m_ai` 来源于 `BattleStartLumiElem.UseAi`（由上游服创建战斗时注入；机器人/野怪表 `Monster.json` → 见 wiki `robot-teams` 页数据链路）。**普通玩家 Lumi `m_ai = 0`**，走等级 AI。
 
-**决策环节**（`BaseAiLogic` 抽象方法）：
-1. **BP**：BanPick 时的 ban 选逻辑（一些机器人有特化）
-2. **索敌**：`UpdateAttackTarget`
-3. **换宠**：判断当前 Lumi 是否需要换（`ChangeLumiCond`）
-4. **技能**：能量够就打，按脚本或通用规则选技能
-5. **光灵/训练师技能**：能量够就用
-6. **默认普攻**：其他条件都不满足时的兜底出招
+**决策管线**（`BaseAiLogic.UpdateAI` 五段）：
+1. **环境检测 + 索敌**（`TargetSelect.GetPlayerSingleTargetMaster` 拿当前主目标）
+2. **BanPick 判定**：仅 BanPick 三阶段跑（贪心策略：ban 对方总等级最高、选自己总等级最高）
+3. **换宠管线**：Cond → Act，含死亡切换 + High/Top 属性克制主动换
+4. **技能管线**：Cond → Act，`TryUseSkill1` / `TryUseSkill2`
+5. **训练师技能管线**：Cond → Act（仅 Top / NodeAct 有配的会用）
+6. **普攻兜底**：以上都不触发时 `AiUtils.TryAttack`
 
 **启动延迟**：`SupportStartTimeOut = 500ms` —— 战斗刚开始 500ms 内 AI 不出招，避免"开局瞬间秒杀"（也给真人玩家一个反应时间）。
 
 **分析价值**：
 - **玩家胜率分析**去人机干扰：判定 `playerType == 1` 就是真人；`2` 是离线镜像（AI 接管）；`3` 是机器人。见 [[01-battle-tick]] 里"人机对局筛选"逻辑
-- **未上线 Lumi 强度评估**：如果配了 `m_ai != 0` 的专属脚本，AI 会**精准触发被动最佳时机**（比木棍人被动 3 次积满 → 队友群攻蹭必暴），线上出场时表现会跟"完全随机 AI"差异巨大
+- **未上线 Lumi 强度评估**：如果配了 `m_ai != 0` 的专属脚本，AI 会**精准触发被动最佳时机**（比木棍人被动 3 次积满 → 队友群攻蹭必暴），线上出场时表现会跟"完全随机 AI"差异巨大 —— 详见 [[08-ai-behavior]] §六
 
 ---
 
@@ -262,5 +266,5 @@ foreach (var lumi in player.m_children_lumi)
 ---
 
 > 最后验证于 commit `8d59ed518`（分支 OB-dev），日期 2026-09-11
-> 关键代码：`BattleDefine.BattleRunTypeMap`（Pvp/Pve 分派）· `BattleGameSystem.IsBanPickBattleType`（185~188）· `BattleGameSystem.Init`（605~659 阵容/超时/疲劳）· `BattleWorldEntity.Isover`（799~822）· `PlayerSupportLogic.cs` / `BaseAiLogic.cs`（AI 支援 6 环节）
+> 关键代码：`BattleDefine.BattleRunTypeMap`（Pvp/Pve 分派）· `BattleGameSystem.IsBanPickBattleType`（185~188）· `BattleGameSystem.Init`（605~659 阵容/超时/疲劳）· `BattleWorldEntity.Isover`（799~822）· `PlayerSupportLogic.cs` / `BaseAiLogic.cs`（AI 支援 5 段管线，详见 [[08-ai-behavior]]）
 > 协议：`server/feature/service/proto/ProtoBase.proto::119` `enum EBattleType`

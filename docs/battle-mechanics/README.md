@@ -15,7 +15,7 @@
 - [05-buffs-debuffs.md](05-buffs-debuffs.md) — Buff 系统（决策地图 / 属性字段 ↔ 伤害公式交叉表 / ModifyAttackSpeed 精确公式 / 免疫 3 层过滤 / 触发时序 / 子系统边界）
 - [06-passives-triggers.md](06-passives-triggers.md) — 被动系统（=buff 初始化包装器 · 三个来源 · Priority 应用顺序 · Target 7 种含 2v2 差异 · 家园被动完全不进战斗验证 · 递归防护）
 - [07-battle-modes.md](07-battle-modes.md) — 战斗模式差异（EBattleType 21 种枚举 · Pvp/Pve 分派 · 阵容规则 1v1/2v2 · 胜负判定 · BanPick 三阶段 · AI 支援 6 环节 · 疲劳）
-- 08-ai-behavior.md — AI 决策规则 · _待写_
+- [08-ai-behavior.md](08-ai-behavior.md) — AI 行为系统（4 级 AILevel · 5 段决策管线 · Rank→AILevel 映射 · NodeAct 特化脚本 · Bot BanPick 策略）
 - [glossary.md](glossary.md) — 战斗关键字词典（BattleKeywordDes ↔ 服务端实现）
 - [unknowns.md](unknowns.md) — 我读代码时的疑问，等策划/程序回答
 - [_stubs.md](_stubs.md) — 各章骨架大纲（写到某章时拆出去）
@@ -24,7 +24,7 @@
 ## 权威代码位置
 
 **服务器仓库**：`F:\G36Branch\LumiServer\`（git，gitlab-game.bilibili.co/g10_excalibur/lumigoserver）
-**当前基线 commit**：`8d59ed518` @ 2026-09-11（OB-dev 分支；fbb25c313→8d59ed518 仅 Trap 陷阱新功能 + HealthComponent debug 日志，不影响 00/02/03 章）
+**当前基线 commit**：`1bf7b708d` @ 2026-09-12（OB-dev 分支；8d59ed518→1bf7b708d battle 目录零改动）
 
 | 关注点 | 代码路径 | 说明 |
 |---|---|---|

@@ -62,18 +62,7 @@
 
 ---
 
-## 08 · AI 行为
-
-**关键代码**：需要 grep 找 `RobotAI` `BotBehavior` 之类
-
-**表数据**：`RobotData.json`, `RobotLvMatching.json`, `MonsterGroup.json`, `Monster.json`
-
-**需要覆盖的问题**：
-- 机器人的技能选择规则：随机？最优？脚本？
-- 目标选择规则：随机？最脆？按威胁度？
-- 换宠决策：什么时候会换宠？
-- 是否有难度分级（等级越高 AI 越聪明？）
-- **对分析的关键意义**：如果 AI 是"打随机技能选随机目标"，那 with-bot 数据里的胜率不能作为强度参考
+<!-- 08 已单独成文，见 08-ai-behavior.md -->
 
 ---
 
