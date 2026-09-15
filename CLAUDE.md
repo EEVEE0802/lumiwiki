@@ -323,19 +323,25 @@ MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Daily"  /tr "D:\lumiwiki\scrip
 
 ### 游戏周期
 
-- **游戏周**：周五 00:00 ~ 下周四 23:59（自然日归属周，跟 daily 分片对齐）
-- **首周（Week 1）**：2026-07-10 00:00 开始，**无周赛**
-- **国内 + 海外全球通服**，共用同一套 baseFriday
+- **游戏周（常规）**：周五 00:00 ~ 下周四 23:59（自然日归属周，跟 daily 分片对齐）
+- **首周（Week 1）特殊 = 8 天**：2026-09-17（周四·正式服上线日）~ 2026-09-24（周三→周四），上线首日并入首周
+- **Week 2 起点**：2026-09-25（周五）—— `baseFriday` 就是这个值；Week 1 硬编码在 `scripts/week-utils.mjs`
+- **国内 + 海外全球通服**，共用同一套周编号规则
 - **数据范围**：每次拉取"昨天 + 今天"两天到对应 daily 分片；老数据永久保留
-- **周编号算法**：`week = floor((现在 - 2026-07-10 00:00) / 7天) + 1`
-- **每周独立**：process 脚本按 `--week N` 读该周 7 天 daily CSV 汇总
+- **周编号算法**：见 `scripts/week-utils.mjs` 的 `weekOfDate` / `getWeekDates`。上线前的日期返回 0（不属于任何游戏周）
+- **玩法开放日历**：`scripts/auto-update.mjs` 顶部的 `MODE_OPEN_DATE`
+  - ladder / infinity-gym / assist / login / recharge = 2026-09-17（上线首日）
+  - tournament（周赛）= 2026-09-25（Week 2 起点）
+  - guild-war（公会战）= 2026-09-30
+  - 未开放的模式 auto-update 会跳过（打印 `⏭ 尚未开放`），不影响其他模式
+- **每周独立**：process 脚本按 `--week N` 从 week-utils 拿日期区间读 daily CSV 汇总
 
 ### 周赛策略
 
 **周赛开放时间**：国内时间**周五 19:00 ~ 周一 07:00**（全球通服共用国内时间）
 
 - 每天固定拉，非开放日 SQL 返回空 CSV（无害）
-- 首周（Week 1）跳过
+- 首周（Week 1）跳过（`MODE_OPEN_DATE.tournament=2026-09-25` 兜底 + process-tournament 内部跳过）
 
 ### 前端区域切换
 
