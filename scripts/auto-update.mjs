@@ -4,11 +4,34 @@ import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'url'
 import { fetchCsv } from './ta-fetch.mjs'
 import { notify } from './notify.mjs'
+import { computeWeekInfo, weeksToProcess, formatDate } from './week-utils.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const PROJECT_ROOT = path.resolve(__dirname, '..')
 
 const REGIONS = ['domestic', 'overseas']
+
+// 玩法首次开放日期（YYYY-MM-DD）。今天 < 开放日 直接跳过对应模式，避免拉空 CSV / 报错
+// 正式服玩法节奏：
+// - 上线首周（9/17）：仅天梯 + 无限道馆
+// - Week 2 开始（9/25 周五）：周赛开放
+// - 9/30 起：公会战开放
+const MODE_OPEN_DATE = {
+  ladder: '2026-09-17',
+  'infinity-gym': '2026-09-17',
+  assist: '2026-09-17',
+  login: '2026-09-17',
+  recharge: '2026-09-17',
+  tournament: '2026-09-25',
+  'guild-war': '2026-09-30'
+}
+
+function isModeOpen(mode, now = new Date()) {
+  const openISO = MODE_OPEN_DATE[mode]
+  if (!openISO) return true // 未配置视为始终开放
+  const open = new Date(openISO + 'T00:00:00+08:00')
+  return now >= open
+}
 
 function loadConfig() {
   return JSON.parse(fs.readFileSync(path.join(__dirname, 'ta-config.json'), 'utf-8'))
@@ -45,42 +68,12 @@ function runCommand(cmd, args = []) {
   return result.stdout || ''
 }
 
-function formatDate(date) {
+function formatDateShort(date) {
   const pad = n => String(n).padStart(2, '0')
   return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`
 }
 
-// 计算当前游戏周编号和时间范围（新架构：按自然日归属周）
-// 游戏周：周五 00:00 ~ 下周四 23:59（自然日归属周，配合按天分片方案）
-// 首周从 config.baseFriday 00:00 开始
-// 国内 / 海外全球通服，共用同一套 baseFriday
-export function computeWeekInfo(baseFriday) {
-  const now = new Date()
-  const base = new Date(baseFriday + 'T00:00:00')
-  const week = Math.floor((now - base) / (7 * 24 * 60 * 60 * 1000)) + 1
-
-  const weekStart = new Date(base)
-  weekStart.setDate(weekStart.getDate() + (week - 1) * 7)
-
-  return {
-    week,
-    startDate: formatDate(weekStart),  // 'YYYY-MM-DD'
-    endDate: formatDate(now)
-  }
-}
-
-// 返回本次需要 process 的所有周（昨天所属周 + 今天所属周，去重升序，通常 1 项；跨周日 2 项）
-// 目的：跨周边界日（如周五凌晨跑）时，前一周周四的数据在 daily CSV 里已经完整，
-// 但只 process 当前周会让上一周 JSON 停留在上一周周四早上残缺状态。
-// 拉数据只做一次（昨天+今天），process 循环这个数组即可保证跨周正确性。
-export function weeksToProcess(baseFriday) {
-  const base = new Date(baseFriday + 'T00:00:00')
-  const now = new Date()
-  const yesterday = new Date(now); yesterday.setDate(yesterday.getDate() - 1)
-  const weekOf = d => Math.floor((d - base) / (7 * 24 * 60 * 60 * 1000)) + 1
-  const set = new Set([weekOf(yesterday), weekOf(now)])
-  return [...set].filter(w => w >= 1).sort((a, b) => a - b)
-}
+// computeWeekInfo / weeksToProcess 已迁移到 scripts/week-utils.mjs（含 Week 1 特殊 8 天逻辑）
 
 // 每天固定拉取所有模式（含周赛），因此不再需要 isTournamentActive / shouldFetchTournament 判断窗口
 // 周赛在非开放日拉出来是空 CSV，process 脚本能处理，不影响任何东西
@@ -112,6 +105,10 @@ function ensureWeekInJson(region, week) {
  * @param {number[]} weeks 升序，末尾是当前周（用于更新 battle-stats.json）
  */
 export async function updateRegionMode(region, mode, weeks) {
+  if (!isModeOpen(mode)) {
+    console.log(`  ⏭  [${region}/${mode}] 尚未开放（${MODE_OPEN_DATE[mode]} 起），跳过`)
+    return
+  }
   const pad = n => String(n).padStart(2, '0')
   const fmt = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
   const now = new Date()
@@ -172,29 +169,42 @@ export async function updateRegionParticipation(region, weeks, baseFriday) {
     const dates = [fmt(yesterday), fmt(now)]
 
     // login daily 分片（每天创号+登录事件），单天失败不阻塞
-    for (const date of dates) {
-      const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'login', `${date}.csv`)
-      try {
-        await fetchCsv(region, 'login', date, date, outPath)
-      } catch (e) {
-        console.error(`⚠️  [${region}/login/${date}] 拉取失败: ${e.message}`)
+    if (isModeOpen('login')) {
+      for (const date of dates) {
+        const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'login', `${date}.csv`)
+        try {
+          await fetchCsv(region, 'login', date, date, outPath)
+        } catch (e) {
+          console.error(`⚠️  [${region}/login/${date}] 拉取失败: ${e.message}`)
+        }
       }
+    } else {
+      console.log(`  ⏭  [${region}/login] 尚未开放（${MODE_OPEN_DATE.login} 起），跳过`)
     }
     // guild-war daily 分片（异步 PVP 事件），单天失败不阻塞
-    for (const date of dates) {
-      const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'guild-war', `${date}.csv`)
-      try {
-        await fetchCsv(region, 'guild-war', date, date, outPath)
-      } catch (e) {
-        console.error(`⚠️  [${region}/guild-war/${date}] 拉取失败: ${e.message}`)
+    if (isModeOpen('guild-war')) {
+      for (const date of dates) {
+        const outPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'guild-war', `${date}.csv`)
+        try {
+          await fetchCsv(region, 'guild-war', date, date, outPath)
+        } catch (e) {
+          console.error(`⚠️  [${region}/guild-war/${date}] 拉取失败: ${e.message}`)
+        }
       }
+    } else {
+      console.log(`  ⏭  [${region}/guild-war] 尚未开放（${MODE_OPEN_DATE['guild-war']} 起），跳过`)
     }
     // recharge：累计全量（不按天分片，每人历史最大 recharge_total）
-    try {
-      const rechargeCsvPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'recharge.csv')
-      await fetchCsv(region, 'recharge', baseFriday, fmt(now), rechargeCsvPath)
-    } catch (e) {
-      console.error(`⚠️  [${region}] recharge 拉取失败（不阻塞参与走势）: ${e.message}`)
+    // 起点用玩法开放日（2026-09-17，覆盖 Week 1 首日），不用 baseFriday（是 Week 2 起点）
+    if (isModeOpen('recharge')) {
+      try {
+        const rechargeCsvPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'recharge.csv')
+        await fetchCsv(region, 'recharge', MODE_OPEN_DATE.recharge, fmt(now), rechargeCsvPath)
+      } catch (e) {
+        console.error(`⚠️  [${region}] recharge 拉取失败（不阻塞参与走势）: ${e.message}`)
+      }
+    } else {
+      console.log(`  ⏭  [${region}/recharge] 尚未开放（${MODE_OPEN_DATE.recharge} 起），跳过`)
     }
     // 注意：这里故意不传 --publish，因为 auto-update 末尾统一 publish 一次即可；
     // --publish 是给「手动补跑」用的，让操作者不用另外记着 bash publish.sh（详见 CLAUDE.md「数据分离机制」）
@@ -225,6 +235,10 @@ export function updateRegionLumiTeams(region) {
  * process-infinity-gym.mjs 会读整个 daily 目录累计聚合。
  */
 export async function updateRegionInfinityGym(region /* baseFriday 不再使用 */) {
+  if (!isModeOpen('infinity-gym')) {
+    console.log(`  ⏭  [${region}/infinity-gym] 尚未开放（${MODE_OPEN_DATE['infinity-gym']} 起），跳过`)
+    return
+  }
   const pad = n => String(n).padStart(2, '0')
   const fmt = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
   const now = new Date()
@@ -240,10 +254,12 @@ export async function updateRegionInfinityGym(region /* baseFriday 不再使用 
     } catch (e) {
       console.error(`⚠️  [${region}/infinity-gym/${date}] 拉取失败: ${e.message}`)
     }
-    try {
-      await fetchCsv(region, 'assist', date, date, assistPath)
-    } catch (e) {
-      console.error(`⚠️  [${region}/assist/${date}] 拉取失败: ${e.message}`)
+    if (isModeOpen('assist')) {
+      try {
+        await fetchCsv(region, 'assist', date, date, assistPath)
+      } catch (e) {
+        console.error(`⚠️  [${region}/assist/${date}] 拉取失败: ${e.message}`)
+      }
     }
   }
 

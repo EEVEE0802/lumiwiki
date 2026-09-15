@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url'
 import readline from 'readline'
 import { spawnSync } from 'node:child_process'
 import { fetchCsv } from './ta-fetch.mjs'
+import { getWeekDates } from './week-utils.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -27,33 +28,18 @@ if (!['domestic', 'overseas'].includes(region)) {
   process.exit(1)
 }
 
-// 读取 baseFriday（从 ta-config.json）
-// 新架构：周五 00:00 ~ 下周四 23:59 = 一周（自然日归属周，跟 daily 分片对齐）
+// 读取 baseFriday（从 ta-config.json）—— 供 recharge 拉取用（累计全量的起点）
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, 'ta-config.json'), 'utf-8'))
-const baseFriday = new Date(config.baseFriday + 'T00:00:00+08:00')
 
-// 计算周时间范围
-const startTime = new Date(baseFriday)
-startTime.setDate(startTime.getDate() + (week - 1) * 7)
-const endTime = new Date(startTime)
-endTime.setDate(endTime.getDate() + 7)
-
-// 新 SQL 用日期粒度（YYYY-MM-DD），跟 "$part_date" 一致
+// 本周所有日期（Week 1=8 天，Week N≥2=7 天，详见 week-utils.mjs）
+const weekDates = getWeekDates(week)
+const startDate = weekDates[0]
+const endDate = weekDates[weekDates.length - 1]
 const fmtDate = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
-const startDate = fmtDate(startTime)
-const endDate = fmtDate(new Date(endTime - 1000)) // 结束当天算最后一天（endTime 是下周五 03:00）
 
 console.log(`\n===== 参与走势拉取 Week ${week} (${region}) =====`)
-console.log(`日期范围: ${startDate} ~ ${endDate}`)
+console.log(`日期范围: ${startDate} ~ ${endDate} (${weekDates.length} 天)`)
 
-// 本周 7 天的日期数组（YYYY-MM-DD）
-const weekDates = []
-{
-  const s = new Date(startTime), e = new Date(endTime)
-  for (let d = new Date(s); d < e; d.setDate(d.getDate() + 1)) {
-    weekDates.push(fmtDate(d))
-  }
-}
 const dailyPaths = mode => weekDates.map(d =>
   path.join(PROJECT_ROOT, `data/${region}/archive/daily/${mode}/${d}.csv`)
 )

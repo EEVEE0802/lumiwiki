@@ -15,5 +15,6 @@
     }
   },
   "notifyWebhook": "https://open.feishu.cn/open-apis/bot/v2/hook/xxx",
-  "baseFriday": "2026-07-10"
+  "_baseFriday_note": "baseFriday 是 Week 2 的起点周五。Week 1（8 天）特殊化在 scripts/week-utils.mjs：2026-09-17 ~ 2026-09-24",
+  "baseFriday": "2026-09-25"
 }

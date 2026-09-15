@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import readline from 'readline'
+import { getWeekDates } from './week-utils.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -17,30 +18,10 @@ if (!['domestic', 'overseas'].includes(region)) {
   process.exit(1)
 }
 
-// 周编号规则：周五 00:00 ~ 下周四 23:59 = 一周（自然日归属周）
-// baseFriday = 2026-07-10（Week 1 首日）
-function getWeekDates(weekNum, baseFriday) {
-  const s = new Date(baseFriday + 'T00:00:00+08:00')
-  s.setDate(s.getDate() + (weekNum - 1) * 7)
-  const dates = []
-  for (let i = 0; i < 7; i++) {
-    const d = new Date(s); d.setDate(d.getDate() + i)
-    const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0')
-    dates.push(`${y}-${m}-${day}`)
-  }
-  return dates
-}
-
-function loadBaseFriday() {
-  const cfgPath = path.join(__dirname, 'ta-config.json')
-  try {
-    return JSON.parse(fs.readFileSync(cfgPath, 'utf-8')).baseFriday
-  } catch { return '2026-07-10' }
-}
-
 // CSV 文件路径
-// 指定 --week 时读该周 7 天 daily 分片；不指定时读单文件（兼容手工测试）
-const weekDates = week ? getWeekDates(week, loadBaseFriday()) : null
+// 指定 --week 时读该周所有天 daily 分片（Week 1=8 天，Week N≥2=7 天，详见 week-utils.mjs）
+// 不指定 --week 时读单文件（兼容手工测试）
+const weekDates = week ? getWeekDates(week) : null
 const tournamentPaths = week
   ? weekDates.map(d => path.join(__dirname, `../data/${region}/archive/daily/tournament/${d}.csv`))
   : [path.join(__dirname, `../data/${region}/tournament.csv`)]
