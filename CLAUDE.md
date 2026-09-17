@@ -192,7 +192,7 @@ comm -23 /tmp/source_ca.txt /tmp/wiki_ca.txt | while read f; do cp "$SRC/$f" "$D
 
 ### 每周数据更新（已由 auto-update.mjs 自动完成，手动仅供故障恢复）
 
-日常无需手动更新。定时任务 `LumiWiki_Online_Daily` 每天 04:30 自动拉取昨天+今天到 daily 分片、聚合、发布、push。
+日常无需手动更新。定时任务 `LumiWiki_Online_Daily` 每天 07:30 自动拉取昨天+今天到 daily 分片、聚合、发布、push。
 
 **手动补跑某周**（例如某天定时任务没跑成功）：
 ```bash
@@ -236,7 +236,7 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 ## 自动化数据更新
 
 **两个定时任务**：
-- **每天 04:30**（LumiWiki_Online_Daily）跑线上数据：拉双区（国内+海外）昨天+今天数据到 daily 分片（ladder / tournament / infinity-gym / assist / login / guild-war），处理后 build + push
+- **每天 07:30**（LumiWiki_Online_Daily）跑线上数据：拉 6 个正式服（cn/sp/va/jp/sg/fra）昨天+今天数据到 daily 分片（ladder / tournament / infinity-gym / assist / login / guild-war），处理后 build + push
 - **每天 03:00**（LumiWiki_Daily）跑游戏数据：svn update → 复制 JSON → 多语言 → 衍生脚本（robot-teams / adventure-drop / egg-drop）→ 立绘同步 → build + push
 
 失败时通过飞书机器人通知。
@@ -313,7 +313,7 @@ GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
 
 | 任务名 | 频率 | 时间 | 模式 |
 |---|---|---|---|
-| `LumiWiki_Online_Daily` | 每天 | 04:30 | 双区线上数据（ladder / tournament / infinity-gym / assist / login / guild-war + 参与走势） |
+| `LumiWiki_Online_Daily` | 每天 | 07:30 | 6 region 线上数据（ladder / tournament / infinity-gym / assist / login / guild-war + 参与走势） |
 | `LumiWiki_Daily` | 每天 | 03:00 | 游戏配置 + 立绘 + 衍生（对外+对内 svn） |
 
 注册命令（Git Bash 里执行，需 `MSYS_NO_PATHCONV=1` 防止 `/create` 等参数被误转成路径）：
@@ -322,8 +322,8 @@ GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
 # 删除老任务
 MSYS_NO_PATHCONV=1 schtasks /delete /tn "LumiWiki_Online" /f
 
-# 新架构：每天 04:30 拉线上数据
-MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Online_Daily" /tr "D:\lumiwiki\scripts\auto-update.bat" /sc DAILY /st 04:30 /f
+# 新架构：每天 07:30 拉线上数据
+MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Online_Daily" /tr "D:\lumiwiki\scripts\auto-update.bat" /sc DAILY /st 07:30 /f
 MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Daily"  /tr "D:\lumiwiki\scripts\auto-update-all.bat" /sc DAILY /st 03:00 /f
 ```
 
@@ -409,7 +409,7 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
 ### 数据流（完整链路）
 
 ```
-[每日 04:30 触发：auto-update.bat → auto-update.mjs]
+[每日 07:30 触发：auto-update.bat → auto-update.mjs]
 
   computeWeekInfo() 算游戏周编号（自然日归属周）
   今天/昨天日期 = 每次拉取的目标日期
@@ -586,7 +586,7 @@ node scripts/fetch-participation-trend.mjs --week 6 --region cn --publish
 ### 集成位置
 
 - `auto-update.mjs` 的 `updateRegionParticipation` 里调用：先拉 login/guild-war/recharge 到 daily，再跑聚合
-- 每天 04:30 自动流程内跟 ladder 一起触发
+- 每天 07:30 自动流程内跟 ladder 一起触发
 - 参与走势失败**不阻塞发布**（`try/catch` 包裹），仅日志报错
 
 ### 注意事项
