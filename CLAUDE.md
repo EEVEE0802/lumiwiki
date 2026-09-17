@@ -19,27 +19,29 @@
 LumiWiki/
 ├── public/
 │   ├── data/                        # JSON 数据文件
-│   │   ├── online/                  # 线上战斗数据（按区域分区）
-│   │   │   ├── domestic/            # 国内服
+│   │   ├── online/                  # 线上战斗数据（按 region 分区，9/17 上线后 6 个正式服）
+│   │   │   ├── cn/                  # 国内 (zone 1890)
 │   │   │   │   ├── battle-stats.json
 │   │   │   │   └── weekly/          # ladder-weekN / tournament-weekN / participation-weekN / weeks.json
-│   │   │   └── overseas/            # 海外服（同结构）
-│   │   ├── domestic/lumi-teams.json # 推荐配队（国内，依赖 online 数据生成）
-│   │   ├── overseas/lumi-teams.json # 推荐配队（海外）
+│   │   │   ├── sp/                  # 南美 (zone 2890)  同结构
+│   │   │   ├── va/                  # 北美 (zone 2891)  同结构
+│   │   │   ├── jp/                  # 日本 (zone 2892)  同结构
+│   │   │   ├── sg/                  # 新加坡 (zone 2893) 同结构
+│   │   │   └── fra/                 # 法兰克福 (zone 2894) 同结构
+│   │   ├── cn/lumi-teams.json       # 推荐配队（仅用国内数据生成一份，海外服前端也读这份）
 │   │   ├── internal/                # 对内游戏配置分支（版本切换）
-│   │   │   ├── domestic/lumi-teams.json
-│   │   │   └── overseas/lumi-teams.json
+│   │   │   └── cn/lumi-teams.json   # 对内版复用对外 cn 配队
 │   │   ├── extra.json               # 社区维护扩展数据
 │   │   ├── robot-teams.json         # 机器人阵容（道馆/天梯/家园，由脚本生成）
 │   │   ├── adventure/               # 冒险掉落
 │   │   │   └── drop-rates.json      # 各地图噜咪出现概率（由脚本生成）
 │   │   ├── egg-drop.json            # 蛋掉落（各蛋开出噜咪概率，由脚本生成）
-│   ├── lumi-teams.json 已迁移到 domestic/overseas 子目录（前端 loadData 自动注入 region 前缀）
+│   ├── lumi-teams.json 已迁移到 cn 子目录；前端 loadData 对 lumi-teams 硬编码走 cn（所有 region 共读）
 │   │   ├── zh-CN.json 等            # 多语言文件
 │   │   └── ...                      # 游戏核心数据
 │   └── images/                      # 图片资源
 ├── data/                            # 中间产物（CSV 不进 git）
-│   ├── domestic/archive/             # 国内 CSV 归档
+│   ├── cn/archive/                   # 国内 CSV 归档 (zone 1890)
 │   │   ├── daily/                    # 按天分片（所有事件流）
 │   │   │   ├── ladder/{YYYY-MM-DD}.csv
 │   │   │   ├── tournament/{YYYY-MM-DD}.csv
@@ -48,7 +50,11 @@ LumiWiki/
 │   │   │   ├── assist/{YYYY-MM-DD}.csv
 │   │   │   └── guild-war/{YYYY-MM-DD}.csv
 │   │   └── recharge.csv              # 累计全量（每 role_id 历史最大充值，不按天分片）
-│   └── overseas/archive/             # 海外 CSV 归档（同结构）
+│   ├── sp/archive/                   # 南美 CSV 归档 (zone 2890) 同结构
+│   ├── va/archive/                   # 北美 (zone 2891) 同结构
+│   ├── jp/archive/                   # 日本 (zone 2892) 同结构
+│   ├── sg/archive/                   # 新加坡 (zone 2893) 同结构
+│   └── fra/archive/                  # 法兰克福 (zone 2894) 同结构
 ├── scripts/
 │   ├── process-battle-data.js       # 天梯数据处理（读本周 7 天 daily/ladder）
 │   ├── process-tournament-data.js   # 周赛数据处理（读本周 7 天 daily/tournament）
@@ -193,13 +199,13 @@ comm -23 /tmp/source_ca.txt /tmp/wiki_ca.txt | while read f; do cp "$SRC/$f" "$D
 cd D:/LumiWiki
 
 # 补拉某天的原始事件（按需选模式）
-node scripts/backfill-daily.mjs --region domestic --modes ladder,tournament,login,guild-war,infinity-gym,assist --start 2026-08-21 --end 2026-08-21 --force
+node scripts/backfill-daily.mjs --region cn --modes ladder,tournament,login,guild-war,infinity-gym,assist --start 2026-09-17 --end 2026-09-24 --force
 
-# 重新处理该周（--week N 会读该周 7 天 daily CSV 聚合）
-node scripts/process-battle-data.js --week N --region domestic
-node scripts/process-tournament-data.js --week N --region domestic
-node scripts/process-infinity-gym.mjs --region domestic
-node scripts/fetch-participation-trend.mjs --week N --region domestic --publish
+# 重新处理该周（--week N 会读该周 7 天 daily CSV 聚合；region 可选 cn/sp/va/jp/sg/fra）
+node scripts/process-battle-data.js --week N --region cn
+node scripts/process-tournament-data.js --week N --region cn
+node scripts/process-infinity-gym.mjs --region cn
+node scripts/fetch-participation-trend.mjs --week N --region cn --publish
 ```
 
 ### 常用命令
@@ -261,7 +267,7 @@ data/{region}/archive/
 ### 前置要求
 
 - **svn 命令行**：TortoiseSVN 安装时必须勾选「Command line client tools」（默认不勾）。验证：`svn --version` 能输出版本号
-- **数数开放 API**：每个 region 一个长期 token（不需要续期！），配在 `ta-config.json` 的 `regions.{domestic,overseas}` 下
+- **数数开放 API**：每个 region 一个长期 token（不需要续期！），配在 `ta-config.json` 的 `regions.{cn,sp,va,jp,sg,fra}` 下（海外 5 服共用同一个 token 和 projectId=83，只有 bZoneIds 不同）
 - **飞书群机器人**：webhook URL 配在 `ta-config.json`（自定义关键词 `LumiWiki`）
 
 ### 数数开放 API（关键改造）
@@ -290,7 +296,7 @@ GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
 
 | 脚本 | 职责 |
 |---|---|
-| `scripts/ta-fetch.mjs` | 数数开放 API 拉取：submit-sql → 分页 sql-result-page → **流式写入 CSV**（绕过 Buffer 2GB 上限）。参数：`--region domestic\|overseas --mode ladder\|tournament\|login\|infinity-gym\|assist\|guild-war\|recharge --start YYYY-MM-DD --end YYYY-MM-DD --out` |
+| `scripts/ta-fetch.mjs` | 数数开放 API 拉取：submit-sql → 分页 sql-result-page → **流式写入 CSV**（绕过 Buffer 2GB 上限）。参数：`--region cn\|sp\|va\|jp\|sg\|fra --mode ladder\|tournament\|login\|infinity-gym\|assist\|guild-war\|recharge --start YYYY-MM-DD --end YYYY-MM-DD --out` |
 | `scripts/backfill-daily.mjs` | **按天回填历史数据**（一次性用）。参数：`--region --modes m1,m2 --start --end [--force]`。已存在的文件默认跳过 |
 | `scripts/fetch-participation-trend.mjs` | 参与走势聚合（读 daily/{ladder,tournament,login,infinity-gym,guild-war} × 本周 7 天）。参数：`--week N --region [--publish]` |
 | `scripts/process-infinity-gym.mjs` | 无限道馆数据处理（遍历 daily/infinity-gym/*.csv 累计聚合） |
@@ -300,7 +306,7 @@ GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
 | `scripts/auto-update-all.mjs` | **每日游戏数据总控**：对外+对内游戏数据 + 立绘 + 衍生 → build + push |
 | `scripts/auto-update.bat` | 每日线上任务 wrapper |
 | `scripts/auto-update-all.bat` | 每日游戏任务 wrapper |
-| `scripts/ta-config.json` | 配置（regions.{domestic,overseas}.{token,projectId,bZoneIds,baseUrl} + webhook，**不进 git**） |
+| `scripts/ta-config.json` | 配置（regions.{cn,sp,va,jp,sg,fra}.{token,projectId,bZoneIds,baseUrl} + webhook，**不进 git**） |
 | `scripts/ta-config.example.json` | 配置模板（进 git） |
 
 ### 定时任务（Windows 任务计划程序）
@@ -345,10 +351,12 @@ MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Daily"  /tr "D:\lumiwiki\scrip
 
 ### 前端区域切换
 
-- `useRegion` composable（`domestic` / `overseas`），localStorage 持久化
-- `OnlineData.vue` 顶部按钮切换
-- `loadData('lumi-teams')` 和 `loadData('online/...')` 自动注入 region 前缀
-- 版本切换（对外/对内）× 区域切换（国内/海外）正交存在
+- `useRegion` composable，6 个正式服 region：`cn / sp / va / jp / sg / fra`，localStorage 持久化
+- `OnlineData.vue` 顶部按钮切换（6 个平铺，flex-wrap 允许窄屏换行）
+- `loadData('online/...')` 自动注入当前 region 前缀
+- `loadData('lumi-teams')` **硬编码走 cn**（推荐配队只用国内数据生成，海外服前端也读这份，忽略当前 region）
+- 版本切换（对外/对内）× 区域切换（6 个 region）正交存在
+- 旧 localStorage 值（`domestic` / `overseas`）自动 fallback 到 `cn`
 
 ### 通知（飞书机器人）
 
@@ -367,10 +375,10 @@ node scripts/auto-update.mjs --ladder
 node scripts/auto-update.mjs --tournament
 
 # 单独跑数数拉取（调试用，按天）
-node scripts/ta-fetch.mjs --region overseas --mode ladder --start 2026-08-08 --end 2026-08-08 --out data/overseas/archive/daily/ladder/2026-08-08.csv
+node scripts/ta-fetch.mjs --region jp --mode ladder --start 2026-09-17 --end 2026-09-17 --out data/jp/archive/daily/ladder/2026-09-17.csv
 
 # 按天回填历史（一次性用）—— 换机器 / 首次部署时跑
-node scripts/backfill-daily.mjs --region domestic --modes ladder,tournament,login,guild-war,infinity-gym,assist --start 2026-07-10 --end 2026-08-23
+node scripts/backfill-daily.mjs --region cn --modes ladder,tournament,login,guild-war,infinity-gym,assist --start 2026-09-17 --end 2026-09-24
 
 # 手动触发每日游戏任务
 node scripts/auto-update-all.mjs
@@ -391,7 +399,7 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
 
 **token 失效**（飞书收到 token 失效告警）：
 - 数数开放 API token 是**长期**的，一般不会失效
-- 万一失效：找 PM 或数据同事重新申请 token，更新 `scripts/ta-config.json` 的 `regions.{domestic|overseas}.token`
+- 万一失效：找 PM 或数据同事重新申请 token，更新 `scripts/ta-config.json` 的 `regions.{cn|sp|va|jp|sg|fra}.token`（海外 5 服共用同一 token，改一处需要同步改 5 处）
 
 **接口失败排查**：
 - 看 `auto-update.log` 的错误信息
@@ -406,7 +414,7 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
   computeWeekInfo() 算游戏周编号（自然日归属周）
   今天/昨天日期 = 每次拉取的目标日期
 
-  for region in [domestic, overseas]:
+  for region in [cn, sp, va, jp, sg, fra]:  # 6 个正式服循环
     1. 天梯 (updateRegionMode('ladder')):
        → ta-fetch.mjs: 拉昨天 + 今天 2 天，各写入
          data/{region}/archive/daily/ladder/{date}.csv
@@ -428,11 +436,12 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
        → fetch-participation-trend.mjs --week N --region 读本周 7 天各 daily CSV
          → 输出 public/data/online/{region}/weekly/participation-weekN.json
 
-    5. 推荐配队 (process-lumi-teams.mjs --region):
-       → 读所有周 ladder no-bot + tournament，按 lumi 聚合 top 3 队伍
-       → 输出 public/data/{region}/lumi-teams.json
+  5. 推荐配队 (process-lumi-teams.mjs --region cn，仅跑一次)：
+     → 读 cn 的所有周 ladder no-bot + tournament，按 lumi 聚合 top 3 队伍
+     → 输出 public/data/cn/lumi-teams.json
+     → 前端所有 6 region 都读这一份（src/data/index.js loadData 硬编码 cn）
 
-  6. 镜像 lumi-teams 到 internal 分支（对内版复用对外的推荐配队）
+  6. 镜像 cn 的 lumi-teams 到 internal 分支（对内版复用对外的国内配队）
 
   7. 统一 publish (bash publish.sh)
 
@@ -567,11 +576,11 @@ data/{region}/archive/daily/{login,ladder,tournament,infinity-gym,guild-war}/{YY
 
 ```bash
 # 参与走势聚合（依赖 daily CSV 已被 auto-update 或 backfill 提前拉好）
-node scripts/fetch-participation-trend.mjs --week N --region domestic
+node scripts/fetch-participation-trend.mjs --week N --region cn
 
 # --publish：跑完自动 bash publish.sh，把结果推到 dist + 重启 3005 服务
 # 手动补跑时强烈建议加，否则浏览器看到的还是老数据（见「数据分离机制」小节）
-node scripts/fetch-participation-trend.mjs --week 6 --region domestic --publish
+node scripts/fetch-participation-trend.mjs --week 6 --region cn --publish
 ```
 
 ### 集成位置
@@ -724,7 +733,7 @@ CSV 表头：`噜咪ID,体型,活动地图,关键特质,行为习惯`
 ### 常见踩坑场景
 
 - ✅ **自动流程没事**：`auto-update.mjs` / `auto-update-all.mjs` / `update-game-data.mjs` 末尾都自带 `bash publish.sh`，跑完就上线
-- ❌ **手动补跑必踩**：例如 `node scripts/fetch-participation-trend.mjs --week 6 --region domestic --skip-fetch` 只写 `public/`，不 publish → 浏览器硬刷也是老数据
+- ❌ **手动补跑必踩**：例如 `node scripts/fetch-participation-trend.mjs --week 6 --region cn --skip-fetch` 只写 `public/`，不 publish → 浏览器硬刷也是老数据
 - ❌ **手动跑 processor 也踩**：`npm run process-adventure` / `npm run process-egg-drop` / `npm run process-lumi-teams` 都只写 `public/`
 
 ### 手动补跑的正确姿势
@@ -732,13 +741,13 @@ CSV 表头：`噜咪ID,体型,活动地图,关键特质,行为习惯`
 **优先**：给 processor 脚本传 `--publish`（如果它支持）
 ```bash
 # 参与走势已支持
-node scripts/fetch-participation-trend.mjs --week 6 --region domestic --skip-fetch --publish
+node scripts/fetch-participation-trend.mjs --week 6 --region cn --skip-fetch --publish
 ```
 
 **兜底**：跑完 processor 后手动 `bash publish.sh`
 ```bash
-node scripts/process-infinity-gym.mjs --region domestic
-node scripts/process-lumi-teams.mjs --region domestic
+node scripts/process-infinity-gym.mjs --region cn
+node scripts/process-lumi-teams.mjs --region cn
 bash publish.sh   # ← 关键！
 ```
 

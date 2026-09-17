@@ -12,7 +12,7 @@
       ⚠️ 当前应用切换为「对内版」，但线上数据（天梯 / 周赛 / 参与走势）只来源于对外正式服，与版本切换无关。
     </div>
 
-    <!-- 区域切换：国内 / 海外 -->
+    <!-- 区域切换：6 个正式服（国内 + 海外 5 个独立服） -->
     <div class="region-selector">
       <button
         v-for="(cfg, key) in regions"
@@ -2538,17 +2538,18 @@ watch(currentStats, () => {
 
 .region-selector {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 16px;
 }
 
 .region-btn {
-  padding: 8px 22px;
+  padding: 7px 16px;
   border: 2px solid #e0d7ff;
   background: white;
   color: #7c6fb3;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: 20px;
   cursor: pointer;

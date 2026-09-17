@@ -12,9 +12,10 @@ const args = process.argv.slice(2)
 const weekIndex = args.indexOf('--week')
 const week = weekIndex !== -1 ? parseInt(args[weekIndex + 1]) : null
 const regionIndex = args.indexOf('--region')
-const region = regionIndex !== -1 ? args[regionIndex + 1] : 'domestic'
-if (!['domestic', 'overseas'].includes(region)) {
-  console.error(`未知 --region: ${region}（仅支持 domestic / overseas）`)
+const region = regionIndex !== -1 ? args[regionIndex + 1] : 'cn'
+const VALID_REGIONS = ['cn', 'sp', 'va', 'jp', 'sg', 'fra']
+if (!VALID_REGIONS.includes(region)) {
+  console.error(`未知 --region: ${region}（仅支持 ${VALID_REGIONS.join(' / ')}）`)
   process.exit(1)
 }
 

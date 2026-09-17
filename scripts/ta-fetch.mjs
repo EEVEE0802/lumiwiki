@@ -361,7 +361,7 @@ async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs
 
 /**
  * 拉取指定区域、指定模式的数据到 CSV 文件
- * @param {'domestic'|'overseas'} region
+ * @param {'cn'|'sp'|'va'|'jp'|'sg'|'fra'} region
  * @param {'ladder'|'tournament'|'login'} mode
  * @param {string} startDate 'YYYY-MM-DD'（含）
  * @param {string} endDate 'YYYY-MM-DD'（含）
@@ -411,14 +411,14 @@ if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToP
     const i = args.indexOf(name)
     return i !== -1 ? args[i + 1] : null
   }
-  const region = getArg('--region') || 'domestic'
+  const region = getArg('--region') || 'cn'
   const mode = getArg('--mode') || 'ladder'
   const start = getArg('--start')
   const end = getArg('--end')
   const out = getArg('--out')
 
   if (!start || !end || !out) {
-    console.log('用法: node ta-fetch.mjs --region domestic --mode ladder --start 2026-08-08 --end 2026-08-08 --out data/domestic/archive/daily/ladder/2026-08-08.csv')
+    console.log('用法: node ta-fetch.mjs --region cn --mode ladder --start 2026-09-17 --end 2026-09-17 --out data/cn/archive/daily/ladder/2026-09-17.csv')
     process.exit(1)
   }
 

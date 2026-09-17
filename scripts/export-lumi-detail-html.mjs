@@ -85,12 +85,15 @@ const trainerSkills = safeReadJson(path.join(DATA_DIR, 'TrainerSkill.json')) || 
 const avgData = safeReadJson(path.join(DATA_DIR, 'Avg.json')) || []
 const extraData = safeReadJson(path.join(DATA_DIR, 'extra.json')) || {}
 const orderNpcData = safeReadJson(path.join(DATA_DIR, 'OrderNPC.json')) || []
-// lumi-teams：先看 domestic 子目录，回退到根
+// lumi-teams：优先看 cn 子目录（9/17 上线后推荐配队仅生成 cn 一份），回退兼容旧 domestic 目录和根路径
+const teamsPathCn = path.join(DATA_DIR, 'cn/lumi-teams.json')
 const teamsPathDomestic = path.join(DATA_DIR, 'domestic/lumi-teams.json')
 const teamsPathRoot = path.join(DATA_DIR, 'lumi-teams.json')
-const lumiTeamsData = fs.existsSync(teamsPathDomestic)
-  ? readJson(teamsPathDomestic)
-  : (fs.existsSync(teamsPathRoot) ? readJson(teamsPathRoot) : null)
+const lumiTeamsData = fs.existsSync(teamsPathCn)
+  ? readJson(teamsPathCn)
+  : fs.existsSync(teamsPathDomestic)
+    ? readJson(teamsPathDomestic)
+    : (fs.existsSync(teamsPathRoot) ? readJson(teamsPathRoot) : null)
 
 function safeReadJson(p) {
   try { return readJson(p) } catch { return null }

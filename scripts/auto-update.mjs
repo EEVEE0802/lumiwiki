@@ -9,7 +9,17 @@ import { computeWeekInfo, weeksToProcess, formatDate } from './week-utils.mjs'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const PROJECT_ROOT = path.resolve(__dirname, '..')
 
-const REGIONS = ['domestic', 'overseas']
+// 6 个正式服 region（9/17 上线后拆分）：cn=国内，其余 5 个是海外各独立服
+// - cn = 1890
+// - sp = 2890 南美
+// - va = 2891 北美
+// - jp = 2892 日本
+// - sg = 2893 新加坡
+// - fra = 2894 法兰克福
+const REGIONS = ['cn', 'sp', 'va', 'jp', 'sg', 'fra']
+
+// 推荐配队仅用国内数据生成（海外初期玩家少，样本不足；且前端所有 region 都读同一份 cn 数据）
+const LUMI_TEAMS_REGION = 'cn'
 
 // 玩法首次开放日期（YYYY-MM-DD）。今天 < 开放日 直接跳过对应模式，避免拉空 CSV / 报错
 // 正式服玩法节奏：
@@ -100,7 +110,7 @@ function ensureWeekInJson(region, week) {
  *
  * 跨周日会传两个 week（昨天所属周 + 今天所属周），拉数据只做一次，process 循环所有 week
  *
- * @param {'domestic'|'overseas'} region
+ * @param {'cn'|'sp'|'va'|'jp'|'sg'|'fra'} region
  * @param {'ladder'|'tournament'} mode
  * @param {number[]} weeks 升序，末尾是当前周（用于更新 battle-stats.json）
  */
@@ -338,22 +348,27 @@ async function main() {
       }
     }
 
-    // 5. 推荐配队（跟着最新的 ladder/tournament 数据重算，失败不阻塞发布）
+  }
+
+  // 5. 推荐配队：仅用国内（cn）数据生成一份，海外服前端也读这份（loadData 里 lumi-teams 硬编码走 cn）
+  //    海外初期玩家少，各服独立算样本不足；用 cn 作为参考数据对所有服玩家都有价值
+  if (!modeFilter || modeFilter === 'ladder') {
     try {
-      updateRegionLumiTeams(region)
+      updateRegionLumiTeams(LUMI_TEAMS_REGION)
     } catch (e) {
-      console.error(`⚠️  [${region}] 推荐配队更新失败（不阻塞其他）: ${e.message}`)
+      console.error(`⚠️  [${LUMI_TEAMS_REGION}] 推荐配队更新失败（不阻塞其他）: ${e.message}`)
     }
   }
 
-  // 5. 镜像 lumi-teams 到 internal 分支（对内版复用对外的推荐配队数据）
-  for (const region of REGIONS) {
-    const src = path.join(PROJECT_ROOT, `public/data/${region}/lumi-teams.json`)
-    const dst = path.join(PROJECT_ROOT, `public/data/internal/${region}/lumi-teams.json`)
+  // 6. 镜像 lumi-teams 到 internal 分支（对内版复用对外的推荐配队数据）
+  //    只镜像 cn 一份，internal 对外/对内共用同一份配队数据
+  {
+    const src = path.join(PROJECT_ROOT, `public/data/${LUMI_TEAMS_REGION}/lumi-teams.json`)
+    const dst = path.join(PROJECT_ROOT, `public/data/internal/${LUMI_TEAMS_REGION}/lumi-teams.json`)
     if (fs.existsSync(src)) {
       fs.mkdirSync(path.dirname(dst), { recursive: true })
       fs.copyFileSync(src, dst)
-      console.log(`  ✓ [${region}] 镜像 lumi-teams.json 到 internal`)
+      console.log(`  ✓ [${LUMI_TEAMS_REGION}] 镜像 lumi-teams.json 到 internal`)
     }
   }
 

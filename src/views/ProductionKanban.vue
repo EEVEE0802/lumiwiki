@@ -12,6 +12,7 @@ import { apiFetch } from '../data/api'
 import { useAuth } from '../composables/useAuth'
 import { TYPE_COLORS, TYPE_NAMES } from '../data'
 import { avatarUrl } from '../data/imageUrl'
+import ProductionOrderEditor from '../components/ProductionOrderEditor.vue'
 
 const { currentUser, hasPermission } = useAuth()
 const canPm = computed(() => hasPermission('production.pm'))
@@ -134,6 +135,33 @@ function isMineCard(c) {
   if (!u) return false
   return c.assignee === u || (c.designer && c.designer.includes(u))
 }
+
+// 元数据编辑弹窗：卡片 = stage 视图，缺 order 完整字段（如 tapdStoryUrl / releaseStatus 等），
+// 打开时按 lumiId 拉一次完整 order
+const editing = ref(null)
+const editorLoading = ref(false)
+async function openEdit(c) {
+  if (editorLoading.value) return
+  editorLoading.value = true
+  try {
+    const { order } = await apiFetch(`/api/production/orders/${c.lumiId}`)
+    editing.value = { mode: 'edit', order }
+  } catch (e) {
+    error.value = `拉取元数据失败：${e.message}`
+  } finally {
+    editorLoading.value = false
+  }
+}
+function onSaved() { editing.value = null; loadBoard() }
+function onDeleted() { editing.value = null; loadBoard() }
+
+// datalist 建议项（跟 ProductionOrderEditor 的 progress/designer 输入联动）
+const uniqueProgress = computed(() =>
+  [...new Set(cards.value.map(c => c.progressStage).filter(Boolean))].sort()
+)
+const uniqueDesigners = computed(() =>
+  [...new Set(cards.value.map(c => c.designer).filter(Boolean))].sort()
+)
 </script>
 
 <template>
@@ -213,6 +241,7 @@ function isMineCard(c) {
               :key="c.lumiId + ':' + c.stageType"
               class="kanban-card"
               :class="{ 'is-mine': isMineCard(c) }"
+              @click="openEdit(c)"
             >
               <div class="card-head">
                 <img
@@ -251,12 +280,12 @@ function isMineCard(c) {
                 <span
                   v-if="c.tapdStoryUrl"
                   class="card-tapd"
-                  @click="goToTapd(c.tapdStoryUrl)"
+                  @click.stop="goToTapd(c.tapdStoryUrl)"
                 >TAPD 总单</span>
                 <span
                   v-if="c.tapdSubStoryId"
                   class="card-tapd"
-                  @click="goToTapd(`https://www.tapd.cn/${46491618}/prong/stories/view/${c.tapdSubStoryId}`)"
+                  @click.stop="goToTapd(`https://www.tapd.cn/${46491618}/prong/stories/view/${c.tapdSubStoryId}`)"
                 >TAPD 子单</span>
               </div>
             </div>
@@ -264,6 +293,17 @@ function isMineCard(c) {
         </div>
       </div>
     </div>
+
+    <ProductionOrderEditor
+      v-if="editing"
+      :mode="editing.mode"
+      :order="editing.order"
+      :progress-options="uniqueProgress"
+      :designer-options="uniqueDesigners"
+      @close="editing = null"
+      @saved="onSaved"
+      @deleted="onDeleted"
+    />
   </div>
 </template>
 
@@ -451,11 +491,12 @@ function isMineCard(c) {
   flex-direction: column;
   gap: 6px;
   transition: all 0.15s;
+  cursor: pointer;
 }
 .kanban-card:hover {
   border-color: var(--accent);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.1);
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.18);
 }
 .kanban-card.is-mine {
   border-left: 3px solid var(--accent);

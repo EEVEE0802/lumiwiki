@@ -1,13 +1,14 @@
 // 按天回填历史数据到 daily 分片目录
 // 用法:
-//   node scripts/backfill-daily.mjs --region domestic --modes infinity-gym,assist --start 2026-07-10 --end 2026-08-23
+//   node scripts/backfill-daily.mjs --region cn --modes infinity-gym,assist --start 2026-09-17 --end 2026-09-24
+//   （region 可选 cn/sp/va/jp/sg/fra）
 //
 // 输出路径: data/{region}/archive/daily/{mode}/{YYYY-MM-DD}.csv
 // 默认幂等：已存在的文件跳过；加 --force 强制覆盖
 //
 // 常见用例:
-//   补齐国内 gym: node scripts/backfill-daily.mjs --region domestic --modes infinity-gym,assist --start 2026-07-10 --end 2026-08-23
-//   补齐海外 gym: node scripts/backfill-daily.mjs --region overseas --modes infinity-gym,assist --start 2026-07-10 --end 2026-08-23
+//   补齐国内 gym: node scripts/backfill-daily.mjs --region cn --modes infinity-gym,assist --start 2026-09-17 --end 2026-09-24
+//   补齐日本 gym: node scripts/backfill-daily.mjs --region jp --modes infinity-gym,assist --start 2026-09-17 --end 2026-09-24
 
 import fs from 'fs'
 import path from 'path'
@@ -28,12 +29,13 @@ const startDate = getArg('--start')
 const endDate = getArg('--end')
 const force = args.includes('--force')
 
+const VALID_REGIONS = ['cn', 'sp', 'va', 'jp', 'sg', 'fra']
 if (!region || !modesArg || !startDate || !endDate) {
-  console.error('用法: node scripts/backfill-daily.mjs --region <domestic|overseas> --modes m1,m2 --start YYYY-MM-DD --end YYYY-MM-DD [--force]')
+  console.error(`用法: node scripts/backfill-daily.mjs --region <${VALID_REGIONS.join('|')}> --modes m1,m2 --start YYYY-MM-DD --end YYYY-MM-DD [--force]`)
   process.exit(1)
 }
-if (!['domestic', 'overseas'].includes(region)) {
-  console.error(`未知 --region: ${region}`)
+if (!VALID_REGIONS.includes(region)) {
+  console.error(`未知 --region: ${region}（仅支持 ${VALID_REGIONS.join(' / ')}）`)
   process.exit(1)
 }
 const modes = modesArg.split(',').map(s => s.trim()).filter(Boolean)

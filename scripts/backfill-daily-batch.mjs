@@ -3,7 +3,8 @@
 // 一次 SQL 拉 [start, end] 全部行 → 按 part_date 分组写多个 daily CSV
 //
 // 用法:
-//   node scripts/backfill-daily-batch.mjs --region overseas --mode tournament --start 2026-07-10 --end 2026-08-23
+//   node scripts/backfill-daily-batch.mjs --region jp --mode tournament --start 2026-09-25 --end 2026-10-01
+//   （region 可选 cn/sp/va/jp/sg/fra）
 //
 // 用途：backfill-daily.mjs 逐天太慢时用这个替代。
 // 日常增量拉取仍走 backfill-daily.mjs（每次只拉 1-2 天，按天扫更快）
@@ -27,8 +28,13 @@ const startDate = getArg('--start')
 const endDate = getArg('--end')
 const force = args.includes('--force')
 
+const VALID_REGIONS = ['cn', 'sp', 'va', 'jp', 'sg', 'fra']
 if (!region || !mode || !startDate || !endDate) {
-  console.error('用法: node scripts/backfill-daily-batch.mjs --region <domestic|overseas> --mode <mode> --start YYYY-MM-DD --end YYYY-MM-DD [--force]')
+  console.error(`用法: node scripts/backfill-daily-batch.mjs --region <${VALID_REGIONS.join('|')}> --mode <mode> --start YYYY-MM-DD --end YYYY-MM-DD [--force]`)
+  process.exit(1)
+}
+if (!VALID_REGIONS.includes(region)) {
+  console.error(`未知 --region: ${region}（仅支持 ${VALID_REGIONS.join(' / ')}）`)
   process.exit(1)
 }
 

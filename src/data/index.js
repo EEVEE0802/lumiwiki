@@ -10,36 +10,39 @@ function getCurrentLanguage() {
   return localStorage.getItem('lumiwiki-lang') || 'zh-CN'
 }
 
-// 判断某个数据名是否需要按 region（国内/海外）分区加载
-// - lumi-teams：推荐配队，依赖天梯数据 → 分区
-// - online/*：线上战斗数据 → 分区
+// 判断某个数据名是否需要按 region（6 个正式服 region）分区加载
+// - online/*：线上战斗数据 → 按当前 region 分区
+// - lumi-teams：推荐配队特殊化 —— 只用 cn 数据生成一份，所有 region 共读（loadData 里硬编码 cn）
 function needsRegion(name) {
-  return name === 'lumi-teams' || name.startsWith('online/')
+  return name.startsWith('online/')
 }
+
+// lumi-teams 硬编码走的 region：国内数据作为所有服的参考配队
+const LUMI_TEAMS_REGION = 'cn'
 
 // 通用数据加载器（带缓存）
 // name 可含路径分隔符（如 'adventure/drop-rates'），会作为相对路径拼在 prefix 后
-// 对 lumi-teams / online/* 会自动加上 region 前缀（如 'domestic/lumi-teams'）
+// 对 online/* 自动加上当前 region 前缀（如 'online/cn/battle-stats'）
+// 对 lumi-teams 强制走 cn（如 'cn/lumi-teams'），忽略当前 region
 async function loadData(name) {
   // 如果请求的是 localization，使用当前语言
   const dataName = name === 'localization' ? getCurrentLanguage() : name
   const region = getRegionSync()
-  // cache key 包含版本 + 语言 + 区域维度，切换任意维度后自动落到新 key
-  const cacheKey = `${getVersionSync()}_${region}_${getCurrentLanguage()}_${name}`
+  // cache key 里 lumi-teams 用固定 cn 作为区域维度，避免切换 region 时重复加载同一份数据
+  const cacheRegion = name === 'lumi-teams' ? LUMI_TEAMS_REGION : region
+  const cacheKey = `${getVersionSync()}_${cacheRegion}_${getCurrentLanguage()}_${name}`
   if (cache[cacheKey]) return cache[cacheKey]
 
   const prefix = dataPrefix()
 
   // 需要分区的数据：把 name 变成 {region}/{name}
-  // - lumi-teams → domestic/lumi-teams
-  // - online/battle-stats → online/domestic/battle-stats
+  // - online/battle-stats → online/{当前region}/battle-stats
+  // - lumi-teams → cn/lumi-teams（硬编码，所有 region 共读）
   let effectiveName = dataName
-  if (needsRegion(name)) {
-    if (name.startsWith('online/')) {
-      effectiveName = `online/${region}/${name.slice('online/'.length)}`
-    } else {
-      effectiveName = `${region}/${dataName}`
-    }
+  if (name === 'lumi-teams') {
+    effectiveName = `${LUMI_TEAMS_REGION}/${dataName}`
+  } else if (needsRegion(name)) {
+    effectiveName = `online/${region}/${name.slice('online/'.length)}`
   }
 
   // 先尝试加载加密版本 (.encoded)

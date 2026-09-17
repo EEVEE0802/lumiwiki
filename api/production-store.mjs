@@ -22,11 +22,11 @@ const stmtUpsertOrder = db.prepare(`
   INSERT INTO production_orders(
     lumiId, model, level, name, type1, type2, maxScore, workType, combatStrength, workBuilding,
     tapdStoryId, tapdStoryUrl, milestone, releaseStatus, progressStage, designer, status,
-    createdAt, updatedAt, ganttRaw
+    createdAt, updatedAt, ganttRaw, vfxNormal, vfxSkill
   ) VALUES (
     @lumiId, @model, @level, @name, @type1, @type2, @maxScore, @workType, @combatStrength, @workBuilding,
     @tapdStoryId, @tapdStoryUrl, @milestone, @releaseStatus, @progressStage, @designer, @status,
-    @createdAt, @updatedAt, @ganttRaw
+    @createdAt, @updatedAt, @ganttRaw, @vfxNormal, @vfxSkill
   )
   ON CONFLICT(lumiId) DO UPDATE SET
     model=excluded.model,
@@ -45,7 +45,9 @@ const stmtUpsertOrder = db.prepare(`
     progressStage=excluded.progressStage,
     designer=excluded.designer,
     updatedAt=excluded.updatedAt,
-    ganttRaw=excluded.ganttRaw
+    ganttRaw=excluded.ganttRaw,
+    vfxNormal=excluded.vfxNormal,
+    vfxSkill=excluded.vfxSkill
 `)
 const stmtPatchOrder = db.prepare(`
   UPDATE production_orders SET
@@ -65,16 +67,38 @@ const stmtPatchOrder = db.prepare(`
     progressStage = COALESCE(@progressStage, progressStage),
     designer = COALESCE(@designer, designer),
     status = COALESCE(@status, status),
+    vfxNormal = COALESCE(@vfxNormal, vfxNormal),
+    vfxSkill  = COALESCE(@vfxSkill,  vfxSkill),
     updatedAt = @updatedAt
   WHERE lumiId = @lumiId
 `)
 
+// vfxNormal / vfxSkill 在库里存字符串（JSON），出库时 parse 成数组给前端
+function decodeVfx(order) {
+  if (!order) return order
+  for (const k of ['vfxNormal', 'vfxSkill']) {
+    if (typeof order[k] === 'string' && order[k]) {
+      try { order[k] = JSON.parse(order[k]) }
+      catch { order[k] = [] }
+    } else if (!order[k]) {
+      order[k] = []
+    }
+  }
+  return order
+}
+function encodeVfx(v) {
+  if (v == null) return null
+  if (typeof v === 'string') return v  // 已是 JSON 字符串
+  if (Array.isArray(v)) return v.length ? JSON.stringify(v) : null
+  return null
+}
+
 export function getOrder(lumiId) {
-  return stmtGetOrder.get(Number(lumiId)) || null
+  return decodeVfx(stmtGetOrder.get(Number(lumiId)) || null)
 }
 
 export function listOrders() {
-  return stmtListOrders.all()
+  return stmtListOrders.all().map(decodeVfx)
 }
 
 export function upsertOrder(order) {
@@ -100,12 +124,26 @@ export function upsertOrder(order) {
     createdAt: order.createdAt || now,
     updatedAt: now,
     ganttRaw: order.ganttRaw ?? null,
+    vfxNormal: encodeVfx(order.vfxNormal),
+    vfxSkill: encodeVfx(order.vfxSkill),
   })
   return getOrder(order.lumiId)
 }
 
 export function patchOrder(lumiId, patch) {
   const now = new Date().toISOString()
+  // vfx 字段特殊：想「清空」时前端传 [] （空数组），SQL 里用 COALESCE 判 NULL，
+  // 所以 encodeVfx 会把 [] 转成 null → 无法真正清空。
+  // 这里对 vfx 字段显式区分「未传（undefined）」和「传了但空」两种情况：
+  //   patch.vfxXxx === undefined       → 不改（传 null 给 COALESCE，保留原值）
+  //   patch.vfxXxx === []              → 存 '[]'（前端能取到空数组，明确表示清空）
+  //   patch.vfxXxx === [...有内容]      → JSON.stringify
+  const encodeVfxForPatch = (v) => {
+    if (v === undefined) return null
+    if (Array.isArray(v)) return JSON.stringify(v)
+    if (typeof v === 'string') return v
+    return null
+  }
   stmtPatchOrder.run({
     lumiId: Number(lumiId),
     updatedAt: now,
@@ -125,6 +163,8 @@ export function patchOrder(lumiId, patch) {
     progressStage: patch.progressStage ?? null,
     designer: patch.designer ?? null,
     status: patch.status ?? null,
+    vfxNormal: encodeVfxForPatch(patch.vfxNormal),
+    vfxSkill: encodeVfxForPatch(patch.vfxSkill),
   })
   return getOrder(lumiId)
 }

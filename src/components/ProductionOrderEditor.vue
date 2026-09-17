@@ -36,6 +36,12 @@ const tapdStoryUrl = ref('')
 const releaseStatus = ref('')
 const progressStage = ref('')
 const designer = ref('')
+// 动特表现：普攻 / 技能 —— 每一项 { name, type: '动作'|'子弹'|'受击', hook }
+const vfxNormal = ref([])
+const vfxSkill = ref([])
+const VFX_TYPES = ['动作', '子弹', '受击']
+// 挂点建议值：从 CSV 高频统计出来的，覆盖 98% 场景
+const HOOK_SUGGESTIONS = ['s_ZeroPoint', 'd_HitPoint', 'Bone_Head', 'Bone_Weapon01', 'Bone_Weapon06', 'Root']
 // 注：order.status 不再由 UI 编辑，后端根据 stages 自动推导（见 api/production-store.mjs 的 recomputeOrderStatus）
 
 const saving = ref(false)
@@ -59,6 +65,27 @@ function resetFromOrder() {
   releaseStatus.value = o.releaseStatus ?? ''
   progressStage.value = o.progressStage ?? ''
   designer.value = o.designer ?? ''
+  // vfx 后端已 decode 成数组；防旧数据是字符串再兜一次
+  vfxNormal.value = normalizeVfx(o.vfxNormal)
+  vfxSkill.value = normalizeVfx(o.vfxSkill)
+}
+function normalizeVfx(v) {
+  if (Array.isArray(v)) return v.map(cleanVfxItem)
+  if (typeof v === 'string' && v) {
+    try { return JSON.parse(v).map(cleanVfxItem) } catch { return [] }
+  }
+  return []
+}
+function cleanVfxItem(x) {
+  return { name: x?.name || '', type: x?.type || '动作', hook: x?.hook || '' }
+}
+function addVfxRow(group) {
+  const arr = group === 'normal' ? vfxNormal : vfxSkill
+  arr.value = [...arr.value, { name: '', type: '动作', hook: '' }]
+}
+function removeVfxRow(group, idx) {
+  const arr = group === 'normal' ? vfxNormal : vfxSkill
+  arr.value = arr.value.filter((_, i) => i !== idx)
 }
 resetFromOrder()
 watch(() => props.order, resetFromOrder)
@@ -91,6 +118,9 @@ const levelOptions = [
 ]
 
 function buildPayload() {
+  // 剔除空行（name/hook 都空的直接丢），确保存的都是有效条目
+  const cleanVfx = arr => arr.filter(x => (x.name || '').trim() || (x.hook || '').trim())
+    .map(x => ({ name: (x.name || '').trim(), type: x.type || '动作', hook: (x.hook || '').trim() }))
   const p = {
     lumiId: Number(lumiId.value),
     model: model.value.trim() || null,
@@ -107,6 +137,8 @@ function buildPayload() {
     releaseStatus: releaseStatus.value || null,
     progressStage: progressStage.value.trim() || null,
     designer: designer.value.trim() || null,
+    vfxNormal: cleanVfx(vfxNormal.value),
+    vfxSkill: cleanVfx(vfxSkill.value),
   }
   return p
 }
@@ -256,13 +288,80 @@ const title = computed(() => props.mode === 'create' ? '➕ 新增噜咪生产�
           </div>
         </div>
 
-        <!-- 动特表现（内容后续再补） -->
+        <!-- 动特表现 -->
         <div class="field-section">动特表现</div>
-        <div class="field-grid">
-          <div class="field-col field-placeholder">
-            <span class="placeholder-hint">🚧 具体字段待定，稍后补充</span>
+
+        <div class="vfx-block">
+          <div class="vfx-block-head">
+            <span class="vfx-block-title">🥊 普攻表现</span>
+            <button v-if="canEdit" type="button" class="btn-add" @click="addVfxRow('normal')">+ 添加</button>
+          </div>
+          <div v-if="!vfxNormal.length" class="vfx-empty">尚未填写</div>
+          <div v-for="(row, i) in vfxNormal" :key="'n'+i" class="vfx-row">
+            <input
+              v-model="row.name"
+              placeholder="特效名（prefab）"
+              class="vfx-name"
+              :disabled="!canEdit"
+              list="vfx-hook-suggest"
+            />
+            <select v-model="row.type" class="vfx-type" :disabled="!canEdit">
+              <option v-for="t in VFX_TYPES" :key="t" :value="t">{{ t }}</option>
+            </select>
+            <input
+              v-model="row.hook"
+              placeholder="挂点"
+              class="vfx-hook"
+              :disabled="!canEdit"
+              list="vfx-hook-suggest"
+            />
+            <button
+              v-if="canEdit"
+              type="button"
+              class="btn-remove"
+              title="删除这行"
+              @click="removeVfxRow('normal', i)"
+            >✕</button>
           </div>
         </div>
+
+        <div class="vfx-block">
+          <div class="vfx-block-head">
+            <span class="vfx-block-title">✨ 技能表现</span>
+            <button v-if="canEdit" type="button" class="btn-add" @click="addVfxRow('skill')">+ 添加</button>
+          </div>
+          <div v-if="!vfxSkill.length" class="vfx-empty">尚未填写</div>
+          <div v-for="(row, i) in vfxSkill" :key="'s'+i" class="vfx-row">
+            <input
+              v-model="row.name"
+              placeholder="特效名（prefab）"
+              class="vfx-name"
+              :disabled="!canEdit"
+              list="vfx-hook-suggest"
+            />
+            <select v-model="row.type" class="vfx-type" :disabled="!canEdit">
+              <option v-for="t in VFX_TYPES" :key="t" :value="t">{{ t }}</option>
+            </select>
+            <input
+              v-model="row.hook"
+              placeholder="挂点"
+              class="vfx-hook"
+              :disabled="!canEdit"
+              list="vfx-hook-suggest"
+            />
+            <button
+              v-if="canEdit"
+              type="button"
+              class="btn-remove"
+              title="删除这行"
+              @click="removeVfxRow('skill', i)"
+            >✕</button>
+          </div>
+        </div>
+
+        <datalist id="vfx-hook-suggest">
+          <option v-for="h in HOOK_SUGGESTIONS" :key="h" :value="h" />
+        </datalist>
 
         <div v-if="error" class="editor-error">{{ error }}</div>
       </div>
@@ -489,4 +588,71 @@ const title = computed(() => props.mode === 'create' ? '➕ 新增噜咪生产�
   gap: 10px;
   margin-top: 16px;
 }
+
+/* 动特表现 */
+.vfx-block {
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.vfx-block-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.vfx-block-title {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.btn-add {
+  background: rgba(102, 126, 234, 0.15);
+  color: #a493e0;
+  border: 1px solid rgba(102, 126, 234, 0.4);
+  border-radius: 4px;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+.btn-add:hover { background: rgba(102, 126, 234, 0.3); }
+.vfx-empty {
+  color: var(--text-dim);
+  font-size: 0.85em;
+  padding: 6px 0;
+  font-style: italic;
+}
+.vfx-row {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr 1fr auto;
+  gap: 6px;
+  margin-top: 4px;
+  align-items: center;
+}
+.vfx-row input,
+.vfx-row select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.85em;
+  outline: none;
+  min-width: 0;
+}
+.vfx-row input:focus,
+.vfx-row select:focus { border-color: var(--accent); }
+.btn-remove {
+  background: transparent;
+  border: 1px solid rgba(233,69,96,0.35);
+  color: #ff8b95;
+  border-radius: 4px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-size: 0.85em;
+}
+.btn-remove:hover { background: rgba(233,69,96,0.2); }
 </style>

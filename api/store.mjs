@@ -160,6 +160,10 @@ ensureColumn('production_stages', 'tapdSyncedAt', 'tapdSyncedAt TEXT')
 // pokedexId 列保留以防旧数据兼容 —— SQLite 不支持删列且业务上没有必要清除历史。
 ensureColumn('production_orders', 'model', 'model TEXT')
 ensureColumn('production_orders', 'level', 'level TEXT')
+// 动特表现（普攻 / 技能）— 存 JSON 数组：[{name, type: '动作'|'子弹'|'受击', hook}]
+// 数据源：策划 + 特效同事从「特效资源记录表」CSV 导入；也可以在 Editor 里人工加行
+ensureColumn('production_orders', 'vfxNormal', 'vfxNormal TEXT')
+ensureColumn('production_orders', 'vfxSkill', 'vfxSkill TEXT')
 
 // 环节从 9 → 7：删掉旧数据里的 rigging / audio
 // （P1 决定：rigging 合入 anim，audio 合入 gui，跟 TAPD 子单对齐）

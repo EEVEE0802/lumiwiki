@@ -15,16 +15,17 @@ const args = process.argv.slice(2)
 const weekIdx = args.indexOf('--week')
 const week = weekIdx !== -1 ? parseInt(args[weekIdx + 1]) : null
 const regionIdx = args.indexOf('--region')
-const region = regionIdx !== -1 ? args[regionIdx + 1] : 'domestic'
+const region = regionIdx !== -1 ? args[regionIdx + 1] : 'cn'
 const skipFetch = args.includes('--skip-fetch')
 const shouldPublish = args.includes('--publish')
 
+const VALID_REGIONS = ['cn', 'sp', 'va', 'jp', 'sg', 'fra']
 if (isNaN(week) || week < 1) {
-  console.error('用法: node fetch-participation-trend.mjs --week N [--region domestic|overseas] [--skip-fetch] [--publish]')
+  console.error(`用法: node fetch-participation-trend.mjs --week N [--region ${VALID_REGIONS.join('|')}] [--skip-fetch] [--publish]`)
   process.exit(1)
 }
-if (!['domestic', 'overseas'].includes(region)) {
-  console.error(`未知 --region: ${region}（仅支持 domestic / overseas）`)
+if (!VALID_REGIONS.includes(region)) {
+  console.error(`未知 --region: ${region}（仅支持 ${VALID_REGIONS.join(' / ')}）`)
   process.exit(1)
 }
 

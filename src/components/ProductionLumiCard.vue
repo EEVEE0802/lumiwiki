@@ -38,7 +38,7 @@ function stageTip(k) {
 </script>
 
 <template>
-  <div class="lumi-card">
+  <div class="lumi-card" @click="emit('edit', order)">
     <div class="card-head">
       <img
         :src="internalAvatarUrl(order.lumiId)"
@@ -65,8 +65,7 @@ function stageTip(k) {
         </div>
       </div>
       <div class="card-actions">
-        <button class="act-btn" @click="emit('edit', order)" title="编辑元数据">✏️</button>
-        <button class="act-btn" @click="emit('schedule', order)" title="调整排期">📅</button>
+        <button class="act-btn" @click.stop="emit('schedule', order)" title="调整排期">📅</button>
       </div>
     </div>
     <div class="stage-progress">
@@ -88,7 +87,7 @@ function stageTip(k) {
       <span
         v-if="order.tapdStoryUrl"
         class="card-tapd"
-        @click="emit('tapd', order.tapdStoryUrl)"
+        @click.stop="emit('tapd', order.tapdStoryUrl)"
       >TAPD</span>
     </div>
   </div>
@@ -104,11 +103,12 @@ function stageTip(k) {
   flex-direction: column;
   gap: 4px;
   transition: all 0.15s;
+  cursor: pointer;
 }
 .lumi-card:hover {
   border-color: var(--accent);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.12);
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.18);
 }
 .card-head { display: flex; gap: 6px; align-items: flex-start; }
 .card-avatar {
