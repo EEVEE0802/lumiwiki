@@ -231,10 +231,13 @@ for (const a of args) {
 }
 
 if (allNew || tagFilter !== null) {
-  // 对内 vs 对外 diff
+  // 对内 vs 对外 diff：找内部有但外部没有的噜咪（即"未上线噜咪"）
+  // ⚠️ 2026-09-17 起对外/对内在 branch-cfg 里都指向 Branch，两边表相同 → 此处 diff 恒为空
+  //    保留旧对外路径（F:/G36/LumiGoDesigner）作为独立参照源，需要区分时若已废弃可改成新的对外源
   const EXT_LUMI_PATH = 'F:/G36/LumiGoDesigner/Config/Luban/Datas/check/data/Lumi.json'
   if (!fs.existsSync(EXT_LUMI_PATH)) {
     console.error(`找不到对外 Lumi 表: ${EXT_LUMI_PATH}`)
+    console.error('提示：2026-09-17 起 branch-cfg 里对外/对内都指向 Branch，如需 diff "未上线噜咪"，请手动指定一个独立的对外参照源路径')
     process.exit(1)
   }
   const extIds = new Set(JSON.parse(fs.readFileSync(EXT_LUMI_PATH, 'utf-8')).map(l => String(l.Id)))

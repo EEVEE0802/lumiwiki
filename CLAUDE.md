@@ -94,12 +94,15 @@ LumiWiki/
 ## 数据源
 
 游戏原始数据（Luban 导表）**从 2026-08-11 起客户端/服务端表统一放在一个目录**：
-- **对外**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\check\data\` —— 展示/配置类 + 匹配/逻辑类 全部在这里（Lumi、技能、物品、属性克制、Gym、MonsterGroup、Monster、RobotData、RobotLvMatching、LumiDrop、LumiDropData 等）
-- **对内**：`F:\G36Branch\Designer\Config\Luban\Datas\check\data\`
+
+**2026-09-17 正式服上线起，对外/对内共用同一份 Branch 数据源**（两 branch 相同、写两份到 `public/data/` 和 `public/data/internal/`，前端切换机制保留，需要区分时改 `scripts/branch-cfg.mjs`）：
+- **对外 / 对内**（当前一致）：`F:\G36Branch\Designer\Config\Luban\Datas\check\data\` —— 展示/配置类 + 匹配/逻辑类 全部在这里（Lumi、技能、物品、属性克制、Gym、MonsterGroup、Monster、RobotData、RobotLvMatching、LumiDrop、LumiDropData 等）
 
 > ⚠️ 之前分 `Table/data`（客户端）和 `server/data`（服务端）两套，现已合并到 `check/data` 一套。旧目录 svn 里可能还在，但新数据只导到 `check/data`。
+>
+> 📌 之前对外用 `F:\G36\LumiGoDesigner`、对内用 `F:\G36Branch\Designer`；正式服上线后统一走 Branch。恢复分家时改 `scripts/branch-cfg.mjs` 里 `external` 的 `LUBAN_DATA_DIR` / `CLIENT_ROOT` 指回 `F:\G36\LumiGoDesigner\...` 即可。
 
-**枚举定义**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\__enums__.xlsx`
+**枚举定义**：`F:\G36Branch\Designer\Config\Luban\Datas\__enums__.xlsx`
 **项目数据**：`D:\LumiWiki\public\data\`（对外）/ `D:\LumiWiki\public\data\internal\`（对内）
 
 ### 核心数据文件
@@ -128,7 +131,7 @@ LumiWiki/
 
 ```bash
 # 1. 复制核心数据文件（2026-08-11 起统一放在 check/data）
-SRC="F:/G36/LumiGoDesigner/Config/Luban/Datas/check/data"
+SRC="F:/G36Branch/Designer/Config/Luban/Datas/check/data"
 DST="D:/LumiWiki/public/data"
 cp "$SRC/ActiveSkill.json" "$SRC/BattlePassive.json" "$SRC/HomePassive.json" "$DST/"
 cp "$SRC/Lumi.json" "$SRC/LumiEvolution.json" "$SRC/LumiTypeCounter.json" "$DST/"
@@ -148,12 +151,12 @@ rm -f public/data/*.encoded
 
 从游戏客户端资源目录同步噜咪立绘图片：
 
-**立绘源目录**：`F:\G36\LumiGoProgram\Client\Assets\UIResource\Textures\Lumi\`
+**立绘源目录**：`F:\G36Branch\LumiGoProgram\Client\Assets\UIResource\Textures\Lumi\`
 **Wiki 目标目录**：`D:\LumiWiki\public\images\avatars\`
 
 ```bash
 # 同步缺失的立绘（源文件本身就是 CA_ 前缀，无需重命名）
-SRC="F:/G36/LumiGoProgram/Client/Assets/UIResource/Textures/Lumi"
+SRC="F:/G36Branch/LumiGoProgram/Client/Assets/UIResource/Textures/Lumi"
 DST="D:/LumiWiki/public/images/avatars"
 
 # 对比源和 wiki，找出缺失文件
@@ -524,7 +527,7 @@ npm run process-adventure   # 重新生成 drop-rates.json
 - **表位置**：`AdventureMap` 和 `LumiDropData` 现都在 `check\data`（2026-08-11 起客户端/服务端表统一目录，见「数据源」）。
 - **前端直接 fetch**：`AdventureDrop.vue` 用 `fetch('/data/adventure/drop-rates.json')` 读取（不走 `loadData` 的 `.encoded` 机制），更新后**无需清缓存**，刷新即可。
 - 输出含主线地图（多阶段：霸主解锁前/后）和赛季地图两类。
-- ⚠️ 该脚本原先硬编码了旧机器路径 `D:/G36/LumiGoProgram/...`，已修正为 `F:/G36/LumiGoDesigner/...`。换机器时记得改脚本顶部的 `SOURCE_DIR` / `SERVER_DATA_DIR`。
+- ⚠️ 该脚本原先硬编码了旧机器路径 `D:/G36/LumiGoProgram/...`，已修正为 `F:/G36Branch/Designer/...`（2026-09-17 起对外/对内都走 Branch）。换机器时记得改脚本顶部的 `SOURCE_DIR` / `SERVER_DATA_DIR`。
 
 ---
 
