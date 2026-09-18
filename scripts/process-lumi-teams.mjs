@@ -29,7 +29,7 @@ const weekIdx = args.indexOf('--week')
 const explicitWeek = weekIdx !== -1 ? parseInt(args[weekIdx + 1]) : null
 const regionIdx = args.indexOf('--region')
 const region = regionIdx !== -1 ? args[regionIdx + 1] : 'cn'
-const VALID_REGIONS = ['cn', 'sp', 'va', 'jp', 'sg', 'fra']
+const VALID_REGIONS = ['cn', 'overseas']
 if (!VALID_REGIONS.includes(region)) {
   console.error(`未知 --region: ${region}（仅支持 ${VALID_REGIONS.join(' / ')}）`)
   process.exit(1)

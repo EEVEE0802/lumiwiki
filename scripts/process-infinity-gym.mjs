@@ -31,7 +31,7 @@ const args = process.argv.slice(2)
 const regionIdx = args.indexOf('--region')
 const region = regionIdx !== -1 ? args[regionIdx + 1] : 'cn'
 const forceRebuild = args.includes('--rebuild')  // 强制全量重算 state（用于回归测试或首次迁移）
-const VALID_REGIONS = ['cn', 'sp', 'va', 'jp', 'sg', 'fra']
+const VALID_REGIONS = ['cn', 'overseas']
 if (!VALID_REGIONS.includes(region)) {
   console.error(`未知 --region: ${region}（仅支持 ${VALID_REGIONS.join(' / ')}）`)
   process.exit(1)

@@ -19,15 +19,11 @@
 LumiWiki/
 ├── public/
 │   ├── data/                        # JSON 数据文件
-│   │   ├── online/                  # 线上战斗数据（按 region 分区，9/17 上线后 6 个正式服）
+│   │   ├── online/                  # 线上战斗数据（按 region 分区，2 个 region）
 │   │   │   ├── cn/                  # 国内 (zone 1890)
 │   │   │   │   ├── battle-stats.json
 │   │   │   │   └── weekly/          # ladder-weekN / tournament-weekN / participation-weekN / weeks.json
-│   │   │   ├── sp/                  # 南美 (zone 2890)  同结构
-│   │   │   ├── va/                  # 北美 (zone 2891)  同结构
-│   │   │   ├── jp/                  # 日本 (zone 2892)  同结构
-│   │   │   ├── sg/                  # 新加坡 (zone 2893) 同结构
-│   │   │   └── fra/                 # 法兰克福 (zone 2894) 同结构
+│   │   │   └── overseas/            # 海外 5 服合并 (zone 2890/91/92/93/94) 同结构
 │   │   ├── cn/lumi-teams.json       # 推荐配队（仅用国内数据生成一份，海外服前端也读这份）
 │   │   ├── internal/                # 对内游戏配置分支（版本切换）
 │   │   │   └── cn/lumi-teams.json   # 对内版复用对外 cn 配队
@@ -50,11 +46,7 @@ LumiWiki/
 │   │   │   ├── assist/{YYYY-MM-DD}.csv
 │   │   │   └── guild-war/{YYYY-MM-DD}.csv
 │   │   └── recharge.csv              # 累计全量（每 role_id 历史最大充值，不按天分片）
-│   ├── sp/archive/                   # 南美 CSV 归档 (zone 2890) 同结构
-│   ├── va/archive/                   # 北美 (zone 2891) 同结构
-│   ├── jp/archive/                   # 日本 (zone 2892) 同结构
-│   ├── sg/archive/                   # 新加坡 (zone 2893) 同结构
-│   └── fra/archive/                  # 法兰克福 (zone 2894) 同结构
+│   └── overseas/archive/             # 海外 5 服合并 CSV 归档 (zone 2890-2894) 同结构
 ├── scripts/
 │   ├── process-battle-data.js       # 天梯数据处理（读本周 7 天 daily/ladder）
 │   ├── process-tournament-data.js   # 周赛数据处理（读本周 7 天 daily/tournament）
@@ -204,7 +196,7 @@ cd D:/LumiWiki
 # 补拉某天的原始事件（按需选模式）
 node scripts/backfill-daily.mjs --region cn --modes ladder,tournament,login,guild-war,infinity-gym,assist --start 2026-09-17 --end 2026-09-24 --force
 
-# 重新处理该周（--week N 会读该周 7 天 daily CSV 聚合；region 可选 cn/sp/va/jp/sg/fra）
+# 重新处理该周（--week N 会读该周 7 天 daily CSV 聚合；region 可选 cn / overseas）
 node scripts/process-battle-data.js --week N --region cn
 node scripts/process-tournament-data.js --week N --region cn
 node scripts/process-infinity-gym.mjs --region cn
@@ -239,7 +231,7 @@ bash publish.sh                   # 一键发布（构建+停旧服务+启新服
 ## 自动化数据更新
 
 **两个定时任务**：
-- **每天 07:30**（LumiWiki_Online_Daily）跑线上数据：拉 6 个正式服（cn/sp/va/jp/sg/fra）昨天+今天数据到 daily 分片（ladder / tournament / infinity-gym / assist / login / guild-war），处理后 build + push
+- **每天 07:30**（LumiWiki_Online_Daily）跑线上数据：拉 2 个 region（cn 国内 + overseas 海外 5 服合并）昨天+今天数据到 daily 分片（ladder / tournament / infinity-gym / assist / login / guild-war），处理后 build + push
 - **每天 03:00**（LumiWiki_Daily）跑游戏数据：svn update → 复制 JSON → 多语言 → 衍生脚本（robot-teams / adventure-drop / egg-drop）→ 立绘同步 → build + push
 
 失败时通过飞书机器人通知。
@@ -270,7 +262,7 @@ data/{region}/archive/
 ### 前置要求
 
 - **svn 命令行**：TortoiseSVN 安装时必须勾选「Command line client tools」（默认不勾）。验证：`svn --version` 能输出版本号
-- **数数开放 API**：每个 region 一个长期 token（不需要续期！），配在 `ta-config.json` 的 `regions.{cn,sp,va,jp,sg,fra}` 下（海外 5 服共用同一个 token 和 projectId=83，只有 bZoneIds 不同）
+- **数数开放 API**：每个 region 一个长期 token（不需要续期！），配在 `ta-config.json` 的 `regions.{cn,overseas}` 下。overseas 的 `bZoneIds` 是 5 个 zone `[2890,2891,2892,2893,2894]`，SQL 侧一次 IN(...) 拉合并数据
 - **飞书群机器人**：webhook URL 配在 `ta-config.json`（自定义关键词 `LumiWiki`）
 
 ### 数数开放 API（关键改造）
@@ -299,7 +291,7 @@ GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
 
 | 脚本 | 职责 |
 |---|---|
-| `scripts/ta-fetch.mjs` | 数数开放 API 拉取：submit-sql → 分页 sql-result-page → **流式写入 CSV**（绕过 Buffer 2GB 上限）。参数：`--region cn\|sp\|va\|jp\|sg\|fra --mode ladder\|tournament\|login\|infinity-gym\|assist\|guild-war\|recharge --start YYYY-MM-DD --end YYYY-MM-DD --out` |
+| `scripts/ta-fetch.mjs` | 数数开放 API 拉取：submit-sql → 分页 sql-result-page → **流式写入 CSV**（绕过 Buffer 2GB 上限）。参数：`--region cn\|overseas --mode ladder\|tournament\|login\|infinity-gym\|assist\|guild-war\|recharge --start YYYY-MM-DD --end YYYY-MM-DD --out` |
 | `scripts/backfill-daily.mjs` | **按天回填历史数据**（一次性用）。参数：`--region --modes m1,m2 --start --end [--force]`。已存在的文件默认跳过 |
 | `scripts/fetch-participation-trend.mjs` | 参与走势聚合（读 daily/{ladder,tournament,login,infinity-gym,guild-war} × 本周 7 天）。参数：`--week N --region [--publish]` |
 | `scripts/process-infinity-gym.mjs` | 无限道馆数据处理（遍历 daily/infinity-gym/*.csv 累计聚合） |
@@ -309,7 +301,7 @@ GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
 | `scripts/auto-update-all.mjs` | **每日游戏数据总控**：对外+对内游戏数据 + 立绘 + 衍生 → build + push |
 | `scripts/auto-update.bat` | 每日线上任务 wrapper |
 | `scripts/auto-update-all.bat` | 每日游戏任务 wrapper |
-| `scripts/ta-config.json` | 配置（regions.{cn,sp,va,jp,sg,fra}.{token,projectId,bZoneIds,baseUrl} + webhook，**不进 git**） |
+| `scripts/ta-config.json` | 配置（regions.{cn,overseas}.{token,projectId,bZoneIds,baseUrl} + webhook，**不进 git**） |
 | `scripts/ta-config.example.json` | 配置模板（进 git） |
 
 ### 定时任务（Windows 任务计划程序）
@@ -354,12 +346,12 @@ MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Daily"  /tr "D:\lumiwiki\scrip
 
 ### 前端区域切换
 
-- `useRegion` composable，6 个正式服 region：`cn / sp / va / jp / sg / fra`，localStorage 持久化
+- `useRegion` composable，2 个 region：`cn` 国内 + `overseas` 海外 5 服合并统计（zone 2890-2894），localStorage 持久化
 - `OnlineData.vue` 顶部按钮切换（6 个平铺，flex-wrap 允许窄屏换行）
 - `loadData('online/...')` 自动注入当前 region 前缀
 - `loadData('lumi-teams')` **硬编码走 cn**（推荐配队只用国内数据生成，海外服前端也读这份，忽略当前 region）
 - 版本切换（对外/对内）× 区域切换（6 个 region）正交存在
-- 旧 localStorage 值（`domestic` / `overseas`）自动 fallback 到 `cn`
+- 旧 localStorage 值自动 fallback：`domestic` → `cn`；`sp/va/jp/sg/fra`（短暂 6-region 拆分期）→ `overseas`
 
 ### 通知（飞书机器人）
 
@@ -378,7 +370,7 @@ node scripts/auto-update.mjs --ladder
 node scripts/auto-update.mjs --tournament
 
 # 单独跑数数拉取（调试用，按天）
-node scripts/ta-fetch.mjs --region jp --mode ladder --start 2026-09-17 --end 2026-09-17 --out data/jp/archive/daily/ladder/2026-09-17.csv
+node scripts/ta-fetch.mjs --region overseas --mode ladder --start 2026-09-17 --end 2026-09-17 --out data/overseas/archive/daily/ladder/2026-09-17.csv
 
 # 按天回填历史（一次性用）—— 换机器 / 首次部署时跑
 node scripts/backfill-daily.mjs --region cn --modes ladder,tournament,login,guild-war,infinity-gym,assist --start 2026-09-17 --end 2026-09-24
@@ -402,7 +394,7 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
 
 **token 失效**（飞书收到 token 失效告警）：
 - 数数开放 API token 是**长期**的，一般不会失效
-- 万一失效：找 PM 或数据同事重新申请 token，更新 `scripts/ta-config.json` 的 `regions.{cn|sp|va|jp|sg|fra}.token`（海外 5 服共用同一 token，改一处需要同步改 5 处）
+- 万一失效：找 PM 或数据同事重新申请 token，更新 `scripts/ta-config.json` 的 `regions.{cn|overseas}.token`（overseas 是 5 服合并，所有海外 zone 共用同一 token）
 
 **接口失败排查**：
 - 看 `auto-update.log` 的错误信息
@@ -417,7 +409,7 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
   computeWeekInfo() 算游戏周编号（自然日归属周）
   今天/昨天日期 = 每次拉取的目标日期
 
-  for region in [cn, sp, va, jp, sg, fra]:  # 6 个正式服循环
+  for region in [cn, overseas]:  # 2 个 region（cn=1890, overseas=5 服 zone 2890-2894 合并）
     1. 天梯 (updateRegionMode('ladder')):
        → ta-fetch.mjs: 拉昨天 + 今天 2 天，各写入
          data/{region}/archive/daily/ladder/{date}.csv

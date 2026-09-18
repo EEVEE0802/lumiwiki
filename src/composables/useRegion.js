@@ -1,20 +1,25 @@
 import { ref, computed } from 'vue'
 
-// 线上数据区域：9/17 正式服起国内 + 海外 5 个独立服（游戏服务器地域）
+// 线上数据区域：9/17 正式服起国内 + 海外合并（5 服合并统计）
 // 只影响 online/* 数据；lumi-teams（推荐配队）所有 region 都读同一份 cn 数据（loadData 里硬编码）
 export const REGIONS = {
-  cn:  { label: '国内',     icon: '🇨🇳', zone: 1890 },
-  sp:  { label: '南美',     icon: '🇧🇷', zone: 2890 },
-  va:  { label: '北美',     icon: '🇺🇸', zone: 2891 },
-  jp:  { label: '日本',     icon: '🇯🇵', zone: 2892 },
-  sg:  { label: '新加坡',   icon: '🇸🇬', zone: 2893 },
-  fra: { label: '法兰克福', icon: '🇪🇺', zone: 2894 },
+  cn:       { label: '国内',     icon: '🇨🇳' },
+  overseas: { label: '海外',     icon: '🌏' },
 }
 
 const STORAGE_KEY = 'lumiwiki-region'
-// 兼容旧值：测试期存的是 'domestic' / 'overseas'，正式服拆分后统一 fallback 到 cn
+// 兼容旧值：
+// - 测试期存的是 'domestic' / 'overseas' → domestic 转 cn
+// - 短暂拆分期存的是 'sp' / 'va' / 'jp' / 'sg' / 'fra' → 转 overseas
+// - 未知值兜底 cn
 const saved = localStorage.getItem(STORAGE_KEY)
-const currentRegion = ref(REGIONS[saved] ? saved : 'cn')
+const OVERSEAS_LEGACY = new Set(['sp', 'va', 'jp', 'sg', 'fra'])
+const initialRegion = REGIONS[saved]
+  ? saved
+  : OVERSEAS_LEGACY.has(saved)
+    ? 'overseas'
+    : 'cn'
+const currentRegion = ref(initialRegion)
 
 export function setRegion(v) {
   if (!REGIONS[v]) return
@@ -34,5 +39,7 @@ export function useRegion() {
 // 同步 helper（供 loadData / 非 Vue 环境用）
 export function getRegionSync() {
   const v = localStorage.getItem(STORAGE_KEY)
-  return REGIONS[v] ? v : 'cn'
+  if (REGIONS[v]) return v
+  if (OVERSEAS_LEGACY.has(v)) return 'overseas'
+  return 'cn'
 }

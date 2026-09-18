@@ -9,14 +9,11 @@ import { runCommand as runCmdRaw } from './lib/run.mjs'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const PROJECT_ROOT = path.resolve(__dirname, '..')
 
-// 6 个正式服 region（9/17 上线后拆分）：cn=国内，其余 5 个是海外各独立服
-// - cn = 1890
-// - sp = 2890 南美
-// - va = 2891 北美
-// - jp = 2892 日本
-// - sg = 2893 新加坡
-// - fra = 2894 法兰克福
-const REGIONS = ['cn', 'sp', 'va', 'jp', 'sg', 'fra']
+// 2 个 region（9/17 正式服上线后国内 + 海外合并统计）：
+// - cn      = zone 1890 (国内正式)
+// - overseas = zone 2890 (南美) + 2891 (北美) + 2892 (日本) + 2893 (新加坡) + 2894 (法兰克福) 合并
+//   数数 API 侧 bZoneIds 数组会用 IN(...) 一次拉合并数据，不用后期聚合
+const REGIONS = ['cn', 'overseas']
 
 // 推荐配队仅用国内数据生成（海外初期玩家少，样本不足；且前端所有 region 都读同一份 cn 数据）
 const LUMI_TEAMS_REGION = 'cn'
@@ -83,7 +80,7 @@ function ensureWeekInJson(region, week) {
  *
  * 跨周日会传两个 week（昨天所属周 + 今天所属周），拉数据只做一次，process 循环所有 week
  *
- * @param {'cn'|'sp'|'va'|'jp'|'sg'|'fra'} region
+ * @param {'cn'|'overseas'} region
  * @param {'ladder'|'tournament'} mode
  * @param {number[]} weeks 升序，末尾是当前周（用于更新 battle-stats.json）
  */

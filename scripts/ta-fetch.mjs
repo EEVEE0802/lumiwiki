@@ -361,7 +361,7 @@ async function pollAndDownload(cfg, taskId, mode, outputPath, { maxWaitPerPollMs
 
 /**
  * 拉取指定区域、指定模式的数据到 CSV 文件
- * @param {'cn'|'sp'|'va'|'jp'|'sg'|'fra'} region
+ * @param {'cn'|'overseas'} region
  * @param {'ladder'|'tournament'|'login'} mode
  * @param {string} startDate 'YYYY-MM-DD'（含）
  * @param {string} endDate 'YYYY-MM-DD'（含）

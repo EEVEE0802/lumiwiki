@@ -20,7 +20,7 @@ const region = regionIdx !== -1 ? args[regionIdx + 1] : 'cn'
 const skipFetch = args.includes('--skip-fetch')
 const shouldPublish = args.includes('--publish')
 
-const VALID_REGIONS = ['cn', 'sp', 'va', 'jp', 'sg', 'fra']
+const VALID_REGIONS = ['cn', 'overseas']
 if (isNaN(week) || week < 1) {
   console.error(`用法: node fetch-participation-trend.mjs --week N [--region ${VALID_REGIONS.join('|')}] [--skip-fetch] [--publish]`)
   process.exit(1)
