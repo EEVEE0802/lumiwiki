@@ -733,6 +733,20 @@ CSV 表头：`噜咪ID,体型,活动地图,关键特质,行为习惯`
 
 **含义**：任何时候你**直接改了 `public/data/**` 下的 JSON**（哪怕只是手动补跑了一个 processor 脚本），端口 3005 上的用户**看不到新数据**，除非你跑一次 `bash publish.sh` 把它构建到 dist 并重启服务。
 
+### ⚠️ 数据不进 git（2026-09-18 起）
+
+**`public/data/**` 和 `public/images/**` 都在 `.gitignore` 里**，git 只装代码。
+
+- 数据、立绘、图标全部由本地 auto-update 流程生成 → `bash publish.sh` 构建到 dist → 3005 服务读 dist → 在线更新
+- git 只做代码同步（脚本、组件、配置），跟数据流完全解耦
+- **git push 失败不阻塞发布**：`auto-update.mjs` / `auto-update-all.mjs` 里 git 段包了 try/catch，push 挂只发飞书 warning，前面 publish.sh 已经把新数据推到线上了
+
+**换机器 / 恢复流程**（新机器上 git clone 后没有数据）：
+1. `scripts/ta-config.json` 从旧机器 copy（含 token）
+2. 跑一次 `node scripts/auto-update-all.mjs`：svn update → 复制 JSON → 立绘同步 → 衍生 → build
+3. 跑一次 `node scripts/auto-update.mjs`：拉今天线上数据（或 `backfill-daily.mjs` 补历史）
+4. 完成，`public/data/**` 和 `public/images/**` 都重新生成好了
+
 ### 常见踩坑场景
 
 - ✅ **自动流程没事**：`auto-update.mjs` / `auto-update-all.mjs` / `update-game-data.mjs` 末尾都自带 `bash publish.sh`，跑完就上线
