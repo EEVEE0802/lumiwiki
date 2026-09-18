@@ -1,8 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import readline from 'readline'
 import { getWeekDates } from './week-utils.mjs'
+import { parseCSVLine, processCSVStream } from './lib/csv.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -37,73 +37,7 @@ const outputPath = week
   ? path.join(__dirname, `../public/data/online/${region}/weekly/tournament-week${week}.json`)
   : path.join(__dirname, `../public/data/online/${region}/tournament.json`)
 
-// 改进的 CSV 解析器
-function parseCSVLine(line) {
-  const result = []
-  let current = ''
-  let inQuotes = false
-  let i = 0
-
-  while (i < line.length) {
-    const char = line[i]
-
-    if (char === '"') {
-      if (i + 1 < line.length && line[i + 1] === '"') {
-        current += '"'
-        i += 2
-      } else {
-        inQuotes = !inQuotes
-        i++
-      }
-    } else if (char === ',' && !inQuotes) {
-      result.push(current)
-      current = ''
-      i++
-    } else {
-      current += char
-      i++
-    }
-  }
-
-  result.push(current)
-  return result
-}
-
-// 流式读取 CSV 文件（支持传单路径或路径数组：daily 分片下需要遍历本周所有天）
-async function processCSVStream(pathOrPaths, processor) {
-  const paths = Array.isArray(pathOrPaths) ? pathOrPaths : [pathOrPaths]
-  let headers = []
-  let totalRows = 0
-
-  for (const filePath of paths) {
-    if (!fs.existsSync(filePath)) continue
-    const fileStream = fs.createReadStream(filePath)
-    const rl = readline.createInterface({
-      input: fileStream,
-      crlfDelay: Infinity
-    })
-
-    let fileRowIndex = 0
-    for await (const line of rl) {
-      if (fileRowIndex === 0) {
-        if (headers.length === 0) {
-          headers = parseCSVLine(line).map(h => h.replace(/^﻿/, '').trim())
-        }
-      } else {
-        const values = parseCSVLine(line)
-        const obj = {}
-        headers.forEach((header, index) => {
-          obj[header] = values[index]
-        })
-        await processor(obj, totalRows + fileRowIndex)
-      }
-      fileRowIndex++
-    }
-    totalRows += Math.max(0, fileRowIndex - 1)
-  }
-
-  return { headers, totalRows }
-}
+// parseCSVLine / processCSVStream 已抽到 scripts/lib/csv.mjs
 
 // 主处理函数
 async function processTournamentData() {

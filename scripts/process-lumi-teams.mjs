@@ -16,8 +16,8 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import readline from 'readline'
 import { getWeekDates } from './week-utils.mjs'
+import { parseCSVLine, processCSVStream } from './lib/csv.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -57,51 +57,7 @@ const outputPath = path.join(PROJECT_ROOT, `public/data/${region}/lumi-teams.jso
 console.log(`\n===== LumiWiki 噜咪推荐配队处理 (${region}) =====`)
 console.log(`数据周次: ${weeks.map(w => 'Week ' + w).join(' + ')}`)
 
-// === CSV 解析（跟 process-battle-data 一致，未来抽 lib/csv.mjs 时统一）===
-function parseCSVLine(line) {
-  const result = []
-  let current = ''
-  let inQuotes = false
-  let i = 0
-  while (i < line.length) {
-    const ch = line[i]
-    if (ch === '"') {
-      if (i + 1 < line.length && line[i + 1] === '"') { current += '"'; i += 2 }
-      else { inQuotes = !inQuotes; i++ }
-    } else if (ch === ',' && !inQuotes) {
-      result.push(current); current = ''; i++
-    } else {
-      current += ch; i++
-    }
-  }
-  result.push(current)
-  return result
-}
-
-async function processCSVStream(paths, processor) {
-  let headers = []
-  for (const filePath of paths) {
-    if (!fs.existsSync(filePath)) continue
-    const rl = readline.createInterface({
-      input: fs.createReadStream(filePath),
-      crlfDelay: Infinity
-    })
-    let fileRowIndex = 0
-    for await (const line of rl) {
-      if (fileRowIndex === 0) {
-        if (headers.length === 0) {
-          headers = parseCSVLine(line).map(h => h.replace(/^﻿/, '').trim())
-        }
-      } else {
-        const values = parseCSVLine(line)
-        const obj = {}
-        headers.forEach((h, idx) => { obj[h] = values[idx] })
-        await processor(obj)
-      }
-      fileRowIndex++
-    }
-  }
-}
+// parseCSVLine / processCSVStream 已抽到 scripts/lib/csv.mjs
 
 // === 聚合每场战斗到 mergedTeams（key = 排序后的 lumiIds join('-')）===
 const mergedTeams = new Map()

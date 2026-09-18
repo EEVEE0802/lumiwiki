@@ -13,6 +13,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import readline from 'readline'
 import { fetchCsv } from './ta-fetch.mjs'
+import { parseCSVLine } from './lib/csv.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const PROJECT_ROOT = path.join(__dirname, '..')
@@ -75,21 +76,7 @@ await fetchCsv(region, mode, startDate, endDate, tmpPath)
 const tmpSize = fs.statSync(tmpPath).size
 console.log(`\n批量文件大小: ${(tmpSize / 1024 / 1024).toFixed(2)} MB\n`)
 
-// CSV 解析（简单版：只用来找 part_date 列）
-function parseCSVLine(line) {
-  const result = []
-  let current = '', inQuotes = false, i = 0
-  while (i < line.length) {
-    const ch = line[i]
-    if (ch === '"') {
-      if (i + 1 < line.length && line[i + 1] === '"') { current += '"'; i += 2 }
-      else { inQuotes = !inQuotes; i++ }
-    } else if (ch === ',' && !inQuotes) { result.push(current); current = ''; i++ }
-    else { current += ch; i++ }
-  }
-  result.push(current)
-  return result
-}
+// parseCSVLine 已抽到 scripts/lib/csv.mjs
 
 console.log(`按 part_date 分组写入 daily CSV...`)
 const rl = readline.createInterface({ input: fs.createReadStream(tmpPath), crlfDelay: Infinity })

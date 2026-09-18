@@ -5,6 +5,7 @@ import readline from 'readline'
 import { spawnSync } from 'node:child_process'
 import { fetchCsv } from './ta-fetch.mjs'
 import { getWeekDates } from './week-utils.mjs'
+import { parseCSVLine } from './lib/csv.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -70,34 +71,7 @@ function classifyTier(rechargeCents) {
   return 'mega'                         // > 20000 元
 }
 
-// CSV 解析（处理引号 + 双引号转义）
-function parseCSVLine(line) {
-  const result = []
-  let current = ''
-  let inQuotes = false
-  let i = 0
-  while (i < line.length) {
-    const char = line[i]
-    if (char === '"') {
-      if (i + 1 < line.length && line[i + 1] === '"') {
-        current += '"'
-        i += 2
-      } else {
-        inQuotes = !inQuotes
-        i++
-      }
-    } else if (char === ',' && !inQuotes) {
-      result.push(current)
-      current = ''
-      i++
-    } else {
-      current += char
-      i++
-    }
-  }
-  result.push(current)
-  return result
-}
+// parseCSVLine 已抽到 scripts/lib/csv.mjs
 
 const ONE_DAY_MS = 24 * 60 * 60 * 1000
 

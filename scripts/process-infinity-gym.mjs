@@ -20,6 +20,7 @@ import fs from 'fs'
 import path from 'path'
 import readline from 'readline'
 import { fileURLToPath } from 'url'
+import { parseCSVLine } from './lib/csv.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -266,32 +267,8 @@ function buildNpcTeam(floor) {
 }
 
 // ==========================================
-// CSV 解析工具（与其他脚本保持一致）
+// CSV 解析工具已抽到 scripts/lib/csv.mjs
 // ==========================================
-function parseCSVLine(line) {
-  const result = []
-  let current = ''
-  let inQuotes = false
-  let i = 0
-  while (i < line.length) {
-    const ch = line[i]
-    if (ch === '"') {
-      if (i + 1 < line.length && line[i + 1] === '"') {
-        current += '"'
-        i += 2
-      } else {
-        inQuotes = !inQuotes
-        i++
-      }
-    } else if (ch === ',' && !inQuotes) {
-      result.push(current); current = ''; i++
-    } else {
-      current += ch; i++
-    }
-  }
-  result.push(current)
-  return result
-}
 
 async function readCsv(csvPath) {
   if (!fs.existsSync(csvPath)) {

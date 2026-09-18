@@ -1,10 +1,10 @@
 import fs from 'fs'
 import path from 'path'
-import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'url'
 import { fetchCsv } from './ta-fetch.mjs'
 import { notify } from './notify.mjs'
 import { computeWeekInfo, weeksToProcess, formatDate } from './week-utils.mjs'
+import { runCommand as runCmdRaw } from './lib/run.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const PROJECT_ROOT = path.resolve(__dirname, '..')
@@ -47,36 +47,9 @@ function loadConfig() {
   return JSON.parse(fs.readFileSync(path.join(__dirname, 'ta-config.json'), 'utf-8'))
 }
 
-// 定时任务环境 PATH 可能不含 bash，预先查找完整路径
-function findBash() {
-  if (process.platform !== 'win32') return 'bash'
-  const candidates = [
-    'C:\\Program Files\\Git\\bin\\bash.exe',
-    'C:\\Program Files\\Git\\usr\\bin\\bash.exe',
-    'C:\\Program Files (x86)\\Git\\bin\\bash.exe'
-  ]
-  return candidates.find(p => fs.existsSync(p)) || 'bash'
-}
-
-function runCommand(cmd, args = []) {
-  if (cmd === 'bash' && process.platform === 'win32') {
-    cmd = findBash()
-  }
-  console.log(`\n$ ${cmd} ${args.join(' ')}`)
-  const result = spawnSync(cmd, args, {
-    cwd: PROJECT_ROOT,
-    encoding: 'utf-8',
-    stdio: 'pipe'
-  })
-  if (result.stdout) console.log(result.stdout.slice(-2000))
-  if (result.error) {
-    throw new Error(`命令启动失败: ${result.error.message}`)
-  }
-  if (result.status !== 0) {
-    throw new Error(`命令失败 (exit ${result.status}): ${cmd} ${args.join(' ')}`)
-  }
-  return result.stdout || ''
-}
+// runCommand / findBash 已抽到 scripts/lib/run.mjs
+// 本文件内所有 runCommand(cmd, args) 都以 PROJECT_ROOT 作为 cwd（跟原实现一致）
+const runCommand = (cmd, args = []) => runCmdRaw(cmd, args, { cwd: PROJECT_ROOT })
 
 function formatDateShort(date) {
   const pad = n => String(n).padStart(2, '0')
