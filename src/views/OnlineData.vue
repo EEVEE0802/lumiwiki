@@ -816,6 +816,7 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
+import { Chart } from 'chart.js/auto'
 import MultiSelect from '../components/MultiSelect.vue'
 import { loadData as loadGameData, tSync } from '../data'
 import { avatarUrl, skillIconUrl, handleAvatarError } from '../data/imageUrl'

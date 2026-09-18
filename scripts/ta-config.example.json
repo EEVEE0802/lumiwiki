@@ -1,40 +1,41 @@
 {
   "_comment": "复制本文件为 ta-config.json 并填入真实值。ta-config.json 不进 git（含 API Token）",
-  "_region_note": "9/17 正式服起 region 拆分：国内 cn=1890；海外分 5 个独立服 sp/va/jp/sg/fra，同一数数项目 projectId=83，仅 bZoneIds 区分。海外 5 服共用同一个海外 token。",
+  "_region_note": "9/17 正式服起 region 拆分：国内 cn=1890；海外分 5 个独立服 sp/va/jp/sg/fra，同一数数项目 projectId=83，仅 bZoneIds 区分。",
+  "_token_note": "只需 2 个 token：cn 一个国内数数 token，海外 5 服（sp/va/jp/sg/fra）共用一个海外数数 token（因为在同一 projectId=83 项目里）。海外那 5 处填相同的 token 值。",
   "regions": {
     "cn": {
       "baseUrl": "http://47.103.103.174:8992",
-      "token": "your-domestic-open-api-token",
+      "token": "<国内数数 open API token>",
       "projectId": 29,
       "bZoneIds": ["1890"]
     },
     "sp": {
       "baseUrl": "http://8.219.166.50:8992",
-      "token": "your-overseas-open-api-token",
+      "token": "<海外数数 open API token>",
       "projectId": 83,
       "bZoneIds": ["2890"]
     },
     "va": {
       "baseUrl": "http://8.219.166.50:8992",
-      "token": "your-overseas-open-api-token",
+      "token": "<海外数数 open API token（与 sp/jp/sg/fra 相同）>",
       "projectId": 83,
       "bZoneIds": ["2891"]
     },
     "jp": {
       "baseUrl": "http://8.219.166.50:8992",
-      "token": "your-overseas-open-api-token",
+      "token": "<海外数数 open API token（与 sp/va/sg/fra 相同）>",
       "projectId": 83,
       "bZoneIds": ["2892"]
     },
     "sg": {
       "baseUrl": "http://8.219.166.50:8992",
-      "token": "your-overseas-open-api-token",
+      "token": "<海外数数 open API token（与 sp/va/jp/fra 相同）>",
       "projectId": 83,
       "bZoneIds": ["2893"]
     },
     "fra": {
       "baseUrl": "http://8.219.166.50:8992",
-      "token": "your-overseas-open-api-token",
+      "token": "<海外数数 open API token（与 sp/va/jp/sg 相同）>",
       "projectId": 83,
       "bZoneIds": ["2894"]
     }

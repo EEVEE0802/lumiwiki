@@ -68,7 +68,10 @@ function parseCsv(text) {
 
 const args = process.argv.slice(2)
 const csvArgIdx = args.indexOf('--csv')
-const csvPath = csvArgIdx !== -1 ? args[csvArgIdx + 1] : 'D:/G36-Lumi资产进展表-Lumi甘特.csv'
+// 默认路径可通过环境变量 LUMI_PRODUCTION_CSV 覆盖，未设置时用当前机器上的默认位置
+// 换机器时：改 --csv 参数或设置 LUMI_PRODUCTION_CSV 环境变量
+const DEFAULT_CSV = process.env.LUMI_PRODUCTION_CSV || 'D:/G36-Lumi资产进展表-Lumi甘特.csv'
+const csvPath = csvArgIdx !== -1 ? args[csvArgIdx + 1] : DEFAULT_CSV
 const dryRun = args.includes('--dry-run')
 // --only-orders: 只更新 order 元数据（名字/TAPD/里程碑/投放/进度/策划等），不动 production_stages
 // 用途：CSV 通常比 TAPD 同步落后，跑全量会用粗略推断的 status 覆盖掉 TAPD 拉来的准确 status
