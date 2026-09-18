@@ -64,7 +64,13 @@
     "LevelLimit": 50,
     "CostNum": 0,
     "ShardNum": 30,
-    "Cost": [],
+    "Cost": [
+      {
+        "Type": 2,
+        "Id": 10069,
+        "Count": 10
+      }
+    ],
     "battleState": [
       4641,
       4641,
@@ -83,7 +89,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 20
       }
     ],
     "battleState": [
@@ -99,12 +105,12 @@
     "Id": 6,
     "LevelLimit": 70,
     "CostNum": 0,
-    "ShardNum": 50,
+    "ShardNum": 60,
     "Cost": [
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 20
+        "Count": 30
       }
     ],
     "battleState": [
@@ -120,12 +126,12 @@
     "Id": 7,
     "LevelLimit": 80,
     "CostNum": 0,
-    "ShardNum": 60,
+    "ShardNum": 80,
     "Cost": [
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 30
+        "Count": 40
       }
     ],
     "battleState": [
@@ -141,12 +147,12 @@
     "Id": 8,
     "LevelLimit": 90,
     "CostNum": 0,
-    "ShardNum": 80,
+    "ShardNum": 100,
     "Cost": [
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 40
+        "Count": 50
       }
     ],
     "battleState": [
@@ -162,12 +168,17 @@
     "Id": 9,
     "LevelLimit": 100,
     "CostNum": 0,
-    "ShardNum": 100,
+    "ShardNum": 0,
     "Cost": [
       {
         "Type": 2,
-        "Id": 10069,
-        "Count": 50
+        "Id": 10001,
+        "Count": 150000
+      },
+      {
+        "Type": 2,
+        "Id": 10063,
+        "Count": 5
       }
     ],
     "battleState": [
@@ -188,12 +199,12 @@
       {
         "Type": 2,
         "Id": 10001,
-        "Count": 150000
+        "Count": 200000
       },
       {
         "Type": 2,
         "Id": 10063,
-        "Count": 5
+        "Count": 10
       }
     ],
     "battleState": [
@@ -214,12 +225,12 @@
       {
         "Type": 2,
         "Id": 10001,
-        "Count": 200000
+        "Count": 300000
       },
       {
         "Type": 2,
         "Id": 10063,
-        "Count": 10
+        "Count": 15
       }
     ],
     "battleState": [
@@ -240,12 +251,12 @@
       {
         "Type": 2,
         "Id": 10001,
-        "Count": 300000
+        "Count": 500000
       },
       {
         "Type": 2,
-        "Id": 10063,
-        "Count": 15
+        "Id": 10064,
+        "Count": 1
       }
     ],
     "battleState": [
@@ -266,12 +277,12 @@
       {
         "Type": 2,
         "Id": 10001,
-        "Count": 500000
+        "Count": 1000000
       },
       {
         "Type": 2,
         "Id": 10064,
-        "Count": 1
+        "Count": 2
       }
     ],
     "battleState": [
@@ -288,18 +299,7 @@
     "LevelLimit": 150,
     "CostNum": 0,
     "ShardNum": 0,
-    "Cost": [
-      {
-        "Type": 2,
-        "Id": 10001,
-        "Count": 1000000
-      },
-      {
-        "Type": 2,
-        "Id": 10064,
-        "Count": 2
-      }
-    ],
+    "Cost": [],
     "battleState": [
       27967,
       27967,

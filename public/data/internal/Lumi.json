@@ -20567,10 +20567,10 @@
     "EscapeTransformTime": 1000,
     "EscapeFootTime": 1000,
     "LoveHeartHeight": 1650,
-    "CatchRateCheckHeight": 1100,
+    "CatchRateCheckHeight": 560,
     "HomeMoveSpeed": 1.2,
     "HomeRotateSpeed": 180,
-    "Distance": 5500,
+    "Distance": 6500,
     "Height": 0,
     "LookatHeight": 300,
     "VFXScale": 1.6,
@@ -33131,7 +33131,7 @@
     "ActiveSkill": 12080102,
     "SkillPool1": [
       4003,
-      15001
+      15002
     ],
     "SkillPool2": [
       1004,
@@ -33331,7 +33331,7 @@
     "ActiveSkill": 12090102,
     "SkillPool1": [
       4003,
-      15001
+      15002
     ],
     "SkillPool2": [
       1004,
@@ -33538,7 +33538,7 @@
     "ActiveSkill": 12090202,
     "SkillPool1": [
       4003,
-      15001
+      15002
     ],
     "SkillPool2": [
       1004,
@@ -33738,7 +33738,7 @@
     "ActiveSkill": 12090102,
     "SkillPool1": [
       4003,
-      15001
+      15002
     ],
     "SkillPool2": [
       1004,
@@ -46010,7 +46010,7 @@
       53004
     ],
     "LumiFavor": 1,
-    "ColorVariantType": 0,
+    "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Tomato_S_XC",
     "SpineAssetFolder": "",
@@ -46211,7 +46211,7 @@
       53004
     ],
     "LumiFavor": 1,
-    "ColorVariantType": 0,
+    "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Tomato_M_XC",
     "SpineAssetFolder": "",
@@ -46412,7 +46412,7 @@
       53004
     ],
     "LumiFavor": 1,
-    "ColorVariantType": 0,
+    "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Tomato_L_XC",
     "SpineAssetFolder": "",
@@ -46620,7 +46620,7 @@
       53003
     ],
     "LumiFavor": 1,
-    "ColorVariantType": 0,
+    "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Tomato_Assassin_3D_XC",
     "SpineAssetFolder": "",
@@ -46833,7 +46833,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10001010,
+    "StarSoulid": 10006010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -47028,7 +47028,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10002010,
+    "StarSoulid": 10007010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -47228,7 +47228,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10001010,
+    "StarSoulid": 10008010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -47637,7 +47637,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10002010,
+    "StarSoulid": 10032010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -47839,7 +47839,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10002010,
+    "StarSoulid": 10033010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -48041,7 +48041,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10001010,
+    "StarSoulid": 10034010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -48241,7 +48241,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10001010,
+    "StarSoulid": 10035010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -48441,7 +48441,7 @@
     "BattleEntranceVFX": [],
     "Growid": 1,
     "StarUpid": 1,
-    "StarSoulid": 10002010,
+    "StarSoulid": 10036010,
     "AvartarAtlas": "LumiAvatarCollab1",
     "CanRename": false
   },
@@ -48618,7 +48618,7 @@
       53023
     ],
     "LumiFavor": 1,
-    "ColorVariantType": 0,
+    "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Dasima_Small_XC",
     "SpineAssetFolder": "",
@@ -48818,7 +48818,7 @@
       53023
     ],
     "LumiFavor": 1,
-    "ColorVariantType": 0,
+    "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Dasima_Gang_XC",
     "SpineAssetFolder": "",
@@ -49013,7 +49013,7 @@
       53023
     ],
     "LumiFavor": 1,
-    "ColorVariantType": 0,
+    "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Dasima_Big_XC",
     "SpineAssetFolder": "",
@@ -49220,7 +49220,7 @@
       53024
     ],
     "LumiFavor": 1,
-    "ColorVariantType": 0,
+    "ColorVariantType": 1,
     "AchievementType": 1,
     "ModleColorVariant": "Dasima_Muscle_XC",
     "SpineAssetFolder": "",

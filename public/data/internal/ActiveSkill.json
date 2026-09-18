@@ -30541,7 +30541,7 @@
       {
         "TriggerType": 3,
         "TriggerCondition": 133801042,
-        "TriggerEffect": 493
+        "TriggerEffect": 494
       },
       {
         "TriggerType": 3,
@@ -30578,7 +30578,7 @@
     ],
     "SkillCost": [
       1,
-      50
+      40
     ],
     "BaseCrit": 500,
     "AddEnergy": 0,
@@ -34883,7 +34883,7 @@
     "name": "A_Skill_100050202",
     "Des": "A_SkillText_100050202",
     "DesParam": [
-      450
+      350
     ],
     "LumiTpye": 11,
     "UnlockCost": 0,

@@ -66,3 +66,10 @@ tools/nssm.zip
 tools/nssm-2.24/
 tools/lumiwiki-service.*.log
 tools/install-log.txt
+
+# docs 整个目录不进 git（个人分析、临时文件、大 Excel 等；用户明确要求 2026-09-18）
+# 注意：CLAUDE.md（根目录）仍然进 git，不受此规则影响
+docs/
+
+# 根目录截图/临时图片（如"写入.png"这类调试截图）
+/*.png

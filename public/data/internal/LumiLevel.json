@@ -946,13 +946,13 @@
   },
   {
     "Id": 46,
-    "Exp": 500,
+    "Exp": 300,
     "ShardNum": 0,
     "Cost": [
       {
         "Type": 2,
         "Id": 10020,
-        "Count": 500
+        "Count": 300
       }
     ],
     "battleState": [
@@ -967,13 +967,13 @@
   },
   {
     "Id": 47,
-    "Exp": 500,
+    "Exp": 300,
     "ShardNum": 0,
     "Cost": [
       {
         "Type": 2,
         "Id": 10020,
-        "Count": 500
+        "Count": 300
       }
     ],
     "battleState": [
@@ -988,13 +988,13 @@
   },
   {
     "Id": 48,
-    "Exp": 500,
+    "Exp": 300,
     "ShardNum": 0,
     "Cost": [
       {
         "Type": 2,
         "Id": 10020,
-        "Count": 500
+        "Count": 300
       }
     ],
     "battleState": [
@@ -1009,13 +1009,13 @@
   },
   {
     "Id": 49,
-    "Exp": 500,
+    "Exp": 300,
     "ShardNum": 0,
     "Cost": [
       {
         "Type": 2,
         "Id": 10020,
-        "Count": 500
+        "Count": 300
       }
     ],
     "battleState": [
@@ -1030,7 +1030,7 @@
   },
   {
     "Id": 50,
-    "Exp": 1000,
+    "Exp": 0,
     "ShardNum": 0,
     "Cost": [
       {
@@ -2601,7 +2601,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2627,7 +2627,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2653,7 +2653,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2679,7 +2679,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2705,7 +2705,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2731,7 +2731,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2757,7 +2757,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2783,7 +2783,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2809,7 +2809,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2835,7 +2835,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 10
+        "Count": 12
       }
     ],
     "battleState": [
@@ -2861,7 +2861,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
@@ -2887,7 +2887,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
@@ -2913,7 +2913,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
@@ -2939,7 +2939,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
@@ -2965,7 +2965,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
@@ -2991,7 +2991,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
@@ -3017,7 +3017,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
@@ -3043,7 +3043,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
@@ -3069,7 +3069,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
@@ -3095,7 +3095,7 @@
       {
         "Type": 2,
         "Id": 10069,
-        "Count": 15
+        "Count": 16
       }
     ],
     "battleState": [
