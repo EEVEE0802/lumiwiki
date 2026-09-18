@@ -376,21 +376,30 @@ async function main() {
   console.log('\n──── 统一发布 ────')
   runCommand('bash', ['publish.sh'])
 
-  // 7. git commit + push
-  console.log('\n──── 提交 git ────')
-  const status = runCommand('git', ['status', '--porcelain'])
-  if (status.trim()) {
-    const now = new Date()
-    const dateStr = now.toLocaleDateString('zh-CN', { timeZone: 'Asia/Shanghai' })
-    const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`
-    const summary = modeSummary.join(' · ') || '(无变化)'
-    const message = `自动更新线上数据（Week ${weekInfo.week} · ${summary} · ${dateStr} ${timeStr}）`
-    runCommand('git', ['add', '-A'])
-    runCommand('git', ['commit', '-m', message])
-    runCommand('git', ['push'])
-    console.log('  ✓ 数据已提交并推送')
-  } else {
-    console.log('  无数据改动，跳过 commit')
+  // 7. git commit + push（只处理代码变更；数据/图片已在 .gitignore 里排除）
+  //    2026-09-18 起策略：数据不进 git，git 只装代码。git 失败不阻塞发布 —— 前面 publish.sh 已经把数据推到 dist 生效
+  console.log('\n──── 提交 git（代码同步，失败不影响发布）────')
+  try {
+    const status = runCommand('git', ['status', '--porcelain'])
+    if (status.trim()) {
+      const now = new Date()
+      const dateStr = now.toLocaleDateString('zh-CN', { timeZone: 'Asia/Shanghai' })
+      const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`
+      const summary = modeSummary.join(' · ') || '(无变化)'
+      const message = `自动更新线上数据（Week ${weekInfo.week} · ${summary} · ${dateStr} ${timeStr}）`
+      runCommand('git', ['add', '-A'])
+      runCommand('git', ['commit', '-m', message])
+      runCommand('git', ['push'])
+      console.log('  ✓ 数据已提交并推送')
+    } else {
+      console.log('  无代码改动，跳过 commit')
+    }
+  } catch (e) {
+    console.error(`⚠️  git 同步失败（不影响发布，本地数据已经 publish 生效）: ${e.message}`)
+    // 独立发一条飞书告警，方便手动排查
+    try {
+      await notify(`⚠️ 线上数据 git 同步失败（数据已本地发布，不影响 wiki 访问）\n错误: ${e.message.slice(0, 300)}`, 'warning')
+    } catch { /* notify 失败也不阻塞 */ }
   }
 
   await notify(

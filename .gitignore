@@ -73,3 +73,17 @@ docs/
 
 # 根目录截图/临时图片（如"写入.png"这类调试截图）
 /*.png
+
+# ============================================================
+# 数据/资产全部不进 git（2026-09-18 起，git 只装代码）
+# ============================================================
+# 游戏配置 JSON、多语言、线上战斗数据、推荐配队 —— 全部本地生成
+# auto-update 每日跑 build → publish.sh 服务本地 dist，不再依赖 git 同步
+# 换机器 / 恢复：跑 update-game-data.mjs 从 svn 拉源数据 + backfill-daily.mjs 补历史 CSV
+public/data/**
+public/images/**
+# 保留目录结构占位（如果有）
+!public/data/.gitkeep
+!public/data/**/.gitkeep
+!public/images/.gitkeep
+!public/images/**/.gitkeep

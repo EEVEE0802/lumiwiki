@@ -52,17 +52,25 @@ async function main() {
   console.log('\n[3/3] 统一发布...')
   runCommand('bash', ['publish.sh'])
 
-  console.log('\n──── 提交 git ────')
-  const status = runCommand('git', ['status', '--porcelain'])
-  if (status.trim()) {
-    const date = new Date().toLocaleDateString('zh-CN', { timeZone: 'Asia/Shanghai' })
-    const message = `自动更新数据（游戏数据对外+对内 + 衍生 + 立绘，${date}）`
-    runCommand('git', ['add', '-A'])
-    runCommand('git', ['commit', '-m', message])
-    runCommand('git', ['push'])
-    console.log('  ✓ 数据已提交并推送')
-  } else {
-    console.log('  无数据改动，跳过 commit')
+  console.log('\n──── 提交 git（代码同步，失败不影响发布）────')
+  // 2026-09-18 起策略：数据不进 git，git 只装代码。git 失败不阻塞发布 —— 前面 publish.sh 已经把数据推到 dist 生效
+  try {
+    const status = runCommand('git', ['status', '--porcelain'])
+    if (status.trim()) {
+      const date = new Date().toLocaleDateString('zh-CN', { timeZone: 'Asia/Shanghai' })
+      const message = `自动更新数据（游戏数据对外+对内 + 衍生 + 立绘，${date}）`
+      runCommand('git', ['add', '-A'])
+      runCommand('git', ['commit', '-m', message])
+      runCommand('git', ['push'])
+      console.log('  ✓ 数据已提交并推送')
+    } else {
+      console.log('  无代码改动，跳过 commit')
+    }
+  } catch (e) {
+    console.error(`⚠️  git 同步失败（不影响发布，本地数据已经 publish 生效）: ${e.message}`)
+    try {
+      await notify(`⚠️ 每日游戏数据 git 同步失败（数据已本地发布，不影响 wiki 访问）\n错误: ${e.message.slice(0, 300)}`, 'warning')
+    } catch { /* notify 失败也不阻塞 */ }
   }
 
   await notify('每日游戏数据更新完成\n对外+对内 + 衍生 + 立绘 + git', 'success')
