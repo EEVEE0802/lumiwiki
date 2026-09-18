@@ -1,6 +1,23 @@
+// 推荐配队生成脚本（噜咪详情页「推荐配队」用）
+//
+// 【2026-09-18 重构】从直接读 daily CSV 聚合，不再依赖 ladder-week{N}.json
+// 原因：process-battle-data 输出的 teams 会被裁 top 200 以控制 JSON 体积，
+//      裁完之后冷门队伍消失，会导致冷门噜咪没有推荐配队。
+//      改成直接扫 CSV 后，process-battle-data 可以放心减负，冷门噜咪也不会漏。
+//
+// 数据源：
+//   - 天梯：data/{region}/archive/daily/ladder/{date}.csv（过滤 player_type === 1，即 all-no-bot）
+//   - 周赛：data/{region}/archive/daily/tournament/{date}.csv（全部真人）
+// 时间范围：
+//   - --week N：只处理该周 7-8 天
+//   - 不传 --week：处理 weeks.json 里所有可用周（全周聚合）
+// 输出：public/data/{region}/lumi-teams.json
+
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import readline from 'readline'
+import { getWeekDates } from './week-utils.mjs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -40,19 +57,77 @@ const outputPath = path.join(PROJECT_ROOT, `public/data/${region}/lumi-teams.jso
 console.log(`\n===== LumiWiki 噜咪推荐配队处理 (${region}) =====`)
 console.log(`数据周次: ${weeks.map(w => 'Week ' + w).join(' + ')}`)
 
-// 合并多周 ladder no-bot + tournament 的所有队伍
-// key = 排序后的 teamLumiIds join('-')；累加 battles/wins、合并 secondSkills
+// === CSV 解析（跟 process-battle-data 一致，未来抽 lib/csv.mjs 时统一）===
+function parseCSVLine(line) {
+  const result = []
+  let current = ''
+  let inQuotes = false
+  let i = 0
+  while (i < line.length) {
+    const ch = line[i]
+    if (ch === '"') {
+      if (i + 1 < line.length && line[i + 1] === '"') { current += '"'; i += 2 }
+      else { inQuotes = !inQuotes; i++ }
+    } else if (ch === ',' && !inQuotes) {
+      result.push(current); current = ''; i++
+    } else {
+      current += ch; i++
+    }
+  }
+  result.push(current)
+  return result
+}
+
+async function processCSVStream(paths, processor) {
+  let headers = []
+  for (const filePath of paths) {
+    if (!fs.existsSync(filePath)) continue
+    const rl = readline.createInterface({
+      input: fs.createReadStream(filePath),
+      crlfDelay: Infinity
+    })
+    let fileRowIndex = 0
+    for await (const line of rl) {
+      if (fileRowIndex === 0) {
+        if (headers.length === 0) {
+          headers = parseCSVLine(line).map(h => h.replace(/^﻿/, '').trim())
+        }
+      } else {
+        const values = parseCSVLine(line)
+        const obj = {}
+        headers.forEach((h, idx) => { obj[h] = values[idx] })
+        await processor(obj)
+      }
+      fileRowIndex++
+    }
+  }
+}
+
+// === 聚合每场战斗到 mergedTeams（key = 排序后的 lumiIds join('-')）===
 const mergedTeams = new Map()
 
-function ingestTeam(team) {
-  const sortedIds = [...team.teamLumiIds].sort()
-  const key = sortedIds.join('-')
+// 用于 process-battle-data 里"跨周去重"的思路：同一 game_id_str 只算一次（防止周赛/天梯的重复采样）
+// 天梯 CSV 每场 2 行（双方各上报）；周赛也是；但 player_type===1 已经过滤掉对方 NPC/机器人，
+// 剩下的都是真人玩家上报的己方队伍视角 —— 每人一份计数是合理的（跟 process-battle-data 一致）
+function ingestBattleRow(row, isWin) {
+  // 解析噜咪阵容
+  let lumis = []
+  try {
+    const jsonStr = row.player_lumis.replace(/""/g, '"')
+    lumis = JSON.parse(jsonStr)
+  } catch { return }
+  if (lumis.length === 0) return
+
+  // 按 lumiId 排序
+  lumis.sort((a, b) => String(a.lumi_id).localeCompare(String(b.lumi_id)))
+  const key = lumis.map(l => l.lumi_id).sort().join('-')
+
   if (!mergedTeams.has(key)) {
     mergedTeams.set(key, {
-      teamLumiIds: sortedIds,
-      lumis: team.lumis.map(l => ({
-        lumiId: l.lumiId,
-        lumiName: l.lumiName,
+      teamLumiIds: lumis.map(l => l.lumi_id),
+      lumis: lumis.map(l => ({
+        lumiId: l.lumi_id,
+        lumiName: l.lumi_name,
         secondSkills: new Map()  // skillId -> count
       })),
       trainerSkills: new Map(),  // trainerId -> count
@@ -60,42 +135,80 @@ function ingestTeam(team) {
       wins: 0
     })
   }
-  const merged = mergedTeams.get(key)
-  merged.battles += team.battles || 0
-  merged.wins += team.wins || 0
-  // 按 index 对齐合并 secondSkills
-  ;(team.lumis || []).forEach((l, idx) => {
-    const target = merged.lumis[idx]
-    if (!target) return
-    ;(l.secondSkills || []).forEach(ss => {
-      target.secondSkills.set(ss.skillId, (target.secondSkills.get(ss.skillId) || 0) + ss.count)
-    })
+  const team = mergedTeams.get(key)
+  team.battles++
+  if (isWin) team.wins++
+
+  // 累加每只噜咪的第二技能计数（lumis 已按 lumiId 排序，index 一一对应）
+  // skillId=0 表示未携带，也参与统计（前端展示为「未携带」选项）
+  lumis.forEach((lumi, idx) => {
+    const skillId = parseInt(lumi.lumi_secondskill)
+    if (!isNaN(skillId)) {
+      const ss = team.lumis[idx].secondSkills
+      ss.set(skillId, (ss.get(skillId) || 0) + 1)
+    }
   })
-  // 合并训练家技能计数
-  ;(team.trainerSkills || []).forEach(ts => {
-    merged.trainerSkills.set(ts.trainerId, (merged.trainerSkills.get(ts.trainerId) || 0) + ts.count)
-  })
+
+  // 累加训练家技能计数（行级，每场战斗一个）
+  const trainerId = parseInt(row.trainer_id)
+  const trainerIdKey = !isNaN(trainerId) ? trainerId : 0
+  team.trainerSkills.set(trainerIdKey, (team.trainerSkills.get(trainerIdKey) || 0) + 1)
 }
 
-// 遍历每周，读 ladder + tournament 合并
+// === 扫描所有周的天梯 + 周赛 CSV ===
 for (const w of weeks) {
-  const ladderPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/ladder-week${w}.json`)
-  const tournamentPath = path.join(PROJECT_ROOT, `public/data/online/${region}/weekly/tournament-week${w}.json`)
-
-  if (fs.existsSync(ladderPath)) {
-    const ladder = JSON.parse(fs.readFileSync(ladderPath, 'utf-8'))
-    const ladderTeams = ladder.stats?.['all-no-bot']?.teams || []
-    console.log(`[Week ${w}] 天梯 (all-no-bot) 队伍数: ${ladderTeams.length}`)
-    ladderTeams.forEach(ingestTeam)
-  } else {
-    console.log(`[Week ${w}] ⚠️  无天梯数据: ${ladderPath}`)
+  const weekDates = getWeekDates(w)
+  if (!weekDates || weekDates.length === 0) {
+    console.log(`[Week ${w}] ⚠️  week-utils 返回空日期，跳过`)
+    continue
   }
 
-  if (fs.existsSync(tournamentPath)) {
-    const tournament = JSON.parse(fs.readFileSync(tournamentPath, 'utf-8'))
-    const tournamentTeams = tournament.popularTeams || []
-    console.log(`[Week ${w}] 周赛队伍数: ${tournamentTeams.length}`)
-    tournamentTeams.forEach(ingestTeam)
+  // 天梯 CSV：只取 all-no-bot（先扫一遍收集 gameHasBot，再扫一遍过滤含人机的场次）
+  const ladderPaths = weekDates.map(d => path.join(PROJECT_ROOT, `data/${region}/archive/daily/ladder/${d}.csv`))
+  const ladderExisting = ladderPaths.filter(p => fs.existsSync(p))
+
+  if (ladderExisting.length > 0) {
+    // Pass 1: 收集每场 game_id_str 是否含人机（player_type != 1）
+    const gameHasBot = new Map()
+    await processCSVStream(ladderExisting, (row) => {
+      const gid = row.game_id_str
+      const pt = parseInt(row.player_type)
+      if (!gameHasBot.has(gid)) gameHasBot.set(gid, false)
+      if (pt !== 1) gameHasBot.set(gid, true)
+    })
+
+    // Pass 2: 只保留真人 + 不含人机的场次
+    let ladderRows = 0
+    await processCSVStream(ladderExisting, (row) => {
+      const pt = parseInt(row.player_type)
+      if (pt !== 1) return
+      const rank = parseInt(row.player_rank)
+      // 传说段位（151）无人机，直接算；其他段位过滤 gameHasBot
+      const isLegend = rank === 151
+      if (!isLegend && gameHasBot.get(row.game_id_str)) return
+      const isWin = parseInt(row.battle_result) === 1
+      ingestBattleRow(row, isWin)
+      ladderRows++
+    })
+    console.log(`[Week ${w}] 天梯 (no-bot) 采样场次: ${ladderRows}`)
+  } else {
+    console.log(`[Week ${w}] ⚠️  无天梯 CSV`)
+  }
+
+  // 周赛 CSV：全部真人（周赛只有真人）
+  const tournamentPaths = weekDates.map(d => path.join(PROJECT_ROOT, `data/${region}/archive/daily/tournament/${d}.csv`))
+  const tournamentExisting = tournamentPaths.filter(p => fs.existsSync(p))
+
+  if (tournamentExisting.length > 0) {
+    let tournamentRows = 0
+    await processCSVStream(tournamentExisting, (row) => {
+      const pt = parseInt(row.player_type)
+      if (pt !== 1) return
+      const isWin = parseInt(row.battle_result) === 1
+      ingestBattleRow(row, isWin)
+      tournamentRows++
+    })
+    console.log(`[Week ${w}] 周赛采样场次: ${tournamentRows}`)
   }
 }
 

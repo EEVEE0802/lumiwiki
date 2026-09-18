@@ -349,9 +349,15 @@ async function processBattleData() {
       }))
       .sort((a, b) => parseFloat(b.winRate) - parseFloat(a.winRate))
 
-    // 构建该组合的全部队伍（前端按需 slice 展示 + 下载全部）
-    const teamsData = Array.from(teamUsageMap.get(key).values())
+    // 构建该组合的 top 200 队伍
+    // 前端 OnlineData 页面按段位×人机筛选后最多展示 top 50；保留 200 给筛选合并留冗余
+    // 全量 team 数据由 process-lumi-teams 直接扫 CSV 独立聚合（不再依赖此 JSON）
+    // 2026-09-18 前是全量输出，cn 单文件曾达 52 MB；改成 top 200 后约 8 MB
+    const TEAM_TOP_N = 200
+    const allTeamsSorted = Array.from(teamUsageMap.get(key).values())
       .sort((a, b) => b.battles - a.battles)
+    const teamsData = allTeamsSorted
+      .slice(0, TEAM_TOP_N)
       .map(team => ({
         ...team,
         lumis: team.lumis.map(l => ({
@@ -366,6 +372,9 @@ async function processBattleData() {
           .sort((a, b) => b.count - a.count),
         winRate: ((team.wins / team.battles) * 100).toFixed(2)
       }))
+    if (allTeamsSorted.length > TEAM_TOP_N) {
+      console.log(`  [${key}] 队伍数 ${allTeamsSorted.length} → 截取 top ${TEAM_TOP_N}`)
+    }
 
     stats[key] = {
       appearance: appearanceData,
