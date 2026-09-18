@@ -341,7 +341,8 @@ async function processTournamentData() {
     tournamentPlayerRankDistribution
   }
 
-  // 写入输出文件
+  // 写入输出文件（首次拉某 region 时 weekly/ 目录可能不存在，需先建）
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true })
   fs.writeFileSync(outputPath, JSON.stringify(output, null, 2), 'utf-8')
 
   console.log('\n数据处理完成！')
