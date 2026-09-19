@@ -154,7 +154,7 @@ const { currentLang, languages, setLanguage } = useLanguage()
   align-items: center;
   gap: 16px;
   padding: 0 24px;
-  height: 56px;
+  min-height: 56px;
   background: #1a1a2e;
   border-bottom: 2px solid #e94560;
   flex-wrap: wrap;
