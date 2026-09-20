@@ -244,9 +244,9 @@ def build_sheet(ws, header, lumis, active_map, battle_p_map, home_p_map, locmap)
 def main():
     print('加载对内版数据...')
     lumis_all = load_json(INTERNAL_DATA / 'Lumi.json')
-    lumis = [l for l in lumis_all if not l.get('IfLock')]
+    lumis = list(lumis_all)  # 全量导出（IfLock 是"获取时锁定防误放生"，跟上线状态无关）
     lumis.sort(key=lambda x: (x.get('PokedexId', 99999), x.get('Id')))
-    print(f'  噜咪 IfLock=false: {len(lumis)}')
+    print(f'  噜咪全量: {len(lumis)}')
 
     active_map = to_map(load_json(INTERNAL_DATA / 'ActiveSkill.json'))
     battle_p_map = to_map(load_json(INTERNAL_DATA / 'BattlePassive.json'))
