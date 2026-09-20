@@ -153,7 +153,7 @@ function buildSql(mode, startDate, endDate, cfg) {
         AND "$part_date" <= '${endDate}'
         AND "#event_name" = 'battle_end'
         AND ${zoneFilter}
-        AND game_type = 'Gym1v1'
+        AND game_type = 'Tower1v1'
       GROUP BY game_id_str, b_role_id
       HAVING MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) BETWEEN 128100001 AND 128101000
     `.trim().replace(/\s+/g, ' ')
