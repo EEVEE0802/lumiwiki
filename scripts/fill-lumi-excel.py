@@ -1,8 +1,9 @@
 """
 把对内版噜咪信息填入 docs/噜咪立绘与技能资料.xlsx
 
-每种语言一个 sheet，共 5 个 sheet：
-  简体中文 / 繁體中文 / English / 日本語 / 한국어
+每种语言一个 sheet，共 11 个 sheet：
+  简体中文 / 繁體中文 / English / 日本語 / 한국어 /
+  Русский / Deutsch / Español / Français / Português / ไทย
 
 每个 sheet 独立完整：1 表头 + 194 只噜咪各占 1 行，图片完整嵌入
 """
@@ -34,6 +35,12 @@ LANGUAGES = [
     ('en',    'English', 'MultilingualEN.json'),
     ('ja',    '日本語',  'MultilingualJP.json'),
     ('ko',    '한국어',  'MultilingualKR.json'),
+    ('ru',    'Русский', 'MultilingualRU.json'),
+    ('de',    'Deutsch', 'MultilingualDE.json'),
+    ('es',    'Español', 'MultilingualES.json'),
+    ('fr',    'Français', 'MultilingualFR.json'),
+    ('pt',    'Português', 'MultilingualPT.json'),
+    ('th',    'ไทย',    'MultilingualTH.json'),
 ]
 
 IMG_SIZE = 80  # 图片显示尺寸（像素）

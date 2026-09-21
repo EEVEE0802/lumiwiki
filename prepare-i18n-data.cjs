@@ -35,6 +35,12 @@ const LANGUAGES = {
   'en': { file: 'MultilingualEN.json', name: 'English' },
   'ja': { file: 'MultilingualJP.json', name: '日本語' },
   'ko': { file: 'MultilingualKR.json', name: '한국어' },
+  'ru': { file: 'MultilingualRU.json', name: 'Русский' },
+  'de': { file: 'MultilingualDE.json', name: 'Deutsch' },
+  'es': { file: 'MultilingualES.json', name: 'Español' },
+  'fr': { file: 'MultilingualFR.json', name: 'Français' },
+  'pt': { file: 'MultilingualPT.json', name: 'Português' },
+  'th': { file: 'MultilingualTH.json', name: 'ไทย' },
 }
 
 console.log('======================================')

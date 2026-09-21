@@ -8,6 +8,12 @@ export const LANGUAGES = {
   'en': { name: 'English', flag: '🇺🇸' },
   'ja': { name: '日本語', flag: '🇯🇵' },
   'ko': { name: '한국어', flag: '🇰🇷' },
+  'ru': { name: 'Русский', flag: '🇷🇺' },
+  'de': { name: 'Deutsch', flag: '🇩🇪' },
+  'es': { name: 'Español', flag: '🇪🇸' },
+  'fr': { name: 'Français', flag: '🇫🇷' },
+  'pt': { name: 'Português', flag: '🇵🇹' },
+  'th': { name: 'ไทย', flag: '🇹🇭' },
 }
 
 // 当前语言（从 localStorage 读取或使用默认值）
