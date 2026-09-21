@@ -85,6 +85,7 @@ function cloneState(s) {
         lumis: t.lumis.map(l => ({
           lumiId: l.lumiId,
           lumiName: l.lumiName,
+          level: l.level || 0,
           secondSkills: new Map(l.secondSkills),
         })),
         trainerSkills: new Map(t.trainerSkills),
@@ -129,6 +130,7 @@ function serializeState(s) {
         lumis: t.lumis.map(l => ({
           lumiId: l.lumiId,
           lumiName: l.lumiName,
+          level: l.level || 0,
           secondSkills: [...l.secondSkills],   // [[skillId, count], ...]
         })),
         trainerSkills: [...t.trainerSkills],
@@ -157,6 +159,7 @@ function deserializeState(obj) {
         lumis: t.lumis.map(l => ({
           lumiId: l.lumiId,
           lumiName: l.lumiName,
+          level: l.level || 0,
           secondSkills: new Map(l.secondSkills || []),
         })),
         trainerSkills: new Map(t.trainerSkills || []),
@@ -386,6 +389,7 @@ function accumulateGymRow(state, row) {
       lumis: lumis.map(l => ({
         lumiId: l.lumi_id,
         lumiName: l.lumi_name,
+        level: parseInt(l.lumi_level) || 0,
         secondSkills: new Map()
       })),
       trainerSkills: new Map(),
@@ -395,10 +399,16 @@ function accumulateGymRow(state, row) {
   }
   const team = f.teamsWon.get(teamKey)
   team.battles++
-  // 更新该队"最近一次胜利"的 game_id_str（BigInt 比较）
+  // 更新该队"最近一次胜利"的 game_id_str（BigInt 比较）；level 跟 latestGameId 联动
+  // → 展示的是"最近该玩家用这队通关时"的等级（玩家中间升级的话取更新后的等级）
   try {
     const gid = BigInt(row.game_id_str)
-    if (gid > team.latestGameId) team.latestGameId = gid
+    if (gid > team.latestGameId) {
+      team.latestGameId = gid
+      lumis.forEach((l, idx) => {
+        team.lumis[idx].level = parseInt(l.lumi_level) || 0
+      })
+    }
   } catch { /* game_id_str 非数字直接跳过 */ }
   // 累加各噜咪携带的第二技能
   lumis.forEach((l, idx) => {
@@ -541,6 +551,7 @@ async function main() {
         lumis: t.lumis.map(l => ({
           lumiId: l.lumiId,
           lumiName: l.lumiName,
+          level: l.level || 0,
           secondSkills: [...l.secondSkills.entries()]
             .map(([skillId, count]) => ({ skillId, count }))
             .sort((a, b) => b.count - a.count)
