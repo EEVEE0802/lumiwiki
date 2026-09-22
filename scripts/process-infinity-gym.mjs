@@ -51,33 +51,38 @@ const FREEZE_DELAY_DAYS = 2
 // - freeze 阶段的数据从 state.json 反序列化过来（历史累计）
 // - 每次跑再叠加"未冻结的天"（最近 2 天 + 新增天）
 // - 只有"冻结的天"部分会写回 state.json（append-only）
+//
+// 分区（zone: mainline / season）：主线道馆 + 赛季道馆各自独立聚合
+//   - zones[key].floors / uniqueChallengersGlobal / playerMaxFloor / totalBattlesAllFloors / assistBattlesAllFloors
+//   - 顶层 globalLumiCount / assistBattleUids / processedDates / processedAssistDates 全区共享
 // ==========================================
-function createEmptyState() {
+function createEmptyZone() {
   return {
     floors: new Map(),                       // floor -> { totalBattles, wins, loses, assistBattles, uniqueClearers:Set, uniqueChallengers:Set, teamsWon:Map<teamKey, teamStats> }
     uniqueChallengersGlobal: new Set(),
     playerMaxFloor: new Map(),               // b_role_id -> max floor
-    globalLumiCount: new Map(),              // lumiId -> 出场场次
-    assistBattleUids: new Set(),             // battle_uid（对应 gym CSV 的 game_id_str）
     totalBattlesAllFloors: 0,
     assistBattlesAllFloors: 0,
+  }
+}
+function createEmptyState() {
+  return {
+    zones: { mainline: createEmptyZone(), season: createEmptyZone() },
+    globalLumiCount: new Map(),              // lumiId -> 出场场次（全区共享）
+    assistBattleUids: new Set(),             // battle_uid（对应 gym CSV 的 game_id_str）
     processedDates: new Set(),               // 已冻结（写入 state）的日期（YYYY-MM-DD）
     processedAssistDates: new Set(),         // 已冻结的 assist 日期
   }
 }
 
 // 深拷贝 state 用于"临时叠加最近未冻结天"—— 保持 state.json 里的冻结状态不被污染
-function cloneState(s) {
-  const c = createEmptyState()
-  c.totalBattlesAllFloors = s.totalBattlesAllFloors
-  c.assistBattlesAllFloors = s.assistBattlesAllFloors
-  c.processedDates = new Set(s.processedDates)
-  c.processedAssistDates = new Set(s.processedAssistDates)
-  c.uniqueChallengersGlobal = new Set(s.uniqueChallengersGlobal)
-  c.playerMaxFloor = new Map(s.playerMaxFloor)
-  c.globalLumiCount = new Map(s.globalLumiCount)
-  c.assistBattleUids = new Set(s.assistBattleUids)
-  for (const [floor, f] of s.floors) {
+function cloneZone(z) {
+  const c = createEmptyZone()
+  c.totalBattlesAllFloors = z.totalBattlesAllFloors
+  c.assistBattlesAllFloors = z.assistBattlesAllFloors
+  c.uniqueChallengersGlobal = new Set(z.uniqueChallengersGlobal)
+  c.playerMaxFloor = new Map(z.playerMaxFloor)
+  for (const [floor, f] of z.floors) {
     const clonedTeams = new Map()
     for (const [tk, t] of f.teamsWon) {
       clonedTeams.set(tk, {
@@ -105,20 +110,24 @@ function cloneState(s) {
   }
   return c
 }
+function cloneState(s) {
+  const c = createEmptyState()
+  c.processedDates = new Set(s.processedDates)
+  c.processedAssistDates = new Set(s.processedAssistDates)
+  c.globalLumiCount = new Map(s.globalLumiCount)
+  c.assistBattleUids = new Set(s.assistBattleUids)
+  c.zones = { mainline: cloneZone(s.zones.mainline), season: cloneZone(s.zones.season) }
+  return c
+}
 
 // 序列化/反序列化：JSON 不能直接存 Map/Set/BigInt，手动展开
-function serializeState(s) {
+function serializeZone(z) {
   return {
-    version: 1,
-    totalBattlesAllFloors: s.totalBattlesAllFloors,
-    assistBattlesAllFloors: s.assistBattlesAllFloors,
-    processedDates: [...s.processedDates],
-    processedAssistDates: [...s.processedAssistDates],
-    uniqueChallengersGlobal: [...s.uniqueChallengersGlobal],
-    playerMaxFloor: [...s.playerMaxFloor],           // [[b_role_id, maxFloor], ...]
-    globalLumiCount: [...s.globalLumiCount],         // [[lumiId, count], ...]
-    assistBattleUids: [...s.assistBattleUids],
-    floors: [...s.floors].map(([floor, f]) => [floor, {
+    totalBattlesAllFloors: z.totalBattlesAllFloors,
+    assistBattlesAllFloors: z.assistBattlesAllFloors,
+    uniqueChallengersGlobal: [...z.uniqueChallengersGlobal],
+    playerMaxFloor: [...z.playerMaxFloor],
+    floors: [...z.floors].map(([floor, f]) => [floor, {
       totalBattles: f.totalBattles,
       wins: f.wins,
       loses: f.loses,
@@ -140,17 +149,26 @@ function serializeState(s) {
     }]),
   }
 }
+function serializeState(s) {
+  return {
+    version: 2,   // v2: 分区 mainline/season；v1: 单一 floors（不再兼容）
+    processedDates: [...s.processedDates],
+    processedAssistDates: [...s.processedAssistDates],
+    globalLumiCount: [...s.globalLumiCount],         // [[lumiId, count], ...]
+    assistBattleUids: [...s.assistBattleUids],
+    zones: {
+      mainline: serializeZone(s.zones.mainline),
+      season: serializeZone(s.zones.season),
+    },
+  }
+}
 
-function deserializeState(obj) {
-  const s = createEmptyState()
-  s.totalBattlesAllFloors = obj.totalBattlesAllFloors || 0
-  s.assistBattlesAllFloors = obj.assistBattlesAllFloors || 0
-  s.processedDates = new Set(obj.processedDates || [])
-  s.processedAssistDates = new Set(obj.processedAssistDates || [])
-  s.uniqueChallengersGlobal = new Set(obj.uniqueChallengersGlobal || [])
-  s.playerMaxFloor = new Map(obj.playerMaxFloor || [])
-  s.globalLumiCount = new Map(obj.globalLumiCount || [])
-  s.assistBattleUids = new Set(obj.assistBattleUids || [])
+function deserializeZone(obj) {
+  const z = createEmptyZone()
+  z.totalBattlesAllFloors = obj.totalBattlesAllFloors || 0
+  z.assistBattlesAllFloors = obj.assistBattlesAllFloors || 0
+  z.uniqueChallengersGlobal = new Set(obj.uniqueChallengersGlobal || [])
+  z.playerMaxFloor = new Map(obj.playerMaxFloor || [])
   for (const [floor, f] of obj.floors || []) {
     const teams = new Map()
     for (const [tk, t] of f.teamsWon || []) {
@@ -167,7 +185,7 @@ function deserializeState(obj) {
         latestGameId: BigInt(t.latestGameId || '0'),
       })
     }
-    s.floors.set(floor, {
+    z.floors.set(floor, {
       totalBattles: f.totalBattles,
       wins: f.wins,
       loses: f.loses,
@@ -177,6 +195,18 @@ function deserializeState(obj) {
       teamsWon: teams,
     })
   }
+  return z
+}
+function deserializeState(obj) {
+  const s = createEmptyState()
+  s.processedDates = new Set(obj.processedDates || [])
+  s.processedAssistDates = new Set(obj.processedAssistDates || [])
+  s.globalLumiCount = new Map(obj.globalLumiCount || [])
+  s.assistBattleUids = new Set(obj.assistBattleUids || [])
+  s.zones = {
+    mainline: deserializeZone(obj.zones?.mainline || {}),
+    season: deserializeZone(obj.zones?.season || {}),
+  }
   return s
 }
 
@@ -184,6 +214,10 @@ function loadState() {
   if (!fs.existsSync(STATE_JSON)) return null
   try {
     const obj = JSON.parse(fs.readFileSync(STATE_JSON, 'utf-8'))
+    if ((obj.version || 1) < 2) {
+      console.warn(`⚠️ state.json 是老版本 (v${obj.version || 1})，schema 不兼容，改用全量重建`)
+      return null
+    }
     return deserializeState(obj)
   } catch (e) {
     console.warn(`⚠️ 加载 state 失败（将全量重建）: ${e.message}`)
@@ -221,11 +255,15 @@ function listDailyCsvs(dir) {
     .map(f => path.join(dir, f))
 }
 
-// 无限道馆 gym_uid 范围
-const GYM_UID_BASE = 128100000
-const GYM_UID_MIN = 128100001
-const GYM_UID_MAX = 128101000
-const uidToFloor = uid => uid - GYM_UID_BASE
+// 无限道馆 gym_uid 分区：主线 + 赛季
+const ZONES = [
+  { key: 'mainline', base: 128100000, min: 128100001, max: 128101000 },
+  { key: 'season',   base: 1281100000, min: 1281100001, max: 1281100200 },
+]
+function zoneOfUid(uid) {
+  for (const z of ZONES) if (uid >= z.min && uid <= z.max) return z
+  return null
+}
 
 // 每层通关阵容槽位：按语义分三档（最近使用 / 使用最多 / 其他），最多输出 3 支
 // 全局噜咪出场率 top N（前端可能全展示）
@@ -239,9 +277,16 @@ const GLOBAL_LUMI_TOP_N = 300
 console.log('加载 robot-teams / Lumi / 多语言...')
 const robotTeamsPath = path.join(PROJECT_ROOT, 'public/data/robot-teams.json')
 const robotTeams = JSON.parse(fs.readFileSync(robotTeamsPath, 'utf-8'))
-// floor -> { lumis: [{lumiId, level, breakthrough, score}] }
-const npcTeamByFloor = new Map((robotTeams.infinityGym || []).map(t => [t.floor, t]))
-if (npcTeamByFloor.size === 0) {
+// infinityGym 结构：{ mainline: [{floor, teamId, lumis}], season: [...] }
+// 兼容老结构（数组）：视作 mainline
+const gymCfg = Array.isArray(robotTeams.infinityGym)
+  ? { mainline: robotTeams.infinityGym, season: [] }
+  : (robotTeams.infinityGym || { mainline: [], season: [] })
+const npcTeamByZone = {
+  mainline: new Map((gymCfg.mainline || []).map(t => [t.floor, t])),
+  season: new Map((gymCfg.season || []).map(t => [t.floor, t])),
+}
+if (npcTeamByZone.mainline.size === 0 && npcTeamByZone.season.size === 0) {
   console.warn('⚠️ robot-teams.json 里未找到 infinityGym 数据；请先跑 process-robot-teams.js')
 }
 
@@ -257,8 +302,8 @@ const lumiNameOf = lumiId => {
   return zhMap[lumi.Name] || lumi.Name || String(lumiId)
 }
 
-function buildNpcTeam(floor) {
-  const t = npcTeamByFloor.get(floor)
+function buildNpcTeam(zoneKey, floor) {
+  const t = npcTeamByZone[zoneKey]?.get(floor)
   if (!t) return []
   return (t.lumis || []).map(l => ({
     lumiId: String(l.lumiId),
@@ -321,19 +366,22 @@ async function processCsvStream(csvPath, onRow) {
 }
 
 // ==========================================
-// 把一行 gym CSV 累加到 state
+// 把一行 gym CSV 累加到 state（分区累加：主线/赛季）
 // ==========================================
 function accumulateGymRow(state, row) {
   const gymUid = parseInt(row.gym_uid)
-  if (!Number.isFinite(gymUid) || gymUid < GYM_UID_MIN || gymUid > GYM_UID_MAX) return
+  if (!Number.isFinite(gymUid)) return
+  const zone = zoneOfUid(gymUid)
+  if (!zone) return
 
-  const floor = uidToFloor(gymUid)
+  const z = state.zones[zone.key]
+  const floor = gymUid - zone.base
   const roleId = row.b_role_id
   const isWin = parseInt(row.battle_result) === 1
   const isAssist = state.assistBattleUids.has(row.game_id_str)
 
-  if (!state.floors.has(floor)) {
-    state.floors.set(floor, {
+  if (!z.floors.has(floor)) {
+    z.floors.set(floor, {
       totalBattles: 0,
       wins: 0,
       loses: 0,
@@ -343,12 +391,12 @@ function accumulateGymRow(state, row) {
       teamsWon: new Map(),   // 只统计胜利场次（口径 1）
     })
   }
-  const f = state.floors.get(floor)
+  const f = z.floors.get(floor)
   f.totalBattles++
   f.uniqueChallengers.add(roleId)
   if (isAssist) {
     f.assistBattles++
-    state.assistBattlesAllFloors++
+    z.assistBattlesAllFloors++
   }
   if (isWin) {
     f.wins++
@@ -357,12 +405,12 @@ function accumulateGymRow(state, row) {
     f.loses++
   }
 
-  state.uniqueChallengersGlobal.add(roleId)
-  state.totalBattlesAllFloors++
+  z.uniqueChallengersGlobal.add(roleId)
+  z.totalBattlesAllFloors++
 
   // 玩家最高层（"能打到"就算 —— 挑战即算，不管胜负）
-  const cur = state.playerMaxFloor.get(roleId) || 0
-  if (floor > cur) state.playerMaxFloor.set(roleId, floor)
+  const cur = z.playerMaxFloor.get(roleId) || 0
+  if (floor > cur) z.playerMaxFloor.set(roleId, floor)
 
   // 解析 player_lumis（战斗中玩家阵容）
   let lumis = []
@@ -374,7 +422,7 @@ function accumulateGymRow(state, row) {
   if (lumis.length === 0) return
   lumis.sort((a, b) => String(a.lumi_id).localeCompare(String(b.lumi_id)))
 
-  // 全局噜咪出场率（所有场次都算，不限胜负）
+  // 全局噜咪出场率（所有场次都算，不限胜负，全区共享）
   lumis.forEach(l => {
     const id = String(l.lumi_id)
     state.globalLumiCount.set(id, (state.globalLumiCount.get(id) || 0) + 1)
@@ -514,86 +562,105 @@ async function main() {
     rowCount += total
   }
 
-  console.log(`\n  总场次: ${finalState.totalBattlesAllFloors}`)
-  console.log(`  独立玩家数: ${finalState.uniqueChallengersGlobal.size}`)
-  console.log(`  覆盖层数: ${finalState.floors.size}`)
-  console.log(`  助战场次（gym 命中）: ${finalState.assistBattlesAllFloors}${finalState.totalBattlesAllFloors > 0 ? ` (${(finalState.assistBattlesAllFloors/finalState.totalBattlesAllFloors*100).toFixed(1)}%)` : ''}`)
+  const totalBattlesAll = finalState.zones.mainline.totalBattlesAllFloors + finalState.zones.season.totalBattlesAllFloors
+  const assistBattlesAll = finalState.zones.mainline.assistBattlesAllFloors + finalState.zones.season.assistBattlesAllFloors
+  const uniqueChallengersAll = new Set([
+    ...finalState.zones.mainline.uniqueChallengersGlobal,
+    ...finalState.zones.season.uniqueChallengersGlobal,
+  ])
+  console.log(`\n  总场次: ${totalBattlesAll} (主线 ${finalState.zones.mainline.totalBattlesAllFloors} + 赛季 ${finalState.zones.season.totalBattlesAllFloors})`)
+  console.log(`  独立玩家数（跨区去重）: ${uniqueChallengersAll.size}`)
+  console.log(`  覆盖层数: 主线 ${finalState.zones.mainline.floors.size} / 赛季 ${finalState.zones.season.floors.size}`)
+  console.log(`  助战场次（gym 命中）: ${assistBattlesAll}${totalBattlesAll > 0 ? ` (${(assistBattlesAll/totalBattlesAll*100).toFixed(1)}%)` : ''}`)
   console.log(`  本次 CSV 处理行数: ${rowCount}`)
 
-  // 构建 floors 输出（按 floor 降序 —— 高层在前，方便玩家看到"卡关点"和进度峰值）
-  const floorsOutput = [...finalState.floors.entries()]
-    .sort(([a], [b]) => b - a)
-    .map(([floor, f]) => {
-      // 平均通过尝试次数：总场次 / 通过独立玩家数
-      const uniqueClearers = f.uniqueClearers.size
-      const avgAttempts = uniqueClearers > 0 ? +(f.totalBattles / uniqueClearers).toFixed(2) : 0
+  // 单个 zone 的输出构建（floors + maxFloorDistribution + 统计）
+  const buildZoneOutput = (zoneKey) => {
+    const z = finalState.zones[zoneKey]
+    // 构建 floors 输出（按 floor 降序 —— 高层在前，方便玩家看到"卡关点"和进度峰值）
+    const floorsOutput = [...z.floors.entries()]
+      .sort(([a], [b]) => b - a)
+      .map(([floor, f]) => {
+        // 平均通过尝试次数：总场次 / 通过独立玩家数
+        const uniqueClearers = f.uniqueClearers.size
+        const avgAttempts = uniqueClearers > 0 ? +(f.totalBattles / uniqueClearers).toFixed(2) : 0
 
-      // top teams：三个槽位有明确语义
-      //   recent  = 最近使用（该层所有胜利队伍中 latestGameId 最大的那队）
-      //   popular = 使用最多（battles 最大）
-      //   other   = 其他阵容（排除 recent/popular 后 battles 最大；不足时 fallback 到 popular）
-      // 三个槽位每个都单独渲染一张卡，即使指向同一支队也不合并
-      const allTeams = [...f.teamsWon.values()]
-      const byBattles = [...allTeams].sort((a, b) => b.battles - a.battles)
-      const byRecent = [...allTeams].sort((a, b) => {
-        // BigInt 比较：不能用 a - b
-        if (a.latestGameId < b.latestGameId) return 1
-        if (a.latestGameId > b.latestGameId) return -1
-        return 0
+        // top teams：三个槽位有明确语义
+        //   recent  = 最近使用（该层所有胜利队伍中 latestGameId 最大的那队）
+        //   popular = 使用最多（battles 最大）
+        //   other   = 其他阵容（排除 recent/popular 后 battles 最大；不足时 fallback 到 popular）
+        // 三个槽位每个都单独渲染一张卡，即使指向同一支队也不合并
+        const allTeams = [...f.teamsWon.values()]
+        const byBattles = [...allTeams].sort((a, b) => b.battles - a.battles)
+        const byRecent = [...allTeams].sort((a, b) => {
+          // BigInt 比较：不能用 a - b
+          if (a.latestGameId < b.latestGameId) return 1
+          if (a.latestGameId > b.latestGameId) return -1
+          return 0
+        })
+        const recent = byRecent[0] || null
+        const popular = byBattles[0] || null
+        const other = byBattles.find(t => t !== recent && t !== popular) || popular || null
+
+        const serializeTeam = (t, kind) => ({
+          kind,
+          teamLumiIds: t.teamLumiIds,
+          lumis: t.lumis.map(l => ({
+            lumiId: l.lumiId,
+            lumiName: l.lumiName,
+            level: l.level || 0,
+            secondSkills: [...l.secondSkills.entries()]
+              .map(([skillId, count]) => ({ skillId, count }))
+              .sort((a, b) => b.count - a.count)
+          })),
+          trainerSkills: [...t.trainerSkills.entries()]
+            .map(([trainerId, count]) => ({ trainerId, count }))
+            .sort((a, b) => b.count - a.count),
+          battles: t.battles,
+          winRate: '100.00',   // 口径 1：只有胜场入选
+        })
+
+        const teams = [
+          { key: 'recent', team: recent },
+          { key: 'popular', team: popular },
+          { key: 'other', team: other },
+        ]
+          .filter(s => s.team)
+          .map(s => serializeTeam(s.team, s.key))
+
+        return {
+          floor,
+          totalBattles: f.totalBattles,
+          wins: f.wins,
+          loses: f.loses,
+          assistBattles: f.assistBattles,
+          winRate: f.totalBattles > 0 ? +(f.wins / f.totalBattles * 100).toFixed(2) : 0,
+          assistRate: f.totalBattles > 0 ? +(f.assistBattles / f.totalBattles * 100).toFixed(2) : 0,
+          uniqueChallengers: f.uniqueChallengers.size,
+          uniqueClearers,
+          avgAttempts,
+          npcTeam: buildNpcTeam(zoneKey, floor),
+          topTeams: teams,
+        }
       })
-      const recent = byRecent[0] || null
-      const popular = byBattles[0] || null
-      const other = byBattles.find(t => t !== recent && t !== popular) || popular || null
 
-      const serializeTeam = (t, kind) => ({
-        kind,
-        teamLumiIds: t.teamLumiIds,
-        lumis: t.lumis.map(l => ({
-          lumiId: l.lumiId,
-          lumiName: l.lumiName,
-          level: l.level || 0,
-          secondSkills: [...l.secondSkills.entries()]
-            .map(([skillId, count]) => ({ skillId, count }))
-            .sort((a, b) => b.count - a.count)
-        })),
-        trainerSkills: [...t.trainerSkills.entries()]
-          .map(([trainerId, count]) => ({ trainerId, count }))
-          .sort((a, b) => b.count - a.count),
-        battles: t.battles,
-        winRate: '100.00',   // 口径 1：只有胜场入选
-      })
+    // 最高层数分布（分区独立）
+    const maxFloorDist = {}
+    for (const [, maxFloor] of z.playerMaxFloor) {
+      maxFloorDist[maxFloor] = (maxFloorDist[maxFloor] || 0) + 1
+    }
 
-      const teams = [
-        { key: 'recent', team: recent },
-        { key: 'popular', team: popular },
-        { key: 'other', team: other },
-      ]
-        .filter(s => s.team)
-        .map(s => serializeTeam(s.team, s.key))
-
-      return {
-        floor,
-        totalBattles: f.totalBattles,
-        wins: f.wins,
-        loses: f.loses,
-        assistBattles: f.assistBattles,
-        winRate: f.totalBattles > 0 ? +(f.wins / f.totalBattles * 100).toFixed(2) : 0,
-        assistRate: f.totalBattles > 0 ? +(f.assistBattles / f.totalBattles * 100).toFixed(2) : 0,
-        uniqueChallengers: f.uniqueChallengers.size,
-        uniqueClearers,
-        avgAttempts,
-        npcTeam: buildNpcTeam(floor),
-        topTeams: teams,
-      }
-    })
-
-  // 最高层数分布
-  const maxFloorDist = {}
-  for (const [, maxFloor] of finalState.playerMaxFloor) {
-    maxFloorDist[maxFloor] = (maxFloorDist[maxFloor] || 0) + 1
+    return {
+      totalChallengers: z.uniqueChallengersGlobal.size,
+      totalBattles: z.totalBattlesAllFloors,
+      assistBattles: z.assistBattlesAllFloors,
+      assistRate: z.totalBattlesAllFloors > 0 ? +(z.assistBattlesAllFloors / z.totalBattlesAllFloors * 100).toFixed(2) : 0,
+      maxFloorDistribution: maxFloorDist,
+      floors: floorsOutput,
+    }
   }
 
-  // 全局噜咪出场率
+  // 全局噜咪出场率（跨区合并）
   const globalLumiUsage = [...finalState.globalLumiCount.entries()]
     .sort(([, a], [, b]) => b - a)
     .slice(0, GLOBAL_LUMI_TOP_N)
@@ -601,26 +668,28 @@ async function main() {
       lumiId,
       lumiName: lumiNameOf(Number(lumiId)),
       battles: count,
-      appearanceRate: finalState.totalBattlesAllFloors > 0 ? +(count / finalState.totalBattlesAllFloors * 100).toFixed(2) : 0
+      appearanceRate: totalBattlesAll > 0 ? +(count / totalBattlesAll * 100).toFixed(2) : 0
     }))
 
   const output = {
     updateTime: new Date().toISOString(),
     region,
-    totalChallengers: finalState.uniqueChallengersGlobal.size,
-    totalBattles: finalState.totalBattlesAllFloors,
-    assistBattles: finalState.assistBattlesAllFloors,
-    assistRate: finalState.totalBattlesAllFloors > 0 ? +(finalState.assistBattlesAllFloors / finalState.totalBattlesAllFloors * 100).toFixed(2) : 0,
-    maxFloorDistribution: maxFloorDist,
+    // 顶层保留跨区总量（前端总览用）
+    totalChallengers: uniqueChallengersAll.size,
+    totalBattles: totalBattlesAll,
+    assistBattles: assistBattlesAll,
+    assistRate: totalBattlesAll > 0 ? +(assistBattlesAll / totalBattlesAll * 100).toFixed(2) : 0,
     globalLumiUsage,
-    floors: floorsOutput,
+    // 分区详情：{ mainline, season }，各自 { totalChallengers, totalBattles, floors, maxFloorDistribution, ... }
+    mainline: buildZoneOutput('mainline'),
+    season: buildZoneOutput('season'),
   }
 
   fs.mkdirSync(path.dirname(OUTPUT_JSON), { recursive: true })
   fs.writeFileSync(OUTPUT_JSON, JSON.stringify(output, null, 2), 'utf-8')
   const size = fs.statSync(OUTPUT_JSON).size
   console.log(`\n✓ 输出: ${OUTPUT_JSON} (${(size / 1024).toFixed(1)} KB)`)
-  console.log(`  层数: ${floorsOutput.length}, 全局噜咪: ${globalLumiUsage.length}, 层分布桶: ${Object.keys(maxFloorDist).length}`)
+  console.log(`  主线层数: ${output.mainline.floors.length}, 赛季层数: ${output.season.floors.length}, 全局噜咪: ${globalLumiUsage.length}`)
 }
 
 main().catch(e => {

@@ -138,7 +138,7 @@ function buildSql(mode, startDate, endDate, cfg) {
     //   player_type=1: 玩家视角（有 player_lumis / battle_result / trainer_id，player_uid_str = 玩家自己的 role_id）
     //   player_type=4: NPC 视角（player_uid_str 是道馆 NPC 编号 = MonsterGroupID）
     // 用 GROUP BY game_id_str + MAX(CASE WHEN) 把两条合并成一场
-    // 只保留 gym_uid 在 128100001~128101000 范围的无限道馆记录
+    // 保留两段 uid：主线 128100001~128101000（1000 关） + 赛季 1281100001~1281100200（200 关）
     return `
       SELECT
         MIN("$part_date") AS part_date,
@@ -155,7 +155,8 @@ function buildSql(mode, startDate, endDate, cfg) {
         AND ${zoneFilter}
         AND game_type = 'Tower1v1'
       GROUP BY game_id_str, b_role_id
-      HAVING MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) BETWEEN 128100001 AND 128101000
+      HAVING (MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) BETWEEN 128100001 AND 128101000
+              OR MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) BETWEEN 1281100001 AND 1281100200)
     `.trim().replace(/\s+/g, ' ')
   }
 

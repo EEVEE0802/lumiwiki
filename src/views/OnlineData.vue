@@ -637,25 +637,40 @@
         <p class="no-data-desc">请等待每小时任务生成数据</p>
       </div>
       <template v-else>
+        <!-- 分区切换（主线 / 赛季）—— 整个 UI 按选中分区展示 -->
+        <div class="gym-zone-switch">
+          <button
+            v-for="z in ['mainline','season']"
+            :key="z"
+            :class="['gym-zone-btn', { active: gymZone === z }]"
+            @click="switchGymZone(z)"
+          >{{ GYM_ZONE_META[z].label }}</button>
+        </div>
+
+        <div v-if="!gymZoneData || !gymZoneData.floors.length" class="no-data-box">
+          <p>😅 {{ GYM_ZONE_META[gymZone].label }}暂无数据</p>
+          <p class="no-data-desc">该分区可能尚未开放或还没有玩家挑战</p>
+        </div>
+        <template v-else>
         <!-- 顶部概览 -->
         <div class="gym-overview">
           <div class="gym-stat-card">
-            <div class="gym-stat-value">{{ formatNumber(gymData.totalChallengers) }}</div>
-            <div class="gym-stat-label">总挑战玩家数</div>
+            <div class="gym-stat-value">{{ formatNumber(gymZoneData.totalChallengers) }}</div>
+            <div class="gym-stat-label">挑战玩家数</div>
           </div>
           <div class="gym-stat-card">
-            <div class="gym-stat-value">{{ formatNumber(gymData.totalBattles) }}</div>
-            <div class="gym-stat-label">总战斗场次</div>
+            <div class="gym-stat-value">{{ formatNumber(gymZoneData.totalBattles) }}</div>
+            <div class="gym-stat-label">战斗场次</div>
           </div>
-          <div class="gym-stat-card gym-stat-assist" v-if="gymData.assistBattles != null">
+          <div class="gym-stat-card gym-stat-assist" v-if="gymZoneData.assistBattles != null">
             <div class="gym-stat-value">
-              {{ formatNumber(gymData.assistBattles) }}
-              <span class="gym-stat-sub">({{ gymData.assistRate }}%)</span>
+              {{ formatNumber(gymZoneData.assistBattles) }}
+              <span class="gym-stat-sub">({{ gymZoneData.assistRate }}%)</span>
             </div>
             <div class="gym-stat-label">🤝 使用助战场次</div>
           </div>
           <div class="gym-stat-card">
-            <div class="gym-stat-value">{{ gymData.floors.length }}</div>
+            <div class="gym-stat-value">{{ gymZoneData.floors.length }}</div>
             <div class="gym-stat-label">已被挑战层数</div>
           </div>
           <div class="gym-stat-card">
@@ -673,10 +688,10 @@
           </div>
         </div>
 
-        <!-- 全局噜咪出场率 -->
+        <!-- 全局噜咪出场率（跨区合并，展示所有无限道馆战斗的整体分布） -->
         <div class="gym-chart-block">
           <h3>玩家阵容中噜咪出场率 Top 30</h3>
-          <p class="chart-subtitle">所有无限道馆战斗（含胜负）中，玩家阵容里出现最多的噜咪</p>
+          <p class="chart-subtitle">所有无限道馆战斗（主线+赛季，含胜负）中，玩家阵容里出现最多的噜咪</p>
           <div class="gym-lumi-grid">
             <div
               v-for="l in gymData.globalLumiUsage.slice(0, 30)"
@@ -695,14 +710,14 @@
         <!-- 关卡列表（按 10 层分组，外层只显示卡点关的数据，展开查看组内各层） -->
         <div class="gym-floors-block">
           <div class="gym-floors-header">
-            <h3>关卡数据（共 {{ gymData.floors.length }} 层有玩家挑战）</h3>
+            <h3>关卡数据（共 {{ gymZoneData.floors.length }} 层有玩家挑战）</h3>
             <div class="gym-jump">
               <label>跳转到第
                 <input type="number" v-model.number="gymJumpFloor" min="1" :max="maxFloorReached" @keyup.enter="jumpToFloor">
                 层
               </label>
               <button class="gym-jump-btn" @click="jumpToFloor">跳转</button>
-              <button class="download-teams-btn gym-download-btn" @click="downloadGymTeamsCSV" :disabled="!gymData.floors.length">
+              <button class="download-teams-btn gym-download-btn" @click="downloadGymTeamsCSV" :disabled="!gymZoneData.floors.length">
                 📥 下载通关阵容（CSV）
               </button>
             </div>
@@ -809,6 +824,7 @@
             </div>
           </div>
         </div>
+        </template>
       </template>
     </div>
   </div>
@@ -963,6 +979,7 @@ const noData = ref(false) // 该周数据加载失败时置 true（如首周无�
 
 // 无限道馆状态
 const gymData = ref(null)
+const gymZone = ref('mainline')   // mainline | season（分区切换）
 const expandedFloors = ref(new Set())
 const expandedGroups = ref(new Set())
 const gymJumpFloor = ref(1)
@@ -971,12 +988,23 @@ const gymGroupRefs = new Map()
 const gymFloorDistCanvas = ref(null)
 let gymFloorDistChart = null
 
+// 当前分区数据：{ totalChallengers, totalBattles, assistBattles, assistRate, maxFloorDistribution, floors }
+// gymData 顶层还带 globalLumiUsage / updateTime / region（跨区共享）
+const GYM_ZONE_META = {
+  mainline: { key: 'mainline', label: '🗻 主线道馆', uidBase: 128100000 },
+  season:   { key: 'season',   label: '🌸 赛季道馆', uidBase: 1281100000 },
+}
+const gymZoneData = computed(() => {
+  if (!gymData.value) return null
+  return gymData.value[gymZone.value] || null
+})
+
 // 关卡按 10 层为一组分组（1~10 → "第 10 层" 组，11~20 → "第 20 层" 组，依此类推）
 // 组主行显示"卡点关"（10 倍数层）本身的数据；展开后显示组内所有已被挑战的层
 const gymFloorGroups = computed(() => {
-  if (!gymData.value) return []
+  if (!gymZoneData.value) return []
   const groups = new Map()
-  for (const floor of gymData.value.floors) {
+  for (const floor of gymZoneData.value.floors) {
     const key = Math.ceil(floor.floor / 10) * 10
     if (!groups.has(key)) groups.set(key, { key, floors: [], boss: null })
     const g = groups.get(key)
@@ -1819,17 +1847,27 @@ async function loadGymData() {
   }
 }
 
+// 切换分区（主线 / 赛季）—— 收起所有展开状态、重画层数分布图
+function switchGymZone(zone) {
+  if (gymZone.value === zone) return
+  gymZone.value = zone
+  expandedFloors.value = new Set()
+  expandedGroups.value = new Set()
+  gymJumpFloor.value = 1
+  nextTick(() => drawFloorDistChart())
+}
+
 // 最高层数（用于顶部展示 + jump 输入的 max）
 const maxFloorReached = computed(() => {
-  if (!gymData.value) return 0
-  const keys = Object.keys(gymData.value.maxFloorDistribution || {}).map(Number)
+  if (!gymZoneData.value) return 0
+  const keys = Object.keys(gymZoneData.value.maxFloorDistribution || {}).map(Number)
   return keys.length ? Math.max(...keys) : 0
 })
 
 // 画层数分布图
 function drawFloorDistChart() {
-  if (!gymData.value || !gymFloorDistCanvas.value) return
-  const dist = gymData.value.maxFloorDistribution || {}
+  if (!gymZoneData.value || !gymFloorDistCanvas.value) return
+  const dist = gymZoneData.value.maxFloorDistribution || {}
   const floors = Object.keys(dist).map(Number).sort((a, b) => a - b)
   const counts = floors.map(f => dist[f])
 
@@ -1894,7 +1932,7 @@ function jumpToFloor() {
   const floor = Number(gymJumpFloor.value)
   if (!floor || floor < 1) return
   const groupKey = Math.ceil(floor / 10) * 10
-  const hasFloor = gymData.value?.floors?.some(f => f.floor === floor)
+  const hasFloor = gymZoneData.value?.floors?.some(f => f.floor === floor)
   if (!hasFloor) {
     alert(`第 ${floor} 层暂无玩家挑战数据`)
     return
@@ -1932,12 +1970,12 @@ function gymTopTrainer(team) {
 
 // 下载无限道馆通关阵容 CSV（对齐 Luban GymRecommendTeam 表结构）
 // 每层 3 支阵容：#1 最近使用 / #2 使用最多 / #3 其他阵容（不足时以 popular 兜底）
-// GymID = 128100000 + floor（与 gym_uid 编号一致）
+// GymID = zoneUidBase + floor（主线 128100000 / 赛季 1281100000）
 function downloadGymTeamsCSV() {
-  const floors = gymData.value?.floors
+  const floors = gymZoneData.value?.floors
   if (!floors?.length) return
 
-  const GYM_UID_BASE = 128100000
+  const GYM_UID_BASE = GYM_ZONE_META[gymZone.value].uidBase
   const escape = v => {
     const s = String(v ?? '')
     return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
@@ -1971,7 +2009,7 @@ function downloadGymTeamsCSV() {
   }
 
   const csv = rows.map(r => r.map(escape).join(',')).join('\n')
-  const filename = `GymRecommendTeam-${currentRegion.value}.csv`
+  const filename = `GymRecommendTeam-${gymZone.value}-${currentRegion.value}.csv`
   const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
@@ -2578,6 +2616,35 @@ watch(currentStats, () => {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.gym-zone-switch {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gym-zone-btn {
+  padding: 10px 22px;
+  border: 2px solid #d4c5ee;
+  background: #fff;
+  color: #6b46c1;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gym-zone-btn:hover {
+  background: #f5f0ff;
+}
+
+.gym-zone-btn.active {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(118, 75, 162, 0.28);
 }
 
 .gym-overview {
