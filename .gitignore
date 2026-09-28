@@ -50,6 +50,8 @@ data/**/archive/**/*.csv
 data/**/recharge.csv
 # 无限道馆增量拉取的状态文件（中间产物，动辄几百 MB，超 GitHub 100 MB 限制）
 data/**/gym-state.json
+# 无限道馆按周归档（v4 起改成 gym-weekly/week-N.json，单文件几百 MB）
+data/**/gym-weekly/
 
 # 归档压缩包（本地打包用，绝不进 git —— auto-update 用 git add -A 会误卷）
 *.7z

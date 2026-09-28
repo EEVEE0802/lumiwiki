@@ -245,7 +245,9 @@ export async function updateRegionInfinityGym(region /* baseFriday 不再使用 
 
   // process 遍历所有 daily CSV 聚合；heap 大一点兜底跨天累计后的中间数据结构
   // 即使这次两天全失败，历史 daily 还在，process 也能给出"到上次成功为止"的结果
-  runCommand(process.execPath, ['--max-old-space-size=4096', 'scripts/process-infinity-gym.mjs', '--region', region])
+  // heap 8192 = state 累积到几百 MB 时 stringify/parse 中间对象需要充足内存（saveState 已改流式，
+  // 但 loadState 里的 JSON.parse 仍会构造整块对象；14 天数据后 state ~几百 MB，8G heap 才够 safe margin）
+  runCommand(process.execPath, ['--max-old-space-size=8192', 'scripts/process-infinity-gym.mjs', '--region', region])
 }
 
 // updateRegionGuildWar 已并入 updateRegionParticipation（公会战 daily CSV 跟 login 一起拉）
