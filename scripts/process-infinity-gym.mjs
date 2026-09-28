@@ -275,6 +275,7 @@ function accumulateGymRow(weekState, row, assistBattleUidsFlat) {
         lumiId: l.lumi_id,
         lumiName: l.lumi_name,
         level: parseInt(l.lumi_level) || 0,
+        star: parseInt(l.lumi_star) || 0,
         secondSkills: new Map(),
       })),
       trainerSkills: new Map(),
@@ -290,6 +291,7 @@ function accumulateGymRow(weekState, row, assistBattleUidsFlat) {
       team.latestGameId = gid
       lumis.forEach((l, idx) => {
         team.lumis[idx].level = parseInt(l.lumi_level) || 0
+        team.lumis[idx].star = parseInt(l.lumi_star) || 0
       })
     }
   } catch { /* game_id_str 非数字，跳过 */ }
@@ -379,6 +381,7 @@ async function writeZoneWeekly(key, z, write) {
           lumiId: l.lumiId,
           lumiName: l.lumiName,
           level: l.level || 0,
+          star: l.star || 0,
           secondSkills: [...l.secondSkills],
         })),
         trainerSkills: [...t.trainerSkills],
@@ -419,6 +422,7 @@ function loadWeekState(week) {
               lumiId: l.lumiId,
               lumiName: l.lumiName,
               level: l.level || 0,
+              star: l.star || 0,
               secondSkills: new Map(l.secondSkills || []),
             })),
             trainerSkills: new Map(t.trainerSkills || []),
@@ -499,6 +503,7 @@ function mergeWeeksIntoZone(weeks, zoneKey) {
               lumiId: l.lumiId,
               lumiName: l.lumiName,
               level: l.level || 0,
+              star: l.star || 0,
               secondSkills: new Map(l.secondSkills),
             })),
             trainerSkills: new Map(t.trainerSkills),
@@ -508,10 +513,13 @@ function mergeWeeksIntoZone(weeks, zoneKey) {
         }
         const mt = mf.teamsWon.get(tk)
         mt.battles += t.battles
-        // latestGameId 取 max；对应的 level 也跟着更新
+        // latestGameId 取 max；对应的 level / star 也跟着更新
         if (t.latestGameId > mt.latestGameId) {
           mt.latestGameId = t.latestGameId
-          t.lumis.forEach((l, idx) => { mt.lumis[idx].level = l.level })
+          t.lumis.forEach((l, idx) => {
+            mt.lumis[idx].level = l.level
+            mt.lumis[idx].star = l.star
+          })
         }
         // secondSkills / trainerSkills 计数累加
         for (const [sid, cnt] of t.trainerSkills) {
@@ -694,6 +702,7 @@ async function main() {
             lumiId: l.lumiId,
             lumiName: l.lumiName,
             level: l.level || 0,
+            star: l.star || 0,
             secondSkills: [...l.secondSkills.entries()]
               .map(([skillId, count]) => ({ skillId, count }))
               .sort((a, b) => b.count - a.count)

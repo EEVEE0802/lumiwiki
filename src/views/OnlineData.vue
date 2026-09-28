@@ -802,7 +802,9 @@
                             <div v-for="lumi in team.lumis" :key="'p-' + lumi.lumiId" class="gym-team-lumi" @click="goToLumi(lumi.lumiId)">
                               <img :src="avatarUrl(lumi.lumiId)" :alt="lumi.lumiName" @error="handleAvatarError" class="gym-team-avatar" />
                               <div class="gym-team-name">{{ lumi.lumiName }}</div>
-                              <div v-if="lumi.level" class="gym-team-info">Lv.{{ lumi.level }}</div>
+                              <div v-if="lumi.level" class="gym-team-info">
+                                Lv.{{ lumi.level }}<span v-if="lumi.star" class="gym-team-star"> · {{ '★'.repeat(lumi.star) }}</span>
+                              </div>
                               <div v-if="gymTopSkill(lumi)" class="gym-team-info gym-team-skill">
                                 <img v-if="gymTopSkill(lumi).icon" :src="skillIconUrl(gymTopSkill(lumi).icon)" class="gym-skill-icon" @error="e => e.target.style.display='none'" />
                                 <span>{{ gymTopSkill(lumi).name }}</span>
@@ -3010,6 +3012,11 @@ watch(currentStats, () => {
   font-size: 0.72rem;
   color: #888;
   margin-top: 2px;
+}
+
+.gym-team-star {
+  color: #f5b041;
+  letter-spacing: -1px;
 }
 
 .gym-team-skill {
