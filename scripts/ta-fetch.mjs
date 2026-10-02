@@ -68,6 +68,7 @@ export const CSV_HEADERS = {
   'guild-war':    ['part_date', 'b_role_id'],
   assist:         ['part_date', 'battle_uid', 'b_role_id'],
   recharge:       ['b_role_id', 'max_recharge_total'],
+  'recharge-daily': ['part_date', 'b_role_id', 'daily_max_recharge'],
 }
 
 function buildSql(mode, startDate, endDate, cfg) {
@@ -194,6 +195,25 @@ function buildSql(mode, startDate, endDate, cfg) {
         AND "$part_date" <= '${endDate}'
         AND "#event_name" = 'use_assist_lumi'
         AND ${zoneFilter}
+    `.trim().replace(/\s+/g, ' ')
+  }
+
+  if (mode === 'recharge-daily') {
+    // 每玩家 × 每天的累计充值（end-of-day balance）
+    // b_recharge_total 是累计充值（单位：分），MAX 取当天最后一笔
+    // ⚠️ string 类型，必须 TRY_CAST 成 bigint 再 MAX，避免字典序坑
+    // 用于 LTV(N) 分析：对每玩家找 firstLogin + N - 1 这天的最大累计 = D(N) LTV
+    return `
+      SELECT
+        "$part_date" AS part_date,
+        b_role_id,
+        MAX(TRY_CAST(b_recharge_total AS bigint)) AS daily_max_recharge
+      FROM ${tableName}
+      WHERE "$part_date" >= '${startDate}'
+        AND "$part_date" <= '${endDate}'
+        AND "#event_name" = 'recharge'
+        AND ${zoneFilter}
+      GROUP BY "$part_date", b_role_id
     `.trim().replace(/\s+/g, ' ')
   }
 
