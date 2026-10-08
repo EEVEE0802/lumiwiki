@@ -586,33 +586,8 @@ function writeReport(metrics, outPath) {
     push('')
   }
 
-  // === 6. 流失玩家末登日分布 ===
-  push(`## 6. 流失玩家末登日分布（流失发生在哪天）`)
-  push('')
-  push(`> 看流失是否集中在某些关键日（如公会战首开 9/30、周赛日等）`)
-  push('')
-  const allDatesForChurn = ALL_DATES.filter(d => d <= CUTOFF)
-  for (const c of COHORTS) {
-    push(`### Cohort ${c}`)
-    push('')
-    push(`| 末登日 | ${TIERS.map(t => TIER_LABEL[t]).join(' | ')} | 合计 |`)
-    push(`|---|${TIERS.map(() => '---').join('|')}|---|`)
-    for (const d of allDatesForChurn) {
-      const cells = TIERS.map(t => {
-        const dist = metrics.churnDateDist[c][t]
-        return (dist.byDate[d] || 0).toLocaleString()
-      })
-      const sum = TIERS.reduce((s, t) => s + (metrics.churnDateDist[c][t].byDate[d] || 0), 0)
-      if (sum === 0) continue // 跳过零行
-      push(`| ${d} | ${cells.join(' | ')} | **${sum.toLocaleString()}** |`)
-    }
-    const totals = TIERS.map(t => metrics.churnDateDist[c][t].count)
-    push(`| **合计** | ${totals.map(n => `**${n.toLocaleString()}**`).join(' | ')} | **${totals.reduce((a, b) => a + b, 0).toLocaleString()}** |`)
-    push('')
-  }
-
-  // === 7. 事件效应 ===
-  push(`## 7. 事件效应（周期玩法开放的回流冲击）`)
+  // === 6. 事件效应 ===
+  push(`## 6. 事件效应（周期玩法开放的回流冲击）`)
   push('')
   push(`> 口径：**"休眠"** = 触发日前 7 天内登录过但触发日前一天没登；**回流率** = 触发日登录数 / 休眠池`)
   push('')
