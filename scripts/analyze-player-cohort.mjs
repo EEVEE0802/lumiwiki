@@ -7,7 +7,7 @@
  * 输出：
  *   docs/retention-analysis/player-wide-table-{region}.csv  —— 玩家宽表
  *   docs/retention-analysis/aggregated-metrics-{region}.json —— 聚合指标
- *   docs/retention-analysis/report-{region}-预研版.md       —— Markdown 报告
+ *   docs/retention-analysis/report-{region}-{label}.md       —— Markdown 报告（label 由 --label 控制，默认"预研版"）
  *
  * cohort 划分（跟上线玩法开放节奏对齐，9/17 单独拆出以隔离内测回归）：
  *   A0: 9/17 单日   上线首日（含大量内测回归玩家，粘性天然高）
@@ -35,6 +35,7 @@ const argValue = (name, def) => {
 }
 const region = argValue('--region', 'cn')
 const CUTOFF = argValue('--cutoff', '2026-10-02')
+const LABEL = argValue('--label', '预研版')
 const LAUNCH = '2026-09-17'
 const COHORT_A1_START = '2026-09-18' // A0=9/17 单日（含内测回归），A1=9/18+
 const COHORT_B_START = '2026-09-25'
@@ -367,7 +368,7 @@ function writeReport(metrics, outPath) {
   const L = []
   const push = (...xs) => L.push(...xs)
 
-  push(`# 玩家行为与留存分析（${region}）— 预研版`)
+  push(`# 玩家行为与留存分析（${region}）— ${LABEL}`)
   push('')
   push(`- **截止日期**：${CUTOFF}`)
   push(`- **分析窗口**：${LAUNCH} ~ ${CUTOFF}（${ALL_DATES.length} 天）`)
@@ -431,28 +432,33 @@ function writeReport(metrics, outPath) {
     push('')
   }
 
-  // === 4. 玩法参与率 ===
-  push(`## 4. 玩法参与率 & 人均场次`)
+  // === 4. 玩法参与率（全体 × 付费档，不分 cohort）===
+  push(`## 4. 玩法参与率 & 人均场次（全体 × 付费档）`)
   push('')
-  push(`> 单元格 = **参与率% / 人均场次**；参与率 = 该群组内玩过该玩法的人数占比；人均场次 = 分母只算玩过的人`)
+  push(`> ⚠️ **不分 cohort 合计**：不同 cohort 入场时间差异大、能玩的玩法不同、观察窗口不同，分 cohort 看玩法总量意义不大；此处合计全部玩家按付费档展示`)
+  push(`> 单元格 = **参与率% / 人均场次**；参与率 = 该付费档内玩过该玩法的人数占比；人均场次 = 分母只算玩过的人`)
   push('')
+  push(`| 玩法 | ${TIERS.map(t => TIER_LABEL[t]).join(' | ')} |`)
+  push(`|---|${TIERS.map(() => '---').join('|')}|`)
   for (const m of MODES) {
-    push(`### ${MODE_LABEL[m]}`)
-    push('')
-    push(`| Cohort | ${TIERS.map(t => TIER_LABEL[t]).join(' | ')} |`)
-    push(`|---|${TIERS.map(() => '---').join('|')}|`)
-    for (const c of COHORTS) {
-      const cells = TIERS.map(t => {
+    const cells = TIERS.map(t => {
+      let totalPlayers = 0
+      let playedPlayers = 0
+      let totalBattles = 0
+      for (const c of COHORTS) {
         const r = metrics.participation[c][t][m]
-        if (r.total === 0) return '-'
-        const rate = (r.rate * 100).toFixed(1) + '%'
-        const avg = r.played === 0 ? '-' : r.avgBattlesWhenPlayed.toFixed(1)
-        return `${rate} / ${avg}`
-      })
-      push(`| ${c} | ${cells.join(' | ')} |`)
-    }
-    push('')
+        totalPlayers += r.total
+        playedPlayers += r.played
+        totalBattles += r.avgBattlesWhenPlayed * r.played
+      }
+      if (totalPlayers === 0) return '-'
+      const rate = (playedPlayers / totalPlayers * 100).toFixed(1) + '%'
+      const avg = playedPlayers === 0 ? '-' : (totalBattles / playedPlayers).toFixed(1)
+      return `${rate} / ${avg}`
+    })
+    push(`| ${MODE_LABEL[m]} | ${cells.join(' | ')} |`)
   }
+  push('')
 
   // === 5. 流失前每日场次 ===
   push(`## 5. 流失前每日场次（流失玩家末登日前 N 天的平均日场次，四玩法合计）`)
@@ -585,7 +591,7 @@ function writeReport(metrics, outPath) {
   if (args.includes('--only-report')) {
     const metricsPath = path.join(outDir, `aggregated-metrics-${region}.json`)
     const metrics = JSON.parse(fs.readFileSync(metricsPath, 'utf-8'))
-    writeReport(metrics, path.join(outDir, `report-${region}-预研版.md`))
+    writeReport(metrics, path.join(outDir, `report-${region}-${LABEL}.md`))
     console.log(`\n✅ 仅重新生成报告完成`)
     process.exit(0)
   }
@@ -615,7 +621,7 @@ function writeReport(metrics, outPath) {
   )
   console.log(`聚合写入: aggregated-metrics-${region}.json`)
 
-  writeReport(metrics, path.join(outDir, `report-${region}-预研版.md`))
+  writeReport(metrics, path.join(outDir, `report-${region}-${LABEL}.md`))
 
   console.log(`\n✅ 完成！输出目录: ${outDir}`)
 })().catch(e => {
