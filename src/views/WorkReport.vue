@@ -4,6 +4,42 @@
 
 const reports = [
   {
+    id: 'M5',
+    title: '闪耀吧噜咪 · 噜咪生产小组 M5 里程碑总结',
+    date: '2026-10-08',
+    tag: 'M5',
+    tagColor: '#ff6ec7',
+    desc: '正式服上线复盘：线上问题分析 · 玩家留存数据 · M6 规划',
+    file: '/reports/M5-milestone.html'
+  },
+  {
+    id: 'M5-retention-cn',
+    title: 'M5 附录 · 玩家留存分析（国内 cn）',
+    date: '2026-10-08',
+    tag: '附录',
+    tagColor: '#4dd8ff',
+    desc: '截止 2026-10-07 · cohort × 付费档 × 玩法深度完整数据',
+    file: '/reports/M5-retention-cn.html'
+  },
+  {
+    id: 'M5-retention-overseas',
+    title: 'M5 附录 · 玩家留存分析（海外 overseas）',
+    date: '2026-10-08',
+    tag: '附录',
+    tagColor: '#4dd8ff',
+    desc: '截止 2026-10-07 · 海外 5 服合并的留存与玩法数据',
+    file: '/reports/M5-retention-overseas.html'
+  },
+  {
+    id: 'M5-retention-shuoming',
+    title: 'M5 附录 · 留存分析评测说明',
+    date: '2026-10-08',
+    tag: '附录',
+    tagColor: '#6ee7a8',
+    desc: '口径、Cohort 划分、付费档、流失定义、指标公式说明',
+    file: '/reports/M5-retention-shuoming.html'
+  },
+  {
     id: 'M4',
     title: '闪耀吧噜咪 · 噜咪生产小组 M4 里程碑总结',
     date: '2026-08-03',
