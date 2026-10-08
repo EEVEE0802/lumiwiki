@@ -63,6 +63,25 @@ const MODES = ['ladder', 'tournament', 'gym', 'guildWar']
 const MODE_DIR = { ladder: 'ladder', tournament: 'tournament', gym: 'infinity-gym', guildWar: 'guild-war' }
 const MODE_LABEL = { ladder: '天梯', tournament: '周赛', gym: '道馆', guildWar: '公会战' }
 
+// 天梯段位映射：rank 1-30 青铜, 31-60 白银, 61-90 黄金, 91-120 钻石, 121-150 星耀, 151 传说
+function rankToTier(r) {
+  if (!r || r <= 0) return null
+  if (r <= 30) return '青铜'
+  if (r <= 60) return '白银'
+  if (r <= 90) return '黄金'
+  if (r <= 120) return '钻石'
+  if (r <= 150) return '星耀'
+  return '传说'
+}
+// 道馆 gym_uid 分区（主线 1-500 / 赛季 1-200）
+const GYM_MAINLINE_BASE = 128100000
+const GYM_SEASON_BASE   = 1281100000
+function gymUidToFloor(uid) {
+  if (uid >= 128100001 && uid <= 128100500) return { zone: 'mainline', floor: uid - GYM_MAINLINE_BASE }
+  if (uid >= 1281100001 && uid <= 1281100200) return { zone: 'season', floor: uid - GYM_SEASON_BASE }
+  return null
+}
+
 // ---------- 工具 ----------
 function classifyTier(cents) {
   const v = Number(cents) || 0
@@ -145,6 +164,7 @@ async function buildPlayerBase(tierMap) {
       let p = players.get(r)
       if (!p) {
         p = {
+          roleId: r,
           tier: tierMap.get(r) || 'nonPayer',
           firstLoginDate: partDate,
           lastLoginDate: partDate,
@@ -154,6 +174,9 @@ async function buildPlayerBase(tierMap) {
             firstDay: null,
             daily: new Int32Array(ALL_DATES.length), // 每日场次（按 ALL_DATES 索引）
           }])),
+          maxLadderRank: 0,          // 天梯最高 rank（1-151），0=没打天梯
+          maxGymMainlineFloor: 0,    // 主线道馆最高层（1-500），0=没打
+          maxGymSeasonFloor: 0,      // 赛季道馆最高层（1-200），0=没打
         }
         players.set(r, p)
       } else {
@@ -192,6 +215,17 @@ async function aggregateMode(mode, players) {
       p.modes[mode].daily[dateIdx]++
       if (!p.modes[mode].firstDay || partDate < p.modes[mode].firstDay) {
         p.modes[mode].firstDay = partDate
+      }
+      // 聚合最高段位 / 最高层数
+      if (mode === 'ladder') {
+        const rank = parseInt(row.player_rank)
+        if (rank > p.maxLadderRank) p.maxLadderRank = rank
+      } else if (mode === 'gym') {
+        const parsed = gymUidToFloor(parseInt(row.gym_uid))
+        if (parsed) {
+          if (parsed.zone === 'mainline' && parsed.floor > p.maxGymMainlineFloor) p.maxGymMainlineFloor = parsed.floor
+          else if (parsed.zone === 'season' && parsed.floor > p.maxGymSeasonFloor) p.maxGymSeasonFloor = parsed.floor
+        }
       }
       kept++
     })
@@ -255,52 +289,57 @@ function analyze(players) {
     }
   }
 
-  // === 4. 流失玩家流失前日均场次（L-0 ~ L-6）===
-  //   分母 = 该偏移天 >= firstLoginDate 的流失玩家数（避免"还没入场"的日子被当 0）
-  //   分子 = 该偏移天四玩法总场次
-  const OFFSETS = ['L-0', 'L-1', 'L-2', 'L-3', 'L-4', 'L-5', 'L-6']
-  const churnBehavior = {}
-  for (const c of COHORTS) {
-    churnBehavior[c] = {}
-    for (const t of TIERS) {
-      const subset = valid.filter(p => p.cohort === c && p.tier === t && p.isChurn)
-      if (!subset.length) { churnBehavior[c][t] = null; continue }
-
-      const sumBattles = Object.fromEntries(OFFSETS.map(k => [k, 0]))
-      const sumByMode = Object.fromEntries(OFFSETS.map(k => [k, Object.fromEntries(MODES.map(m => [m, 0]))]))
-      const observable = Object.fromEntries(OFFSETS.map(k => [k, 0]))
-
-      for (const p of subset) {
-        const lastIdx = DATE_TO_IDX.get(p.lastLoginDate)
-        if (lastIdx === undefined) continue
-        for (let i = 0; i <= 6; i++) {
-          const d = addDays(p.lastLoginDate, -i)
-          if (d < p.firstLoginDate || d < LAUNCH) continue
-          const idx = lastIdx - i
-          if (idx < 0) continue
-          observable[`L-${i}`]++
-          let dayTotal = 0
-          for (const m of MODES) {
-            const n = p.modes[m].daily[idx]
-            dayTotal += n
-            sumByMode[`L-${i}`][m] += n
-          }
-          sumBattles[`L-${i}`] += dayTotal
-        }
-      }
-
-      churnBehavior[c][t] = {
-        count: subset.length,
-        avgBattlesByOffset: Object.fromEntries(
-          OFFSETS.map(k => [k, observable[k] ? sumBattles[k] / observable[k] : null])
-        ),
-        avgBattlesByOffsetByMode: Object.fromEntries(
-          OFFSETS.map(k => [k, Object.fromEntries(
-            MODES.map(m => [m, observable[k] ? sumByMode[k][m] / observable[k] : null])
-          )])
-        ),
-      }
+  // === 4. 流失前玩家状态（全体流失 × 付费档，不分 cohort）===
+  //   分母：天梯/道馆/周赛/公会战都只算"玩过该玩法的"流失玩家（避免 0 稀释）
+  const churnStatus = {}
+  for (const t of TIERS) {
+    const subset = valid.filter(p => p.tier === t && p.isChurn)
+    const stat = {
+      count: subset.length,
+      ladder: { played: 0, sumMaxRank: 0 },
+      gymMainline: { played: 0, sumMaxFloor: 0 },
+      gymSeason: { played: 0, sumMaxFloor: 0 },
+      tournament: { played: 0, sumBattles: 0 },
+      guildWar: { played: 0, sumBattles: 0 },
     }
+    for (const p of subset) {
+      if (p.maxLadderRank > 0) { stat.ladder.played++; stat.ladder.sumMaxRank += p.maxLadderRank }
+      if (p.maxGymMainlineFloor > 0) { stat.gymMainline.played++; stat.gymMainline.sumMaxFloor += p.maxGymMainlineFloor }
+      if (p.maxGymSeasonFloor > 0) { stat.gymSeason.played++; stat.gymSeason.sumMaxFloor += p.maxGymSeasonFloor }
+      if (p.modes.tournament.battles > 0) { stat.tournament.played++; stat.tournament.sumBattles += p.modes.tournament.battles }
+      if (p.modes.guildWar.battles > 0) { stat.guildWar.played++; stat.guildWar.sumBattles += p.modes.guildWar.battles }
+    }
+    churnStatus[t] = stat
+  }
+
+  // === 4.1 每付费档随机 5 个流失角色样本（固定种子，可复现）===
+  const SAMPLE_N = 5
+  const churnSamples = {}
+  for (const t of TIERS) {
+    const subset = valid.filter(p => p.tier === t && p.isChurn)
+    // 用 role_id 字符串尾段 hash 排序（稳定且分散）
+    const sorted = subset.slice().sort((a, b) => {
+      const ha = (a.roleId || '').split('').reduce((s, c) => (s * 31 + c.charCodeAt(0)) >>> 0, 2166136261)
+      const hb = (b.roleId || '').split('').reduce((s, c) => (s * 31 + c.charCodeAt(0)) >>> 0, 2166136261)
+      return ha - hb
+    })
+    // 均匀步长抽样
+    const step = Math.max(1, Math.floor(sorted.length / SAMPLE_N))
+    const picked = []
+    for (let i = 0; i < sorted.length && picked.length < SAMPLE_N; i += step) picked.push(sorted[i])
+    churnSamples[t] = picked.map(p => ({
+      roleId: p.roleId,
+      cohort: p.cohort,
+      firstLoginDate: p.firstLoginDate,
+      lastLoginDate: p.lastLoginDate,
+      maxLadderRank: p.maxLadderRank,
+      maxGymMainlineFloor: p.maxGymMainlineFloor,
+      maxGymSeasonFloor: p.maxGymSeasonFloor,
+      tournamentBattles: p.modes.tournament.battles,
+      guildWarBattles: p.modes.guildWar.battles,
+      ladderBattles: p.modes.ladder.battles,
+      gymBattles: p.modes.gym.battles,
+    }))
   }
 
   // === 5. 事件效应（周期玩法开放对休眠玩家的回流冲击）===
@@ -341,7 +380,7 @@ function analyze(players) {
     }
   }
 
-  return { cohortTierCount, retention, participation, churnBehavior, churnDateDist, events }
+  return { cohortTierCount, retention, participation, churnStatus, churnSamples, churnDateDist, events }
 }
 
 // ---------- 5. 输出宽表 CSV ----------
@@ -460,93 +499,101 @@ function writeReport(metrics, outPath) {
   }
   push('')
 
-  // === 5. 流失前每日场次 ===
-  push(`## 5. 流失前每日场次（流失玩家末登日前 N 天的平均日场次，四玩法合计）`)
+  // === 5. 流失前玩家状态（全体流失 × 付费档，不分 cohort）===
+  push(`## 5. 流失前玩家状态（全体流失 × 付费档）`)
   push('')
-  push(`> 分母 = 该偏移天 ≥ 首登日 的流失玩家数（避免"还没入场"的日子被当 0 稀释）；L-0 = 末登日`)
+  push(`> ⚠️ **不分 cohort 合计**：不同 cohort 入场时间、能玩玩法、观察窗口都不同，分 cohort 看玩法深度意义不大；此处聚合全体流失玩家按付费档展示`)
+  push(`> **分母**：天梯/道馆/周赛/公会战都只算"玩过该玩法"的流失玩家（避免 0 稀释，反映真正达到的深度）`)
+  push(`> **天梯段位映射**：rank 1-30 青铜 / 31-60 白银 / 61-90 黄金 / 91-120 钻石 / 121-150 星耀 / 151 传说`)
   push('')
-  const OFFSETS_R = ['L-0', 'L-1', 'L-2', 'L-3', 'L-4', 'L-5', 'L-6']
-  for (const c of COHORTS) {
-    push(`### Cohort ${c} — 日均总场次`)
+  push(`| 指标 | ${TIERS.map(t => TIER_LABEL[t]).join(' | ')} |`)
+  push(`|---|${TIERS.map(() => '---').join('|')}|`)
+  // 流失总人数
+  push(`| 流失总人数 | ${TIERS.map(t => metrics.churnStatus[t].count.toLocaleString()).join(' | ')} |`)
+  // 天梯最高段位（avg rank + 段位 label）
+  push(`| 天梯最高段位（avg rank / 段位） | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t].ladder
+    if (!s.played) return '-'
+    const avg = s.sumMaxRank / s.played
+    return `${avg.toFixed(1)} / ${rankToTier(Math.round(avg))}`
+  }).join(' | ')} |`)
+  push(`| └ 玩过天梯的流失占比 | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t]
+    return s.count ? (s.ladder.played / s.count * 100).toFixed(1) + '%' : '-'
+  }).join(' | ')} |`)
+  // 主线道馆最高层
+  push(`| 主线道馆最高层（avg，1-500） | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t].gymMainline
+    return s.played ? (s.sumMaxFloor / s.played).toFixed(1) : '-'
+  }).join(' | ')} |`)
+  push(`| └ 玩过主线道馆的流失占比 | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t]
+    return s.count ? (s.gymMainline.played / s.count * 100).toFixed(1) + '%' : '-'
+  }).join(' | ')} |`)
+  // 赛季道馆最高层
+  push(`| 赛季道馆最高层（avg，1-200） | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t].gymSeason
+    return s.played ? (s.sumMaxFloor / s.played).toFixed(1) : '-'
+  }).join(' | ')} |`)
+  push(`| └ 玩过赛季道馆的流失占比 | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t]
+    return s.count ? (s.gymSeason.played / s.count * 100).toFixed(1) + '%' : '-'
+  }).join(' | ')} |`)
+  // 周赛平均场次
+  push(`| 周赛平均场次（玩过的） | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t].tournament
+    return s.played ? (s.sumBattles / s.played).toFixed(1) : '-'
+  }).join(' | ')} |`)
+  push(`| └ 玩过周赛的流失占比 | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t]
+    return s.count ? (s.tournament.played / s.count * 100).toFixed(1) + '%' : '-'
+  }).join(' | ')} |`)
+  // 公会战平均场次
+  push(`| 公会战平均场次（玩过的） | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t].guildWar
+    return s.played ? (s.sumBattles / s.played).toFixed(1) : '-'
+  }).join(' | ')} |`)
+  push(`| └ 玩过公会战的流失占比 | ${TIERS.map(t => {
+    const s = metrics.churnStatus[t]
+    return s.count ? (s.guildWar.played / s.count * 100).toFixed(1) + '%' : '-'
+  }).join(' | ')} |`)
+  push('')
+
+  // === 5.1 每付费档随机 5 个流失角色样本 ===
+  push(`### 5.1 流失角色样本（每档固定抽样 5 个，可复现）`)
+  push('')
+  push(`> 用 role_id hash 固定排序 + 均匀步长抽样；无玩过记录 = \`-\`；段位列: rank / 段位 label`)
+  push('')
+  for (const t of TIERS) {
+    const samples = metrics.churnSamples[t]
+    if (!samples || !samples.length) {
+      push(`#### ${TIER_LABEL[t]} — 流失 ${metrics.churnStatus[t].count.toLocaleString()} 人（样本池不足）`)
+      push('')
+      continue
+    }
+    push(`#### ${TIER_LABEL[t]} — 流失 ${metrics.churnStatus[t].count.toLocaleString()} 人`)
     push('')
-    push(`| Tier | 流失人数 | ${OFFSETS_R.join(' | ')} |`)
-    push(`|---|---|${OFFSETS_R.map(() => '---').join('|')}|`)
-    for (const t of TIERS) {
-      const b = metrics.churnBehavior[c][t]
-      if (!b) { push(`| ${TIER_LABEL[t]} | 0 | ${OFFSETS_R.map(() => '-').join(' | ')} |`); continue }
-      const vals = OFFSETS_R.map(k => {
-        const v = b.avgBattlesByOffset[k]
-        return v == null ? '-' : v.toFixed(1)
-      })
-      push(`| ${TIER_LABEL[t]} | ${b.count.toLocaleString()} | ${vals.join(' | ')} |`)
+    push(`| role_id | 首登 | 末登 | 天梯最高段位 | 主线道馆最高层 | 赛季道馆最高层 | 周赛场次 | 公会战场次 |`)
+    push(`|---|---|---|---|---|---|---|---|`)
+    for (const s of samples) {
+      const ladder = s.maxLadderRank > 0 ? `${s.maxLadderRank} / ${rankToTier(s.maxLadderRank)}` : '-'
+      const gymM = s.maxGymMainlineFloor > 0 ? s.maxGymMainlineFloor : '-'
+      const gymS = s.maxGymSeasonFloor > 0 ? s.maxGymSeasonFloor : '-'
+      const tour = s.tournamentBattles > 0 ? s.tournamentBattles : '-'
+      const guild = s.guildWarBattles > 0 ? s.guildWarBattles : '-'
+      push(`| ${s.roleId} | ${s.firstLoginDate} | ${s.lastLoginDate} | ${ladder} | ${gymM} | ${gymS} | ${tour} | ${guild} |`)
     }
     push('')
   }
 
-  // 流失前按玩法拆分（全开 Cohort × Tier × 玩法）
-  push(`### 5.1 流失前日均场次 — 按玩法拆分（全部 Cohort × Tier）`)
-  push('')
-  push(`> 每张小表 = 1 个 (Cohort, Tier) 组合；行 = 4 个玩法；列 = L-0 ~ L-6`)
-  push('')
-  for (const c of COHORTS) {
-    for (const t of TIERS) {
-      const b = metrics.churnBehavior[c][t]
-      if (!b) { push(`#### Cohort ${c} / ${TIER_LABEL[t]} — 流失 0 人（无数据）`); push(''); continue }
-      push(`#### Cohort ${c} / ${TIER_LABEL[t]} — 流失 ${b.count.toLocaleString()} 人`)
-      push('')
-      push(`| 玩法 | ${OFFSETS_R.join(' | ')} |`)
-      push(`|---|${OFFSETS_R.map(() => '---').join('|')}|`)
-      for (const m of MODES) {
-        const row = [MODE_LABEL[m]]
-        for (const k of OFFSETS_R) {
-          const v = b.avgBattlesByOffsetByMode[k][m]
-          row.push(v == null ? '-' : v.toFixed(1))
-        }
-        push(`| ${row.join(' | ')} |`)
-      }
-      push('')
-    }
-  }
-
-  // 5.2 按玩法拆的占比
-  push(`### 5.2 流失前日均场次 — 按玩法占比（%）`)
-  push('')
-  push(`> 占比 = 该玩法场次 / 当天四玩法总场次 × 100%；突出结构性变化（例如"末日公会战占比飙升"）`)
-  push('')
-  for (const c of COHORTS) {
-    for (const t of TIERS) {
-      const b = metrics.churnBehavior[c][t]
-      if (!b) continue
-      push(`#### Cohort ${c} / ${TIER_LABEL[t]}`)
-      push('')
-      push(`| 玩法 | ${OFFSETS_R.join(' | ')} |`)
-      push(`|---|${OFFSETS_R.map(() => '---').join('|')}|`)
-      // 先算每个偏移天的总和
-      const dayTotal = {}
-      for (const k of OFFSETS_R) {
-        dayTotal[k] = MODES.reduce((s, m) => s + (b.avgBattlesByOffsetByMode[k][m] || 0), 0)
-      }
-      for (const m of MODES) {
-        const row = [MODE_LABEL[m]]
-        for (const k of OFFSETS_R) {
-          const v = b.avgBattlesByOffsetByMode[k][m]
-          if (v == null || dayTotal[k] === 0) { row.push('-'); continue }
-          row.push((v / dayTotal[k] * 100).toFixed(1) + '%')
-        }
-        push(`| ${row.join(' | ')} |`)
-      }
-      push('')
-    }
-  }
-
-  // 5.3 末登日分布
-  push(`### 5.3 流失玩家末登日分布（流失发生在哪天）`)
+  // === 6. 流失玩家末登日分布 ===
+  push(`## 6. 流失玩家末登日分布（流失发生在哪天）`)
   push('')
   push(`> 看流失是否集中在某些关键日（如公会战首开 9/30、周赛日等）`)
   push('')
   const allDatesForChurn = ALL_DATES.filter(d => d <= CUTOFF)
   for (const c of COHORTS) {
-    push(`#### Cohort ${c}`)
+    push(`### Cohort ${c}`)
     push('')
     push(`| 末登日 | ${TIERS.map(t => TIER_LABEL[t]).join(' | ')} | 合计 |`)
     push(`|---|${TIERS.map(() => '---').join('|')}|---|`)
@@ -564,8 +611,8 @@ function writeReport(metrics, outPath) {
     push('')
   }
 
-  // === 6. 事件效应 ===
-  push(`## 6. 事件效应（周期玩法开放的回流冲击）`)
+  // === 7. 事件效应 ===
+  push(`## 7. 事件效应（周期玩法开放的回流冲击）`)
   push('')
   push(`> 口径：**"休眠"** = 触发日前 7 天内登录过但触发日前一天没登；**回流率** = 触发日登录数 / 休眠池`)
   push('')

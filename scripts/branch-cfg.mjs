@@ -8,6 +8,7 @@ const PROJECT_ROOT = path.resolve(__dirname, '..')
 
 // 对外 / 对内两套数据源
 // 2026-09-17 起：对外/对内都用 Branch 目录（游戏内容一致，前端切换只是视图差异）
+// 2026-10-08 起：对内分支切到 G36Ha 独立数据源（对外继续走 G36Branch）
 // 之前对外是 F:/G36/LumiGoDesigner，对内是 F:/G36Branch/Designer；正式服上线后统一走 Branch
 // 需要区分数据源时改这里即可（DATA_SUBDIR / IMAGE_SUBDIR 保持不变，前端切换机制不受影响）
 const CFG = {
@@ -18,8 +19,8 @@ const CFG = {
     IMAGE_SUBDIR:   '',
   },
   internal: {
-    LUBAN_DATA_DIR: 'F:/G36Branch/Designer/Config/Luban/Datas',
-    CLIENT_ROOT:    'F:/G36Branch/LumiGoProgram/Client/Assets/UIResource',
+    LUBAN_DATA_DIR: 'F:/G36Ha/Designer/Config/Luban/Datas',
+    CLIENT_ROOT:    'F:/G36Ha/LumiGoProgram/Client/Assets/UIResource',
     DATA_SUBDIR:    'internal',
     IMAGE_SUBDIR:   'internal',
   },

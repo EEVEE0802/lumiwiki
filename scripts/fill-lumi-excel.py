@@ -20,7 +20,7 @@ from openpyxl.utils import get_column_letter
 sys.stdout.reconfigure(encoding='utf-8')
 
 # ============ 路径配置 ============
-INTERNAL_DATA = Path('F:/G36Branch/Designer/Config/Luban/Datas/check/data')
+INTERNAL_DATA = Path('F:/G36Ha/Designer/Config/Luban/Datas/check/data')
 WIKI_ROOT = Path('D:/lumiwiki')
 XLSX_PATH = WIKI_ROOT / 'docs' / '噜咪立绘与技能资料.xlsx'
 XLSX_BAK = WIKI_ROOT / 'docs' / '噜咪立绘与技能资料.xlsx.bak'  # 表头模板来源
