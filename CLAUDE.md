@@ -87,12 +87,14 @@ LumiWiki/
 
 游戏原始数据（Luban 导表）**从 2026-08-11 起客户端/服务端表统一放在一个目录**：
 
-**2026-09-17 正式服上线起，对外/对内共用同一份 Branch 数据源**（两 branch 相同、写两份到 `public/data/` 和 `public/data/internal/`，前端切换机制保留，需要区分时改 `scripts/branch-cfg.mjs`）：
-- **对外 / 对内**（当前一致）：`F:\G36Branch\Designer\Config\Luban\Datas\check\data\` —— 展示/配置类 + 匹配/逻辑类 全部在这里（Lumi、技能、物品、属性克制、Gym、MonsterGroup、Monster、RobotData、RobotLvMatching、LumiDrop、LumiDropData 等）
+**2026-10-14 起对外/对内分家，各用独立数据源**（写两份到 `public/data/` 和 `public/data/internal/`，前端切换机制保留，需要区分时改 `scripts/branch-cfg.mjs`）：
+- **对外**：`F:\G36Branch\Designer\Config\Luban\Datas\check\data\`（客户端资源 `F:\G36Branch\LumiGoProgram\...`）
+- **对内**：`F:\G36\LumiGoDesigner\Config\Luban\Datas\check\data\`（客户端资源 `F:\G36\LumiGoProgram\...`）
+- 展示/配置类 + 匹配/逻辑类 全部在 check/data（Lumi、技能、物品、属性克制、Gym、MonsterGroup、Monster、RobotData、RobotLvMatching、LumiDrop、LumiDropData 等）
 
 > ⚠️ 之前分 `Table/data`（客户端）和 `server/data`（服务端）两套，现已合并到 `check/data` 一套。旧目录 svn 里可能还在，但新数据只导到 `check/data`。
 >
-> 📌 之前对外用 `F:\G36\LumiGoDesigner`、对内用 `F:\G36Branch\Designer`；正式服上线后统一走 Branch。恢复分家时改 `scripts/branch-cfg.mjs` 里 `external` 的 `LUBAN_DATA_DIR` / `CLIENT_ROOT` 指回 `F:\G36\LumiGoDesigner\...` 即可。
+> 📌 数据源沿革：最早对外 `F:\G36\LumiGoDesigner`、对内 `F:\G36Branch\Designer` → 2026-09-17 正式服上线统一走 Branch → 2026-10-08 对内切 G36Ha → 2026-10-14 对内切 G36（对外始终 G36Branch）。`prepare-i18n-data.cjs` 的多语言源路径与 branch-cfg 同步维护。
 
 **枚举定义**：`F:\G36Branch\Designer\Config\Luban\Datas\__enums__.xlsx`
 **项目数据**：`D:\LumiWiki\public\data\`（对外）/ `D:\LumiWiki\public\data\internal\`（对内）
