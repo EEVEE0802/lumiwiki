@@ -42,7 +42,7 @@
         :class="['mode-btn', { active: gameMode === 'infinityGym' }]"
         @click="switchGameMode('infinityGym')"
       >
-        ⚔️ 无限道馆
+        ⚔️ 道馆数据
       </button>
       <button
         :class="['mode-btn', { active: gameMode === 'participation' }]"
@@ -637,10 +637,10 @@
         <p class="no-data-desc">请等待每小时任务生成数据</p>
       </div>
       <template v-else>
-        <!-- 分区切换（主线 / 赛季）—— 整个 UI 按选中分区展示 -->
+        <!-- 分区切换（主线 / 赛季 / 有限）—— 整个 UI 按选中分区展示 -->
         <div class="gym-zone-switch">
           <button
-            v-for="z in ['mainline','season']"
+            v-for="z in ['mainline','season','limited']"
             :key="z"
             :class="['gym-zone-btn', { active: gymZone === z }]"
             @click="switchGymZone(z)"
@@ -671,18 +671,18 @@
           </div>
           <div class="gym-stat-card">
             <div class="gym-stat-value">{{ gymZoneData.floors.length }}</div>
-            <div class="gym-stat-label">已被挑战层数</div>
+            <div class="gym-stat-label">已被挑战{{ gymUnit }}数</div>
           </div>
           <div class="gym-stat-card">
             <div class="gym-stat-value">{{ maxFloorReached }}</div>
-            <div class="gym-stat-label">最高层数</div>
+            <div class="gym-stat-label">最高{{ gymUnit }}数</div>
           </div>
         </div>
 
         <!-- 层数分布图 -->
         <div class="gym-chart-block">
-          <h3>玩家最高层数分布</h3>
-          <p class="chart-subtitle">每个玩家历史挑战过的最高层（含胜负）</p>
+          <h3>玩家最高{{ gymUnit }}数分布</h3>
+          <p class="chart-subtitle">每个玩家历史挑战过的最高{{ gymUnit }}（含胜负）</p>
           <div class="chart-wrapper" style="min-height: 320px">
             <canvas ref="gymFloorDistCanvas"></canvas>
           </div>
@@ -710,14 +710,14 @@
         <!-- 关卡列表（按 10 层分组，外层只显示卡点关的数据，展开查看组内各层） -->
         <div class="gym-floors-block">
           <div class="gym-floors-header">
-            <h3>关卡数据（共 {{ gymZoneData.floors.length }} 层有玩家挑战）</h3>
+            <h3>关卡数据（共 {{ gymZoneData.floors.length }} {{ gymUnit }}有玩家挑战）</h3>
             <div class="gym-jump">
               <label>跳转到第
                 <input type="number" v-model.number="gymJumpFloor" min="1" :max="maxFloorReached" @keyup.enter="jumpToFloor">
-                层
+                {{ gymUnit }}
               </label>
               <button class="gym-jump-btn" @click="jumpToFloor">跳转</button>
-              <button class="download-teams-btn gym-download-btn" @click="downloadGymTeamsCSV" :disabled="!gymZoneData.floors.length">
+              <button v-if="gymHasTeams" class="download-teams-btn gym-download-btn" @click="downloadGymTeamsCSV" :disabled="!gymZoneData.floors.length">
                 📥 下载通关阵容（CSV）
               </button>
             </div>
@@ -732,8 +732,8 @@
               <!-- 组主行：卡点关数据 -->
               <div class="gym-group-summary" @click="toggleGroup(group.key)">
                 <div class="gym-floor-num">
-                  第 {{ group.key }} 层
-                  <span class="gym-group-badge">🎯 卡点关</span>
+                  第 {{ group.boss ? group.boss.floor : group.key }} {{ gymUnit }}
+                  <span v-if="group.boss && group.boss.floor === group.key" class="gym-group-badge">🎯 卡点关</span>
                 </div>
                 <div class="gym-floor-metrics" v-if="group.boss">
                   <span>挑战 <b>{{ formatNumber(group.boss.totalBattles) }}</b></span>
@@ -745,7 +745,7 @@
                   <span>通过玩家平均挑战次数 <b>{{ group.boss.avgAttempts }}</b></span>
                 </div>
                 <div class="gym-floor-metrics gym-floor-empty" v-else>
-                  <span>暂无玩家挑战到本层</span>
+                  <span>暂无玩家挑战到本{{ gymUnit }}</span>
                 </div>
                 <div class="gym-floor-toggle">{{ expandedGroups.has(group.key) ? '▲' : '▼' }}</div>
               </div>
@@ -758,7 +758,7 @@
                   :class="['gym-floor-card', 'gym-floor-card-inner', { expanded: expandedFloors.has(floor.floor), 'is-boss': floor.floor === group.key }]"
                 >
                   <div class="gym-floor-summary" @click="toggleFloor(floor.floor)">
-                    <div class="gym-floor-num">第 {{ floor.floor }} 层</div>
+                    <div class="gym-floor-num">第 {{ floor.floor }} {{ gymUnit }}</div>
                     <div class="gym-floor-metrics">
                       <span>挑战 <b>{{ formatNumber(floor.totalBattles) }}</b></span>
                       <span>通过率 <b>{{ floor.winRate }}%</b></span>
@@ -771,8 +771,8 @@
                     <div class="gym-floor-toggle">{{ expandedFloors.has(floor.floor) ? '▲' : '▼' }}</div>
                   </div>
                   <div v-if="expandedFloors.has(floor.floor)" class="gym-floor-detail">
-                    <!-- NPC 阵容 -->
-                    <div class="gym-team-section">
+                    <!-- NPC 阵容（有限道馆不展示） -->
+                    <div v-if="gymHasTeams" class="gym-team-section">
                       <h4>🤖 道馆 NPC 阵容</h4>
                       <div class="gym-team-row">
                         <div v-for="lumi in floor.npcTeam" :key="'npc-' + lumi.lumiId" class="gym-team-lumi" @click="goToLumi(lumi.lumiId)">
@@ -783,8 +783,8 @@
                         </div>
                       </div>
                     </div>
-                    <!-- 玩家通关阵容：最近使用 / 使用最多 / 其他阵容 -->
-                    <div class="gym-team-section">
+                    <!-- 玩家通关阵容：最近使用 / 使用最多 / 其他阵容（有限道馆不收集） -->
+                    <div v-if="gymHasTeams" class="gym-team-section">
                       <h4>🏆 通关玩家阵容</h4>
                       <div v-if="!floor.topTeams.length" class="gym-empty-hint">暂无通关玩家阵容数据</div>
                       <div v-else class="gym-teams-list">
@@ -981,7 +981,7 @@ const noData = ref(false) // 该周数据加载失败时置 true（如首周无�
 
 // 无限道馆状态
 const gymData = ref(null)
-const gymZone = ref('mainline')   // mainline | season（分区切换）
+const gymZone = ref('mainline')   // mainline | season | limited（分区切换）
 const expandedFloors = ref(new Set())
 const expandedGroups = ref(new Set())
 const gymJumpFloor = ref(1)
@@ -991,11 +991,16 @@ const gymFloorDistCanvas = ref(null)
 let gymFloorDistChart = null
 
 // 当前分区数据：{ totalChallengers, totalBattles, assistBattles, assistRate, maxFloorDistribution, floors }
-// gymData 顶层还带 globalLumiUsage / updateTime / region（跨区共享）
+// gymData 顶层还带 globalLumiUsage / updateTime / region（跨区共享，仅无限道馆口径）
+// unit: 文案用的量词（主线/赛季爬塔叫"层"，有限道馆 59 关叫"关"）
 const GYM_ZONE_META = {
-  mainline: { key: 'mainline', label: '🗻 主线道馆', uidBase: 128100000 },
-  season:   { key: 'season',   label: '🌸 赛季道馆', uidBase: 1281100000 },
+  mainline: { key: 'mainline', label: '🗻 主线道馆', uidBase: 128100000, unit: '层', teams: true },
+  season:   { key: 'season',   label: '🌸 赛季道馆', uidBase: 1281100000, unit: '层', teams: true },
+  limited:  { key: 'limited',  label: '🏯 有限道馆', uidBase: 1280000, unit: '关', teams: false },
 }
+const gymUnit = computed(() => GYM_ZONE_META[gymZone.value]?.unit || '层')
+// 当前分区是否展示通关阵容（有限道馆只看参与情况与通关状态，不收集阵容）
+const gymHasTeams = computed(() => GYM_ZONE_META[gymZone.value]?.teams !== false)
 const gymZoneData = computed(() => {
   if (!gymData.value) return null
   return gymData.value[gymZone.value] || null
@@ -1016,6 +1021,10 @@ const gymFloorGroups = computed(() => {
   const result = [...groups.values()]
   result.sort((a, b) => b.key - a.key)
   for (const g of result) g.floors.sort((a, b) => b.floor - a.floor)
+  // 不满 10 层的末组（如有限道馆 51~59 关 → key=60 不存在）用组内最高层当主行，避免显示"暂无数据"
+  for (const g of result) {
+    if (!g.boss) g.boss = g.floors[0] || null
+  }
   return result
 })
 
@@ -1425,7 +1434,7 @@ async function switchRegion(region) {
 const subtitleText = computed(() => {
   if (gameMode.value === 'participation') return '玩家每日参与走势（登录 / 天梯 / 周赛 / 无限道馆 UV）'
   if (gameMode.value === 'tournament') return '周赛高端对战数据'
-  if (gameMode.value === 'infinityGym') return '无限道馆爬塔玩法数据统计（累计）'
+  if (gameMode.value === 'infinityGym') return '道馆玩法数据统计（无限：主线/赛季爬塔 + 有限：59 关，累计）'
   return '天梯1v1实时统计数据'
 })
 
@@ -1849,7 +1858,7 @@ async function loadGymData() {
   }
 }
 
-// 切换分区（主线 / 赛季）—— 收起所有展开状态、重画层数分布图
+// 切换分区（主线 / 赛季 / 有限）—— 收起所有展开状态、重画层数分布图
 function switchGymZone(zone) {
   if (gymZone.value === zone) return
   gymZone.value = zone
@@ -1878,7 +1887,7 @@ function drawFloorDistChart() {
   gymFloorDistChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: floors.map(f => `第${f}层`),
+      labels: floors.map(f => `第${f}${gymUnit.value}`),
       datasets: [{
         label: '停留玩家数',
         data: counts,
@@ -1936,7 +1945,7 @@ function jumpToFloor() {
   const groupKey = Math.ceil(floor / 10) * 10
   const hasFloor = gymZoneData.value?.floors?.some(f => f.floor === floor)
   if (!hasFloor) {
-    alert(`第 ${floor} 层暂无玩家挑战数据`)
+    alert(`第 ${floor} ${gymUnit.value}暂无玩家挑战数据`)
     return
   }
   // 先展开组，再展开该层的阵容详情

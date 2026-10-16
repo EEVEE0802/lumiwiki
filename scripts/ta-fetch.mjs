@@ -65,6 +65,7 @@ export const CSV_HEADERS = {
   tournament:     ['part_date', 'game_id_str', 'b_role_id', 'player_rank', 'player_type', 'player_lumis', 'battle_result', 'trainer_id', 'player_week_win'],
   login:          ['part_date', 'b_role_id', 'b_create_time_str'],
   'infinity-gym': ['part_date', 'game_id_str', 'b_role_id', 'gym_uid', 'player_lumis', 'battle_result', 'trainer_id'],
+  'limited-gym':  ['part_date', 'game_id_str', 'b_role_id', 'gym_uid', 'battle_result'],
   'guild-war':    ['part_date', 'b_role_id'],
   assist:         ['part_date', 'battle_uid', 'b_role_id'],
   recharge:       ['b_role_id', 'max_recharge_total'],
@@ -158,6 +159,29 @@ function buildSql(mode, startDate, endDate, cfg) {
       GROUP BY game_id_str, b_role_id
       HAVING (MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) BETWEEN 128100001 AND 128101000
               OR MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) BETWEEN 1281100001 AND 1281100200)
+    `.trim().replace(/\s+/g, ' ')
+  }
+
+  if (mode === 'limited-gym') {
+    // 有限道馆（gym.EnemyTeam 59 关）：埋点与 Tower1v1 完全同构（双行上报合并成一场）
+    // 区别只有 game_type='Gym1v1' 和 uid 区间：MonsterGroupID 1280001~1280059（floor = uid - 1280000）
+    // 只统计参与情况与是否通关，不拉 player_lumis / trainer_id（阵容数据量大且不需要）
+    // 不计入参与走势（fetch-participation-trend.mjs 不读 daily/limited-gym/）
+    return `
+      SELECT
+        MIN("$part_date") AS part_date,
+        game_id_str,
+        b_role_id,
+        MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) AS gym_uid,
+        MAX(CASE WHEN player_type = 1 THEN battle_result END) AS battle_result
+      FROM ${tableName}
+      WHERE "$part_date" >= '${startDate}'
+        AND "$part_date" <= '${endDate}'
+        AND "#event_name" = 'battle_end'
+        AND ${zoneFilter}
+        AND game_type = 'Gym1v1'
+      GROUP BY game_id_str, b_role_id
+      HAVING MAX(CASE WHEN player_type = 4 THEN TRY_CAST(player_uid_str AS bigint) END) BETWEEN 1280001 AND 1280059
     `.trim().replace(/\s+/g, ' ')
   }
 

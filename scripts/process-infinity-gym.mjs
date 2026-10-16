@@ -1,15 +1,20 @@
 // 处理无限道馆 CSV → JSON
-// 输入: data/{region}/archive/daily/infinity-gym/{YYYY-MM-DD}.csv （按天分片）
-//       data/{region}/archive/daily/assist/{YYYY-MM-DD}.csv       （助战埋点，同样按天分片）
+// 输入: data/{region}/archive/daily/infinity-gym/{YYYY-MM-DD}.csv （按天分片，Tower1v1）
+//       data/{region}/archive/daily/limited-gym/{YYYY-MM-DD}.csv  （按天分片，Gym1v1 = 有限道馆 59 关）
+//       data/{region}/archive/daily/assist/{YYYY-MM-DD}.csv       （助战埋点，同样按天分片，两管线共用）
 // 输出: public/data/online/{region}/infinity-gym.json               （最终展示 JSON）
-// 归档: data/{region}/archive/gym-weekly/week-{N}.json              （每周聚合结果，主线+赛季合一份）
+// 归档: data/{region}/archive/gym-weekly/week-{N}.json              （无限道馆每周聚合，主线+赛季合一份）
+//       data/{region}/archive/gym-limited-weekly/week-{N}.json      （有限道馆每周聚合，独立归档）
 //
 // 每行 CSV = 一场道馆战斗（已合并 player_type=1/4 两条埋点）:
 //   part_date | game_id_str | b_role_id | gym_uid | player_lumis | battle_result | trainer_id
 //
-// gym_uid 分区：
-//   主线 128100001~128101000 (floor = uid - 128100000)
-//   赛季 1281100001~1281100200 (floor = uid - 1281100000)
+// gym_uid 分区（两条管线，输入/归档/聚合全部独立）：
+//   无限·主线 128100001~128101000 (floor = uid - 128100000)
+//   无限·赛季 1281100001~1281100200 (floor = uid - 1281100000)
+//   有限（gym.EnemyTeam 59 关）1280001~1280059 (floor = uid - 1280000)
+//   有限道馆不计入参与走势（fetch-participation-trend.mjs 不读 daily/limited-gym/），
+//   也不计入顶层汇总与 globalLumiUsage（口径保持"无限道馆"）
 // battle_result: 1=胜 2=负
 //
 // —— 架构（v4 按周归档）——
@@ -19,7 +24,7 @@
 //   - 冻结策略：完整跑完的过去周文件不再重写；只有「本周」和「上周（如果跨零点）」每次重新聚合
 //   - 每层 teamsWon 冻结时按 battles 排序取 top 200（3 支输出槽位远够用）
 //   - 最终 OUTPUT_JSON 由所有周归档 merge 而来
-// 助战判定：assistBattleUidsByDate 按天分桶 + TTL 14 天，扁平快照 O(1) 查询
+// 助战判定：assistBattleUidsFlat 扁平快照（TTL 14 天内的 uid 全集）O(1) 查询
 
 import fs from 'fs'
 import path from 'path'
@@ -46,6 +51,8 @@ if (!VALID_REGIONS.includes(region)) {
 const INPUT_DIR = path.join(PROJECT_ROOT, `data/${region}/archive/daily/infinity-gym`)
 const ASSIST_DIR = path.join(PROJECT_ROOT, `data/${region}/archive/daily/assist`)
 const WEEKLY_DIR = path.join(PROJECT_ROOT, `data/${region}/archive/gym-weekly`)
+const LIMITED_INPUT_DIR = path.join(PROJECT_ROOT, `data/${region}/archive/daily/limited-gym`)
+const LIMITED_WEEKLY_DIR = path.join(PROJECT_ROOT, `data/${region}/archive/gym-limited-weekly`)
 const OUTPUT_JSON = path.join(PROJECT_ROOT, `public/data/online/${region}/infinity-gym.json`)
 // 老单文件（v1~v3），首次跑 v4 时如果发现存在就清理掉（避免占磁盘）
 const LEGACY_STATE_JSON = path.join(PROJECT_ROOT, `data/${region}/archive/gym-state.json`)
@@ -64,13 +71,39 @@ const MAX_TEAMS_PER_FLOOR_PER_WEEK = 200
 // 全局噜咪出场率输出 top N
 const GLOBAL_LUMI_TOP_N = 300
 
-// 分区定义：主线 / 赛季
-const ZONES = [
-  { key: 'mainline', base: 128100000, min: 128100001, max: 128101000 },
-  { key: 'season',   base: 1281100000, min: 1281100001, max: 1281100200 },
+// 聚合管线定义：无限道馆（主线+赛季）/ 有限道馆（gym.EnemyTeam 59 关）
+// 两条管线各自独立输入目录 + 周归档目录，冻结策略互不影响
+const PIPELINES = [
+  {
+    key: 'infinity',
+    label: '无限道馆',
+    inputDir: INPUT_DIR,
+    weeklyDir: WEEKLY_DIR,
+    zones: [
+      { key: 'mainline', base: 128100000, min: 128100001, max: 128101000 },
+      { key: 'season',   base: 1281100000, min: 1281100001, max: 1281100200 },
+    ],
+    // 无限道馆战斗分散在 1200 层，周内 teamsWon 无上限累积也撑得住 → 维持「整周聚合完再 trim」
+    dailyTrim: false,
+  },
+  {
+    key: 'limited',
+    label: '有限道馆',
+    inputDir: LIMITED_INPUT_DIR,
+    weeklyDir: LIMITED_WEEKLY_DIR,
+    zones: [
+      { key: 'limited', base: 1280000, min: 1280001, max: 1280059 },
+    ],
+    // 有限道馆只统计参与情况与是否通关，不收集通关阵容：
+    //   - 不解析 player_lumis（JSON.parse 是 CPU/内存大头）
+    //   - 不累积 teamsWon（59 热点关全服玩家集中，队伍组合无上限累积会 OOM）
+    //   - 不计 globalLumiCount（出场率口径保持"无限道馆"）
+    teams: false,
+    dailyTrim: false,
+  },
 ]
-function zoneOfUid(uid) {
-  for (const z of ZONES) if (uid >= z.min && uid <= z.max) return z
+function zoneOfUid(zones, uid) {
+  for (const z of zones) if (uid >= z.min && uid <= z.max) return z
   return null
 }
 
@@ -80,15 +113,20 @@ function zoneOfUid(uid) {
 console.log('加载 robot-teams / Lumi / 多语言...')
 const robotTeamsPath = path.join(PROJECT_ROOT, 'public/data/robot-teams.json')
 const robotTeams = JSON.parse(fs.readFileSync(robotTeamsPath, 'utf-8'))
-const gymCfg = Array.isArray(robotTeams.infinityGym)
-  ? { mainline: robotTeams.infinityGym, season: [] }
-  : (robotTeams.infinityGym || { mainline: [], season: [] })
+const gymCfgRaw = robotTeams.infinityGym || {}
+const gymCfg = Array.isArray(gymCfgRaw)
+  ? { mainline: gymCfgRaw, season: [], limited: [] }
+  : { mainline: gymCfgRaw.mainline || [], season: gymCfgRaw.season || [], limited: gymCfgRaw.limited || [] }
 const npcTeamByZone = {
   mainline: new Map((gymCfg.mainline || []).map(t => [t.floor, t])),
   season: new Map((gymCfg.season || []).map(t => [t.floor, t])),
+  limited: new Map((gymCfg.limited || []).map(t => [t.floor, t])),
 }
 if (npcTeamByZone.mainline.size === 0 && npcTeamByZone.season.size === 0) {
   console.warn('⚠️ robot-teams.json 里未找到 infinityGym 数据；请先跑 process-robot-teams.js')
+}
+if (npcTeamByZone.limited.size === 0) {
+  console.warn('⚠️ robot-teams.json 里未找到 infinityGym.limited 数据；请先跑 process-robot-teams.js')
 }
 
 const lumiPath = path.join(PROJECT_ROOT, 'public/data/Lumi.json')
@@ -185,14 +223,16 @@ function freezeCutoff() {
 //     globalLumiCount: Map<lumiId, count>,   // 全区共享（跨主线赛季）
 //   }
 // ==========================================
-function createEmptyWeek(week) {
+function createEmptyWeek(pipeline, week) {
+  const zones = {}
+  for (const z of pipeline.zones) zones[z.key] = createEmptyZone()
   return {
     week,
+    zoneDefs: pipeline.zones,   // 该管线包含哪些分区（uid 区间定义，运行时用，不序列化）
+    zoneKeys: pipeline.zones.map(z => z.key),
+    teams: pipeline.teams !== false,   // 是否收集通关阵容（limited 管线为 false）
     dates: [],
-    zones: {
-      mainline: createEmptyZone(),
-      season: createEmptyZone(),
-    },
+    zones,
     globalLumiCount: new Map(),
   }
 }
@@ -210,7 +250,7 @@ function createEmptyZone() {
 function accumulateGymRow(weekState, row, assistBattleUidsFlat) {
   const gymUid = parseInt(row.gym_uid)
   if (!Number.isFinite(gymUid)) return
-  const zone = zoneOfUid(gymUid)
+  const zone = zoneOfUid(weekState.zoneDefs, gymUid)
   if (!zone) return
 
   const z = weekState.zones[zone.key]
@@ -248,6 +288,9 @@ function accumulateGymRow(weekState, row, assistBattleUidsFlat) {
 
   const cur = z.playerMaxFloor.get(roleId) || 0
   if (floor > cur) z.playerMaxFloor.set(roleId, floor)
+
+  // teams=false 管线（有限道馆）：只要参与/通关统计，阵容相关全部跳过
+  if (!weekState.teams) return
 
   // 解析玩家阵容
   let lumis = []
@@ -313,7 +356,7 @@ function accumulateGymRow(weekState, row, assistBattleUidsFlat) {
 // 排序：battles DESC → latestGameId DESC（最近使用的优先保）
 // ==========================================
 function trimWeekTopN(weekState) {
-  for (const zoneKey of ['mainline', 'season']) {
+  for (const zoneKey of weekState.zoneKeys) {
     const z = weekState.zones[zoneKey]
     for (const [, f] of z.floors) {
       if (f.teamsWon.size <= MAX_TEAMS_PER_FLOOR_PER_WEEK) continue
@@ -332,14 +375,19 @@ function trimWeekTopN(weekState) {
 // ==========================================
 // 序列化周 state → JSON（流式写，避开 V8 单字符串 512MB 上限）
 // ==========================================
-async function saveWeekState(weekState) {
-  const outPath = path.join(WEEKLY_DIR, `week-${weekState.week}.json`)
-  fs.mkdirSync(WEEKLY_DIR, { recursive: true })
+async function saveWeekState(pipeline, weekState) {
+  const outPath = path.join(pipeline.weeklyDir, `week-${weekState.week}.json`)
+  fs.mkdirSync(pipeline.weeklyDir, { recursive: true })
   const out = fs.createWriteStream(outPath, { encoding: 'utf-8' })
-  const write = str => new Promise((resolve, reject) => {
+  // error 只挂一次（每个 write 各挂一个 once('error') 会累积监听器触发 MaxListeners 警告）；
+  // 磁盘满等写出错误是致命场景，直接退出让定时任务重试
+  out.once('error', err => {
+    console.error(`❌ 写归档 ${outPath} 失败: ${err.message}`)
+    process.exit(1)
+  })
+  const write = str => new Promise((resolve) => {
     if (out.write(str)) resolve()
     else out.once('drain', resolve)
-    out.once('error', reject)
   })
 
   await write('{')
@@ -347,14 +395,17 @@ async function saveWeekState(weekState) {
   await write(`,"week":${weekState.week}`)
   await write(`,"dates":${JSON.stringify(weekState.dates)}`)
   await write(`,"globalLumiCount":${JSON.stringify([...weekState.globalLumiCount])}`)
+  await write(`,"zoneKeys":${JSON.stringify(weekState.zoneKeys)}`)
   await write(',"zones":{')
-  await writeZoneWeekly('mainline', weekState.zones.mainline, write)
-  await write(',')
-  await writeZoneWeekly('season', weekState.zones.season, write)
+  for (let i = 0; i < weekState.zoneKeys.length; i++) {
+    if (i > 0) await write(',')
+    const zk = weekState.zoneKeys[i]
+    await writeZoneWeekly(zk, weekState.zones[zk], write)
+  }
   await write('}}')
   await new Promise(res => out.end(res))
   const size = fs.statSync(outPath).size
-  console.log(`  💾 week-${weekState.week}.json 已保存 (${(size / 1024 / 1024).toFixed(1)} MB)`)
+  console.log(`  💾 ${path.basename(pipeline.weeklyDir)}/week-${weekState.week}.json 已保存 (${(size / 1024 / 1024).toFixed(1)} MB)`)
 }
 
 async function writeZoneWeekly(key, z, write) {
@@ -397,22 +448,36 @@ async function writeZoneWeekly(key, z, write) {
 // ==========================================
 // 加载周归档 → weekState（JSON.parse；单周 < 300MB 安全）
 // ==========================================
-function loadWeekState(week) {
-  const filePath = path.join(WEEKLY_DIR, `week-${week}.json`)
+function loadWeekState(pipeline, week) {
+  const filePath = path.join(pipeline.weeklyDir, `week-${week}.json`)
   if (!fs.existsSync(filePath)) return null
   try {
     const obj = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
     if ((obj.version || 1) < 4) return null
-    const ws = createEmptyWeek(obj.week)
+    const ws = createEmptyWeek(pipeline, obj.week)
     ws.dates = obj.dates || []
     ws.globalLumiCount = new Map(obj.globalLumiCount || [])
-    for (const zoneKey of ['mainline', 'season']) {
+
+    // role_id 字符串驻留：JSON.parse 每个字符串都是新对象，同一玩家的 id 在
+    // 59 层 × N 周 × challengers/clearers 里重复出现几十次，驻留后折叠成同一引用，
+    // 归档全量 load 的内存从 ~2GB 级降到 ~几百 MB（不驻留会 OOM，实测）
+    const intern = new Map()
+    const internId = s => {
+      const cached = intern.get(s)
+      if (cached !== undefined) return cached
+      intern.set(s, s)
+      return s
+    }
+
+    // 老归档无 zoneKeys 字段 → 以管线定义为准（infinity 管线正好是 mainline+season，天然兼容）
+    const zoneKeys = ws.zoneKeys
+    for (const zoneKey of zoneKeys) {
       const zObj = obj.zones?.[zoneKey] || {}
       const z = ws.zones[zoneKey]
       z.totalBattles = zObj.totalBattles || 0
       z.assistBattles = zObj.assistBattles || 0
-      z.uniqueChallengers = new Set(zObj.uniqueChallengers || [])
-      z.playerMaxFloor = new Map(zObj.playerMaxFloor || [])
+      z.uniqueChallengers = new Set((zObj.uniqueChallengers || []).map(internId))
+      z.playerMaxFloor = new Map((zObj.playerMaxFloor || []).map(([k, v]) => [internId(k), v]))
       for (const [floor, f] of zObj.floors || []) {
         const teams = new Map()
         for (const [tk, t] of f.teamsWon || []) {
@@ -435,8 +500,8 @@ function loadWeekState(week) {
           wins: f.wins,
           loses: f.loses,
           assistBattles: f.assistBattles,
-          uniqueClearers: new Set(f.uniqueClearers || []),
-          uniqueChallengers: new Set(f.uniqueChallengers || []),
+          uniqueClearers: new Set((f.uniqueClearers || []).map(internId)),
+          uniqueChallengers: new Set((f.uniqueChallengers || []).map(internId)),
           teamsWon: teams,
         })
       }
@@ -458,8 +523,9 @@ function loadWeekState(week) {
 //     合并后按 battles 排序取 top 200
 //   playerMaxFloor = 跨周同玩家取 max
 //   globalLumiCount = 跨周累加
+// consume=true 时逐周合并并释放源周引用（单 zone 管线用，避免 N 周 unique Set 同时驻留内存）
 // ==========================================
-function mergeWeeksIntoZone(weeks, zoneKey) {
+function mergeWeeksIntoZone(weeks, zoneKey, { consume = false } = {}) {
   const merged = {
     totalBattles: 0,
     assistBattles: 0,
@@ -467,7 +533,8 @@ function mergeWeeksIntoZone(weeks, zoneKey) {
     playerMaxFloor: new Map(),
     floors: new Map(),
   }
-  for (const ws of weeks) {
+  for (let wi = 0; wi < weeks.length; wi++) {
+    const ws = weeks[wi]
     const z = ws.zones[zoneKey]
     merged.totalBattles += z.totalBattles
     merged.assistBattles += z.assistBattles
@@ -533,6 +600,7 @@ function mergeWeeksIntoZone(weeks, zoneKey) {
         })
       }
     }
+    if (consume) weeks[wi] = null  // 释放已合并的源周，GC 可回收其 unique Set / teamsWon
   }
   // 合并后每层再次裁到 top N（跨周合起来可能再次超过 200，虽然极少见）
   for (const [, f] of merged.floors) {
@@ -550,56 +618,14 @@ function mergeWeeksIntoZone(weeks, zoneKey) {
 }
 
 // ==========================================
-// 主处理
+// 单管线聚合：按周分组 → 逐周读归档/重扫 → 返回 allWeekStates
 // ==========================================
-async function main() {
-  console.log(`\n===== 无限道馆数据处理 v4 (${region}) =====`)
+async function aggregatePipeline(pipeline, assistBattleUidsFlat) {
+  const gymCsvs = listDailyCsvs(pipeline.inputDir)
+  console.log(`\n🎬 管线 [${pipeline.label}]: ${gymCsvs.length} 天 daily CSV (${pipeline.inputDir})`)
+  if (gymCsvs.length === 0) return []
 
-  // 清理老 v1~v3 单文件 state
-  if (fs.existsSync(LEGACY_STATE_JSON)) {
-    const legacyMB = (fs.statSync(LEGACY_STATE_JSON).size / 1024 / 1024).toFixed(1)
-    fs.unlinkSync(LEGACY_STATE_JSON)
-    console.log(`🧹 清理老 v1~v3 state 文件（${legacyMB} MB）`)
-  }
-
-  // --rebuild：清空周归档目录
-  if (forceRebuild && fs.existsSync(WEEKLY_DIR)) {
-    for (const f of fs.readdirSync(WEEKLY_DIR)) {
-      if (/^week-\d+\.json$/.test(f)) fs.unlinkSync(path.join(WEEKLY_DIR, f))
-    }
-    console.log(`🧹 --rebuild：清空 ${WEEKLY_DIR}`)
-  }
-
-  const gymCsvs = listDailyCsvs(INPUT_DIR)
-  const assistCsvs = listDailyCsvs(ASSIST_DIR)
-  console.log(`输入: ${gymCsvs.length} 天 gym CSV / ${assistCsvs.length} 天 assist CSV`)
-  if (gymCsvs.length === 0) {
-    console.error(`❌ ${INPUT_DIR} 下未找到任何 daily CSV，退出`)
-    process.exit(1)
-  }
-
-  // ---- 第 1 步：加载 assist 桶（按天分桶 + TTL） ----
-  // 每次都全量重扫 assist（因为 assist 桶是短命的，14 天 TTL 内的桶都要在内存里）
-  console.log('\n🔄 加载 assist 桶...')
-  const assistBattleUidsByDate = new Map()  // date -> Set<uid>
-  const assistBattleUidsFlat = new Set()
-  const pad = n => String(n).padStart(2, '0')
-  const ttlCutoff = new Date()
-  ttlCutoff.setDate(ttlCutoff.getDate() - ASSIST_TTL_DAYS)
-  const ttlDate = `${ttlCutoff.getFullYear()}-${pad(ttlCutoff.getMonth() + 1)}-${pad(ttlCutoff.getDate())}`
-  for (const csvPath of assistCsvs) {
-    const d = dateOfCsvPath(csvPath)
-    if (!d || d < ttlDate) continue  // TTL 之外的 assist 不加载
-    const set = new Set()
-    await processCsvStream(csvPath, (row) => {
-      const uid = row.battle_uid
-      if (uid) { set.add(uid); assistBattleUidsFlat.add(uid) }
-    })
-    assistBattleUidsByDate.set(d, set)
-  }
-  console.log(`  已加载 ${assistBattleUidsByDate.size} 天 assist 桶 / ${assistBattleUidsFlat.size.toLocaleString('en-US')} 个独立 uid`)
-
-  // ---- 第 2 步：按周分组 gym CSV ----
+  // 按周分组 gym CSV
   const gymCsvsByWeek = new Map()  // week -> [csvPath, ...]
   for (const csvPath of gymCsvs) {
     const d = dateOfCsvPath(csvPath)
@@ -610,9 +636,9 @@ async function main() {
     gymCsvsByWeek.get(w).push({ csvPath, date: d })
   }
   const weeks = [...gymCsvsByWeek.keys()].sort((a, b) => a - b)
-  console.log(`\n📅 涉及周: ${weeks.join(', ')}`)
+  console.log(`📅 涉及周: ${weeks.join(', ')}`)
 
-  // ---- 第 3 步：判断哪些周需要重扫，哪些直接读归档 ----
+  // 判断哪些周需要重扫，哪些直接读归档
   // 冻结策略：如果 week-N.json 存在 && 该周所有天 date < freezeCutoff → 直接读归档
   // 否则重扫该周所有 daily CSV（覆盖式写归档）
   const cutoff = freezeCutoff()
@@ -620,7 +646,7 @@ async function main() {
   for (const w of weeks) {
     const wDates = gymCsvsByWeek.get(w).map(x => x.date)
     const maxDate = wDates[wDates.length - 1]
-    const archivePath = path.join(WEEKLY_DIR, `week-${w}.json`)
+    const archivePath = path.join(pipeline.weeklyDir, `week-${w}.json`)
     const archiveExists = fs.existsSync(archivePath)
 
     // 该周是否"完整过去" —— 所有天都 <= cutoff → 可从归档读
@@ -628,7 +654,7 @@ async function main() {
 
     if (archiveExists && isFullyFrozen) {
       console.log(`\n📖 week-${w}: 读归档（${wDates.length} 天，date <= ${cutoff}，冻结）`)
-      const ws = loadWeekState(w)
+      const ws = loadWeekState(pipeline, w)
       if (ws) {
         allWeekStates.push(ws)
         continue
@@ -638,7 +664,7 @@ async function main() {
 
     // 重扫该周
     console.log(`\n🔄 week-${w}: 重扫 ${wDates.length} 天（${wDates[0]} ~ ${maxDate}）`)
-    const ws = createEmptyWeek(w)
+    const ws = createEmptyWeek(pipeline, w)
     ws.dates = wDates
     for (const { csvPath } of gymCsvsByWeek.get(w)) {
       await processCsvStream(csvPath, (row) => accumulateGymRow(ws, row, assistBattleUidsFlat))
@@ -647,37 +673,100 @@ async function main() {
     trimWeekTopN(ws)
     // 冻结的周才写盘归档（本周还在增长的不写，避免"周中断" state 上盘）
     if (isFullyFrozen) {
-      await saveWeekState(ws)
+      await saveWeekState(pipeline, ws)
     } else {
       // 当前进行周：暂存到内存，最后 merge 时也用；同时写"临时归档"允许下次跑增量读
       // 但因为随时会变，还是写盘保存一份最新（保证有中断恢复能力）
-      await saveWeekState(ws)
+      await saveWeekState(pipeline, ws)
     }
     allWeekStates.push(ws)
   }
+  return allWeekStates
+}
 
-  // ---- 第 4 步：合并所有周 → 最终输出 ----
-  console.log(`\n🔗 合并 ${allWeekStates.length} 周...`)
-  const mainline = mergeWeeksIntoZone(allWeekStates, 'mainline')
-  const season = mergeWeeksIntoZone(allWeekStates, 'season')
+// ==========================================
+// 主处理
+// ==========================================
+async function main() {
+  console.log(`\n===== 道馆数据处理 v4 (${region}) =====`)
 
-  // 全局噜咪出场率（跨周累加）
+  // 清理老 v1~v3 单文件 state
+  if (fs.existsSync(LEGACY_STATE_JSON)) {
+    const legacyMB = (fs.statSync(LEGACY_STATE_JSON).size / 1024 / 1024).toFixed(1)
+    fs.unlinkSync(LEGACY_STATE_JSON)
+    console.log(`🧹 清理老 v1~v3 state 文件（${legacyMB} MB）`)
+  }
+
+  // --rebuild：清空全部管线周归档目录
+  if (forceRebuild) {
+    for (const p of PIPELINES) {
+      if (!fs.existsSync(p.weeklyDir)) continue
+      for (const f of fs.readdirSync(p.weeklyDir)) {
+        if (/^week-\d+\.json$/.test(f)) fs.unlinkSync(path.join(p.weeklyDir, f))
+      }
+      console.log(`🧹 --rebuild：清空 ${p.weeklyDir}`)
+    }
+  }
+
+  const assistCsvs = listDailyCsvs(ASSIST_DIR)
+  console.log(`输入: ${assistCsvs.length} 天 assist CSV`)
+  if (!fs.existsSync(INPUT_DIR) || listDailyCsvs(INPUT_DIR).length === 0) {
+    console.error(`❌ ${INPUT_DIR} 下未找到任何 daily CSV，退出`)
+    process.exit(1)
+  }
+
+  // ---- 第 1 步：加载 assist 桶（扁平快照 + TTL，两条管线共用） ----
+  // 每次都全量重扫 assist（因为 assist 桶是短命的，14 天 TTL 内的都要在内存里）
+  console.log('\n🔄 加载 assist 桶...')
+  let assistDays = 0
+  const assistBattleUidsFlat = new Set()
+  const pad = n => String(n).padStart(2, '0')
+  const ttlCutoff = new Date()
+  ttlCutoff.setDate(ttlCutoff.getDate() - ASSIST_TTL_DAYS)
+  const ttlDate = `${ttlCutoff.getFullYear()}-${pad(ttlCutoff.getMonth() + 1)}-${pad(ttlCutoff.getDate())}`
+  for (const csvPath of assistCsvs) {
+    const d = dateOfCsvPath(csvPath)
+    if (!d || d < ttlDate) continue  // TTL 之外的 assist 不加载
+    assistDays++
+    await processCsvStream(csvPath, (row) => {
+      const uid = row.battle_uid
+      if (uid) assistBattleUidsFlat.add(uid)
+    })
+  }
+  console.log(`  已加载 ${assistDays} 天 assist 桶 / ${assistBattleUidsFlat.size.toLocaleString('en-US')} 个独立 uid`)
+
+  // ---- 第 2 步：两条管线各自聚合（有限道馆无输入时容忍为空，不阻塞无限道馆输出） ----
+  const infinityWeeks = await aggregatePipeline(PIPELINES[0], assistBattleUidsFlat)
+  const limitedWeeks = await aggregatePipeline(PIPELINES[1], assistBattleUidsFlat)
+
+  // ---- 第 3 步：合并所有周 → 最终输出 ----
+  console.log(`\n🔗 合并: 无限道馆 ${infinityWeeks.length} 周 / 有限道馆 ${limitedWeeks.length} 周...`)
+  const mainline = mergeWeeksIntoZone(infinityWeeks, 'mainline')
+  const season = mergeWeeksIntoZone(infinityWeeks, 'season')
+  // limited 单 zone 管线用 consume 模式：逐周合并即释放，59 热点关的 unique Set 很大，
+  // 全部周驻留内存会 OOM
+  const limited = mergeWeeksIntoZone(limitedWeeks, 'limited', { consume: true })
+
+  // 全局噜咪出场率（跨周累加，仅无限道馆管线；有限道馆不进该口径）
   const globalLumiCount = new Map()
-  for (const ws of allWeekStates) {
+  for (const ws of infinityWeeks) {
     for (const [id, cnt] of ws.globalLumiCount) {
       globalLumiCount.set(id, (globalLumiCount.get(id) || 0) + cnt)
     }
   }
 
+  // 顶层汇总 = 无限道馆（主线+赛季）；有限道馆只在自身分区内展示，不进顶层与参与走势
   const totalBattlesAll = mainline.totalBattles + season.totalBattles
   const assistBattlesAll = mainline.assistBattles + season.assistBattles
   const uniqueChallengersAll = new Set([...mainline.uniqueChallengers, ...season.uniqueChallengers])
-  console.log(`  总场次: ${totalBattlesAll} (主线 ${mainline.totalBattles} + 赛季 ${season.totalBattles})`)
+  console.log(`  无限道馆总场次: ${totalBattlesAll} (主线 ${mainline.totalBattles} + 赛季 ${season.totalBattles})`)
   console.log(`  独立玩家数（跨区去重）: ${uniqueChallengersAll.size}`)
   console.log(`  覆盖层数: 主线 ${mainline.floors.size} / 赛季 ${season.floors.size}`)
+  console.log(`  有限道馆: ${limited.totalBattles} 场 / ${limited.uniqueChallengers.size} 独立玩家 / ${limited.floors.size} 关有挑战`)
 
   // 构造分区输出
   const buildZoneOutput = (zoneKey, merged) => {
+    const hasTeams = PIPELINES.find(p => p.zones.some(z => z.key === zoneKey))?.teams !== false
     const floorsOutput = [...merged.floors.entries()]
       .sort(([a], [b]) => Number(b) - Number(a))
       .map(([floor, f]) => {
@@ -731,7 +820,7 @@ async function main() {
           uniqueChallengers: f.uniqueChallengers.size,
           uniqueClearers,
           avgAttempts,
-          npcTeam: buildNpcTeam(zoneKey, Number(floor)),
+          npcTeam: hasTeams ? buildNpcTeam(zoneKey, Number(floor)) : [],
           topTeams: teams,
         }
       })
@@ -771,13 +860,14 @@ async function main() {
     globalLumiUsage,
     mainline: buildZoneOutput('mainline', mainline),
     season: buildZoneOutput('season', season),
+    limited: buildZoneOutput('limited', limited),
   }
 
   fs.mkdirSync(path.dirname(OUTPUT_JSON), { recursive: true })
   fs.writeFileSync(OUTPUT_JSON, JSON.stringify(output, null, 2), 'utf-8')
   const size = fs.statSync(OUTPUT_JSON).size
   console.log(`\n✓ 输出: ${OUTPUT_JSON} (${(size / 1024).toFixed(1)} KB)`)
-  console.log(`  主线层数: ${output.mainline.floors.length}, 赛季层数: ${output.season.floors.length}, 全局噜咪: ${globalLumiUsage.length}`)
+  console.log(`  主线层数: ${output.mainline.floors.length}, 赛季层数: ${output.season.floors.length}, 有限道馆关数: ${output.limited.floors.length}, 全局噜咪: ${globalLumiUsage.length}`)
 }
 
 main().catch(e => {

@@ -129,8 +129,9 @@ function main() {
     .sort((a, b) => a.teamId - b.teamId)
 
   // —— 无限道馆：主线 128100001~128101000（1000 关）+ 赛季 1281100001~1281100200（200 关）——
+  // —— 有限道馆：1280001~1280059（gym.EnemyTeam 59 关，floor = id - 1280000）——
   // 玩家挑战后 battle_end 上报 player_uid = MonsterGroupID
-  //   主线 floor = id - 128100000；赛季 floor = id - 1281100000
+  //   主线 floor = id - 128100000；赛季 floor = id - 1281100000；有限 floor = id - 1280000
   const buildGymEntry = (g, base) => {
     const floor = g.MonsterGroupID - base
     const lumis = (g.MonsterIdList || [])
@@ -146,7 +147,11 @@ function main() {
     .filter(g => g.MonsterGroupID >= 1281100001 && g.MonsterGroupID <= 1281100200)
     .map(g => buildGymEntry(g, 1281100000))
     .sort((a, b) => a.floor - b.floor)
-  const infinityGym = { mainline: infinityGymMainline, season: infinityGymSeason }
+  const limitedGym = monsterGroups
+    .filter(g => g.MonsterGroupID >= 1280001 && g.MonsterGroupID <= 1280059)
+    .map(g => buildGymEntry(g, 1280000))
+    .sort((a, b) => a.floor - b.floor)
+  const infinityGym = { mainline: infinityGymMainline, season: infinityGymSeason, limited: limitedGym }
 
   // 输出
   const result = { dojo, ladder, home, infinityGym }
@@ -159,7 +164,8 @@ function main() {
   const homeLumis = home.reduce((s, t) => s + t.lumis.length, 0)
   const gymMainLumis = infinityGymMainline.reduce((s, t) => s + t.lumis.length, 0)
   const gymSeasonLumis = infinityGymSeason.reduce((s, t) => s + t.lumis.length, 0)
-  console.log(`✅ 道馆 ${dojo.length} / 天梯 ${ladder.length}（${ladderLevels} 档位，${ladderLumis} 只）/ 家园 ${home.length}（${homeLumis} 只）/ 无限道馆 主线 ${infinityGymMainline.length} 层（${gymMainLumis} 只）+ 赛季 ${infinityGymSeason.length} 层（${gymSeasonLumis} 只）`)
+  const gymLimitedLumis = limitedGym.reduce((s, t) => s + t.lumis.length, 0)
+  console.log(`✅ 道馆 ${dojo.length} / 天梯 ${ladder.length}（${ladderLevels} 档位，${ladderLumis} 只）/ 家园 ${home.length}（${homeLumis} 只）/ 无限道馆 主线 ${infinityGymMainline.length} 层（${gymMainLumis} 只）+ 赛季 ${infinityGymSeason.length} 层（${gymSeasonLumis} 只）/ 有限道馆 ${limitedGym.length} 关（${gymLimitedLumis} 只）`)
   if (warnCount) console.log(`⚠️  共 ${warnCount} 条警告，请检查上方日志`)
   console.log(`→ ${outPath}`)
 }

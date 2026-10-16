@@ -43,6 +43,7 @@ LumiWiki/
 │   │   │   ├── tournament/{YYYY-MM-DD}.csv
 │   │   │   ├── login/{YYYY-MM-DD}.csv
 │   │   │   ├── infinity-gym/{YYYY-MM-DD}.csv
+│   │   │   ├── limited-gym/{YYYY-MM-DD}.csv
 │   │   │   ├── assist/{YYYY-MM-DD}.csv
 │   │   │   └── guild-war/{YYYY-MM-DD}.csv
 │   │   └── recharge.csv              # 累计全量（每 role_id 历史最大充值，不按天分片）
@@ -249,6 +250,7 @@ data/{region}/archive/
     ladder/{YYYY-MM-DD}.csv          ← 每天一个文件，永远只增不改（除了当天覆盖）
     tournament/{YYYY-MM-DD}.csv
     infinity-gym/{YYYY-MM-DD}.csv
+    limited-gym/{YYYY-MM-DD}.csv
     assist/{YYYY-MM-DD}.csv
     login/{YYYY-MM-DD}.csv
     guild-war/{YYYY-MM-DD}.csv
@@ -293,10 +295,10 @@ GET   {baseUrl}/open/sql-result-page?token=&projectId=&taskId=&pageId=N
 
 | 脚本 | 职责 |
 |---|---|
-| `scripts/ta-fetch.mjs` | 数数开放 API 拉取：submit-sql → 分页 sql-result-page → **流式写入 CSV**（绕过 Buffer 2GB 上限）。参数：`--region cn\|overseas --mode ladder\|tournament\|login\|infinity-gym\|assist\|guild-war\|recharge --start YYYY-MM-DD --end YYYY-MM-DD --out` |
+| `scripts/ta-fetch.mjs` | 数数开放 API 拉取：submit-sql → 分页 sql-result-page → **流式写入 CSV**（绕过 Buffer 2GB 上限）。参数：`--region cn\|overseas --mode ladder\|tournament\|login\|infinity-gym\|limited-gym\|assist\|guild-war\|recharge --start YYYY-MM-DD --end YYYY-MM-DD --out` |
 | `scripts/backfill-daily.mjs` | **按天回填历史数据**（一次性用）。参数：`--region --modes m1,m2 --start --end [--force]`。已存在的文件默认跳过 |
 | `scripts/fetch-participation-trend.mjs` | 参与走势聚合（读 daily/{ladder,tournament,login,infinity-gym,guild-war} × 本周 7 天）。参数：`--week N --region [--publish]` |
-| `scripts/process-infinity-gym.mjs` | 无限道馆数据处理（遍历 daily/infinity-gym/*.csv 累计聚合） |
+| `scripts/process-infinity-gym.mjs` | 道馆数据处理（双管线：无限 daily/infinity-gym → 主线+赛季；有限 daily/limited-gym → 59 关，独立周归档 gym-limited-weekly/；有限道馆不计入参与走势与顶层汇总） |
 | `scripts/notify.mjs` | 飞书/企业微信通知（根据 webhook URL 自动判断平台） |
 | `scripts/update-game-data.mjs` | 游戏数据更新：svn update → 复制 JSON → 多语言 → 衍生脚本 → 立绘同步 |
 | `scripts/auto-update.mjs` | **每日线上数据总控**：双区拉昨天+今天各模式 daily → process → 参与走势 → 推荐配队 → build + push |
@@ -333,7 +335,7 @@ MSYS_NO_PATHCONV=1 schtasks /create /tn "LumiWiki_Daily"  /tr "D:\lumiwiki\scrip
 - **数据范围**：每次拉取"昨天 + 今天"两天到对应 daily 分片；老数据永久保留
 - **周编号算法**：见 `scripts/week-utils.mjs` 的 `weekOfDate` / `getWeekDates`。上线前的日期返回 0（不属于任何游戏周）
 - **玩法开放日历**：`scripts/auto-update.mjs` 顶部的 `MODE_OPEN_DATE`
-  - ladder / infinity-gym / assist / login / recharge = 2026-09-17（上线首日）
+  - ladder / infinity-gym / limited-gym / assist / login / recharge = 2026-09-17（上线首日）
   - tournament（周赛）= 2026-09-25（Week 2 起点）
   - guild-war（公会战）= 2026-09-30
   - 未开放的模式 auto-update 会跳过（打印 `⏭ 尚未开放`），不影响其他模式
@@ -422,10 +424,10 @@ MSYS_NO_PATHCONV=1 schtasks /query /tn LumiWiki_Daily
     2. 周赛 (updateRegionMode('tournament')，非首周):
        → 类似流程，写 daily/tournament/{date}.csv，process 读本周 7 天聚合
 
-    3. 无限道馆 + 助战 (updateRegionInfinityGym):
-       → 拉昨天 + 今天写 daily/infinity-gym/{date}.csv & daily/assist/{date}.csv
-       → process-infinity-gym.mjs 遍历整个 daily 目录累计聚合
-         → 输出 public/data/online/{region}/infinity-gym.json
+    3. 道馆（无限+有限）+ 助战 (updateRegionInfinityGym):
+       → 拉昨天 + 今天写 daily/infinity-gym/{date}.csv & daily/limited-gym/{date}.csv & daily/assist/{date}.csv
+       → process-infinity-gym.mjs 双管线聚合（无限=主线+赛季；有限=59 关，独立周归档 gym-limited-weekly/）
+         → 输出 public/data/online/{region}/infinity-gym.json（mainline/season/limited 三分区）
 
     4. 参与走势 (updateRegionParticipation):
        → 拉昨天 + 今天写 daily/login/{date}.csv & daily/guild-war/{date}.csv
@@ -491,7 +493,7 @@ npm run process-robot-teams   # 重新生成 robot-teams.json（道馆+天梯+�
 
 - **表位置**：天梯等级匹配表 `RobotLvMatching.json` 跟其他表一样在 `Datas\check\data`（2026-08-11 起客户端/服务端表统一目录），见上方「数据源」。
 - **天梯等级档位**是稀疏的（5~51 连续，56/71/100），目标等级不在档位里时由前端「匹配 ≤ 它的最大档位」处理。
-- **输出结构**：`{ dojo: [{teamId, name, lumis}], ladder: [{level, teamId, lumis}], home: [{teamId, lumis}] }`。ladder 每个阵容多一个 `level` 字段供等级选择器过滤；道馆按关卡平铺、天梯用等级选择器、家园按 MonsterGroupID 平铺。
+- **输出结构**：`{ dojo: [{teamId, name, lumis}], ladder: [{level, teamId, lumis}], home: [{teamId, lumis}], infinityGym: { mainline, season, limited } }`。ladder 每个阵容多一个 `level` 字段供等级选择器过滤；道馆按关卡平铺、天梯用等级选择器、家园按 MonsterGroupID 平铺；infinityGym 三分区（主线/赛季/有限，每项 `[{floor, teamId, lumis}]`）供线上道馆页查 NPC 阵容。
 - 噜咪「最大评分」不存进 JSON，前端运行时查 `Lumi.json` 的 `MaxScore`。
 
 ---

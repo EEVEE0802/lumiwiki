@@ -26,6 +26,7 @@ const LUMI_TEAMS_REGION = 'cn'
 const MODE_OPEN_DATE = {
   ladder: '2026-09-17',
   'infinity-gym': '2026-09-17',
+  'limited-gym': '2026-09-17',
   assist: '2026-09-17',
   login: '2026-09-17',
   recharge: '2026-09-17',
@@ -229,10 +230,19 @@ export async function updateRegionInfinityGym(region /* baseFriday 不再使用 
   for (const date of dates) {
     const gymPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'infinity-gym', `${date}.csv`)
     const assistPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'assist', `${date}.csv`)
+    const limitedPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'daily', 'limited-gym', `${date}.csv`)
     try {
       await fetchCsv(region, 'infinity-gym', date, date, gymPath)
     } catch (e) {
       console.error(`⚠️  [${region}/infinity-gym/${date}] 拉取失败: ${e.message}`)
+    }
+    if (isModeOpen('limited-gym')) {
+      // 有限道馆（Gym1v1 59 关）：跟无限道馆同构拉取，process-infinity-gym.mjs 一起聚合
+      try {
+        await fetchCsv(region, 'limited-gym', date, date, limitedPath)
+      } catch (e) {
+        console.error(`⚠️  [${region}/limited-gym/${date}] 拉取失败: ${e.message}`)
+      }
     }
     if (isModeOpen('assist')) {
       try {
@@ -245,9 +255,9 @@ export async function updateRegionInfinityGym(region /* baseFriday 不再使用 
 
   // process 遍历所有 daily CSV 聚合；heap 大一点兜底跨天累计后的中间数据结构
   // 即使这次两天全失败，历史 daily 还在，process 也能给出"到上次成功为止"的结果
-  // heap 8192 = state 累积到几百 MB 时 stringify/parse 中间对象需要充足内存（saveState 已改流式，
-  // 但 loadState 里的 JSON.parse 仍会构造整块对象；14 天数据后 state ~几百 MB，8G heap 才够 safe margin）
-  runCommand(process.execPath, ['--max-old-space-size=8192', 'scripts/process-infinity-gym.mjs', '--region', region])
+  // heap 16384 = 周归档全量 load（JSON.parse 字符串+对象双驻留）+ merge 峰值需要；
+  // loadWeekState 已做 role_id 驻留，但周数增长后归档体量仍大，16G 才够 safe margin（机器 32G）
+  runCommand(process.execPath, ['--max-old-space-size=16384', 'scripts/process-infinity-gym.mjs', '--region', region])
 }
 
 // updateRegionGuildWar 已并入 updateRegionParticipation（公会战 daily CSV 跟 login 一起拉）

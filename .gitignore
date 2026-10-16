@@ -52,6 +52,7 @@ data/**/recharge.csv
 data/**/gym-state.json
 # 无限道馆按周归档（v4 起改成 gym-weekly/week-N.json，单文件几百 MB）
 data/**/gym-weekly/
+data/**/gym-limited-weekly/
 
 # 归档压缩包（本地打包用，绝不进 git —— auto-update 用 git add -A 会误卷）
 *.7z

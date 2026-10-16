@@ -39,7 +39,7 @@ if (!VALID_REGIONS.includes(region)) {
   process.exit(1)
 }
 const modes = modesArg.split(',').map(s => s.trim()).filter(Boolean)
-const VALID_MODES = new Set(['ladder', 'tournament', 'login', 'infinity-gym', 'guild-war', 'assist'])
+const VALID_MODES = new Set(['ladder', 'tournament', 'login', 'infinity-gym', 'limited-gym', 'guild-war', 'assist'])
 for (const m of modes) {
   if (!VALID_MODES.has(m)) {
     console.error(`未知 mode: ${m}（支持: ${[...VALID_MODES].join(', ')}）`)
