@@ -688,6 +688,15 @@
           </div>
         </div>
 
+        <!-- 每关参与率（仅有限道馆：每 3 关一个道馆，参与率 = 打过该关人数 ÷ 当前等级达到道馆解锁线的人数） -->
+        <div v-if="gymZone === 'limited' && hasRateData" class="gym-chart-block">
+          <h3>每关参与率</h3>
+          <p class="chart-subtitle">打了该关卡的总人数 ÷ 解锁了该道馆的总人数（玩家等级以当前最新等级算，相邻道馆双色交替）</p>
+          <div class="chart-wrapper" style="min-height: 320px">
+            <canvas ref="gymRateCanvas"></canvas>
+          </div>
+        </div>
+
         <!-- 全局噜咪出场率（跨区合并，展示所有无限道馆战斗的整体分布） -->
         <div class="gym-chart-block">
           <h3>玩家阵容中噜咪出场率 Top 30</h3>
@@ -989,6 +998,8 @@ const gymFloorRefs = new Map()
 const gymGroupRefs = new Map()
 const gymFloorDistCanvas = ref(null)
 let gymFloorDistChart = null
+const gymRateCanvas = ref(null)
+let gymRateChart = null
 
 // 当前分区数据：{ totalChallengers, totalBattles, assistBattles, assistRate, maxFloorDistribution, floors }
 // gymData 顶层还带 globalLumiUsage / updateTime / region（跨区共享，仅无限道馆口径）
@@ -1851,7 +1862,7 @@ async function loadGymData() {
     expandedFloors.value = new Set()
     expandedGroups.value = new Set()
     // 下一轮 tick 画图
-    nextTick(() => drawFloorDistChart())
+    nextTick(() => { drawFloorDistChart(); drawFloorRateChart() })
   } catch (e) {
     console.error('加载无限道馆数据失败:', e)
     gymData.value = null
@@ -1865,7 +1876,7 @@ function switchGymZone(zone) {
   expandedFloors.value = new Set()
   expandedGroups.value = new Set()
   gymJumpFloor.value = 1
-  nextTick(() => drawFloorDistChart())
+  nextTick(() => { drawFloorDistChart(); drawFloorRateChart() })
 }
 
 // 最高层数（用于顶部展示 + jump 输入的 max）
@@ -1873,6 +1884,11 @@ const maxFloorReached = computed(() => {
   if (!gymZoneData.value) return 0
   const keys = Object.keys(gymZoneData.value.maxFloorDistribution || {}).map(Number)
   return keys.length ? Math.max(...keys) : 0
+})
+
+// 有限道馆每关参与率数据是否可用（level-dist 缺失时 process 输出不含该字段）
+const hasRateData = computed(() => {
+  return (gymZoneData.value?.floors || []).some(f => f.participationRate != null)
 })
 
 // 画层数分布图
@@ -1906,6 +1922,57 @@ function drawFloorDistChart() {
       scales: {
         x: { ticks: { autoSkip: true, maxTicksLimit: 30 } },
         y: { beginAtZero: true, ticks: { callback: v => v.toLocaleString('zh-CN') } },
+      }
+    }
+  })
+}
+
+// 画每关参与率图（仅有限道馆：相邻道馆双色交替，tooltip 带道馆/解锁等级/人数明细）
+function drawFloorRateChart() {
+  if (gymRateChart) { gymRateChart.destroy(); gymRateChart = null }
+  if (gymZone.value !== 'limited' || !hasRateData.value || !gymRateCanvas.value) return
+  const floors = (gymZoneData.value?.floors || [])
+    .filter(f => f.participationRate != null)
+    .sort((a, b) => a.floor - b.floor)
+
+  const ctx = gymRateCanvas.value.getContext('2d')
+  gymRateChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: floors.map(f => `第${f.floor}关`),
+      datasets: [{
+        label: '参与率',
+        data: floors.map(f => f.participationRate),
+        backgroundColor: floors.map(f => f.dojo % 2 === 1
+          ? 'rgba(118, 75, 162, 0.65)'
+          : 'rgba(72, 148, 209, 0.55)'),
+        borderColor: floors.map(f => f.dojo % 2 === 1
+          ? 'rgba(118, 75, 162, 1)'
+          : 'rgba(72, 148, 209, 1)'),
+        borderWidth: 1,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const f = floors[ctx.dataIndex]
+              return [
+                `参与率 ${f.participationRate}%`,
+                `参与 ${f.uniqueChallengers.toLocaleString('zh-CN')} 人 / 解锁 ${f.unlockedPlayers.toLocaleString('zh-CN')} 人`,
+                `道馆 ${f.dojo}（${f.unlockLevel} 级解锁）`,
+              ]
+            }
+          }
+        },
+      },
+      scales: {
+        x: { ticks: { autoSkip: true, maxTicksLimit: 30 } },
+        y: { beginAtZero: true, ticks: { callback: v => v + '%' } },
       }
     }
   })

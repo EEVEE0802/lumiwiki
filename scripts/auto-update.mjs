@@ -253,6 +253,17 @@ export async function updateRegionInfinityGym(region /* baseFriday 不再使用 
     }
   }
 
+  // 玩家等级分布直方图（累计全量，同 recharge 模式）：有限道馆「每关参与率」的分母
+  // 玩家等级以当前最新等级算（每玩家 MAX(level)），所以每天全量覆盖拉一次，process 输出阶段注入
+  if (isModeOpen('login')) {
+    const levelDistPath = path.join(PROJECT_ROOT, 'data', region, 'archive', 'level-dist.csv')
+    try {
+      await fetchCsv(region, 'level-dist', MODE_OPEN_DATE.login, fmt(now), levelDistPath)
+    } catch (e) {
+      console.error(`⚠️  [${region}/level-dist] 拉取失败: ${e.message}`)
+    }
+  }
+
   // process 遍历所有 daily CSV 聚合；heap 大一点兜底跨天累计后的中间数据结构
   // 即使这次两天全失败，历史 daily 还在，process 也能给出"到上次成功为止"的结果
   // heap 16384 = 周归档全量 load（JSON.parse 字符串+对象双驻留）+ merge 峰值需要；

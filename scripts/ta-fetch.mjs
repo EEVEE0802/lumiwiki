@@ -70,6 +70,7 @@ export const CSV_HEADERS = {
   assist:         ['part_date', 'battle_uid', 'b_role_id'],
   recharge:       ['b_role_id', 'max_recharge_total'],
   'recharge-daily': ['part_date', 'b_role_id', 'daily_max_recharge'],
+  'level-dist':   ['level', 'players'],
 }
 
 function buildSql(mode, startDate, endDate, cfg) {
@@ -257,6 +258,27 @@ function buildSql(mode, startDate, endDate, cfg) {
         AND "#event_name" = 'recharge'
         AND ${zoneFilter}
       GROUP BY b_role_id
+    `.trim().replace(/\s+/g, ' ')
+  }
+
+  if (mode === 'level-dist') {
+    // 玩家等级分布直方图（累计全量，同 recharge 模式）：
+    //   player_login 事件带 level 字段（登录时的玩家等级），等级只涨不降 → 每玩家 MAX(level) = 当前最新等级
+    //   外层按等级分组计数 → ~120 行直方图，用于有限道馆「每关参与率」的分母（等级 ≥ 道馆解锁线的累计人数）
+    //   覆盖流失玩家（等级停留在流失前，MAX 全历史仍能取到）
+    return `
+      SELECT CAST(lv AS int) AS level, COUNT(*) AS players
+      FROM (
+        SELECT b_role_id, MAX(TRY_CAST(level AS bigint)) AS lv
+        FROM ${tableName}
+        WHERE "$part_date" >= '${startDate}'
+          AND "$part_date" <= '${endDate}'
+          AND "#event_name" = 'player_login'
+          AND ${zoneFilter}
+        GROUP BY b_role_id
+      ) t
+      GROUP BY lv
+      ORDER BY lv
     `.trim().replace(/\s+/g, ' ')
   }
 

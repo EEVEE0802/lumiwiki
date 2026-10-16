@@ -108,6 +108,53 @@ function zoneOfUid(zones, uid) {
 }
 
 // ==========================================
+// 有限道馆道馆结构（每关参与率用）
+// ==========================================
+// 每 3 关一个道馆（末馆 5 关）：dojo 1（关 1-3）18 级解锁、dojo 2（关 4-6）20 级、
+// dojo n≥3 为 20+(n-2)×5 级（25/30/.../100），末馆 dojo 19（关 55-59）105 级
+// 参与率 = 打了该关卡的总人数 ÷ 解锁了该道馆的总人数（玩家等级以当前最新等级算）
+const LIMITED_DOJOS = (() => {
+  const list = []
+  let floor = 1
+  for (let d = 1; d <= 19; d++) {
+    const unlockLevel = d === 1 ? 18 : d === 2 ? 20 : 20 + (d - 2) * 5
+    const count = d === 19 ? 5 : 3
+    list.push({ dojo: d, unlockLevel, fromFloor: floor, toFloor: floor + count - 1 })
+    floor += count
+  }
+  return list
+})()
+
+// 玩家等级分布直方图（ta-fetch --mode level-dist 生成，累计全量，~几百行小文件）
+const LEVEL_DIST_CSV = path.join(PROJECT_ROOT, `data/${region}/archive/level-dist.csv`)
+
+// 读等级直方图 → 每道馆解锁人数（等级 ≥ 解锁线的累计人数，含流失玩家，等级停留在流失前）
+// 文件缺失时返回 null 容忍（参与率输出 null，不阻塞道馆数据本身）
+function loadDojoUnlocks() {
+  if (!fs.existsSync(LEVEL_DIST_CSV)) {
+    console.warn(`⚠️  未找到 ${LEVEL_DIST_CSV}，有限道馆每关参与率将输出 null（先跑: ta-fetch --mode level-dist）`)
+    return null
+  }
+  let raw = fs.readFileSync(LEVEL_DIST_CSV, 'utf-8')
+  if (raw.charCodeAt(0) === 0xFEFF) raw = raw.slice(1) // 去 BOM
+  const buckets = new Map()
+  for (const line of raw.split(/\r?\n/).slice(1)) { // 跳表头
+    if (!line.trim()) continue
+    const [lv, cnt] = line.split(',').map(s => parseInt(s.replace(/"/g, ''), 10))
+    if (!Number.isFinite(lv) || !Number.isFinite(cnt)) continue
+    buckets.set(lv, (buckets.get(lv) || 0) + cnt)
+  }
+  const result = LIMITED_DOJOS.map(d => {
+    let unlockedPlayers = 0
+    for (const [lv, cnt] of buckets) if (lv >= d.unlockLevel) unlockedPlayers += cnt
+    return { ...d, unlockedPlayers }
+  })
+  const sample = result.find(d => d.dojo === 19)
+  console.log(`  等级直方图: ${buckets.size} 个等级桶，末馆（105 级）解锁 ${sample.unlockedPlayers.toLocaleString('en-US')} 人`)
+  return result
+}
+
+// ==========================================
 // 加载 robot-teams / Lumi / 多语言
 // ==========================================
 console.log('加载 robot-teams / Lumi / 多语言...')
@@ -765,6 +812,7 @@ async function main() {
   console.log(`  有限道馆: ${limited.totalBattles} 场 / ${limited.uniqueChallengers.size} 独立玩家 / ${limited.floors.size} 关有挑战`)
 
   // 构造分区输出
+  const dojoUnlocks = loadDojoUnlocks() // 有限道馆参与率分母（等级快照在最终输出阶段注入，不动周归档）
   const buildZoneOutput = (zoneKey, merged) => {
     const hasTeams = PIPELINES.find(p => p.zones.some(z => z.key === zoneKey))?.teams !== false
     const floorsOutput = [...merged.floors.entries()]
@@ -809,6 +857,11 @@ async function main() {
           { key: 'other', team: other },
         ].filter(s => s.team).map(s => serializeTeam(s.team, s.key))
 
+        // 有限道馆：注入道馆归属 + 解锁人数 → 每关参与率（分子=历史累计挑战人数，分母=当前等级≥解锁线人数）
+        const dj = zoneKey === 'limited' ? dojoUnlocks?.find(d => floor >= d.fromFloor && floor <= d.toFloor) : null
+        const rate = dj && dj.unlockedPlayers > 0
+          ? +(f.uniqueChallengers.size / dj.unlockedPlayers * 100).toFixed(2) : null
+
         return {
           floor: Number(floor),
           totalBattles: f.totalBattles,
@@ -822,6 +875,12 @@ async function main() {
           avgAttempts,
           npcTeam: hasTeams ? buildNpcTeam(zoneKey, Number(floor)) : [],
           topTeams: teams,
+          ...(dj ? {
+            dojo: dj.dojo,
+            unlockLevel: dj.unlockLevel,
+            unlockedPlayers: dj.unlockedPlayers,
+            participationRate: rate,
+          } : {}),
         }
       })
 
