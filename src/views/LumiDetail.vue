@@ -2,7 +2,7 @@
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { loadData, t, TYPE_NAMES, TYPE_COLORS, WORK_TYPE_NAMES, LUMI_TAG_NAMES, LUMI_CARD_TYPE, LUMI_CARD_TYPE_COLORS, getKeywordMap, keywordSync, parseSkillCost } from '../data'
-import { avatarUrl, skillIconUrl, handleAvatarError as handleAvatarErrorHelper } from '../data/imageUrl'
+import { avatarUrl, skillIconUrl, accessoryIconUrl, handleAvatarError as handleAvatarErrorHelper } from '../data/imageUrl'
 
 const route = useRoute()
 const router = useRouter()
@@ -20,6 +20,8 @@ const avgData = ref([])
 const extraData = ref({})
 const lumiTeamsData = ref(null)
 const orderNpcData = ref([])
+const accessories = ref([])
+const selectedAccessoryId = ref(null)
 const loading = ref(true)
 const selectedKeyword = ref(null)
 const showKeywordTooltip = ref(false)
@@ -28,7 +30,7 @@ const showKeywordTooltip = ref(false)
 async function loadLumiData() {
   loading.value = true
   const id = Number(route.params.id)
-  const [data, loc, skills, trainers, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra, teams, orderNpc] = await Promise.all([
+  const [data, loc, skills, trainers, bPassives, hPassives, evos, lumis, tCounters, keywords, avg, extra, teams, orderNpc, accs] = await Promise.all([
     loadData('Lumi'),
     loadData('localization'),
     loadData('ActiveSkill'),
@@ -43,6 +45,7 @@ async function loadLumiData() {
     loadData('extra').catch(() => ({})),
     loadData('lumi-teams').catch(() => null),
     loadData('OrderNPC').catch(() => []),
+    loadData('Accessory').catch(() => []),
   ])
 
   lumi.value = data.find(l => l.Id === id)
@@ -59,6 +62,11 @@ async function loadLumiData() {
   extraData.value = extra
   lumiTeamsData.value = teams
   orderNpcData.value = orderNpc || []
+  accessories.value = accs || []
+  // 默认选中 Sequence=1 的饰品（本体，如无头骑士的骑士盔）
+  const myAccs = (accs || []).filter(a => a.LumiID === id && a.IsShow)
+                              .sort((x, y) => x.Sequence - y.Sequence)
+  selectedAccessoryId.value = myAccs[0]?.Id ?? null
   loading.value = false
 
   // 注册 showKeyword 到 window 对象供 HTML onclick 调用
@@ -375,10 +383,47 @@ const evolutionChainData = computed(() => {
   }
 })
 
+// 饰品：当前噜咪可切换的饰品列表（按 Sequence 排序，Sequence=1 为本体）
+const availableAccessories = computed(() => {
+  if (!lumi.value || !accessories.value.length) return []
+  return accessories.value
+    .filter(a => a.LumiID === lumi.value.Id && a.IsShow)
+    .sort((a, b) => a.Sequence - b.Sequence)
+})
+
+// 当前选中饰品
+const selectedAccessory = computed(() => {
+  if (!availableAccessories.value.length) return null
+  return availableAccessories.value.find(a => a.Id === selectedAccessoryId.value)
+      || availableAccessories.value[0]
+})
+
+// 饰品覆盖后的 Lumi（Override* 为 0 时保留原值，非 0 时覆盖）
+// 影响：Type1/Type2（属性+克制）、BattlePassive（特性）、ActiveSkill（专属技能）、CA/Avatar（立绘）
+const effectiveLumi = computed(() => {
+  if (!lumi.value) return null
+  const acc = selectedAccessory.value
+  if (!acc) return lumi.value
+  const override = (v, orig) => (v != null && v !== 0 ? v : orig)
+  return {
+    ...lumi.value,
+    Type1: override(acc.OverrideType1, lumi.value.Type1),
+    Type2: override(acc.OverrideType2, lumi.value.Type2),
+    BattlePassive: override(acc.OverrideBattlePassive, lumi.value.BattlePassive),
+    ActiveSkill: override(acc.OverrideActiveSkill, lumi.value.ActiveSkill),
+    CA: acc.ReplaceCardAsset || lumi.value.CA,
+    Avatar: acc.ReplaceAvatarAsset || lumi.value.Avatar,
+  }
+})
+
+function selectAccessory(accId) {
+  selectedAccessoryId.value = accId
+}
+
 // 固有技能
 const inherentSkill = computed(() => {
-  if (!lumi.value || !lumi.value.ActiveSkill) return null
-  const s = activeSkills.value.find(x => x.Id === lumi.value.ActiveSkill)
+  if (!effectiveLumi.value || !effectiveLumi.value.ActiveSkill) return null
+  const s = activeSkills.value.find(x => x.Id === effectiveLumi.value.ActiveSkill)
   if (!s) return null
   return {
     id: s.Id,
@@ -537,9 +582,9 @@ const TYPE_KEYS = [
   'Fairy', 'Steel', 'King', 'God',
 ]
 
-// 计算被各属性攻击时的伤害效果
+// 计算被各属性攻击时的伤害效果（基于饰品覆盖后的属性）
 const weaknesses = computed(() => {
-  if (!lumi.value || !typeCounters.value.length) return []
+  if (!effectiveLumi.value || !typeCounters.value.length) return []
 
   const results = []
 
@@ -552,16 +597,16 @@ const weaknesses = computed(() => {
     let multiplier = 10000
 
     // 对第一个属性的效果
-    if (lumi.value.Type1) {
-      const defKey1 = TYPE_KEYS[lumi.value.Type1 - 1]
+    if (effectiveLumi.value.Type1) {
+      const defKey1 = TYPE_KEYS[effectiveLumi.value.Type1 - 1]
       if (defKey1 && atkData[defKey1] !== undefined) {
         multiplier = (multiplier * atkData[defKey1]) / 10000
       }
     }
 
     // 对第二个属性的效果（如果有）
-    if (lumi.value.Type2) {
-      const defKey2 = TYPE_KEYS[lumi.value.Type2 - 1]
+    if (effectiveLumi.value.Type2) {
+      const defKey2 = TYPE_KEYS[effectiveLumi.value.Type2 - 1]
       if (defKey2 && atkData[defKey2] !== undefined) {
         multiplier = (multiplier * atkData[defKey2]) / 10000
       }
@@ -620,8 +665,8 @@ const weaknesses = computed(() => {
     <div class="detail-header">
       <div class="detail-icon">
         <img
-          v-if="lumi.CA"
-          :src="avatarUrl(lumi.CA)"
+          v-if="effectiveLumi.CA"
+          :src="avatarUrl(effectiveLumi.CA)"
           :alt="getName(lumi.Name)"
           class="detail-avatar-img"
         />
@@ -631,12 +676,39 @@ const weaknesses = computed(() => {
         <div class="detail-id">#{{ lumi.PokedexId }}</div>
         <h1 class="detail-name">{{ getName(lumi.Name) }}</h1>
         <div class="detail-types">
-          <span class="type-tag" :style="{ background: TYPE_COLORS[lumi.Type1] }">
-            {{ getTypeName(lumi.Type1) }}
+          <span class="type-tag" :style="{ background: TYPE_COLORS[effectiveLumi.Type1] }">
+            {{ getTypeName(effectiveLumi.Type1) }}
           </span>
-          <span v-if="lumi.Type2" class="type-tag" :style="{ background: TYPE_COLORS[lumi.Type2] }">
-            {{ getTypeName(lumi.Type2) }}
+          <span v-if="effectiveLumi.Type2" class="type-tag" :style="{ background: TYPE_COLORS[effectiveLumi.Type2] }">
+            {{ getTypeName(effectiveLumi.Type2) }}
           </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 饰品切换（仅当该噜咪有饰品时显示） -->
+    <div class="section" v-if="availableAccessories.length">
+      <h2>饰品 <span class="section-subtitle">切换饰品会改变属性、特性和专属技能</span></h2>
+      <div class="accessory-switcher">
+        <div class="accessory-icons">
+          <button
+            v-for="acc in availableAccessories"
+            :key="acc.Id"
+            class="accessory-icon-btn"
+            :class="{ active: selectedAccessory && selectedAccessory.Id === acc.Id, [`quality-${acc.Quality}`]: true }"
+            :title="getName(acc.Name)"
+            @click="selectAccessory(acc.Id)"
+          >
+            <img :src="accessoryIconUrl(acc.IconAssetPath)" :alt="getName(acc.Name)" />
+          </button>
+        </div>
+        <div class="accessory-info" v-if="selectedAccessory">
+          <div class="accessory-name" :class="`quality-${selectedAccessory.Quality}-text`">
+            {{ getName(selectedAccessory.Name) }}
+          </div>
+          <div class="accessory-desc" v-if="getName(selectedAccessory.Desc)">
+            {{ getName(selectedAccessory.Desc) }}
+          </div>
         </div>
       </div>
     </div>
@@ -838,16 +910,16 @@ const weaknesses = computed(() => {
       </div>
     </div>
 
-    <!-- 特性（战斗被动或家园被动） -->
-    <div class="section" v-if="lumi.BattlePassive || lumi.HomePassive">
+    <!-- 特性（战斗被动或家园被动，战斗被动会被饰品覆盖） -->
+    <div class="section" v-if="effectiveLumi.BattlePassive || lumi.HomePassive">
       <h2>特性</h2>
-      <div class="skill-item" v-if="lumi.BattlePassive">
+      <div class="skill-item" v-if="effectiveLumi.BattlePassive">
         <span class="skill-type-badge battle">战斗被动</span>
         <div class="skill-info">
-          <span class="skill-name">{{ getPassiveName(lumi.BattlePassive) }}</span>
-          <span class="skill-des" v-if="getPassiveDes(lumi.BattlePassive)" v-html="getPassiveDes(lumi.BattlePassive)"></span>
+          <span class="skill-name">{{ getPassiveName(effectiveLumi.BattlePassive) }}</span>
+          <span class="skill-des" v-if="getPassiveDes(effectiveLumi.BattlePassive)" v-html="getPassiveDes(effectiveLumi.BattlePassive)"></span>
         </div>
-        <span class="skill-id">ID: {{ lumi.BattlePassive }}</span>
+        <span class="skill-id">ID: {{ effectiveLumi.BattlePassive }}</span>
       </div>
       <div class="skill-item" v-if="lumi.HomePassive">
         <span class="skill-type-badge home">家园被动</span>
@@ -1150,6 +1222,72 @@ const weaknesses = computed(() => {
   color: var(--text-dim);
   font-weight: normal;
   margin-left: 8px;
+}
+
+/* 饰品切换 */
+.accessory-switcher {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.accessory-icons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.accessory-icon-btn {
+  width: 64px;
+  height: 64px;
+  padding: 4px;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.accessory-icon-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.accessory-icon-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-light);
+}
+.accessory-icon-btn.active {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, var(--bg-card), rgba(233, 69, 96, 0.15));
+  box-shadow: 0 2px 12px rgba(233, 69, 96, 0.35);
+}
+.accessory-icon-btn.quality-6 { box-shadow: inset 0 0 0 1px rgba(255, 99, 71, 0.4); }
+.accessory-icon-btn.quality-5 { box-shadow: inset 0 0 0 1px rgba(255, 215, 0, 0.3); }
+.accessory-icon-btn.active.quality-6 { box-shadow: 0 2px 12px rgba(255, 99, 71, 0.5), inset 0 0 0 1px rgba(255, 99, 71, 0.6); }
+.accessory-icon-btn.active.quality-5 { box-shadow: 0 2px 12px rgba(255, 215, 0, 0.45), inset 0 0 0 1px rgba(255, 215, 0, 0.5); }
+.accessory-info {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.accessory-name {
+  font-weight: 700;
+  font-size: 1.05em;
+  color: #fff;
+}
+.accessory-name.quality-6-text { color: #ff6347; }
+.accessory-name.quality-5-text { color: #ffd700; }
+.accessory-desc {
+  color: var(--text-dim);
+  font-size: 0.88em;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 /* 推荐配队 */

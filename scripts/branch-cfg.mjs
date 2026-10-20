@@ -50,12 +50,14 @@ export function parseBranch(argv = process.argv.slice(2)) {
     BUFF_ICON_SRC_DIR: path.join(cfg.CLIENT_ROOT, 'Atlas/IconSkill'),
     SKILL_ICON_SRC_DIR: path.join(cfg.CLIENT_ROOT, 'Atlas/IconSkill'),
     ITEM_ICON_BASE_DIR: path.join(cfg.CLIENT_ROOT, 'Atlas'),
+    ACCESSORY_ICON_SRC_DIR: path.join(cfg.CLIENT_ROOT, 'Atlas/PetDress'),
     // 目标：public/data 与 public/images
     DATA_DST_DIR: path.join(PROJECT_ROOT, 'public/data', cfg.DATA_SUBDIR),
     AVATAR_DST_DIR: path.join(PROJECT_ROOT, 'public/images', cfg.IMAGE_SUBDIR, 'avatars'),
     BUFF_ICON_DST_DIR: path.join(PROJECT_ROOT, 'public/images', cfg.IMAGE_SUBDIR, 'buffs'),
     SKILL_ICON_DST_DIR: path.join(PROJECT_ROOT, 'public/images', cfg.IMAGE_SUBDIR, 'skills'),
     ITEM_ICON_DST_DIR: path.join(PROJECT_ROOT, 'public/images', cfg.IMAGE_SUBDIR, 'items'),
+    ACCESSORY_ICON_DST_DIR: path.join(PROJECT_ROOT, 'public/images', cfg.IMAGE_SUBDIR, 'accessories'),
     PROJECT_ROOT,
   }
 }

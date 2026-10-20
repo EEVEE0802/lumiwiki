@@ -38,6 +38,11 @@ export function skillIconUrl(icon) {
   return `${imagePrefix()}/skills/${icon}.png`
 }
 
+export function accessoryIconUrl(icon) {
+  if (!icon) return `${imagePrefix()}/accessories/unknown.png`
+  return `${imagePrefix()}/accessories/${icon}.png`
+}
+
 // 属性图标（通用，不切换）
 export function typeIconUrl(icon) {
   return `/images/types/${icon}.png`

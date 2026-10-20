@@ -35,7 +35,8 @@ const CORE_FILES = [
   'LumiRareLevel.json',
   'MarketPrice.json',
   'LumiCondition.json',
-  'OrderNPC.json'
+  'OrderNPC.json',
+  'Accessory.json'
 ]
 
 function svnUpdate(cfg) {
@@ -287,6 +288,48 @@ function syncRequestItemIcons(cfg) {
   console.log(`  ✓ 新增 ${added} 个图标，更新 ${updated} 个，缺失源文件 ${missing} 个，无 icon 字段 ${skipped} 个`)
 }
 
+// 同步饰品图标（数据驱动：遍历 Accessory.json 里所有 IconAssetPath 字段引用）
+function syncAccessoryIcons(cfg) {
+  console.log('\n🎀 同步饰品图标（数据驱动按需复制）...')
+  fs.mkdirSync(cfg.ACCESSORY_ICON_DST_DIR, { recursive: true })
+
+  const accPath = path.join(cfg.DATA_DST_DIR, 'Accessory.json')
+  if (!fs.existsSync(accPath)) {
+    console.log('  ⚠ Accessory.json 不存在，跳过')
+    return
+  }
+  if (!fs.existsSync(cfg.ACCESSORY_ICON_SRC_DIR)) {
+    console.log(`  ⚠ 饰品图标源目录不存在，跳过: ${cfg.ACCESSORY_ICON_SRC_DIR}`)
+    return
+  }
+  const accArr = (() => {
+    const d = JSON.parse(fs.readFileSync(accPath, 'utf-8'))
+    return Array.isArray(d) ? d : (d.data || Object.values(d))
+  })()
+
+  const icons = new Set()
+  for (const a of accArr) {
+    if (a.IconAssetPath) icons.add(a.IconAssetPath)
+  }
+
+  let added = 0, updated = 0, missing = 0, invalid = 0
+  for (const icon of icons) {
+    const safeName = path.basename(icon)
+    if (safeName !== icon) { invalid++; continue }
+    const fileName = safeName + '.png'
+    const srcPath = path.join(cfg.ACCESSORY_ICON_SRC_DIR, fileName)
+    if (!fs.existsSync(srcPath)) { missing++; continue }
+    const dstPath = path.join(cfg.ACCESSORY_ICON_DST_DIR, fileName)
+    const status = fileCopyStatus(srcPath, dstPath)
+    if (status === 'skip') continue
+    fs.copyFileSync(srcPath, dstPath)
+    if (status === 'add') added++
+    else updated++
+  }
+  if (invalid) console.log(`  ⚠ 共 ${invalid} 个非法 icon 名已跳过`)
+  console.log(`  ✓ 新增 ${added} 个图标，更新 ${updated} 个，缺失源文件 ${missing} 个`)
+}
+
 // 将对外的 extra.json 复制到 internal（社区维护的口味信息与游戏版本正交）
 function mirrorExtra(cfg) {
   if (!cfg.isInternal) return
@@ -312,6 +355,7 @@ export async function updateGameData(opts = {}) {
   syncBuffIcons(cfg)
   syncSkillIcons(cfg)
   syncRequestItemIcons(cfg)
+  syncAccessoryIcons(cfg)
   mirrorExtra(cfg)
 }
 
