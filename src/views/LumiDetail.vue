@@ -391,9 +391,10 @@ const availableAccessories = computed(() => {
     .sort((a, b) => a.Sequence - b.Sequence)
 })
 
-// 当前选中饰品
+// 当前选中饰品（selectedAccessoryId === null 表示"无饰品"）
 const selectedAccessory = computed(() => {
   if (!availableAccessories.value.length) return null
+  if (selectedAccessoryId.value === null) return null
   return availableAccessories.value.find(a => a.Id === selectedAccessoryId.value)
       || availableAccessories.value[0]
 })
@@ -692,10 +693,18 @@ const weaknesses = computed(() => {
       <div class="accessory-switcher">
         <div class="accessory-icons">
           <button
+            class="accessory-icon-btn accessory-icon-none"
+            :class="{ active: selectedAccessoryId === null }"
+            title="不佩戴饰品"
+            @click="selectAccessory(null)"
+          >
+            <span class="accessory-none-mark">✕</span>
+          </button>
+          <button
             v-for="acc in availableAccessories"
             :key="acc.Id"
             class="accessory-icon-btn"
-            :class="{ active: selectedAccessory && selectedAccessory.Id === acc.Id, [`quality-${acc.Quality}`]: true }"
+            :class="{ active: selectedAccessoryId === acc.Id, [`quality-${acc.Quality}`]: true }"
             :title="getName(acc.Name)"
             @click="selectAccessory(acc.Id)"
           >
@@ -709,6 +718,10 @@ const weaknesses = computed(() => {
           <div class="accessory-desc" v-if="getName(selectedAccessory.Desc)">
             {{ getName(selectedAccessory.Desc) }}
           </div>
+        </div>
+        <div class="accessory-info" v-else>
+          <div class="accessory-name accessory-name-none">无饰品</div>
+          <div class="accessory-desc">未佩戴任何饰品，显示噜咪原本的属性、特性和专属技能。</div>
         </div>
       </div>
     </div>
@@ -1265,6 +1278,17 @@ const weaknesses = computed(() => {
   background: linear-gradient(135deg, var(--bg-card), rgba(233, 69, 96, 0.15));
   box-shadow: 0 2px 12px rgba(233, 69, 96, 0.35);
 }
+.accessory-icon-none {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+}
+.accessory-none-mark {
+  font-size: 1.8em;
+  font-weight: 300;
+  line-height: 1;
+}
 .accessory-icon-btn.quality-6 { box-shadow: inset 0 0 0 1px rgba(255, 99, 71, 0.4); }
 .accessory-icon-btn.quality-5 { box-shadow: inset 0 0 0 1px rgba(255, 215, 0, 0.3); }
 .accessory-icon-btn.active.quality-6 { box-shadow: 0 2px 12px rgba(255, 99, 71, 0.5), inset 0 0 0 1px rgba(255, 99, 71, 0.6); }
@@ -1283,6 +1307,7 @@ const weaknesses = computed(() => {
 }
 .accessory-name.quality-6-text { color: #ff6347; }
 .accessory-name.quality-5-text { color: #ffd700; }
+.accessory-name.accessory-name-none { color: var(--text-dim); }
 .accessory-desc {
   color: var(--text-dim);
   font-size: 0.88em;
